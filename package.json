@@ -7,14 +7,29 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "lint:css": "stylelint-config-prettier-check",
+    "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
+    "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },
   "devDependencies": {
     "@types/prettier": "^2",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-eslint": "^7.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.2.4",
+    "eslint-plugin-sonarjs": "^0.10.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.0.2",
-    "prettier": "2.4.1"
+    "prettier": "2.4.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "typescript": "^4.4.4"
   },
   "repository": {
     "type": "git",

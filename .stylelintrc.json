@@ -1,0 +1,8 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "no-missing-end-of-source-newline": null
+  }
+}
