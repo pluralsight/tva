@@ -1,0 +1,20 @@
+on: [push]
+
+jobs:
+  lint-css:
+    runs-on: ubuntu-latest
+    name: 💅 Check for CSS errors
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - run: yarn lint:css
+
+  lint-js:
+    runs-on: ubuntu-latest
+    name: 💅 Check for JS/TS errors
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - run: yarn lint:js
