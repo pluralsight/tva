@@ -32,7 +32,7 @@ Check out our [documentation website](https://design-system.pluralsight.com/).
 
 ## Contributing
 
-Read the [contributing guide](/CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to MUI.
+Read the [contributing guide](/CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to TVA.
 
 ## License
 
