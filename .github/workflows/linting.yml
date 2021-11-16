@@ -12,9 +12,18 @@ jobs:
 
   lint-js:
     runs-on: ubuntu-latest
-    name: 💅 Check for JS/TS errors
+    name: 💅 Check for JS errors
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - run: yarn install
       - run: yarn lint:js
+
+  lint-ts:
+    runs-on: ubuntu-latest
+    name: 💅 Check for TS errors
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - run: yarn lint:ts

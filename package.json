@@ -10,6 +10,7 @@
     "postinstall": "husky install",
     "lint:css": "stylelint-config-prettier-check",
     "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
+    "lint:ts": "tsc --noEmit",
     "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },
   "devDependencies": {
