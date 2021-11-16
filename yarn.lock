@@ -4,6 +4,12 @@
 __metadata:
   version: 5
 
+"@pluralsight/psds-tokens@workspace:packages/tokens":
+  version: 0.0.0-use.local
+  resolution: "@pluralsight/psds-tokens@workspace:packages/tokens"
+  languageName: unknown
+  linkType: soft
+
 "@pluralsight/tva@workspace:.":
   version: 0.0.0-use.local
   resolution: "@pluralsight/tva@workspace:."

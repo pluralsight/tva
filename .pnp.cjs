@@ -21,11 +21,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {
         "name": "@pluralsight/tva",
         "reference": "workspace:."
+      },
+      {
+        "name": "@pluralsight/psds-tokens",
+        "reference": "workspace:packages/tokens"
       }
     ],
     "enableTopLevelFallback": true,
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
+      ["@pluralsight/psds-tokens", ["workspace:packages/tokens"]],
       ["@pluralsight/tva", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -35,6 +40,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
+      ["@pluralsight/psds-tokens", [
+        ["workspace:packages/tokens", {
+          "packageLocation": "./packages/tokens/",
+          "packageDependencies": [
+            ["@pluralsight/psds-tokens", "workspace:packages/tokens"]
           ],
           "linkType": "SOFT",
         }]

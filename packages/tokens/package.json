@@ -1,0 +1,28 @@
+{
+  "name": "@pluralsight/psds-tokens",
+  "version": "1.0.0",
+  "description": "Design tokens for Pluralsight.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "pluralsight",
+    "pluralsight design",
+    "tokens"
+  ],
+  "author": "Design System Team",
+  "bugs": {
+    "url": "https://github.com/pluralsight/tva/issues"
+  },
+  "homepage": "https://design-system.pluralsight.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pluralsight/tva.git",
+    "directory": "packages/tokens"
+  },
+  "license": "Apache 2.0",
+  "engines": {
+    "node": ">=14.10.0"
+  }
+}

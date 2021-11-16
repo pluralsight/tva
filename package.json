@@ -10,5 +10,8 @@
     "type": "git",
     "url": "git@github.com:pluralsight/tva.git"
   },
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "engines": {
+    "node": ">=14.10.0"
+  }
 }
