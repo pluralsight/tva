@@ -6,6 +6,11 @@
   "workspaces": [
     "packages/*"
   ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/prettier": "^2",
+    "prettier": "2.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:pluralsight/tva.git"

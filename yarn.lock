@@ -3,6 +3,7 @@
 
 __metadata:
   version: 5
+  cacheKey: 8
 
 "@pluralsight/psds-tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
@@ -13,5 +14,24 @@ __metadata:
 "@pluralsight/tva@workspace:.":
   version: 0.0.0-use.local
   resolution: "@pluralsight/tva@workspace:."
+  dependencies:
+    "@types/prettier": ^2
+    prettier: 2.4.1
   languageName: unknown
   linkType: soft
+
+"@types/prettier@npm:^2":
+  version: 2.4.2
+  resolution: "@types/prettier@npm:2.4.2"
+  checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
+  languageName: node
+  linkType: hard
+
+"prettier@npm:2.4.1":
+  version: 2.4.1
+  resolution: "prettier@npm:2.4.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
+  languageName: node
+  linkType: hard
