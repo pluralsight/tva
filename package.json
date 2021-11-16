@@ -1,0 +1,14 @@
+{
+  "name": "@pluralsight/tva",
+  "description": "The unified design system for Pluralsight.",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pluralsight/tva.git"
+  },
+  "license": "Apache 2.0"
+}
