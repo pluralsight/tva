@@ -1,5 +1,5 @@
-function test() {
+function testFn() {
   return 'it works'
 }
 
-export { test }
+export { testFn }

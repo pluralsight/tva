@@ -14,13 +14,9 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:sonarjs/recommended',
-    // "plugin:jest/recommended",
+    'plugin:jest/recommended',
     // Prettier must be last
     'prettier',
   ],
-  plugins: [
-    '@typescript-eslint',
-    'sonarjs',
-    // "jest"
-  ],
+  plugins: ['@typescript-eslint', 'sonarjs', 'jest'],
 }
