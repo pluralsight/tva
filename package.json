@@ -7,13 +7,19 @@
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "husky install",
     "lint:css": "stylelint-config-prettier-check",
     "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
     "lint:ts": "tsc --noEmit",
+    "postinstall": "husky install",
     "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/babel__core": "^7",
+    "@types/babel__preset-env": "^7",
     "@types/prettier": "^2",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
