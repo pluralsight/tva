@@ -3,13 +3,6 @@ import { danger, fail, message, warn } from 'danger'
 const documentation = danger.git.fileMatch('**/*.md')
 const pr = danger.github.pr
 
-// Issues
-
-// Ensure that a label has been set
-if (danger.github.issue.labels.length === 0) {
-  warn('Please include a label to this issue.')
-}
-
 // Pull Requests
 
 // Thank folks for making doc changes
