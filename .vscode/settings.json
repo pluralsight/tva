@@ -7,7 +7,9 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
+  "npm.packageManager": "yarn",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "stylelint.stylelintPath": ".yarn/sdks/stylelint/lib/index.js"
+  "stylelint.stylelintPath": ".yarn/sdks/stylelint/lib/index.js",
+  "jest.jestCommandLine": "yarn test"
 }

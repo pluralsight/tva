@@ -34,10 +34,15 @@ The core team is monitoring for Pull Requests. We will review your Pull Request 
 
 Please follow the coding style of the project. TVA uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
 
-- `yarn format` reformats the code.
-- `yarn lint` runs manually the linting rules.
+- `yarn lint:js` runs manually the linting rules for all js/ts files.
+- `yarn lint:css` runs manually the linting for all css files.
+- `yarn lint:ts` run manually the linting for only ts files.
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
+
+## PR edicate
+
+Before "creating a pull request", please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
 
 ## License
 
