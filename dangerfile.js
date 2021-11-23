@@ -16,11 +16,3 @@ if (documentation.edited) {
 if (pr.body.length < 10) {
   fail('Please include the template provided for pull requests.')
 }
-
-// Always ensure we assign someone to a PR, if its a
-if (pr.assignee === null) {
-  const method = pr.title.includes('WIP') ? warn : fail
-  method(
-    'Please assign someone to merge this PR, and optionally include people who should review.'
-  )
-}
