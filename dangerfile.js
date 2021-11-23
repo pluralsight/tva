@@ -1,4 +1,4 @@
-import { danger, fail, message, warn } from 'danger'
+import { danger, fail, message } from 'danger'
 
 const documentation = danger.git.fileMatch('**/*.md')
 const pr = danger.github.pr
