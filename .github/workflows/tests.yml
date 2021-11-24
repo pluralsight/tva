@@ -16,10 +16,10 @@ jobs:
   danger-check:
     runs-on: ubuntu-latest
     name: ⚡️ Check for Danger errors
-    env:
-      DANGER_DISABLE_TRANSPILATION: true
-      GITHUB_TOKEN: ${{secrets.DANGER_GITHUB_API_TOKEN}}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - uses: danger/danger-js@10.7.1
+        env:
+          DANGER_DISABLE_TRANSPILATION: true
+          GITHUB_TOKEN: ${{secrets.DANGER_GITHUB_API_TOKEN}}
