@@ -1,5 +1,7 @@
 on:
   push:
+    paths:
+      - 'website/**'
     branches:
       - main
   pull_request:

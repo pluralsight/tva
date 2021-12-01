@@ -85,9 +85,7 @@ Use lower case not title case!
 
 ## Updating Docs
 
-When you plan on making changes to our docs (design.pluralsight.com), you will need to first create a branch with the specific naming of `docs/<issue-id>-description`. We use Github actions to specifically look for PR's that use this naming in order to deploy the updates to our docs site.
-
-If you only want to make content changes you just need to be aware of versioned docs.
+When you plan on making changes to our docs (design.pluralsight.com), you just need to be aware of versioned docs.
 
 - `website/docs` - The files in here are responsible for the "next" version at https://docusaurus.io/docs/next/installation.
 - `website/versioned_docs/version-X.Y.Z` - These are the docs for the X.Y.Z version at https://docusaurus.io/docs/X.Y.Z/installation.
