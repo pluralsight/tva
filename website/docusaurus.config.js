@@ -6,15 +6,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Pluralsight Design',
+  tagline:
+    'A single set of principles, guidelines, patterns, assets and components for Pluralsight.',
+  url: 'https://design.pluralsight.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'pluralsight', // Usually your GitHub org/user name.
+  projectName: 'tva', // Usually your repo name.
 
   presets: [
     [
@@ -24,13 +25,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/pluralsight/tva/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+          editUrl: 'https://github.com/pluralsight/tva/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -42,10 +42,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: 'XR709MFGR6',
+        // Public API key: it is safe to commit it
+        apiKey: 'd446bcb18b9377a3c726a55051d3f53f',
+        indexName: 'dev_pluralsight_tva',
+        contextualSearch: true,
+        searchParameters: {},
+      },
       navbar: {
-        title: 'My Site',
+        title: 'Pluralsight Design',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Pluralsight Design System Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -57,7 +65,7 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/pluralsight/tva',
             label: 'GitHub',
             position: 'right',
           },
@@ -80,15 +88,7 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/tva',
               },
             ],
           },
@@ -101,12 +101,20 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/pluralsight/tva',
+              },
+              {
+                label: 'Slack (internal)',
+                href: 'slack://channel?id=70HPSJPP&team=02A50N5X',
+              },
+              {
+                label: 'Figma (internal)',
+                href: 'https://www.figma.com/file/YsTklBecdddy9RZ3HXddIseD/PSDS-Web?node-id=69%3A2190',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Pluralsight LLC. All rights reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
