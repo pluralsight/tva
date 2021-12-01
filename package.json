@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "website"
   ],
   "scripts": {
     "lint:css": "stylelint-config-prettier-check",
