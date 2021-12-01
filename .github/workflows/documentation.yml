@@ -18,8 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
       - run: yarn install
       - run: yarn build:website
 
@@ -30,8 +28,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2
-        with:
-          node-version: '12.x'
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
