@@ -10,6 +10,7 @@
   "scripts": {
     "build:website": "yarn workspace website build",
     "clear:website": "yarn workspace website clear",
+    "deploy:website": "yarn workspace website deploy",
     "lint:css": "stylelint-config-prettier-check",
     "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
     "lint:ts": "tsc --noEmit",
