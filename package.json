@@ -8,10 +8,14 @@
     "website"
   ],
   "scripts": {
+    "build:website": "yarn workspace website build",
+    "clear:website": "yarn workspace website clear",
     "lint:css": "stylelint-config-prettier-check",
     "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
     "lint:ts": "tsc --noEmit",
     "postinstall": "husky install",
+    "serve:website": "yarn workspace website serve",
+    "start:website": "yarn workspace website start",
     "test": "jest",
     "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },
