@@ -1,4 +1,4 @@
-// const OFF = 0
+const OFF = 0
 // const WARN = 1
 // const ERROR = 2
 
@@ -19,4 +19,7 @@ module.exports = {
     'prettier',
   ],
   plugins: ['@typescript-eslint', 'sonarjs', 'jest'],
+  rules: {
+    '@typescript-eslint/no-var-requires': OFF,
+  },
 }
