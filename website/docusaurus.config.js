@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const introPath = '/docs/intro'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -98,19 +99,19 @@ const config = {
             items: [
               {
                 label: 'Foundations',
-                to: '/docs/intro',
+                to: introPath,
               },
               {
                 label: 'Content',
-                to: '/docs/intro/1',
+                to: introPath,
               },
               {
                 label: 'Components',
-                to: '/docs/intro/2',
+                to: introPath,
               },
               {
                 label: 'Development',
-                to: '/docs/intro/3',
+                to: introPath,
               },
             ],
           },
