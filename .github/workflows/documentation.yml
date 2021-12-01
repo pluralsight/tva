@@ -1,9 +1,4 @@
-name: documentation
-
 on:
-  push:
-    branches:
-      - 'docs/**'
   pull_request:
     paths:
       - 'website/**'
