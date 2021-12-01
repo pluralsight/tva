@@ -9,13 +9,14 @@ const config = {
   title: 'Pluralsight Design',
   tagline:
     'A single set of principles, guidelines, patterns, assets and components for Pluralsight.',
-  url: 'https://design.pluralsight.com',
+  // url: 'https://design.pluralsight.com',
+  url: 'https://pluralsight.github.io/tva/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'pluralsight', // Usually your GitHub org/user name.
-  projectName: 'tva', // Usually your repo name.
+  organizationName: 'pluralsight',
+  projectName: 'tva',
 
   presets: [
     [

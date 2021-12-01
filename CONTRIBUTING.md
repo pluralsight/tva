@@ -44,6 +44,58 @@ Finally, when you submit a Pull Request, they are run again by our continuous in
 
 Before "creating a pull request", please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
 
+## Semantic Commit Messages
+
+See how a minor change to your commit message style can make you a better programmer.
+
+Format: `<type>(<scope>): <subject>`
+
+`<scope>` is optional. If your change is specific to one/two packages, consider adding the scope. Scopes should be brief but recognizable, e.g. `content-docs`, `theme-classic`, `core`
+
+The various types of commits:
+
+- `fix`: a bug fix **for the end user**.
+- `feat`: a new API or behavior **for the end user**.
+- `style`: a code style update (formatting, local variables, etc.)
+- `refactor`: a change to production code that leads to no behavior difference, e.g. splitting files, renaming internal variables, improving code style...
+- `build`: a release related commit
+- `ci`: anything related to Github Actions or .github
+- `docs`: a change to the website or other Markdown documents in our repo.
+- `test`: adding missing tests, refactoring tests; no production code change.
+- `chore`: upgrading dependencies, releasing new versions... Chores that are **regularly done** for maintenance purposes.
+- `perf`: performance improvements to any part of the codebase.
+- `revert`: a change that reverts code recently pushed.
+
+Do not get too stressed about PR titles, however. The maintainers will help you get them right, and we also have a PR label system that doesn't equate with the commit message types. Your code is more important than conventions!
+
+### Example
+
+```
+feat(core): allow overriding of webpack config
+^--^^----^  ^------------^
+|   |       |
+|   |       +-> Summary in present tense.
+|   |
+|   +-> The package(s) that this change affected.
+|
++-------> Type: see below for the list we use.
+```
+
+Use lower case not title case!
+
+## Updating Docs
+
+When you plan on making changes to our docs (design.pluralsight.com), you will need to first create a branch with the specific naming of `docs/<issue-id>-description`. We use Github actions to specifically look for PR's that use this naming in order to deploy the updates to our docs site.
+
+If you only want to make content changes you just need to be aware of versioned docs.
+
+- `website/docs` - The files in here are responsible for the "next" version at https://docusaurus.io/docs/next/installation.
+- `website/versioned_docs/version-X.Y.Z` - These are the docs for the X.Y.Z version at https://docusaurus.io/docs/X.Y.Z/installation.
+
+To make a fix to the published versions you must edit the corresponding markdown file in both folders. If you only made changes in `docs`, be sure to be viewing the `next` version to see the updates (ensure there's `next` in the URL).
+
+> Do not edit the auto-generated files within `versioned_docs/` or `versioned_sidebars/` unless you are sure it is necessary. For example, information about new features should not be documented in versioned docs. Edits made to older versions will not be propagated to newer versions of the docs.
+
 ## License
 
 By contributing your code to the [pluralsight/tva](https://github.com/pluralsight/tva) GitHub repository, you agree to license your contribution under the [Apache 2.0 license](/LICENSE).

@@ -28,7 +28,7 @@ please use [Discussions](https://github.com/pluralsight/tva/discussions) instead
 
 ## Documentation
 
-Check out our [documentation website](https://design-system.pluralsight.com/).
+Check out our [documentation website](https://design.pluralsight.com/).
 
 ## Contributing
 
