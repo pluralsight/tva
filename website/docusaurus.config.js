@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const brandPath = 'foundations/brand'
 const introPath = '/docs/intro'
 
 /** @type {import('@docusaurus/types').Config} */
@@ -29,6 +30,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/pluralsight/tva/edit/main/website/',
+          showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +64,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'foundations/brand',
             position: 'left',
             label: 'Foundations',
           },
@@ -100,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'Foundations',
-                to: introPath,
+                to: `/docs/${brandPath}`,
               },
               {
                 label: 'Content',
@@ -120,8 +122,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/tva',
+                label: 'Discussions',
+                href: 'https://github.com/pluralsight/tva/discussions',
               },
             ],
           },
