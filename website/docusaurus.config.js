@@ -3,8 +3,13 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const brandPath = 'foundations/brand'
+const foundationsPath = 'foundations/brand'
+const contentPath = 'content/voice-tone'
 const introPath = '/docs/intro'
+
+function createDocsPath(path) {
+  return `/docs/${path}`
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -64,13 +69,13 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'foundations/brand',
+            docId: foundationsPath,
             position: 'left',
             label: 'Foundations',
           },
           {
             type: 'doc',
-            docId: 'intro',
+            docId: contentPath,
             position: 'left',
             label: 'Content',
           },
@@ -102,11 +107,11 @@ const config = {
             items: [
               {
                 label: 'Foundations',
-                to: `/docs/${brandPath}`,
+                to: createDocsPath(foundationsPath),
               },
               {
                 label: 'Content',
-                to: introPath,
+                to: createDocsPath(contentPath),
               },
               {
                 label: 'Components',
