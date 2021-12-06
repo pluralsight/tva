@@ -38,6 +38,18 @@ Before "creating a pull request", please consider instead [creating a draft](htt
 
 You can use the new [github.dev](https://github.dev/pluralsight/tva) feature. While you are browsing any file, changing the domain name from github.com to github.dev will turn your browser into an online editor. You can start making changes and send pull requests right away.
 
+## Workspaces
+
+We use Yarn 2 workspaces so each workspace is a NPM package or our docs website. All NPM packages are located in the `packages` directory and our docs are located in `website`. You will find easy start up commands for every workspace in the project root package.json file.
+
+All you need to do is run `yarn install` once you are in your online editor.
+
+Example to start the docs:
+
+```
+yarn start:website
+```
+
 ### Coding style
 
 Please follow the coding style of the project. TVA uses prettier and eslint, so if possible, enable linting in your editor to get real-time feedback.
