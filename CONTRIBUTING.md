@@ -22,13 +22,21 @@ If you decide to fix an issue, please be sure to check the comment thread in cas
 If somebody claims an issue but doesn't follow up for more than a week, it's fine to take it over but you should still leave a comment.
 If there has been no activity on the issue for 7 to 14 days, it is safe to assume that nobody is working on it.
 
-## Sending a Pull Request
+## Posting a Pull Request
 
 TVA is a community project, so Pull Requests are always welcome, but, before working on a large change, it is best to open an issue first to discuss it with the maintainers.
 
 When in doubt, keep your Pull Requests small. To give a Pull Request the best chance of getting accepted, don't bundle more than one feature or bug fix per Pull Request. It's often best to create two smaller Pull Requests than one big one.
 
 The core team is monitoring for Pull Requests. We will review your Pull Request and either merge it, request changes to it, or close it with an explanation.
+
+## PR edicate
+
+Before "creating a pull request", please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
+
+## Online one-click setup for contributing
+
+You can use the new [github.dev](https://github.dev/pluralsight/tva) feature. While you are browsing any file, changing the domain name from github.com to github.dev will turn your browser into an online editor. You can start making changes and send pull requests right away.
 
 ### Coding style
 
@@ -39,10 +47,6 @@ Please follow the coding style of the project. TVA uses prettier and eslint, so 
 - `yarn lint:ts` run manually the linting for only ts files.
 
 Finally, when you submit a Pull Request, they are run again by our continuous integration tools, but hopefully, your code is already clean!
-
-## PR edicate
-
-Before "creating a pull request", please consider instead [creating a draft](https://github.blog/2019-02-14-introducing-draft-pull-requests/) while the CI is waiting to complete. Once **all your tests pass**, then open your pull request. There is no need to assign anyone as our maintainers will recieve notifications when any PR's are posted.
 
 ## Semantic Commit Messages
 
