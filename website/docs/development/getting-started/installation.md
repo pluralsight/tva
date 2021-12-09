@@ -13,7 +13,7 @@ This page is a work in progress.
 
 Install TVA, Pluralsight's headless UI framework.
 
-TVA is available as a set of [npm packages](TBD) for web and our `tokens` package is compatable for iOS, Swift, Android, and Kotlin.
+TVA is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `tokens` package is compatable for iOS, Swift, Android, and Kotlin.
 
 ## npm
 
@@ -31,7 +31,7 @@ npm install @pluralsight/tva-tokens
 
 ## PS TT Commons font
 
-TVA was designed with [PS TT Commons](TBD) in mind. So be sure to follow the [typography instructions](TBD). For the best results, install via an HTML `link` tag:
+TVA was designed with [PS TT Commons](https://github.com/pluralsight/tva) in mind. So be sure to follow the [typography instructions](https://github.com/pluralsight/tva). For the best results, install via an HTML `link` tag:
 
 ```
 <link
@@ -44,7 +44,7 @@ Each "component" uses a [variable font](https://developer.mozilla.org/en-US/docs
 
 ## Font icons
 
-To use the font `Icon` component, you must first add the TVA [icons font](TBD). For the best results, install via a HTML `link` tag:
+To use the font `Icon` component, you must first add the TVA [icons font](https://github.com/pluralsight/tva). For the best results, install via a HTML `link` tag:
 
 ```
 <link
@@ -55,7 +55,7 @@ To use the font `Icon` component, you must first add the TVA [icons font](TBD). 
 
 ## SVG icons
 
-In order to use prebuilt SVG TVA icons, such as those found in the [icons demos](TBD) you must first install the [@pluralsight/tva-icons](TBD) package:
+In order to use prebuilt SVG TVA icons, such as those found in the [icons demos](https://github.com/pluralsight/tva) you must first install the [@pluralsight/tva-icons](TBD) package:
 
 ```bash npm2yarn
 npm install @pluralsight/tva-icons
@@ -71,4 +71,4 @@ Our `tokens` package will also deliver all of our icons and fonts via assets for
 
 A set of reusable components for design tools is available, designed to match the web components and to help you craft great products:
 
-- [Figma](TBD): A large UI kit with over 62 handcrafted TVA components.
+- [Figma](https://github.com/pluralsight/tva): A large UI kit with over 62 handcrafted TVA components.
