@@ -55,7 +55,7 @@ To use the font `Icon` component, you must first add the TVA [icons font](https:
 
 ## SVG icons
 
-In order to use prebuilt SVG TVA icons, such as those found in the [icons demos](https://github.com/pluralsight/tva) you must first install the [@pluralsight/tva-icons](TBD) package:
+In order to use prebuilt SVG TVA icons, such as those found in the [icons demos](https://github.com/pluralsight/tva) you must first install the [@pluralsight/tva-icons](https://github.com/pluralsight/tva) package:
 
 ```bash npm2yarn
 npm install @pluralsight/tva-icons
