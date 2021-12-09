@@ -33,14 +33,17 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
+          // TODO: update to site when going live
           editUrl: 'https://github.com/pluralsight/tva/edit/main/website/',
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+          ],
+          sidebarPath: require.resolve('./sidebars.js'),
           showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
+          // TODO: update to site when going live
           editUrl: 'https://github.com/pluralsight/tva/edit/main/website/blog/',
         },
         theme: {

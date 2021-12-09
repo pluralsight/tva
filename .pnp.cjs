@@ -498,6 +498,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'virtual:eef89858b8561757d6bfe02a70821636be7828775f04b662a2984ffdfc7fcf57b4ac921d41ccc038e6d57bb8fecdf54b88094b574e8795bda2b544f758a32930#npm:5.5.2',
         ],
         [
+          '@docusaurus/remark-plugin-npm2yarn',
+          'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.ff31de0ff',
+        ],
+        [
           '@docusaurus/theme-classic',
           'virtual:110792085b49d42c0d8683f918e35531e24b090740547dfcca65391d691e5f1773b82e0906e3bd45f1ecc94d9ab51b9e68cbd6c2599f2b27d9797fbf92efd5ee#npm:2.0.0-beta.9',
         ],
@@ -1485,6 +1489,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['normalize-selector', 'npm:0.2.0'],
         ['normalize-url', 'npm:6.1.0'],
         ['npm-run-path', 'npm:4.0.1'],
+        ['npm-to-yarn', 'npm:1.0.1'],
         ['npmlog', 'npm:4.1.2'],
         ['nprogress', 'npm:0.2.0'],
         ['nth-check', 'npm:1.0.2'],
@@ -10253,6 +10258,53 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['react', 'npm:17.0.2'],
                 ],
                 packagePeers: ['@types/react', 'react'],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@docusaurus/remark-plugin-npm2yarn',
+          [
+            [
+              'npm:2.0.0-beta.ff31de0ff',
+              {
+                packageLocation:
+                  './.yarn/cache/@docusaurus-remark-plugin-npm2yarn-npm-2.0.0-beta.ff31de0ff-6588298587-f58aca344d.zip/node_modules/@docusaurus/remark-plugin-npm2yarn/',
+                packageDependencies: [
+                  [
+                    '@docusaurus/remark-plugin-npm2yarn',
+                    'npm:2.0.0-beta.ff31de0ff',
+                  ],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.ff31de0ff',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/@docusaurus-remark-plugin-npm2yarn-virtual-3035e1ad0e/0/cache/@docusaurus-remark-plugin-npm2yarn-npm-2.0.0-beta.ff31de0ff-6588298587-f58aca344d.zip/node_modules/@docusaurus/remark-plugin-npm2yarn/',
+                packageDependencies: [
+                  [
+                    '@docusaurus/remark-plugin-npm2yarn',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.ff31de0ff',
+                  ],
+                  ['@types/react', null],
+                  ['@types/react-dom', null],
+                  ['npm-to-yarn', 'npm:1.0.1'],
+                  ['react', 'npm:17.0.2'],
+                  [
+                    'react-dom',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:17.0.2',
+                  ],
+                ],
+                packagePeers: [
+                  '@types/react-dom',
+                  '@types/react',
+                  'react-dom',
+                  'react',
+                ],
                 linkType: 'HARD',
               },
             ],
@@ -28742,6 +28794,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'npm-to-yarn',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/npm-to-yarn-npm-1.0.1-9e19f25799-b34958ddfc.zip/node_modules/npm-to-yarn/',
+                packageDependencies: [['npm-to-yarn', 'npm:1.0.1']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'npmlog',
           [
             [
@@ -38702,6 +38768,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     '@docusaurus/preset-classic',
                     'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.9',
+                  ],
+                  [
+                    '@docusaurus/remark-plugin-npm2yarn',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-beta.ff31de0ff',
                   ],
                   [
                     '@docusaurus/theme-search-algolia',
