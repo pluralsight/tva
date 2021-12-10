@@ -25,7 +25,6 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'pluralsight',
   projectName: 'tva',
-  // trailingSlash: true,
 
   presets: [
     [
@@ -64,6 +63,10 @@ const config = {
         contextualSearch: true,
         searchParameters: {},
       },
+      announcementBar: {
+        id: 'announcementBar-beta',
+        content: `⭐️ If you like TVA, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/pluralsight/tva/tree/main">GitHub</a>`,
+      },
       navbar: {
         title: 'Pluralsight Design',
         logo: {
@@ -97,6 +100,8 @@ const config = {
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
+            'aria-label': 'GitHub repository',
+            className: 'header-github-link',
             href: 'https://github.com/pluralsight/tva',
             label: 'GitHub',
             position: 'right',
