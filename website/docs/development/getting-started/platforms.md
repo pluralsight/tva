@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-tags: [Development, Platforms, Getting Started]
+tags: [Development, Platforms, Getting Started, IE11, Server, Typescript]
 ---
 
 # Supported Platforms
