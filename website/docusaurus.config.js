@@ -25,7 +25,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'pluralsight',
   projectName: 'tva',
-  trailingSlash: true,
+  // trailingSlash: true,
 
   presets: [
     [

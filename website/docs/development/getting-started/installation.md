@@ -67,7 +67,7 @@ Our `tokens` package will also deliver all of our icons and fonts via assets for
 
 ## Design resources
 
-_TBD - Add Figma "download" icon/link_
+<!-- TODO: Add Figma "download" icon/link -->
 
 A set of reusable components for design tools is available, designed to match the web components and to help you craft great products:
 
