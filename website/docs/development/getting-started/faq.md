@@ -29,7 +29,7 @@ There are a few ways to support TVA:
   - Report bugs or missing features by [creating an issue](https://github.com/pluralsight/tva/issues/new/choose) or [starting a new discussion](https://github.com/pluralsight/tva/discussions).
   - Review and comment on existing [pull requests](https://github.com/pluralsight/tva/pulls) and [issues](https://github.com/pluralsight/tva/issues).
   - Improve our documentation, fix bugs, or add features by [submitting a pull request](https://github.com/pluralsight/tva/pulls).
-- **Star the repo**. The quickest way to help us get a win is by clicking that "watch" button in Github!
+- **Star the repo**. The quickest way to help us get a win is by clicking that "star" button in Github!
 
 ## Why doesn't TVA export React components?
 
