@@ -7,6 +7,6 @@ tags: [Development, Packages, Components, Button]
 
 :::caution
 
-This section is a work in progress.
+This is **unreleased** documentation for TVA **components** package.
 
 :::

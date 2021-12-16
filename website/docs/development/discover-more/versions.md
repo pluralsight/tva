@@ -1,7 +1,14 @@
 ---
 sidebar_position: 2
 tags:
-  [Development, Discover More, Versions, Version Strategy, Release frequency]
+  [
+    Development,
+    Discover More,
+    Versions,
+    Version Strategy,
+    Release frequency,
+    Deprecation Policy,
+  ]
 ---
 
 # TVA Versions
