@@ -63,7 +63,7 @@ npm install @pluralsight/tva-icons
 
 ## Mobile Assets
 
-Our `tokens` package will also deliver all of our icons and fonts via assets for each mobile platform we support. ❤️
+Our `tokens` package will also deliver all of our icons and fonts via assets for each mobile platform we support. :heart:
 
 ## Design resources
 

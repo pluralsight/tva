@@ -29,10 +29,10 @@ TVA uses Github issues as a bug and feature request tracker. If you think you ha
 
 - Please follow the issue template.
 - Please begin the title with '[type]' if the template did not provide one, and use a succint description that helps others find similar issues.
-  - "Button doesn't work" ❌
-  - "[feature]: add support for Button with..." ✅
+  - "Button doesn't work" :x:
+  - "[feature]: add support for Button with..." :white_check_mark:
 - Please don't group multiple issues in a single topic - each should have it's own issue instead.
-- Please don't comment "+1" on an issue. It spams the maintainers and doesn't help move the issue forward. Use Github reactions instead (👍).
+- Please don't comment "+1" on an issue. It spams the maintainers and doesn't help move the issue forward. Use Github reactions instead (:thumbsup:).
 
 ## Blog
 

@@ -63,4 +63,4 @@ npm install @types/tva -D
 
 ## Versioned Documentation
 
-This documentation always reflects the latest stable version of TVA. You can find older versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle. Additionally, we release our **next** version documentation which has the 🚧 emoji next to it.
+This documentation always reflects the latest stable version of TVA. You can find older versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle. Additionally, we release our **next** version documentation which has the :construction: emoji next to it.

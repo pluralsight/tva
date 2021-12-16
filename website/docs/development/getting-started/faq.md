@@ -15,14 +15,14 @@ Missing something? Check out some of these common questions first.
 
 If you still can't find what you're looking for, you can refer to our [support page](https://github.com/pluralsight/tva/discussions/categories/q-a)
 
-## I ❤️ TVA! How can I support the project?
+## I :heart: TVA! How can I support the project?
 
 There are a few ways to support TVA:
 
 <!-- TODO: Update Twitter link when account created. -->
 
 - **Spread the word**. Evangelize TVA by [linking to design.pluralsight.com](https://design.pluralsight.com) on your website - every backlink matters. Follow us on [Twitter](https://twitter.com/pluralsight), like and retweet the important news. Or just talk about us with your friends.
-- **Give us feedback**. Tell us what we are doing well or how we can improve the project. Please upvote [the discussions](https://github.com/pluralsight/tva/discussions) you are interested in seeing answered. Or upvote (👍) [the issues](https://github.com/pluralsight/tva/issues) you are most interested in seeing resolved.
+- **Give us feedback**. Tell us what we are doing well or how we can improve the project. Please upvote [the discussions](https://github.com/pluralsight/tva/discussions) you are interested in seeing answered. Or upvote (:thumbsup:) [the issues](https://github.com/pluralsight/tva/issues) you are most interested in seeing resolved.
 - **Help new users**. You can answer questions on the [Q&A discussion](https://github.com/pluralsight/tva/discussions/categories/q-a) or our [issues](https://github.com/pluralsight/tva/issues).
 - **Make Changes happen!**
   - Edit the documentation. Every page on this site has an "Edit this page" link in the bottom left.
