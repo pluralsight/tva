@@ -4,23 +4,8 @@ on:
       - 'website/**'
     branches:
       - main
-  pull_request:
-    paths:
-      - 'website/**'
-    branches:
-      - main
 
 jobs:
-  docs-build:
-    if: github.event_name != 'push'
-    runs-on: ubuntu-latest
-    name: 👷‍♀️ Docs successfully build
-    steps:
-      - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
-      - run: yarn install
-      - run: yarn build:website
-
   gh-release:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest

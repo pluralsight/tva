@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    paths:
+      - 'website/**'
+    branches:
+      - main
+
+jobs:
+  docs-build:
+    runs-on: ubuntu-latest
+    name: 👷‍♀️ Docs successfully build
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2
+      - run: yarn install
+      - run: yarn build:website
