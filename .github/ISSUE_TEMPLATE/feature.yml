@@ -1,6 +1,7 @@
 name: Feature request 💄
 description: Suggest a new idea for TVA.
-labels: ["enhancement", "needs triage"]
+labels: ['enhancement', 'needs triage']
+title: '[Feature?]: '
 body:
   - type: markdown
     attributes:

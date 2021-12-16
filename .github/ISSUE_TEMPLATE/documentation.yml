@@ -1,6 +1,7 @@
 name: Documentation Update 📝
 description: Edit documentation in some way or form.
 labels: ['documentation', 'needs triage']
+title: '[Docs?]: '
 body:
   - type: markdown
     attributes:
