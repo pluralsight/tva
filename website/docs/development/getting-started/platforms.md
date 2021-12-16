@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 tags: [Development, Platforms, Getting Started, IE11, Server, Typescript]
 ---
 

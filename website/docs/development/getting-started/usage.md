@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-tags: [Development, Usage, Getting Started]
+tags: [Development, Usage, Getting Started, Web, React Native]
 ---
 
 # Usage (Web)

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 5
-tags: [Development, Support, Getting Started]
+sidebar_position: 6
+tags: [Development, Support, Getting Started, Twitter, Github, Issues]
 ---
 
 # Support
