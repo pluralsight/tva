@@ -27,9 +27,9 @@ Stability ensures that reusable components and libraries, tutorials, tools, and 
 
 This page contains the practices we follow to provide you with a leading-edge library, balanced with stability, ensuring that future changes are always introduced in a predictable way.
 
-TVA follows [Semantic Versioning 2.0.0](https://semver.org/). TVA version numbers have three parts `major.monor.patch`. These numbers increase based on the level of change introduced in a release.
+TVA follows [Semantic Versioning 2.0.0](https://semver.org/). TVA version numbers have three parts `major.minor.patch`. These numbers increase based on the level of change introduced in a release.
 
-- **Major releases** contain new features, some developer assistance may be expected during the update although we strive to stay backwards compatible. When upgrading to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
+- **Major releases** contain new features. Some developer assistance may be expected during the update although we strive to stay backwards compatible. When upgrading to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
 - **Minor releases** contain important new features. Minor releases are fully backwards-compatible; no developer assistance is expected during update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
 - **Patch releases** are low risk and contain mostly bugfixes. There may be very high level (unrecognizable) new features. No developer assistance is expected during and update.
 
