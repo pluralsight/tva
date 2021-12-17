@@ -21,12 +21,13 @@ You can use any of the packages/components as demonstrated in the documentation.
 
 Here's a quick example using React to get you started, **it's literally all you need**:
 
-```jsx live
+```jsx title="components/Button.jsx"
 import { getButtonProps } from '@pluralsight/tva-components
+
+const tvaBtnProps = getButtonProps()
 
 function Button(props) {
   const { children, ...btnProps } = props
-  const tvaBtnProps = getButtonProps()
 
   return (
     <button {...btnProps} {...tvaBtnProps}>
@@ -34,6 +35,8 @@ function Button(props) {
     </button>
   )
 }
+
+export default Button
 
 ```
 
