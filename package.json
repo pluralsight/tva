@@ -37,7 +37,6 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "babel-jest": "^27.3.1",
-    "danger": "^10.7.1",
     "eslint": "^8.2.0",
     "eslint-config-eslint": "^7.0.0",
     "eslint-config-prettier": "^8.3.0",

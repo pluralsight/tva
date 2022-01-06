@@ -8,11 +8,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    name: 📖 Documentarians love
     steps:
-      - uses: mshick/add-pr-comment@v1
+      - uses: actions/checkout@master
+      - uses: harupy/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          message: |
-            **We love our Documentarians**
-            📖
-            !
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          filename: docs_template.md
