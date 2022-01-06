@@ -1,3 +1,5 @@
+name: 'Contributing'
+
 on:
   pull_request:
     paths:
@@ -9,10 +11,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Documentarians
       - uses: mshick/add-pr-comment@v1
         with:
           message: |
             **We love our Documentarians**
             📖
             !
+          proxy-url: https://add-pr-comment-proxy-94idvmwyie-uc.a.run.app
           repo-token: ${{ secrets.GITHUB_TOKEN }}
