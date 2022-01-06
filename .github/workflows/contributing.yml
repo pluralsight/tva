@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Documentarians
-      - uses: mshick/add-pr-comment@v1
+        uses: mshick/add-pr-comment@v1
         with:
           message: |
             **We love our Documentarians**
