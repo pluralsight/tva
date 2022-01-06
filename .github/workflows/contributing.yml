@@ -1,4 +1,7 @@
 on:
+  pull_request_target:
+    paths:
+      - 'website/**'
   pull_request:
     paths:
       - 'website/**'
