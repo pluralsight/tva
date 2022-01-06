@@ -22,12 +22,12 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 ## Basic Button
 
 ```typescript
-interface Options {
+interface ButtonOptions {
   kind: 'default' || 'contained' || 'outlined'
   size: 'xs' || 's' || 'm' || 'l'
 }
 
-getButtonProps(options, js?: 'js'): ButtonProps
+getButtonProps(options: ButtonOptions): ButtonProps
 ```
 
 The `Button` comes with three variants: text (default), contained, and outlined.
@@ -42,7 +42,7 @@ const tvaOutlinedButtonProps = getButtonProps({ kind: 'outlined' })
 
 The `Button` prop-getter returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
 
-```js
+```js title="Return value"
 {
   className: `tva-btn ${ourInternalStylesModule}`
   type: 'button'
@@ -50,14 +50,14 @@ The `Button` prop-getter returns an Object that contains all the a11y attributes
 ```
 
 :::note
-If you are using **Styled-Components**, see "CSS in JS" section.
+If you are using **Styled-Components**, see "getJSButtonProps" section.
 :::
 
-### CSS in JS
+## getJSButtonProps (CSS in JS)
 
-If you prefer to use CSS-in-JS, simply pass a second argument of `'js'` to the `getButtonProps` function. This will return a stringified version of the styles along with a `styles` property for your choosing.
+If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
 
-```js
+```js title="Return value"
 {
   cssProps: `
     color: var(--TBD)
@@ -81,9 +81,9 @@ Here is an example of using `styled-components` to extend a `Button` for a Form.
 
 ```jsx title=page/Login/components/SubmitButton.jsx
 import styled from 'styled-components'
-import { getButtonProps } from '@pluralsight/tva-components'
+import { getJSButtonProps } from '@pluralsight/tva-components'
 
-const tvaBtnProps = getButtonProps('contained', 'js')
+const tvaBtnProps = getJSButtonProps('contained')
 
 const Button = styled.button`
   ...tvaBtnProps.cssProps,
@@ -137,8 +137,9 @@ function EditIconButton(props) {
 
 ## API
 
-| Name                | Argument Type                             | Default                                  | Description                            |
-| ------------------- | ----------------------------------------- | ---------------------------------------- | -------------------------------------- |
-| `getButtonProps`    | **options**: ButtonOptions, **js?**: 'js' | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps` |                                           |                                          | Get button with icon and label styles. |
-| `getButtonProps`    | **ariaLabel**: string                     | 'icon button'                            | Get icon button styles.                |
+| Name                | Argument Type              | Default                                  | Description                            |
+| ------------------- | -------------------------- | ---------------------------------------- | -------------------------------------- |
+| `getButtonProps`    | **options**: ButtonOptions | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getJSButtonProps`  | **options**: ButtonOptions | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getIconLabelProps` |                            |                                          | Get button with icon and label styles. |
+| `getButtonProps`    | **ariaLabel**: string      | 'icon button'                            | Get icon button styles.                |

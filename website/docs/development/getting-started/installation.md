@@ -11,7 +11,7 @@ This page is a work in progress.
 
 :::
 
-Install TVA, Pluralsight's headless UI framework.
+#### Install TVA, Pluralsight's headless UI framework that works with any library or tech stack.
 
 TVA is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `tokens` package is compatable for iOS, Swift, Android, and Kotlin.
 
