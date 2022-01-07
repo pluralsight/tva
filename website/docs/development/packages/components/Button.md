@@ -21,16 +21,9 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 
 ## Basic Button
 
-```typescript
-interface ButtonOptions {
-  kind: 'default' || 'contained' || 'outlined'
-  size: 'xs' || 's' || 'm' || 'l'
-}
-
-getButtonProps(options: ButtonOptions): ButtonProps
-```
-
 The `Button` comes with three variants: text (default), contained, and outlined.
+
+<!-- TODO: ADD USAGE LIVE CODE EXAMPLES HERE -->
 
 ```jsx
 const tvaButtonProps = getButtonProps() // default
@@ -38,66 +31,9 @@ const tvaContainedButtonProps = getButtonProps({ kind: 'contained' })
 const tvaOutlinedButtonProps = getButtonProps({ kind: 'outlined' })
 ```
 
-## getButtonProps
+## Button with icon and label
 
-The `Button` prop-getter returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-```js title="Return value"
-{
-  className: `tva-btn ${ourInternalStylesModule}`
-  type: 'button'
-}
-```
-
-:::note
-If you are using **Styled-Components**, see "getJSButtonProps" section.
-:::
-
-## getJSButtonProps (CSS in JS)
-
-If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
-
-```js title="Return value"
-{
-  cssProps: `
-    color: var(--TBD)
-    background-color: var(--TBD)
-    ...
-  `,
-  styles: {
-    color: `${button.default.text.color.value}`,
-    backgroundColor: `${button.default.background.value}`
-    ...
-  },
-  type: 'button',
-}
-```
-
-### Extending
-
-There are times you may need to make a slight adjustment to the `Button` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
-
-Here is an example of using `styled-components` to extend a `Button` for a Form.
-
-```jsx title=page/Login/components/SubmitButton.jsx
-import styled from 'styled-components'
-import { getJSButtonProps } from '@pluralsight/tva-components'
-
-const tvaBtnProps = getJSButtonProps('contained')
-
-const Button = styled.button`
-  ...tvaBtnProps.cssProps,
-  color: '#bfbfbf' // some custom color
-`
-
-function SubmitButton(props) {
-  return <Button type="submit">{props.children}</Button>
-}
-```
-
-## Buttons with icons and label
-
-Our eyes/brain recognize logos more easily than plain text, so you might want to add icons to certain buttons to enhance the UX. For example, if you have a edit button you can label it with a `PencilIcon`.
+You can combine icons with the `Button` using the `getIconLablProps` and and Icon from the [`@tva/icons`](../icons/icons.md) library.
 
 ```jsx title=components/EditButton.jsx
 import { PencilIcon } from 'components/PencilIcon'
@@ -116,7 +52,7 @@ function EditButton(props) {
 }
 ```
 
-## Icon Button
+## Button with icon (no label)
 
 Icon buttons are commonly found in app bars, toolbars, or as an action such as "toggle".
 
@@ -124,22 +60,168 @@ Icon buttons are commonly found in app bars, toolbars, or as an action such as "
 import { PencilIcon } from 'components/PencilIcon'
 import { getIconButtonProps } from '@pluralsight/tva-components'
 
-const tvaEditIconBtnProps = getButtonProps('edit profile')
+const tvaEditIconBtnProps = getIconButtonProps('edit profile')
 
 function EditIconButton(props) {
   return (
-    <button {...props} {...tvatvaEditIconBtnProps}>
+    <button {...props} {...tvaEditIconBtnProps}>
       <PencilIcon />
     </button>
   )
 }
 ```
 
+## getButtonProps
+
+```typescript
+getButtonProps(options: ButtonOptions): ButtonProps
+```
+
+The `Button` prop-getter takes in [ButtonOptions](#buttonoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+```js title="Return value example"
+{
+  className: `tva-btn ${ourInternalStylesModule}`
+  type: 'button'
+}
+```
+
+#### ButtonProps
+
+```typescript
+interface ButtonProps {
+  className: string
+  type: string
+}
+```
+
+:::note
+If you are using **Styled-Components**, see "getJSButtonProps" section.
+:::
+
+## getJSButtonProps (CSS in JS)
+
+```typescript
+getJSButtonProps(options: ButtonOptions): JSButtonProps
+```
+
+If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: var(--TBD)
+    background-color: var(--TBD)
+    ...
+  `,
+  styles: {
+    color: button.default.text.color.value,
+    backgroundColor: button.default.background.value
+    ...
+  },
+  type: 'button',
+}
+```
+
+#### JSButtonProps
+
+```typescript
+interface JSButtonProps {
+  cssProps: string
+  styles: Record<CSSProps, string>
+  type: string
+}
+```
+
+## getIconLabelProps
+
+```typescript
+getIconLabelProps(): IconLabelButtonProps
+```
+
+Our eyes/brain recognize logos more easily than plain text, so you might want to add icons to certain buttons to enhance the UX. For example, if you have a edit button you can label it with a `PencilIcon`.
+
+```jsx title="Return value example"
+{
+  'aria-hidden': 'true'
+}
+```
+
+#### IconLabelButtonProps
+
+```typescript
+interface IconLabelButtonProps {
+  'aria-hidden': boolean
+}
+```
+
+## getIconButtonProps
+
+```typescript
+getIconButtonProps(ariaLabel: string): IconButtonProps
+```
+
+Icon buttons are commonly found in app bars, toolbars, or as an action such as "toggle".
+
+```jsx title=components/EditIconButton.jsx
+import { PencilIcon } from 'components/PencilIcon'
+import { getIconButtonProps } from '@pluralsight/tva-components'
+
+const tvaEditIconBtnProps = getIconButtonProps('edit profile')
+
+function EditIconButton(props) {
+  return (
+    <button {...props} {...tvaEditIconBtnProps}>
+      <PencilIcon />
+    </button>
+  )
+}
+```
+
+#### IconButtonProps
+
+```typescript
+interface IconButtonProps {
+  'aria-label': string
+}
+```
+
 ## API
 
-| Name                | Argument Type              | Default                                  | Description                            |
-| ------------------- | -------------------------- | ---------------------------------------- | -------------------------------------- |
-| `getButtonProps`    | **options**: ButtonOptions | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getJSButtonProps`  | **options**: ButtonOptions | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps` |                            |                                          | Get button with icon and label styles. |
-| `getButtonProps`    | **ariaLabel**: string      | 'icon button'                            | Get icon button styles.                |
+| Name                 | Argument Type                                | Default                                  | Description                            |
+| -------------------- | -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getIconLabelProps`  |                                              |                                          | Get button with icon and label styles. |
+| `getIconButtonProps` | **ariaLabel**: string                        |                                          | Get icon button styles.                |
+
+## ButtonOptions
+
+```typescript
+interface ButtonOptions {
+  kind: 'default' || 'contained' || 'outlined'
+  size: 'xs' || 's' || 'm' || 'l'
+}
+```
+
+## Extending
+
+There are times you may need to make a slight adjustment to the `Button` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
+
+Here is an example of using `styled-components` to extend a `Button` for a Form.
+
+```jsx title=page/Login/components/SubmitButton.jsx
+import styled from 'styled-components'
+import { getJSButtonProps } from '@pluralsight/tva-components'
+
+const tvaBtnProps = getJSButtonProps({ kind: 'contained' })
+
+const Button = styled.button`
+  ...tvaBtnProps.cssProps,
+  color: '#bfbfbf' // some custom color
+`
+
+function SubmitButton(props) {
+  return <Button type="submit">{props.children}</Button>
+}
+```
