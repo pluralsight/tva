@@ -64,11 +64,7 @@ TVA is developed with a mobile-first strategy in which we first write code for m
 
 ## Typescript
 
-TVA has a supported `@types/tva` package available for anyone who uses Typescript. All you need to do is install it as a `devDependency`. If you use [Yarn berry](https://yarnpkg.com/getting-started/migration), you can install the [typescript plugin](https://github.com/yarnpkg/berry/tree/master/packages/plugin-typescript) which will automatically install any supporting type delcaration packages you need for any dependency you add into your project!
-
-```bash npm2yarn
-npm install @types/tva -D
-```
+TVA is built using Typescript so we will include type definitions in the `components` package for any project that may require them.
 
 ## Versioned Documentation
 
