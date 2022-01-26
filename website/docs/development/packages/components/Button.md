@@ -186,24 +186,6 @@ interface IconButtonProps {
 }
 ```
 
-## API
-
-| Name                 | Argument Type                                | Default                                  | Description                            |
-| -------------------- | -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
-| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps`  |                                              |                                          | Get button with icon and label styles. |
-| `getIconButtonProps` | **ariaLabel**: string                        |                                          | Get icon button styles.                |
-
-## ButtonOptions
-
-```typescript
-interface ButtonOptions {
-  kind: 'default' || 'contained' || 'outlined'
-  size: 'xs' || 's' || 'm' || 'l'
-}
-```
-
 ## Extending
 
 There are times you may need to make a slight adjustment to the `Button` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
@@ -223,5 +205,60 @@ const Button = styled.button`
 
 function SubmitButton(props) {
   return <Button type="submit">{props.children}</Button>
+}
+```
+
+## API
+
+| Name                 | Argument Type                                | Default                                  | Description                            |
+| -------------------- | -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
+| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
+| `getIconLabelProps`  |                                              |                                          | Get button with icon and label styles. |
+| `getIconButtonProps` | **ariaLabel**: string                        |                                          | Get icon button styles.                |
+
+## ButtonOptions
+
+```typescript
+interface ButtonOptions {
+  kind: 'default' || 'contained' || 'outlined'
+  size: 'xs' || 's' || 'm' || 'l'
+}
+```
+
+## Button size guide
+
+Button sizes are relative to the `padding` and `font-size` styles. Here is an interface that gives the sizing guide. Variables are referenced from the [`tokens`](../tokens/intro.md) package.
+
+```typescript title="Example interface - does not exist in types"
+interface ButtonSizeGuide {
+  xs: {
+    fontSize: var(--ps-font-size-body-xs)
+    padding: '4px 8px'
+  }
+  s: {
+    fontSize: var(--ps-font-size-body-s)
+    padding: '6px 12px'
+  }
+  m: {
+    fontSize: var(--ps-font-size-body-m)
+    padding: '10px 16px'
+  }
+  l: {
+    fontSize: var(--ps-font-size-body-l)
+    padding: '12px 20px'
+  }
+}
+```
+
+## Button color guide
+
+Button colors are relative to the `background` style. Here is an interface that gives the color guide. Variables are referenced from the [`tokens`](../tokens/intro.md) package.
+
+```typescript title="Example interface - does not exist in types"
+interface ButtonColorGuide {
+  default: 'transparent'
+  contained: var(--ps-color-primary-background)
+  outlined: 'transparent'
 }
 ```
