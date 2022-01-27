@@ -25,6 +25,34 @@ npm install @pluralsight/tva-tokens
 
 A "token" is a word used to define a style property for any platform. So, instead of having to specify CSS variable, iOS/Swift style, Android style variable, etc. We can just say "token" which refers to the style variables of any platform.
 
+## Naming convention
+
+In order to make our tokens scalable and easier to consume, we use the same naming convention created by the Asana team.
+
+```bash
+# "usage" is the only property required
+
+ps-[sentiment?]-[usage]-[prominence?]-[interaction?]
+```
+
+- **Sentiment** - "default", "neutral", "success", "warning", "danger", "selected"
+- **Usage** - "background", "text", "icon", "border", "size"
+- **Prominence** - "default", "weak", "medium", "strong", or clothing size shorthand
+- **Interaction** - "default", "hover", "active", "focus", "disabled"
+
+:::note
+Values marked "default" can be ignored since the field is optional.
+:::
+
+What this looks like in terms of an actual token can be seen in an example for something that may apply to a Button:
+
+```css title="Button example - not actual properties"
+:root {
+  --ps-selected-background: #123456;
+  --ps-selected-background-hover: #123456;
+}
+```
+
 ## Usage
 
 The `tokens` package is the single source of truth for all style properties and assets in the design system. This is how we define styles in `components` and why you can just use this package if you need maximum flexibility - or are on a mobile platform.
@@ -41,15 +69,15 @@ The `components` package will consume the `css` and `js` tokens internally and d
 
 When you use the `css`, we use the `:root` psuedo-selector to store the properties.
 
-```css title="CSS example - not actual properties"
+```css title="CSS example - not actual properties or values"
 :root {
-  --color-font-base: #ff0000;
-  --color-font-secondary: #00ff00;
-  --color-font-tertiary: #cccccc;
-  --size-font-small: 0.75rem; /* the small size of the font */
-  --size-font-medium: 1rem; /* the medium size of the font */
-  --size-font-large: 2rem; /* the large size of the font */
-  --size-font-base: 1rem; /* the base size of the font */
+  --ps-text: #ff0000;
+  --ps-warning-text: #00ff00;
+  --ps-text-strong: #cccccc;
+  --ps-size-s: 0.75rem;
+  --ps-size-m: 1rem;
+  --ps-size-l: 2rem;
+  --ps-size-xl: 1rem;
 }
 ```
 
@@ -57,14 +85,14 @@ When you use the `css`, we use the `:root` psuedo-selector to store the properti
 
 When you use the `js`, we use `export` for unique ID variable names.
 
-```javascript title="JS example - not actual properties"
-export const ColorFontBase = '#ff0000'
-export const ColorFontSecondary = '#00ff00'
-export const ColorFontTertiary = '#cccccc'
-export const SizeFontSmall = '0.75rem' // the small size of the font
-export const SizeFontMedium = '1rem' // the medium size of the font
-export const SizeFontLarge = '2rem' // the large size of the font
-export const SizeFontBase = '1rem' // the base size of the font
+```javascript title="JS example - not actual properties or values"
+export const PsText = '#ff0000'
+export const PsWarningText = '#00ff00'
+export const PsTextStrong = '#cccccc'
+export const PsSizeS = '0.75rem'
+export const PsSizeM = '1rem'
+export const PsSizeL = '2rem'
+export const PsSizeXL = '1rem'
 ```
 
 ### Mobile
