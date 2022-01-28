@@ -1,28 +1,36 @@
 {
-  "name": "@pluralsight/psds-tokens",
-  "version": "1.0.0",
+  "name": "@pluralsight/design-tokens",
+  "version": "0.0.0",
   "description": "Design tokens for Pluralsight.",
+  "main": "build/index.js",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "style-dictionary build",
+    "clean": "rm -rf build",
+    "prepublishOnly": "yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pluralsight",
+    "pluralsight design",
+    "pluralsight tokens",
+    "design system",
+    "design tokens"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [
-    "design system",
-    "pluralsight",
-    "pluralsight design",
-    "tokens"
-  ],
   "author": "Design System Team",
   "bugs": {
     "url": "https://github.com/pluralsight/tva/issues"
   },
-  "homepage": "https://design-system.pluralsight.com/",
+  "homepage": "https://design.pluralsight.com/",
   "repository": {
     "type": "git",
     "url": "git@github.com:pluralsight/tva.git",
     "directory": "packages/tokens"
   },
-  "license": "Apache 2.0",
-  "engines": {
-    "node": ">=14.10.0"
-  }
+  "license": "Apache 2.0"
 }

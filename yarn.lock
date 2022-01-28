@@ -2672,9 +2672,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pluralsight/psds-tokens@workspace:packages/tokens":
+"@pluralsight/design-tokens@workspace:packages/tokens":
   version: 0.0.0-use.local
-  resolution: "@pluralsight/psds-tokens@workspace:packages/tokens"
+  resolution: "@pluralsight/design-tokens@workspace:packages/tokens"
   languageName: unknown
   linkType: soft
 
