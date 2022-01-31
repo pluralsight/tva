@@ -19,11 +19,12 @@ jobs:
       - run: yarn install
       - run: yarn lint:js
 
-  lint-ts:
-    runs-on: ubuntu-latest
-    name: 💅 Check for TS errors
-    steps:
-      - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
-      - run: yarn install
-      - run: yarn lint:ts
+  # TODO: Uncomment when starting to use TS
+  # lint-ts:
+  #   runs-on: ubuntu-latest
+  #   name: 💅 Check for TS errors
+  #   steps:
+  #     - uses: actions/checkout@v2.4.0
+  #     - uses: actions/setup-node@v2
+  #     - run: yarn install
+  #     - run: yarn lint:ts

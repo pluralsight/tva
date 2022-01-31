@@ -4,6 +4,9 @@ module.exports = {
     '\\.[jt]sx?$': 'babel-jest',
   },
   transformIgnorePatterns: [`/.pnp.cjs$`],
-  testMatch: [`<rootDir>/packages/**/*/?(*.)+(test).(js|ts|tsx)`],
+  testMatch: [
+    `<rootDir>/packages/**/*/?(*.)+(test).(js|ts|tsx)`,
+    '!<rootDir>/packages/tokens/**/*',
+  ],
   testTimeout: 50000,
 }
