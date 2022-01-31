@@ -15,6 +15,7 @@
     "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
     "lint:ts": "tsc --noEmit",
     "postinstall": "husky install",
+    "publishRelease": "node ./scripts/release/publish.js",
     "serve:website": "yarn workspace website serve",
     "start:website": "yarn workspace website start",
     "test": "jest",
