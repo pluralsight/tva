@@ -590,6 +590,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/babel__preset-env', 'npm:7.9.2'],
         ['@types/babel__template', 'npm:7.4.1'],
         ['@types/babel__traverse', 'npm:7.14.2'],
+        ['@types/command-line-args', 'npm:5.2.0'],
         ['@types/eslint', 'npm:8.2.0'],
         ['@types/eslint-scope', 'npm:3.7.1'],
         ['@types/estree', 'npm:0.0.50'],
@@ -701,6 +702,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['arr-diff', 'npm:4.0.0'],
         ['arr-flatten', 'npm:1.1.0'],
         ['arr-union', 'npm:3.1.0'],
+        ['array-back', 'npm:3.1.0'],
         ['array-flatten', 'npm:1.1.1'],
         ['array-ify', 'npm:1.0.0'],
         ['array-union', 'npm:2.1.0'],
@@ -786,7 +788,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['caniuse-lite', 'npm:1.0.30001283'],
         ['capital-case', 'npm:1.0.4'],
         ['ccount', 'npm:1.1.0'],
-        ['chalk', 'npm:4.1.2'],
+        ['chalk', 'npm:5.0.0'],
         ['change-case', 'npm:4.1.2'],
         ['char-regex', 'npm:1.0.2'],
         ['character-entities', 'npm:1.2.4'],
@@ -823,6 +825,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['combine-promises', 'npm:1.1.0'],
         ['combined-stream', 'npm:1.0.8'],
         ['comma-separated-tokens', 'npm:1.0.8'],
+        ['command-line-args', 'npm:5.2.1'],
         ['commander', 'npm:5.1.0'],
         ['commondir', 'npm:1.0.1'],
         ['compare-func', 'npm:2.0.0'],
@@ -1036,6 +1039,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['fill-range', 'npm:7.0.1'],
         ['finalhandler', 'npm:1.1.2'],
         ['find-cache-dir', 'npm:3.3.2'],
+        ['find-replace', 'npm:3.0.0'],
         ['find-up', 'npm:4.1.0'],
         ['flat-cache', 'npm:3.0.4'],
         ['flatted', 'npm:3.2.4'],
@@ -1303,6 +1307,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['lodash', 'npm:4.17.21'],
         ['lodash.assignin', 'npm:4.2.0'],
         ['lodash.bind', 'npm:4.2.1'],
+        ['lodash.camelcase', 'npm:4.3.0'],
         ['lodash.curry', 'npm:4.1.1'],
         ['lodash.debounce', 'npm:4.0.8'],
         ['lodash.defaults', 'npm:4.2.0'],
@@ -1936,6 +1941,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'typescript',
           'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
         ],
+        ['typical', 'npm:4.0.0'],
         ['ua-parser-js', 'npm:0.7.31'],
         ['unbox-primitive', 'npm:1.0.1'],
         ['unherit', 'npm:1.1.3'],
@@ -2092,6 +2098,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@testing-library/jest-dom', 'npm:5.15.0'],
                   ['@types/babel__core', 'npm:7.1.16'],
                   ['@types/babel__preset-env', 'npm:7.9.2'],
+                  ['@types/command-line-args', 'npm:5.2.0'],
                   ['@types/jest', 'npm:27.0.2'],
                   ['@types/prettier', 'npm:2.4.2'],
                   ['@types/testing-library__jest-dom', 'npm:5.14.1'],
@@ -2107,6 +2114,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'babel-jest',
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:27.3.1',
                   ],
+                  ['chalk', 'npm:5.0.0'],
+                  ['command-line-args', 'npm:5.2.1'],
                   ['eslint', 'npm:8.2.0'],
                   [
                     'eslint-config-eslint',
@@ -10778,6 +10787,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@testing-library/jest-dom', 'npm:5.15.0'],
                   ['@types/babel__core', 'npm:7.1.16'],
                   ['@types/babel__preset-env', 'npm:7.9.2'],
+                  ['@types/command-line-args', 'npm:5.2.0'],
                   ['@types/jest', 'npm:27.0.2'],
                   ['@types/prettier', 'npm:2.4.2'],
                   ['@types/testing-library__jest-dom', 'npm:5.14.1'],
@@ -10793,6 +10803,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'babel-jest',
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:27.3.1',
                   ],
+                  ['chalk', 'npm:5.0.0'],
+                  ['command-line-args', 'npm:5.2.1'],
                   ['eslint', 'npm:8.2.0'],
                   [
                     'eslint-config-eslint',
@@ -11420,6 +11432,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['@types/babel__traverse', 'npm:7.14.2'],
                   ['@babel/types', 'npm:7.16.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/command-line-args',
+          [
+            [
+              'npm:5.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-command-line-args-npm-5.2.0-3454e6d6cf-423121d2d0.zip/node_modules/@types/command-line-args/',
+                packageDependencies: [
+                  ['@types/command-line-args', 'npm:5.2.0'],
                 ],
                 linkType: 'HARD',
               },
@@ -13292,6 +13320,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'array-back',
+          [
+            [
+              'npm:3.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/array-back-npm-3.1.0-a52d25f5a3-7205004fcd.zip/node_modules/array-back/',
+                packageDependencies: [['array-back', 'npm:3.1.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'array-flatten',
           [
             [
@@ -14867,6 +14909,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 linkType: 'HARD',
               },
             ],
+            [
+              'npm:5.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/chalk-npm-5.0.0-7be183234e-6eba7c518b.zip/node_modules/chalk/',
+                packageDependencies: [['chalk', 'npm:5.0.0']],
+                linkType: 'HARD',
+              },
+            ],
           ],
         ],
         [
@@ -15568,6 +15619,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/comma-separated-tokens-npm-1.0.8-00dbbf3418-0adcb07174.zip/node_modules/comma-separated-tokens/',
                 packageDependencies: [['comma-separated-tokens', 'npm:1.0.8']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'command-line-args',
+          [
+            [
+              'npm:5.2.1',
+              {
+                packageLocation:
+                  './.yarn/cache/command-line-args-npm-5.2.1-093a68d295-e759519087.zip/node_modules/command-line-args/',
+                packageDependencies: [
+                  ['command-line-args', 'npm:5.2.1'],
+                  ['array-back', 'npm:3.1.0'],
+                  ['find-replace', 'npm:3.0.0'],
+                  ['lodash.camelcase', 'npm:4.3.0'],
+                  ['typical', 'npm:4.0.0'],
+                ],
                 linkType: 'HARD',
               },
             ],
@@ -19375,6 +19446,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['commondir', 'npm:1.0.1'],
                   ['make-dir', 'npm:3.1.0'],
                   ['pkg-dir', 'npm:4.2.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'find-replace',
+          [
+            [
+              'npm:3.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/find-replace-npm-3.0.0-686bd07d28-6b04bcfd79.zip/node_modules/find-replace/',
+                packageDependencies: [
+                  ['find-replace', 'npm:3.0.0'],
+                  ['array-back', 'npm:3.1.0'],
                 ],
                 linkType: 'HARD',
               },
@@ -24419,6 +24507,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/lodash.bind-npm-4.2.1-0b68ea9ea1-cf0e41de2f.zip/node_modules/lodash.bind/',
                 packageDependencies: [['lodash.bind', 'npm:4.2.1']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'lodash.camelcase',
+          [
+            [
+              'npm:4.3.0',
+              {
+                packageLocation:
+                  './.yarn/cache/lodash.camelcase-npm-4.3.0-bf268e3bf0-cb9227612f.zip/node_modules/lodash.camelcase/',
+                packageDependencies: [['lodash.camelcase', 'npm:4.3.0']],
                 linkType: 'HARD',
               },
             ],
@@ -34070,6 +34172,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'typical',
+          [
+            [
+              'npm:4.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/typical-npm-4.0.0-2255d8d515-a242081956.zip/node_modules/typical/',
+                packageDependencies: [['typical', 'npm:4.0.0']],
                 linkType: 'HARD',
               },
             ],
