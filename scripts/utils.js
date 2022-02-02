@@ -2,6 +2,15 @@
 
 'use strict'
 
+async function getTheme() {
+  try {
+    return await import('./theme.mjs')
+  } catch (error) {
+    console.error('Unable to import theme')
+    process.exit(1)
+  }
+}
+
 // Convert an array param (expected format "--foo bar baz")
 // to also accept comma input (e.g. "--foo bar,baz")
 const splitCommaParams = (array) => {
@@ -18,5 +27,6 @@ const splitCommaParams = (array) => {
 }
 
 module.exports = {
+  getTheme,
   splitCommaParams,
 }

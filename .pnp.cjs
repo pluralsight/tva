@@ -2133,6 +2133,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'eslint-plugin-sonarjs',
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:0.10.0',
                   ],
+                  ['fs-extra', 'npm:10.0.0'],
                   ['husky', 'npm:7.0.4'],
                   [
                     'jest',
@@ -10822,6 +10823,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'eslint-plugin-sonarjs',
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:0.10.0',
                   ],
+                  ['fs-extra', 'npm:10.0.0'],
                   ['husky', 'npm:7.0.4'],
                   [
                     'jest',

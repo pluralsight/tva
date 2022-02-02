@@ -3,6 +3,10 @@
 'use strict'
 
 const commandLineArgs = require('command-line-args')
+const { getTheme } = require('../utils')
+
+const releaseChannels = ['experimental', 'alpha', 'next', 'latest', 'stable']
+const channelList = releaseChannels.join(', ')
 
 const paramDefinitions = [
   {
@@ -17,19 +21,9 @@ const paramDefinitions = [
     name: 'release',
     alias: 'R',
     type: String,
-    description:
-      'Release channel (stable, latest, next, experimental, or alpha)',
+    description: `Release channel (${channelList})`,
   },
 ]
-
-async function getTheme() {
-  try {
-    return await import('../theme.mjs')
-  } catch (error) {
-    console.error(console.error(`Unable to get theme. ${error}`))
-    process.exit(1)
-  }
-}
 
 module.exports = async () => {
   const theme = await getTheme()
@@ -37,33 +31,17 @@ module.exports = async () => {
   const channel = params.release
   const commit = params.commit
 
-  if (
-    channel !== 'experimental' &&
-    channel !== 'stable' &&
-    channel !== 'latest'
-  ) {
+  if (!releaseChannels.includes(channel)) {
     console.error(
-      theme.error`Invalid release channel (-r) "${channel}". Must be "stable", "experimental", or "latest".`
+      theme.error`Invalid release channel (-r) "${channel}". Must be ${channelList}`
     )
     process.exit(1)
   }
 
-  if (commit == null || !commit) {
+  if ((commit == null || !commit) && channel !== 'stable') {
     console.error(theme.error`A --commit param must be specified.`)
     process.exit(1)
   }
-
-  // try {
-  //   if (params.build === null) {
-  //     params.build = await logPromise(
-  //       getBuildIdForCommit(params.commit),
-  //       theme`Getting build ID for commit "${params.commit}"`
-  //     )
-  //   }
-  // } catch (error) {
-  //   console.error(error(error))
-  //   process.exit(1)
-  // }
 
   return params
 }
