@@ -2,6 +2,26 @@
 
 'use strict'
 
+const { exec } = require('child-process-promise')
+
+async function execRead(command, options) {
+  const { stdout } = await exec(command, options)
+  return stdout.trim()
+}
+
+async function getReleaseDate() {
+  let dateString = await execRead(
+    `git show -s --no-show-signature --format=%cd --date=format:%Y%m%d`
+  )
+
+  // On CI environment, this string is wrapped with quotes '...'s
+  if (dateString.startsWith("'")) {
+    dateString = dateString.substr(1, 8)
+  }
+
+  return dateString
+}
+
 async function getTheme() {
   try {
     return await import('./theme.mjs')
@@ -27,6 +47,8 @@ const splitCommaParams = (array) => {
 }
 
 module.exports = {
+  execRead,
+  getReleaseDate,
   getTheme,
   splitCommaParams,
 }

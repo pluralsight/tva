@@ -590,6 +590,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/babel__preset-env', 'npm:7.9.2'],
         ['@types/babel__template', 'npm:7.4.1'],
         ['@types/babel__traverse', 'npm:7.14.2'],
+        ['@types/child-process-promise', 'npm:2.2.2'],
         ['@types/command-line-args', 'npm:5.2.0'],
         ['@types/eslint', 'npm:8.2.0'],
         ['@types/eslint-scope', 'npm:3.7.1'],
@@ -795,6 +796,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['character-entities-legacy', 'npm:1.1.4'],
         ['character-reference-invalid', 'npm:1.1.4'],
         ['cheerio', 'npm:0.22.0'],
+        ['child-process-promise', 'npm:2.2.1'],
         ['chokidar', 'npm:3.5.2'],
         ['chownr', 'npm:2.0.0'],
         ['chrome-trace-event', 'npm:1.0.3'],
@@ -1403,6 +1405,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['node-int64', 'npm:0.4.0'],
         ['node-modules-regexp', 'npm:1.0.0'],
         ['node-releases', 'npm:2.0.1'],
+        ['node-version', 'npm:1.2.0'],
         ['nopt', 'npm:5.0.0'],
         ['normalize-package-data', 'npm:3.0.3'],
         ['normalize-path', 'npm:3.0.0'],
@@ -1644,12 +1647,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'promise-inflight',
           'virtual:a7e5239c6ae68bf6359adfd3598326db000e94dbb349bc00a3852ed53a31712a0e2e787228c6e859d3e5cf2fbb872aba1ea4abe4995cef8086a77ef619ae1be6#npm:1.0.1',
         ],
+        ['promise-polyfill', 'npm:6.1.0'],
         ['promise-retry', 'npm:2.0.1'],
         ['prompts', 'npm:2.4.2'],
         ['prop-types', 'npm:15.7.2'],
         ['property-information', 'npm:5.6.0'],
         ['proxy-addr', 'npm:2.0.7'],
         ['prr', 'npm:1.0.1'],
+        ['pseudomap', 'npm:1.0.2'],
         ['psl', 'npm:1.8.0'],
         ['pump', 'npm:3.0.0'],
         ['punycode', 'npm:2.1.1'],
@@ -2041,7 +2046,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['whatwg-encoding', 'npm:1.0.5'],
         ['whatwg-mimetype', 'npm:2.3.0'],
         ['whatwg-url', 'npm:8.7.0'],
-        ['which', 'npm:2.0.2'],
+        ['which', 'npm:1.3.1'],
         ['which-boxed-primitive', 'npm:1.0.2'],
         ['which-module', 'npm:2.0.0'],
         ['wide-align', 'npm:1.1.5'],
@@ -2098,6 +2103,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@testing-library/jest-dom', 'npm:5.15.0'],
                   ['@types/babel__core', 'npm:7.1.16'],
                   ['@types/babel__preset-env', 'npm:7.9.2'],
+                  ['@types/child-process-promise', 'npm:2.2.2'],
                   ['@types/command-line-args', 'npm:5.2.0'],
                   ['@types/jest', 'npm:27.0.2'],
                   ['@types/prettier', 'npm:2.4.2'],
@@ -2115,6 +2121,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:27.3.1',
                   ],
                   ['chalk', 'npm:5.0.0'],
+                  ['child-process-promise', 'npm:2.2.1'],
                   ['command-line-args', 'npm:5.2.1'],
                   ['eslint', 'npm:8.2.0'],
                   [
@@ -10788,6 +10795,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@testing-library/jest-dom', 'npm:5.15.0'],
                   ['@types/babel__core', 'npm:7.1.16'],
                   ['@types/babel__preset-env', 'npm:7.9.2'],
+                  ['@types/child-process-promise', 'npm:2.2.2'],
                   ['@types/command-line-args', 'npm:5.2.0'],
                   ['@types/jest', 'npm:27.0.2'],
                   ['@types/prettier', 'npm:2.4.2'],
@@ -10805,6 +10813,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'virtual:c19dcb99318bfcd0fd59c50b672219e80878d75940e975cda3d4f7b8080c6426f6def69bede6e2865b48bc0ce2dc2217dc0cad86e7b8eb616c714c11fa35a9b2#npm:27.3.1',
                   ],
                   ['chalk', 'npm:5.0.0'],
+                  ['child-process-promise', 'npm:2.2.1'],
                   ['command-line-args', 'npm:5.2.1'],
                   ['eslint', 'npm:8.2.0'],
                   [
@@ -11434,6 +11443,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['@types/babel__traverse', 'npm:7.14.2'],
                   ['@babel/types', 'npm:7.16.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/child-process-promise',
+          [
+            [
+              'npm:2.2.2',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-child-process-promise-npm-2.2.2-53840fecc6-e7b1140372.zip/node_modules/@types/child-process-promise/',
+                packageDependencies: [
+                  ['@types/child-process-promise', 'npm:2.2.2'],
+                  ['@types/node', 'npm:16.11.7'],
                 ],
                 linkType: 'HARD',
               },
@@ -15043,6 +15069,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'child-process-promise',
+          [
+            [
+              'npm:2.2.1',
+              {
+                packageLocation:
+                  './.yarn/cache/child-process-promise-npm-2.2.1-152d4a9872-fb72dda7ee.zip/node_modules/child-process-promise/',
+                packageDependencies: [
+                  ['child-process-promise', 'npm:2.2.1'],
+                  ['cross-spawn', 'npm:4.0.2'],
+                  ['node-version', 'npm:1.2.0'],
+                  ['promise-polyfill', 'npm:6.1.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'chokidar',
           [
             [
@@ -16212,6 +16257,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           'cross-spawn',
           [
+            [
+              'npm:4.0.2',
+              {
+                packageLocation:
+                  './.yarn/cache/cross-spawn-npm-4.0.2-3c23494e5b-8ce57b3e11.zip/node_modules/cross-spawn/',
+                packageDependencies: [
+                  ['cross-spawn', 'npm:4.0.2'],
+                  ['lru-cache', 'npm:4.1.5'],
+                  ['which', 'npm:1.3.1'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
             [
               'npm:6.0.5',
               {
@@ -24861,6 +24919,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'lru-cache',
           [
             [
+              'npm:4.1.5',
+              {
+                packageLocation:
+                  './.yarn/cache/lru-cache-npm-4.1.5-ede304cc43-4bb4b58a36.zip/node_modules/lru-cache/',
+                packageDependencies: [
+                  ['lru-cache', 'npm:4.1.5'],
+                  ['pseudomap', 'npm:1.0.2'],
+                  ['yallist', 'npm:2.1.2'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
               'npm:6.0.0',
               {
                 packageLocation:
@@ -26145,6 +26216,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/node-releases-npm-2.0.1-77b8e327f7-b20dd8d4bc.zip/node_modules/node-releases/',
                 packageDependencies: [['node-releases', 'npm:2.0.1']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'node-version',
+          [
+            [
+              'npm:1.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/node-version-npm-1.2.0-8be29089db-74e92d2a7f.zip/node_modules/node-version/',
+                packageDependencies: [['node-version', 'npm:1.2.0']],
                 linkType: 'HARD',
               },
             ],
@@ -29157,6 +29242,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'promise-polyfill',
+          [
+            [
+              'npm:6.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/promise-polyfill-npm-6.1.0-74f42c423b-6f1899cca3.zip/node_modules/promise-polyfill/',
+                packageDependencies: [['promise-polyfill', 'npm:6.1.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'promise-retry',
           [
             [
@@ -29268,6 +29367,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/prr-npm-1.0.1-608d442761-3bca2db047.zip/node_modules/prr/',
                 packageDependencies: [['prr', 'npm:1.0.1']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'pseudomap',
+          [
+            [
+              'npm:1.0.2',
+              {
+                packageLocation:
+                  './.yarn/cache/pseudomap-npm-1.0.2-0d0e40fee0-856c0aae0f.zip/node_modules/pseudomap/',
+                packageDependencies: [['pseudomap', 'npm:1.0.2']],
                 linkType: 'HARD',
               },
             ],
@@ -36228,6 +36341,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [
           'yallist',
           [
+            [
+              'npm:2.1.2',
+              {
+                packageLocation:
+                  './.yarn/cache/yallist-npm-2.1.2-2e38c366a3-9ba9940920.zip/node_modules/yallist/',
+                packageDependencies: [['yallist', 'npm:2.1.2']],
+                linkType: 'HARD',
+              },
+            ],
             [
               'npm:4.0.0',
               {
