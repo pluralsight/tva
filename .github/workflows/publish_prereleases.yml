@@ -39,6 +39,7 @@ jobs:
       - run: |
           yarn install
           yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
+          yarn publish:packages --ci --tags experimental
 
   next-release:
     runs-on: ubuntu-latest
@@ -55,4 +56,5 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
-          yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
+          yarn prepare-release --release next --commit=${{ secrets.GITHUB_SHA }} --ci
+          yarn publish:packages --ci --tags alpha,next

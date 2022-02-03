@@ -17,6 +17,7 @@
     "lint:ts": "tsc --noEmit",
     "postinstall": "husky install",
     "prepare-release": "node ./scripts/release/prepare-release.js",
+    "publish:packages": "node ./scripts/release/publish.js",
     "serve:website": "yarn workspace website serve",
     "start:website": "yarn workspace website start",
     "test": "jest",
