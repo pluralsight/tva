@@ -3,8 +3,8 @@
 'use strict'
 
 const { resolve, join } = require('path')
-const { readJsonSync } = require('fs-extra')
-const { getReleaseDate, getTheme } = require('../utils')
+const { readJsonSync, writeJSONSync } = require('fs-extra')
+const { getReleaseDate, getTheme, execRead } = require('../../utils')
 
 function getPrereleaseChannelLabel(version) {
   const { release } = version
@@ -35,17 +35,19 @@ module.exports = async (packageList, versionData) => {
   packageList.forEach((packageName) => {
     console.log(theme.info('\n📝  Updating version for ' + packageName))
 
-    const packagePath = resolve(__dirname, `../../packages/${packageName}`)
-    const { version } = readJsonSync(join(packagePath, 'package.json'))
-
-    console.log(version, versionData)
+    const packagePath = resolve(__dirname, `../../../packages/${packageName}`)
+    const origPackageInfo = readJsonSync(join(packagePath, 'package.json'))
+    let newVersion = `${versionData.DesignVersion}`
 
     if (versionData.commit) {
-      const newVersion = getPrereleaseVersion(versionData, date)
-      console.log('release ', packageName, newVersion)
-      process.exit(1)
+      newVersion = getPrereleaseVersion(versionData, date)
     }
 
-    console.log('create stable release version')
+    // Probably should do a summary here to confirm first if not in CI?
+
+    // writeJSONSync(join(packagePath, 'package.json'), {
+    //   ...origPackageInfo,
+    //   version: newVersion
+    // })
   })
 }

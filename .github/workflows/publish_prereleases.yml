@@ -21,7 +21,7 @@ jobs:
           git config --global user.email ${{ secrets.GH_EMAIL }}
           git config --global user.name ${{ secrets.GH_USER }}
           yarn install
-          yarn publish-release --release experimental --commit=${{ secrets.GITHUB_SHA }}
+          yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
 
   next-release:
     runs-on: ubuntu-latest
@@ -36,4 +36,4 @@ jobs:
           git config --global user.email ${{ secrets.GH_EMAIL }}
           git config --global user.name ${{ secrets.GH_USER }}
           yarn install
-          yarn publish-release --release next --commit=${{ secrets.GITHUB_SHA }}
+          yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci

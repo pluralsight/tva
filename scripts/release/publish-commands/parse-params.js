@@ -3,7 +3,7 @@
 'use strict'
 
 const commandLineArgs = require('command-line-args')
-const { getTheme } = require('../utils')
+const { getTheme } = require('../../utils')
 
 const releaseChannels = ['experimental', 'alpha', 'next', 'latest', 'stable']
 const channelList = releaseChannels.join(', ')
@@ -15,6 +15,13 @@ const paramDefinitions = [
     type: String,
     description:
       'GitHub commit SHA. When provided, automatically finds corresponding CI build.',
+    defaultValue: null,
+  },
+  {
+    name: 'ci',
+    type: Boolean,
+    description:
+      'Whether or not you are running the command in a CI environment (which skips prompts).',
     defaultValue: null,
   },
   {

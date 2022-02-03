@@ -5,10 +5,6 @@
 const parseParams = require('../publish-commands/parse-params')
 const prepareRelease = require('./prepare-release')
 
-// 1. Check channel to know how to create version number
-// 2. update all package.json "version" in packages to make sure they match
-// 3. publish to npm using correct channel
-
 async function run() {
   try {
     const params = await parseParams()
