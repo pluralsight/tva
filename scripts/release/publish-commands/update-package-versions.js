@@ -43,9 +43,15 @@ module.exports = async (packageList, versionData) => {
       newVersion = getPrereleaseVersion(versionData, date)
     }
 
-    writeJSONSync(join(packagePath, 'package.json'), {
-      ...origPackageInfo,
-      version: newVersion,
-    })
+    writeJSONSync(
+      join(packagePath, 'package.json'),
+      {
+        ...origPackageInfo,
+        version: newVersion,
+      },
+      {
+        spaces: '\t',
+      }
+    )
   })
 }

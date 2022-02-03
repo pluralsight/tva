@@ -9,11 +9,6 @@ const parseParams = require('./publish-commands/parse-params')
 const buildPackages = require('./shared-commands/build-packages')
 const printPrereleaseSummary = require('./shared-commands/print-prerelease-summary')
 
-// 1. Run build in CI and save builds as artifacts ✅
-// 2. Download build artifacts ✅
-// 3. Update package.json versions
-// 3. Print summary ✅
-
 async function run() {
   const params = await parseParams()
   const theme = await getTheme()
