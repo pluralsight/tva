@@ -43,11 +43,9 @@ module.exports = async (packageList, versionData) => {
       newVersion = getPrereleaseVersion(versionData, date)
     }
 
-    // Probably should do a summary here to confirm first if not in CI?
-
-    // writeJSONSync(join(packagePath, 'package.json'), {
-    //   ...origPackageInfo,
-    //   version: newVersion
-    // })
+    writeJSONSync(join(packagePath, 'package.json'), {
+      ...origPackageInfo,
+      version: newVersion,
+    })
   })
 }

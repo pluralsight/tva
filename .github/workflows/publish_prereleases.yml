@@ -8,32 +8,51 @@ on:
       - main
 
 jobs:
-  experimental-release:
+  build-packages:
     runs-on: ubuntu-latest
-    name: 🚀 Publish experimental release
-    env:
-      USE_SSH: true
-      GIT_USER: ${{ secrets.GH_USERNAME }}
+    name: 👷‍♀️ Build all packages
     steps:
       - uses: actions/checkout@v2.4.0
       - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
       - run: |
-          git config --global user.email ${{ secrets.GH_EMAIL }}
-          git config --global user.name ${{ secrets.GH_USER }}
+          yarn install
+          yarn workspaces run build
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: packages
+          path: packages/**/build
+
+  experimental-release:
+    runs-on: ubuntu-latest
+    name: 🚀 Publish experimental release
+    needs: build-packages
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - run: |
           yarn install
           yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
 
   next-release:
     runs-on: ubuntu-latest
     name: 🚀 Publish next release
+    needs: build-packages
     env:
       USE_SSH: true
       GIT_USER: ${{ secrets.GH_USERNAME }}
     steps:
       - uses: actions/checkout@v2.4.0
       - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
       - run: |
-          git config --global user.email ${{ secrets.GH_EMAIL }}
-          git config --global user.name ${{ secrets.GH_USER }}
           yarn install
           yarn prepare-release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
