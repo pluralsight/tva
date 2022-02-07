@@ -22,7 +22,7 @@ async function confirm(message) {
   prompt.done()
 
   if (confirmation !== 'y' && confirmation !== 'Y') {
-    console.log(theme.error`\n{caution Release cancelled.}`)
+    console.log(theme.error`\n==== Release cancelled ====`)
     process.exit(0)
   }
 }
@@ -72,8 +72,8 @@ const splitCommaParams = (array) => {
 function warning(trueCondition, warningMessage) {
   if (!trueCondition) {
     console.error(warningMessage)
+    process.exit(1)
   }
-  process.exit(1)
 }
 
 module.exports = {

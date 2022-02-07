@@ -6,10 +6,6 @@ const { readJson } = require('fs-extra')
 const { join } = require('path')
 const { getTheme, warning } = require('../../utils')
 
-function isLatestTag(tags) {
-  return tags.includes('latest')
-}
-
 function tagError(theme, message) {
   return theme.error(errorMessage(message))
 }

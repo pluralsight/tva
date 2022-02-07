@@ -8,6 +8,7 @@ const { getTheme } = require('../utils')
 const parseParams = require('./publish-commands/parse-publish-params')
 const validateTags = require('./publish-commands/validate-tags')
 const confirmSkippedPackages = require('./publish-commands/confirm-skipped-packages')
+const confirmVersionAndTags = require('./publish-commands/confirm-version-and-tags')
 
 async function run() {
   const theme = await getTheme()
@@ -41,7 +42,7 @@ async function run() {
     await confirmSkippedPackages(params)
   }
 
-  // await confirmVersionAndTags(params)
+  await confirmVersionAndTags({ ...params, packages })
   // await validateSkipPackages(params)
   // await checkNPMPermissions(params)
 }

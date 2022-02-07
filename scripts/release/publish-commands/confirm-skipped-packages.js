@@ -11,8 +11,6 @@ const run = async ({ skipPackages }) => {
     return
   }
 
-  console.clear()
-
   console.log(
     theme.success`{spinnerSuccess ✓} The following packages will not be published as part of this release`
   )
@@ -22,8 +20,6 @@ const run = async ({ skipPackages }) => {
   })
 
   await confirm('Do you want to proceed?')
-
-  console.clear()
 }
 
 // Run this directly because it's fast,
