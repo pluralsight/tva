@@ -3,6 +3,29 @@
 'use strict'
 
 const { exec } = require('child-process-promise')
+const prompt = require('prompt-promise')
+
+async function checkTag(condition, error, elseLog) {
+  if (condition) {
+    error
+  } else {
+    elseLog
+  }
+}
+
+async function confirm(message) {
+  const theme = await getTheme()
+  const confirmation = await prompt(
+    theme.warning`\n{caution ${message}} (y/N) `
+  )
+
+  prompt.done()
+
+  if (confirmation !== 'y' && confirmation !== 'Y') {
+    console.log(theme.error`\n{caution Release cancelled.}`)
+    process.exit(0)
+  }
+}
 
 async function execRead(command, options) {
   const { stdout } = await exec(command, options)
@@ -46,9 +69,19 @@ const splitCommaParams = (array) => {
   }
 }
 
+function warning(trueCondition, warningMessage) {
+  if (!trueCondition) {
+    console.error(warningMessage)
+  }
+  process.exit(1)
+}
+
 module.exports = {
+  checkTag,
+  confirm,
   execRead,
   getReleaseDate,
   getTheme,
   splitCommaParams,
+  warning,
 }
