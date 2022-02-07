@@ -2,8 +2,10 @@
 
 'use strict'
 
+const { join } = require('path')
 const { exec } = require('child-process-promise')
 const prompt = require('prompt-promise')
+const createLogger = require('progress-estimator')
 
 async function checkTag(condition, error, elseLog) {
   if (condition) {
@@ -54,6 +56,15 @@ async function getTheme() {
   }
 }
 
+// https://www.npmjs.com/package/progress-estimator#configuration
+const logger = createLogger({
+  storagePath: join(__dirname, '.progress-estimator'),
+})
+
+async function logPromise(promise, text, estimate) {
+  logger(promise, text, { estimate })
+}
+
 // Convert an array param (expected format "--foo bar baz")
 // to also accept comma input (e.g. "--foo bar,baz")
 const splitCommaParams = (array) => {
@@ -82,6 +93,7 @@ module.exports = {
   execRead,
   getReleaseDate,
   getTheme,
+  logPromise,
   splitCommaParams,
   warning,
 }
