@@ -2,6 +2,7 @@
   "name": "release-script",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "prepare-release": "node ./release/prepare-release.js",
     "publish-packages": "node ./release/publish.js"

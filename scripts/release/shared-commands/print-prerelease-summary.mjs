@@ -2,30 +2,31 @@
 
 'use strict'
 
-const { getTheme } = require('../../utils')
+import { command, importantNote } from '../../theme.mjs'
 
-module.exports = async (isStableRelease) => {
-  const theme = await getTheme()
-  const publishScript = theme.command`node ./scripts/release/publish.js`
+function printReleaseSummary(isStableRelease) {
+  const publishScript = command`node ./scripts/release/publish.js`
   let message = ''
 
   if (isStableRelease) {
-    message = theme.importantNote(
+    message = importantNote(
       '\n⚠️  caution A stable release candidate has been prepared!\n\nYou can review the contents of this release by running:\n' +
-        theme.command`yarn build` +
+        command`yarn build` +
         '\n\n{header Before publishing, consider testing this release locally with create-react-app!}\n\nYou can publish this release by running:\n' +
         publishScript +
-        theme.command` -R stable`
+        command` -R stable`
     )
   } else {
-    message = theme.importantNote(
+    message = importantNote(
       '\n⚠️  caution A "next" release candidate has been prepared!\n\nYou can review the contents of this release by running:\n' +
-        theme.command`yarn build` +
+        command`yarn build` +
         '\n\nYou can publish this release by running:\n ' +
         publishScript +
-        theme.command` -R next --commit={commitSHA}`
+        command` -R next --commit={commitSHA}`
     )
   }
 
   console.log(message)
 }
+
+export default printReleaseSummary

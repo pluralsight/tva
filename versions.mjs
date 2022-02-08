@@ -23,22 +23,15 @@
 //
 //   0.0.0-experimental-241c4467e-20200129
 
-const DesignVersion = '0.0.0'
+export const DesignVersion = '0.0.0'
 
 // The label used by the @next channel. Represents the upcoming release's
 // stability. Could be "alpha", "beta", "next", "rc", etc.
-const nextChannelLabel = 'alpha'
+export const nextChannelLabel = 'alpha'
 
-const stablePackages = {}
+export const stablePackages = {}
 
 // These packages do not exist in the @next or @latest channel, only
 // @experimental. We don't use semver, just the commit sha, so this is just a
 // list of package names instead of a map.
-const experimentalPackages = ['tokens']
-
-module.exports = {
-  DesignVersion,
-  nextChannelLabel,
-  stablePackages,
-  experimentalPackages,
-}
+export const experimentalPackages = ['tokens']

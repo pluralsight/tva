@@ -2,12 +2,17 @@
 
 'use strict'
 
-const { join } = require('path')
-const { exec } = require('child-process-promise')
-const prompt = require('prompt-promise')
-const createLogger = require('progress-estimator')
+import { dirname, join, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { exec } from 'child-process-promise'
+import prompt from 'prompt-promise'
+import createLogger from 'progress-estimator'
 
-async function checkTag(condition, error, elseLog) {
+export function __dirname(metaURL) {
+  return dirname(fileURLToPath(metaURL))
+}
+
+export async function checkTag(condition, error, elseLog) {
   if (condition) {
     error
   } else {
@@ -15,7 +20,7 @@ async function checkTag(condition, error, elseLog) {
   }
 }
 
-async function confirm(message) {
+export async function confirm(message) {
   const theme = await getTheme()
   const confirmation = await prompt(
     theme.warning`\n{caution ${message}} (y/N) `
@@ -29,12 +34,16 @@ async function confirm(message) {
   }
 }
 
-async function execRead(command, options) {
+export async function execRead(command, options) {
   const { stdout } = await exec(command, options)
   return stdout.trim()
 }
 
-async function getReleaseDate() {
+export function getPackagePath(packageName) {
+  return resolve(__dirname(import.meta.url), `../packages/${packageName}`)
+}
+
+export async function getReleaseDate() {
   let dateString = await execRead(
     `git show -s --no-show-signature --format=%cd --date=format:%Y%m%d`
   )
@@ -47,27 +56,18 @@ async function getReleaseDate() {
   return dateString
 }
 
-async function getTheme() {
-  try {
-    return await import('./theme.mjs')
-  } catch (error) {
-    console.error('Unable to import theme')
-    process.exit(1)
-  }
-}
-
 // https://www.npmjs.com/package/progress-estimator#configuration
 const logger = createLogger({
-  storagePath: join(__dirname, '.progress-estimator'),
+  storagePath: join(import.meta.url, '.progress-estimator'),
 })
 
-async function logPromise(promise, text, estimate) {
+export async function logPromise(promise, text, estimate) {
   logger(promise, text, { estimate })
 }
 
 // Convert an array param (expected format "--foo bar baz")
 // to also accept comma input (e.g. "--foo bar,baz")
-const splitCommaParams = (array) => {
+export const splitCommaParams = (array) => {
   if (array == null) {
     return
   }
@@ -80,20 +80,9 @@ const splitCommaParams = (array) => {
   }
 }
 
-function warning(trueCondition, warningMessage) {
+export function warning(trueCondition, warningMessage) {
   if (!trueCondition) {
     console.error(warningMessage)
     process.exit(1)
   }
-}
-
-module.exports = {
-  checkTag,
-  confirm,
-  execRead,
-  getReleaseDate,
-  getTheme,
-  logPromise,
-  splitCommaParams,
-  warning,
 }

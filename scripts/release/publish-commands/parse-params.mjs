@@ -2,8 +2,8 @@
 
 'use strict'
 
-const commandLineArgs = require('command-line-args')
-const { getTheme } = require('../../utils')
+import commandLineArgs from 'command-line-args'
+import { error } from '../../theme.mjs'
 
 const releaseChannels = ['experimental', 'alpha', 'next', 'latest', 'stable']
 const channelList = releaseChannels.join(', ')
@@ -32,23 +32,24 @@ const paramDefinitions = [
   },
 ]
 
-module.exports = async () => {
-  const theme = await getTheme()
+function parseParams() {
   const params = commandLineArgs(paramDefinitions)
   const channel = params.release
   const commit = params.commit
 
   if (!releaseChannels.includes(channel)) {
     console.error(
-      theme.error`Invalid release channel (-r) "${channel}". Must be ${channelList}`
+      error`Invalid release channel (-r) "${channel}". Must be ${channelList}`
     )
     process.exit(1)
   }
 
   if ((commit == null || !commit) && channel !== 'stable') {
-    console.error(theme.error`A --commit param must be specified.`)
+    console.error(error`A --commit param must be specified.`)
     process.exit(1)
   }
 
   return params
 }
+
+export default parseParams

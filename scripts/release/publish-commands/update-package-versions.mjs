@@ -2,9 +2,10 @@
 
 'use strict'
 
-const { resolve, join } = require('path')
-const { readJsonSync, writeJSONSync } = require('fs-extra')
-const { getReleaseDate, getTheme } = require('../../utils')
+import { join } from 'node:path'
+import pkg from 'fs-extra'
+import { getReleaseDate, getPackagePath } from '../../utils.mjs'
+import { info } from '../../theme.mjs'
 
 function getPrereleaseChannelLabel(version) {
   const { release } = version
@@ -28,14 +29,14 @@ function getPrereleaseVersion(version, date) {
   return defaultVersion
 }
 
-module.exports = async (packageList, versionData) => {
-  const theme = await getTheme()
+async function updatePackageVersions(packageList, versionData) {
+  const { readJsonSync, writeJSONSync } = pkg
   const date = await getReleaseDate()
 
   packageList.forEach((packageName) => {
-    console.log(theme.info('\n📝  Updating version for ' + packageName))
+    console.log(info('\n📝  Updating version for ' + packageName))
 
-    const packagePath = resolve(__dirname, `../../../packages/${packageName}`)
+    const packagePath = getPackagePath(packageName)
     const origPackageInfo = readJsonSync(join(packagePath, 'package.json'))
     let newVersion = `${versionData.DesignVersion}`
 
@@ -55,3 +56,5 @@ module.exports = async (packageList, versionData) => {
     )
   })
 }
+
+export default updatePackageVersions

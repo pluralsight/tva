@@ -2,24 +2,33 @@
 
 'use strict'
 
-const versions = require('../../versions')
-const { getTheme } = require('../utils')
-const updatePackageVersions = require('./publish-commands/update-package-versions')
-const parseParams = require('./publish-commands/parse-params')
-const buildPackages = require('./shared-commands/build-packages')
-const printPrereleaseSummary = require('./shared-commands/print-prerelease-summary')
+import {
+  DesignVersion,
+  experimentalPackages,
+  nextChannelLabel,
+  stablePackages,
+} from '../../versions.mjs'
+import updatePackageVersions from './publish-commands/update-package-versions.mjs'
+import parseParams from './publish-commands/parse-params.mjs'
+import buildPackages from './shared-commands/build-packages.mjs'
+import printPrereleaseSummary from './shared-commands/print-prerelease-summary.mjs'
+import { info } from '../theme.mjs'
 
 async function run() {
-  const params = await parseParams()
-  const theme = await getTheme()
+  const params = parseParams()
   const isStableRelease = params.releaseChannel === 'stable'
-  const { experimentalPackages } = versions
+  const versions = {
+    DesignVersion,
+    experimentalPackages,
+    nextChannelLabel,
+    stablePackages,
+  }
 
   if (isStableRelease) {
-    console.log(theme.info`\n👷‍♀️  Preparing stable release...`)
-    await updatePackageVersions(Object.keys(versions.stablePackages), versions)
+    console.log(info`\n👷‍♀️  Preparing stable release...`)
+    await updatePackageVersions(Object.keys(stablePackages), versions)
   } else {
-    console.log(theme.info('\n👷‍♀️  Preparing ' + params.release + ' release...'))
+    console.log(info('\n👷‍♀️  Preparing ' + params.release + ' release...'))
     await buildPackages(experimentalPackages, params.ci)
     await updatePackageVersions(experimentalPackages, {
       ...versions,
@@ -28,7 +37,7 @@ async function run() {
   }
 
   if (!params.ci) {
-    await printPrereleaseSummary(isStableRelease)
+    printPrereleaseSummary(isStableRelease)
   }
 }
 

@@ -2,13 +2,11 @@
 
 'use strict'
 
-const { resolve } = require('path')
-const { exec } = require('child-process-promise')
-const { getTheme } = require('../../utils')
+import { exec } from 'child-process-promise'
+import { getPackagePath } from '../../utils.mjs'
+import { info } from '../../theme.mjs'
 
-module.exports = async (packageList, isCI) => {
-  const theme = await getTheme()
-
+async function buildPackages(packageList, isCI) {
   if (isCI) {
     // TODO: Setup GH SHA to abe able to download artifacts and reuse
     // https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts
@@ -16,9 +14,11 @@ module.exports = async (packageList, isCI) => {
     process.exit(1)
   }
 
-  console.log(theme.info`\n🛠  Building public packages...`)
+  console.log(info`\n🛠  Building public packages...`)
   await packageList.forEach(async (packageName) => {
-    const cwd = resolve(__dirname, `../../../packages/${packageName}`)
+    const cwd = getPackagePath(packageName)
     await exec('yarn build', { cwd })
   })
 }
+
+export default buildPackages
