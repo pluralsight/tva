@@ -10,5 +10,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
       - run: yarn install
       - run: yarn test --passWithNoTests
+
+  packages-build:
+    runs-on: ubuntu-latest
+    name: 👷‍♀️ All public packages successfully build
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build:packages
