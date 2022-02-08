@@ -12,7 +12,7 @@ const readPackageJSON = async (name) => {
   return await readJson(packageJSONPath)
 }
 
-const run = async ({ cwd, packages, skipPackages }) => {
+const run = async ({ packages, skipPackages }) => {
   const theme = await getTheme()
 
   if (skipPackages.length === 0) {

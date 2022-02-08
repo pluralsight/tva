@@ -2,7 +2,7 @@
 
 'use strict'
 
-const { resolve, join } = require('path')
+const { resolve } = require('path')
 const { exec } = require('child-process-promise')
 const { getTheme } = require('../../utils')
 
