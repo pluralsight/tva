@@ -4,7 +4,7 @@
 
 const { resolve, join } = require('path')
 const { readJsonSync, writeJSONSync } = require('fs-extra')
-const { getReleaseDate, getTheme, execRead } = require('../../utils')
+const { getReleaseDate, getTheme } = require('../../utils')
 
 function getPrereleaseChannelLabel(version) {
   const { release } = version

@@ -9,7 +9,7 @@
     "scripts"
   ],
   "scripts": {
-    "build:packages": "yarn workspaces foreach run build --no-private",
+    "build:packages": "yarn workspaces foreach --no-private run build",
     "build:website": "yarn workspace website build",
     "clear:website": "yarn workspace website clear",
     "deploy:website": "yarn workspace website deploy",
