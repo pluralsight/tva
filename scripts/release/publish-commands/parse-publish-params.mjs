@@ -2,8 +2,8 @@
 
 'use strict'
 
-const commandLineArgs = require('command-line-args')
-const { splitCommaParams } = require('../../utils')
+import commandLineArgs from 'command-line-args'
+import { splitCommaParams } from '../../utils.mjs'
 
 const publishParamDefinitions = [
   {
@@ -34,7 +34,7 @@ const publishParamDefinitions = [
   },
 ]
 
-module.exports = () => {
+export default function parsePublishParams() {
   const params = commandLineArgs(publishParamDefinitions)
 
   splitCommaParams(params.skipPackages)

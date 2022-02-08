@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url'
 import { exec } from 'child-process-promise'
 import prompt from 'prompt-promise'
 import createLogger from 'progress-estimator'
+import { error, warning as themeWarning } from './theme.mjs'
 
 export function __dirname(metaURL) {
   return dirname(fileURLToPath(metaURL))
@@ -21,15 +22,12 @@ export async function checkTag(condition, error, elseLog) {
 }
 
 export async function confirm(message) {
-  const theme = await getTheme()
-  const confirmation = await prompt(
-    theme.warning`\n{caution ${message}} (y/N) `
-  )
+  const confirmation = await prompt(themeWarning`\n{caution ${message}} (y/N) `)
 
   prompt.done()
 
   if (confirmation !== 'y' && confirmation !== 'Y') {
-    console.log(theme.error`\n==== Release cancelled ====`)
+    console.log(error`\n==== Release cancelled ====`)
     process.exit(0)
   }
 }
@@ -58,7 +56,7 @@ export async function getReleaseDate() {
 
 // https://www.npmjs.com/package/progress-estimator#configuration
 const logger = createLogger({
-  storagePath: join(import.meta.url, '.progress-estimator'),
+  storagePath: resolve(__dirname(import.meta.url), '.progress-estimator'),
 })
 
 export async function logPromise(promise, text, estimate) {

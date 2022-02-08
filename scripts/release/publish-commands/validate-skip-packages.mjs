@@ -2,19 +2,19 @@
 
 'use strict'
 
-const { readJson } = require('fs-extra')
-const { resolve, join } = require('path')
-const { execRead, getTheme } = require('../../utils')
+import { join } from 'node:path'
+import pkg from 'fs-extra'
+import { error } from '../../theme.mjs'
+import { execRead, getPackagePath } from '../../utils.mjs'
 
 const readPackageJSON = async (name) => {
-  const packagePath = resolve(__dirname, `../../../packages/${name}`)
+  const { readJson } = pkg
+  const packagePath = getPackagePath(name)
   const packageJSONPath = join(packagePath, 'package.json')
   return await readJson(packageJSONPath)
 }
 
-const run = async ({ packages, skipPackages }) => {
-  const theme = await getTheme()
-
+async function validateSkipPackages({ packages, skipPackages }) {
   if (skipPackages.length === 0) {
     return
   }
@@ -35,12 +35,12 @@ const run = async ({ packages, skipPackages }) => {
 
         if (!info) {
           console.error(
-            theme.error(
+            error(
               'error package: ' +
                 name +
                 ' depends on an unpublished skipped package'
             ),
-            theme.error('error package: ' + dependency + '@' + version)
+            error('error package: ' + dependency + '@' + version)
           )
           process.exit(1)
         }
@@ -52,10 +52,9 @@ const run = async ({ packages, skipPackages }) => {
   // unless the dependency has already been published to NPM.
   packages.forEach(async (name) => {
     const { dependencies, peerDependencies } = await readPackageJSON(name)
-
     validateDependencies(name, dependencies)
     validateDependencies(name, peerDependencies)
   })
 }
 
-module.exports = run
+export default validateSkipPackages

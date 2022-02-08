@@ -2,10 +2,11 @@
 
 'use strict'
 
-const { resolve, join } = require('path')
-const { exec } = require('child-process-promise')
-const { readJsonSync } = require('fs-extra')
-const { confirm, execRead, getTheme } = require('../../utils')
+import { join } from 'node:path'
+import { exec } from 'child-process-promise'
+import pkg from 'fs-extra'
+import { error, success } from '../../theme.mjs'
+import { confirm, execRead, getPackagePath } from '../../utils.mjs'
 
 async function addDistTags({ dry, tags, version }, packageName, packagePath) {
   if (dry) {
@@ -28,9 +29,9 @@ async function addUntaggedTags({ dry, tags }, packageName) {
   await exec(`npm dist-tag rm ${packageName} untagged`)
 }
 
-const run = async ({ dry, tags, ci }, packageName) => {
-  const theme = await getTheme()
-  const packagePath = resolve(__dirname, `../../../packages/${packageName}`)
+async function publishToNPM({ dry, tags, ci }, packageName) {
+  const { readJsonSync } = pkg
+  const packagePath = getPackagePath(packageName)
   const { version } = readJsonSync(join(packagePath, 'package.json'))
   // Check if this package version has already been published.
   // If so we might be resuming from a previous run.
@@ -40,7 +41,7 @@ const run = async ({ dry, tags, ci }, packageName) => {
 
   if (info) {
     console.log(
-      theme.error(
+      error(
         'error: package ' +
           packageName +
           '@' +
@@ -52,9 +53,7 @@ const run = async ({ dry, tags, ci }, packageName) => {
       await confirm('Is this expected?')
     }
   } else {
-    console.log(
-      theme.success`{spinnerSuccess ✓} Publishing {package ${packageName}}`
-    )
+    console.log(success`{spinnerSuccess ✓} Publishing {package ${packageName}}`)
 
     // Publish the package and tag it.
     await exec(`npm publish --tag=${tags[0]}`, {
@@ -66,4 +65,4 @@ const run = async ({ dry, tags, ci }, packageName) => {
   }
 }
 
-module.exports = run
+export default publishToNPM

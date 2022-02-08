@@ -2,10 +2,10 @@
 
 'use strict'
 
-const { execRead, logPromise, getTheme } = require('../../utils')
+import { error, info } from '../../theme.mjs'
+import { execRead, logPromise } from '../../utils.mjs'
 
-const run = async (packages) => {
-  const theme = await getTheme()
+async function checkNPMPermissions(packages) {
   const currentUser = await execRead('npm whoami')
   const failedProjects = []
 
@@ -24,15 +24,15 @@ const run = async (packages) => {
 
   await logPromise(
     Promise.all(packages.map(checkProject)),
-    theme.info('Checking NPM permissions for ' + currentUser + '.')
+    info('Checking NPM permissions for ' + currentUser + '.')
   )
 
   if (failedProjects.length) {
     console.error(
-      theme.error`
+      error`
       {error Insufficient NPM permissions}
       \nNPM user ${currentUser} is not an owner for: ${failedProjects
-        .map((name) => theme.package(name))
+        .map((name) => error(name))
         .join(', ')}
       \nPlease contact a TVA team member to be added to the above project(s).
       `
@@ -43,4 +43,4 @@ const run = async (packages) => {
   }
 }
 
-module.exports = run
+export default checkNPMPermissions

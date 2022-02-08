@@ -2,12 +2,13 @@
 
 'use strict'
 
-const { readJson } = require('fs-extra')
-const { join } = require('path')
-const { getTheme, warning } = require('../../utils')
+import { join } from 'node:path'
+import pkg from 'fs-extra'
+import { error } from '../../theme.mjs'
+import { warning } from '../../utils.mjs'
 
-function tagError(theme, message) {
-  return theme.error(errorMessage(message))
+function tagError(message) {
+  return error(errorMessage(message))
 }
 
 function errorMessage({ release, version, badTag }) {
@@ -21,8 +22,8 @@ function errorMessage({ release, version, badTag }) {
   )
 }
 
-const run = async ({ cwd, packages, tags }) => {
-  const theme = await getTheme()
+async function validateTags({ cwd, packages, tags }) {
+  const { readJson } = pkg
   // Prevent a "next" release from ever being published as @latest
   // All canaries share a version number, so it's okay to check any of them.
   const arbitraryPackageName = packages[0]
@@ -40,7 +41,7 @@ const run = async ({ cwd, packages, tags }) => {
     if (tags.includes('latest')) {
       warning(
         !isExperimentalVersion,
-        tagError(theme, {
+        tagError({
           badTag: 'latest',
           version,
           release: 'Experimental',
@@ -48,7 +49,7 @@ const run = async ({ cwd, packages, tags }) => {
       )
       warning(
         isExperimentalVersion,
-        tagError(theme, {
+        tagError({
           badTag: 'next',
           version,
           release: 'latest',
@@ -58,7 +59,7 @@ const run = async ({ cwd, packages, tags }) => {
 
     warning(
       !(tags.includes('next') && isExperimentalVersion),
-      tagError(theme, {
+      tagError({
         badTag: 'experimental',
         version,
         release: 'next',
@@ -66,7 +67,7 @@ const run = async ({ cwd, packages, tags }) => {
     )
     warning(
       !(tags.includes('experimental') && !isExperimentalVersion),
-      tagError(theme, {
+      tagError({
         badTag: 'next',
         version,
         release: 'exprimental',
@@ -75,7 +76,7 @@ const run = async ({ cwd, packages, tags }) => {
   } else {
     warning(
       tags.includes('latest'),
-      tagError(theme, {
+      tagError({
         badTag: 'stable',
         version,
         release: 'latest',
@@ -83,7 +84,7 @@ const run = async ({ cwd, packages, tags }) => {
     )
     warning(
       !tags.includes('experimental'),
-      tagError(theme, {
+      tagError({
         badTag: 'stable',
         version,
         release: 'experimental',
@@ -92,4 +93,4 @@ const run = async ({ cwd, packages, tags }) => {
   }
 }
 
-module.exports = run
+export default validateTags

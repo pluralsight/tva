@@ -1,6 +1,6 @@
 {
   "name": "@pluralsight/design-tokens",
-  "version": "0.0.0-experimental-12345-20220208",
+  "version": "0.0.0-experimental-test03-20220208",
   "description": "Design tokens for Pluralsight.",
   "main": "build/index.js",
   "files": [

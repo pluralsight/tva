@@ -2,13 +2,12 @@
 
 'use strict'
 
-const { readJson } = require('fs-extra')
-const { resolve, join } = require('path')
-const { confirm, getTheme } = require('../../utils')
+import { join } from 'node:path'
+import pkg from 'fs-extra'
+import { info, success } from '../../theme.mjs'
+import { confirm, getPackagePath } from '../../utils.mjs'
 
-const run = async ({ packages, tags, ci }) => {
-  const theme = await getTheme()
-
+async function confirmVersionAndTags({ packages, tags, ci }) {
   console.clear()
 
   if (tags.length === 0) {
@@ -16,25 +15,26 @@ const run = async ({ packages, tags, ci }) => {
     process.exit(1)
   } else if (tags.length === 1) {
     console.log(
-      theme.success(
+      success(
         '✅  You are about the publish the following packages under the tag: ' +
           tags
       )
     )
   } else {
     console.log(
-      theme.success`✅  You are about the publish the following packages under the tags ${tags.join(
+      success`✅  You are about the publish the following packages under the tags ${tags.join(
         ' '
       )}:`
     )
   }
 
   packages.forEach(async (packageName) => {
-    const packagePath = resolve(__dirname, `../../../packages/${packageName}`)
+    const { readJson } = pkg
+    const packagePath = getPackagePath(packageName)
     const packageJSONPath = join(packagePath, 'package.json')
     const packageJSON = await readJson(packageJSONPath)
     console.log(
-      theme.info(
+      info(
         '\n• package: ' + packageName + ' \n  version: ' + packageJSON.version
       )
     )
@@ -47,4 +47,4 @@ const run = async ({ packages, tags, ci }) => {
 
 // Run this directly because it's fast,
 // and logPromise would interfere with console prompting.
-module.exports = run
+export default confirmVersionAndTags
