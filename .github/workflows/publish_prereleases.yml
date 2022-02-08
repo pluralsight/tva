@@ -7,6 +7,9 @@ on:
     branches:
       - main
 
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 jobs:
   build-packages:
     runs-on: ubuntu-latest
@@ -36,8 +39,6 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-      - env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: |
           yarn install
           yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci
@@ -56,8 +57,6 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-      - env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: |
           yarn install
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
