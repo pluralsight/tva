@@ -36,8 +36,9 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
+      - env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: |
-          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
           yarn install
           yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags experimental
@@ -55,8 +56,9 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
+      - env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: |
-          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
           yarn install
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags alpha,next
