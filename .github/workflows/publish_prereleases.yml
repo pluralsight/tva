@@ -39,7 +39,7 @@ jobs:
       - run: |
           echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
           yarn install
-          yarn prepare:release --release experimental --commit=${{ secrets.GITHUB_SHA }} --ci
+          yarn prepare:release --release experimental --commit=${{ github.GITHUB_SHA }} --ci
           yarn publish:packages --ci --tags experimental
 
   next-release:
@@ -58,5 +58,5 @@ jobs:
       - run: |
           echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
           yarn install
-          yarn prepare:release --release next --commit=${{ secrets.GITHUB_SHA }} --ci
+          yarn prepare:release --release next --commit=${{ github.GITHUB_SHA }} --ci
           yarn publish:packages --ci --tags alpha,next
