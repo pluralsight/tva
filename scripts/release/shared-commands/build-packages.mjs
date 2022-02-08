@@ -11,7 +11,7 @@ async function buildPackages(packageList, isCI) {
     // TODO: Setup GH SHA to abe able to download artifacts and reuse
     // https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts
     // await exec('gh run download <run-id> -n packages')
-    process.exit(1)
+    // process.exit(1)
   }
 
   console.log(info`\n🛠  Building public packages...`)
