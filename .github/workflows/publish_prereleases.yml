@@ -41,8 +41,6 @@ jobs:
           cache: 'yarn'
       - run: |
           yarn install
-          yarn npm whoami
-          npm whoami
           yarn prepare:release --release experimental --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags experimental
 

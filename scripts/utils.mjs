@@ -33,8 +33,13 @@ export async function confirm(message) {
 }
 
 export async function execRead(command, options) {
-  const { stdout } = await exec(command, options)
-  return stdout.trim()
+  try {
+    const { stdout } = await exec(command, options)
+    return stdout.trim()
+  } catch (error) {
+    console.error(error)
+    process.exit(1)
+  }
 }
 
 export function getPackagePath(packageName) {
