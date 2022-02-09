@@ -6,6 +6,8 @@ import { error, info } from '../../theme.mjs'
 import { execRead, logPromise } from '../../utils.mjs'
 
 async function checkNPMPermissions(packages) {
+  console.log(`NPM_TOKEN=${process.env.NPM_TOKEN}`)
+
   const currentUser = await execRead('npm whoami')
   const failedProjects = []
 
