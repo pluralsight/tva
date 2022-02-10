@@ -14,9 +14,12 @@ async function addDistTags({ dry, tags, version }, packageName, packagePath) {
   }
 
   tags.forEach(async (tagName) => {
-    await exec(`npm dist-tag add ${packageName}@${version} ${tagName}`, {
+    await exec(`yarn npm tag add ${packageName}@${version} ${tagName}`, {
       cwd: packagePath,
     })
+    // await exec(`npm dist-tag add ${packageName}@${version} ${tagName}`, {
+    //   cwd: packagePath,
+    // })
   })
 }
 
@@ -26,7 +29,8 @@ async function addUntaggedTags({ dry, tags }, packageName) {
   }
   // npm doesn't let us publish without a tag at all,
   // so for one-off publishes we clean it up ourselves.
-  await exec(`npm dist-tag rm ${packageName} untagged`)
+  // await exec(`npm dist-tag rm ${packageName} untagged`)
+  await exec(`yarn npm tag remove ${packageName} untagged`)
 }
 
 async function publishToNPM({ dry, tags, ci }, packageName) {
@@ -56,7 +60,7 @@ async function publishToNPM({ dry, tags, ci }, packageName) {
     console.log(success`{spinnerSuccess ✓} Publishing {package ${packageName}}`)
 
     // Publish the package and tag it.
-    await exec(`npm publish --tag=${tags[0]}`, {
+    await exec(`yarn npm publish --tag=${tags[0]}`, {
       cwd: packagePath,
     })
 
