@@ -10,6 +10,7 @@ async function buildPackages(packageList, isCI) {
   if (isCI) {
     // TODO: Setup GH SHA to abe able to download artifacts and reuse
     // https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts
+    // Need to figure out how to get run-id
     // await exec('gh run download <run-id> -n packages')
     // process.exit(1)
   }
