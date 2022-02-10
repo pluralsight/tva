@@ -6,9 +6,7 @@ import { error, info } from '../../theme.mjs'
 import { execRead, logPromise } from '../../utils.mjs'
 
 async function checkNPMPermissions(packages) {
-  // TODO: Remove when CI working with token
-  console.log(`NPM_TOKEN=${process.env.NPM_TOKEN}`)
-
+  const currentUser = await execRead('yarn npm whoami')
   const currentUser = await execRead('npm whoami')
   const failedProjects = []
 
