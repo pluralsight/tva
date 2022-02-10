@@ -14,7 +14,7 @@
     "clear:website": "yarn workspace website clear",
     "deploy:website": "yarn workspace website deploy",
     "lint:css": "stylelint-config-prettier-check",
-    "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js)\"",
+    "lint:js": "eslint --max-warnings 0 \"./**/*.@(ts|js|mjs)\"",
     "lint:ts": "tsc --noEmit",
     "postinstall": "husky install",
     "prepare:release": "yarn workspace release-script run prepare-release",
