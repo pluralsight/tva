@@ -17,10 +17,16 @@ function getPrereleaseChannelLabel(version) {
   return version.nextChannelLabel
 }
 
+function getShortCommit(commit) {
+  return commit.substring(0, 6)
+}
+
 function getPrereleaseVersion(version, date) {
   const channelLabel = getPrereleaseChannelLabel(version)
   const isExperimental = channelLabel === 'experimental'
-  const defaultVersion = `${version.DesignVersion}-${channelLabel}-${version.commit}`
+  const defaultVersion = `${
+    version.DesignVersion
+  }-${channelLabel}-${getShortCommit(version.commit)}`
 
   if (isExperimental) {
     return `${defaultVersion}-${date}`
