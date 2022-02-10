@@ -6,10 +6,9 @@ import { error, info } from '../../theme.mjs'
 import { execRead, logPromise } from '../../utils.mjs'
 
 async function checkNPMPermissions(packages) {
-  const yarnUser = await execRead('yarn npm whoami')
+  const currentUser = await execRead('yarn npm whoami')
   console.log(`yarnUser: ${yarnUser}`)
-  const currentUser = await execRead('npm whoami')
-  console.log(`npmUser: ${currentUser}`)
+  // const currentUser = await execRead('npm whoami')
   const failedProjects = []
 
   const checkProject = async (project) => {
