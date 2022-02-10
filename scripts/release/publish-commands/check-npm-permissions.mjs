@@ -9,6 +9,7 @@ async function checkNPMPermissions(packages) {
   const yarnUser = await execRead('yarn npm whoami')
   console.log(`yarnUser: ${yarnUser}`)
   const currentUser = await execRead('npm whoami')
+  console.log(`npmUser: ${currentUser}`)
   const failedProjects = []
 
   const checkProject = async (project) => {
