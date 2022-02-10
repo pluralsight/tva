@@ -59,6 +59,7 @@ jobs:
           node-version: '14'
           cache: 'yarn'
       - run: |
+          yarn config set -H 'npmAuthToken' "${{ secrets.NPM_TOKEN }}"
           yarn install
           yarn prepare:release --release next --commit=$GITHUB_SHA --ci
           yarn publish:packages --ci --tags alpha,next

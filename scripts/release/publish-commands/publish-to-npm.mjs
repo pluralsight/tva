@@ -14,12 +14,12 @@ async function addDistTags({ dry, tags, version }, packageName, packagePath) {
   }
 
   tags.forEach(async (tagName) => {
-    await exec(`yarn npm tag add ${packageName}@${version} ${tagName}`, {
-      cwd: packagePath,
-    })
-    // await exec(`npm dist-tag add ${packageName}@${version} ${tagName}`, {
-    //   cwd: packagePath,
-    // })
+    await exec(
+      `yarn npm tag add @pluralsight/design-${packageName}@${version} ${tagName}`,
+      {
+        cwd: packagePath,
+      }
+    )
   })
 }
 
@@ -30,7 +30,7 @@ async function addUntaggedTags({ dry, tags }, packageName) {
   // npm doesn't let us publish without a tag at all,
   // so for one-off publishes we clean it up ourselves.
   // await exec(`npm dist-tag rm ${packageName} untagged`)
-  await exec(`yarn npm tag remove ${packageName} untagged`)
+  await exec(`yarn npm tag remove @pluralsight/design-${packageName} untagged`)
 }
 
 async function publishToNPM({ dry, tags, ci }, packageName) {
