@@ -45,7 +45,7 @@ jobs:
   next-release:
     runs-on: ubuntu-latest
     name: 🚀 Publish next release
-    needs: build-packages
+    needs: experimental-release
     env:
       USE_SSH: true
       GIT_USER: ${{ secrets.GH_USERNAME }}
