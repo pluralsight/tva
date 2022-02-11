@@ -3,7 +3,11 @@
 'use strict'
 
 import { join } from 'node:path'
-import { experimentalPackages, stablePackages } from '../../versions.mjs'
+import {
+  experimentalPackages,
+  stablePackages,
+  DesignVersion,
+} from '../../versions.mjs'
 import { error } from '../theme.mjs'
 import { __dirname } from '../utils.mjs'
 import parseParams from './publish-commands/parse-publish-params.mjs'
@@ -13,6 +17,7 @@ import confirmVersionAndTags from './publish-commands/confirm-version-and-tags.m
 import validateSkipPackages from './publish-commands/validate-skip-packages.mjs'
 import checkNPMPermissions from './publish-commands/check-npm-permissions.mjs'
 import publishToNPM from './publish-commands/publish-to-npm.mjs'
+import printFollowUpInstructions from './publish-commands/print-follow-up-instructions.mjs'
 
 async function run() {
   const params = await parseParams()
@@ -81,8 +86,7 @@ async function run() {
       }
     })
 
-    // await updateStableVersionNumbers(params)
-    // await printFollowUpInstructions(params)
+    await printFollowUpInstructions({ ...params, version: DesignVersion })
   }
 }
 
