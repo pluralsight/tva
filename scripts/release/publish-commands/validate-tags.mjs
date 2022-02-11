@@ -50,9 +50,9 @@ async function validateTags({ cwd, packages, tags }) {
       warning(
         isExperimentalVersion,
         tagError({
-          badTag: 'next',
+          badTag: 'latest',
           version,
-          release: 'latest',
+          release: 'next',
         })
       )
     }
@@ -77,17 +77,9 @@ async function validateTags({ cwd, packages, tags }) {
     warning(
       tags.includes('latest'),
       tagError({
-        badTag: 'stable',
+        badTag: 'experimental',
         version,
         release: 'latest',
-      })
-    )
-    warning(
-      !tags.includes('experimental'),
-      tagError({
-        badTag: 'stable',
-        version,
-        release: 'experimental',
       })
     )
   }
