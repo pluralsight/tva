@@ -41,7 +41,7 @@ Below we'll look at migrating the Button component which will be the same patter
 In order to use TVA, we need to get it into your project first. For most projects, you will only need to install the components and icons packages.
 
 ```bash npm2yarn
-npm install @pluralsight/tva-components @pluralsight/tva-icons
+npm install @pluralsight/tva-headless-styles
 ```
 
 All of our packages are lightweight because they only use vanilla JS/TS, so you don't have to worry about adding additional overhead to your bundle size.
@@ -58,7 +58,7 @@ In this example, we are creating a `PrimaryButton` for your project.
 
 ```typescript title="components/PrimaryButton.tsx"
 import { type ButtonHTMLAttributes } from 'react'
-import { getButtonProps } from '@pluralsight/tva-components'
+import { getButtonProps } from '@pluralsight/tva-headless-styles'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
@@ -85,7 +85,7 @@ If you are a team that uses CSS-in-JS, you can just as easily use the same strat
 
 ```typescript title="components/PrimaryButton.tsx"
 import styled from 'styled-components'
-import { getButtonProps } from '@pluralsight/tva-components'
+import { getButtonProps } from '@pluralsight/tva-headless-styles'
 
 const tvaBtnProps = getJSButtonProps({ kind: 'default' })
 

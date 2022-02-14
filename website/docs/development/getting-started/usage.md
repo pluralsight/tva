@@ -13,7 +13,7 @@ This is **unreleased** documentation for TVA **components** package.
 
 TVA packages and "components" work in isolation. **They are self-supporting**, and will only inject the styles they need to display and don't rely on any global style-sheets such as [normalize.css](https://github.com/necolas/normalize.css/).
 
-You can use any of the packages/components as demonstrated in the documentation. Please refer to each "component's" [page](../packages/components/button) to see how they should be imported and used.
+You can use any of the packages/components as demonstrated in the documentation. Please refer to each "component's" [page](../packages/headless-styles/button) to see how they should be imported and used.
 
 ## Headless design
 
@@ -28,7 +28,7 @@ We strive to provide codesandbox examples for the common popular stacks (mention
 Here's a quick example using React to get you started, **it's literally all you need**:
 
 ```jsx title="components/Button.jsx"
-import { getButtonProps } from '@pluralsight/tva-components
+import { getButtonProps } from '@pluralsight/tva-headless-styles
 
 const tvaBtnProps = getButtonProps()
 
@@ -64,7 +64,7 @@ TVA is developed with a mobile-first strategy in which we first write code for m
 
 ## Typescript
 
-TVA is built using Typescript so we will include type definitions in the `components` package for any project that may require them.
+TVA is built using Typescript so we will include type definitions in the `headless-styles` package for any project that may require them.
 
 ## Versioned Documentation
 

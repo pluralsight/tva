@@ -73,7 +73,7 @@ You can do this (in any framework or library - here we are combining MUI with TV
 ```jsx title="src/components/ActionButton.jsx"
 import { styled } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
-import { getButtonProps } from '@pluralsight/tva-components'
+import { getButtonProps } from '@pluralsight/tva-headless-styles'
 
 // 💡 Keep the function out of the component for better performance
 const {styles as tvaStyles, ...a11yProps} = getButtonProps()

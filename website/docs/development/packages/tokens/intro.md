@@ -18,7 +18,7 @@ This is **unreleased** documentation for TVA **tokens** package.
 To use tokens via the web, just install the npm package.
 
 ```bash npm2yarn
-npm install @pluralsight/tva-tokens
+npm install @pluralsight/design-tokens
 ```
 
 ## What is a token?
@@ -55,7 +55,7 @@ What this looks like in terms of an actual token can be seen in an example for s
 
 ## Usage
 
-The `tokens` package is the single source of truth for all style properties and assets in the design system. This is how we define styles in `components` and why you can just use this package if you need maximum flexibility - or are on a mobile platform.
+The `tokens` package is the single source of truth for all style properties and assets in the design system. This is how we define styles in `headless-styles` and why you can just use this package if you need maximum flexibility - or are on a mobile platform.
 
 Depending on what platform you are using, will determine what you are able to consume from the `tokens` package.
 
@@ -63,7 +63,7 @@ Depending on what platform you are using, will determine what you are able to co
 
 For the web (npm), we will ship `css` properties, `scss` variables, and `js` es6 modules. This way, you can choose whatever syntax works best for your project.
 
-The `components` package will consume the `css` and `js` tokens internally and depending on which function you call (css vs. CSS-in-JS) we will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only).
+The `headless-styles` package will consume the `css` and `js` tokens internally and depending on which function you call (css vs. CSS-in-JS) we will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only).
 
 #### CSS
 

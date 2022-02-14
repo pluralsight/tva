@@ -26,7 +26,7 @@ Here are the top priorities:
 - **Better documentation.** :books: There is no perfect documentation and we will strive to continue to get to that standard with each release and community contribution.
 - **Performance.** :racing_car: With every decision we make, we must stay extremely lightweight and performant. This is will always be our priority to you.
 - **Flexibility**. 🧘 One of the biggest challenges we face is being truly flexible in an ever changing frontend environment. Making React components (or any other library) only helps the small audience of those users. Our goal is to ensure we are creating something bigger than any UI framework or library which comes into existence so that we can have a larger community of users and contributers.
-- **Typescript** :mechanical_arm: The codebase is mostly written in Typescript and we will have definitions available from the `@types/tva` strongly typed package.
+- **Typescript** :mechanical_arm: The codebase is mostly written in Typescript and we will have definitions available in every package that uses Typescript.
 - **Accessibility** :deaf_woman: Pluralsight puts a high focus on a11y and we will keep a very strong priority in making sure we are delivering the most accessbile library we can create - from screen readers, down to colorblindess. We are here for you!
 
 ## Quarterly Roadmap
