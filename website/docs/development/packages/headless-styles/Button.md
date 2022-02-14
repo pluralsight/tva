@@ -145,7 +145,7 @@ interface JSButtonProps {
 getIconLabelProps(): IconLabelButtonProps
 ```
 
-Our eyes/brain recognize logos more easily than plain text, so you might want to add icons to certain buttons to enhance the UX. For example, if you have a edit button you can label it with a pencil icon.
+Our eyes/brain recognize logos more easily than plain text, so you might want to add icons to certain buttons to enhance the UX. For example, if you have an edit button you can label it with a pencil icon.
 
 ```jsx title="Return value example"
 {
