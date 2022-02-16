@@ -139,6 +139,10 @@ const config = {
                 label: 'Discussions',
                 href: 'https://github.com/pluralsight/tva/discussions',
               },
+              {
+                label: 'Team',
+                href: '/docs/team',
+              },
             ],
           },
           {
