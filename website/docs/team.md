@@ -20,7 +20,7 @@ Casey is a life-long learner who stumbled into software-development after going 
 
 [@Rykus0 on Github](https://github.com/Rykus0) | [@tpietros on Twitter](https://twitter.com/tpietros)
 
-Tom is a father of 2, sometime writer, and martial artist who dabbles in music and theater.
+Tom has been enamored with Internet technology since the late 90s, and with humans even longer. He is a lover of nature who keeps busy with 2 kids, writing, martial arts, music, theater, games of all sorts, and gardening.
 
 ### Design
 
