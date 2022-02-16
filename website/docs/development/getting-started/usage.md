@@ -7,7 +7,7 @@ tags: [Development, Usage, Getting Started, Web, React Native]
 
 :::caution
 
-This is **unreleased** documentation for TVA **components** package.
+This is **unreleased** documentation for TVA **headless-styles** package.
 
 :::
 

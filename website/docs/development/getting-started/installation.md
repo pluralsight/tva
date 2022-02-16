@@ -53,6 +53,10 @@ To use the icon font, you must first add the TVA [icons font](https://github.com
 />
 ```
 
+:::caution
+This execution is currently being designed. We have created an [un-baised comparison](https://github.com/pluralsight/tva/discussions/70) of using SVGs vs an Icon library. If you have time, please visit the discussion and contribute by leaving a comment! 🎉
+:::
+
 ## Mobile Assets
 
 Our `tokens` package will also deliver all of our fonts and icons via assets for each platform we support (commonly `.png` types). :heart:
