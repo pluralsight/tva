@@ -4,7 +4,9 @@
   "description": "Design tokens for Pluralsight.",
   "main": "build/index.js",
   "files": [
-    "build/**/*"
+    "build/css/variables.css",
+    "build/scss/_variables.scss",
+    "index.js"
   ],
   "scripts": {
     "build": "style-dictionary build",
