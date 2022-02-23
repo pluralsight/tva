@@ -1,4 +1,5 @@
 {
+  "node": "17",
   "packages": ["packages/tokens"],
   "sandboxes": ["new"]
 }
