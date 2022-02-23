@@ -1,0 +1,4 @@
+{
+  "packages": ["packages/tokens"],
+  "sandboxes": ["new"]
+}
