@@ -1,4 +1,5 @@
 {
+  "buildCommand": "build:packages",
   "node": "14",
   "packages": ["packages/tokens"],
   "sandboxes": ["new"]
