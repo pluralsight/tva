@@ -1,0 +1,10 @@
+# This file should only export the dark theme colors. Other themes
+# will be declared in our normalize.css file. This is to keep performance
+# high and prevent "token vomit" (i.e. we just need to overwrite tokens
+# for each theme - not create additional unique ones).
+
+ps:
+  background:
+    value: '{color.base.blue.50.dark.value}'
+  text:
+    value: '{color.base.white.value}'

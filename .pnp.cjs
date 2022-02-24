@@ -623,6 +623,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/stack-utils', 'npm:2.0.1'],
         ['@types/testing-library__jest-dom', 'npm:5.14.1'],
         ['@types/unist', 'npm:2.0.6'],
+        ['@types/yaml', 'npm:1.9.6'],
         ['@types/yargs', 'npm:16.0.4'],
         ['@types/yargs-parser', 'npm:20.2.1'],
         [
@@ -842,7 +843,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['comma-separated-tokens', 'npm:1.0.8'],
         ['command-line-args', 'npm:4.0.7'],
         ['command-line-usage', 'npm:4.1.0'],
-        ['commander', 'npm:5.1.0'],
+        ['commander', 'npm:8.3.0'],
         ['commondir', 'npm:1.0.1'],
         ['compare-func', 'npm:2.0.0'],
         ['component-emitter', 'npm:1.3.0'],
@@ -1320,7 +1321,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['json3', 'npm:3.3.3'],
         ['json5', 'npm:2.2.0'],
         ['jsonc-parser', 'npm:3.0.0'],
-        ['jsonfile', 'npm:4.0.0'],
+        ['jsonfile', 'npm:6.1.0'],
         ['jsonparse', 'npm:1.3.1'],
         ['jsprim', 'npm:1.4.2'],
         ['keypress', 'npm:0.2.1'],
@@ -1908,7 +1909,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['strip-final-newline', 'npm:2.0.0'],
         ['strip-indent', 'npm:3.0.0'],
         ['strip-json-comments', 'npm:3.1.1'],
-        ['style-dictionary', 'npm:3.1.1'],
+        ['style-dictionary', 'npm:3.7.0'],
         ['style-search', 'npm:0.1.0'],
         ['style-to-object', 'npm:0.3.0'],
         [
@@ -2025,7 +2026,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['unist-util-stringify-position', 'npm:2.0.3'],
         ['unist-util-visit', 'npm:2.0.3'],
         ['unist-util-visit-parents', 'npm:3.1.1'],
-        ['universalify', 'npm:0.1.2'],
+        ['universalify', 'npm:2.0.0'],
         ['unpipe', 'npm:1.0.0'],
         ['unquote', 'npm:1.1.1'],
         ['unset-value', 'npm:1.0.0'],
@@ -10815,7 +10816,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: './packages/tokens/',
                 packageDependencies: [
                   ['@pluralsight/design-tokens', 'workspace:packages/tokens'],
-                  ['style-dictionary', 'npm:3.1.1'],
+                  ['@types/yaml', 'npm:1.9.6'],
+                  ['style-dictionary', 'npm:3.7.0'],
+                  ['yaml', 'npm:1.10.2'],
                 ],
                 linkType: 'SOFT',
               },
@@ -11944,6 +11947,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/@types-unist-npm-2.0.6-82641b4aa5-25cb860ff1.zip/node_modules/@types/unist/',
                 packageDependencies: [['@types/unist', 'npm:2.0.6']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/yaml',
+          [
+            [
+              'npm:1.9.6',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-yaml-npm-1.9.6-25a1e52ff0-3df74c9d40.zip/node_modules/@types/yaml/',
+                packageDependencies: [
+                  ['@types/yaml', 'npm:1.9.6'],
+                  ['yaml', 'npm:1.10.2'],
+                ],
                 linkType: 'HARD',
               },
             ],
@@ -20396,20 +20416,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/fs-extra-npm-4.0.3-2a1f6bc181-c5ae3c7043.zip/node_modules/fs-extra/',
                 packageDependencies: [
                   ['fs-extra', 'npm:4.0.3'],
-                  ['graceful-fs', 'npm:4.2.8'],
-                  ['jsonfile', 'npm:4.0.0'],
-                  ['universalify', 'npm:0.1.2'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-            [
-              'npm:8.1.0',
-              {
-                packageLocation:
-                  './.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/',
-                packageDependencies: [
-                  ['fs-extra', 'npm:8.1.0'],
                   ['graceful-fs', 'npm:4.2.8'],
                   ['jsonfile', 'npm:4.0.0'],
                   ['universalify', 'npm:0.1.2'],
@@ -34174,16 +34180,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'style-dictionary',
           [
             [
-              'npm:3.1.1',
+              'npm:3.7.0',
               {
                 packageLocation:
-                  './.yarn/unplugged/style-dictionary-npm-3.1.1-545efd222e/node_modules/style-dictionary/',
+                  './.yarn/unplugged/style-dictionary-npm-3.7.0-0860ecb1f5/node_modules/style-dictionary/',
                 packageDependencies: [
-                  ['style-dictionary', 'npm:3.1.1'],
+                  ['style-dictionary', 'npm:3.7.0'],
                   ['chalk', 'npm:4.1.2'],
                   ['change-case', 'npm:4.1.2'],
-                  ['commander', 'npm:5.1.0'],
-                  ['fs-extra', 'npm:8.1.0'],
+                  ['commander', 'npm:8.3.0'],
+                  ['fs-extra', 'npm:10.0.0'],
                   ['glob', 'npm:7.2.0'],
                   ['json5', 'npm:2.2.0'],
                   ['jsonc-parser', 'npm:3.0.0'],

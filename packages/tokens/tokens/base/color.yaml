@@ -1,0 +1,12 @@
+color:
+  base:
+    black:
+      value: '#000000'
+    blue:
+      '50':
+        light:
+          value: '#f0f9ff'
+        dark:
+          value: 'hsla(245, 36%, 15%, 1)'
+    white:
+      value: '#ffffff'

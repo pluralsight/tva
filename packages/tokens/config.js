@@ -1,11 +1,18 @@
 const baseFilter = require('./utils/baseFilter')
+const yaml = require('yaml')
 
 const baseFileConfig = {
   filter: baseFilter,
 }
 
 module.exports = {
-  source: ['tokens/**/*.json'],
+  parsers: [
+    {
+      pattern: /\.yaml$/,
+      parse: ({ contents, filePath }) => yaml.parse(contents),
+    },
+  ],
+  source: ['tokens/**/*.yaml'],
   platforms: {
     js: {
       transformGroup: 'js',
