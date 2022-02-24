@@ -8,6 +8,10 @@
     "build/scss/_variables.scss",
     "build/index.js"
   ],
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
   "scripts": {
     "build": "style-dictionary build",
     "clean": "rm -rf build",
