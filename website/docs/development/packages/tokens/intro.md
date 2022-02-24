@@ -64,14 +64,18 @@ Depending on what platform you are using, will determine what you are able to co
 For the web (npm), we ship `css` properties, `scss` variables, and `js` es6 modules. This way, you can choose whatever syntax works best for your project.
 
 :::info
-We include the CSS tokens in our normalize setup, so there is no need to install this package unless you are using another language.
+**We include the CSS tokens in our normalize setup**, so there is no need to install this package unless you are using another language.
 :::
 
 #### CSS
 
-When you use `css`, we use the `:root` psuedo-selector to store the properties.
+```css title="Alternatively importing tokens into your CSS"
+import "@pluralsight/design-tokens/build/css/variables.css";
+```
 
-```css title="CSS example"
+When you import `css`, we use the `:root` psuedo-selector to store the properties.
+
+```css title="CSS import outcome (example)"
 :root {
   --ps-text: #ff0000;
   --ps-background: #cccccc;
@@ -80,25 +84,29 @@ When you use `css`, we use the `:root` psuedo-selector to store the properties.
 
 #### es6
 
-When you use `js`, we use `export` for unique ID variable names.
+```javascript title="Alternatively importing tokens into your JS"
+import { PsText } from '@pluralsight/design-tokens'
+```
 
-```javascript title="JS example"
+When you use `js`, we `export` unique ID variable names.
+
+```javascript title="JS import outcome (example)"
 export const PsText = '#ff0000'
 export const PsBackground = '#cccccc'
 ```
 
 #### SCSS
 
-When you use `scss`, we use the variable syntax to store names.
+```scss title="Importing tokens into your SCSS"
+@use '@pluralsight/design-tokens/scss/_variables.scss';
+```
 
-```scss title="SCSS example"
+When you use `scss`, we set the SCSS variables.
+
+```scss title="SCSS import outcome (example)"
 $ps-text: #ffffff;
 $ps-background: #1b1834;
 ```
-
-:::tip
-The `headless-styles` package will consume the `css` and `js` tokens internally and depending on which setup you use (css vs. CSS-in-JS) we will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only). This means **you do not need to install this package** unless you do not plan on using `headless-styles`.
-:::
 
 ### Mobile
 
