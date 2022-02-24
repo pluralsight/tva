@@ -9,7 +9,7 @@ module.exports = {
   parsers: [
     {
       pattern: /\.yaml$/,
-      parse: ({ contents, filePath }) => yaml.parse(contents),
+      parse: ({ contents }) => yaml.parse(contents),
     },
   ],
   source: ['tokens/**/*.yaml'],
