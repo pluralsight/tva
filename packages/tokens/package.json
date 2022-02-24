@@ -9,8 +9,8 @@
     "build/index.js"
   ],
   "sideEffects": [
-    "*.css",
-    "*.scss"
+    "build/css/*.css",
+    "build/scss/*.scss"
   ],
   "scripts": {
     "build": "style-dictionary build",
