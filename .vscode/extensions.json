@@ -7,6 +7,7 @@
     "mgmcdermott.vscode-language-babel",
     "VisualStudioExptTeam.vscodeintellicode",
     "stylelint.vscode-stylelint",
-    "sonarsource.sonarlint-vscode"
+    "sonarsource.sonarlint-vscode",
+    "redhat.vscode-yaml"
   ]
 }
