@@ -7,7 +7,7 @@ tags: [Development, Packages, Tokens, Intro]
 
 :::caution
 
-This is **unreleased** documentation for TVA **tokens** package.
+This is **unreleased** documentation for the **tokens** package.
 
 :::
 
@@ -61,40 +61,57 @@ Depending on what platform you are using, will determine what you are able to co
 
 ### Web
 
-For the web (npm), we will ship `css` properties, `scss` variables, and `js` es6 modules. This way, you can choose whatever syntax works best for your project.
+For the web (npm), we ship `css` properties, `scss` variables, and `js` es6 modules. This way, you can choose whatever syntax works best for your project.
 
-The `headless-styles` package will consume the `css` and `js` tokens internally and depending on which function you call (css vs. CSS-in-JS) we will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only).
+:::info
+We include the CSS tokens in our normalize setup, so there is no need to install this package unless you are using another language.
+:::
 
 #### CSS
 
-When you use the `css`, we use the `:root` psuedo-selector to store the properties.
+When you use `css`, we use the `:root` psuedo-selector to store the properties.
 
-```css title="CSS example - not actual properties or values"
+```css title="CSS example"
 :root {
   --ps-text: #ff0000;
-  --ps-warning-text: #00ff00;
-  --ps-text-strong: #cccccc;
-  --ps-size-s: 0.75rem;
-  --ps-size-m: 1rem;
-  --ps-size-l: 2rem;
-  --ps-size-xl: 1rem;
+  --ps-background: #cccccc;
 }
 ```
 
 #### es6
 
-When you use the `js`, we use `export` for unique ID variable names.
+When you use `js`, we use `export` for unique ID variable names.
 
-```javascript title="JS example - not actual properties or values"
+```javascript title="JS example"
 export const PsText = '#ff0000'
-export const PsWarningText = '#00ff00'
-export const PsTextStrong = '#cccccc'
-export const PsSizeS = '0.75rem'
-export const PsSizeM = '1rem'
-export const PsSizeL = '2rem'
-export const PsSizeXL = '1rem'
+export const PsBackground = '#cccccc'
 ```
+
+#### SCSS
+
+When you use `scss`, we use the variable syntax to store names.
+
+```scss title="SCSS example"
+$ps-text: #ffffff;
+$ps-background: #1b1834;
+```
+
+:::tip
+The `headless-styles` package will consume the `css` and `js` tokens internally and depending on which setup you use (css vs. CSS-in-JS) we will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only). This means **you do not need to install this package** unless you do not plan on using `headless-styles`.
+:::
 
 ### Mobile
 
 For mobile, we will ship `iOS`, `swift`, and `android` files to import into your projects via our repo.
+
+## Why are the tokens limited to colors?
+
+During our R&D phase, we have done extensive research to understand the best way to deliver tokens in the most performant way so that the customer experience does not have a negative impact regarding render performance & load times.
+
+In this research we have found that there _is_ a threshold where CSS variables do negatively impact browser performance (just like specific properties do). For example, in some case studies, using a variable for `padding` throughout your app can slow down render performance by **up to 2 seconds**!
+
+During this research we have also compared solutions that are currently being executed by teams (i.e. Twitter, Github, etc.) drawing a correlation to slower apps using more tokens (in the web).
+
+Thus, the current standard which seems to keep a performant load time (under 1 second) is to **keep variables limited to only colors and the quantity being defined up to 37**.
+
+This is the standard we align with for the `tokens` package and is why our semantic-tokens are what they are.
