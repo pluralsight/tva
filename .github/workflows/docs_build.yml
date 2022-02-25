@@ -11,6 +11,6 @@ jobs:
     name: 👷‍♀️ Docs successfully build
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
       - run: yarn install
       - run: yarn build:website

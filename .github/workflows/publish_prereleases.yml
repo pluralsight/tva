@@ -9,7 +9,7 @@ jobs:
     name: 👷‍♀️ Build all packages
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
@@ -28,7 +28,7 @@ jobs:
     needs: build-packages
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
@@ -47,7 +47,7 @@ jobs:
       GIT_USER: ${{ secrets.GH_USERNAME }}
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
