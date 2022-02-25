@@ -9,7 +9,7 @@ jobs:
     name: 🧪 Run unit tests
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
@@ -21,7 +21,7 @@ jobs:
     name: 👷‍♀️ All public packages successfully build
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14'
           cache: 'yarn'
