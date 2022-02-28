@@ -1,0 +1,66 @@
+color:
+  neutral:
+    background:
+      dark:
+        value: 'hsl(251deg 42% 10% / 100%)'
+      light:
+        value: 'hsl(210deg 40% 96% / 100%)'
+    background-weak:
+      dark:
+        value: 'hsl(245deg 36% 15% / 100%)'
+      light:
+        value: 'hsl(0deg 0% 100% / 100%)'
+    background-medium:
+      dark:
+        value: 'hsl(245deg 36% 20% / 100%)'
+      light:
+        value: 'hsl(210deg 40% 97% / 100%)'
+    background-strong:
+      dark:
+        value: 'hsl(244deg 36% 24% / 100%)'
+      light:
+        value: 'hsl(214deg 32% 93% / 100%)'
+    black:
+      value: 'hsl(0deg 0% 0% / 90%)'
+    border:
+      dark:
+        value: 'hsl(234deg 30% 49% / 60%)'
+      light:
+        value: 'hsl(214deg 36% 66% / 50%)'
+    border-muted:
+      dark:
+        value: 'hsl(234deg 30% 49% / 30%)'
+      light:
+        value: 'hsl(214deg 36% 66% / 30%)'
+    border-strong:
+      dark:
+        value: 'hsl(234deg 30% 49% / 100%)'
+      light:
+        value: 'hsl(214deg 35% 66% / 100%)'
+    label-muted:
+      dark:
+        value: 'hsl(0deg 0% 100% / 80%)'
+      light:
+        value: 'hsl(0deg 0% 0% / 65%)'
+    label-subtle:
+      dark:
+        value: 'hsl(0deg 0% 100% / 50%)'
+      light:
+        value: 'hsl(0deg 0% 0% / 45%)'
+    interactive-background:
+      dark:
+        value: 'hsl(214deg 48% 83% / 40%)'
+      light:
+        value: 'hsl(234deg 30% 49% / 50%)'
+    interactive-background-active:
+      light:
+        value: 'hsl(214deg 48% 83% / 70%)'
+      dark:
+        value: 'hsl(234deg 30% 49% / 30%)'
+    interactive-background-hover:
+      light:
+        value: 'hsl(214deg 48% 83% / 60%)'
+      dark:
+        value: 'hsl(234deg 30% 49% / 60%)'
+    white:
+      value: 'hsl(0deg 0% 100% / 100%)'

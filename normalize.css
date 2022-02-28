@@ -157,3 +157,14 @@ textarea {
   top: auto;
   width: 1px;
 }
+
+/* themes */
+
+.light {
+  --ps-background: #fff;
+  --ps-selected-background: hsl(249deg 63% 51% / 100%);
+  --ps-selected-background-weak: hsl(214deg 48% 83% / 40%);
+  --ps-selected-background-medium: hsl(253deg 100% 94% / 100%);
+  --ps-text: hsl(0deg 0% 0% / 90%);
+  --ps-text-weak: hsl(249deg 67% 25% / 100%);
+}

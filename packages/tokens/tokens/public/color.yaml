@@ -5,6 +5,6 @@
 
 ps:
   background:
-    value: '{color.base.blue.50.dark.value}'
+    value: '{color.neutral.background-weak.dark.value}'
   text:
-    value: '{color.base.white.value}'
+    value: '{color.neutral.white.value}'

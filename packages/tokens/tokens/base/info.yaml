@@ -1,0 +1,42 @@
+color:
+  info:
+    background:
+      dark:
+        value: 'hsl(202deg 100% 35% / 100%)'
+      light:
+        value: 'hsl(202deg 100% 43% / 100%)'
+    background-active:
+      dark:
+        value: 'hsl(202deg 100% 35% / 60%)'
+      light:
+        value: 'hsl(202deg 100% 43% / 70%)'
+    background-hover:
+      dark:
+        value: 'hsl(202deg 100% 35% / 80%)'
+      light:
+        value: 'hsl(202deg 100% 43% / 85%)'
+    background-weak:
+      dark:
+        value: 'hsl(204deg 100% 20% / 100%)'
+      light:
+        value: 'hsl(216deg 100% 91% / 100%)'
+    border:
+      dark:
+        value: 'hsl(202deg 100% 50% / 100%)'
+      light:
+        value: 'hsl(202deg 100% 50% / 100%)'
+    label:
+      dark:
+        value: 'hsl(216deg 100% 91% / 100%)'
+      light:
+        value: 'hsl(204deg 100% 20% / 100%)'
+    label-muted:
+      dark:
+        value: 'hsl(212deg 100% 76% / 100%)'
+      light:
+        value: 'hsl(197deg 100% 25% / 100%)'
+    label-subtle:
+      dark:
+        value: 'hsl(202deg 100% 50% / 100%)'
+      light:
+        value: 'hsl(202deg 100% 43% / 100%)'
