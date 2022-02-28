@@ -4,6 +4,8 @@ const yaml = require('yaml')
 const baseFileConfig = {
   filter: baseFilter,
 }
+const transforms = ['color/hsl-4']
+const KEBAB = 'name/cti/kebab'
 
 module.exports = {
   parsers: [
@@ -16,6 +18,7 @@ module.exports = {
   platforms: {
     js: {
       transformGroup: 'js',
+      transforms: [...transforms, 'name/cti/camel'],
       buildPath: 'build/',
       files: [
         {
@@ -27,6 +30,7 @@ module.exports = {
     },
     css: {
       transformGroup: 'css',
+      transforms: [...transforms, KEBAB],
       buildPath: 'build/css/',
       files: [
         {
@@ -38,6 +42,7 @@ module.exports = {
     },
     scss: {
       transformGroup: 'scss',
+      transforms: [...transforms, KEBAB],
       buildPath: 'build/scss/',
       files: [
         {
@@ -49,13 +54,9 @@ module.exports = {
     },
     android: {
       transformGroup: 'android',
+      transforms,
       buildPath: 'build/android/',
       files: [
-        {
-          ...baseFileConfig,
-          destination: 'font_dimens.xml',
-          format: 'android/fontDimens',
-        },
         {
           ...baseFileConfig,
           destination: 'colors.xml',
@@ -65,6 +66,7 @@ module.exports = {
     },
     ios: {
       transformGroup: 'ios',
+      transforms,
       buildPath: 'build/ios/',
       files: [
         {
