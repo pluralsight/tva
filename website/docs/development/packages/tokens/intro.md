@@ -7,7 +7,7 @@ tags: [Development, Packages, Tokens, Intro]
 
 :::caution
 
-This is **unreleased** documentation for the **tokens** package.
+This is **experimental** documentation for the **design-tokens** package.
 
 :::
 
