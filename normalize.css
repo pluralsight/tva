@@ -167,7 +167,6 @@ textarea {
   --ps-border: hsl(214deg 36% 66% / 50%);
   --ps-danger-background: hsl(347deg 100% 89% / 100%);
   --ps-danger-border: hsl(326deg 100% 41% / 100%);
-  --ps-danger-icon: hsl(326deg 100% 32% / 100%);
   --ps-danger-selected-text: hsl(326deg 100% 32% / 100%);
   --ps-danger-text: hsl(327deg 100% 24% / 100%);
   --ps-info-background: hsl(216deg 100% 91% / 100%);

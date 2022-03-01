@@ -16,8 +16,6 @@ ps:
     value: '{color.danger.background-weak.dark.value}'
   danger-border:
     value: '{color.danger.border.dark.value}'
-  danger-icon:
-    value: '{color.danger.label-muted.dark.value}'
   danger-selected-text:
     value: '{color.danger.label-muted.dark.value}'
   danger-text:

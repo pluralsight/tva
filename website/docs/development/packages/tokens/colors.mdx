@@ -1,0 +1,46 @@
+---
+sidebar_position: 2
+tags: [Development, Packages, Tokens, Colors]
+---
+
+import TokensColorMap from '@site/src/components/TokensColorMap/TokensColorMap'
+
+# Colors
+
+:::caution
+This is **unreleased** documentation for the **tokens** package.
+:::
+
+## Installation
+
+```bash npm2yarn
+npm install @pluralsight/design-tokens
+```
+
+:::tip
+The `headless-styles` package will consume the `css` and `js` tokens internally and depending on which setup you use (css vs. CSS-in-JS) will either return the styles being referenced from the tokens, or the tokens themselves (CSS-in-JS only). This means **you do not need to install this package** if you are using `headless-styles`.
+:::
+
+## Themes
+
+The `design-tokens` package comes with two themes: `light` and `dark` (default). Themes are controlled by using CSS classes. The default token values that you will receive will be for the `dark` theme. If you want to use the `light` theme, simply add a class name of `light` to your root component if you want to control the whole app. Additionally, if you just want to change the theme of a specific child, just add the `light` class name to the parent of that component.
+
+:::caution
+Token themes **depend on the normalize.css** file to be used in your project. Check out our [getting started](../../getting-started/usage.md#normalizecss) docs to learn how to add the normalize.css file to your project.
+:::
+
+## List of tokens
+
+These are the default values (dark theme) and for every theme, we just overwrite the values shown in this list. The tokens are presented in alphabetical order.
+
+<TokensColorMap />
+
+## Custom Tokens
+
+Because we are limiting tokens to our semantic colors (which should provide you with anything you will more than likely ever need), your team may feel the need to extend and add additional variables to your project. In this scenario **you should absolutely use static variables when you need a color/value not in the list**. Just because we can use CSS tokens, doesn't mean we should use them for everything.
+
+There's no doubt that using tokens make life easier (for the engineer), however, when it starts to be used so much it negatively affects the customer experience - we have failed as a team. So if your team would like to define a large number of tokens to make your code seem more valuable, **we highly recommend the use of SASS in your project which will produce the most performant outcome in this scenario.**
+
+### SASS tokens
+
+SASS tokens differ from CSS variables in that they are pre-processed out of existence and into your code base. This means that when you use SASS, there are no tokens that are stored in browser memory. This is a **huge** benefit because you can essentially create as many tokens as you want with **no negative side effects to performance.**

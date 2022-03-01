@@ -1,0 +1,46 @@
+.labelcontainer {
+  color: white;
+  padding-top: 4px;
+}
+
+.label {
+  font-family: 'DM Mono', monospace, serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+}
+
+.item {
+  margin-bottom: 16px;
+  margin-right: 8px;
+}
+
+.item + li {
+  margin-top: 0 !important;
+}
+
+.swab {
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+}
+
+.syntax {
+  display: block;
+  color: hsl(0deg 0% 100% / 50%);
+}
+
+.wrapper {
+  background-color: hsl(245deg 36% 15% / 100%);
+  border-radius: 12px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+}
