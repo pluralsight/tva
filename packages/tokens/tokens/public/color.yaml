@@ -11,7 +11,7 @@ ps:
   background-strong:
     value: '{color.neutral.black.value}'
   border:
-    value: '{color.nuetral.border.dark.value}'
+    value: '{color.neutral.border.dark.value}'
   danger-background:
     value: '{color.danger.background-weak.dark.value}'
   danger-border:
