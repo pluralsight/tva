@@ -5,6 +5,58 @@
 
 ps:
   background:
-    value: '{color.neutral.background-weak.dark.value}'
+    value: '{color.neutral.background.dark.value}'
+  background-medium:
+    value: '{color.neutral.background-medium.dark.value}'
+  background-strong:
+    value: '{color.neutral.black.value}'
+  border:
+    value: '{color.nuetral.border.dark.value}'
+  danger-background:
+    value: '{color.danger.background-weak.dark.value}'
+  danger-border:
+    value: '{color.danger.border.dark.value}'
+  danger-icon:
+    value: '{color.danger.label-muted.dark.value}'
+  danger-selected-text:
+    value: '{color.danger.label-muted.dark.value}'
+  danger-text:
+    value: '{color.danger.label.dark.value}'
+  info-background:
+    value: '{color.info.background-weak.dark.value}'
+  info-border:
+    value: '{color.info.border.value}'
+  info-icon:
+    value: '{color.info.label-muted.dark.value}'
+  info-text:
+    value: '{color.info.label.dark.value}'
+  selected-background:
+    value: '{color.accent.background.dark.value}'
+  selected-background-medium:
+    value: '{color.neutral.label-muted.dark.value}'
+  selected-background-strong:
+    value: '{color.accent.background-weak.dark.value}'
+  selected-background-weak:
+    value: '{color.neutral.interactive-background.dark.value}'
+  success-background:
+    value: '{color.success.background-weak.dark.value}'
+  success-border:
+    value: '{color.success.border.value}'
+  success-icon:
+    value: '{color.success.label-muted.dark.value}'
+  success-text:
+    value: '{color.success.label.dark.value}'
   text:
     value: '{color.neutral.white.value}'
+  text-weak:
+    value: '{color.accent.label-muted.dark.value}'
+  text-medium:
+    value: '{color.accent.label.dark.value}'
+  warning-background:
+    value: '{color.warning.background-weak.dark.value}'
+  warning-border:
+    value: '{color.warning.border.value}'
+  warning-icon:
+    value: '{color.warning.label-muted.dark.value}'
+  warning-text:
+    value: '{color.warning.label.dark.value}'

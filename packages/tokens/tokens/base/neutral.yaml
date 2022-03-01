@@ -21,7 +21,7 @@ color:
       light:
         value: 'hsl(214deg 32% 93% / 100%)'
     black:
-      value: 'hsl(0deg 0% 0% / 90%)'
+      value: 'hsl(0deg 0% 0% / 92%)'
     border:
       dark:
         value: 'hsl(234deg 30% 49% / 60%)'
@@ -49,9 +49,9 @@ color:
         value: 'hsl(0deg 0% 0% / 45%)'
     interactive-background:
       dark:
-        value: 'hsl(214deg 48% 83% / 40%)'
-      light:
         value: 'hsl(234deg 30% 49% / 50%)'
+      light:
+        value: 'hsl(214deg 48% 83% / 40%)'
     interactive-background-active:
       light:
         value: 'hsl(214deg 48% 83% / 70%)'

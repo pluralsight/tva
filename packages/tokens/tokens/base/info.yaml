@@ -21,10 +21,7 @@ color:
       light:
         value: 'hsl(216deg 100% 91% / 100%)'
     border:
-      dark:
-        value: 'hsl(202deg 100% 50% / 100%)'
-      light:
-        value: 'hsl(202deg 100% 50% / 100%)'
+      value: 'hsl(202deg 100% 50% / 100%)'
     label:
       dark:
         value: 'hsl(216deg 100% 91% / 100%)'
