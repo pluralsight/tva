@@ -13,7 +13,7 @@ This page is a work in progress.
 
 #### Install Pluralsight's headless UI framework that works with any library or tech stack.
 
-Pluralsight Design is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
+Pluralsight Design is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `design-tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
 
 ## npm
 

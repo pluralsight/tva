@@ -287,10 +287,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     linear-gradient(90deg, #00a3ff 0%, #770ef7 100%);
 }
 
-.navbar__brand {
-  color: var(--ps-text);
-}
-
+.navbar__brand,
+html[data-theme='light'] .navbar__brand:hover,
 .navbar__link {
   color: var(--ps-text);
 }
