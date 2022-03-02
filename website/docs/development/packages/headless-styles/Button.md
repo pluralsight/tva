@@ -7,7 +7,7 @@ tags: [Development, Packages, Components, Button]
 
 :::caution
 
-This is **unreleased** documentation for TVA **headless-styles** package.
+This is **unreleased** documentation for **headless-styles** package.
 
 :::
 

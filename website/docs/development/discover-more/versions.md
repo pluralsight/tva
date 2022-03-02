@@ -11,23 +11,17 @@ tags:
   ]
 ---
 
-# TVA Versions
+# Versions
 
-:::caution
-
-This section is a work in progress.
-
-:::
-
-Learn how we approach versioning and releases for TVA.
+Learn how we approach versioning and releases for Pluralsight Design.
 
 ## Version strategy
 
-Stability ensures that reusable components and libraries, tutorials, tools, and learned practices don't become obsolete unexpectedly. Stability is essential for the ecosystem around TVA to thrive.
+Stability ensures that reusable components and libraries, tutorials, tools, and learned practices don't become obsolete unexpectedly. Stability is essential for the ecosystem around Pluralsight Design to thrive.
 
 This page contains the practices we follow to provide you with a leading-edge library, balanced with stability, ensuring that future changes are always introduced in a predictable way.
 
-TVA follows [Semantic Versioning 2.0.0](https://semver.org/). TVA version numbers have three parts `major.minor.patch`. These numbers increase based on the level of change introduced in a release.
+Pluralsight Design follows [Semantic Versioning 2.0.0](https://semver.org/). Pluralsight Design version numbers have three parts `major.minor.patch`. These numbers increase based on the level of change introduced in a release.
 
 - **Major releases** contain new features. Some developer assistance may be expected during the update although we strive to stay backwards compatible. When upgrading to a new major release, you may need to run update scripts, refactor code, run additional tests, and learn new APIs.
 - **Minor releases** contain important new features. Minor releases are fully backwards-compatible; no developer assistance is expected during update, but you can optionally modify your apps and libraries to begin using new APIs, features, and capabilities that were added in the release.
@@ -35,7 +29,7 @@ TVA follows [Semantic Versioning 2.0.0](https://semver.org/). TVA version number
 
 ## Release frequency
 
-A regular schedule of releases helps you plan and coordinate your updates with the continuing evolution of TVA.
+A regular schedule of releases helps you plan and coordinate your updates with the continuing evolution of Pluralsight Design.
 
 In general, you can expect the following release cycle:
 
@@ -46,7 +40,7 @@ In general, you can expect the following release cycle:
 You can follow the [milestones](https://github.com/pluralsight/tva/milestones) for a detailed review of what releases contain.
 
 :::caution
-The development, releases, and timing of any features or functionality remains at the sole discretion of TVA. The roadmap does not represent a commitment, obligation, or promise to deliver at any time.
+The development, releases, and timing of any features or functionality remains at the sole discretion of Pluralsight Design. The roadmap does not represent a commitment, obligation, or promise to deliver at any time.
 :::
 
 ## Deprecation practices

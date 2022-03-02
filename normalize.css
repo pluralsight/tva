@@ -177,7 +177,7 @@ textarea {
   --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
   --ps-selected-background-weak: hsl(214deg 48% 83% / 40%);
   --ps-success-background: hsl(142deg 100% 88% / 100%);
-  --ps-icon: hsl(155deg 100% 19% / 100%);
+  --ps-success-icon: hsl(155deg 100% 19% / 100%);
   --ps-success-text: hsl(151deg 100% 9% / 100%);
   --ps-text: hsl(0deg 0% 0% / 90%);
   --ps-text-weak: hsl(248deg 63% 38% / 100%);

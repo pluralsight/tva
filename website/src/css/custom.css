@@ -76,6 +76,7 @@
   --ifm-font-color-base: var(--ps-text);
   --ifm-heading-color: var(--ps-text);
   --ifm-navbar-background-color: hsl(245deg 36% 15% / 100%);
+  --ps-search-background: hsl(244deg 36% 24% / 100%);
 }
 
 html {
@@ -88,12 +89,12 @@ html {
 html[data-theme='dark'] {
   --docsearch-key-gradient: var(--ps-text) !important;
   --docsearch-muted-color: var(--ps-text) !important;
-  --docsearch-searchbox-background: hsl(244deg 36% 24% / 100%) !important;
+  --docsearch-searchbox-background: var(--ps-search-background) !important;
   --ifm-background-color: var(--ps-background);
 }
 
 html[data-theme='light'] {
-  --docsearch-searchbox-background: hsl(244deg 36% 24% / 100%) !important;
+  --docsearch-searchbox-background: var(--ps-search-background) !important;
   --ifm-color-primary: hsl(249deg 63% 51% / 100%);
   --ifm-font-color-base: hsl(0deg 0% 0% / 90%);
   --ifm-heading-color: hsl(0deg 0% 0% / 90%);
@@ -105,6 +106,24 @@ html[data-theme='light'] {
 
 .admonition-caution {
   --ra-admonition-icon-color: var(--ps-warning-icon);
+}
+
+.admonition-tip {
+  --ra-admonition-icon-color: var(--ps-success-icon);
+}
+
+.admonition-note,
+.admonition-info {
+  --ra-admonition-icon-color: var(--ps-info-icon);
+}
+
+html[data-theme='light'] .admonition-note,
+html[data-theme='light'] .admonition-info {
+  --ra-admonition-icon-color: hsl(197deg 100% 25% / 100%);
+}
+
+html[data-theme='light'] .admonition-tip {
+  --ra-admonition-icon-color: hsl(155deg 100% 19% / 100%);
 }
 
 html[data-theme='light'] .admonition-caution {
@@ -124,7 +143,14 @@ html[data-theme='light'] .admonition-caution {
   padding-right: 8px;
 }
 
-.alert--warning {
+.alert a {
+  color: var(--ps-selected-strong);
+}
+
+.alert--warning,
+.alert--secondary,
+.alert--info,
+.alert--success {
   --ifm-alert-background-color: var(--ps-warning-background);
   --ifm-alert-border-color: var(--ps-warning-border);
 
@@ -133,7 +159,21 @@ html[data-theme='light'] .admonition-caution {
   position: relative;
 }
 
-.alert--warning::before {
+.alert--secondary,
+.alert--info {
+  --ifm-alert-background-color: var(--ps-info-background);
+  --ifm-alert-border-color: var(--ps-info-border);
+}
+
+.alert--success {
+  --ifm-alert-background-color: var(--ps-success-background);
+  --ifm-alert-border-color: var(--ps-success-border);
+}
+
+.alert--warning::before,
+.alert--secondary::before,
+.alert--info::before,
+.alert--success::before {
   background-color: var(--ifm-alert-border-color);
   border-bottom-left-radius: 6px;
   border-top-left-radius: 6px;
@@ -150,6 +190,15 @@ html[data-theme='light'] .alert--warning {
   --ifm-alert-background-color: hsl(36deg 100% 92% / 100%);
 }
 
+html[data-theme='light'] .alert--secondary,
+html[data-theme='light'] .alert--info {
+  --ifm-alert-background-color: hsl(216deg 100% 91% / 100%);
+}
+
+html[data-theme='light'] .alert--success {
+  --ifm-alert-background-color: hsl(142deg 100% 88% / 100%);
+}
+
 .alert--warning h5,
 .alert.alert--warning {
   color: var(--ps-warning-text);
@@ -160,10 +209,57 @@ html[data-theme='light'] .alert.alert--warning {
   color: hsl(45deg 100% 15% / 100%);
 }
 
+.alert--secondary h5,
+.alert--info h5,
+.alert.alert--secondary,
+.alert.alert--info {
+  color: var(--ps-info-text);
+}
+
+html[data-theme='light'] .alert--secondary h5,
+html[data-theme='light'] .alert.alert--secondary,
+html[data-theme='light'] .alert--info h5,
+html[data-theme='light'] .alert.alert--info {
+  color: hsl(204deg 100% 20% / 100%);
+}
+
+.alert--success h5,
+.alert.alert--success {
+  color: var(--ps-success-text);
+}
+
+html[data-theme='light'] .alert--success h5,
+html[data-theme='light'] .alert.alert--success {
+  color: hsl(151deg 100% 9% / 100%);
+}
+
+.DocSearch-Button,
+.DocSearch-Button:hover,
+.DocSearch-Button .DocSearch-Search-Icon,
+.DocSearch-Button-Key {
+  color: hsl(234deg 30% 68% / 100%) !important;
+}
+
+.DocSearch-Button:hover {
+  background: var(--ps-search-background) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='light'] .DocSearch-Button:hover {
+  color: var(--ps-text);
+}
+
 .DocSearch-Button-Key {
   border-radius: 4px !important;
   box-shadow: none !important;
-  color: var(--ps-background-strong) !important;
+}
+
+.DocSearch-Commands-Key {
+  box-shadow: none !important;
+}
+
+.DocSearch-Commands-Key path {
+  stroke: var(--ps-background-strong);
 }
 
 .docusaurus-highlight-code-line {
