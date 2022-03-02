@@ -204,11 +204,6 @@ html[data-theme='light'] .alert--success {
   color: var(--ps-warning-text);
 }
 
-html[data-theme='light'] .alert--warning h5,
-html[data-theme='light'] .alert.alert--warning {
-  color: hsl(45deg 100% 15% / 100%);
-}
-
 .alert--secondary h5,
 .alert--info h5,
 .alert.alert--secondary,
@@ -216,16 +211,21 @@ html[data-theme='light'] .alert.alert--warning {
   color: var(--ps-info-text);
 }
 
+.alert--success h5,
+.alert.alert--success {
+  color: var(--ps-success-text);
+}
+
+html[data-theme='light'] .alert--warning h5,
+html[data-theme='light'] .alert.alert--warning {
+  color: hsl(45deg 100% 15% / 100%);
+}
+
 html[data-theme='light'] .alert--secondary h5,
 html[data-theme='light'] .alert.alert--secondary,
 html[data-theme='light'] .alert--info h5,
 html[data-theme='light'] .alert.alert--info {
   color: hsl(204deg 100% 20% / 100%);
-}
-
-.alert--success h5,
-.alert.alert--success {
-  color: var(--ps-success-text);
 }
 
 html[data-theme='light'] .alert--success h5,
