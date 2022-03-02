@@ -11,9 +11,9 @@ This page is a work in progress.
 
 :::
 
-#### Install TVA, Pluralsight's headless UI framework that works with any library or tech stack.
+#### Install Pluralsight's headless UI framework that works with any library or tech stack.
 
-TVA is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
+Pluralsight Design is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
 
 ## npm
 
@@ -23,7 +23,7 @@ For the entire kitchen sink up front, just install the `headless-styles` package
 npm install @pluralsight/tva-headless-styles
 ```
 
-Or if you want maximum flexibility, just install the `tokens` package:
+Or if you want maximum flexibility, just install the `design-tokens` package:
 
 ```bash npm2yarn
 npm install @pluralsight/design-tokens
@@ -41,6 +41,10 @@ TVA was designed with [PS TT Commons](https://github.com/pluralsight/tva) in min
 ```
 
 Each "component" uses a [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) declaration to provide all weights programmatically. IE 11 does not support variable fonts, so any IE users will get the sans-serif fallback.
+
+:::caution
+Be sure to add this resource before [normalize.css](./usage.md#normalizecss) to help performance and prevent FOUC.
+:::
 
 ## Icon font
 
@@ -63,8 +67,6 @@ Our `tokens` package will also deliver all of our fonts and icons via assets for
 
 ## Design resources
 
-<!-- TODO: Add Figma "download" icon/link -->
-
 A set of reusable components for design tools is available, designed to match the web components and to help you craft great products:
 
-- [Figma](https://github.com/pluralsight/tva): A large UI kit with over 62 handcrafted TVA components.
+- [Figma](https://www.figma.com/file/ZmH4XsZS5WnKeo28ylM5x1/PS-Design---Web-UI-Kit-%5BALPHA%5D?node-id=1214%3A50531): A large (private) UI kit of handcrafted Pluralsight components.

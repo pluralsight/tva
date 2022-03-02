@@ -23,6 +23,14 @@
     "jsToken": "psBackgroundStrong",
     "value": "hsl(0deg 0% 0% / 92%)"
   },
+  "psBackgroundWeak": {
+    "id": "psBackgroundWeak",
+    "label": "psBackgroundWeak",
+    "cssToken": "--ps-background-weak",
+    "sassToken": "$ps-background-weak",
+    "jsToken": "psBackgroundWeak",
+    "value": "hsl(245deg 36% 15% / 100%)"
+  },
   "psBorder": {
     "id": "psBorder",
     "label": "psBorder",

@@ -1,28 +1,200 @@
+@import url('https://unpkg.com/@pluralsight/design-tokens@experimental/build/css/variables.css');
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+@font-face {
+  font-display: swap;
+  font-family: 'PS TT Commons Roman';
+  font-weight: 100 900;
+  src: url('https://fonts.pluralsight.com/ps-tt-commons/v1/ps-tt-commons-variable-roman.woff2')
+    format('woff-variations');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'PS TT Commons Roman';
+  font-style: italic;
+  src: url('https://fonts.pluralsight.com/ps-tt-commons/v1/ps-tt-commons-variable-italic.woff2')
+    format('woff-variations');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-light.ttf')
+    format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: italic;
+  font-weight: 300;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-light-italic.ttf')
+    format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-regular.ttf')
+    format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-italic.ttf')
+    format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-medium.ttf')
+    format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: italic;
+  font-weight: 500;
+  src: url('https://fonts.pluralsight.com/dm-mono/v1/dm-mono-medium-italic.ttf')
+    format('truetype');
+}
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+  --ifm-color-primary: var(--ps-selected-background);
+  --ifm-font-color-base: var(--ps-text);
+  --ifm-heading-color: var(--ps-text);
+  --ifm-navbar-background-color: hsl(245deg 36% 15% / 100%);
+}
+
+html {
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  text-size-adjust: 100%;
+}
+
+html[data-theme='dark'] {
+  --docsearch-key-gradient: var(--ps-text) !important;
+  --docsearch-muted-color: var(--ps-text) !important;
+  --docsearch-searchbox-background: hsl(244deg 36% 24% / 100%) !important;
+  --ifm-background-color: var(--ps-background);
+}
+
+html[data-theme='light'] {
+  --docsearch-searchbox-background: hsl(244deg 36% 24% / 100%) !important;
+  --ifm-color-primary: hsl(249deg 63% 51% / 100%);
+  --ifm-font-color-base: hsl(0deg 0% 0% / 90%);
+  --ifm-heading-color: hsl(0deg 0% 0% / 90%);
+}
+
+.admonition-content {
+  padding-left: 48px;
+}
+
+.admonition-caution {
+  --ra-admonition-icon-color: var(--ps-warning-icon);
+}
+
+html[data-theme='light'] .admonition-caution {
+  --ra-admonition-icon-color: hsl(46deg 100% 26% / 100%);
+}
+
+.admonition-heading {
+  padding-left: 13px;
+}
+
+.admonition-heading h5 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.admonition-icon {
+  padding-right: 8px;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: var(--ps-warning-background);
+  --ifm-alert-border-color: var(--ps-warning-border);
+
+  border: none;
+  border-radius: 6px;
+  position: relative;
+}
+
+.alert--warning::before {
+  background-color: var(--ifm-alert-border-color);
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  content: '';
+  height: 100%;
+  left: 0.5px;
+  position: absolute;
+  top: 0;
+  width: 4px;
+  z-index: 1;
+}
+
+html[data-theme='light'] .alert--warning {
+  --ifm-alert-background-color: hsl(36deg 100% 92% / 100%);
+}
+
+.alert--warning h5,
+.alert.alert--warning {
+  color: var(--ps-warning-text);
+}
+
+html[data-theme='light'] .alert--warning h5,
+html[data-theme='light'] .alert.alert--warning {
+  color: hsl(45deg 100% 15% / 100%);
+}
+
+.DocSearch-Button-Key {
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  color: var(--ps-background-strong) !important;
 }
 
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(0 0 0 / 10%);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgb(0 0 0 / 30%);
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--ps-background-strong);
+  --ifm-footer-color: var(--ifm-footer-link-color);
+  --ifm-footer-link-color: var(--ps-selected-background-medium);
+  --ifm-footer-title-color: var(--ifm-color-white);
+}
+
+.hero--primary {
+  --ifm-hero-text-color: var(--ps-text);
+
+  background: linear-gradient(0deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
+    linear-gradient(90deg, #00a3ff 0%, #770ef7 100%);
+}
+
+.navbar__brand {
+  color: var(--ps-text);
+}
+
+.navbar__link {
+  color: var(--ps-text);
 }

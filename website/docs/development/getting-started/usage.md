@@ -7,13 +7,13 @@ tags: [Development, Usage, Getting Started, Web, React Native]
 
 :::caution
 
-This is **unreleased** documentation for TVA **headless-styles** package.
+This is **unreleased** documentation for the **headless-styles** package.
 
 :::
 
-TVA packages and "components" work in isolation. **They are self-supporting**, and will only inject the styles they need to display and don't rely on any global style-sheets such as [normalize.css](https://github.com/necolas/normalize.css/).
+Pluralsight Design packages and "components" work in isolation. **They are self-supporting**, and will only inject the styles they need to display.
 
-You can use any of the packages/components as demonstrated in the documentation. Please refer to each "component's" [page](../packages/headless-styles/button) to see how they should be imported and used.
+You can use any of the packages as demonstrated in the documentation. Please refer to each "component's" [page](../packages/headless-styles/button) to see how they should be imported and used.
 
 ## Headless design
 
@@ -52,11 +52,11 @@ This means you can use **any framework** or library of your choice (React, Svelt
 
 ## Globals
 
-TVA usage experience can be improved with a handful of important globals that you'll need to be aware of.
+Pluralsight Design usage experience can be improved with a handful of important globals that you'll need to be aware of.
 
 ### Responsive meta tag
 
-TVA is developed with a mobile-first strategy in which we first write code for mobile devices, and then scale up "components" as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
+Pluralsight Design is developed with a mobile-first strategy in which we first write code for mobile devices, and then scale up "components" as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
 
 ```html
 <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -72,8 +72,8 @@ All of our packages **depend on our normalize.css** file to be used in your proj
 
 ## Typescript
 
-TVA is built using Typescript so we will include type definitions in the `headless-styles` package for any project that may require them.
+Pluralsight Design is built using Typescript so we will include type definitions in the `headless-styles` package for any project that may require them.
 
 ## Versioned Documentation
 
-This documentation always reflects the latest stable version of TVA. You can find older versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle. Additionally, we release our **next** version documentation which has the :construction: emoji next to it.
+This documentation always reflects the latest stable version of Pluralsight Design. You can find older versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle. Additionally, we release our **next** version documentation which has the :construction: emoji next to it.

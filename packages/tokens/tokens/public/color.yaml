@@ -10,6 +10,8 @@ ps:
     value: '{color.neutral.background-medium.dark.value}'
   background-strong:
     value: '{color.neutral.black.value}'
+  background-weak:
+    value: '{color.neutral.background-weak.dark.value}'
   border:
     value: '{color.neutral.border.dark.value}'
   danger-background:

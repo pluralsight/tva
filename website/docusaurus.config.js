@@ -65,7 +65,9 @@ const config = {
       },
       announcementBar: {
         id: 'announcementBar-beta',
+        backgroundColor: 'hsla(204, 100%, 20%, 1)',
         content: `⭐️ If you like TVA, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/pluralsight/tva/tree/main">GitHub</a>`,
+        textColor: '#fff',
       },
       navbar: {
         title: 'Pluralsight Design',

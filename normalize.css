@@ -184,5 +184,5 @@ textarea {
   --ps-text-medium: hsl(249deg 67% 25% / 100%);
   --ps-warning-background: hsl(36deg 100% 92% / 100%);
   --ps-warning-icon: hsl(46deg 100% 26% / 100%);
-  --ps-warning-label: hsl(45deg 100% 15% / 100%);
+  --ps-warning-text: hsl(45deg 100% 15% / 100%);
 }
