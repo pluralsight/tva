@@ -8,5 +8,5 @@
 !.yarn/versions
 
 # Workspace related
-packages/tokens/build
+packages/design-tokens/build
 website/build
