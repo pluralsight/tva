@@ -17,7 +17,7 @@ If you still can't find what you're looking for, you can refer to our [support p
 
 ## I :heart: TVA! How can I support the project?
 
-There are a few ways to support TVA:
+There are a few ways to support Pluralsight Design:
 
 <!-- TODO: Update Twitter link when account created. -->
 
@@ -31,7 +31,7 @@ There are a few ways to support TVA:
   - Improve our documentation, fix bugs, or add features by [submitting a pull request](https://github.com/pluralsight/tva/pulls).
 - **Star the repo**. The quickest way to help us get a win is by clicking that "star" button in Github!
 
-## Why doesn't TVA export React components?
+## Why doesn't your library export React components?
 
 Since the first concept of a Component framework (Polymer), Components have swept the frontend industry introducing us to such libraries as React, Vue, and Svelte. Even Angular joined the club! However, this concept quickly changed the UI libraries we have known to instead be frontend vendor specific (MUI - React, React Bootstrap, etc.). This movement has been great in helping us understand Components and provide a great experience to users with the frameworks we have chosen to use.
 
@@ -68,18 +68,18 @@ return (
 )
 ```
 
-You can do this (in any framework or library - here we are combining MUI with TVA):
+You can do this (in any framework or library - here we are combining MUI with headless-styles):
 
 ```jsx title="src/components/ActionButton.jsx"
 import { styled } from '@mui/material/styles';
 import Button, { ButtonProps } from '@mui/material/Button';
-import { getButtonProps } from '@pluralsight/tva-headless-styles'
+import { getButtonProps } from '@pluralsight/headless-styles'
 
 // 💡 Keep the function out of the component for better performance
-const {styles as tvaStyles, ...a11yProps} = getButtonProps()
+const {styles as psStyles, ...a11yProps} = getButtonProps()
 
 const BoostrapButton = styled(Button)({
-  ...tvaStyles
+  ...psStyles
 })
 
 function ActionButton(props) {
@@ -98,3 +98,5 @@ Of course, using plain JSX html tags will gain you the biggest performance boost
 ## What does TVA stand for?
 
 TVA is a reference to the Marvel Universe faction which monitors the timeline to make sure everything is how it should be (Time Variance Authority). Just like the TVA, we on the design system team are similar in that we monitor and make sure everything is how it should be for the brand!
+
+To be clear, this is our alias for the engineering side of all packages for the Pluralsight Design suite.

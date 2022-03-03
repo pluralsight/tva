@@ -12,9 +12,9 @@
 
 ## Installation
 
-- **Web**: TVA is available as an [npm package](https://www.npmjs.com/package/@pluralsight/tva).
-- **iOS**: TVA is available...TBD
-- **Android**: TVA is available...TBD
+- **Web**: Pluralsight Design is available as an [npm package](https://www.npmjs.com/package/@pluralsight/design-tokens).
+- **iOS**: Pluralsight Design is available...TBD
+- **Android**: Pluralsight Design is available...TBD
 
 ## Questions
 

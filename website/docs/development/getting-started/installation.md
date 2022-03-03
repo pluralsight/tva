@@ -20,7 +20,7 @@ Pluralsight Design is available as a set of [npm packages](https://github.com/pl
 For the entire kitchen sink up front, just install the `headless-styles` package.
 
 ```bash npm2yarn
-npm install @pluralsight/tva-headless-styles@alpha
+npm install @pluralsight/headless-styles@alpha
 ```
 
 :::caution

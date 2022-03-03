@@ -7,7 +7,7 @@ tags: [Development, Usage, Getting Started, Mobile]
 
 :::caution
 
-This is **unreleased** documentation for TVA **components** package.
+This is **unreleased** documentation for Pluralsight Design **components** package.
 
 :::
 
