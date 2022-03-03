@@ -1,6 +1,6 @@
 {
   "buildCommand": "build:packages",
   "node": "14",
-  "packages": ["packages/tokens"],
+  "packages": ["packages/design-tokens"],
   "sandboxes": ["new"]
 }
