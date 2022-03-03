@@ -27,7 +27,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         },
         {
           name: '@pluralsight/design-tokens',
-          reference: 'workspace:packages/tokens',
+          reference: 'workspace:packages/design-tokens',
         },
         {
           name: 'release-script',
@@ -42,7 +42,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ignorePatternData:
         '(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)',
       fallbackExclusionList: [
-        ['@pluralsight/design-tokens', ['workspace:packages/tokens']],
+        ['@pluralsight/design-tokens', ['workspace:packages/design-tokens']],
         ['@pluralsight/tva', ['workspace:.']],
         ['release-script', ['workspace:scripts']],
         ['website', ['workspace:website']],
@@ -562,7 +562,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@nodelib/fs.walk', 'npm:1.2.8'],
         ['@npmcli/fs', 'npm:1.0.0'],
         ['@npmcli/move-file', 'npm:1.1.2'],
-        ['@pluralsight/design-tokens', 'workspace:packages/tokens'],
+        ['@pluralsight/design-tokens', 'workspace:packages/design-tokens'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@sideway/address', 'npm:4.1.3'],
         ['@sideway/formula', 'npm:3.0.0'],
@@ -10811,11 +10811,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/design-tokens',
           [
             [
-              'workspace:packages/tokens',
+              'workspace:packages/design-tokens',
               {
-                packageLocation: './packages/tokens/',
+                packageLocation: './packages/design-tokens/',
                 packageDependencies: [
-                  ['@pluralsight/design-tokens', 'workspace:packages/tokens'],
+                  [
+                    '@pluralsight/design-tokens',
+                    'workspace:packages/design-tokens',
+                  ],
                   ['@types/yaml', 'npm:1.9.6'],
                   ['style-dictionary', 'npm:3.7.0'],
                   ['yaml', 'npm:1.10.2'],

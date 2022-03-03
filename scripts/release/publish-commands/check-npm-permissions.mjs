@@ -10,9 +10,7 @@ async function checkNPMPermissions(packages) {
   const failedProjects = []
 
   const checkProject = async (project) => {
-    const owners = (
-      await execRead(`npm owner ls @pluralsight/design-${project}`)
-    )
+    const owners = (await execRead(`npm owner ls @pluralsight/${project}`))
       .split('\n')
       .filter((owner) => owner)
       .map((owner) => owner.split(' ')[0])
