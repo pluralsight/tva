@@ -7,18 +7,18 @@ tags: [Development, Packages, Tokens, Intro]
 
 :::caution
 
-This is **experimental** documentation for the **design-tokens** package.
+This is **alpha** documentation for the **design-tokens** package.
 
 :::
 
-#### Learn how to use TVA tokens for any project or OS platform.
+#### Learn how to use design-tokens for any project or OS platform.
 
 ## npm
 
 To use tokens via the web, just install the npm package.
 
 ```bash npm2yarn
-npm install @pluralsight/design-tokens
+npm install @pluralsight/design-tokens@alpha
 ```
 
 ## What is a token?
@@ -35,9 +35,9 @@ In order to make our tokens scalable and easier to consume, we use the same nami
 ps-[sentiment?]-[usage]-[prominence?]-[interaction?]
 ```
 
-- **Sentiment** - "default", "neutral", "success", "warning", "danger", "selected"
-- **Usage** - "background", "text", "icon", "border", "size"
-- **Prominence** - "default", "weak", "medium", "strong", or clothing size shorthand
+- **Sentiment** - "default", "info", "success", "warning", "danger", "selected"
+- **Usage** - "background", "border", "text"
+- **Prominence** - "default", "weak", "medium", "strong"
 - **Interaction** - "default", "hover", "active", "focus", "disabled"
 
 :::note
@@ -55,13 +55,11 @@ What this looks like in terms of an actual token can be seen in an example for s
 
 ## Usage
 
-The `tokens` package is the single source of truth for all style properties and assets in the design system. This is how we define styles in `headless-styles` and why you can just use this package if you need maximum flexibility - or are on a mobile platform.
-
-Depending on what platform you are using, will determine what you are able to consume from the `tokens` package.
+The `design-tokens` package is the single source of truth for colors in the design system. This is how we define styles in `headless-styles` and why you can just use this package if you need maximum flexibility - or are on a mobile platform.
 
 ### Web
 
-For the web (npm), we ship `css` properties, `scss` variables, and `js` es6 modules. This way, you can choose whatever syntax works best for your project.
+For the web (npm), we ship `css` and `scss` variables along with `js` es6 modules. This way, you can choose whatever syntax works best for your project.
 
 :::info
 **We include the CSS tokens in our normalize setup**, so there is no need to install this package unless you are using another language.
@@ -77,22 +75,22 @@ When you import `css`, we use the `:root` psuedo-selector to store the propertie
 
 ```css title="CSS import outcome (example)"
 :root {
-  --ps-text: #ff0000;
   --ps-background: #cccccc;
+  --ps-text: #ff0000;
 }
 ```
 
 #### es6
 
 ```javascript title="Alternatively importing tokens into your JS"
-import { PsText } from '@pluralsight/design-tokens'
+import { psText } from '@pluralsight/design-tokens'
 ```
 
 When you use `js`, we `export` unique ID variable names.
 
 ```javascript title="JS import outcome (example)"
-export const PsText = '#ff0000'
-export const PsBackground = '#cccccc'
+export const psBackground = '#cccccc'
+export const psText = '#ff0000'
 ```
 
 #### SCSS
@@ -104,13 +102,19 @@ export const PsBackground = '#cccccc'
 When you use `scss`, we set the SCSS variables.
 
 ```scss title="SCSS import outcome (example)"
-$ps-text: #ffffff;
 $ps-background: #1b1834;
+$ps-text: #ffffff;
 ```
 
 ### Mobile
 
-For mobile, we will ship `iOS`, `swift`, and `android` files to import into your projects via our repo.
+For mobile, we will ship `iOS`, `swift`, and `android` files to import into your projects via our repo. Just run the following command to have access to any resource your team needs:
+
+```bash
+yarn workspace @pluralsight/design-tokens run build
+```
+
+This will create a `build` directory in the `packages/design-tokens` location which will contain all of the resources mentioned above.
 
 ## Why are the tokens limited to colors?
 
@@ -118,8 +122,8 @@ During our R&D phase, we have done extensive research to understand the best way
 
 In this research we have found that there _is_ a threshold where CSS variables do negatively impact browser performance (just like specific properties do). For example, in some case studies, using a variable for `padding` throughout your app can slow down render performance by **up to 2 seconds**!
 
-During this research we have also compared solutions that are currently being executed by teams (i.e. Twitter, Github, etc.) drawing a correlation to slower apps using more tokens (in the web).
+During this research we have also compared solutions that are currently being executed by teams (i.e. Twitter, Github, etc.) drawing a correlation to slower apps using more CSS variables (in the web).
 
 Thus, the current standard which seems to keep a performant load time (under 1 second) is to **keep variables limited to only colors and the quantity being defined up to 37**.
 
-This is the standard we align with for the `tokens` package and is why our semantic-tokens are what they are.
+This is the standard we align with for the `design-tokens` package. Additionally, because we have a semantic naming pattern, we are delivering every color needed for our entire Web UI Kit (except for rare/uncommonly used colors).

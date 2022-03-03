@@ -20,46 +20,67 @@ Pluralsight Design is available as a set of [npm packages](https://github.com/pl
 For the entire kitchen sink up front, just install the `headless-styles` package.
 
 ```bash npm2yarn
-npm install @pluralsight/tva-headless-styles
+npm install @pluralsight/tva-headless-styles@alpha
 ```
+
+:::caution
+The `headless-styles` package will be available in the future.
+:::
 
 Or if you want maximum flexibility, just install the `design-tokens` package:
 
 ```bash npm2yarn
-npm install @pluralsight/design-tokens
+npm install @pluralsight/design-tokens@alpha
 ```
 
 ## PS TT Commons font
 
-TVA was designed with [PS TT Commons](https://github.com/pluralsight/tva) in mind. So be sure to follow the [typography instructions](https://github.com/pluralsight/tva). For the best results, install via an HTML `link` tag:
+Our libraries were designed with PS TT Commons (Pluralsight brand font) in mind. For the best results, install via an HTML `link` tag:
 
-```
+```html
+<link
+  rel="preload"
+  href="https://fonts.pluralsight.com/ps-tt-commons/v1/ps-tt-commons-variable-roman.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 <link
   rel="stylesheet"
-  href="https://...TBD"
+  href="https://unpkg.com/@pluralsight/design-tokens@alpha/fonts.css"
 />
 ```
 
-Each "component" uses a [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) declaration to provide all weights programmatically. IE 11 does not support variable fonts, so any IE users will get the sans-serif fallback.
+Our fonts file declares both the brand font and a monospace font. We are only preloading the brand font since it's the most common used font across all of our products and teams. This will help boost performance and prevent FOUC.
+
+Additionally, each "component" uses a [variable font](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Fonts/Variable_Fonts_Guide) declaration to provide all weights programmatically. IE 11 does not support variable fonts, so any IE users will get the sans-serif fallback.
 
 :::caution
-Be sure to add this resource before [normalize.css](./usage.md#normalizecss) to help performance and prevent FOUC.
+Be sure to add this resource **before** [normalize.css](#normalizecss) to prevent FOUC.
 :::
 
 ## Icon font
 
-To use the icon font, you must first add the TVA [icons font](https://github.com/pluralsight/tva). For the best results, install via a HTML `link` tag:
+To use the icon font, you must first add the Pluralsight Design [icons font](https://github.com/pluralsight/tva). For the best results, install via a HTML `link` tag:
 
-```
-<link
-  rel="stylesheet"
-  href="https://...TBD"
-/>
+```html
+<link rel="stylesheet" href="https://...TBD" />
 ```
 
 :::caution
 This execution is currently being designed. We have created an [un-baised comparison](https://github.com/pluralsight/tva/discussions/70) of using SVGs vs an Icon library. If you have time, please visit the discussion and contribute by leaving a comment! 🎉
 :::
+
+## Normalize.css
+
+All of our web packages **depend on our normalize.css** file to be used in your project. This file adds our CSS resets, the `design-tokens` for CSS consumption, and our themes. To add our normalize file, simply copy and past the `link` content below into your `head` tag:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@pluralsight/design-tokens@alpha/fonts.css"
+/>
+```
 
 ## Mobile Assets
 

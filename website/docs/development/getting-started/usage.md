@@ -62,14 +62,6 @@ Pluralsight Design is developed with a mobile-first strategy in which we first w
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 ```
 
-### Normalize.css
-
-All of our packages **depend on our normalize.css** file to be used in your project. This file adds our CSS resets, the `design-tokens` for CSS consumption, and our themes. To add our normalize file, simply copy and past the `link` content below into your `head` tag:
-
-```html
-<link rel="stylesheet" href="https://TBD" />
-```
-
 ## Typescript
 
 Pluralsight Design is built using Typescript so we will include type definitions in the `headless-styles` package for any project that may require them.
