@@ -1,11 +1,34 @@
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 1px 2px rgb(0 0 0 / 06%);
+  margin-bottom: 48px;
+  min-height: 247px;
+  max-width: 384px !important;
+  padding: 40px !important;
+}
+
 .features {
-  display: flex;
   align-items: center;
-  padding: 2rem 0;
+  display: flex;
+  padding-bottom: 110px;
+  padding-top: 60px;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.row {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (min-width: 966px) {
+  .card {
+    margin-bottom: initial;
+  }
+
+  .row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

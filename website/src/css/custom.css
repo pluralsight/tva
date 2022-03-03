@@ -256,22 +256,26 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .footer--dark {
   --ifm-footer-background-color: var(--ps-background-strong);
-  --ifm-footer-color: var(--ifm-footer-link-color);
-  --ifm-footer-link-color: var(--ps-selected-background-medium);
-  --ifm-footer-title-color: var(--ifm-color-white);
+  --ifm-footer-color: var(--ps-text-weak);
+  --ifm-footer-link-color: var(--ps-text);
+  --ifm-footer-title-color: var(--ps-text);
 }
 
 html[data-theme='light'] .footer--dark {
-  --ifm-footer-background-color: var(--ps-text);
+  --ifm-footer-background-color: var(--ps-background-weak);
+  --ifm-footer-color: hsl(234deg 30% 78% / 100%);
   --ifm-footer-link-color: var(--ifm-color-white);
-  --ifm-footer-title-color: var(--ps-selected-background-weak);
+  --ifm-footer-title-color: vhsl(234deg 30% 78% / 100%);
 }
 
 .hero--primary {
   --ifm-hero-text-color: var(--ps-text);
 
-  background: linear-gradient(0deg, rgb(0 0 0 / 50%), rgb(0 0 0 / 50%)),
-    linear-gradient(90deg, #00a3ff 0%, #770ef7 100%);
+  background: linear-gradient(103.95deg, #00a3ff 0%, #770ef7 100%);
+}
+
+html[data-theme='light'] .hero__subtitle {
+  color: hsl(0deg 0% 100% / 80%);
 }
 
 .navbar__brand {
@@ -279,7 +283,8 @@ html[data-theme='light'] .footer--dark {
 }
 
 .navbar__brand,
-html[data-theme='light'] .navbar__link {
+html[data-theme='light'] .navbar__link,
+html[data-theme='light'] .hero__title {
   color: white;
 }
 
@@ -287,4 +292,9 @@ html[data-theme='light'] .navbar__brand:hover,
 html[data-theme='light'] .navbar__link:hover,
 html[data-theme='light'] .navbar__link--active {
   color: var(--ps-selected-background);
+}
+
+html[data-theme='dark'] .card__text,
+html[data-theme='dark'] .card__text h3 {
+  color: hsl(214deg 36% 16% / 100%);
 }
