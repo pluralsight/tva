@@ -73,6 +73,8 @@
   --ifm-code-font-size: 95%;
   --ifm-color-primary: var(--ps-selected-background);
   --ifm-font-color-base: var(--ps-text);
+  --ifm-font-family-monospace: 'DM Mono', sfmono-regular, menlo, monaco,
+    consalas, 'Liberation Mono', 'Courier New', monospace;
   --ifm-heading-color: var(--ps-text);
   --ifm-navbar-background-color: hsl(245deg 36% 15% / 100%);
   --ps-search-background: hsl(244deg 36% 24% / 100%);
@@ -97,6 +99,30 @@ html[data-theme='light'] {
   --ifm-color-primary: hsl(249deg 63% 51% / 100%);
   --ifm-font-color-base: hsl(0deg 0% 0% / 90%);
   --ifm-heading-color: hsl(0deg 0% 0% / 90%);
+  --ps-background: hsl(210deg 40% 96% / 100%);
+  --ps-backround-medium: hsl(210deg 40% 97% / 100%);
+  --ps-background-strong: hsl(0deg 0% 100% / 100%);
+  --ps-border: hsl(214deg 36% 66% / 50%);
+  --ps-danger-background: hsl(347deg 100% 89% / 100%);
+  --ps-danger-border: hsl(326deg 100% 41% / 100%);
+  --ps-danger-selected-text: hsl(326deg 100% 32% / 100%);
+  --ps-danger-text: hsl(327deg 100% 24% / 100%);
+  --ps-info-background: hsl(216deg 100% 91% / 100%);
+  --ps-info-icon: hsl(197deg 100% 25% / 100%);
+  --ps-info-text: hsl(204deg 100% 20% / 100%);
+  --ps-selected-background: hsl(249deg 63% 51% / 100%);
+  --ps-selected-background-medium: hsl(0deg 0% 0% / 65%);
+  --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
+  --ps-selected-background-weak: hsl(214deg 48% 83% / 40%);
+  --ps-success-background: hsl(142deg 100% 88% / 100%);
+  --ps-success-icon: hsl(155deg 100% 19% / 100%);
+  --ps-success-text: hsl(151deg 100% 9% / 100%);
+  --ps-text: hsl(0deg 0% 0% / 90%);
+  --ps-text-weak: hsl(248deg 63% 38% / 100%);
+  --ps-text-medium: hsl(249deg 67% 25% / 100%);
+  --ps-warning-background: hsl(36deg 100% 92% / 100%);
+  --ps-warning-icon: hsl(46deg 100% 26% / 100%);
+  --ps-warning-text: hsl(45deg 100% 15% / 100%);
 }
 
 .admonition-content {
@@ -114,19 +140,6 @@ html[data-theme='light'] {
 .admonition-note,
 .admonition-info {
   --ra-admonition-icon-color: var(--ps-info-icon);
-}
-
-html[data-theme='light'] .admonition-note,
-html[data-theme='light'] .admonition-info {
-  --ra-admonition-icon-color: hsl(197deg 100% 25% / 100%);
-}
-
-html[data-theme='light'] .admonition-tip {
-  --ra-admonition-icon-color: hsl(155deg 100% 19% / 100%);
-}
-
-html[data-theme='light'] .admonition-caution {
-  --ra-admonition-icon-color: hsl(46deg 100% 26% / 100%);
 }
 
 .admonition-heading {
@@ -185,19 +198,6 @@ html[data-theme='light'] .admonition-caution {
   z-index: 1;
 }
 
-html[data-theme='light'] .alert--warning {
-  --ifm-alert-background-color: hsl(36deg 100% 92% / 100%);
-}
-
-html[data-theme='light'] .alert--secondary,
-html[data-theme='light'] .alert--info {
-  --ifm-alert-background-color: hsl(216deg 100% 91% / 100%);
-}
-
-html[data-theme='light'] .alert--success {
-  --ifm-alert-background-color: hsl(142deg 100% 88% / 100%);
-}
-
 .alert--warning h5,
 .alert.alert--warning {
   color: var(--ps-warning-text);
@@ -213,23 +213,6 @@ html[data-theme='light'] .alert--success {
 .alert--success h5,
 .alert.alert--success {
   color: var(--ps-success-text);
-}
-
-html[data-theme='light'] .alert--warning h5,
-html[data-theme='light'] .alert.alert--warning {
-  color: hsl(45deg 100% 15% / 100%);
-}
-
-html[data-theme='light'] .alert--secondary h5,
-html[data-theme='light'] .alert.alert--secondary,
-html[data-theme='light'] .alert--info h5,
-html[data-theme='light'] .alert.alert--info {
-  color: hsl(204deg 100% 20% / 100%);
-}
-
-html[data-theme='light'] .alert--success h5,
-html[data-theme='light'] .alert.alert--success {
-  color: hsl(151deg 100% 9% / 100%);
 }
 
 .DocSearch-Button,
@@ -279,6 +262,12 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-footer-title-color: var(--ifm-color-white);
 }
 
+html[data-theme='light'] .footer--dark {
+  --ifm-footer-background-color: var(--ps-text);
+  --ifm-footer-link-color: var(--ifm-color-white);
+  --ifm-footer-title-color: var(--ps-selected-background-weak);
+}
+
 .hero--primary {
   --ifm-hero-text-color: var(--ps-text);
 
@@ -286,8 +275,17 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
     linear-gradient(90deg, #00a3ff 0%, #770ef7 100%);
 }
 
-.navbar__brand,
-html[data-theme='light'] .navbar__brand:hover,
-.navbar__link {
+.navbar__brand {
   color: var(--ps-text);
+}
+
+.navbar__brand,
+html[data-theme='light'] .navbar__link {
+  color: white;
+}
+
+html[data-theme='light'] .navbar__brand:hover,
+html[data-theme='light'] .navbar__link:hover,
+html[data-theme='light'] .navbar__link--active {
+  color: var(--ps-selected-background);
 }
