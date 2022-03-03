@@ -4,223 +4,188 @@
     "label": "psBackground",
     "cssToken": "--ps-background",
     "sassToken": "$ps-background",
-    "jsToken": "psBackground",
-    "value": "hsl(251deg 42% 10% / 100%)"
+    "jsToken": "psBackground"
   },
   "backgroundMedium": {
     "id": "psBackgroundMedium",
     "label": "psBackgroundMedium",
     "cssToken": "--ps-background-medium",
     "sassToken": "$ps-background-medium",
-    "jsToken": "psBackgroundMedium",
-    "value": "hsl(245deg 36% 20% / 100%)"
+    "jsToken": "psBackgroundMedium"
   },
   "psBackgroundStrong": {
     "id": "psBackgroundStrong",
     "label": "psBackgroundStrong",
     "cssToken": "--ps-background-strong",
     "sassToken": "$ps-background-strong",
-    "jsToken": "psBackgroundStrong",
-    "value": "hsl(0deg 0% 0% / 92%)"
+    "jsToken": "psBackgroundStrong"
   },
   "psBackgroundWeak": {
     "id": "psBackgroundWeak",
     "label": "psBackgroundWeak",
     "cssToken": "--ps-background-weak",
     "sassToken": "$ps-background-weak",
-    "jsToken": "psBackgroundWeak",
-    "value": "hsl(245deg 36% 15% / 100%)"
+    "jsToken": "psBackgroundWeak"
   },
   "psBorder": {
     "id": "psBorder",
     "label": "psBorder",
     "cssToken": "--ps-border",
     "sassToken": "$ps-border",
-    "jsToken": "psBorder",
-    "value": "hsl(234deg 30% 49% / 60%)"
+    "jsToken": "psBorder"
   },
   "psDangerBackground": {
     "id": "psDangerBackground",
     "label": "psDangerBackground",
     "cssToken": "--ps-danger-background",
     "sassToken": "$ps-danger-background",
-    "jsToken": "psDangerBackground",
-    "value": "hsl(331deg 100% 25% / 100%)"
+    "jsToken": "psDangerBackground"
   },
   "psDangerBorder": {
     "id": "psDangerBorder",
     "label": "psDangerBorder",
     "cssToken": "--ps-danger-border",
     "sassToken": "$ps-danger-border",
-    "jsToken": "psDangerBorder",
-    "value": "hsl(325deg 100% 50% / 100%)"
+    "jsToken": "psDangerBorder"
   },
   "psDangerSelectedText": {
     "id": "psDangerSelectedText",
     "label": "psDangerSelectedText",
     "cssToken": "--ps-danger-selected-text",
     "sassToken": "$ps-danger-selected-text",
-    "jsToken": "psDangerSelectedText",
-    "value": "hsl(345deg 100% 82% / 100%)"
+    "jsToken": "psDangerSelectedText"
   },
   "psDangerText": {
     "id": "psDangerText",
     "label": "psDangerText",
     "cssToken": "--ps-danger-text",
     "sassToken": "$ps-danger-text",
-    "jsToken": "psDangerText",
-    "value": "hsl(348deg 100% 93% / 100%)"
+    "jsToken": "psDangerText"
   },
   "psInfoBackground": {
     "id": "psInfoBackground",
     "label": "psInfoBackground",
     "cssToken": "--ps-info-background",
     "sassToken": "$ps-info-background",
-    "jsToken": "psInfoBackground",
-    "value": "hsl(204deg 100% 20% / 100%)"
+    "jsToken": "psInfoBackground"
   },
   "psInfoBorder": {
     "id": "psInfoBorder",
     "label": "psInfoBorder",
     "cssToken": "--ps-info-border",
     "sassToken": "$ps-info-border",
-    "jsToken": "psInfoBorder",
-    "value": "hsl(202deg 100% 50% / 100%)"
+    "jsToken": "psInfoBorder"
   },
   "psInfoIcon": {
     "id": "psInfoIcon",
     "label": "psInfoIcon",
     "cssToken": "--ps-info-icon",
     "sassToken": "$ps-info-icon",
-    "jsToken": "psInfoIcon",
-    "value": "hsl(212deg 100% 76% / 100%)"
+    "jsToken": "psInfoIcon"
   },
   "psInfoText": {
     "id": "psInfoText",
     "label": "psInfoText",
     "cssToken": "--ps-info-text",
     "sassToken": "$ps-info-text",
-    "jsToken": "psInfoText",
-    "value": "hsl(216deg 100% 91% / 100%)"
+    "jsToken": "psInfoText"
   },
   "psSelectedBackground": {
     "id": "psSelectedBackground",
     "label": "psSelectedBackground",
     "cssToken": "--ps-selected-background",
     "sassToken": "$ps-selected-background",
-    "jsToken": "psSelectedBackground",
-    "value": "hsl(247deg 67% 60% / 100%)"
+    "jsToken": "psSelectedBackground"
   },
   "psSelectedBackgroundMedium": {
     "id": "psSelectedBackgroundMedium",
     "label": "psSelectedBackgroundMedium",
     "cssToken": "--ps-selected-background-medium",
     "sassToken": "$ps-selected-background-medium",
-    "jsToken": "psSelectedBackgroundMedium",
-    "value": "hsl(0deg 0% 100% / 80%)"
+    "jsToken": "psSelectedBackgroundMedium"
   },
   "psSelectedBackgroundStrong": {
     "id": "psSelectedBackgroundStrong",
     "label": "psSelectedBackgroundStrong",
     "cssToken": "--ps-selected-background-strong",
     "sassToken": "$ps-selected-background-strong",
-    "jsToken": "psSelectedBackgroundStrong",
-    "value": "hsl(249deg 67% 25% / 100%)"
-  },
-  "psSelectedBackgroundWeak": {
-    "id": "psSelectedBackgroundWeak",
-    "label": "psSelectedBackgroundWeak",
-    "cssToken": "--ps-selected-background-weak",
-    "sassToken": "$ps-selected-background-weak",
-    "jsToken": "psSelectedBackgroundWeak",
-    "value": "hsl(234deg 30% 49% / 50%)"
+    "jsToken": "psSelectedBackgroundStrong"
   },
   "psSuccessBackground": {
     "id": "psSuccessBackground",
     "label": "psSuccessBackground",
     "cssToken": "--ps-success-background",
     "sassToken": "$ps-success-background",
-    "jsToken": "psSuccessBackground",
-    "value": "hsl(153deg 100% 14% / 100%)"
+    "jsToken": "psSuccessBackground"
   },
   "psSuccessBorder": {
     "id": "psSuccessBorder",
     "label": "psSuccessBorder",
     "cssToken": "--ps-success-border",
     "sassToken": "$ps-success-border",
-    "jsToken": "psSuccessBorder",
-    "value": "hsl(156deg 99% 36% / 100%)"
+    "jsToken": "psSuccessBorder"
   },
   "psSuccessIcon": {
     "id": "psSuccessIcon",
     "label": "psSuccessIcon",
     "cssToken": "--ps-success-icon",
     "sassToken": "$ps-success-icon",
-    "jsToken": "psSuccessIcon",
-    "value": "hsl(149deg 100% 67% / 100%)"
+    "jsToken": "psSuccessIcon"
   },
   "psSuccessText": {
     "id": "psSuccessText",
     "label": "psSuccessText",
     "cssToken": "--ps-success-text",
     "sassToken": "$ps-success-text",
-    "jsToken": "psSuccessText",
-    "value": "hsl(142deg 100% 88% / 100%)"
+    "jsToken": "psSuccessText"
   },
   "psText": {
     "id": "psText",
     "label": "psText",
     "cssToken": "--ps-text",
     "sassToken": "$ps-text",
-    "jsToken": "psText",
-    "value": "hsl(0deg 0% 100% / 100%)"
+    "jsToken": "psText"
   },
   "psTextMedium": {
     "id": "psTextMedium",
     "label": "psTextMedium",
     "cssToken": "--ps-text-medium",
     "sassToken": "$ps-text-medium",
-    "jsToken": "psTextMedium",
-    "value": "hsl(253deg 100% 94% / 100%)"
+    "jsToken": "psTextMedium"
   },
   "psTextWeak": {
     "id": "psTextWeak",
     "label": "psTextWeak",
     "cssToken": "--ps-text-weak",
     "sassToken": "$ps-text-weak",
-    "jsToken": "psTextWeak",
-    "value": "hsl(244deg 67% 83% / 100%)"
+    "jsToken": "psTextWeak"
   },
   "psWarningBackground": {
     "id": "psWarningBackground",
     "label": "psWarningBackground",
     "cssToken": "--ps-warning-background",
     "sassToken": "$ps-warning-background",
-    "jsToken": "psWarningBackground",
-    "value": "hsl(46deg 100% 20% / 100%)"
+    "jsToken": "psWarningBackground"
   },
   "psWarningBorder": {
     "id": "psWarningBorder",
     "label": "psWarningBorder",
     "cssToken": "--ps-warning-border",
     "sassToken": "$ps-warning-border",
-    "jsToken": "psWarningBorder",
-    "value": "hsl(46deg 100% 45% / 100%)"
+    "jsToken": "psWarningBorder"
   },
   "psWarningIcon": {
     "id": "psWarningIcon",
     "label": "psWarningIcon",
     "cssToken": "--ps-warning-icon",
     "sassToken": "$ps-warning-icon",
-    "jsToken": "psWarningIcon",
-    "value": "hsl(37deg 100% 83% / 100%)"
+    "jsToken": "psWarningIcon"
   },
   "psWarningText": {
     "id": "psWarningText",
     "label": "psWarningText",
     "cssToken": "--ps-warning-text",
     "sassToken": "$ps-warning-text",
-    "jsToken": "psWarningText",
-    "value": "hsl(36deg 100% 92% / 100%)"
+    "jsToken": "psWarningText"
   }
 }

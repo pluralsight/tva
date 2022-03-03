@@ -33,11 +33,9 @@ ps:
   selected-background:
     value: '{color.accent.background.dark.value}'
   selected-background-medium:
-    value: '{color.neutral.label-muted.dark.value}'
+    value: '{color.neutral.interactive-background.dark.value}'
   selected-background-strong:
     value: '{color.accent.background-weak.dark.value}'
-  selected-background-weak:
-    value: '{color.neutral.interactive-background.dark.value}'
   success-background:
     value: '{color.success.background-weak.dark.value}'
   success-border:

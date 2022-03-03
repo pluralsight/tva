@@ -11,12 +11,7 @@ function Label(props) {
 function ColorItem(props) {
   return (
     <li className={styles.item}>
-      <div
-        className={styles.swab}
-        style={{
-          backgroundColor: props.value,
-        }}
-      />
+      <div className={`${styles.swab} ${styles[props.id]}`} />
       <div className={styles.labelcontainer}>
         <Label>
           <span className={styles.syntax}>CSS:</span> {props.cssToken}
