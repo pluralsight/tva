@@ -32,7 +32,7 @@ const FeatureList = [
   },
 ]
 
-function Feature({ Svg, title, description }) {
+function Feature({ title, description }) {
   return (
     <div className={clsx('col col--4', styles.card)}>
       <div className="text--left padding-horiz--md card__text">
