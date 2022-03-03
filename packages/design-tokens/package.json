@@ -6,7 +6,9 @@
   "files": [
     "build/css/variables.css",
     "build/scss/_variables.scss",
-    "build/index.js"
+    "build/index.js",
+    "normalize.css",
+    "fonts.css"
   ],
   "sideEffects": [
     "build/css/*.css",

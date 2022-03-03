@@ -20,7 +20,6 @@
   src: url('https://fonts.pluralsight.com/ps-tt-commons/v1/ps-tt-commons-variable-italic.woff2')
     format('woff-variations');
 }
-
 @font-face {
   font-display: swap;
   font-family: 'DM Mono';
