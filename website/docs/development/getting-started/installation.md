@@ -73,12 +73,12 @@ This execution is currently being designed. We have created an [un-baised compar
 
 ## Normalize.css
 
-All of our web packages **depend on our normalize.css** file to be used in your project. This file adds our CSS resets, the `design-tokens` for CSS consumption, and our themes. To add our normalize file, simply copy and past the `link` content below into your `head` tag:
+All of our web packages **depend on our normalize.css** file to be used in your project. This file adds our CSS resets, the `design-tokens` for CSS consumption, and our themes. To add our normalize file, simply copy and paste the `link` content below into your `head` tag:
 
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@pluralsight/design-tokens@alpha/fonts.css"
+  href="https://unpkg.com/@pluralsight/design-tokens@alpha/normalize.css"
 />
 ```
 
