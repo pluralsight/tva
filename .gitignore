@@ -9,4 +9,5 @@
 
 # Workspace related
 packages/design-tokens/build
+packages/headless-styles/build
 website/build

@@ -2682,6 +2682,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@pluralsight/headless-styles@workspace:packages/headless-styles":
+  version: 0.0.0-use.local
+  resolution: "@pluralsight/headless-styles@workspace:packages/headless-styles"
+  dependencies:
+    typescript: ^4.6.2
+  languageName: unknown
+  linkType: soft
+
 "@pluralsight/tva@workspace:.":
   version: 0.0.0-use.local
   resolution: "@pluralsight/tva@workspace:."
@@ -2717,7 +2725,7 @@ __metadata:
     stylelint-order: ^5.0.0
     stylelint-prettier: ^2.0.0
     supports-color: ^9.2.1
-    typescript: ^4.4.4
+    typescript: ^4.6.2
   languageName: unknown
   linkType: soft
 
@@ -16033,7 +16041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.4.3, typescript@npm:^4.4.4":
+"typescript@npm:^4.4.3":
   version: 4.4.4
   resolution: "typescript@npm:4.4.4"
   bin:
@@ -16043,13 +16051,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>":
+"typescript@npm:^4.6.2":
+  version: 4.6.2
+  resolution: "typescript@npm:4.6.2"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: bd629ad0da4a15d79aaad56baf3ee7d96f6a181760d430ae77f8c5325df7bffd9edee57544a3970e3651e8b796fe03a5838a7eb39c6d46cc3866c0b23d36a0dd
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
+  version: 4.6.2
+  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: efb83260a22ee49d4c8bdc59b3cefe54fdf51d6f563f5c3a35aa3d5e46fb12f3f1d33a36d6f9f64171e567ead1847e99cb612d0a9a74e7d44e16cad9d0bbc937
   languageName: node
   linkType: hard
 

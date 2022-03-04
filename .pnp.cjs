@@ -30,6 +30,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           reference: 'workspace:packages/design-tokens',
         },
         {
+          name: '@pluralsight/headless-styles',
+          reference: 'workspace:packages/headless-styles',
+        },
+        {
           name: 'release-script',
           reference: 'workspace:scripts',
         },
@@ -43,6 +47,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         '(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)',
       fallbackExclusionList: [
         ['@pluralsight/design-tokens', ['workspace:packages/design-tokens']],
+        [
+          '@pluralsight/headless-styles',
+          ['workspace:packages/headless-styles'],
+        ],
         ['@pluralsight/tva', ['workspace:.']],
         ['release-script', ['workspace:scripts']],
         ['website', ['workspace:website']],
@@ -563,6 +571,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@npmcli/fs', 'npm:1.0.0'],
         ['@npmcli/move-file', 'npm:1.1.2'],
         ['@pluralsight/design-tokens', 'workspace:packages/design-tokens'],
+        ['@pluralsight/headless-styles', 'workspace:packages/headless-styles'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@sideway/address', 'npm:4.1.3'],
         ['@sideway/formula', 'npm:3.0.0'],
@@ -2002,7 +2011,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['typedarray-to-buffer', 'npm:3.1.5'],
         [
           'typescript',
-          'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+          'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
         ],
         ['typical', 'npm:2.6.1'],
         ['ua-parser-js', 'npm:0.7.31'],
@@ -2223,7 +2232,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['supports-color', 'npm:9.2.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'SOFT',
@@ -10829,6 +10838,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          '@pluralsight/headless-styles',
+          [
+            [
+              'workspace:packages/headless-styles',
+              {
+                packageLocation: './packages/headless-styles/',
+                packageDependencies: [
+                  [
+                    '@pluralsight/headless-styles',
+                    'workspace:packages/headless-styles',
+                  ],
+                  [
+                    'typescript',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                  ],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+          ],
+        ],
+        [
           '@pluralsight/tva',
           [
             [
@@ -10915,7 +10946,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['supports-color', 'npm:9.2.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'SOFT',
@@ -12054,7 +12085,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: [
@@ -12154,7 +12185,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['eslint', 'npm:8.2.0'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: [
@@ -12272,7 +12303,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: ['@types/typescript', 'typescript'],
@@ -35428,7 +35459,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['tslib', 'npm:1.14.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: ['@types/typescript', 'typescript'],
@@ -35640,6 +35671,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     'typescript',
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
+                  ],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
+              'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+              {
+                packageLocation:
+                  './.yarn/cache/typescript-patch-cf7929b7ae-efb83260a2.zip/node_modules/typescript/',
+                packageDependencies: [
+                  [
+                    'typescript',
+                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'HARD',

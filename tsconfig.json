@@ -2,19 +2,19 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "isolatedModules": true,
     "lib": ["ES2019"],
     "module": "commonjs",
     "noImplicitReturns": true,
+    "resolveJsonModule": true,
     "strict": true,
     "target": "ES2019",
-    "declaration": true,
-    "importHelpers": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
     "useUnknownInCatchVariables": false
   }
 }
