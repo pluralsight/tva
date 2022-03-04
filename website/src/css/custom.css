@@ -265,7 +265,7 @@ html[data-theme='light'] .footer--dark {
   --ifm-footer-background-color: var(--ps-background-weak);
   --ifm-footer-color: hsl(234deg 30% 78% / 100%);
   --ifm-footer-link-color: var(--ifm-color-white);
-  --ifm-footer-title-color: vhsl(234deg 30% 78% / 100%);
+  --ifm-footer-title-color: hsl(234deg 30% 78% / 100%);
 }
 
 .hero--primary {
