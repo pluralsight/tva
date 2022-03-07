@@ -2,7 +2,7 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "main": "./src/index.ts",
+  "main": "./build/index.js",
   "files": [
     "build/**/*"
   ],
@@ -23,9 +23,7 @@
     "headless-styles"
   ],
   "publishConfig": {
-    "access": "public",
-    "main": "./build/index.js",
-    "types": "./build/index.d.ts"
+    "access": "public"
   },
   "author": "Design System Team",
   "bugs": {
