@@ -2,7 +2,7 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "main": "index.ts",
+  "main": "./src/index.ts",
   "files": [
     "build/**/*"
   ],
