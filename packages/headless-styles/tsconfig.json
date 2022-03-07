@@ -2,8 +2,6 @@
   "extends": "../../tsconfig.json",
   "include": ["src", "tests"],
   "compilerOptions": {
-    "baseUrl": "./src",
-    "rootDir": ".",
-    "types": ["@types/jest"]
+    "baseUrl": "src"
   }
 }

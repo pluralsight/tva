@@ -2024,7 +2024,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['typedarray-to-buffer', 'npm:3.1.5'],
         [
           'typescript',
-          'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+          'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
         ],
         ['typical', 'npm:2.6.1'],
         ['ua-parser-js', 'npm:0.7.31'],
@@ -2246,7 +2246,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['supports-color', 'npm:9.2.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'SOFT',
@@ -11642,7 +11642,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/jest', 'npm:27.4.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'SOFT',
@@ -11738,7 +11738,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['supports-color', 'npm:9.2.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'SOFT',
@@ -12903,7 +12903,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: [
@@ -13003,7 +13003,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['eslint', 'npm:8.2.0'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: [
@@ -13089,7 +13089,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: [
@@ -13241,7 +13241,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: ['@types/typescript', 'typescript'],
@@ -36725,7 +36725,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['tslib', 'npm:1.14.1'],
                   [
                     'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
+                    'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
                 ],
                 packagePeers: ['@types/typescript', 'typescript'],
@@ -36937,20 +36937,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   [
                     'typescript',
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
-                  ],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-            [
-              'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
-              {
-                packageLocation:
-                  './.yarn/cache/typescript-patch-cf7929b7ae-efb83260a2.zip/node_modules/typescript/',
-                packageDependencies: [
-                  [
-                    'typescript',
-                    'patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=ddd1e8',
                   ],
                 ],
                 linkType: 'HARD',

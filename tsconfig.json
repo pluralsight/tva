@@ -16,7 +16,7 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ES2022",
+    "target": "ES6",
     "skipLibCheck": true
   }
 }
