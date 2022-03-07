@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "lib": ["ES2019"],
-    "module": "commonjs",
+    "lib": ["ESNext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ES2019",
-    "skipLibCheck": true,
-    "useUnknownInCatchVariables": false
+    "target": "ES2022",
+    "skipLibCheck": true
   }
 }

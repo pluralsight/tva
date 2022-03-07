@@ -5,9 +5,9 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
+  "npm.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js",
-  "npm.packageManager": "yarn",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "jest.jestCommandLine": "yarn test"

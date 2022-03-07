@@ -6,7 +6,7 @@ module.exports = {
   transformIgnorePatterns: [`/.pnp.cjs$`],
   testMatch: [
     `<rootDir>/packages/**/*/?(*.)+(test).(js|ts|tsx)`,
-    '!<rootDir>/packages/tokens/**/*',
+    '!<rootDir>/packages/design-tokens/**/*',
   ],
   testTimeout: 50000,
 }

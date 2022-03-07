@@ -7,10 +7,11 @@
     "build/**/*"
   ],
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --project tsconfig.build.json",
+    "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "typescript": "^4.6.2"
   },
   "keywords": [

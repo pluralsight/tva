@@ -1,7 +1,7 @@
 import { getButtonProps } from '../src'
 
 describe('button', () => {
-  context('getButtonProps', () => {
+  describe('getButtonProps', () => {
     test('should exist', () => {
       expect(getButtonProps).toBeDefined()
     })

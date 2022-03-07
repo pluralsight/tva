@@ -4,7 +4,7 @@ const OFF = 0
 
 module.exports = {
   root: true,
-  ignorePatterns: ['website/build/**'],
+  ignorePatterns: ['website/build/**', 'packages/headless-styles/tests/**/*'],
   parser: require.resolve('@typescript-eslint/parser'),
   env: {
     browser: true,
