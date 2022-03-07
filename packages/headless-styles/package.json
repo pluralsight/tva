@@ -23,7 +23,9 @@
     "headless-styles"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "main": "./build/index.js",
+    "types": "./build/index.d.ts"
   },
   "author": "Design System Team",
   "bugs": {
