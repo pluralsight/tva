@@ -31,7 +31,7 @@ async function validateSkipPackages({ packages, skipPackages }) {
         // Do we depend on a version of the package that has not been
         // published to NPM? Yarn version plugin manages this, but has no
         // ci option to date, so we have to manually manage it.
-        const info = await execRead(`npm view ${dependency}@${version}`)
+        const info = await execRead(`yarn npm info ${dependency}@${version}`)
 
         if (!info) {
           console.error(
