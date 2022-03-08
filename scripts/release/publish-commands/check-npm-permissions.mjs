@@ -27,15 +27,13 @@ async function checkNPMPermissions(packages) {
 
   if (failedProjects.length) {
     console.error(
-      error`
-      {error Insufficient NPM permissions}
-      \nNPM user ${currentUser} is not an owner for: ${failedProjects
-        .map((name) => error(name))
-        .join(', ')}
-      \nPlease contact a TVA team member to be added to the above project(s).
-      `
-        .replace(/\n +/g, '\n')
-        .trim()
+      error(
+        '{error Insufficient NPM permissions}\nNPM user ' +
+          currentUser +
+          ' is not an owner for: ' +
+          failedProjects.map((name) => error(name)).join(', ') +
+          '\nPlease contact a TVA team member to be added to the above project(s).'
+      )
     )
     process.exit(1)
   }

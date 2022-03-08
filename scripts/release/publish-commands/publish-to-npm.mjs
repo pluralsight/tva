@@ -41,9 +41,7 @@ async function publishToNPM({ dry, tags, ci }, packageName) {
   // If so we might be resuming from a previous run.
   // We could infer this by comparing the build-info.json,
   // But for now the easiest way is just to ask if this is expected.
-  const info = await execRead(
-    `yarn npm info @pluralsight/${packageName}@${version}`
-  )
+  const info = await execRead(`npm view @pluralsight/${packageName}@${version}`)
 
   if (info) {
     console.log(
