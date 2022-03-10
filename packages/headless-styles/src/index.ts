@@ -1,1 +1,1 @@
-export { getButtonProps } from './components/Button/Button'
+export { getButtonProps } from './components/Button/buttonCSS'

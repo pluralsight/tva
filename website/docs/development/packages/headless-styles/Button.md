@@ -15,9 +15,9 @@ The Button is used to call attention, perform an action, or to nagivate.
 
 Buttons communicate actions that users can take. In your UI, they are typically found in places like:
 
-- Modal windows
 - Forms
-- Skills Cards
+- Modal windows
+- Course Cards
 
 ## Basic Button
 
@@ -77,7 +77,9 @@ function EditIconButton(props) {
 }
 ```
 
-## getButtonProps
+## CSS API
+
+### getButtonProps
 
 ```typescript
 getButtonProps(options: ButtonOptions): ButtonProps
@@ -105,41 +107,7 @@ interface ButtonProps {
 If you are using **Styled-Components**, see "getJSButtonProps" section.
 :::
 
-## getJSButtonProps (CSS in JS)
-
-```typescript
-getJSButtonProps(options: ButtonOptions): JSButtonProps
-```
-
-If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: var(--TBD)
-    background-color: var(--TBD)
-    ...
-  `,
-  styles: {
-    color: button.default.text.color.value,
-    backgroundColor: button.default.background.value
-    ...
-  },
-  type: 'button',
-}
-```
-
-#### JSButtonProps
-
-```typescript
-interface JSButtonProps {
-  cssProps: string
-  styles: Record<CSSProps, string>
-  type: string
-}
-```
-
-## getIconLabelProps
+### getIconLabelProps
 
 ```typescript
 getIconLabelProps(): IconLabelButtonProps
@@ -162,7 +130,7 @@ interface IconLabelButtonProps {
 }
 ```
 
-## getIconButtonProps
+### getIconButtonProps
 
 ```typescript
 getIconButtonProps(ariaLabel: string): IconButtonProps
@@ -193,6 +161,42 @@ function EditIconButton(props) {
 ```typescript
 interface IconButtonProps {
   'aria-label': string
+}
+```
+
+## CSS in JS API
+
+### getJSButtonProps
+
+```typescript
+getJSButtonProps(options: ButtonOptions): JSButtonProps
+```
+
+If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: var(--TBD)
+    background-color: var(--TBD)
+    ...
+  `,
+  styles: {
+    color: button.default.text.color.value,
+    backgroundColor: button.default.background.value
+    ...
+  },
+  type: 'button',
+}
+```
+
+#### JSButtonProps
+
+```typescript
+interface JSButtonProps {
+  cssProps: string
+  styles: Record<CSSProps, string>
+  type: string
 }
 ```
 
