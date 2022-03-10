@@ -2,34 +2,27 @@ color:
   neutral:
     background:
       dark:
-        value: 'hsl(251deg 42% 10% / 100%)'
+        value: 'hsl(238deg 30% 32% / 100%)'
       light:
-        value: 'hsl(210deg 40% 96% / 100%)'
-    background-weak:
+        value: 'hsl(214deg 48% 83% / 60%)'
+    background-active:
       dark:
-        value: 'hsl(245deg 36% 15% / 100%)'
+        value: 'hsl(240deg 31% 25% / 100%)'
       light:
-        value: 'hsl(0deg 0% 100% / 100%)'
-    background-medium:
+        value: 'hsl(214deg 48% 83% / 70%)'
+    background-hover:
       dark:
-        value: 'hsl(245deg 36% 20% / 100%)'
+        value: 'hsl(237deg 30% 36% / 100%)'
       light:
-        value: 'hsl(210deg 40% 97% / 100%)'
-    background-strong:
-      dark:
-        value: 'hsl(244deg 36% 24% / 100%)'
-      light:
-        value: 'hsl(214deg 32% 93% / 100%)'
-    black:
-      value: 'hsl(0deg 0% 0% / 92%)'
+        value: 'hsl(214deg 36% 66% / 30%)'
     border:
       dark:
-        value: 'hsl(234deg 30% 49% / 60%)'
+        value: 'hsl(237deg 30% 36% / 100%)'
       light:
         value: 'hsl(214deg 36% 66% / 50%)'
     border-muted:
       dark:
-        value: 'hsl(234deg 30% 49% / 30%)'
+        value: 'hsl(240deg 31% 25% / 100%)'
       light:
         value: 'hsl(214deg 36% 66% / 30%)'
     border-strong:
@@ -37,30 +30,53 @@ color:
         value: 'hsl(234deg 30% 49% / 100%)'
       light:
         value: 'hsl(214deg 35% 66% / 100%)'
+    label:
+      dark:
+        value: 'hsl(0deg 0% 100% / 100%)'
+      light:
+        value: 'hsl(214deg 36% 16% / 100%)'
     label-muted:
       dark:
-        value: 'hsl(0deg 0% 100% / 80%)'
+        value: 'hsl(235deg 30% 78% / 100%)'
       light:
-        value: 'hsl(0deg 0% 0% / 65%)'
+        value: 'hsl(214deg 30% 35% / 100%)'
     label-subtle:
       dark:
-        value: 'hsl(0deg 0% 100% / 50%)'
+        value: 'hsl(234deg 30% 66% / 100%)'
       light:
-        value: 'hsl(0deg 0% 0% / 45%)'
+        value: 'hsl(214deg 25% 41% / 100%)'
     interactive-background:
       dark:
         value: 'hsl(234deg 30% 49% / 50%)'
       light:
         value: 'hsl(214deg 48% 83% / 40%)'
     interactive-background-active:
-      light:
-        value: 'hsl(214deg 48% 83% / 70%)'
       dark:
         value: 'hsl(234deg 30% 49% / 30%)'
-    interactive-background-hover:
       light:
-        value: 'hsl(214deg 48% 83% / 60%)'
+        value: 'hsl(214deg 48% 83% / 70%)'
+    interactive-background-hover:
       dark:
         value: 'hsl(234deg 30% 49% / 60%)'
-    white:
-      value: 'hsl(0deg 0% 100% / 100%)'
+      light:
+        value: 'hsl(214deg 48% 83% / 60%)'
+    surface:
+      dark:
+        value: 'hsl(251deg 42% 10% / 100%)'
+      light:
+        value: 'hsl(210deg 38% 97% / 100%)'
+    surface-weak:
+      dark:
+        value: 'hsl(246deg 37% 15% / 100%)'
+      light:
+        value: 'hsl(0deg 0% 100% / 100%)'
+    surface-medium:
+      dark:
+        value: 'hsl(245deg 35% 20% / 100%)'
+      light:
+        value: 'hsl(210deg 40% 97% / 100%)'
+    surface-strong:
+      dark:
+        value: 'hsl(244deg 36% 24% / 100%)'
+      light:
+        value: 'hsl(214deg 32% 94% / 100%)'

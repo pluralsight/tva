@@ -35,8 +35,8 @@ In order to make our tokens scalable and easier to consume, we use the same nami
 ps-[sentiment?]-[usage]-[prominence?]-[interaction?]
 ```
 
-- **Sentiment** - "default", "info", "success", "warning", "danger", "selected"
-- **Usage** - "background", "border", "text"
+- **Sentiment** - "default" (accent), "neutral", "info", "success", "warning", "danger"
+- **Usage** - "background", "border", "surface", "text"
 - **Prominence** - "default", "weak", "medium", "strong"
 - **Interaction** - "default", "hover", "active", "focus", "disabled"
 
@@ -48,8 +48,8 @@ What this looks like in terms of an actual token can be seen in an example for s
 
 ```css title="Button example - not actual properties"
 :root {
-  --ps-selected-background: #123456;
-  --ps-selected-background-hover: #123456;
+  --ps-background: #123456;
+  --ps-background-hover: #123456;
 }
 ```
 

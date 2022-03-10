@@ -5,15 +5,19 @@
 
 ps:
   background:
-    value: '{color.neutral.background.dark.value}'
-  background-medium:
-    value: '{color.neutral.background-medium.dark.value}'
-  background-strong:
-    value: '{color.neutral.black.value}'
+    value: '{color.accent.background.dark.value}'
+  background-active:
+    value: '{color.accent.background-active.dark.value}'
+  background-hover:
+    value: '{color.accent.background-hover.dark.value}'
   background-weak:
-    value: '{color.neutral.background-weak.dark.value}'
+    value: '{color.aceent.background-weak.dark.value}'
+  background-weak-active:
+    value: '{color.aceent.background-weak-active.dark.value}'
+  background-weak-hover:
+    value: '{color.aceent.background-weak-hover.dark.value}'
   border:
-    value: '{color.neutral.border.dark.value}'
+    value: '{color.aceent.border.dark.value}'
   danger-background:
     value: '{color.danger.background-weak.dark.value}'
   danger-border:
@@ -30,6 +34,32 @@ ps:
     value: '{color.info.label-muted.dark.value}'
   info-text:
     value: '{color.info.label.dark.value}'
+  neutral-background:
+    value: '{color.neutral.background.dark.value}'
+  neutral-background-active:
+    value: '{color.neutral.background-active.dark.value}'
+  neutral-background-hover:
+    value: '{color.neutral.background-hover.dark.value}'
+  neutral-border:
+    value: '{color.neutral.border.dark.value}'
+  neutral-border-weak:
+    value: '{color.neutral.border-muted.dark.value}'
+  neutral-border-strong:
+    value: '{color.neutral.border-strong.dark.value}'
+  neutral-surface:
+    value: '{color.neutral.surface.dark.value}'
+  neutral-surface-weak:
+    value: '{color.neutral.surface-weak.dark.value}'
+  neutral-surface-medium:
+    value: '{color.neutral.surface-medium.dark.value}'
+  neutral-surface-strong:
+    value: '{color.neutral.surface-strong.dark.value}'
+  neutral-text:
+    value: '{color.neutral.label.dark.value}'
+  neutral-text-weak:
+    value: '{color.neutral.label-muted.dark.value}'
+  neutral-text-medium:
+    value: '{color.neutral.label-subtle.dark.value}'
   selected-background:
     value: '{color.accent.background.dark.value}'
   selected-background-medium:
@@ -45,11 +75,11 @@ ps:
   success-text:
     value: '{color.success.label.dark.value}'
   text:
-    value: '{color.neutral.white.value}'
+    value: '{color.accent.label.dark.value}'
   text-weak:
     value: '{color.accent.label-muted.dark.value}'
   text-medium:
-    value: '{color.accent.label.dark.value}'
+    value: '{color.accent.label-subtle.dark.value}'
   warning-background:
     value: '{color.warning.background-weak.dark.value}'
   warning-border:
