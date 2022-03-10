@@ -1,191 +1,400 @@
 {
-  "background": {
-    "id": "psBackground",
-    "label": "psBackground",
-    "cssToken": "--ps-background",
-    "sassToken": "$ps-background",
-    "jsToken": "psBackground"
+  "categories": ["default", "neutral", "info", "success", "warning", "danger"],
+  "default": {
+    "background": {
+      "id": "psBackground",
+      "label": "psBackground",
+      "cssToken": "--ps-background",
+      "sassToken": "$ps-background",
+      "jsToken": "psBackground"
+    },
+    "backgroundActive": {
+      "id": "psBackgroundActive",
+      "label": "psBackgroundActive",
+      "cssToken": "--ps-background-active",
+      "sassToken": "$ps-background-active",
+      "jsToken": "psBackgroundActive"
+    },
+    "backgroundHover": {
+      "id": "psBackgroundHover",
+      "label": "psBackgroundHover",
+      "cssToken": "--ps-background-hover",
+      "sassToken": "$ps-background-hover",
+      "jsToken": "psBackgroundHover"
+    },
+    "backgroundWeak": {
+      "id": "psBackgroundWeak",
+      "label": "psBackgroundWeak",
+      "cssToken": "--ps-background-weak",
+      "sassToken": "$ps-background-weak",
+      "jsToken": "psBackgroundWeak"
+    },
+    "backgroundWeakActive": {
+      "id": "psBackgroundWeakActive",
+      "label": "psBackgroundWeakActive",
+      "cssToken": "--ps-background-weak-active",
+      "sassToken": "$ps-background-weak-active",
+      "jsToken": "psBackgroundWeakActive"
+    },
+    "backgroundWeakHover": {
+      "id": "psBackgroundWeakHover",
+      "label": "psBackgroundWeakHover",
+      "cssToken": "--ps-background-weak-hover",
+      "sassToken": "$ps-background-weak-hover",
+      "jsToken": "psBackgroundWeakHover"
+    },
+    "psBorder": {
+      "id": "psBorder",
+      "label": "psBorder",
+      "cssToken": "--ps-border",
+      "sassToken": "$ps-border",
+      "jsToken": "psBorder"
+    },
+    "psText": {
+      "id": "psText",
+      "label": "psText",
+      "cssToken": "--ps-text",
+      "sassToken": "$ps-text",
+      "jsToken": "psText"
+    },
+    "psTextWeak": {
+      "id": "psTextWeak",
+      "label": "psTextWeak",
+      "cssToken": "--ps-text-weak",
+      "sassToken": "$ps-text-weak",
+      "jsToken": "psTextWeak"
+    },
+    "psTextMedium": {
+      "id": "psTextMedium",
+      "label": "psTextMedium",
+      "cssToken": "--ps-text-medium",
+      "sassToken": "$ps-text-medium",
+      "jsToken": "psTextMedium"
+    }
   },
-  "backgroundMedium": {
-    "id": "psBackgroundMedium",
-    "label": "psBackgroundMedium",
-    "cssToken": "--ps-background-medium",
-    "sassToken": "$ps-background-medium",
-    "jsToken": "psBackgroundMedium"
+  "neutral": {
+    "neutralBackground": {
+      "id": "psNeutralBackground",
+      "label": "psNeutralBackground",
+      "cssToken": "--ps-neutral-background",
+      "sassToken": "$ps-neutral-background",
+      "jsToken": "psNeutralBackground"
+    },
+    "neutralBackgroundActive": {
+      "id": "psNeutralBackgroundActive",
+      "label": "psNeutralBackgroundActive",
+      "cssToken": "--ps-neutral-background-active",
+      "sassToken": "$ps-neutral-background-active",
+      "jsToken": "psNeutralBackgroundActive"
+    },
+    "neutralBackgroundHover": {
+      "id": "psNeutralBackgroundHover",
+      "label": "psNeutralBackgroundHover",
+      "cssToken": "--ps-neutral-background-hover",
+      "sassToken": "$ps-neutral-background-hover",
+      "jsToken": "psNeutralBackgroundHover"
+    },
+    "neutralBorder": {
+      "id": "psNeutralBorder",
+      "label": "psNeutralBorder",
+      "cssToken": "--ps-neutral-border",
+      "sassToken": "$ps-neutral-border",
+      "jsToken": "psNeutralBorder"
+    },
+    "neutralBorderWeak": {
+      "id": "psNeutralBorderWeak",
+      "label": "psNeutralBorderWeak",
+      "cssToken": "--ps-neutral-border-weak",
+      "sassToken": "$ps-neutral-border-weak",
+      "jsToken": "psNeutralBorderWeak"
+    },
+    "neutralBorderStrong": {
+      "id": "psNeutralBorderStrong",
+      "label": "psNeutralBorderStrong",
+      "cssToken": "--ps-neutral-border-strong",
+      "sassToken": "$ps-neutral-border-strong",
+      "jsToken": "psNeutralBorderStrong"
+    },
+    "neutralText": {
+      "id": "psNeutralText",
+      "label": "neutralText",
+      "cssToken": "--ps-neutral-text",
+      "sassToken": "$ps-neutral-text",
+      "jsToken": "psNeutralText"
+    },
+    "neutralTextWeak": {
+      "id": "psNeutralTextWeak",
+      "label": "neutralTextWeak",
+      "cssToken": "--ps-neutral-text-weak",
+      "sassToken": "$ps-neutral-text-weak",
+      "jsToken": "psNeutralTextWeak"
+    },
+    "neutralTextMedium": {
+      "id": "psNeutralTextMedium",
+      "label": "neutralTextMedium",
+      "cssToken": "--ps-neutral-text-medium",
+      "sassToken": "$ps-neutral-text-medium",
+      "jsToken": "psNeutralTextMedium"
+    },
+    "neutralSurface": {
+      "id": "psNeutralSurface",
+      "label": "psNeutralSurface",
+      "cssToken": "--ps-neutral-surface",
+      "sassToken": "$ps-neutral-surface",
+      "jsToken": "psNeutralSurface"
+    },
+    "surfaceWeak": {
+      "id": "psNeutralSurfaceWeak",
+      "label": "psNeutralSurfaceWeak",
+      "cssToken": "--ps-neutral-surface-weak",
+      "sassToken": "$ps-neutral-surface-weak",
+      "jsToken": "psNeutralSurfaceWeak"
+    },
+    "surfaceMedium": {
+      "id": "psNeutralSurfaceMedium",
+      "label": "psNeutralSurfaceMedium",
+      "cssToken": "--ps-neutral-surface-medium",
+      "sassToken": "$ps-neutral-surface-medium",
+      "jsToken": "psNeutralSurfaceMedium"
+    },
+    "surfaceStrong": {
+      "id": "psNeutralSurfaceStrong",
+      "label": "psNeutralSurfaceStrong",
+      "cssToken": "--ps-neutral-surface-strong",
+      "sassToken": "$ps-neutral-surface-strong",
+      "jsToken": "psNeutralSurfaceStrong"
+    }
   },
-  "psBackgroundStrong": {
-    "id": "psBackgroundStrong",
-    "label": "psBackgroundStrong",
-    "cssToken": "--ps-background-strong",
-    "sassToken": "$ps-background-strong",
-    "jsToken": "psBackgroundStrong"
+  "info": {
+    "infoBackground": {
+      "id": "psInfoBackground",
+      "label": "psInfoBackground",
+      "cssToken": "--ps-info-background",
+      "sassToken": "$ps-info-background",
+      "jsToken": "psInfoBackground"
+    },
+    "infoBackgroundActive": {
+      "id": "psInfoBackgroundActive",
+      "label": "psInfoBackgroundActive",
+      "cssToken": "--ps-info-background-active",
+      "sassToken": "$ps-info-background-active",
+      "jsToken": "psInfoBackgroundActive"
+    },
+    "infoBackgroundHover": {
+      "id": "psInfoBackgroundHover",
+      "label": "psInfoBackgroundHover",
+      "cssToken": "--ps-info-background-hover",
+      "sassToken": "$ps-info-background-hover",
+      "jsToken": "psInfoBackgroundHover"
+    },
+    "infoBackgroundWeak": {
+      "id": "psInfoBackgroundWeak",
+      "label": "psInfoBackgroundWeak",
+      "cssToken": "--ps-info-background-weak",
+      "sassToken": "$ps-info-background-weak",
+      "jsToken": "psInfoBackgroundWeak"
+    },
+    "infoBorder": {
+      "id": "psInfoBorder",
+      "label": "psInfoBorder",
+      "cssToken": "--ps-info-border",
+      "sassToken": "$ps-info-border",
+      "jsToken": "psInfoBorder"
+    },
+    "infoText": {
+      "id": "psInfoText",
+      "label": "psInfoText",
+      "cssToken": "--ps-info-text",
+      "sassToken": "$ps-info-text",
+      "jsToken": "psInfoText"
+    },
+    "infoTextWeak": {
+      "id": "psInfoTextWeak",
+      "label": "psInfoTextWeak",
+      "cssToken": "--ps-info-text-weak",
+      "sassToken": "$ps-info-text-weak",
+      "jsToken": "psInfoTextWeak"
+    },
+    "infoTextMedium": {
+      "id": "psInfoTextMedium",
+      "label": "psInfoTextMedium",
+      "cssToken": "--ps-info-text-medium",
+      "sassToken": "$ps-info-text-medium",
+      "jsToken": "psInfoTextMedium"
+    }
   },
-  "psBackgroundWeak": {
-    "id": "psBackgroundWeak",
-    "label": "psBackgroundWeak",
-    "cssToken": "--ps-background-weak",
-    "sassToken": "$ps-background-weak",
-    "jsToken": "psBackgroundWeak"
+  "success": {
+    "successBackground": {
+      "id": "psSuccessBackground",
+      "label": "psSuccessBackground",
+      "cssToken": "--ps-success-background",
+      "sassToken": "$ps-success-background",
+      "jsToken": "psSuccessBackground"
+    },
+    "successBackgroundActive": {
+      "id": "psSuccessBackgroundActive",
+      "label": "psSuccessBackgroundActive",
+      "cssToken": "--ps-success-background-active",
+      "sassToken": "$ps-success-background-active",
+      "jsToken": "psSuccessBackgroundActive"
+    },
+    "successBackgroundHover": {
+      "id": "psSuccessBackgroundHover",
+      "label": "psSuccessBackgroundHover",
+      "cssToken": "--ps-success-background-hover",
+      "sassToken": "$ps-success-background-hover",
+      "jsToken": "psSuccessBackgroundHover"
+    },
+    "successBackgroundWeak": {
+      "id": "psSuccessBackgroundWeak",
+      "label": "psSuccessBackgroundWeak",
+      "cssToken": "--ps-success-background-weak",
+      "sassToken": "$ps-success-background-weak",
+      "jsToken": "psSuccessBackgroundWeak"
+    },
+    "successBorder": {
+      "id": "psSuccessBorder",
+      "label": "psSuccessBorder",
+      "cssToken": "--ps-success-border",
+      "sassToken": "$ps-success-border",
+      "jsToken": "psSuccessBorder"
+    },
+    "successText": {
+      "id": "psSuccessText",
+      "label": "successText",
+      "cssToken": "--ps-success-text",
+      "sassToken": "$ps-success-text",
+      "jsToken": "psSuccessText"
+    },
+    "successTextWeak": {
+      "id": "psSuccessTextWeak",
+      "label": "successTextWeak",
+      "cssToken": "--ps-text-success-weak",
+      "sassToken": "$ps-text-success-weak",
+      "jsToken": "psSuccessTextWeak"
+    },
+    "successTextMedium": {
+      "id": "psSuccessTextMedium",
+      "label": "successTextMedium",
+      "cssToken": "--ps-success-text-medium",
+      "sassToken": "$ps-success-text-medium",
+      "jsToken": "psSuccessTextMedium"
+    }
   },
-  "psBorder": {
-    "id": "psBorder",
-    "label": "psBorder",
-    "cssToken": "--ps-border",
-    "sassToken": "$ps-border",
-    "jsToken": "psBorder"
+  "warning": {
+    "warningBackground": {
+      "id": "psWarningBackground",
+      "label": "pswarningBackground",
+      "cssToken": "--ps-warning-background",
+      "sassToken": "$ps-warning-background",
+      "jsToken": "psWarningBackground"
+    },
+    "warningBackgroundActive": {
+      "id": "psWarningBackgroundActive",
+      "label": "pswarningBackgroundActive",
+      "cssToken": "--ps-warning-background-active",
+      "sassToken": "$ps-warning-background-active",
+      "jsToken": "psWarningBackgroundActive"
+    },
+    "warningBackgroundHover": {
+      "id": "psWarningBackgroundHover",
+      "label": "pswarningBackgroundHover",
+      "cssToken": "--ps-warning-background-hover",
+      "sassToken": "$ps-warning-background-hover",
+      "jsToken": "psWarningBackgroundHover"
+    },
+    "warningBackgroundWeak": {
+      "id": "psWarningBackgroundWeak",
+      "label": "pswarningBackgroundWeak",
+      "cssToken": "--ps-warning-background-weak",
+      "sassToken": "$ps-warning-background-weak",
+      "jsToken": "psWarningBackgroundWeak"
+    },
+    "warningBorder": {
+      "id": "psWarningBorder",
+      "label": "pswarningBorder",
+      "cssToken": "--ps-warning-border",
+      "sassToken": "$ps-warning-border",
+      "jsToken": "psWarningBorder"
+    },
+    "warningText": {
+      "id": "psWarningText",
+      "label": "warningText",
+      "cssToken": "--ps-warning-text",
+      "sassToken": "$ps-warning-text",
+      "jsToken": "psWarningText"
+    },
+    "warningTextWeak": {
+      "id": "psWarningTextWeak",
+      "label": "warningTextWeak",
+      "cssToken": "--ps-text-warning-weak",
+      "sassToken": "$ps-text-warning-weak",
+      "jsToken": "psWarningTextWeak"
+    },
+    "warningTextMedium": {
+      "id": "psWarningTextMedium",
+      "label": "warningTextMedium",
+      "cssToken": "--ps-warning-text-medium",
+      "sassToken": "$ps-warning-text-medium",
+      "jsToken": "psWarningTextMedium"
+    }
   },
-  "psDangerBackground": {
-    "id": "psDangerBackground",
-    "label": "psDangerBackground",
-    "cssToken": "--ps-danger-background",
-    "sassToken": "$ps-danger-background",
-    "jsToken": "psDangerBackground"
-  },
-  "psDangerBorder": {
-    "id": "psDangerBorder",
-    "label": "psDangerBorder",
-    "cssToken": "--ps-danger-border",
-    "sassToken": "$ps-danger-border",
-    "jsToken": "psDangerBorder"
-  },
-  "psDangerSelectedText": {
-    "id": "psDangerSelectedText",
-    "label": "psDangerSelectedText",
-    "cssToken": "--ps-danger-selected-text",
-    "sassToken": "$ps-danger-selected-text",
-    "jsToken": "psDangerSelectedText"
-  },
-  "psDangerText": {
-    "id": "psDangerText",
-    "label": "psDangerText",
-    "cssToken": "--ps-danger-text",
-    "sassToken": "$ps-danger-text",
-    "jsToken": "psDangerText"
-  },
-  "psInfoBackground": {
-    "id": "psInfoBackground",
-    "label": "psInfoBackground",
-    "cssToken": "--ps-info-background",
-    "sassToken": "$ps-info-background",
-    "jsToken": "psInfoBackground"
-  },
-  "psInfoBorder": {
-    "id": "psInfoBorder",
-    "label": "psInfoBorder",
-    "cssToken": "--ps-info-border",
-    "sassToken": "$ps-info-border",
-    "jsToken": "psInfoBorder"
-  },
-  "psInfoIcon": {
-    "id": "psInfoIcon",
-    "label": "psInfoIcon",
-    "cssToken": "--ps-info-icon",
-    "sassToken": "$ps-info-icon",
-    "jsToken": "psInfoIcon"
-  },
-  "psInfoText": {
-    "id": "psInfoText",
-    "label": "psInfoText",
-    "cssToken": "--ps-info-text",
-    "sassToken": "$ps-info-text",
-    "jsToken": "psInfoText"
-  },
-  "psSelectedBackground": {
-    "id": "psSelectedBackground",
-    "label": "psSelectedBackground",
-    "cssToken": "--ps-selected-background",
-    "sassToken": "$ps-selected-background",
-    "jsToken": "psSelectedBackground"
-  },
-  "psSelectedBackgroundMedium": {
-    "id": "psSelectedBackgroundMedium",
-    "label": "psSelectedBackgroundMedium",
-    "cssToken": "--ps-selected-background-medium",
-    "sassToken": "$ps-selected-background-medium",
-    "jsToken": "psSelectedBackgroundMedium"
-  },
-  "psSelectedBackgroundStrong": {
-    "id": "psSelectedBackgroundStrong",
-    "label": "psSelectedBackgroundStrong",
-    "cssToken": "--ps-selected-background-strong",
-    "sassToken": "$ps-selected-background-strong",
-    "jsToken": "psSelectedBackgroundStrong"
-  },
-  "psSuccessBackground": {
-    "id": "psSuccessBackground",
-    "label": "psSuccessBackground",
-    "cssToken": "--ps-success-background",
-    "sassToken": "$ps-success-background",
-    "jsToken": "psSuccessBackground"
-  },
-  "psSuccessBorder": {
-    "id": "psSuccessBorder",
-    "label": "psSuccessBorder",
-    "cssToken": "--ps-success-border",
-    "sassToken": "$ps-success-border",
-    "jsToken": "psSuccessBorder"
-  },
-  "psSuccessIcon": {
-    "id": "psSuccessIcon",
-    "label": "psSuccessIcon",
-    "cssToken": "--ps-success-icon",
-    "sassToken": "$ps-success-icon",
-    "jsToken": "psSuccessIcon"
-  },
-  "psSuccessText": {
-    "id": "psSuccessText",
-    "label": "psSuccessText",
-    "cssToken": "--ps-success-text",
-    "sassToken": "$ps-success-text",
-    "jsToken": "psSuccessText"
-  },
-  "psText": {
-    "id": "psText",
-    "label": "psText",
-    "cssToken": "--ps-text",
-    "sassToken": "$ps-text",
-    "jsToken": "psText"
-  },
-  "psTextMedium": {
-    "id": "psTextMedium",
-    "label": "psTextMedium",
-    "cssToken": "--ps-text-medium",
-    "sassToken": "$ps-text-medium",
-    "jsToken": "psTextMedium"
-  },
-  "psTextWeak": {
-    "id": "psTextWeak",
-    "label": "psTextWeak",
-    "cssToken": "--ps-text-weak",
-    "sassToken": "$ps-text-weak",
-    "jsToken": "psTextWeak"
-  },
-  "psWarningBackground": {
-    "id": "psWarningBackground",
-    "label": "psWarningBackground",
-    "cssToken": "--ps-warning-background",
-    "sassToken": "$ps-warning-background",
-    "jsToken": "psWarningBackground"
-  },
-  "psWarningBorder": {
-    "id": "psWarningBorder",
-    "label": "psWarningBorder",
-    "cssToken": "--ps-warning-border",
-    "sassToken": "$ps-warning-border",
-    "jsToken": "psWarningBorder"
-  },
-  "psWarningIcon": {
-    "id": "psWarningIcon",
-    "label": "psWarningIcon",
-    "cssToken": "--ps-warning-icon",
-    "sassToken": "$ps-warning-icon",
-    "jsToken": "psWarningIcon"
-  },
-  "psWarningText": {
-    "id": "psWarningText",
-    "label": "psWarningText",
-    "cssToken": "--ps-warning-text",
-    "sassToken": "$ps-warning-text",
-    "jsToken": "psWarningText"
+  "danger": {
+    "dangerBackground": {
+      "id": "psDangerBackground",
+      "label": "psdangerBackground",
+      "cssToken": "--ps-danger-background",
+      "sassToken": "$ps-danger-background",
+      "jsToken": "psDangerBackground"
+    },
+    "dangerBackgroundActive": {
+      "id": "psDangerBackgroundActive",
+      "label": "psDangerBackgroundActive",
+      "cssToken": "--ps-danger-background-active",
+      "sassToken": "$ps-danger-background-active",
+      "jsToken": "psDangerBackgroundActive"
+    },
+    "dangerBackgroundHover": {
+      "id": "psDangerBackgroundHover",
+      "label": "psDangerBackgroundHover",
+      "cssToken": "--ps-danger-background-hover",
+      "sassToken": "$ps-danger-background-hover",
+      "jsToken": "psDangerBackgroundHover"
+    },
+    "dangerBackgroundWeak": {
+      "id": "psDangerBackgroundWeak",
+      "label": "psDangerBackgroundWeak",
+      "cssToken": "--ps-danger-background-weak",
+      "sassToken": "$ps-danger-background-weak",
+      "jsToken": "psDangerBackgroundWeak"
+    },
+    "dangerBorder": {
+      "id": "psDangerBorder",
+      "label": "psDangerBorder",
+      "cssToken": "--ps-danger-border",
+      "sassToken": "$ps-danger-border",
+      "jsToken": "psDangerBorder"
+    },
+    "dangerText": {
+      "id": "psDangerText",
+      "label": "dangerText",
+      "cssToken": "--ps-danger-text",
+      "sassToken": "$ps-danger-text",
+      "jsToken": "psDangerText"
+    },
+    "dangerTextWeak": {
+      "id": "psDangerTextWeak",
+      "label": "dangerTextWeak",
+      "cssToken": "--ps-text-danger-weak",
+      "sassToken": "$ps-text-danger-weak",
+      "jsToken": "psDangerTextWeak"
+    },
+    "dangerTextMedium": {
+      "id": "psDangerTextMedium",
+      "label": "dangerTextMedium",
+      "cssToken": "--ps-danger-text-medium",
+      "sassToken": "$ps-danger-text-medium",
+      "jsToken": "psDangerTextMedium"
+    }
   }
 }

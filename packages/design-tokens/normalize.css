@@ -140,7 +140,7 @@ html[data-theme='light'],
   --ps-text: hsl(249deg 63% 8% / 100%);
   --ps-text-weak: hsl(249deg 63% 25% / 100%);
   --ps-text-medium: hsl(249deg 63% 43% / 100%);
-  --ps-warning-background-weak: hsl(43deg 100% 21% / 100%);
+  --ps-warning-background-weak: hsl(43deg 100% 88% / 100%);
   --ps-warning-text: hsl(43deg 100% 10% / 100%);
   --ps-warning-text-weak: hsl(43deg 100% 32% / 100%);
   --ps-warning-text-medium: hsl(43deg 100% 42% / 100%);

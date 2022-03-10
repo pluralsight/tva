@@ -32,17 +32,14 @@
 }
 
 .syntax {
+  color: var(--ps-neutral-text-medium);
   display: block;
-  color: var(--ps-text-weak);
 }
 
 .wrapper {
-  background-color: var(--ps-background-medium);
+  background-color: var(--ps-neutral-surface-weak);
   border-radius: 12px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
+  padding: 16px;
 }
 
 /* swab colors */
@@ -51,112 +48,219 @@
   background-color: var(--ps-background);
 }
 
-.psBackgroundMedium {
-  background-color: var(--ps-background-medium);
+.psBackgroundActive {
+  background-color: var(--ps-background-active);
 }
 
-.psBackgroundStrong {
-  background-color: var(--ps-background-strong);
+.psBackgroundHover {
+  background-color: var(--ps-background-hover);
 }
 
 .psBackgroundWeak {
   background-color: var(--ps-background-weak);
 }
 
+.psBackgroundWeakActive {
+  background-color: var(--ps-background-weak-active);
+}
+
+.psBackgroundWeakHover {
+  background-color: var(--ps-background-weak-hover);
+}
+
 .psBorder {
   background-color: var(--ps-border);
-}
-
-.psDangerBackground {
-  background-color: var(--ps-danger-background);
-}
-
-.psDangerBorder {
-  background-color: var(--ps-danger-border);
-}
-
-.psDangerSelectedText {
-  background-color: var(--ps-danger-selected-text);
-}
-
-.psDangerText {
-  background-color: var(--ps-danger-text);
-}
-
-.psInfoBackground {
-  background-color: var(--ps-info-background);
-}
-
-.psInfoBorder {
-  background-color: var(--ps-info-border);
-}
-
-.psInfoIcon {
-  background-color: var(--ps-info-icon);
-}
-
-.psInfoText {
-  background-color: var(--ps-info-text);
-}
-
-.psSelectedBackground {
-  background-color: var(--ps-selected-background);
-}
-
-.psSelectedBackgroundMedium {
-  background-color: var(--ps-selected-background-medium);
-}
-
-.psSelectedBackgroundStrong {
-  background-color: var(--ps-selected-background-strong);
-}
-
-.psSuccessBackground {
-  background-color: var(--ps-success-background);
-}
-
-.psSuccessBorder {
-  background-color: var(--ps-success-border);
-}
-
-.psSuccessIcon {
-  background-color: var(--ps-success-icon);
-}
-
-.psSuccessText {
-  background-color: var(--ps-success-text);
 }
 
 .psText {
   background-color: var(--ps-text);
 }
 
+.psTextWeak {
+  background-color: var(--ps-text-weak);
+}
+
 .psTextMedium {
   background-color: var(--ps-text-medium);
 }
 
-.psTextWeak {
-  background-color: var(--ps-text-weak);
+.psNeutralBackground {
+  background-color: var(--ps-neutral-background);
+}
+
+.psNeutralBackgroundActive {
+  background-color: var(--ps-neutral-background-active);
+}
+
+.psNeutralBackgroundHover {
+  background-color: var(--ps-neutral-background-hover);
+}
+
+.psNeutralBorder {
+  background-color: var(--ps-neutral-border);
+}
+
+.psNeutralBorderWeak {
+  background-color: var(--ps-neutral-border-weak);
+}
+
+.psNeutralBorderStrong {
+  background-color: var(--ps-neutral-border-strong);
+}
+
+.psNeutralText {
+  background-color: var(--ps-neutral-text);
+}
+
+.psNeutralTextWeak {
+  background-color: var(--ps-neutral-text-weak);
+}
+
+.psNeutralTextMedium {
+  background-color: var(--ps-neutral-text-medium);
+}
+
+.psNeutralSurface {
+  background-color: var(--ps-neutral-surface);
+}
+
+.psNeutralSurfaceWeak {
+  background-color: var(--ps-neutral-surface-weak);
+  border: 1px solid var(--ps-neutral-border);
+}
+
+.psNeutralSurfaceMedium {
+  background-color: var(--ps-neutral-surface-medium);
+}
+
+.psNeutralSurfaceStrong {
+  background-color: var(--ps-neutral-surface-strong);
+}
+
+.psInfoBackground {
+  background-color: var(--ps-info-background);
+}
+
+.psInfoBackgroundActive {
+  background-color: var(--ps-info-background-active);
+}
+
+.psInfoBackgroundHover {
+  background-color: var(--ps-info-background-hover);
+}
+
+.psInfoBackgroundWeak {
+  background-color: var(--ps-info-background-weak);
+}
+
+.psInfoBorder {
+  background-color: var(--ps-info-border);
+}
+
+.psInfoText {
+  background-color: var(--ps-info-text);
+}
+
+.psInfoTextWeak {
+  background-color: var(--ps-info-text-weak);
+}
+
+.psInfoTextMedium {
+  background-color: var(--ps-info-text-medium);
+}
+
+.psSuccessBackground {
+  background-color: var(--ps-success-background);
+}
+
+.psSuccessBackgroundActive {
+  background-color: var(--ps-success-background-active);
+}
+
+.psSuccessBackgroundHover {
+  background-color: var(--ps-success-background-hover);
+}
+
+.psSuccessBackgroundWeak {
+  background-color: var(--ps-success-background-weak);
+}
+
+.psSuccessBorder {
+  background-color: var(--ps-success-border);
+}
+
+.psSuccessText {
+  background-color: var(--ps-success-text);
+}
+
+.psSuccessTextWeak {
+  background-color: var(--ps-success-text-weak);
+}
+
+.psSuccessTextMedium {
+  background-color: var(--ps-success-text-medium);
 }
 
 .psWarningBackground {
   background-color: var(--ps-warning-background);
 }
 
-.psWarningBorder {
-  background-color: var(--ps-warning-border);
+.psWarningBackgroundActive {
+  background-color: var(--ps-warning-background-active);
 }
 
-.psWarningIcon {
-  background-color: var(--ps-warning-icon);
+.psWarningBackgroundHover {
+  background-color: var(--ps-warning-background-hover);
+}
+
+.psWarningBackgroundWeak {
+  background-color: var(--ps-warning-background-weak);
+}
+
+.psWarningBorder {
+  background-color: var(--ps-warning-border);
 }
 
 .psWarningText {
   background-color: var(--ps-warning-text);
 }
 
-html[data-theme='light'] .psBackground,
-html[data-theme='light'] .psBackgroundStrong,
-.psBackgroundMedium {
-  border: 1px solid var(--ps-border);
+.psWarningTextWeak {
+  background-color: var(--ps-warning-text-weak);
+}
+
+.psWarningTextMedium {
+  background-color: var(--ps-warning-text-medium);
+}
+
+.psDangerBackground {
+  background-color: var(--ps-danger-background);
+}
+
+.psDangerBackgroundActive {
+  background-color: var(--ps-danger-background-active);
+}
+
+.psDangerBackgroundHover {
+  background-color: var(--ps-danger-background-hover);
+}
+
+.psDangerBackgroundWeak {
+  background-color: var(--ps-danger-background-weak);
+}
+
+.psDangerBorder {
+  background-color: var(--ps-danger-border);
+}
+
+.psDangerText {
+  background-color: var(--ps-danger-text);
+}
+
+.psDangerTextWeak {
+  background-color: var(--ps-danger-text-weak);
+}
+
+.psDangerTextMedium {
+  background-color: var(--ps-danger-text-medium);
 }

@@ -8,9 +8,9 @@ color:
       value: 'hsl(43deg 100% 32% / 100%)'
     background-weak:
       dark:
-        value: 'hsl(43deg 100% 88% / 100%)'
-      light:
         value: 'hsl(43deg 100% 21% / 100%)'
+      light:
+        value: 'hsl(43deg 100% 88% / 100%)'
     border:
       value: 'hsl(43deg 100% 53% / 100%)'
     label:

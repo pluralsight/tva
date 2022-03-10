@@ -2,10 +2,24 @@ import React from 'react'
 import styles from './TokensColorMap.module.css'
 import tokenData from './tokens.data.json'
 
-const tokenKeys = Object.keys(tokenData)
-
 function Label(props) {
   return <p className={styles.label}>{props.children}</p>
+}
+
+function ColorSection(props) {
+  const { items } = props
+  const results = Object.keys(items)
+
+  return (
+    <section>
+      <h3>{props.category}</h3>
+      <ul className={styles.list}>
+        {results.map((color) => (
+          <ColorItem {...items[color]} key={items[color].id} />
+        ))}
+      </ul>
+    </section>
+  )
 }
 
 function ColorItem(props) {
@@ -30,11 +44,13 @@ function ColorItem(props) {
 function TokensColorMap() {
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.list}>
-        {tokenKeys.map((token) => (
-          <ColorItem key={token} {...tokenData[token]} />
-        ))}
-      </ul>
+      {tokenData.categories.map((category) => (
+        <ColorSection
+          category={category}
+          items={tokenData[category]}
+          key={category}
+        />
+      ))}
     </div>
   )
 }

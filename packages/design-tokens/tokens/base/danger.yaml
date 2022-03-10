@@ -5,7 +5,7 @@ color:
     background-active:
       value: 'hsl(335deg 100% 18% / 100%)'
     background-hover:
-      value: 'hsl(336deg 100% 27% / 10%)'
+      value: 'hsl(336deg 100% 27% / 100%)'
     background-weak:
       dark:
         value: 'hsl(335deg 100% 18% / 100%)'

@@ -76,12 +76,6 @@ ps:
     value: '{color.neutral.label-muted.dark.value}'
   neutral-text-medium:
     value: '{color.neutral.label-subtle.dark.value}'
-  selected-background:
-    value: '{color.accent.background.dark.value}'
-  selected-background-medium:
-    value: '{color.neutral.interactive-background.dark.value}'
-  selected-background-strong:
-    value: '{color.accent.background-weak.dark.value}'
   success-background:
     value: '{color.success.background.value}'
   success-background-active:

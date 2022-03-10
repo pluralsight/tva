@@ -71,12 +71,14 @@
 
 :root {
   --ifm-code-font-size: 95%;
-  --ifm-color-primary: var(--ps-selected-background);
-  --ifm-font-color-base: var(--ps-text);
+  --ifm-color-primary: var(--ps-background);
+  --ifm-menu-color-active: var(--ps-text-weak);
+  --ifm-font-color-base: var(--ps-neutral-text);
   --ifm-font-family-monospace: 'DM Mono', sfmono-regular, menlo, monaco,
     consalas, 'Liberation Mono', 'Courier New', monospace;
-  --ifm-heading-color: var(--ps-text);
+  --ifm-heading-color: var(--ps-neutral-text);
   --ifm-navbar-background-color: hsl(245deg 36% 15% / 100%);
+  --ifm-navbar-link-hover-color: var(--ps-text-weak);
   --ps-search-background: hsl(244deg 36% 24% / 100%);
 }
 
@@ -88,40 +90,18 @@ html {
 }
 
 html[data-theme='dark'] {
-  --docsearch-key-gradient: var(--ps-text) !important;
-  --docsearch-muted-color: var(--ps-text) !important;
+  --docsearch-key-gradient: var(--ps-neutral-text) !important;
+  --docsearch-muted-color: var(--ps-neutral-text) !important;
   --docsearch-searchbox-background: var(--ps-search-background) !important;
-  --ifm-background-color: var(--ps-background);
+  --ifm-background-color: var(--ps-neutral-surface);
+  --ifm-tabs-color-active: var(--ps-border);
 }
 
 html[data-theme='light'] {
   --docsearch-searchbox-background: var(--ps-search-background) !important;
-  --ifm-color-primary: hsl(249deg 63% 51% / 100%);
   --ifm-font-color-base: hsl(0deg 0% 0% / 90%);
   --ifm-heading-color: hsl(0deg 0% 0% / 90%);
-  --ps-background: hsl(210deg 40% 96% / 100%);
-  --ps-background-medium: hsl(210deg 40% 97% / 100%);
-  --ps-background-strong: hsl(0deg 0% 100% / 100%);
-  --ps-border: hsl(214deg 36% 66% / 50%);
-  --ps-danger-background: hsl(347deg 100% 89% / 100%);
-  --ps-danger-border: hsl(326deg 100% 41% / 100%);
-  --ps-danger-selected-text: hsl(326deg 100% 32% / 100%);
-  --ps-danger-text: hsl(327deg 100% 24% / 100%);
-  --ps-info-background: hsl(216deg 100% 91% / 100%);
-  --ps-info-icon: hsl(197deg 100% 25% / 100%);
-  --ps-info-text: hsl(204deg 100% 20% / 100%);
-  --ps-selected-background: hsl(249deg 63% 51% / 100%);
-  --ps-selected-background-medium: hsl(214deg 48% 83% / 40%);
-  --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
-  --ps-success-background: hsl(142deg 100% 88% / 100%);
-  --ps-success-icon: hsl(155deg 100% 19% / 100%);
-  --ps-success-text: hsl(151deg 100% 9% / 100%);
-  --ps-text: hsl(0deg 0% 0% / 90%);
-  --ps-text-weak: hsl(248deg 63% 38% / 100%);
-  --ps-text-medium: hsl(249deg 67% 25% / 100%);
-  --ps-warning-background: hsl(36deg 100% 92% / 100%);
-  --ps-warning-icon: hsl(46deg 100% 26% / 100%);
-  --ps-warning-text: hsl(45deg 100% 15% / 100%);
+  --ifm-navbar-link-hover-color: hsl(248deg 63% 75% / 100%) !important;
 }
 
 .admonition-content {
@@ -129,16 +109,16 @@ html[data-theme='light'] {
 }
 
 .admonition-caution {
-  --ra-admonition-icon-color: var(--ps-warning-icon);
+  --ra-admonition-icon-color: var(--ps-warning-text-weak);
 }
 
 .admonition-tip {
-  --ra-admonition-icon-color: var(--ps-success-icon);
+  --ra-admonition-icon-color: var(--ps-success-text-weak);
 }
 
 .admonition-note,
 .admonition-info {
-  --ra-admonition-icon-color: var(--ps-info-icon);
+  --ra-admonition-icon-color: var(--ps-info-text-weak);
 }
 
 .admonition-heading {
@@ -155,14 +135,19 @@ html[data-theme='light'] {
 }
 
 .alert a {
-  color: var(--ps-selected-strong);
+  color: var(--ps-background);
+}
+
+.alert--warning a,
+.alert--secondary a {
+  color: var(--ps-text-weak);
 }
 
 .alert--warning,
 .alert--secondary,
 .alert--info,
 .alert--success {
-  --ifm-alert-background-color: var(--ps-warning-background);
+  --ifm-alert-background-color: var(--ps-warning-background-weak);
   --ifm-alert-border-color: var(--ps-warning-border);
 
   border: none;
@@ -172,12 +157,12 @@ html[data-theme='light'] {
 
 .alert--secondary,
 .alert--info {
-  --ifm-alert-background-color: var(--ps-info-background);
+  --ifm-alert-background-color: var(--ps-info-background-weak);
   --ifm-alert-border-color: var(--ps-info-border);
 }
 
 .alert--success {
-  --ifm-alert-background-color: var(--ps-success-background);
+  --ifm-alert-background-color: var(--ps-success-background-weak);
   --ifm-alert-border-color: var(--ps-success-border);
 }
 
@@ -258,11 +243,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-footer-background-color: var(--ps-background-strong);
   --ifm-footer-color: var(--ps-text-weak);
   --ifm-footer-link-color: var(--ps-text);
-  --ifm-footer-title-color: var(--ps-text);
+  --ifm-footer-title-color: var(--ps-text-weak);
 }
 
 html[data-theme='light'] .footer--dark {
-  --ifm-footer-background-color: var(--ps-background-weak);
   --ifm-footer-color: hsl(234deg 30% 78% / 100%);
   --ifm-footer-link-color: var(--ifm-color-white);
   --ifm-footer-title-color: hsl(234deg 30% 78% / 100%);
@@ -291,7 +275,7 @@ html[data-theme='light'] .hero__title {
 html[data-theme='light'] .navbar__brand:hover,
 html[data-theme='light'] .navbar__link:hover,
 html[data-theme='light'] .navbar__link--active {
-  color: var(--ps-selected-background);
+  color: var(--ps-background-weak-active);
 }
 
 html[data-theme='dark'] .card__text,
