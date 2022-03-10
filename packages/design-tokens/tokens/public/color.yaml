@@ -27,13 +27,21 @@ ps:
   danger-text:
     value: '{color.danger.label.dark.value}'
   info-background:
+    value: '{color.info.background.dark.value}'
+  info-background-active:
+    value: '{color.info.background-active.dark.value}'
+  info-background-hover:
+    value: '{color.info.background-hover.dark.value}'
+  info-background-weak:
     value: '{color.info.background-weak.dark.value}'
   info-border:
     value: '{color.info.border.value}'
-  info-icon:
-    value: '{color.info.label-muted.dark.value}'
   info-text:
     value: '{color.info.label.dark.value}'
+  info-text-weak:
+    value: '{color.info.label-muted.dark.value}'
+  info-text-medium:
+    value: '{color.info.label-subtle.dark.value}'
   neutral-background:
     value: '{color.neutral.background.dark.value}'
   neutral-background-active:

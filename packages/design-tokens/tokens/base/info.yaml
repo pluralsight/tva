@@ -2,38 +2,38 @@ color:
   info:
     background:
       dark:
-        value: 'hsl(202deg 100% 35% / 100%)'
+        value: 'hsl(202deg 100% 33% / 100%)'
       light:
-        value: 'hsl(202deg 100% 43% / 100%)'
+        value: 'hsl(202deg 100% 42% / 100%)'
     background-active:
       dark:
-        value: 'hsl(202deg 100% 35% / 60%)'
+        value: 'hsl(202deg 100% 17% / 100%)'
       light:
-        value: 'hsl(202deg 100% 43% / 70%)'
+        value: 'hsl(202deg 100% 25% / 100%)'
     background-hover:
       dark:
-        value: 'hsl(202deg 100% 35% / 80%)'
+        value: 'hsl(202deg 100% 25% / 100%)'
       light:
-        value: 'hsl(202deg 100% 43% / 85%)'
+        value: 'hsl(202deg 100% 33% / 100%)'
     background-weak:
       dark:
-        value: 'hsl(204deg 100% 20% / 100%)'
+        value: 'hsl(202deg 100% 17% / 100%)'
       light:
-        value: 'hsl(216deg 100% 91% / 100%)'
+        value: 'hsl(202deg 100% 83% / 100%)'
     border:
       value: 'hsl(202deg 100% 50% / 100%)'
     label:
       dark:
-        value: 'hsl(216deg 100% 91% / 100%)'
+        value: 'hsl(201deg 100% 92% / 100%)'
       light:
-        value: 'hsl(204deg 100% 20% / 100%)'
+        value: 'hsl(202deg 100% 17% / 100%)'
     label-muted:
       dark:
-        value: 'hsl(212deg 100% 76% / 100%)'
+        value: 'hsl(202deg 100% 75% / 100%)'
       light:
-        value: 'hsl(197deg 100% 25% / 100%)'
+        value: 'hsl(202deg 100% 25% / 100%)'
     label-subtle:
       dark:
-        value: 'hsl(202deg 100% 50% / 100%)'
+        value: 'hsl(202deg 100% 58% / 100%)'
       light:
-        value: 'hsl(202deg 100% 43% / 100%)'
+        value: 'hsl(202deg 100% 42% / 100%)'
