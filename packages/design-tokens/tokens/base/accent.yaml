@@ -2,51 +2,48 @@ color:
   accent:
     background:
       dark:
-        value: 'hsl(247deg 67% 60% / 100%)'
-      light:
         value: 'hsl(249deg 63% 51% / 100%)'
+      light:
+        value: 'hsl(249deg 63% 43% / 100%)'
     background-active:
       dark:
-        value: 'hsl(247deg 67% 60% / 60%)'
+        value: 'hsl(249deg 63% 34% / 100%)'
       light:
-        value: 'hsl(249deg 63% 51% / 70%)'
+        value: 'hsl(249deg 63% 25% / 100%)'
     background-hover:
       dark:
-        value: 'hsl(247deg 67% 60% / 80%)'
+        value: 'hsl(249deg 63% 43% / 100%)'
       light:
-        value: 'hsl(249deg 63% 51% / 85%)'
+        value: 'hsl(249deg 63% 34% / 100%)'
     background-weak:
       dark:
-        value: 'hsl(249deg 67% 25% / 100%)'
+        value: 'hsl(249deg 63% 25% / 100%)'
       light:
-        value: 'hsl(253deg 100% 94% / 100%)'
-    background-weak-hover:
-      dark:
-        value: 'hsl(248deg 63% 38% / 80%)'
-      light:
-        value: 'hsl(254deg 98% 84% / 70%)'
+        value: 'hsl(249deg 62% 92% / 100%)'
     background-weak-active:
       dark:
-        value: 'hsl(248deg 63% 38% / 50%)'
+        value: 'hsl(249deg 63% 25% / 100%)'
       light:
-        value: 'hsl(254deg 98% 84% / 85%)'
-    border:
+        value: 'hsl(248deg 63% 75% / 100%)'
+    background-weak-hover:
       dark:
-        value: 'hsl(245deg 70% 75% / 100%)'
+        value: 'hsl(248deg 63% 34% / 100%)'
       light:
-        value: 'hsl(245deg 69% 68% / 100%)'
+        value: 'hsl(249deg 64% 84% / 100%)'
+    border:
+      value: 'hsl(249deg 63% 59% / 100%)'
     label:
       dark:
-        value: 'hsl(253deg 100% 94% / 100%)'
+        value: 'hsl(249deg 62% 92% / 100%)'
       light:
-        value: 'hsl(249deg 67% 25% / 100%)'
+        value: 'hsl(249deg 63% 8% / 100%)'
     label-muted:
       dark:
-        value: 'hsl(244deg 67% 83% / 100%)'
+        value: 'hsl(248deg 63% 75% / 100%)'
       light:
-        value: 'hsl(248deg 63% 38% / 100%)'
+        value: 'hsl(249deg 63% 25% / 100%)'
     label-subtle:
       dark:
-        value: 'hsl(245deg 65% 76% / 100%)'
+        value: 'hsl(249deg 63% 67% / 100%)'
       light:
-        value: 'hsl(247deg 67% 60% / 100%)'
+        value: 'hsl(249deg 63% 43% / 100%)'

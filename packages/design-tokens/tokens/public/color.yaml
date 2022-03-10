@@ -11,13 +11,13 @@ ps:
   background-hover:
     value: '{color.accent.background-hover.dark.value}'
   background-weak:
-    value: '{color.aceent.background-weak.dark.value}'
+    value: '{color.accent.background-weak.dark.value}'
   background-weak-active:
-    value: '{color.aceent.background-weak-active.dark.value}'
+    value: '{color.accent.background-weak-active.dark.value}'
   background-weak-hover:
-    value: '{color.aceent.background-weak-hover.dark.value}'
+    value: '{color.accent.background-weak-hover.dark.value}'
   border:
-    value: '{color.aceent.border.dark.value}'
+    value: '{color.accent.border.value}'
   danger-background:
     value: '{color.danger.background-weak.dark.value}'
   danger-border:
