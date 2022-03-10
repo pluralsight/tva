@@ -19,13 +19,21 @@ ps:
   border:
     value: '{color.accent.border.value}'
   danger-background:
+    value: '{color.danger.background.value}'
+  danger-background-active:
+    value: '{color.danger.background-active.value}'
+  danger-background-hover:
+    value: '{color.danger.background-hover.value}'
+  danger-background-weak:
     value: '{color.danger.background-weak.dark.value}'
   danger-border:
     value: '{color.danger.border.dark.value}'
-  danger-selected-text:
-    value: '{color.danger.label-muted.dark.value}'
   danger-text:
     value: '{color.danger.label.dark.value}'
+  danger-text-weak:
+    value: '{color.danger.label-muted.dark.value}'
+  danger-text-medium:
+    value: '{color.danger.label-subtle.dark.value}'
   info-background:
     value: '{color.info.background.dark.value}'
   info-background-active:
@@ -83,7 +91,7 @@ ps:
   success-background-weak:
     value: '{color.success.background-weak.dark.value}'
   success-border:
-    value: '{color.success.border.value}'
+    value: '{color.success.border.dark.value}'
   success-text:
     value: '{color.success.label.dark.value}'
   success-text-weak:

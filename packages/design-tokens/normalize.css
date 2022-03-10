@@ -101,10 +101,11 @@ textarea {
   --ps-background-medium: hsl(210deg 40% 97% / 100%);
   --ps-background-strong: hsl(0deg 0% 100% / 100%);
   --ps-border: hsl(214deg 36% 66% / 50%);
-  --ps-danger-background: hsl(347deg 100% 89% / 100%);
-  --ps-danger-border: hsl(326deg 100% 41% / 100%);
-  --ps-danger-selected-text: hsl(326deg 100% 32% / 100%);
-  --ps-danger-text: hsl(327deg 100% 24% / 100%);
+  --ps-danger-background-weak: hsl(336deg 100% 91% / 100%);
+  --ps-danger-border: hsl(335deg 100% 64% / 100%);
+  --ps-danger-text: hsl(335deg 100% 18% / 100%);
+  --ps-danger-text-weak: hsl(336deg 100% 36% / 100%);
+  --ps-danger-text-medium: hsl(335deg 100% 64% / 100%);
   --ps-info-background: hsl(216deg 100% 91% / 100%);
   --ps-info-icon: hsl(197deg 100% 25% / 100%);
   --ps-info-text: hsl(204deg 100% 20% / 100%);
@@ -112,6 +113,7 @@ textarea {
   --ps-selected-background-medium: hsl(214deg 48% 83% / 40%);
   --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
   --ps-success-background-weak: hsl(156deg 98% 81% / 100%);
+  --ps-success-border: hsl(156deg 98% 37% / 100%);
   --ps-success-text: hsl(157deg 100% 7% / 100%);
   --ps-success-text-weak: hsl(156deg 98% 22% / 100%);
   --ps-success-text-medium: hsl(156deg 99% 29% / 100%);

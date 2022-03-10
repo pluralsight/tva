@@ -1,52 +1,33 @@
 color:
   danger:
     background:
-      dark:
-        value: 'hsl(326deg 100% 41% / 100%)'
-      light:
-        value: 'hsl(326deg 100% 41% / 100%)'
+      value: 'hsl(336deg 100% 36% / 100%)'
     background-active:
-      dark:
-        value: 'hsl(326deg 100% 41% / 60%)'
-      light:
-        value: 'hsl(326deg 100% 41% / 70%)'
+      value: 'hsl(335deg 100% 18% / 100%)'
     background-hover:
-      dark:
-        value: 'hsl(326deg 100% 41% / 80%)'
-      light:
-        value: 'hsl(326deg 100% 41% / 85%)'
+      value: 'hsl(336deg 100% 27% / 10%)'
     background-weak:
       dark:
-        value: 'hsl(331deg 100% 25% / 100%)'
+        value: 'hsl(335deg 100% 18% / 100%)'
       light:
-        value: 'hsl(347deg 100% 89% / 100%)'
-    background-weak-hover:
-      dark:
-        value: 'hsl(330deg 100% 33% / 80%)'
-      light:
-        value: 'hsl(345deg 100% 82% / 70%)'
-    background-weak-active:
-      dark:
-        value: 'hsl(330deg 100% 33% / 50%)'
-      light:
-        value: 'hsl(345deg 100% 82% / 85%)'
+        value: 'hsl(336deg 100% 91% / 100%)'
     border:
       dark:
-        value: 'hsl(325deg 100% 50% / 100%)'
+        value: 'hsl(336deg 100% 54% / 100%)'
       light:
-        value: 'hsl(326deg 100% 41% / 100%)'
+        value: 'hsl(335deg 100% 64% / 100%)'
     label:
       dark:
-        value: 'hsl(348deg 100% 93% / 100%)'
+        value: 'hsl(336deg 100% 97% / 100%)'
       light:
-        value: 'hsl(327deg 100% 24% / 100%)'
+        value: 'hsl(335deg 100% 18% / 100%)'
     label-muted:
       dark:
-        value: 'hsl(345deg 100% 82% / 100%)'
+        value: 'hsl(335deg 100% 82% / 100%)'
       light:
-        value: 'hsl(326deg 100% 32% / 100%)'
+        value: 'hsl(336deg 100% 36% / 100%)'
     label-subtle:
       dark:
-        value: 'hsl(334deg 100% 69% / 100%)'
+        value: 'hsl(336deg 100% 73% / 100%)'
       light:
-        value: 'hsl(326deg 100% 41% / 100%)'
+        value: 'hsl(335deg 100% 64% / 100%)'
