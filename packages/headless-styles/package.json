@@ -6,13 +6,19 @@
   "files": [
     "build/**/*"
   ],
+  "sideEffects": [
+    "**/*.css",
+    "build/index.js"
+  ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
-    "typescript": "4.4.4"
+    "identity-obj-proxy": "^3.0.0",
+    "typescript": "4.4.4",
+    "typescript-plugin-css-modules": "^3.4.0"
   },
   "keywords": [
     "pluralsight",

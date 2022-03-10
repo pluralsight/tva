@@ -1,0 +1,41 @@
+.base,
+.default,
+.size-m {
+  appearance: none;
+  background-color: transparent;
+  border-radius: 6px;
+  color: var(--ps-text);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 16px;
+}
+
+.light .base,
+.light .weak {
+  color: hsl(0deg 0% 100% / 100%);
+}
+
+.weak {
+  background-color: var(--ps-selected-background);
+}
+
+.medium {
+  color: var(--ps-text-medium);
+  background-color: var(--ps-selected-background-medium);
+}
+
+.strong {
+  background-color: var(--ps-selected-background-strong);
+}
+
+.size-xs {
+  padding: 4px 8px;
+}
+
+.size-s {
+  padding: 6px 12px;
+}
+
+.size-l {
+  padding: 14.5px 24px;
+}
