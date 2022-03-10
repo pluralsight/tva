@@ -111,9 +111,10 @@ textarea {
   --ps-selected-background: hsl(249deg 63% 51% / 100%);
   --ps-selected-background-medium: hsl(214deg 48% 83% / 40%);
   --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
-  --ps-success-background: hsl(142deg 100% 88% / 100%);
-  --ps-success-icon: hsl(155deg 100% 19% / 100%);
-  --ps-success-text: hsl(151deg 100% 9% / 100%);
+  --ps-success-background-weak: hsl(156deg 98% 81% / 100%);
+  --ps-success-text: hsl(157deg 100% 7% / 100%);
+  --ps-success-text-weak: hsl(156deg 98% 22% / 100%);
+  --ps-success-text-medium: hsl(156deg 99% 29% / 100%);
   --ps-text: hsl(0deg 0% 0% / 90%);
   --ps-text-weak: hsl(248deg 63% 38% / 100%);
   --ps-text-medium: hsl(249deg 67% 25% / 100%);
