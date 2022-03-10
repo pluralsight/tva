@@ -45,21 +45,6 @@ color:
         value: 'hsl(234deg 30% 66% / 100%)'
       light:
         value: 'hsl(214deg 25% 41% / 100%)'
-    interactive-background:
-      dark:
-        value: 'hsl(234deg 30% 49% / 50%)'
-      light:
-        value: 'hsl(214deg 48% 83% / 40%)'
-    interactive-background-active:
-      dark:
-        value: 'hsl(234deg 30% 49% / 30%)'
-      light:
-        value: 'hsl(214deg 48% 83% / 70%)'
-    interactive-background-hover:
-      dark:
-        value: 'hsl(234deg 30% 49% / 60%)'
-      light:
-        value: 'hsl(214deg 48% 83% / 60%)'
     surface:
       dark:
         value: 'hsl(251deg 42% 10% / 100%)'
