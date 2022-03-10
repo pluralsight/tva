@@ -105,10 +105,18 @@ ps:
   text-medium:
     value: '{color.accent.label-subtle.dark.value}'
   warning-background:
+    value: '{color.warning.background.value}'
+  warning-background-active:
+    value: '{color.warning.background-active.value}'
+  warning-background-hover:
+    value: '{color.warning.background-hover.value}'
+  warning-background-weak:
     value: '{color.warning.background-weak.dark.value}'
   warning-border:
     value: '{color.warning.border.value}'
-  warning-icon:
-    value: '{color.warning.label-muted.dark.value}'
   warning-text:
     value: '{color.warning.label.dark.value}'
+  warning-text-weak:
+    value: '{color.warning.label-muted.dark.value}'
+  warning-text-medium:
+    value: '{color.warning.label-subtle.dark.value}'
