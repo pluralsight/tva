@@ -632,9 +632,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@types/parse-json', 'npm:4.0.0'],
         ['@types/parse5', 'npm:5.0.3'],
         ['@types/prettier', 'npm:2.4.2'],
+        ['@types/prop-types', 'npm:15.7.4'],
         ['@types/q', 'npm:1.5.5'],
+        ['@types/react', 'npm:17.0.40'],
         ['@types/responselike', 'npm:1.0.0'],
         ['@types/sax', 'npm:1.2.3'],
+        ['@types/scheduler', 'npm:0.16.2'],
         ['@types/stack-utils', 'npm:2.0.1'],
         ['@types/testing-library__jest-dom', 'npm:5.14.1'],
         ['@types/unist', 'npm:2.0.6'],
@@ -945,6 +948,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['csso', 'npm:4.2.0'],
         ['cssom', 'npm:0.4.4'],
         ['cssstyle', 'npm:2.3.0'],
+        ['csstype', 'npm:3.0.11'],
         ['dargs', 'npm:7.0.0'],
         ['dashdash', 'npm:1.14.1'],
         ['data-urls', 'npm:2.0.0'],
@@ -11672,6 +11676,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'workspace:packages/headless-styles',
                   ],
                   ['@types/jest', 'npm:27.4.1'],
+                  ['@types/react', 'npm:17.0.40'],
                   ['identity-obj-proxy', 'npm:3.0.0'],
                   [
                     'typescript',
@@ -12760,6 +12765,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          '@types/prop-types',
+          [
+            [
+              'npm:15.7.4',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-prop-types-npm-15.7.4-592896a9fe-ef6e1899e5.zip/node_modules/@types/prop-types/',
+                packageDependencies: [['@types/prop-types', 'npm:15.7.4']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           '@types/q',
           [
             [
@@ -12768,6 +12787,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/@types-q-npm-1.5.5-ffd6e0cd72-3bd386fb97.zip/node_modules/@types/q/',
                 packageDependencies: [['@types/q', 'npm:1.5.5']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/react',
+          [
+            [
+              'npm:17.0.40',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-react-npm-17.0.40-7487e5fdd0-24d1b210b5.zip/node_modules/@types/react/',
+                packageDependencies: [
+                  ['@types/react', 'npm:17.0.40'],
+                  ['@types/prop-types', 'npm:15.7.4'],
+                  ['@types/scheduler', 'npm:0.16.2'],
+                  ['csstype', 'npm:3.0.11'],
+                ],
                 linkType: 'HARD',
               },
             ],
@@ -12802,6 +12840,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/sax', 'npm:1.2.3'],
                   ['@types/node', 'npm:16.11.7'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@types/scheduler',
+          [
+            [
+              'npm:0.16.2',
+              {
+                packageLocation:
+                  './.yarn/cache/@types-scheduler-npm-0.16.2-ba3a7d8c68-b6b4dcfeae.zip/node_modules/@types/scheduler/',
+                packageDependencies: [['@types/scheduler', 'npm:0.16.2']],
                 linkType: 'HARD',
               },
             ],
@@ -18656,6 +18708,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['cssstyle', 'npm:2.3.0'],
                   ['cssom', 'npm:0.3.8'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'csstype',
+          [
+            [
+              'npm:3.0.11',
+              {
+                packageLocation:
+                  './.yarn/cache/csstype-npm-3.0.11-b49897178d-95e56abfe9.zip/node_modules/csstype/',
+                packageDependencies: [['csstype', 'npm:3.0.11']],
                 linkType: 'HARD',
               },
             ],

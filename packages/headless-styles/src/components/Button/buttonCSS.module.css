@@ -11,8 +11,12 @@
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
-.default {
+.text {
   color: var(--ps-neutral-text-weak);
+}
+
+.text-weak {
+  color: var(--ps-text-medium);
 }
 
 .weak {
@@ -46,20 +50,33 @@
 
 /* hover styles */
 
-.default:hover,
+.text:hover,
+.text-weak:hover,
+.medium:hover,
+.strong:hover {
+  color: #fff;
+}
+
+.text-weak:hover,
 .medium:hover,
 .strong:hover {
   background-color: var(--ps-background-hover);
   color: #fff;
 }
 
+.text:hover,
 .weak:hover {
   background-color: var(--ps-neutral-background-hover);
 }
 
 /* active styles */
 
-.default:active,
+.base:active {
+  outline: none;
+}
+
+.text:active,
+.text-weak:active,
 .medium:active,
 .strong:active {
   background-color: var(--ps-background-active);
@@ -73,4 +90,9 @@
 
 .base:focus {
   outline: 3px solid var(--ps-background-active);
+}
+
+.base:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: 0;
 }

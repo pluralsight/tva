@@ -21,7 +21,7 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 
 ## Basic Button
 
-The `Button` comes with three variants: text (default), weak, medium, and strong.
+The `Button` comes with four variants: text (default), text-weak, weak, medium, and strong.
 
 <!-- TODO: ADD USAGE LIVE CODE EXAMPLES HERE -->
 
@@ -71,10 +71,7 @@ With ES\* you could destructure the className out of the object (i.e. `{ classNa
 You can combine icons with the `Button` using the `getIconLablProps` and and Icon from the PS Icons font library.
 
 ```jsx title=components/EditButton.jsx
-import {
-  getButtonProps,
-  getIconLabelProps,
-} from '@pluralsight/tva-headless-styles'
+import { getButtonProps, getIconLabelProps } from '@pluralsight/headless-styles'
 
 const tvaButtonProps = getButtonProps({ kind: 'contained' })
 const tvaIconLabelProps = getIconLabelProps()
@@ -98,7 +95,7 @@ Icon buttons are commonly found in app bars, toolbars, or as an action such as "
 import {
   getIconButtonProps,
   getIconLabelProps,
-} from '@pluralsight/tva-headless-styles'
+} from '@pluralsight/headless-styles'
 
 const tvaEditIconBtnProps = getIconButtonProps('edit profile')
 
@@ -243,12 +240,12 @@ Here is an example of using `styled-components` to extend a `Button` for a Form.
 
 ```jsx title=page/Login/components/SubmitButton.jsx
 import styled from 'styled-components'
-import { getJSButtonProps } from '@pluralsight/tva-headless-styles'
+import { getJSButtonProps } from '@pluralsight/headless-styles'
 
-const tvaBtnProps = getJSButtonProps({ kind: 'contained' })
+const psBtnProps = getJSButtonProps({ kind: 'medium' })
 
 const Button = styled.button`
-  ...tvaBtnProps.cssProps,
+  ...psBtnProps.cssProps,
   color: '#bfbfbf' // some custom color
 `
 
@@ -274,7 +271,7 @@ interface ButtonOptions
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  kind?: 'default' | 'weak' | 'medium' | 'strong'
+  kind?: 'text' | 'text-weak' | 'weak' | 'medium' | 'strong'
   size?: 'xs' | 's' | 'm' | 'l'
 }
 ```
@@ -311,6 +308,7 @@ Button colors are relative to the `background` style and have a direct correlati
 ```typescript title="Example interface - does not exist in types"
 interface ButtonColorGuide {
   default: 'transparent'
+  'default-weak': 'transparent'
   weak: 'var(--ps-neutral-background)'
   medium: 'var(--ps-background)'
   strong: 'var(--ps-background-weak)'
