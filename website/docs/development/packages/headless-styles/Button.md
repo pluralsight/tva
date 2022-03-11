@@ -21,15 +21,50 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 
 ## Basic Button
 
-The `Button` comes with three variants: text (default), contained, and outlined.
+The `Button` comes with three variants: text (default), weak, medium, and strong.
 
 <!-- TODO: ADD USAGE LIVE CODE EXAMPLES HERE -->
 
-```jsx
-const tvaButtonProps = getButtonProps() // default
-const tvaContainedButtonProps = getButtonProps({ kind: 'contained' })
-const tvaOutlinedButtonProps = getButtonProps({ kind: 'outlined' })
+```js
+// Passing no params delivers size "m", "text" styles
+const psButtonProps = getButtonProps()
+
+const psWeakButtonProps = getButtonProps({ kind: 'weak' })
+const psMediumButtonProps = getButtonProps({ kind: 'medium' })
+const psStrongButtonProps = getButtonProps({ kind: 'strong' })
 ```
+
+## Button sizes
+
+The `Button` comes with four size variants: xs, s, m (default), l.
+
+```js
+const psLargeSizeButtonProps = getButtonProps({ size: 'xs' })
+const psLargeSizeButtonProps = getButtonProps({ size: 's' })
+const psLargeSizeButtonProps = getButtonProps({ size: 'm' })
+const psLargeSizeButtonProps = getButtonProps({ size: 'l' })
+```
+
+## Button styled links
+
+If you want to use the `Button` styles for an `a` element (no matter what framework you use), just omit the `type` property from the return Object we send.
+
+```jsx
+const psButtonProps = getButtonProps()
+const psButtonLinkProps = { className: psButtonProps.className }
+
+function BackLink() {
+  return (
+    <a href="#" {...psbButtonLinkProps}>
+      Back
+    </a>
+  )
+}
+```
+
+:::tip
+With ES\* you could destructure the className out of the object (i.e. `{ className, ...rest }`). However, this approach forces you to declare an unused variable which will negatively impact performance at some point, make a negative impact on code readability, and fail sonarlint tests.
+:::
 
 ## Button with icon and label
 
@@ -89,7 +124,7 @@ The `Button` prop-getter takes in [ButtonOptions](#buttonoptions) returns an Obj
 
 ```js title="Return value example"
 {
-  className: `tva-btn ${ourInternalStylesModule}`
+  className: `ps-btn ${...internalStyleModules}`
   type: 'button'
 }
 ```
@@ -99,7 +134,7 @@ The `Button` prop-getter takes in [ButtonOptions](#buttonoptions) returns an Obj
 ```typescript
 interface ButtonProps {
   className: string
-  type: string
+  type: 'button'
 }
 ```
 
@@ -234,9 +269,13 @@ function SubmitButton(props) {
 ## ButtonOptions
 
 ```typescript
-interface ButtonOptions {
-  kind: 'default' || 'contained' || 'outlined'
-  size: 'xs' || 's' || 'm' || 'l'
+interface ButtonOptions
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  kind?: 'default' | 'weak' | 'medium' | 'strong'
+  size?: 'xs' | 's' | 'm' | 'l'
 }
 ```
 
@@ -247,32 +286,33 @@ Button sizes are relative to the `padding` and `font-size` styles. Here is an in
 ```typescript title="Example interface - does not exist in types"
 interface ButtonSizeGuide {
   xs: {
-    fontSize: var(--ps-font-size-body-xs)
+    fontSize: '12px'
     padding: '4px 8px'
   }
   s: {
-    fontSize: var(--ps-font-size-body-s)
+    fontSize: '14px'
     padding: '6px 12px'
   }
   m: {
-    fontSize: var(--ps-font-size-body-m)
+    fontSize: '16px'
     padding: '10px 16px'
   }
   l: {
-    fontSize: var(--ps-font-size-body-l)
-    padding: '12px 20px'
+    fontSize: '16px'
+    padding: '14.5px 24px'
   }
 }
 ```
 
 ## Button color guide
 
-Button colors are relative to the `background` style. Here is an interface that gives the color guide. Variables are referenced from the [`tokens`](../tokens/intro.md) package.
+Button colors are relative to the `background` style and have a direct correlation from the `kind` to the [`design-tokens`](../tokens/intro.md) package. Here is an interface that gives the color guide.
 
 ```typescript title="Example interface - does not exist in types"
 interface ButtonColorGuide {
   default: 'transparent'
-  contained: var(--ps-color-primary-background)
-  outlined: 'transparent'
+  weak: 'var(--ps-neutral-background)'
+  medium: 'var(--ps-background)'
+  strong: 'var(--ps-background-weak)'
 }
 ```

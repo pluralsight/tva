@@ -1,41 +1,76 @@
-.base,
-.default,
-.size-m {
+.base {
   appearance: none;
   background-color: transparent;
+  border: none;
   border-radius: 6px;
-  color: var(--ps-text);
   cursor: pointer;
   font-size: 16px;
   padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
-.light .base,
-.light .weak {
-  color: hsl(0deg 0% 100% / 100%);
+.default {
+  color: var(--ps-neutral-text-weak);
 }
 
 .weak {
-  background-color: var(--ps-selected-background);
+  background-color: var(--ps-neutral-background);
+  color: var(--ps-neutral-text);
 }
 
 .medium {
-  color: var(--ps-text-medium);
-  background-color: var(--ps-selected-background-medium);
+  background-color: var(--ps-background);
+  color: #fff;
 }
 
 .strong {
-  background-color: var(--ps-selected-background-strong);
+  background-color: var(--ps-background-weak);
+  color: var(--ps-text);
 }
 
 .size-xs {
+  font-size: 12px;
   padding: 4px 8px;
 }
 
 .size-s {
+  font-size: 14px;
   padding: 6px 12px;
 }
 
 .size-l {
   padding: 14.5px 24px;
+}
+
+/* hover styles */
+
+.default:hover,
+.medium:hover,
+.strong:hover {
+  background-color: var(--ps-background-hover);
+  color: #fff;
+}
+
+.weak:hover {
+  background-color: var(--ps-neutral-background-hover);
+}
+
+/* active styles */
+
+.default:active,
+.medium:active,
+.strong:active {
+  background-color: var(--ps-background-active);
+}
+
+.weak:active {
+  background-color: var(--ps-neutral-background-active);
+}
+
+/* focus styles */
+
+.base:focus {
+  outline: 3px solid var(--ps-background-active);
 }

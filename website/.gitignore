@@ -1,5 +1,5 @@
 # Dependencies
-.yarn/*
+.yarn
 
 # Production
 /build
