@@ -2,12 +2,5 @@
   "buildCommand": "build:packages",
   "node": "14",
   "packages": ["packages/design-tokens", "packages/headless-styles"],
-  "sandboxes": [
-    "new",
-    "headless-react-ts",
-    "react-typescript-react-ts",
-    "next-js",
-    "ps-next-js",
-    "svelte"
-  ]
+  "sandboxes": ["new", "headless-react-ts", "react-typescript-react-ts"]
 }
