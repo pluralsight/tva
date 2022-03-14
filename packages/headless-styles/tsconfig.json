@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.json",
   "include": ["src", "tests"],
   "compilerOptions": {
-    "baseUrl": "src",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "baseUrl": "src"
   }
 }

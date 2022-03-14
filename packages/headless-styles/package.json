@@ -11,15 +11,17 @@
     "build/index.js"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
+    "build": "yarn copy:css && tsc --project tsconfig.build.json",
+    "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "devDependencies": {
+    "@types/copyfiles": "^2",
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.40",
+    "copyfiles": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
-    "typescript": "4.4.4",
-    "typescript-plugin-css-modules": "^3.4.0"
+    "typescript": "4.4.4"
   },
   "keywords": [
     "pluralsight",
