@@ -21,7 +21,7 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 
 ## Basic Button
 
-The `Button` comes with four variants: text (default), text-weak, weak, medium, and strong.
+The `Button` comes with five variants: text (default), text-weak, weak, medium, and strong.
 
 <!-- TODO: ADD USAGE LIVE CODE EXAMPLES HERE -->
 
