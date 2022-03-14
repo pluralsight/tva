@@ -28,6 +28,18 @@ module.exports = {
         },
       ],
     },
+    ts: {
+      transformGroup: 'ts',
+      transforms: [...transforms, 'name/cti/camel'],
+      buildPath: 'build/',
+      files: [
+        {
+          ...baseFileConfig,
+          destination: 'index.d.ts',
+          format: 'typescript/es6-declarations',
+        },
+      ],
+    },
     css: {
       transformGroup: 'css',
       transforms: [...transforms, KEBAB],
