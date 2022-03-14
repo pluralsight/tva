@@ -6,6 +6,7 @@
   "files": [
     "build/css/variables.css",
     "build/scss/_variables.scss",
+    "build/index.d.ts",
     "build/index.js",
     "normalize.css",
     "fonts.css"
