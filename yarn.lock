@@ -3064,7 +3064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pluralsight/design-tokens@workspace:packages/design-tokens":
+"@pluralsight/design-tokens@workspace:^, @pluralsight/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@pluralsight/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -3078,6 +3078,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pluralsight/headless-styles@workspace:packages/headless-styles"
   dependencies:
+    "@pluralsight/design-tokens": "workspace:^"
     "@types/copyfiles": ^2
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.40

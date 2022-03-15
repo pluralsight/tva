@@ -11650,6 +11650,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     '@pluralsight/headless-styles',
                     'workspace:packages/headless-styles',
                   ],
+                  [
+                    '@pluralsight/design-tokens',
+                    'workspace:packages/design-tokens',
+                  ],
                   ['@types/copyfiles', 'npm:2.4.1'],
                   ['@types/jest', 'npm:27.4.1'],
                   ['@types/react', 'npm:17.0.40'],

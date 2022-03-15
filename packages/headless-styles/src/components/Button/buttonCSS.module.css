@@ -61,7 +61,6 @@
 .medium:hover,
 .strong:hover {
   background-color: var(--ps-background-hover);
-  color: #fff;
 }
 
 .text:hover,

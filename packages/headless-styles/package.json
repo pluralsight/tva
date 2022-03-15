@@ -45,5 +45,8 @@
     "directory": "packages/headless-styles"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "dependencies": {
+    "@pluralsight/design-tokens": "workspace:^"
+  }
 }
