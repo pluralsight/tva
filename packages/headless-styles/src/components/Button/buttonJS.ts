@@ -44,8 +44,6 @@ const baseCSSProps = `
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
@@ -54,7 +52,7 @@ const baseCSSProps = `
     outline: none;
   }
   &:focus {
-    outline: 3px solid ${psBackgroundActive}
+    outline: 3px solid ${psBackgroundActive};
   }
   &:focus:not(:focus-visible) {
     box-shadow: none;
@@ -177,6 +175,7 @@ function getSizeStyles(size: Size) {
 function getPsuedoStyles(kind: Kind) {
   switch (kind) {
     case 'text-weak':
+    case 'medium':
     case 'strong':
       return {
         css: `
@@ -221,28 +220,6 @@ function getPsuedoStyles(kind: Kind) {
         },
       }
 
-    case 'medium':
-      return {
-        css: `
-          &:hover {
-            color: #fff;
-            background-color: ${psBackgroundHover};
-          }
-          &:active {
-            backgroundColor: ${psBackgroundActive};
-          }
-        `,
-        js: {
-          hover: {
-            color: '#fff',
-            backgroundColor: psBackgroundHover,
-          },
-          active: {
-            backgroundColor: psBackgroundActive,
-          },
-        },
-      }
-
     default:
       return {
         css: `
@@ -276,10 +253,12 @@ export function getJSButtonProps(options?: ButtonOptions) {
   return {
     cssProps: `
       ${baseCSSProps}
-      ${kindStyles.css}
-      ${sizeStyles.css}
-      ${psuedoStyles.css}
-    `,
+      ${kindStyles.css.trim()}
+      ${sizeStyles.css.trim()}
+      ${psuedoStyles.css.trim()}
+    `
+      .trim()
+      .replace(/^ {2,12}/gm, ''),
     styles: {
       ...buttonStyles,
       ...kindStyles.js,

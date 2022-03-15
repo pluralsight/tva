@@ -1,6 +1,6 @@
-import { getButtonProps } from '../src'
+import { getButtonProps } from '../../src'
 
-describe('Button', () => {
+describe('Button CSS', () => {
   describe('getButtonProps', () => {
     const baseClass = 'ps-btn base'
     const result = {

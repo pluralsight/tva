@@ -7,7 +7,7 @@ module.exports = {
   ignorePatterns: [
     'website/build/**',
     'website/.yarn',
-    'packages/headless-styles/tests/**/*',
+    'packages/headless-styles/tests/**/*.test.ts',
   ],
   parser: require.resolve('@typescript-eslint/parser'),
   env: {
