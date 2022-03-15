@@ -209,13 +209,13 @@ If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will r
 ```js title="Return value example"
 {
   cssProps: `
-    color: var(--TBD)
-    background-color: var(--TBD)
+    color: #fff;
+    background-color: #000;
     ...
   `,
   styles: {
-    color: button.default.text.color.value,
-    backgroundColor: button.default.background.value
+    color: '#fff',
+    backgroundColor: '#000'
     ...
   },
   type: 'button',
@@ -228,7 +228,7 @@ If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will r
 interface JSButtonProps {
   cssProps: string
   styles: Record<CSSProps, string>
-  type: string
+  type: 'button'
 }
 ```
 
@@ -245,8 +245,8 @@ import { getJSButtonProps } from '@pluralsight/headless-styles'
 const psBtnProps = getJSButtonProps({ kind: 'medium' })
 
 const Button = styled.button`
-  ...psBtnProps.cssProps,
-  color: '#bfbfbf' // some custom color
+  ${psBtnProps.cssProps}
+  color: '#bfbfbf'
 `
 
 function SubmitButton(props) {
