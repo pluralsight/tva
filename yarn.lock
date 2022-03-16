@@ -3064,7 +3064,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pluralsight/design-tokens@workspace:^, @pluralsight/design-tokens@workspace:packages/design-tokens":
+"@pluralsight/design-tokens@npm:alpha":
+  version: 0.0.0-alpha-11b7e9
+  resolution: "@pluralsight/design-tokens@npm:0.0.0-alpha-11b7e9"
+  checksum: 614ac7c9b47d682181be7c9e82d8c99cca7c8082a8c976bc1b1a225f7bdd5b28e7bcaf0b22f3723c3776fe55f6506e65ab93f83d0ef6bb475f0f5c6b61b01411
+  languageName: node
+  linkType: hard
+
+"@pluralsight/design-tokens@workspace:packages/design-tokens":
   version: 0.0.0-use.local
   resolution: "@pluralsight/design-tokens@workspace:packages/design-tokens"
   dependencies:
@@ -3078,7 +3085,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pluralsight/headless-styles@workspace:packages/headless-styles"
   dependencies:
-    "@pluralsight/design-tokens": "workspace:^"
+    "@pluralsight/design-tokens": alpha
     "@types/copyfiles": ^2
     "@types/jest": ^27.4.1
     "@types/react": ^17.0.40

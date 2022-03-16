@@ -16,7 +16,7 @@
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
-    "@pluralsight/design-tokens": "workspace:^"
+    "@pluralsight/design-tokens": "alpha"
   },
   "devDependencies": {
     "@types/copyfiles": "^2",
