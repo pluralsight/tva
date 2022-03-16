@@ -15,6 +15,9 @@
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
+  "dependencies": {
+    "@pluralsight/design-tokens": "workspace:^"
+  },
   "devDependencies": {
     "@types/copyfiles": "^2",
     "@types/jest": "^27.4.1",
@@ -45,8 +48,5 @@
     "directory": "packages/headless-styles"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0",
-  "dependencies": {
-    "@pluralsight/design-tokens": "workspace:^"
-  }
+  "packageManager": "yarn@3.1.0"
 }

@@ -10,9 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
       - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-          cache: 'yarn'
+        # with:
+        #   node-version: '14'
+        #   cache: 'yarn'
       - run: yarn install
       - run: yarn test --passWithNoTests
 
