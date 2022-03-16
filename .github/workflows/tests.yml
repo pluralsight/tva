@@ -4,6 +4,17 @@ on:
       - main
 
 jobs:
+  validate-cache:
+    runs-on: ubuntu-latest
+    name: 🚨 Ensure cache has not been altered
+    steps:
+      - uses: actions/checkout@v2.4.0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - run: yarn install --check-cache
+
   unit-tests:
     runs-on: ubuntu-latest
     name: 🧪 Run unit tests
@@ -13,7 +24,7 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-      - run: yarn install --check-cache
+      - run: yarn install
       - run: yarn test --passWithNoTests
 
   packages-build:
