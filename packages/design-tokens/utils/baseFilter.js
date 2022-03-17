@@ -1,5 +1,8 @@
 function baseFilter(token) {
-  if (token.filePath.includes('tokens/base')) {
+  if (
+    token.filePath.includes('tokens/base') ||
+    token.filePath.includes('lightColors.yaml')
+  ) {
     return undefined
   }
 

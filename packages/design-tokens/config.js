@@ -1,8 +1,12 @@
 const baseFilter = require('./utils/baseFilter')
+const jsFilter = require('./utils/jsFilter')
 const yaml = require('yaml')
 
 const baseFileConfig = {
   filter: baseFilter,
+}
+const jsFileConfig = {
+  filter: jsFilter,
 }
 const transforms = ['color/hsl-4']
 const jsTransforms = [...transforms, 'name/cti/camel']
@@ -23,7 +27,7 @@ module.exports = {
       buildPath: 'build/',
       files: [
         {
-          ...baseFileConfig,
+          ...jsFileConfig,
           destination: 'index.js',
           format: 'javascript/es6',
         },
@@ -35,7 +39,7 @@ module.exports = {
       buildPath: 'build/common/',
       files: [
         {
-          ...baseFileConfig,
+          ...jsFileConfig,
           destination: 'index.js',
           format: 'javascript/module-flat',
         },
@@ -47,7 +51,7 @@ module.exports = {
       buildPath: 'build/',
       files: [
         {
-          ...baseFileConfig,
+          ...jsFileConfig,
           destination: 'index.d.ts',
           format: 'typescript/es6-declarations',
         },
