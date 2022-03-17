@@ -31,19 +31,23 @@ The tokens are presented in alphabetical order.
 
 ## Themes
 
-The `design-tokens` package comes with two themes: `light` and `dark` (default). Themes are controlled by using CSS classes or a `data-theme` attribute on the `html` tag. The default token values that you will receive will be for the `dark` theme. If you want to use the `light` theme, simply add a class name of `light` to the root component or `data-theme="light"` to the `html` tag.
+The `design-tokens` package comes with two themes: `light` and `dark` (default). Themes are controlled by using CSS classes (i.e., `.light`) or a `data-theme` attribute on the `html` tag. The default token values that you will receive will be for the `dark` theme. If you want to use the `light` theme, simply add a class name of `light` a parent component or `data-theme="light"` to the `html` tag for a full page switch (what we do in these docs).
 
-If you just want to change the theme of a specific child, just add the `light` class name to the parent of that component.
+If you want to change the theme of a specific child, just add the `light` class name to the parent of that component.
 
 :::caution
 Themes **depend on the normalize.css** file to be used in your project. Check out our [getting started](../../getting-started/installation.md#normalizecss) docs to learn how to add the normalize.css file to your project.
 :::
 
-As of today, **themes are only supported in CSS environments**. However, there is a plan to deliver a JS-in-CSS solution in the future. For now, if you are using React, there are a number of solutions you can use.
+### Example solutions for CSS-in-JS
+
+If you choose to use the `design-tokens` in a CSS-in-JS environment, we ship both the light and dark tokens. Just use the same color map we have provided above and add "Light" after the "ps" ID (i.e. `psBackground` becomes `psLightBackground`).
+
+If you are using React, there are a number of solutions you can use to create theme switching in your project.
 
 - Add a `light` class name or class toggle to your root element
 - Create a state-based solution or `context` in your project
-- Source the colors located in the [base directory](https://github.com/pluralsight/tva/tree/main/packages/design-tokens/tokens/base) of our project for light theme values
+- Create a custom hook that dynamically imports a map of colors depending on what you pass into it (i.e. "light", "dark"). However, we do not recommend this approach for performance reasons but provide it as an example to show your creativity limits what is possible.
 
 ## Custom Tokens
 
