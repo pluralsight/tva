@@ -52,6 +52,8 @@ const config = {
     ],
   ],
 
+  plugins: ['@docusaurus/theme-live-codeblock'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -68,6 +70,9 @@ const config = {
         backgroundColor: 'hsla(204, 100%, 20%, 1)',
         content: `⭐️ If you like TVA, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/pluralsight/tva/tree/main">GitHub</a>`,
         textColor: '#fff',
+      },
+      liveCodeBlock: {
+        playgroundPosition: 'top',
       },
       navbar: {
         title: 'Pluralsight Design',
