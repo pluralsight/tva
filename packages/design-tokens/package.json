@@ -5,12 +5,13 @@
   "main": "build/common/index.js",
   "module": "build/index.js",
   "files": [
-    "build/*",
+    "build/css/variables.css",
+    "build/scss/_variables.scss",
+    "build/common/index.js",
+    "build/index.js",
+    "build/index.d.ts",
     "normalize.css",
-    "fonts.css",
-    "!build/android/*",
-    "!build/ios/*",
-    "!build/ios-swift/*"
+    "fonts.css"
   ],
   "sideEffects": [
     "build/css/*.css",
