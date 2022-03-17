@@ -1,14 +1,7 @@
 import React, { memo } from 'react'
+import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-
-const iframeStyles = {
-  border: 0,
-  borderRadius: '12px',
-  height: '200px',
-  overflow: 'hidden',
-  width: '100%',
-}
 
 const tabValues = [
   { label: 'React', value: 'react' },
@@ -18,32 +11,23 @@ const tabValues = [
   { label: 'Svelte', value: 'svelte' },
 ]
 
-function Iframe({ sandbox }) {
-  const src = `https://codesandbox.io/embed/${sandbox}?fontsize=14&hidenavigation=1&theme=dark&view=preview`
-
-  return <div>{sandbox}</div>
-}
-
 function LiveExampleTabs(props) {
-  const src = (sandbox) =>
-    `https://codesandbox.io/embed/${sandbox}?fontsize=14&hidenavigation=1&theme=dark&view=preview`
-
   return (
     <Tabs defaultValue="react" values={tabValues}>
       <TabItem value="react">
-        <Iframe sandbox={props.examples.react} />
+        <CodeBlock>{props.examples.react}</CodeBlock>
       </TabItem>
       <TabItem value="styled">
-        <Iframe sandbox={props.examples.styled} />
+        <CodeBlock>{props.examples.styled}</CodeBlock>
       </TabItem>
       <TabItem value="chakra">
-        <Iframe sandbox={props.examples.chakra} />
+        <CodeBlock>{props.examples.chakra}</CodeBlock>
       </TabItem>
       <TabItem value="joy">
-        <Iframe sandbox={props.examples.joy} />
+        <CodeBlock>{props.examples.joy}</CodeBlock>
       </TabItem>
       <TabItem value="svelte">
-        <Iframe sandbox={props.examples.svelte} />
+        <CodeBlock>{props.examples.svelte}</CodeBlock>
       </TabItem>
     </Tabs>
   )

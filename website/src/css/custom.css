@@ -308,7 +308,9 @@ html[data-theme='light'] .hero__subtitle {
 
 .navbar__brand,
 html[data-theme='light'] .navbar__link,
-html[data-theme='light'] .hero__title {
+html[data-theme='light'] .hero__title,
+html[data-theme='light']
+  .toggleButton_----yarn-__virtual__-\@docusaurus-theme-classic-virtual-4f4c57fe32-0-cache-\@docusaurus-theme-classic-npm-2-0-0-beta-17-10c688a3f2-ef612eacc6-zip-node_modules-\@docusaurus-theme-classic-lib-next-theme-ColorModeToggle-styles-module {
   color: white;
 }
 

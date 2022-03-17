@@ -1,0 +1,10 @@
+.base {
+  align-items: center;
+  border: 1px solid var(--ps-neutral-border);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 36px;
+  text-align: center;
+}

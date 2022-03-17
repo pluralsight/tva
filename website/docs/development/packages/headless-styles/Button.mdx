@@ -3,7 +3,13 @@ sidebar_position: 2
 tags: [Development, Packages, Components, Button]
 ---
 
-import { getButtonProps } from '@pluralsight/headless-styles'
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import BasicButton from '@site/src/components/Button/BasicButton'
+import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
 # Button
 
@@ -25,20 +31,20 @@ Buttons communicate actions that users can take. In your UI, they are typically 
 
 The `Button` comes with five variants: text (default), text-weak, weak, medium, and strong.
 
+<BasicButton />
 <LiveExampleTabs
   examples={{
-    react: 'basic-button-css-zsn9cx',
-    styled: 'basic-button-css-zsn9cx',
-    chakra: 'basic-button-css-zsn9cx',
-    joy: 'basic-button-css-zsn9cx',
-    svelte: 'basic-button-css-zsn9cx',
+    react: 'TODO: FIGURE OUT HOW TO GET BLOCK IN HERE',
+    styled: 'external link to sandbox',
+    joy: 'external link to sandbox',
+    chakra: 'external link to sandbox',
+    svelte: 'external link to sandbox',
   }}
 />
 
 ```js
-// Passing no params delivers size "m", "text" styles
 const psButtonProps = getButtonProps()
-
+const psWeakButtonProps = getButtonProps({ kind: 'text-weak' })
 const psWeakButtonProps = getButtonProps({ kind: 'weak' })
 const psMediumButtonProps = getButtonProps({ kind: 'medium' })
 const psStrongButtonProps = getButtonProps({ kind: 'strong' })
@@ -47,6 +53,8 @@ const psStrongButtonProps = getButtonProps({ kind: 'strong' })
 ## Button sizes
 
 The `Button` comes with four size variants: xs, s, m (default), l.
+
+<ButtonSizes />
 
 ```js
 const psLargeSizeButtonProps = getButtonProps({ size: 'xs' })
