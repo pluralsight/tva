@@ -5,6 +5,7 @@ const baseFileConfig = {
   filter: baseFilter,
 }
 const transforms = ['color/hsl-4']
+const jsTransforms = [...transforms, 'name/cti/camel']
 const KEBAB = 'name/cti/kebab'
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
   platforms: {
     js: {
       transformGroup: 'js',
-      transforms: [...transforms, 'name/cti/camel'],
+      transforms: jsTransforms,
       buildPath: 'build/',
       files: [
         {
@@ -28,9 +29,21 @@ module.exports = {
         },
       ],
     },
+    common: {
+      transformGroup: 'commonjs',
+      transforms: jsTransforms,
+      buildPath: 'build/common/',
+      files: [
+        {
+          ...baseFileConfig,
+          destination: 'index.js',
+          format: 'javascript/module-flat',
+        },
+      ],
+    },
     ts: {
       transformGroup: 'ts',
-      transforms: [...transforms, 'name/cti/camel'],
+      transforms: jsTransforms,
       buildPath: 'build/',
       files: [
         {
