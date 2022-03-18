@@ -13,6 +13,10 @@ import {
   BasicButtonPreview,
   BasicButtonFullPreview,
 } from '@site/src/components/Button/BasicButton.preview'
+import {
+  ButtonSizesPreview,
+  ButtonSizesFullPreview,
+} from '@site/src/components/Button/ButtonSizes.preview'
 import ButtonSizes from '@site/src/components/Button/ButtonSizes'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -40,9 +44,9 @@ The `Button` comes with five variants: text (default), text-weak, weak, medium, 
 <LiveExampleTabs
   fullCode={<BasicButtonFullPreview />}
   sandboxList={{
-    chakra: '',
-    joy: '',
-    styled: 'basic-button-css-zsn9cx',
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
     svelte: '',
   }}
 >
@@ -54,13 +58,17 @@ The `Button` comes with five variants: text (default), text-weak, weak, medium, 
 The `Button` comes with four size variants: xs, s, m (default), l.
 
 <ButtonSizes />
-
-```js
-const psLargeSizeButtonProps = getButtonProps({ size: 'xs' })
-const psLargeSizeButtonProps = getButtonProps({ size: 's' })
-const psLargeSizeButtonProps = getButtonProps({ size: 'm' })
-const psLargeSizeButtonProps = getButtonProps({ size: 'l' })
-```
+<LiveExampleTabs
+  fullCode={<ButtonSizesFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: '',
+  }}
+>
+  <ButtonSizesPreview />
+</LiveExampleTabs>
 
 ## Button styled links
 
