@@ -1,0 +1,37 @@
+.button {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.codeIcon {
+  padding-top: 4px;
+}
+
+.list {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.listItem {
+  margin-right: 12px;
+}
+
+.listItem:first-of-type .button {
+  margin-top: 4px;
+}
+
+.listItem:last-of-type {
+  margin-right: 0;
+}
+
+.icon {
+  line-height: 0;
+  width: 17px;
+}
+
+.icon path {
+  fill: var(--ps-neutral-text-weak);
+}

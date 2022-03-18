@@ -7,6 +7,7 @@ tags: [Development, Packages, Components, Button]
 <!-- Keep an eye out so we can kill the components we are importing in. -->
 <!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
 
+import CodeBlock from '@theme/CodeBlock'
 import BasicButton from '@site/src/components/Button/BasicButton'
 import ButtonSizes from '@site/src/components/Button/ButtonSizes'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
@@ -33,22 +34,21 @@ The `Button` comes with five variants: text (default), text-weak, weak, medium, 
 
 <BasicButton />
 <LiveExampleTabs
-  examples={{
-    react: 'TODO: FIGURE OUT HOW TO GET BLOCK IN HERE',
-    styled: 'external link to sandbox',
-    joy: 'external link to sandbox',
-    chakra: 'external link to sandbox',
-    svelte: 'external link to sandbox',
-  }}
-/>
-
-```js
-const psButtonProps = getButtonProps()
-const psWeakButtonProps = getButtonProps({ kind: 'text-weak' })
-const psWeakButtonProps = getButtonProps({ kind: 'weak' })
-const psMediumButtonProps = getButtonProps({ kind: 'medium' })
-const psStrongButtonProps = getButtonProps({ kind: 'strong' })
-```
+  fullCode={
+    <code>{`import { getButtonProps } from '@pluralsight/headless-styles';\n
+const psButtonProps = getButtonProps();\n
+export default function TextButton(props) {
+  const { children, ...buttonProps } = props;
+  return (<button {...buttonProps} {...psButtonProps}>children</button>);
+}`}</code>
+  }
+>
+  <code>{`const psButtonProps = getButtonProps();
+const psWeakButtonProps = getButtonProps({ kind: 'text-weak' });
+const psWeakButtonProps = getButtonProps({ kind: 'weak' });
+const psMediumButtonProps = getButtonProps({ kind: 'medium' });
+const psStrongButtonProps = getButtonProps({ kind: 'strong' });`}</code>
+</LiveExampleTabs>
 
 ## Button sizes
 
