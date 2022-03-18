@@ -9,6 +9,10 @@ tags: [Development, Packages, Components, Button]
 
 import CodeBlock from '@theme/CodeBlock'
 import BasicButton from '@site/src/components/Button/BasicButton'
+import {
+  BasicButtonPreview,
+  BasicButtonFullPreview,
+} from '@site/src/components/Button/BasicButton.preview'
 import ButtonSizes from '@site/src/components/Button/ButtonSizes'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -34,20 +38,15 @@ The `Button` comes with five variants: text (default), text-weak, weak, medium, 
 
 <BasicButton />
 <LiveExampleTabs
-  fullCode={
-    <code>{`import { getButtonProps } from '@pluralsight/headless-styles';\n
-const psButtonProps = getButtonProps();\n
-export default function TextButton(props) {
-  const { children, ...buttonProps } = props;
-  return (<button {...buttonProps} {...psButtonProps}>children</button>);
-}`}</code>
-  }
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: '',
+    joy: '',
+    styled: 'basic-button-css-zsn9cx',
+    svelte: '',
+  }}
 >
-  <code>{`const psButtonProps = getButtonProps();
-const psWeakButtonProps = getButtonProps({ kind: 'text-weak' });
-const psWeakButtonProps = getButtonProps({ kind: 'weak' });
-const psMediumButtonProps = getButtonProps({ kind: 'medium' });
-const psStrongButtonProps = getButtonProps({ kind: 'strong' });`}</code>
+  <BasicButtonPreview />
 </LiveExampleTabs>
 
 ## Button sizes

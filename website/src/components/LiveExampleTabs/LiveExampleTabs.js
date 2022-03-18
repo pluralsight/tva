@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { getButtonProps } from '@pluralsight/headless-styles'
 import styles from './LiveExampleTabs.module.css'
 
@@ -40,25 +40,21 @@ const tabs = {
     styled: {
       icon: sandboxIcon,
       id: 'styled',
-      href: getSandboxLink('basic-button-css-zsn9cx'),
       label: 'View styled components 💅',
     },
     chakra: {
       icon: sandboxIcon,
       id: 'chakra',
-      href: getSandboxLink('basic-button-css-zsn9cx1'),
       label: 'View Chakra',
     },
     joy: {
       icon: sandboxIcon,
       id: 'joy',
-      href: getSandboxLink('basic-button-css-zsn9cx2'),
       label: 'View MUI / Joy',
     },
     svelte: {
       icon: sandboxIcon,
       id: 'svelte',
-      href: getSandboxLink('basic-button-css-zsn9cx3'),
       label: 'View Svelte',
     },
   },
@@ -67,17 +63,35 @@ const tabs = {
 function TechLink(props) {
   const data = tabs.results[props.techId]
   const { className } = getButtonProps({ size: 'xs' })
+  const href = getSandboxLink(props.href)
 
   return (
     <a
       aria-label={data.label}
       className={`${className} ${styles.button}`}
-      href={data.href}
+      href={href}
       rel="noopener noreferrer"
       target="_blank"
+      title={data.label}
     >
       {props.children}
     </a>
+  )
+}
+
+function ToggleButton(props) {
+  const { techId } = props
+  const { className, ...psBtnProps } = { ...getButtonProps({ size: 'xs' }) }
+
+  return (
+    <button
+      className={`${className} ${styles.button}`}
+      onClick={props.onToggleShow}
+      title={tabs.results[techId].label}
+      {...psBtnProps}
+    >
+      <TechIcon tabId={techId} />
+    </button>
   )
 }
 
@@ -85,27 +99,32 @@ function TechIcon(props) {
   return tabs.results[props.tabId].icon
 }
 
-function TechToolbar(props) {
-  const { className, ...psBtnProps } = { ...getButtonProps({ size: 'xs' }) }
+function TechListItem(props) {
+  const { techId } = props
 
+  return (
+    <li className={styles.listItem}>
+      {techId === 'source' ? (
+        <ToggleButton onToggleShow={props.onToggleShow} techId={techId} />
+      ) : (
+        <TechLink techId={techId} href={props.sandboxList[techId]}>
+          <TechIcon tabId={techId} />
+        </TechLink>
+      )}
+    </li>
+  )
+}
+
+function TechToolbar(props) {
   return (
     <ul className={styles.list}>
       {tabs.items.map((techId) => (
-        <li className={styles.listItem} key={techId}>
-          {techId === 'source' ? (
-            <button
-              className={`${className} ${styles.button}`}
-              onClick={props.onToggleShow}
-              {...psBtnProps}
-            >
-              <TechIcon tabId={techId} />
-            </button>
-          ) : (
-            <TechLink techId={techId}>
-              <TechIcon tabId={techId} />
-            </TechLink>
-          )}
-        </li>
+        <TechListItem
+          key={techId}
+          onToggleShow={props.onToggleShow}
+          sandboxList={props.sandboxList}
+          techId={techId}
+        />
       ))}
     </ul>
   )
@@ -120,10 +139,13 @@ function LiveExampleTabs(props) {
 
   return (
     <div>
-      <TechToolbar onToggleShow={handleToggleShow} />
+      <TechToolbar
+        onToggleShow={handleToggleShow}
+        sandboxList={props.sandboxList}
+      />
       {showFull ? props.fullCode : props.children}
     </div>
   )
 }
 
-export default LiveExampleTabs
+export default memo(LiveExampleTabs)
