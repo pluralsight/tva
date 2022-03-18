@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://pluralsight.github.io/blog</id>
+    <id>https://design.pluralsight.com/blog</id>
     <title>Pluralsight Design Blog</title>
     <updated>2021-08-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://pluralsight.github.io/blog"/>
+    <link rel="alternate" href="https://design.pluralsight.com/blog"/>
     <subtitle>Pluralsight Design Blog</subtitle>
-    <icon>https://pluralsight.github.io/img/logo.svg</icon>
+    <icon>https://design.pluralsight.com/img/logo.svg</icon>
     <entry>
         <title type="html"><![CDATA[MDX Blog Post]]></title>
         <id>mdx-blog-post</id>
-        <link href="https://pluralsight.github.io/tva/blog/mdx-blog-post"/>
+        <link href="https://design.pluralsight.com/blog/mdx-blog-post"/>
         <updated>2021-08-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Long Blog Post]]></title>
         <id>long-blog-post</id>
-        <link href="https://pluralsight.github.io/tva/blog/long-blog-post"/>
+        <link href="https://design.pluralsight.com/blog/long-blog-post"/>
         <updated>2019-05-29T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[First Blog Post]]></title>
         <id>first-blog-post</id>
-        <link href="https://pluralsight.github.io/tva/blog/first-blog-post"/>
+        <link href="https://design.pluralsight.com/blog/first-blog-post"/>
         <updated>2019-05-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
     </entry>

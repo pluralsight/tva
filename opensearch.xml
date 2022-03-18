@@ -4,8 +4,8 @@
   <ShortName>Pluralsight Design</ShortName>
   <Description>Search Pluralsight Design</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://pluralsight.github.io/tva/img/logo.svg</Image>
-  <Url type="text/html" method="get" template="https://pluralsight.github.io/tva/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://pluralsight.github.io/tva/opensearch.xml" />
-  <moz:SearchForm>https://pluralsight.github.io/tva/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://design.pluralsight.com/img/logo.svg</Image>
+  <Url type="text/html" method="get" template="https://design.pluralsight.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://design.pluralsight.com/opensearch.xml" />
+  <moz:SearchForm>https://design.pluralsight.com/</moz:SearchForm>
 </OpenSearchDescription>

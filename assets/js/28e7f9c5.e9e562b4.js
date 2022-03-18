@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[1280],{5641:function(t){t.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"MDX Blog Post","permalink":"/tva/blog/mdx-blog-post"},{"title":"Long Blog Post","permalink":"/tva/blog/long-blog-post"},{"title":"First Blog Post","permalink":"/tva/blog/first-blog-post"}]}')}}]);
