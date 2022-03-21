@@ -1,0 +1,38 @@
+{
+  "name": "@pluralsight/icons",
+  "version": "0.0.0",
+  "description": "Icons for Pluralsight.",
+  "main": "build/common/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/*"
+  ],
+  "scripts": {
+    "build": "echo \"Error: no build command specified\" && exit 1",
+    "clean": "rm -rf build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pluralsight",
+    "pluralsight design",
+    "pluralsight icons",
+    "design system",
+    "design icons"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Design System Team",
+  "bugs": {
+    "url": "https://github.com/pluralsight/tva/issues"
+  },
+  "homepage": "https://design.pluralsight.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pluralsight/tva.git",
+    "directory": "packages/icons"
+  },
+  "license": "Apache 2.0",
+  "packageManager": "yarn@3.1.0"
+}

@@ -34,6 +34,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           reference: 'workspace:packages/headless-styles',
         },
         {
+          name: '@pluralsight/icons',
+          reference: 'workspace:packages/icons',
+        },
+        {
           name: 'release-script',
           reference: 'workspace:scripts',
         },
@@ -51,6 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           ['workspace:packages/headless-styles'],
         ],
+        ['@pluralsight/icons', ['workspace:packages/icons']],
         ['@pluralsight/tva', ['workspace:.']],
         ['release-script', ['workspace:scripts']],
         ['website', ['workspace:website']],
@@ -585,6 +590,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-2ba2f1-20220317',
         ],
+        ['@pluralsight/icons', 'workspace:packages/icons'],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@sideway/address', 'npm:4.1.3'],
         ['@sideway/formula', 'npm:3.0.0'],
@@ -14802,6 +14808,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'typescript',
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
                   ],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+          ],
+        ],
+        [
+          '@pluralsight/icons',
+          [
+            [
+              'workspace:packages/icons',
+              {
+                packageLocation: './packages/icons/',
+                packageDependencies: [
+                  ['@pluralsight/icons', 'workspace:packages/icons'],
                 ],
                 linkType: 'SOFT',
               },
