@@ -14,38 +14,44 @@ import {
 import { getDefaultOptions } from './shared'
 import type { ButtonOptions, ButtonType, Kind, Size } from './types'
 
-const buttonStyles = {
-  appearance: 'none',
-  borderRadius: '6px',
-  backgroundColor: 'transparent',
-  border: 'none',
-  cursor: 'pointer',
-  fontSize: '16px',
-  padding: '10px 16px',
-  textAlign: 'center',
-  textDecoration: 'none',
-  transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
+const baseStyles = {
+  js: {
+    appearance: 'none',
+    borderRadius: '6px',
+    backgroundColor: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily:
+      'PS TT Commons Roman, Gotham SSm A, Gotham SSm B, Arial,sans-serif',
+    fontSize: '16px',
+    padding: '10px 16px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    textTransform: 'none',
+    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
 
-  active: {
-    outline: 'none',
+    '&:active': {
+      outline: 'none',
+    },
+    '&:focus': {
+      outline: `3px solid ${psBackgroundActive}`,
+    },
+    '&:focus:not(:focus-visible)': {
+      boxShadow: 'none',
+      outline: 'none',
+    },
   },
-  focus: {
-    outline: `3px solid ${psBackgroundActive}`,
-  },
-  focusNotFocusVisible: {
-    boxShadow: 'none',
-    outline: 0,
-  },
-}
-
-const baseCSSProps = `
+  css: `
   appearance: none;
   background-color: transparent;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+  sans-serif;
   text-align: center;
   text-decoration: none;
+  text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &:active {
@@ -56,9 +62,10 @@ const baseCSSProps = `
   }
   &:focus:not(:focus-visible) {
     box-shadow: none;
-    outline: 0;
+    outline: none;
   }
-`
+`,
+}
 
 function getKindStyles(kind: Kind) {
   switch (kind) {
@@ -184,7 +191,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psBackgroundHover};
           }
           &:active {
-            background-color: ${psBackgroundActive};
+            background-color: ${psBackgroundActive} !important;
           }
         `,
         js: {
@@ -193,7 +200,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psBackgroundHover,
           },
           active: {
-            backgroundColor: psBackgroundActive,
+            backgroundColor: `${psBackgroundActive} !important`,
           },
         },
       }
@@ -206,7 +213,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psNeutralBackgroundHover};
           }
           &:active {
-            background-color: ${psNeutralBackgroundActive};
+            background-color: ${psNeutralBackgroundActive} !important;
           }
         `,
         js: {
@@ -215,7 +222,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psNeutralBackgroundHover,
           },
           active: {
-            backgroundColor: psNeutralBackgroundActive,
+            backgroundColor: `${psNeutralBackgroundActive} !important`,
           },
         },
       }
@@ -228,7 +235,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psNeutralBackgroundHover};
           }
           &:active {
-            background-color: ${psBackgroundActive};
+            background-color: ${psBackgroundActive} !important;
           }
         `,
         js: {
@@ -237,7 +244,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psNeutralBackgroundHover,
           },
           active: {
-            backgroundColor: psBackgroundActive,
+            backgroundColor: `${psBackgroundActive} !important`,
           },
         },
       }
@@ -252,7 +259,7 @@ export function getJSButtonProps(options?: ButtonOptions) {
 
   return {
     cssProps: `
-      ${baseCSSProps}
+      ${baseStyles.css.trim()}
       ${kindStyles.css.trim()}
       ${sizeStyles.css.trim()}
       ${psuedoStyles.css.trim()}
@@ -260,12 +267,11 @@ export function getJSButtonProps(options?: ButtonOptions) {
       .trim()
       .replace(/^ {2,12}/gm, ''),
     styles: {
-      ...buttonStyles,
+      ...baseStyles.js,
       ...kindStyles.js,
       ...sizeStyles.js,
-      hover: { ...psuedoStyles.js.hover },
-      active: { ...buttonStyles.active, ...psuedoStyles.js.active },
-      focus: { ...buttonStyles.focus, ...buttonStyles.focusNotFocusVisible },
+      '&:hover': { ...psuedoStyles.js.hover },
+      '&:active': { ...baseStyles.js['&:active'], ...psuedoStyles.js.active },
     },
     type: 'button' as ButtonType,
   }

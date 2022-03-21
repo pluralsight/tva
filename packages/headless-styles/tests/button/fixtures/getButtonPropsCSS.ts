@@ -10,8 +10,11 @@ const baseCSS = cleanupString(`
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+  sans-serif;
   text-align: center;
   text-decoration: none;
+  text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
   &:active {
@@ -22,7 +25,7 @@ const baseCSS = cleanupString(`
   }
   &:focus:not(:focus-visible) {
     box-shadow: none;
-    outline: 0;
+    outline: none;
   }
 `)
 
@@ -37,7 +40,7 @@ export const defaultButtonCSS = cleanupString(`
     background-color: hsl(237deg 30% 36% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)
 
@@ -52,7 +55,7 @@ export const textWeakButtonCSS = cleanupString(`
     background-color: hsl(249deg 63% 43% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)
 
@@ -68,7 +71,7 @@ export const weakButtonCSS = cleanupString(`
     background-color: hsl(237deg 30% 36% / 100%);
   }
   &:active {
-    background-color: hsl(240deg 31% 25% / 100%);
+    background-color: hsl(240deg 31% 25% / 100%) !important;
   }
 `)
 
@@ -84,7 +87,7 @@ export const mediumButtonCSS = cleanupString(`
     background-color: hsl(249deg 63% 43% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !iimportant;
   }
 `)
 
@@ -100,7 +103,7 @@ export const strongButtonCSS = cleanupString(`
     background-color: hsl(249deg 63% 43% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)
 
@@ -115,7 +118,7 @@ export const xsButtonCSS = cleanupString(`
     background-color: hsl(237deg 30% 36% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)
 
@@ -130,7 +133,7 @@ export const sButtonCSS = cleanupString(`
     background-color: hsl(237deg 30% 36% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)
 
@@ -145,6 +148,6 @@ export const lButtonCSS = cleanupString(`
     background-color: hsl(237deg 30% 36% / 100%);
   }
   &:active {
-    background-color: hsl(249deg 63% 34% / 100%);
+    background-color: hsl(249deg 63% 34% / 100%) !important;
   }
 `)

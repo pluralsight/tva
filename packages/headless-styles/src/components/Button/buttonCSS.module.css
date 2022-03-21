@@ -4,10 +4,13 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
   font-size: 16px;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
+  text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
@@ -78,11 +81,11 @@
 .text-weak:active,
 .medium:active,
 .strong:active {
-  background-color: var(--ps-background-active);
+  background-color: var(--ps-background-active) !important;
 }
 
 .weak:active {
-  background-color: var(--ps-neutral-background-active);
+  background-color: var(--ps-neutral-background-active) !important;
 }
 
 /* focus styles */
