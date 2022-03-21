@@ -229,7 +229,7 @@ interface IconButtonProps {
 getJSButtonProps(options: ButtonOptions): JSButtonProps
 ```
 
-If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that uses a traditional Javascript Object for your choosing.
+If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
 
 ```js title="Return value example"
 {
@@ -241,7 +241,9 @@ If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will r
   styles: {
     color: '#fff',
     backgroundColor: '#000'
-    ...
+    '&:hover': {
+      ...
+    }
   },
   type: 'button',
 }
@@ -281,12 +283,12 @@ function SubmitButton(props) {
 
 ## API
 
-| Name                 | Argument Type                                | Default                                  | Description                            |
-| -------------------- | -------------------------------------------- | ---------------------------------------- | -------------------------------------- |
-| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'default', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps`  |                                              |                                          | Get button with icon and label styles. |
-| `getIconButtonProps` | **ariaLabel**: string                        |                                          | Get icon button styles.                |
+| Name                 | Argument Type                                | Default                               | Description                            |
+| -------------------- | -------------------------------------------- | ------------------------------------- | -------------------------------------- |
+| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
+| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
+| `getIconLabelProps`  |                                              |                                       | Get button with icon and label styles. |
+| `getIconButtonProps` | **ariaLabel**: string                        |                                       | Get icon button styles.                |
 
 ## ButtonOptions
 
@@ -332,8 +334,8 @@ Button colors are relative to the `background` style and have a direct correlati
 
 ```typescript title="Example interface - does not exist in types"
 interface ButtonColorGuide {
-  default: 'transparent'
-  'default-weak': 'transparent'
+  text: 'transparent'
+  'text-weak': 'transparent'
   weak: 'var(--ps-neutral-background)'
   medium: 'var(--ps-background)'
   strong: 'var(--ps-background-weak)'
