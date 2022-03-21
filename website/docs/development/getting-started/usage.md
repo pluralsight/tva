@@ -7,7 +7,7 @@ tags: [Development, Usage, Getting Started, Web, React Native]
 
 :::caution
 
-This is **unreleased** documentation for the **headless-styles** package.
+This is **unreleased** documentation for the **headless-styles** and **icons** package.
 
 :::
 
@@ -22,8 +22,6 @@ TVA is designed as a headless vanilla Javascript library so you can use it withi
 We strive to provide codesandbox examples for the common popular stacks (mentioned). However, if there is an example you need for a combination that we do not provide, please [let us know](https://github.com/pluralsight/tva/discussions/categories/q-a) by starting a Q&A discussion.
 
 ## Quick Start
-
-<!-- TODO: Add React live imports when package published -->
 
 Here's a quick example using React to get you started, **it's literally all you need**:
 
