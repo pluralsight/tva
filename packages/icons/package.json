@@ -9,9 +9,9 @@
     "build/*"
   ],
   "scripts": {
-    "build": "echo \"Error: no build command specified\" && exit 1",
+    "build": "echo \"no build command specified\"",
     "clean": "rm -rf build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "keywords": [
     "pluralsight",
