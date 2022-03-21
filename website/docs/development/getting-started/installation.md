@@ -17,14 +17,14 @@ Pluralsight Design is available as a set of [npm packages](https://github.com/pl
 
 ## npm
 
-For the entire kitchen sink up front, just install the `headless-styles` package.
+For the entire kitchen sink up front, just install the `headless-styles` and `icons` package.
 
 ```bash npm2yarn
-npm install @pluralsight/headless-styles@alpha
+npm install @pluralsight/headless-styles@alpha @pluralsight/icons@alpha
 ```
 
 :::caution
-The `headless-styles` package will be available in the future.
+The `headless-styles` and `icons` packages will be available in the future.
 :::
 
 Or if you want maximum flexibility, just install the `design-tokens` package:
@@ -57,18 +57,6 @@ Additionally, each "component" uses a [variable font](https://developer.mozilla.
 
 :::caution
 Be sure to add this resource **before** [normalize.css](#normalizecss) to prevent FOUC.
-:::
-
-## Icon font
-
-To use the icon font, you must first add the Pluralsight Design [icons font](https://github.com/pluralsight/tva). For the best results, install via a HTML `link` tag:
-
-```html
-<link rel="stylesheet" href="https://...TBD" />
-```
-
-:::caution
-This execution is currently being designed. We have created an [un-baised comparison](https://github.com/pluralsight/tva/discussions/70) of using SVGs vs an Icon library. If you have time, please visit the discussion and contribute by leaving a comment! 🎉
 :::
 
 ## Normalize.css

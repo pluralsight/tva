@@ -8,5 +8,4 @@
 !.yarn/versions
 
 # Workspace related
-packages/design-tokens/build
-packages/headless-styles/build
+packages/*/build
