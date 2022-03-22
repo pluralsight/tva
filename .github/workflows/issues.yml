@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Close Issue
-        uses: peter-evans/close-issue@v1
+        uses: peter-evans/close-issue@v2
         if: "${{ github.event.label.name == ':speech_balloon: Question' }}"
         with:
           comment: Please note this issue tracker is not a help forum. We recommend using [Discussions](https://github.com/pluralsight/tva/discussions/categories/q-a) for questions.
