@@ -14,21 +14,26 @@ import {
 import { getDefaultOptions } from './shared'
 import type { ButtonOptions, ButtonType, Kind, Size } from './types'
 
+const BASE_FONT_SIZE = '16px !important'
+
 const baseStyles = {
   js: {
     appearance: 'none',
-    borderRadius: '6px',
-    backgroundColor: 'transparent',
+    backgroundColor: 'transparent !important',
     border: 'none',
+    borderRadius: '6px !important',
     cursor: 'pointer',
     fontFamily:
       'PS TT Commons Roman, Gotham SSm A, Gotham SSm B, Arial,sans-serif',
-    fontSize: '16px',
+    fontSize: BASE_FONT_SIZE,
+    fontWeight: 'inherit !important',
+    height: 'initial !important',
     padding: '10px 16px',
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'none',
     transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
+    transitionProperty: 'background-color, color !important',
 
     '&:active': {
       outline: 'none',
@@ -43,16 +48,19 @@ const baseStyles = {
   },
   css: `
   appearance: none;
-  background-color: transparent;
+  background-color: transparent !important;
   border: none;
-  border-radius: 6px;
+  border-radius: 6px !important;
   cursor: pointer;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
   sans-serif;
+  font-weight: inherit !important;
+  height: initial !important;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition-property: background-color, color !important;
 
   &:active {
     outline: none;
@@ -82,11 +90,11 @@ function getKindStyles(kind: Kind) {
     case 'weak':
       return {
         css: `
-          background-color: ${psNeutralBackground};
+          background-color: ${psNeutralBackground} !important;
           color: ${psNeutralText};
         `,
         js: {
-          backgroundColor: psNeutralBackground,
+          backgroundColor: `${psNeutralBackground} !important`,
           color: psNeutralText,
         },
       }
@@ -94,11 +102,11 @@ function getKindStyles(kind: Kind) {
     case 'medium':
       return {
         css: `
-          background-color: ${psBackground};
+          background-color: ${psBackground} !important;
           color: #fff;
         `,
         js: {
-          backgroundColor: psBackground,
+          backgroundColor: `${psBackground} !important`,
           color: '#fff',
         },
       }
@@ -106,11 +114,11 @@ function getKindStyles(kind: Kind) {
     case 'strong':
       return {
         css: `
-          background-color: ${psBackgroundWeak};
+          background-color: ${psBackgroundWeak} !important;
           color: ${psText};
         `,
         js: {
-          backgroundColor: psBackgroundWeak,
+          backgroundColor: `${psBackgroundWeak} !important`,
           color: psText,
         },
       }
@@ -132,11 +140,11 @@ function getSizeStyles(size: Size) {
     case 'xs':
       return {
         css: `
-          font-size: 12px;
+          font-size: 12px !important;
           padding: 4px 8px;
         `,
         js: {
-          fontSize: '12px',
+          fontSize: '12px !important',
           padding: '4px 8px',
         },
       }
@@ -144,11 +152,11 @@ function getSizeStyles(size: Size) {
     case 's':
       return {
         css: `
-          font-size: 14px;
+          font-size: 14px !important;
           padding: 6px 12px;
         `,
         js: {
-          fontSize: '14px',
+          fontSize: '14px !important',
           padding: '6px 12px',
         },
       }
@@ -156,11 +164,11 @@ function getSizeStyles(size: Size) {
     case 'l':
       return {
         css: `
-          font-size: 16px;
+          font-size: 16px !important;
           padding: 14.5px 24px;
         `,
         js: {
-          fontSize: '16px',
+          fontSize: BASE_FONT_SIZE,
           padding: '14.5px 24px',
         },
       }
@@ -168,11 +176,11 @@ function getSizeStyles(size: Size) {
     default:
       return {
         css: `
-          font-size: 16px;
+          font-size: 16px !important;
           padding: 10px 16px;
         `,
         js: {
-          fontSize: '16px',
+          fontSize: BASE_FONT_SIZE,
           padding: '10px 16px',
         },
       }

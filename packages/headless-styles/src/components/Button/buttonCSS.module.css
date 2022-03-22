@@ -1,17 +1,20 @@
 .base {
   appearance: none;
-  background-color: transparent;
+  background-color: transparent !important;
   border: none;
-  border-radius: 6px;
+  border-radius: 6px !important;
   cursor: pointer;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
-  font-size: 16px;
+  font-size: 16px !important;
+  font-weight: inherit !important;
+  height: initial !important; /* this is due to Chakra */
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition-property: bacgkround-color, color !important;
 }
 
 .text {
@@ -23,27 +26,27 @@
 }
 
 .weak {
-  background-color: var(--ps-neutral-background);
+  background-color: var(--ps-neutral-background) !important;
   color: var(--ps-neutral-text);
 }
 
 .medium {
-  background-color: var(--ps-background);
+  background-color: var(--ps-background) !important;
   color: #fff;
 }
 
 .strong {
-  background-color: var(--ps-background-weak);
+  background-color: var(--ps-background-weak) !important;
   color: var(--ps-text);
 }
 
 .size-xs {
-  font-size: 12px;
+  font-size: 12px !important;
   padding: 4px 8px;
 }
 
 .size-s {
-  font-size: 14px;
+  font-size: 14px !important;
   padding: 6px 12px;
 }
 
@@ -63,12 +66,12 @@
 .text-weak:hover,
 .medium:hover,
 .strong:hover {
-  background-color: var(--ps-background-hover);
+  background-color: var(--ps-background-hover) !important;
 }
 
 .text:hover,
 .weak:hover {
-  background-color: var(--ps-neutral-background-hover);
+  background-color: var(--ps-neutral-background-hover) !important;
 }
 
 /* active styles */
@@ -97,4 +100,11 @@
 .base:focus:not(:focus-visible) {
   box-shadow: none;
   outline: 0;
+}
+
+/* light theme */
+
+.light .text:hover,
+html[data-theme='light'] .text:hover {
+  color: var(--ps-neutral-text-weak);
 }
