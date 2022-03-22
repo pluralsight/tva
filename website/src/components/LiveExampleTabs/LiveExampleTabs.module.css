@@ -4,6 +4,14 @@
   justify-content: center;
 }
 
+.chakra path {
+  fill: var(--ps-neutral-surface) !important;
+}
+
+.chakraCircle {
+  fill: var(--ps-neutral-text-weak);
+}
+
 .codeIcon {
   padding-top: 4px;
 }
