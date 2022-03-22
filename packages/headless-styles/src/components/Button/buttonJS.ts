@@ -28,12 +28,12 @@ const baseStyles = {
     fontSize: BASE_FONT_SIZE,
     fontWeight: 'inherit !important',
     height: 'initial !important',
+    outlineOffset: 'initial !important',
     padding: '10px 16px',
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'none',
     transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    transitionProperty: 'background-color, color !important',
 
     '&:active': {
       outline: 'none',
@@ -56,11 +56,11 @@ const baseStyles = {
   sans-serif;
   font-weight: inherit !important;
   height: initial !important;
+  outline-offset: initial !important;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
-  transition-property: background-color, color !important;
 
   &:active {
     outline: none;

@@ -9,12 +9,12 @@
   font-size: 16px !important;
   font-weight: inherit !important;
   height: initial !important; /* this is due to Chakra */
+  outline-offset: initial !important;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
-  transition-property: bacgkround-color, color !important;
 }
 
 .text {
