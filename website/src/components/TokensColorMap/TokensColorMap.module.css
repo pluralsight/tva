@@ -42,6 +42,10 @@
   padding: 16px;
 }
 
+html[data-theme='light'] .wrapper {
+  background-color: var(--ps-neutral-surface);
+}
+
 /* swab colors */
 
 .psBackground {
@@ -263,4 +267,9 @@
 
 .psDangerTextMedium {
   background-color: var(--ps-danger-text-medium);
+}
+
+html[data-theme='light'] .psNeutralSurfaceMedium,
+html[data-theme='light'] .psNeutralSurface {
+  border: 1px solid var(--ps-neutral-border);
 }
