@@ -146,7 +146,7 @@ The `Button` prop-getter takes in [ButtonOptions](#buttonoptions) returns an Obj
 
 ```js title="Return value example"
 {
-  className: `ps-btn ${...internalStyleModules}`
+  className: `ps-btn ${...internal-style-modules}`
   type: 'button'
 }
 ```
@@ -281,6 +281,14 @@ function SubmitButton(props) {
 }
 ```
 
+## Using with other frameworks
+
+`headless-styles` was built with the mindset that any tech stack should work with our helpers. However, when making the decision to support multiple UI frameworks, styles can get out of hand very quickly. In order to scale styles without creating negative impacts to other platforms, we have included the optional `tech` option to [ButtonOptions](#buttonoptions). This small inclusion allows us to ship specific styles per platform you choose to use without conflicting with others. :boom:
+
+:::tip
+When combining `headless-styles` with other frameworks, please follow the guides in the example codesandboxes for the best experience. **Not all frameworks require special CSS support**.
+:::
+
 ## API
 
 | Name                 | Argument Type                                | Default                               | Description                            |
@@ -300,6 +308,7 @@ interface ButtonOptions
   > {
   kind?: 'text' | 'text-weak' | 'weak' | 'medium' | 'strong'
   size?: 'xs' | 's' | 'm' | 'l'
+  tech?: 'chakra'
 }
 ```
 

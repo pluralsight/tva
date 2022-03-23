@@ -7,6 +7,7 @@ export interface ButtonOptions
   > {
   kind?: Kind
   size?: Size
+  tech?: Tech
 }
 
 // types
@@ -14,3 +15,4 @@ export interface ButtonOptions
 export type ButtonType = 'button' | 'submit' | 'reset' | undefined
 export type Kind = 'text' | 'text-weak' | 'weak' | 'medium' | 'strong'
 export type Size = 'xs' | 's' | 'm' | 'l'
+export type Tech = 'chakra' | ''

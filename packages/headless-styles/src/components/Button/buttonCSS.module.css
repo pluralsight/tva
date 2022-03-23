@@ -1,20 +1,24 @@
 .base {
+  align-items: center;
   appearance: none;
-  background-color: transparent !important;
+  background-color: transparent;
   border: none;
-  border-radius: 6px !important;
+  border-radius: 6px;
   cursor: pointer;
+  display: inline-flex;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
-  font-size: 16px !important;
-  font-weight: inherit !important;
-  height: initial !important; /* this is due to Chakra */
-  outline-offset: initial !important;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  outline: none;
   padding: 10px 16px;
+  position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  user-select: none;
 }
 
 .text {
@@ -26,27 +30,27 @@
 }
 
 .weak {
-  background-color: var(--ps-neutral-background) !important;
+  background-color: var(--ps-neutral-background);
   color: var(--ps-neutral-text);
 }
 
 .medium {
-  background-color: var(--ps-background) !important;
+  background-color: var(--ps-background);
   color: #fff;
 }
 
 .strong {
-  background-color: var(--ps-background-weak) !important;
+  background-color: var(--ps-background-weak);
   color: var(--ps-text);
 }
 
 .size-xs {
-  font-size: 12px !important;
+  font-size: 12px;
   padding: 4px 8px;
 }
 
 .size-s {
-  font-size: 14px !important;
+  font-size: 14px;
   padding: 6px 12px;
 }
 
@@ -66,12 +70,12 @@
 .text-weak:hover,
 .medium:hover,
 .strong:hover {
-  background-color: var(--ps-background-hover) !important;
+  background-color: var(--ps-background-hover);
 }
 
 .text:hover,
 .weak:hover {
-  background-color: var(--ps-neutral-background-hover) !important;
+  background-color: var(--ps-neutral-background-hover);
 }
 
 /* active styles */
@@ -84,11 +88,11 @@
 .text-weak:active,
 .medium:active,
 .strong:active {
-  background-color: var(--ps-background-active) !important;
+  background-color: var(--ps-background-active);
 }
 
 .weak:active {
-  background-color: var(--ps-neutral-background-active) !important;
+  background-color: var(--ps-neutral-background-active);
 }
 
 /* focus styles */
@@ -104,7 +108,60 @@
 
 /* light theme */
 
-.light .text:hover,
-html[data-theme='light'] .text:hover {
+.light .base.text:hover,
+html[data-theme='light'] .base.text:hover {
   color: var(--ps-neutral-text-weak);
+}
+
+/* chakra styles */
+
+.chakra {
+  background-color: transparent !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+  font-weight: inherit !important;
+  height: initial !important;
+  outline-offset: initial !important;
+}
+
+.chakra.weak {
+  background-color: var(--ps-neutral-background) !important;
+}
+
+.chakra.medium {
+  background-color: var(--ps-background) !important;
+}
+
+.chakra.strong {
+  background-color: var(--ps-background-weak) !important;
+}
+
+.chakra.size-xs {
+  font-size: 12px !important;
+}
+
+.chakra.size-s {
+  font-size: 14px !important;
+}
+
+.chakra.text-weak:hover,
+.chakra.medium:hover,
+.chakra.strong:hover {
+  background-color: var(--ps-background-hover) !important;
+}
+
+.chakra.text:hover,
+.chakra.weak:hover {
+  background-color: var(--ps-neutral-background-hover) !important;
+}
+
+.chakra.text:active,
+.chakra.text-weak:active,
+.chakra.medium:active,
+.chakra.strong:active {
+  background-color: var(--ps-background-active) !important;
+}
+
+.chakra.weak:active {
+  background-color: var(--ps-neutral-background-active) !important;
 }
