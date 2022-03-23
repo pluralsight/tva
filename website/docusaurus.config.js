@@ -109,7 +109,6 @@ const config = {
             'aria-label': 'GitHub repository',
             className: 'header-github-link',
             href: 'https://github.com/pluralsight/tva',
-            label: 'GitHub',
             position: 'right',
           },
         ],
