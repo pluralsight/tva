@@ -14,21 +14,21 @@ import {
 import { getDefaultOptions } from './shared'
 import type { ButtonOptions, ButtonType, Kind, Size } from './types'
 
-const BASE_FONT_SIZE = '16px !important'
+const BASE_FONT_SIZE = '16px'
 
 const baseStyles = {
   js: {
     appearance: 'none',
-    backgroundColor: 'transparent !important',
+    backgroundColor: 'transparent',
     border: 'none',
-    borderRadius: '6px !important',
+    borderRadius: '6px',
     cursor: 'pointer',
     fontFamily:
       'PS TT Commons Roman, Gotham SSm A, Gotham SSm B, Arial,sans-serif',
     fontSize: BASE_FONT_SIZE,
-    fontWeight: 'inherit !important',
-    height: 'initial !important',
-    outlineOffset: 'initial !important',
+    fontWeight: 'inherit',
+    height: 'initial',
+    outlineOffset: 'initial',
     padding: '10px 16px',
     textAlign: 'center',
     textDecoration: 'none',
@@ -48,15 +48,15 @@ const baseStyles = {
   },
   css: `
   appearance: none;
-  background-color: transparent !important;
+  background-color: transparent;
   border: none;
-  border-radius: 6px !important;
+  border-radius: 6px;
   cursor: pointer;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
   sans-serif;
-  font-weight: inherit !important;
-  height: initial !important;
-  outline-offset: initial !important;
+  font-weight: inherit;
+  height: initial;
+  outline-offset: initial;
   text-align: center;
   text-decoration: none;
   text-transform: none;
@@ -90,11 +90,11 @@ function getKindStyles(kind: Kind) {
     case 'weak':
       return {
         css: `
-          background-color: ${psNeutralBackground} !important;
+          background-color: ${psNeutralBackground};
           color: ${psNeutralText};
         `,
         js: {
-          backgroundColor: `${psNeutralBackground} !important`,
+          backgroundColor: `${psNeutralBackground}`,
           color: psNeutralText,
         },
       }
@@ -102,11 +102,11 @@ function getKindStyles(kind: Kind) {
     case 'medium':
       return {
         css: `
-          background-color: ${psBackground} !important;
+          background-color: ${psBackground};
           color: #fff;
         `,
         js: {
-          backgroundColor: `${psBackground} !important`,
+          backgroundColor: `${psBackground}`,
           color: '#fff',
         },
       }
@@ -114,11 +114,11 @@ function getKindStyles(kind: Kind) {
     case 'strong':
       return {
         css: `
-          background-color: ${psBackgroundWeak} !important;
+          background-color: ${psBackgroundWeak};
           color: ${psText};
         `,
         js: {
-          backgroundColor: `${psBackgroundWeak} !important`,
+          backgroundColor: `${psBackgroundWeak}`,
           color: psText,
         },
       }
@@ -140,11 +140,11 @@ function getSizeStyles(size: Size) {
     case 'xs':
       return {
         css: `
-          font-size: 12px !important;
+          font-size: 12px;
           padding: 4px 8px;
         `,
         js: {
-          fontSize: '12px !important',
+          fontSize: '12px',
           padding: '4px 8px',
         },
       }
@@ -152,11 +152,11 @@ function getSizeStyles(size: Size) {
     case 's':
       return {
         css: `
-          font-size: 14px !important;
+          font-size: 14px;
           padding: 6px 12px;
         `,
         js: {
-          fontSize: '14px !important',
+          fontSize: '14px',
           padding: '6px 12px',
         },
       }
@@ -164,7 +164,7 @@ function getSizeStyles(size: Size) {
     case 'l':
       return {
         css: `
-          font-size: 16px !important;
+          font-size: 16px;
           padding: 14.5px 24px;
         `,
         js: {
@@ -176,7 +176,7 @@ function getSizeStyles(size: Size) {
     default:
       return {
         css: `
-          font-size: 16px !important;
+          font-size: 16px;
           padding: 10px 16px;
         `,
         js: {
@@ -199,7 +199,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psBackgroundHover};
           }
           &:active {
-            background-color: ${psBackgroundActive} !important;
+            background-color: ${psBackgroundActive};
           }
         `,
         js: {
@@ -208,7 +208,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psBackgroundHover,
           },
           active: {
-            backgroundColor: `${psBackgroundActive} !important`,
+            backgroundColor: `${psBackgroundActive}`,
           },
         },
       }
@@ -221,7 +221,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psNeutralBackgroundHover};
           }
           &:active {
-            background-color: ${psNeutralBackgroundActive} !important;
+            background-color: ${psNeutralBackgroundActive};
           }
         `,
         js: {
@@ -230,7 +230,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psNeutralBackgroundHover,
           },
           active: {
-            backgroundColor: `${psNeutralBackgroundActive} !important`,
+            backgroundColor: `${psNeutralBackgroundActive}`,
           },
         },
       }
@@ -243,7 +243,7 @@ function getPsuedoStyles(kind: Kind) {
             background-color: ${psNeutralBackgroundHover};
           }
           &:active {
-            background-color: ${psBackgroundActive} !important;
+            background-color: ${psBackgroundActive};
           }
         `,
         js: {
@@ -252,7 +252,7 @@ function getPsuedoStyles(kind: Kind) {
             backgroundColor: psNeutralBackgroundHover,
           },
           active: {
-            backgroundColor: `${psBackgroundActive} !important`,
+            backgroundColor: `${psBackgroundActive}`,
           },
         },
       }
