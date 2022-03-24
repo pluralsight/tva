@@ -1,7 +1,7 @@
 @font-face {
   font-display: swap;
   font-family: 'PS TT Commons Roman';
-  font-weight: 100 900;
+  font-weight: 400 600;
   src: url('https://fonts.pluralsight.com/ps-tt-commons/v1/ps-tt-commons-variable-roman.woff2')
     format('woff-variations');
 }
