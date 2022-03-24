@@ -3629,7 +3629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/theme-search-algolia@npm:2.0.0-beta.17, @docusaurus/theme-search-algolia@npm:^2.0.0-beta.17":
+"@docusaurus/theme-search-algolia@npm:2.0.0-beta.17":
   version: 2.0.0-beta.17
   resolution: "@docusaurus/theme-search-algolia@npm:2.0.0-beta.17"
   dependencies:
@@ -18325,7 +18325,6 @@ __metadata:
     "@docusaurus/preset-classic": ^2.0.0-beta.17
     "@docusaurus/remark-plugin-npm2yarn": ^2.0.0-beta.17
     "@docusaurus/theme-live-codeblock": ^2.0.0-beta.17
-    "@docusaurus/theme-search-algolia": ^2.0.0-beta.17
     "@mdx-js/react": ^1.6.21
     "@pluralsight/headless-styles": experimental
     "@svgr/webpack": ^5.5.0

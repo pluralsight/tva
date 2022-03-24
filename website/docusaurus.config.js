@@ -57,10 +57,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       algolia: {
-        appId: 'XR709MFGR6',
+        appId: 'IJ77Q0YL0X',
         // Public API key: it is safe to commit it
-        apiKey: 'd446bcb18b9377a3c726a55051d3f53f',
-        indexName: 'dev_pluralsight_tva',
+        apiKey: '3fcedfb99537045bc7f67e1bf07d02d4',
+        indexName: 'design-pluralsight',
         contextualSearch: true,
         searchParameters: {},
       },
