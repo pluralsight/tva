@@ -4210,11 +4210,11 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:experimental":
-  version: 0.0.0-experimental-2ba2f1-20220317
-  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-2ba2f1-20220317"
+  version: 0.0.0-experimental-1572ee-20220325
+  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-1572ee-20220325"
   dependencies:
     "@pluralsight/design-tokens": alpha
-  checksum: e4bd0380a4282b0d10b973a1e6be9e8be1ebb94b9b3a5b117fe6e02714e4069e6f3f2151b0e61954fadf9a9afd042cae141f361408f0a2cb44c99705c59fd48e
+  checksum: a2fcae6a7b9fb0b36beaaf90cf748ce28b20285e3945cc8a5d6b348a9f61b8ca5a15af257b40e58c99c13c303ed29d31ac2b30a8baa21d9c9cec88911882f5e3
   languageName: node
   linkType: hard
 
