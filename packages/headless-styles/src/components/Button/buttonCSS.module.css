@@ -8,17 +8,21 @@
   display: inline-flex;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 1rem;
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+  height: 1.5rem;
   justify-content: center;
   outline: none;
-  padding: 10px 16px;
+  padding-inline: 16px;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: none;
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
   user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
 .text {
@@ -45,17 +49,20 @@
 }
 
 .size-xs {
-  font-size: 12px;
-  padding: 4px 8px;
+  font-size: 0.75rem;
+  height: 1.5rem;
+  padding-inline: 8px;
 }
 
 .size-s {
-  font-size: 14px;
-  padding: 6px 12px;
+  font-size: 0.875rem;
+  height: 2rem;
+  padding-inline: 12px;
 }
 
 .size-l {
-  padding: 14.5px 24px;
+  height: 3rem;
+  padding-inline: 24px;
 }
 
 /* hover styles */
@@ -103,7 +110,7 @@
 
 .base:focus:not(:focus-visible) {
   box-shadow: none;
-  outline: 0;
+  outline: none;
 }
 
 /* light theme */
@@ -118,9 +125,9 @@ html[data-theme='light'] .base.text:hover {
 .chakra {
   background-color: transparent !important;
   border-radius: 6px !important;
-  font-size: 16px !important;
-  font-weight: inherit !important;
-  height: initial !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  height: 1.5rem !important;
   outline-offset: initial !important;
 }
 
@@ -137,11 +144,20 @@ html[data-theme='light'] .base.text:hover {
 }
 
 .chakra.size-xs {
-  font-size: 12px !important;
+  font-size: 0.75rem !important;
+  height: 1.5rem !important;
+  padding-inline: 8px !important;
 }
 
 .chakra.size-s {
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
+  height: 2rem !important;
+  padding-inline: 12px !important;
+}
+
+.chakra.size-l {
+  height: 3rem !important;
+  padding-inline: 24px !important;
 }
 
 .chakra.text-weak:hover,
