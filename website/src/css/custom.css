@@ -72,13 +72,17 @@
 :root {
   --ifm-code-font-size: 95%;
   --ifm-color-primary: var(--ps-background);
-  --ifm-menu-color-active: var(--ps-text-weak);
   --ifm-font-color-base: var(--ps-neutral-text);
+  --ifm-heading-font-family: 'PS TT Commons Roman', 'Gotham SSm A',
+    'Gotham SSm B', arial, sans-serif;
+  --ifm-heading-font-line-height: 1.5;
+  --ifm-heading-font-weight: 600;
   --ifm-font-family-monospace: 'DM Mono', sfmono-regular, menlo, monaco,
     consalas, 'Liberation Mono', 'Courier New', monospace;
   --ifm-heading-color: var(--ps-neutral-text);
   --ifm-navbar-background-color: hsl(245deg 36% 15% / 100%);
   --ifm-navbar-link-hover-color: var(--ps-text-weak);
+  --ifm-menu-color-active: var(--ps-text-weak);
 }
 
 html {
