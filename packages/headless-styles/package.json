@@ -2,7 +2,9 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "main": "./build/index.js",
+  "main": "build/common/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build/**/*"
   ],
@@ -10,8 +12,13 @@
     "**/*.css",
     "build/index.js"
   ],
+  "workspaces": [
+    "sandbox"
+  ],
   "scripts": {
-    "build": "yarn copy:css && tsc --project tsconfig.build.json",
+    "build": "yarn build:common && yarn build:es",
+    "build:common": "tsc --project tsconfig.cjs.json",
+    "build:es": "yarn copy:css && tsc --project tsconfig.build.json",
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },

@@ -1,0 +1,20 @@
+.App {
+  background-color: var(--ps-neutral-surface);
+  color: var(--ps-neutral-text);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.App-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5rem auto;
+  width: 37.5rem;
+}
+
+.App-header {
+  margin-bottom: 17rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}

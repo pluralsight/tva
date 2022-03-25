@@ -45,6 +45,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           name: 'website',
           reference: 'workspace:website',
         },
+        {
+          name: 'sandbox',
+          reference: 'workspace:packages/headless-styles/sandbox',
+        },
       ],
       enableTopLevelFallback: true,
       ignorePatternData:
@@ -58,6 +62,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@pluralsight/icons', ['workspace:packages/icons']],
         ['@pluralsight/tva', ['workspace:.']],
         ['release-script', ['workspace:scripts']],
+        ['sandbox', ['workspace:packages/headless-styles/sandbox']],
         ['website', ['workspace:website']],
       ],
       fallbackPool: [
@@ -82,6 +87,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@algolia/requester-common', 'npm:4.11.0'],
         ['@algolia/requester-node-http', 'npm:4.11.0'],
         ['@algolia/transporter', 'npm:4.11.0'],
+        ['@americanexpress/css-to-js', 'npm:1.0.1'],
         ['@ampproject/remapping', 'npm:2.1.2'],
         [
           '@babel/cli',
@@ -592,6 +598,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ],
         ['@pluralsight/icons', 'workspace:packages/icons'],
         ['@polka/url', 'npm:1.0.0-next.21'],
+        ['@rollup/pluginutils', 'npm:4.2.0'],
         ['@sideway/address', 'npm:4.1.3'],
         ['@sideway/formula', 'npm:3.0.0'],
         ['@sideway/pinpoint', 'npm:2.0.0'],
@@ -708,6 +715,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'virtual:21427a80bf0ce9b56dd9308c5097f4dde724da4144dfd3ed685a4a7b8689c43d606e08493b65c7fffcdc0ae57cdb4e7837d47bd8e68a35bd16598f7fbf3c3f9d#npm:5.13.0',
         ],
         ['@typescript-eslint/visitor-keys', 'npm:5.13.0'],
+        ['@vitejs/plugin-react', 'npm:1.2.0'],
         ['@webassemblyjs/ast', 'npm:1.11.1'],
         ['@webassemblyjs/floating-point-hex-parser', 'npm:1.11.1'],
         ['@webassemblyjs/helper-api-error', 'npm:1.11.1'],
@@ -1048,6 +1056,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['es-to-primitive', 'npm:1.2.1'],
         ['es6-promise', 'npm:4.2.8'],
         ['es6-promisify', 'npm:5.0.0'],
+        ['esbuild', 'npm:0.14.27'],
+        ['esbuild-android-64', 'npm:0.14.27'],
+        ['esbuild-android-arm64', 'npm:0.14.27'],
+        ['esbuild-darwin-64', 'npm:0.14.27'],
+        ['esbuild-darwin-arm64', 'npm:0.14.27'],
+        ['esbuild-freebsd-64', 'npm:0.14.27'],
+        ['esbuild-freebsd-arm64', 'npm:0.14.27'],
+        ['esbuild-linux-32', 'npm:0.14.27'],
+        ['esbuild-linux-64', 'npm:0.14.27'],
+        ['esbuild-linux-arm', 'npm:0.14.27'],
+        ['esbuild-linux-arm64', 'npm:0.14.27'],
+        ['esbuild-linux-mips64le', 'npm:0.14.27'],
+        ['esbuild-linux-ppc64le', 'npm:0.14.27'],
+        ['esbuild-linux-riscv64', 'npm:0.14.27'],
+        ['esbuild-linux-s390x', 'npm:0.14.27'],
+        ['esbuild-netbsd-64', 'npm:0.14.27'],
+        ['esbuild-openbsd-64', 'npm:0.14.27'],
+        ['esbuild-sunos-64', 'npm:0.14.27'],
+        ['esbuild-windows-32', 'npm:0.14.27'],
+        ['esbuild-windows-64', 'npm:0.14.27'],
+        ['esbuild-windows-arm64', 'npm:0.14.27'],
         ['escalade', 'npm:3.1.1'],
         ['escape-goat', 'npm:2.1.1'],
         ['escape-html', 'npm:1.0.3'],
@@ -1081,6 +1110,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['esquery', 'npm:1.4.0'],
         ['esrecurse', 'npm:4.3.0'],
         ['estraverse', 'npm:5.3.0'],
+        ['estree-walker', 'npm:2.0.2'],
         ['esutils', 'npm:2.0.3'],
         ['eta', 'npm:1.12.3'],
         ['etag', 'npm:1.8.1'],
@@ -1780,6 +1810,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'react-loadable-ssr-addon-v5-slorber',
           'virtual:07d2749afd02b10d7894bb60a3675ed1bf16dbb4518e07c11a0db2c0a7f52ae4b907aff92f5a04c174272a7a52f69b5a2f450b7a980844a8b8e76d5b8ffd45a0#npm:1.0.1',
         ],
+        ['react-refresh', 'npm:0.11.0'],
         [
           'react-router',
           'virtual:07d2749afd02b10d7894bb60a3675ed1bf16dbb4518e07c11a0db2c0a7f52ae4b907aff92f5a04c174272a7a52f69b5a2f450b7a980844a8b8e76d5b8ffd45a0#npm:5.2.1',
@@ -1845,18 +1876,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['resolve-from', 'npm:5.0.0'],
         ['resolve-global', 'npm:1.0.0'],
         ['resolve-pathname', 'npm:3.0.0'],
+        ['resolve-url', 'npm:0.2.1'],
         ['resolve.exports', 'npm:1.1.0'],
         ['responselike', 'npm:1.0.2'],
         ['restore-cursor', 'npm:3.1.0'],
         ['retry', 'npm:0.12.0'],
         ['reusify', 'npm:1.0.4'],
         ['rimraf', 'npm:3.0.2'],
+        ['rollup', 'npm:2.70.1'],
         ['rtl-detect', 'npm:1.0.4'],
         ['rtlcss', 'npm:3.5.0'],
         ['run-parallel', 'npm:1.2.0'],
         ['rxjs', 'npm:7.4.0'],
         ['safe-buffer', 'npm:5.1.2'],
         ['safer-buffer', 'npm:2.1.2'],
+        ['sandbox', 'workspace:packages/headless-styles/sandbox'],
         ['sax', 'npm:1.2.4'],
         ['saxes', 'npm:5.0.1'],
         ['scheduler', 'npm:0.20.2'],
@@ -1899,6 +1933,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['source-map-js', 'npm:0.6.2'],
         ['source-map-resolve', 'npm:0.6.0'],
         ['source-map-support', 'npm:0.5.20'],
+        ['source-map-url', 'npm:0.4.1'],
         ['sourcemap-codec', 'npm:1.4.8'],
         ['space-separated-tokens', 'npm:1.1.5'],
         ['spdx-correct', 'npm:3.1.1'],
@@ -1960,6 +1995,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ],
         ['supports-color', 'npm:9.2.1'],
         ['supports-hyperlinks', 'npm:2.2.0'],
+        ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
         ['svg-parser', 'npm:2.0.4'],
         ['svg-tags', 'npm:1.0.0'],
         ['svgo', 'npm:2.8.0'],
@@ -2053,6 +2089,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['upper-case', 'npm:2.0.2'],
         ['upper-case-first', 'npm:2.0.2'],
         ['uri-js', 'npm:4.4.1'],
+        ['urix', 'npm:0.1.0'],
         [
           'url-loader',
           'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:4.1.1',
@@ -2085,6 +2122,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['vfile', 'npm:4.2.1'],
         ['vfile-location', 'npm:3.2.0'],
         ['vfile-message', 'npm:2.0.4'],
+        [
+          'vite',
+          'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:2.8.6',
+        ],
         ['vlq', 'npm:1.0.1'],
         ['w3c-hr-time', 'npm:1.0.2'],
         ['w3c-xmlserializer', 'npm:2.0.0'],
@@ -2743,6 +2784,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@algolia/cache-common', 'npm:4.13.0'],
                   ['@algolia/logger-common', 'npm:4.13.0'],
                   ['@algolia/requester-common', 'npm:4.13.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@americanexpress/css-to-js',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/@americanexpress-css-to-js-npm-1.0.1-2fc3463fc4-61f138dd2c.zip/node_modules/@americanexpress/css-to-js/',
+                packageDependencies: [
+                  ['@americanexpress/css-to-js', 'npm:1.0.1'],
+                  ['css', 'npm:2.2.4'],
                 ],
                 linkType: 'HARD',
               },
@@ -11443,6 +11501,74 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          '@babel/plugin-transform-react-jsx-self',
+          [
+            [
+              'npm:7.16.7',
+              {
+                packageLocation:
+                  './.yarn/cache/@babel-plugin-transform-react-jsx-self-npm-7.16.7-76fb9b22b6-cf1e408eed.zip/node_modules/@babel/plugin-transform-react-jsx-self/',
+                packageDependencies: [
+                  ['@babel/plugin-transform-react-jsx-self', 'npm:7.16.7'],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/@babel-plugin-transform-react-jsx-self-virtual-0695586809/0/cache/@babel-plugin-transform-react-jsx-self-npm-7.16.7-76fb9b22b6-cf1e408eed.zip/node_modules/@babel/plugin-transform-react-jsx-self/',
+                packageDependencies: [
+                  [
+                    '@babel/plugin-transform-react-jsx-self',
+                    'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+                  ],
+                  ['@babel/core', 'npm:7.17.8'],
+                  ['@babel/helper-plugin-utils', 'npm:7.16.7'],
+                  ['@types/babel__core', null],
+                ],
+                packagePeers: ['@babel/core', '@types/babel__core'],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@babel/plugin-transform-react-jsx-source',
+          [
+            [
+              'npm:7.16.7',
+              {
+                packageLocation:
+                  './.yarn/cache/@babel-plugin-transform-react-jsx-source-npm-7.16.7-d42c9e9f0e-722147fd37.zip/node_modules/@babel/plugin-transform-react-jsx-source/',
+                packageDependencies: [
+                  ['@babel/plugin-transform-react-jsx-source', 'npm:7.16.7'],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/@babel-plugin-transform-react-jsx-source-virtual-3c75ecb916/0/cache/@babel-plugin-transform-react-jsx-source-npm-7.16.7-d42c9e9f0e-722147fd37.zip/node_modules/@babel/plugin-transform-react-jsx-source/',
+                packageDependencies: [
+                  [
+                    '@babel/plugin-transform-react-jsx-source',
+                    'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+                  ],
+                  ['@babel/core', 'npm:7.17.8'],
+                  ['@babel/helper-plugin-utils', 'npm:7.16.7'],
+                  ['@types/babel__core', null],
+                ],
+                packagePeers: ['@babel/core', '@types/babel__core'],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           '@babel/plugin-transform-react-pure-annotations',
           [
             [
@@ -17036,6 +17162,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          '@rollup/pluginutils',
+          [
+            [
+              'npm:4.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/@rollup-pluginutils-npm-4.2.0-c001caeeb5-2e86d9bfb9.zip/node_modules/@rollup/pluginutils/',
+                packageDependencies: [
+                  ['@rollup/pluginutils', 'npm:4.2.0'],
+                  ['estree-walker', 'npm:2.0.2'],
+                  ['picomatch', 'npm:2.3.1'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           '@sideway/address',
           [
             [
@@ -19383,6 +19527,45 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@typescript-eslint/visitor-keys', 'npm:5.4.0'],
                   ['@typescript-eslint/types', 'npm:5.4.0'],
                   ['eslint-visitor-keys', 'npm:3.1.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          '@vitejs/plugin-react',
+          [
+            [
+              'npm:1.2.0',
+              {
+                packageLocation:
+                  './.yarn/cache/@vitejs-plugin-react-npm-1.2.0-7d55f3ed98-d838018f59.zip/node_modules/@vitejs/plugin-react/',
+                packageDependencies: [
+                  ['@vitejs/plugin-react', 'npm:1.2.0'],
+                  ['@babel/core', 'npm:7.17.8'],
+                  [
+                    '@babel/plugin-transform-react-jsx',
+                    'virtual:90900a35bcd0d6e0f1df14c0e6d388ef4a6eacab79f2c047b34d396ec92beb2e6a02ca86d1cd951c8a634c7624c66479f489d394cc81bc4c43b9a2a415daf13d#npm:7.17.3',
+                  ],
+                  [
+                    '@babel/plugin-transform-react-jsx-development',
+                    'virtual:90900a35bcd0d6e0f1df14c0e6d388ef4a6eacab79f2c047b34d396ec92beb2e6a02ca86d1cd951c8a634c7624c66479f489d394cc81bc4c43b9a2a415daf13d#npm:7.16.7',
+                  ],
+                  [
+                    '@babel/plugin-transform-react-jsx-self',
+                    'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+                  ],
+                  [
+                    '@babel/plugin-transform-react-jsx-source',
+                    'virtual:7d55f3ed98b8adbab33baaaf589a2e7621be1f5fa1e52800afe77cd7bcaed8cde8a92ca50a7a8d5eecbbbc8bbdab136bcace881a0d8ab091483a712270dfbb3d#npm:7.16.7',
+                  ],
+                  ['@rollup/pluginutils', 'npm:4.2.0'],
+                  ['react-refresh', 'npm:0.11.0'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b',
+                  ],
                 ],
                 linkType: 'HARD',
               },
@@ -24149,6 +24332,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'css',
           [
             [
+              'npm:2.2.4',
+              {
+                packageLocation:
+                  './.yarn/cache/css-npm-2.2.4-2a363d6a5d-a35d483c5c.zip/node_modules/css/',
+                packageDependencies: [
+                  ['css', 'npm:2.2.4'],
+                  ['inherits', 'npm:2.0.4'],
+                  ['source-map', 'npm:0.6.1'],
+                  ['source-map-resolve', 'npm:0.5.3'],
+                  ['urix', 'npm:0.1.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
               'npm:3.0.0',
               {
                 packageLocation:
@@ -26321,6 +26519,324 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'esbuild',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-npm-0.14.27-28f00433ee/node_modules/esbuild/',
+                packageDependencies: [
+                  ['esbuild', 'npm:0.14.27'],
+                  ['esbuild-android-64', 'npm:0.14.27'],
+                  ['esbuild-android-arm64', 'npm:0.14.27'],
+                  ['esbuild-darwin-64', 'npm:0.14.27'],
+                  ['esbuild-darwin-arm64', 'npm:0.14.27'],
+                  ['esbuild-freebsd-64', 'npm:0.14.27'],
+                  ['esbuild-freebsd-arm64', 'npm:0.14.27'],
+                  ['esbuild-linux-32', 'npm:0.14.27'],
+                  ['esbuild-linux-64', 'npm:0.14.27'],
+                  ['esbuild-linux-arm', 'npm:0.14.27'],
+                  ['esbuild-linux-arm64', 'npm:0.14.27'],
+                  ['esbuild-linux-mips64le', 'npm:0.14.27'],
+                  ['esbuild-linux-ppc64le', 'npm:0.14.27'],
+                  ['esbuild-linux-riscv64', 'npm:0.14.27'],
+                  ['esbuild-linux-s390x', 'npm:0.14.27'],
+                  ['esbuild-netbsd-64', 'npm:0.14.27'],
+                  ['esbuild-openbsd-64', 'npm:0.14.27'],
+                  ['esbuild-sunos-64', 'npm:0.14.27'],
+                  ['esbuild-windows-32', 'npm:0.14.27'],
+                  ['esbuild-windows-64', 'npm:0.14.27'],
+                  ['esbuild-windows-arm64', 'npm:0.14.27'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-android-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-android-64-npm-0.14.27-eab96e0de7/node_modules/esbuild-android-64/',
+                packageDependencies: [['esbuild-android-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-android-arm64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-android-arm64-npm-0.14.27-4038ef634e/node_modules/esbuild-android-arm64/',
+                packageDependencies: [['esbuild-android-arm64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-darwin-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-darwin-64-npm-0.14.27-f963688700/node_modules/esbuild-darwin-64/',
+                packageDependencies: [['esbuild-darwin-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-darwin-arm64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-darwin-arm64-npm-0.14.27-26df219055/node_modules/esbuild-darwin-arm64/',
+                packageDependencies: [['esbuild-darwin-arm64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-freebsd-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-freebsd-64-npm-0.14.27-24ebb5dc6a/node_modules/esbuild-freebsd-64/',
+                packageDependencies: [['esbuild-freebsd-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-freebsd-arm64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-freebsd-arm64-npm-0.14.27-7c1518de45/node_modules/esbuild-freebsd-arm64/',
+                packageDependencies: [['esbuild-freebsd-arm64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-32',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-32-npm-0.14.27-9654bca0d5/node_modules/esbuild-linux-32/',
+                packageDependencies: [['esbuild-linux-32', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-64-npm-0.14.27-8a6316b19f/node_modules/esbuild-linux-64/',
+                packageDependencies: [['esbuild-linux-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-arm',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-arm-npm-0.14.27-2b21985daa/node_modules/esbuild-linux-arm/',
+                packageDependencies: [['esbuild-linux-arm', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-arm64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-arm64-npm-0.14.27-8939cba336/node_modules/esbuild-linux-arm64/',
+                packageDependencies: [['esbuild-linux-arm64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-mips64le',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-mips64le-npm-0.14.27-8120d1ae50/node_modules/esbuild-linux-mips64le/',
+                packageDependencies: [
+                  ['esbuild-linux-mips64le', 'npm:0.14.27'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-ppc64le',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-ppc64le-npm-0.14.27-db8daae4a6/node_modules/esbuild-linux-ppc64le/',
+                packageDependencies: [['esbuild-linux-ppc64le', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-riscv64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-riscv64-npm-0.14.27-2d9ceb49bc/node_modules/esbuild-linux-riscv64/',
+                packageDependencies: [['esbuild-linux-riscv64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-linux-s390x',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-linux-s390x-npm-0.14.27-cbae378228/node_modules/esbuild-linux-s390x/',
+                packageDependencies: [['esbuild-linux-s390x', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-netbsd-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-netbsd-64-npm-0.14.27-217ccd08e1/node_modules/esbuild-netbsd-64/',
+                packageDependencies: [['esbuild-netbsd-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-openbsd-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-openbsd-64-npm-0.14.27-e4579cb509/node_modules/esbuild-openbsd-64/',
+                packageDependencies: [['esbuild-openbsd-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-sunos-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-sunos-64-npm-0.14.27-a582577b19/node_modules/esbuild-sunos-64/',
+                packageDependencies: [['esbuild-sunos-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-windows-32',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-windows-32-npm-0.14.27-d82d626aed/node_modules/esbuild-windows-32/',
+                packageDependencies: [['esbuild-windows-32', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-windows-64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-windows-64-npm-0.14.27-2b295da577/node_modules/esbuild-windows-64/',
+                packageDependencies: [['esbuild-windows-64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'esbuild-windows-arm64',
+          [
+            [
+              'npm:0.14.27',
+              {
+                packageLocation:
+                  './.yarn/unplugged/esbuild-windows-arm64-npm-0.14.27-31d74a4a05/node_modules/esbuild-windows-arm64/',
+                packageDependencies: [['esbuild-windows-arm64', 'npm:0.14.27']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'escalade',
           [
             [
@@ -26801,6 +27317,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/estraverse-npm-5.3.0-03284f8f63-072780882d.zip/node_modules/estraverse/',
                 packageDependencies: [['estraverse', 'npm:5.3.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'estree-walker',
+          [
+            [
+              'npm:2.0.2',
+              {
+                packageLocation:
+                  './.yarn/cache/estree-walker-npm-2.0.2-dfab42f65c-6151e6f982.zip/node_modules/estree-walker/',
+                packageDependencies: [['estree-walker', 'npm:2.0.2']],
                 linkType: 'HARD',
               },
             ],
@@ -30139,6 +30669,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/is-core-module-npm-2.8.0-acc8c42f1b-f8b5271489.zip/node_modules/is-core-module/',
                 packageDependencies: [
                   ['is-core-module', 'npm:2.8.0'],
+                  ['has', 'npm:1.0.3'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
+              'npm:2.8.1',
+              {
+                packageLocation:
+                  './.yarn/cache/is-core-module-npm-2.8.1-ce21740d1b-418b7bc107.zip/node_modules/is-core-module/',
+                packageDependencies: [
+                  ['is-core-module', 'npm:2.8.1'],
                   ['has', 'npm:1.0.3'],
                 ],
                 linkType: 'HARD',
@@ -38184,6 +38726,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'react-refresh',
+          [
+            [
+              'npm:0.11.0',
+              {
+                packageLocation:
+                  './.yarn/cache/react-refresh-npm-0.11.0-c0a4e59e76-112178a05b.zip/node_modules/react-refresh/',
+                packageDependencies: [['react-refresh', 'npm:0.11.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'react-router',
           [
             [
@@ -39174,6 +39730,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 linkType: 'HARD',
               },
             ],
+            [
+              'patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b',
+              {
+                packageLocation:
+                  './.yarn/cache/resolve-patch-bad885c6ea-c79ecaea36.zip/node_modules/resolve/',
+                packageDependencies: [
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b',
+                  ],
+                  ['is-core-module', 'npm:2.8.1'],
+                  ['path-parse', 'npm:1.0.7'],
+                  ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
           ],
         ],
         [
@@ -39242,6 +39815,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/resolve-pathname-npm-3.0.0-bab4d7e47c-6147241ba4.zip/node_modules/resolve-pathname/',
                 packageDependencies: [['resolve-pathname', 'npm:3.0.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'resolve-url',
+          [
+            [
+              'npm:0.2.1',
+              {
+                packageLocation:
+                  './.yarn/cache/resolve-url-npm-0.2.1-39edb8f908-7b7035b9ed.zip/node_modules/resolve-url/',
+                packageDependencies: [['resolve-url', 'npm:0.2.1']],
                 linkType: 'HARD',
               },
             ],
@@ -39376,6 +39963,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'rollup',
+          [
+            [
+              'npm:2.70.1',
+              {
+                packageLocation:
+                  './.yarn/cache/rollup-npm-2.70.1-13154f7180-06c62933e6.zip/node_modules/rollup/',
+                packageDependencies: [
+                  ['rollup', 'npm:2.70.1'],
+                  [
+                    'fsevents',
+                    'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
+                  ],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'rtl-detect',
           [
             [
@@ -39488,6 +40095,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/safer-buffer-npm-2.1.2-8d5c0b705e-cab8f25ae6.zip/node_modules/safer-buffer/',
                 packageDependencies: [['safer-buffer', 'npm:2.1.2']],
                 linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'sandbox',
+          [
+            [
+              'workspace:packages/headless-styles/sandbox',
+              {
+                packageLocation: './packages/headless-styles/sandbox/',
+                packageDependencies: [
+                  ['sandbox', 'workspace:packages/headless-styles/sandbox'],
+                  ['@americanexpress/css-to-js', 'npm:1.0.1'],
+                  ['@vitejs/plugin-react', 'npm:1.2.0'],
+                  ['react', 'npm:17.0.2'],
+                  [
+                    'react-dom',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:17.0.2',
+                  ],
+                  [
+                    'vite',
+                    'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:2.8.6',
+                  ],
+                ],
+                linkType: 'SOFT',
               },
             ],
           ],
@@ -40396,6 +41029,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'source-map-resolve',
           [
             [
+              'npm:0.5.3',
+              {
+                packageLocation:
+                  './.yarn/cache/source-map-resolve-npm-0.5.3-6502ae65ba-c73fa44ac0.zip/node_modules/source-map-resolve/',
+                packageDependencies: [
+                  ['source-map-resolve', 'npm:0.5.3'],
+                  ['atob', 'npm:2.1.2'],
+                  ['decode-uri-component', 'npm:0.2.0'],
+                  ['resolve-url', 'npm:0.2.1'],
+                  ['source-map-url', 'npm:0.4.1'],
+                  ['urix', 'npm:0.1.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+            [
               'npm:0.6.0',
               {
                 packageLocation:
@@ -40436,6 +41085,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['buffer-from', 'npm:1.1.2'],
                   ['source-map', 'npm:0.6.1'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'source-map-url',
+          [
+            [
+              'npm:0.4.1',
+              {
+                packageLocation:
+                  './.yarn/cache/source-map-url-npm-0.4.1-747a1f6eba-64c5c2c77a.zip/node_modules/source-map-url/',
+                packageDependencies: [['source-map-url', 'npm:0.4.1']],
                 linkType: 'HARD',
               },
             ],
@@ -41495,6 +42158,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['supports-hyperlinks', 'npm:2.2.0'],
                   ['has-flag', 'npm:4.0.0'],
                   ['supports-color', 'npm:7.2.0'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'supports-preserve-symlinks-flag',
+          [
+            [
+              'npm:1.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-53b1e247e6.zip/node_modules/supports-preserve-symlinks-flag/',
+                packageDependencies: [
+                  ['supports-preserve-symlinks-flag', 'npm:1.0.0'],
                 ],
                 linkType: 'HARD',
               },
@@ -43089,6 +43768,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'urix',
+          [
+            [
+              'npm:0.1.0',
+              {
+                packageLocation:
+                  './.yarn/cache/urix-npm-0.1.0-bd5e55a13a-4c076ecfbf.zip/node_modules/urix/',
+                packageDependencies: [['urix', 'npm:0.1.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'url-loader',
           [
             [
@@ -43516,6 +44209,59 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['vfile-message', 'npm:2.0.4'],
                   ['@types/unist', 'npm:2.0.6'],
                   ['unist-util-stringify-position', 'npm:2.0.3'],
+                ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'vite',
+          [
+            [
+              'npm:2.8.6',
+              {
+                packageLocation:
+                  './.yarn/cache/vite-npm-2.8.6-60b9dced78-4b02d13389.zip/node_modules/vite/',
+                packageDependencies: [['vite', 'npm:2.8.6']],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:2.8.6',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/vite-virtual-6dbaf8d1c0/0/cache/vite-npm-2.8.6-60b9dced78-4b02d13389.zip/node_modules/vite/',
+                packageDependencies: [
+                  [
+                    'vite',
+                    'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:2.8.6',
+                  ],
+                  ['@types/less', null],
+                  ['@types/sass', null],
+                  ['@types/stylus', null],
+                  ['esbuild', 'npm:0.14.27'],
+                  [
+                    'fsevents',
+                    'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
+                  ],
+                  ['less', null],
+                  ['postcss', 'npm:8.4.12'],
+                  [
+                    'resolve',
+                    'patch:resolve@npm%3A1.22.0#~builtin<compat/resolve>::version=1.22.0&hash=07638b',
+                  ],
+                  ['rollup', 'npm:2.70.1'],
+                  ['sass', null],
+                  ['stylus', null],
+                ],
+                packagePeers: [
+                  '@types/less',
+                  '@types/sass',
+                  '@types/stylus',
+                  'less',
+                  'sass',
+                  'stylus',
                 ],
                 linkType: 'HARD',
               },
