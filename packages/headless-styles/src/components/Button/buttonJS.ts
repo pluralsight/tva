@@ -15,6 +15,10 @@ import { getDefaultOptions } from './shared'
 import styles from './generated/buttonCSS.module'
 import type { ButtonOptions, ButtonType, Kind, Size } from './types'
 
+// TODO:
+// 1. Figure out how to convert JSObject to style-string
+// 2. Figure out how to make :active more important than :hover in JS Object
+
 const baseStyles = {
   js: {
     ...styles.base,
@@ -62,6 +66,7 @@ function getKindStyles(kind: Kind) {
           },
           '&:hover': {
             backgroundColor: psBackgroundHover,
+            color: '#fff',
           },
         },
       }
