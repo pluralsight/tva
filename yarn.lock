@@ -4312,6 +4312,9 @@ __metadata:
 "@pluralsight/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@pluralsight/icons@workspace:packages/icons"
+  dependencies:
+    "@types/svgo": ^2
+    svgo: ^2.8.0
   languageName: unknown
   linkType: soft
 
@@ -5240,6 +5243,15 @@ __metadata:
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019
+  languageName: node
+  linkType: hard
+
+"@types/svgo@npm:^2":
+  version: 2.6.3
+  resolution: "@types/svgo@npm:2.6.3"
+  dependencies:
+    "@types/node": "*"
+  checksum: d72714e565790f247be23065d071b1733021e1dc80358d1ca68a42362ca31d96b42aeeb3799b8e960a44a14cee658093344e6e14f36d0827903307cbeb78db0a
   languageName: node
   linkType: hard
 
@@ -17592,7 +17604,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^2.5.0, svgo@npm:^2.7.0":
+"svgo@npm:^2.5.0, svgo@npm:^2.7.0, svgo@npm:^2.8.0":
   version: 2.8.0
   resolution: "svgo@npm:2.8.0"
   dependencies:

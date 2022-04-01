@@ -34,5 +34,9 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "@types/svgo": "^2",
+    "svgo": "^2.8.0"
+  }
 }
