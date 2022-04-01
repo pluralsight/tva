@@ -8,6 +8,9 @@
   "files": [
     "build/*"
   ],
+  "exports": {
+    "./svg/": "./build/svg/"
+  },
   "scripts": {
     "build": "echo \"no build command specified\"",
     "build:svg": "yarn run clean:svg && svgo -f src/svg -o build/svg",
