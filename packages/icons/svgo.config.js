@@ -23,6 +23,12 @@ module.exports = {
       },
     },
     {
+      name: 'addClassesToSVGElement',
+      params: {
+        className: 'ps-icon-svg',
+      },
+    },
+    {
       ...addAriaLabel,
       params: {
         useFilename: true,
