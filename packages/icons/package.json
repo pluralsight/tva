@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "build": "echo \"no build command specified\"",
+    "build:svg": "yarn run clean:svg && svgo -f src/svg -o build/svg",
     "clean": "rm -rf build",
+    "clean:svg": "rm -rf build/svg",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "keywords": [
