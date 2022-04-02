@@ -13,7 +13,7 @@ This page is a work in progress.
 
 #### Learn how to migrate from [PSDS Classic](https://github.com/pluralsight/design-system).
 
-Any major release or new framework has it's breaking changes and TVA isn't the exception. However, since this is a completely different design it should be easy to transition on your own terms - no matter the size or complexity of your project. To make this process more efficient we've listed below the recommended migrations steps, along with soutions for the most common problems you might face.
+Any major release or new framework has its breaking changes and TVA isn't the exception. However, since this is a completely different design it should be easy to transition on your own terms - no matter the size or complexity of your project. To make this process more efficient we've listed below the recommended migrations steps, along with soutions for the most common problems you might face.
 
 ## Why should you migrate?
 
