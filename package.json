@@ -21,6 +21,7 @@
     "publish:packages": "yarn workspace release-script run publish-packages",
     "serve:website": "yarn workspace website serve",
     "start:website": "yarn workspace website start",
+    "start:headless": "yarn workspace sandbox run dev",
     "test": "jest",
     "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },
