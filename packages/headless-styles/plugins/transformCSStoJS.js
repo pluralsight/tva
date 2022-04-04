@@ -1,14 +1,22 @@
+import { rename } from 'fs'
 import { convert } from '@americanexpress/css-to-js'
 
 function getOutputPath(path) {
   const splitPath = path.split('/')
-  splitPath.pop()
-  return `${splitPath.join('/')}/generated`
+  const fileName = splitPath.pop()
+  return {
+    fileName,
+    outputPath: `${splitPath.join('/')}/generated`,
+  }
 }
 
 function compileFileToJS(id) {
-  const outputPath = getOutputPath(id)
+  const { fileName, outputPath } = getOutputPath(id)
+  const rawName = fileName.split('.css')[0]
+  const covertedFile = `${outputPath}/${rawName}`
+
   convert(id, { outputType: 'file', outputPath })
+  rename(`${covertedFile}.js`, `${covertedFile}.ts`)
   return undefined
 }
 

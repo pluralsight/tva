@@ -19,9 +19,9 @@
     "postinstall": "husky install",
     "prepare:release": "yarn workspace release-script run prepare-release",
     "publish:packages": "yarn workspace release-script run publish-packages",
+    "start:sandbox": "yarn workspace sandbox run dev",
     "serve:website": "yarn workspace website serve",
     "start:website": "yarn workspace website start",
-    "start:headless": "yarn workspace sandbox run dev",
     "test": "jest",
     "vscode:update": "yarn dlx @yarnpkg/sdks vscode"
   },

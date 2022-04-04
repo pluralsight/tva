@@ -8,7 +8,7 @@ export default {
     cursor: 'pointer',
     display: 'inline-flex',
     fontFamily:
-      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif",
+      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     fontSize: '1rem',
     fontVariationSettings: "'wght' 600",
     fontWeight: '600',
