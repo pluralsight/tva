@@ -15,13 +15,13 @@ Missing something? Check out some of these common questions first.
 
 If you still can't find what you're looking for, you can refer to our [support page](https://github.com/pluralsight/tva/discussions/categories/q-a)
 
-## I :heart: TVA! How can I support the project?
+## I :heart: Pluralsight Design! How can I support the project?
 
 There are a few ways to support Pluralsight Design:
 
 <!-- TODO: Update Twitter link when account created. -->
 
-- **Spread the word**. Evangelize TVA by [linking to design.pluralsight.com](https://design.pluralsight.com) on your website - every backlink matters. Follow us on [Twitter](https://twitter.com/pluralsight), like and retweet the important news. Or just talk about us with your friends.
+- **Spread the word**. Evangelize Pluralsight Design by [linking to design.pluralsight.com](https://design.pluralsight.com) on your website - every backlink matters. Follow us on [Twitter](https://twitter.com/pluralsight), like and retweet the important news. Or just talk about us with your friends.
 - **Give us feedback**. Tell us what we are doing well or how we can improve the project. Please upvote [the discussions](https://github.com/pluralsight/tva/discussions) you are interested in seeing answered. Or upvote (:thumbsup:) [the issues](https://github.com/pluralsight/tva/issues) you are most interested in seeing resolved.
 - **Help new users**. You can answer questions on the [Q&A discussion](https://github.com/pluralsight/tva/discussions/categories/q-a) or our [issues](https://github.com/pluralsight/tva/issues).
 - **Make Changes happen!**
@@ -94,6 +94,10 @@ export default ActionButton
 ```
 
 Of course, using plain JSX html tags will gain you the biggest performance boost, but you can easily see how much more flexible headless options are. Your imagination is your guide.
+
+## Are your packages compatible with React 18?
+
+Yes! We build our libraries using React 18 concurrent mode to ensure our products will be compatible out the door so you can keep moving your apps forward to have the best user experiences. :rocket:
 
 ## What does TVA stand for?
 
