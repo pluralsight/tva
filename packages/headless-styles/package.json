@@ -23,7 +23,8 @@
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
-    "@pluralsight/design-tokens": "alpha"
+    "@pluralsight/design-tokens": "alpha",
+    "kebab-case": "^1.0.1"
   },
   "devDependencies": {
     "@types/copyfiles": "^2",
@@ -31,7 +32,6 @@
     "@types/react": "^17.0.40",
     "copyfiles": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
-    "kebab-case": "^1.0.1",
     "typescript": "4.4.4"
   },
   "keywords": [
