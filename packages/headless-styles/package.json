@@ -31,6 +31,7 @@
     "@types/react": "^17.0.40",
     "copyfiles": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
+    "kebab-case": "^1.0.1",
     "typescript": "4.4.4"
   },
   "keywords": [

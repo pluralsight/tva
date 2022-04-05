@@ -1401,6 +1401,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['jsonfile', 'npm:6.1.0'],
         ['jsonparse', 'npm:1.3.1'],
         ['jsprim', 'npm:1.4.2'],
+        ['kebab-case', 'npm:1.0.1'],
         ['keypress', 'npm:0.2.1'],
         ['keyv', 'npm:3.1.0'],
         ['kind-of', 'npm:6.0.3'],
@@ -17025,6 +17026,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@types/react', 'npm:17.0.40'],
                   ['copyfiles', 'npm:2.4.1'],
                   ['identity-obj-proxy', 'npm:3.0.0'],
+                  ['kebab-case', 'npm:1.0.1'],
                   [
                     'typescript',
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
@@ -32719,6 +32721,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['json-schema', 'npm:0.4.0'],
                   ['verror', 'npm:1.10.0'],
                 ],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
+          'kebab-case',
+          [
+            [
+              'npm:1.0.1',
+              {
+                packageLocation:
+                  './.yarn/cache/kebab-case-npm-1.0.1-12915713c5-8cf5f5d534.zip/node_modules/kebab-case/',
+                packageDependencies: [['kebab-case', 'npm:1.0.1']],
                 linkType: 'HARD',
               },
             ],
