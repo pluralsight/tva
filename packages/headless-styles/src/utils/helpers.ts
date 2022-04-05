@@ -13,7 +13,7 @@ function formatCSSPropName(propName: string) {
 
 function transformValue(style: NestedStyleValue): NestedStyleValue {
   if (typeof style === 'string') {
-    return `${style};`.trim()
+    return `${style.trim()};`
   }
 
   const psuedoStyles = Object.keys(style).reduce((prev, current) => {
