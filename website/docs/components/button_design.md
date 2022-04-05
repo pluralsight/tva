@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-tags: [App Frame, Components]
+tags: [Button, Design, Components]
 ---
 
-# App Frame
+# Button
 
 :::caution
 

@@ -70,27 +70,6 @@ The `Button` comes with four size variants: xs, s, m (default), l.
   <ButtonSizesPreview />
 </LiveExampleTabs>
 
-## Button styled links
-
-If you want to use the `Button` styles for an `a` element (no matter what framework you use), just omit the `type` property from the return Object we send.
-
-```jsx
-const psButtonProps = getButtonProps()
-const psButtonLinkProps = { className: psButtonProps.className }
-
-function BackLink() {
-  return (
-    <a href="#" {...psbButtonLinkProps}>
-      Back
-    </a>
-  )
-}
-```
-
-:::tip
-With ES\* you could destructure the className out of the object (i.e. `{ className, ...rest }`). However, this approach forces you to declare an unused variable which will negatively impact performance at some point, make a negative impact on code readability, and fail sonarlint tests.
-:::
-
 ## Button with icon and label
 
 You can combine icons with the `Button` using the `getIconLablProps` and and Icon from the PS Icons font library.
@@ -133,6 +112,27 @@ function EditIconButton(props) {
   )
 }
 ```
+
+## Button styled links
+
+If you want to use the `Button` styles for an `a` element (no matter what framework you use), just omit the `type` property from the return Object we send.
+
+```jsx
+const psButtonProps = getButtonProps()
+const psButtonLinkProps = { className: psButtonProps.className }
+
+function BackLink() {
+  return (
+    <a href="#" {...psbButtonLinkProps}>
+      Back
+    </a>
+  )
+}
+```
+
+:::tip
+With ES\* you could destructure the className out of the object (i.e. `{ className, ...rest }`). However, this approach forces you to declare an unused variable which will negatively impact performance at some point, make a negative impact on code readability, and fail sonarlint tests.
+:::
 
 ## CSS API
 

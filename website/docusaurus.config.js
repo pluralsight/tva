@@ -5,7 +5,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 const foundationsPath = 'foundations/brand'
 const contentPath = 'content/voice-tone'
-const componentsPath = 'components/app-frame'
+const componentsPath = 'components/button_design'
 const devPath = 'development/getting-started/installation'
 
 function createDocsPath(path) {
