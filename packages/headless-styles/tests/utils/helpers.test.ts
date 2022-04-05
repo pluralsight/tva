@@ -15,7 +15,7 @@ describe('helpers', () => {
     background: black;
     font-variation-settings: none;
     white-space: none;
-    &:after: {
+    &:after {
 
     background-color: white;
     }

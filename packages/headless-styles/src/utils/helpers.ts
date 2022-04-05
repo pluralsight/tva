@@ -3,6 +3,14 @@ import kebabCase from 'kebab-case'
 type StyleObject = Record<string, unknown>
 type NestedStyleValue = string | StyleObject
 
+function formatCSSPropName(propName: string) {
+  if (propName.includes('&')) {
+    return propName
+  }
+
+  return `${kebabCase(propName)}:`
+}
+
 function transformValue(style: NestedStyleValue): NestedStyleValue {
   if (typeof style === 'string') {
     return `${style};`.trim()
@@ -21,11 +29,11 @@ function transformValue(style: NestedStyleValue): NestedStyleValue {
 export function transformStyles(styleObject: StyleObject) {
   return Object.keys(styleObject)
     .reduce((prev, current) => {
+      const propName = formatCSSPropName(current)
+
       return `
       ${prev.trim()}
-      ${kebabCase(current)}: ${transformValue(
-        styleObject[current] as NestedStyleValue
-      )}
+      ${propName} ${transformValue(styleObject[current] as NestedStyleValue)}
     `
     }, '')
     .trim()
