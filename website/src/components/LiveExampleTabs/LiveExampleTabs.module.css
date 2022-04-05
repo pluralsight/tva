@@ -1,7 +1,8 @@
 .button {
-  align-items: center;
-  display: inline-flex;
-  justify-content: center;
+  border-radius: 50%;
+  height: 2.5rem;
+  inline-padding: 10.5px;
+  width: 2.5rem;
 }
 
 .chakra path {
@@ -12,10 +13,6 @@
   fill: var(--ps-neutral-text-weak);
 }
 
-.codeIcon {
-  padding-top: 4px;
-}
-
 .list {
   align-items: center;
   display: flex;
@@ -24,20 +21,14 @@
 }
 
 .listItem {
-  margin-right: 12px;
-}
-
-.listItem:first-of-type .button {
-  margin-top: 4px;
-}
-
-.listItem:last-of-type {
-  margin-right: 0;
+  margin-left: 6px;
+  margin-top: 0 !important;
 }
 
 .icon {
+  height: 1.24rem;
   line-height: 0;
-  width: 17px;
+  width: 1.24rem;
 }
 
 .icon path {
