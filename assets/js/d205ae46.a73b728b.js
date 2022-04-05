@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7615],{405:function(e){e.exports=JSON.parse('{"name":"App Frame","permalink":"/docs/tags/app-frame","docs":[{"id":"components/app-frame","title":"App Frame","description":"This section is a work in progress.","permalink":"/docs/components/app-frame"}],"allTagsPath":"/docs/tags"}')}}]);
