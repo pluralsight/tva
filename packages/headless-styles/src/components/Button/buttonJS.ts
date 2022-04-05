@@ -60,6 +60,7 @@ function getKindStyles(kind: Kind) {
         },
         '&:hover': {
           backgroundColor: psBackgroundHover,
+          color: '#fff',
         },
       }
 
@@ -73,6 +74,7 @@ function getKindStyles(kind: Kind) {
         },
         '&:hover': {
           backgroundColor: psBackgroundHover,
+          color: '#fff',
         },
       }
 
@@ -85,6 +87,7 @@ function getKindStyles(kind: Kind) {
         },
         '&:hover': {
           backgroundColor: psNeutralBackgroundHover,
+          color: '#fff',
         },
       }
   }
