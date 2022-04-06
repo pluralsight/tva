@@ -147,3 +147,53 @@ html[data-theme='light'],
   --ps-warning-text-weak: hsl(43deg 100% 32% / 100%);
   --ps-warning-text-medium: hsl(43deg 100% 42% / 100%);
 }
+
+html[data-theme='flow-light'],
+.flow-light {
+  --ps-background: hsl(249deg 63% 43% / 100%);
+  --ps-background-active: hsl(249deg 63% 25% / 100%);
+  --ps-background-hover: hsl(249deg 63% 34% / 100%);
+  --ps-background-weak: hsl(249deg 62% 92% / 100%);
+  --ps-background-weak-active: hsl(248deg 63% 75% / 100%);
+  --ps-background-weak-hover: hsl(249deg 64% 84% / 100%);
+  --ps-danger-background-weak: hsl(336deg 100% 91% / 100%);
+  --ps-danger-border: hsl(335deg 100% 64% / 100%);
+  --ps-danger-text: hsl(335deg 100% 18% / 100%);
+  --ps-danger-text-weak: hsl(336deg 100% 36% / 100%);
+  --ps-danger-text-medium: hsl(335deg 100% 64% / 100%);
+  --ps-info-background: hsl(202deg 100% 42% / 100%);
+  --ps-info-background-active: hsl(202deg 100% 25% / 100%);
+  --ps-info-background-hover: hsl(202deg 100% 33% / 100%);
+  --ps-info-background-weak: hsl(202deg 100% 83% / 100%);
+  --ps-info-text: hsl(202deg 100% 17% / 100%);
+  --ps-info-text-weak: hsl(202deg 100% 25% / 100%);
+  --ps-info-text-medium: hsl(202deg 100% 42% / 100%);
+  --ps-neutral-background: hsl(214deg 48% 83% / 60%);
+  --ps-neutral-background-active: hsl(214deg 48% 83% / 70%);
+  --ps-neutral-background-hover: hsl(214deg 36% 66% / 30%);
+  --ps-neutral-border: hsl(214deg 36% 66% / 50%);
+  --ps-neutral-border-weak: hsl(214deg 36% 66% / 30%);
+  --ps-neutral-border-strong: hsl(214deg 35% 66% / 100%);
+  --ps-neutral-text: hsl(214deg 36% 16% / 100%);
+  --ps-neutral-text-weak: hsl(214deg 30% 35% / 100%);
+  --ps-neutral-text-medium: hsl(214deg 25% 41% / 100%);
+  --ps-neutral-surface: hsl(210deg 38% 97% / 100%);
+  --ps-neutral-surface-weak: hsl(0deg 0% 100% / 100%);
+  --ps-neutral-surface-medium: hsl(210deg 40% 97% / 100%);
+  --ps-neutral-surface-strong: hsl(214deg 32% 94% / 100%);
+  --ps-selected-background: hsl(249deg 63% 51% / 100%);
+  --ps-selected-background-medium: hsl(214deg 48% 83% / 40%);
+  --ps-selected-background-strong: hsl(253deg 100% 94% / 100%);
+  --ps-success-background-weak: hsl(156deg 98% 81% / 100%);
+  --ps-success-border: hsl(156deg 98% 37% / 100%);
+  --ps-success-text: hsl(157deg 100% 7% / 100%);
+  --ps-success-text-weak: hsl(156deg 98% 22% / 100%);
+  --ps-success-text-medium: hsl(156deg 99% 29% / 100%);
+  --ps-text: hsl(249deg 63% 8% / 100%);
+  --ps-text-weak: hsl(249deg 63% 25% / 100%);
+  --ps-text-medium: hsl(249deg 63% 43% / 100%);
+  --ps-warning-background-weak: hsl(43deg 100% 88% / 100%);
+  --ps-warning-text: hsl(43deg 100% 10% / 100%);
+  --ps-warning-text-weak: hsl(43deg 100% 32% / 100%);
+  --ps-warning-text-medium: hsl(43deg 100% 42% / 100%);
+}
