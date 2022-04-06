@@ -49,11 +49,40 @@ If you are using React, there are a number of solutions you can use to create th
 - Create a state-based solution or `context` in your project
 - Create a custom hook that dynamically imports a map of colors depending on what you pass into it (i.e. "light", "dark"). However, we do not recommend this approach for performance reasons but provide it as an example to show your creativity limits what is possible.
 
+## Custom Theming
+
+Our semantic-token based system allows for easily customizing themes to meet the needs of your team. Instead of adding new tokens, simply overwrite the tokens we provide in the list above. We default the `:root` to use dark mode and only overwrite for any theme outside of that (i.e. "light", etc.).
+
+### CSS custom theming
+
+In CSS all you need to do is to overwrite [the tokens](#list-of-tokens) you want to update in the `:root` CSS selector in your project for dark mode.
+
+```css title="Global CSS file for your project"
+:root {
+  --ps-text: #fff;
+}
+```
+
+To create your own light theme, you will need to do the exact same thing, except target our "light" selectors.
+
+```css title="Global CSS file for your project"
+html[data-theme='light'],
+.light {
+  --ps-text: #000;
+}
+```
+
+### JS custom theming
+
+Due to the nature of our CSS-in-JS design in [headless-styles](../headless-styles/Button.mdx), you can extend our components to use whichever custom theme solution you prefer with your chosen library (i.e. styled-components, emotion, etc.).
+
+See the [Button example](../headless-styles/Button.mdx#extending) for more details.
+
 ## Custom Tokens
 
-Because we are limiting tokens to our semantic colors (which should provide you with anything you will more than likely ever need), your team may feel the need to extend and add additional variables to your project. In this scenario **you should absolutely use static variables when you need a color/value not in the list**. Just because we can use CSS tokens, doesn't mean we should use them for everything.
+Because we limit tokens to our semantic color theme framework (which should provide you with anything you will more than likely ever need), your team may feel the need to extend and add additional variables to your project. In this scenario, for performance reasons, **you should use static variables when you need a color/value not in the list**. Additional tokens will start to compound and negatively affect the performance of page loads.
 
-There's no doubt that using tokens makes life easier (for the engineer), however, when it starts to be used so much it negatively affects the customer experience - we have failed as a team. So if your team would like to define a large number of tokens to make your code seem more valuable, **we highly recommend the use of SASS in your project which will produce the most performant outcome in this scenario.**
+There's no doubt that using tokens makes life easier, however, when it starts to be used so much it negatively affects the customer experience - we have failed as a team. So if your team would like to define a large number of tokens to make your code seem more valuable, **we highly recommend the use of SASS in your project which will produce the most performant outcome in this scenario.**
 
 ### SASS tokens
 
