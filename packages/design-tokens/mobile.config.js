@@ -1,23 +1,11 @@
-const baseFilter = require('./utils/baseFilter')
-const yaml = require('yaml')
+const vars = require('./utils/vars')
 
-const baseFileConfig = {
-  filter: baseFilter,
-}
-const transforms = ['color/hsl-4']
+const baseFileConfig = vars.baseFileConfig
+const transforms = vars.transforms
 
 module.exports = {
-  parsers: [
-    {
-      pattern: /\.yaml$/,
-      parse: ({ contents }) => yaml.parse(contents),
-    },
-  ],
-  source: [
-    'tokens/base/*.yaml',
-    'tokens/public/color.yaml',
-    'tokens/public/lightColors.yaml',
-  ],
+  parsers: vars.parsers,
+  source: vars.skillsSources,
   platforms: {
     android: {
       transformGroup: 'android',
