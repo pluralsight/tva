@@ -12,112 +12,112 @@
 
 ps:
   background:
-    value: '{color.accent.background.dark.value}'
+    value: '{color.accent.background.flow-dark.value}'
   background-active:
-    value: '{color.accent.background-active.dark.value}'
+    value: '{color.accent.background-active.flow-dark.value}'
   background-hover:
-    value: '{color.accent.background-hover.dark.value}'
+    value: '{color.accent.background-hover.flow-dark.value}'
   background-weak:
-    value: '{color.accent.background-weak.dark.value}'
+    value: '{color.accent.background-weak.flow-dark.value}'
   background-weak-active:
-    value: '{color.accent.background-weak-active.dark.value}'
+    value: '{color.accent.background-weak-active.flow-dark.value}'
   background-weak-hover:
-    value: '{color.accent.background-weak-hover.dark.value}'
+    value: '{color.accent.background-weak-hover.flow-dark.value}'
   border:
-    value: '{color.accent.border.dark.value}'
+    value: '{color.accent.border.flow-dark.value}'
   danger-background:
-    value: '{color.danger.background.dark.value}'
+    value: '{color.danger.background.flow-dark.value}'
   danger-background-active:
-    value: '{color.danger.background-active.dark.value}'
+    value: '{color.danger.background-active.flow-dark.value}'
   danger-background-hover:
-    value: '{color.danger.background-hover.dark.value}'
+    value: '{color.danger.background-hover.flow-dark.value}'
   danger-background-weak:
-    value: '{color.danger.background-weak.dark.value}'
+    value: '{color.danger.background-weak.flow-dark.value}'
   danger-border:
-    value: '{color.danger.border.dark.value}'
+    value: '{color.danger.border.flow-dark.value}'
   danger-text:
-    value: '{color.danger.label.dark.value}'
+    value: '{color.danger.label.flow-dark.value}'
   danger-text-weak:
-    value: '{color.danger.label-muted.dark.value}'
+    value: '{color.danger.label-muted.flow-dark.value}'
   danger-text-medium:
-    value: '{color.danger.label-subtle.dark.value}'
+    value: '{color.danger.label-subtle.flow-dark.value}'
   info-background:
-    value: '{color.info.background.dark.value}'
+    value: '{color.info.background.flow-dark.value}'
   info-background-active:
-    value: '{color.info.background-active.dark.value}'
+    value: '{color.info.background-active.flow-dark.value}'
   info-background-hover:
-    value: '{color.info.background-hover.dark.value}'
+    value: '{color.info.background-hover.flow-dark.value}'
   info-background-weak:
-    value: '{color.info.background-weak.dark.value}'
+    value: '{color.info.background-weak.flow-dark.value}'
   info-border:
-    value: '{color.info.border.dark.value}'
+    value: '{color.info.border.flow-dark.value}'
   info-text:
-    value: '{color.info.label.dark.value}'
+    value: '{color.info.label.flow-dark.value}'
   info-text-weak:
-    value: '{color.info.label-muted.dark.value}'
+    value: '{color.info.label-muted.flow-dark.value}'
   info-text-medium:
-    value: '{color.info.label-subtle.dark.value}'
+    value: '{color.info.label-subtle.flow-dark.value}'
   neutral-background:
-    value: '{color.neutral.background.dark.value}'
+    value: '{color.neutral.background.flow-dark.value}'
   neutral-background-active:
-    value: '{color.neutral.background-active.dark.value}'
+    value: '{color.neutral.background-active.flow-dark.value}'
   neutral-background-hover:
-    value: '{color.neutral.background-hover.dark.value}'
+    value: '{color.neutral.background-hover.flow-dark.value}'
   neutral-border:
-    value: '{color.neutral.border.dark.value}'
+    value: '{color.neutral.border.flow-dark.value}'
   neutral-border-weak:
-    value: '{color.neutral.border-muted.dark.value}'
+    value: '{color.neutral.border-muted.flow-dark.value}'
   neutral-border-strong:
-    value: '{color.neutral.border-strong.dark.value}'
+    value: '{color.neutral.border-strong.flow-dark.value}'
   neutral-surface:
-    value: '{color.neutral.surface.dark.value}'
+    value: '{color.neutral.surface.flow-dark.value}'
   neutral-surface-weak:
-    value: '{color.neutral.surface-weak.dark.value}'
+    value: '{color.neutral.surface-weak.flow-dark.value}'
   neutral-surface-medium:
-    value: '{color.neutral.surface-medium.dark.value}'
+    value: '{color.neutral.surface-medium.flow-dark.value}'
   neutral-surface-strong:
-    value: '{color.neutral.surface-strong.dark.value}'
+    value: '{color.neutral.surface-strong.flow-dark.value}'
   neutral-text:
-    value: '{color.neutral.label.dark.value}'
+    value: '{color.neutral.label.flow-dark.value}'
   neutral-text-weak:
-    value: '{color.neutral.label-muted.dark.value}'
+    value: '{color.neutral.label-muted.flow-dark.value}'
   neutral-text-medium:
-    value: '{color.neutral.label-subtle.dark.value}'
+    value: '{color.neutral.label-subtle.flow-dark.value}'
   success-background:
-    value: '{color.success.background.dark.value}'
+    value: '{color.success.background.flow-dark.value}'
   success-background-active:
-    value: '{color.success.background-active.dark.value}'
+    value: '{color.success.background-active.flow-dark.value}'
   success-background-hover:
-    value: '{color.success.background-hover.dark.value}'
+    value: '{color.success.background-hover.flow-dark.value}'
   success-background-weak:
-    value: '{color.success.background-weak.dark.value}'
+    value: '{color.success.background-weak.flow-dark.value}'
   success-border:
-    value: '{color.success.border.dark.value}'
+    value: '{color.success.border.flow-dark.value}'
   success-text:
-    value: '{color.success.label.dark.value}'
+    value: '{color.success.label.flow-dark.value}'
   success-text-weak:
-    value: '{color.success.label-muted.dark.value}'
+    value: '{color.success.label-muted.flow-dark.value}'
   success-text-medium:
-    value: '{color.success.label-subtle.dark.value}'
+    value: '{color.success.label-subtle.flow-dark.value}'
   text:
-    value: '{color.accent.label.dark.value}'
+    value: '{color.accent.label.flow-dark.value}'
   text-weak:
-    value: '{color.accent.label-muted.dark.value}'
+    value: '{color.accent.label-muted.flow-dark.value}'
   text-medium:
-    value: '{color.accent.label-subtle.dark.value}'
+    value: '{color.accent.label-subtle.flow-dark.value}'
   warning-background:
-    value: '{color.warning.background.dark.value}'
+    value: '{color.warning.background.flow-dark.value}'
   warning-background-active:
-    value: '{color.warning.background-active.dark.value}'
+    value: '{color.warning.background-active.flow-dark.value}'
   warning-background-hover:
-    value: '{color.warning.background-hover.dark.value}'
+    value: '{color.warning.background-hover.flow-dark.value}'
   warning-background-weak:
-    value: '{color.warning.background-weak.dark.value}'
+    value: '{color.warning.background-weak.flow-dark.value}'
   warning-border:
-    value: '{color.warning.border.dark.value}'
+    value: '{color.warning.border.flow-dark.value}'
   warning-text:
-    value: '{color.warning.label.dark.value}'
+    value: '{color.warning.label.flow-dark.value}'
   warning-text-weak:
-    value: '{color.warning.label-muted.dark.value}'
+    value: '{color.warning.label-muted.flow-dark.value}'
   warning-text-medium:
-    value: '{color.warning.label-subtle.dark.value}'
+    value: '{color.warning.label-subtle.flow-dark.value}'
