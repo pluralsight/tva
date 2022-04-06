@@ -1,5 +1,6 @@
 @import url('https://unpkg.com/normalize.css@latest/normalize.css');
 @import url('https://unpkg.com/@pluralsight/design-tokens@alpha/build/css/variables.css');
+@import url('https://unpkg.com/@pluralsight/design-tokens@alpha/build/flow/css/variables.css');
 
 html {
   box-sizing: border-box;

@@ -23,25 +23,37 @@ The `headless-styles` package will consume the `css` and `js` tokens internally.
 
 ## List of tokens
 
-These are the default values (dark) we provide. For every theme, we simply overwrite the values needed shown in this list (i.e. token names are the same for all themes).
+These are the default values we provide (dark theme). For every theme, we overwrite the values shown in this list (i.e. token names are the same for all themes).
 
-The tokens are presented in alphabetical order.
+The tokens are presented by sentiment.
 
 <TokensColorMap />
 
 ## Themes
 
-The `design-tokens` package comes with two themes: `light` and `dark` (default). Themes are controlled by using CSS classes (i.e., `.light`) or a `data-theme` attribute on the `html` tag. The default token values that you will receive will be for the `dark` theme. If you want to use the `light` theme, simply add a class name of `light` a parent component or `data-theme="light"` to the `html` tag for a full page switch (what we do in these docs).
+The `design-tokens` package comes with four themes: **dark (default), light, flow-dark, flow-light**.
 
-If you want to change the theme of a specific child, just add the `light` class name to the parent of that component.
+This website uses the "dark" and "light" theme.
+
+Themes are controlled by using an attribute on the `html` tag of `data-theme` for a full page takeover (what we do on this site), or a CSS class of the theme name (i.e. "light", "dark") for component level control. The default token values that you will receive will be for the dark theme.
 
 :::caution
 Themes **depend on the normalize.css** file to be used in your project. Check out our [getting started](../../getting-started/installation.md#normalizecss) docs to learn how to add the normalize.css file to your project.
 :::
 
+### Flow theme tokens
+
+For any of our tokens, we highly recommend using the CSS solution as you will have a faster experience for your team or product. By nature, all of our themes are shipped with our normalize.css file.
+
+However, if you prefer to use CSS-in-JS, you can easily import the Flow theme by targeting it's directory in our package.
+
+```javascript title="Importing Flow CSS-in-JS Variables"
+import { psText } from '@pluralsight/design-tokens/flow'
+```
+
 ### Example solutions for CSS-in-JS
 
-If you choose to use the `design-tokens` in a CSS-in-JS environment, we ship both the light and dark tokens. Just use the same color map we have provided above and add "Light" after the "ps" ID (i.e. `psBackground` becomes `psLightBackground`).
+If you choose to use the `design-tokens` in a CSS-in-JS environment, we ship all the theme tokens in a tree-shaking friendly environment. Just use the same color map we have provided above and add "Light" after the "ps" ID (i.e. `psBackground` becomes `psLightBackground`).
 
 If you are using React, there are a number of solutions you can use to create theme switching in your project.
 
