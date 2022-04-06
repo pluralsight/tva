@@ -1,12 +1,9 @@
 function baseFilter(token) {
-  if (
-    token.filePath.includes('tokens/base') ||
-    token.filePath.includes('lightColors.yaml')
-  ) {
-    return undefined
+  if (token.filePath.includes('color.yaml')) {
+    return token
   }
 
-  return token
+  return undefined
 }
 
 module.exports = baseFilter

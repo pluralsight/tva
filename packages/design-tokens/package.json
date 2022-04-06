@@ -6,21 +6,20 @@
   "module": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
-    "build/css/variables.css",
-    "build/scss/_variables.scss",
-    "build/common/index.js",
-    "build/index.js",
-    "build/index.d.ts",
+    "build/**/*",
     "normalize.css",
     "fonts.css"
   ],
   "sideEffects": [
-    "build/css/*.css",
-    "build/scss/*.scss"
+    "build/**/*.css",
+    "build/**/*.scss"
   ],
   "scripts": {
-    "build": "style-dictionary build",
-    "clean": "rm -rf build",
+    "build": "yarn build:skills && yarn build:flow",
+    "build:flow": "style-dictionary build --config ./flow.config.js",
+    "build:mobile": "style-dictionary build --config ./mobile.config.js",
+    "build:skills": "style-dictionary build",
+    "prebuild": "rm -rf build",
     "prepublishOnly": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

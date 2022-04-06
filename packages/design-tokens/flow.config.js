@@ -21,14 +21,14 @@ module.exports = {
   ],
   source: [
     'tokens/base/*.yaml',
-    'tokens/public/color.yaml',
-    'tokens/public/lightColors.yaml',
+    'tokens/public/flow/color.yaml',
+    'tokens/public/flow/lightColors.yaml',
   ],
   platforms: {
     js: {
       transformGroup: 'js',
       transforms: jsTransforms,
-      buildPath: 'build/',
+      buildPath: 'build/flow/',
       files: [
         {
           ...jsFileConfig,
@@ -40,7 +40,7 @@ module.exports = {
     common: {
       transformGroup: 'commonjs',
       transforms: jsTransforms,
-      buildPath: 'build/common/',
+      buildPath: 'build/flow/common/',
       files: [
         {
           ...jsFileConfig,
@@ -52,7 +52,7 @@ module.exports = {
     ts: {
       transformGroup: 'ts',
       transforms: jsTransforms,
-      buildPath: 'build/',
+      buildPath: 'build/flow/',
       files: [
         {
           ...jsFileConfig,
@@ -64,7 +64,7 @@ module.exports = {
     css: {
       transformGroup: 'css',
       transforms: [...transforms, KEBAB],
-      buildPath: 'build/css/',
+      buildPath: 'build/flow/css/',
       files: [
         {
           ...baseFileConfig,
@@ -76,7 +76,7 @@ module.exports = {
     scss: {
       transformGroup: 'scss',
       transforms: [...transforms, KEBAB],
-      buildPath: 'build/scss/',
+      buildPath: 'build/flow/scss/',
       files: [
         {
           ...baseFileConfig,
