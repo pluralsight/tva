@@ -5,45 +5,88 @@ color:
         value: 'hsl(249deg 63% 51% / 100%)'
       light:
         value: 'hsl(249deg 63% 43% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-active:
       dark:
         value: 'hsl(249deg 63% 34% / 100%)'
       light:
         value: 'hsl(249deg 63% 25% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-hover:
       dark:
         value: 'hsl(249deg 63% 43% / 100%)'
       light:
         value: 'hsl(249deg 63% 34% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-weak:
       dark:
         value: 'hsl(249deg 63% 25% / 100%)'
       light:
         value: 'hsl(249deg 62% 92% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-weak-active:
       dark:
         value: 'hsl(249deg 63% 25% / 100%)'
       light:
         value: 'hsl(248deg 63% 75% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-weak-hover:
       dark:
         value: 'hsl(248deg 63% 34% / 100%)'
       light:
         value: 'hsl(249deg 64% 84% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border:
-      value: 'hsl(249deg 63% 59% / 100%)'
+      dark:
+        value: 'hsl(249deg 63% 59% / 100%)'
+      light:
+        value: 'hsl(249deg 63% 59% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label:
       dark:
         value: 'hsl(249deg 62% 92% / 100%)'
       light:
         value: 'hsl(249deg 63% 8% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-muted:
       dark:
         value: 'hsl(248deg 63% 75% / 100%)'
       light:
         value: 'hsl(249deg 63% 25% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-subtle:
       dark:
         value: 'hsl(249deg 63% 67% / 100%)'
       light:
         value: 'hsl(249deg 63% 43% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'

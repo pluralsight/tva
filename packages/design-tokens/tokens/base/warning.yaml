@@ -1,30 +1,74 @@
 color:
   warning:
     background:
-      value: 'hsl(43deg 100% 42% / 100%)'
+      dark:
+        value: 'hsl(43deg 100% 42% / 100%)'
+      light:
+        value: 'hsl(43deg 100% 42% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-active:
-      value: 'hsl(43deg 100% 21% / 100%)'
+      dark:
+        value: 'hsl(43deg 100% 21% / 100%)'
+      light:
+        value: 'hsl(43deg 100% 21% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-hover:
-      value: 'hsl(43deg 100% 32% / 100%)'
+      dark:
+        value: 'hsl(43deg 100% 32% / 100%)'
+      light:
+        value: 'hsl(43deg 100% 32% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-weak:
       dark:
         value: 'hsl(43deg 100% 21% / 100%)'
       light:
         value: 'hsl(43deg 100% 88% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border:
-      value: 'hsl(43deg 100% 53% / 100%)'
+      dark:
+        value: 'hsl(43deg 100% 53% / 100%)'
+      light:
+        value: 'hsl(43deg 100% 53% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label:
       dark:
         value: 'hsl(43deg 100% 94% / 100%)'
       light:
         value: 'hsl(43deg 100% 10% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-muted:
       dark:
         value: 'hsl(43deg 100% 82% / 100%)'
       light:
         value: 'hsl(43deg 100% 32% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-subtle:
       dark:
         value: 'hsl(43deg 100% 69% / 100%)'
       light:
         value: 'hsl(43deg 100% 42% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'

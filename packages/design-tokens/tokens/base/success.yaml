@@ -1,33 +1,74 @@
 color:
   success:
     background:
-      value: 'hsl(156deg 99% 29% / 100%)'
+      dark:
+        value: 'hsl(156deg 99% 29% / 100%)'
+      light:
+        value: 'hsl(156deg 99% 29% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-active:
-      value: 'hsl(156deg 97% 15% / 100%)'
+      dark:
+        value: 'hsl(156deg 97% 15% / 100%)'
+      light:
+        value: 'hsl(156deg 97% 15% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-hover:
-      value: 'hsl(156deg 98% 22% / 100%)'
+      dark:
+        value: 'hsl(156deg 98% 22% / 100%)'
+      light:
+        value: 'hsl(156deg 98% 22% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-weak:
       dark:
         value: 'hsl(156deg 97% 15% / 100%)'
       light:
         value: 'hsl(156deg 98% 81% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border:
       dark:
         value: 'hsl(156deg 98% 44% / 100%)'
       light:
         value: 'hsl(156deg 98% 37% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label:
       dark:
         value: 'hsl(156deg 100% 91% / 100%)'
       light:
         value: 'hsl(157deg 100% 7% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-muted:
       dark:
         value: 'hsl(156deg 98% 63% / 100%)'
       light:
         value: 'hsl(156deg 98% 22% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-subtle:
       dark:
         value: 'hsl(156deg 98% 37% / 100%)'
       light:
         value: 'hsl(156deg 99% 29% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'

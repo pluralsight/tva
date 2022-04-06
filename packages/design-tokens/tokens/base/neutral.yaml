@@ -5,63 +5,115 @@ color:
         value: 'hsl(238deg 30% 32% / 100%)'
       light:
         value: 'hsl(214deg 48% 83% / 60%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-active:
       dark:
         value: 'hsl(240deg 31% 25% / 100%)'
       light:
         value: 'hsl(214deg 48% 83% / 70%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     background-hover:
       dark:
         value: 'hsl(237deg 30% 36% / 100%)'
       light:
         value: 'hsl(214deg 36% 66% / 30%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border:
       dark:
         value: 'hsl(237deg 30% 36% / 100%)'
       light:
         value: 'hsl(214deg 36% 66% / 50%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border-muted:
       dark:
         value: 'hsl(240deg 31% 25% / 100%)'
       light:
         value: 'hsl(214deg 36% 66% / 30%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     border-strong:
       dark:
         value: 'hsl(234deg 30% 49% / 100%)'
       light:
         value: 'hsl(214deg 35% 66% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label:
       dark:
         value: 'hsl(0deg 0% 100% / 100%)'
       light:
         value: 'hsl(214deg 36% 16% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-muted:
       dark:
         value: 'hsl(235deg 30% 78% / 100%)'
       light:
         value: 'hsl(214deg 30% 35% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     label-subtle:
       dark:
         value: 'hsl(234deg 30% 66% / 100%)'
       light:
         value: 'hsl(214deg 25% 41% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     surface:
       dark:
         value: 'hsl(251deg 42% 10% / 100%)'
       light:
         value: 'hsl(210deg 38% 97% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     surface-weak:
       dark:
         value: 'hsl(246deg 37% 15% / 100%)'
       light:
         value: 'hsl(0deg 0% 100% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     surface-medium:
       dark:
         value: 'hsl(245deg 35% 20% / 100%)'
       light:
         value: 'hsl(210deg 40% 97% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
     surface-strong:
       dark:
         value: 'hsl(244deg 36% 24% / 100%)'
       light:
         value: 'hsl(214deg 32% 94% / 100%)'
+      flow-dark:
+        value: 'hsl()'
+      flow-light:
+        value: 'hsl()'
