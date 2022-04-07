@@ -1,4 +1,4 @@
-import { convert } from '@americanexpress/css-to-js'
+import { convert } from './css-to-ts'
 
 function getOutputPath(path) {
   const splitPath = path.split('/')

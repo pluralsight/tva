@@ -87,7 +87,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@algolia/requester-common', 'npm:4.11.0'],
         ['@algolia/requester-node-http', 'npm:4.11.0'],
         ['@algolia/transporter', 'npm:4.11.0'],
-        ['@americanexpress/css-to-js', 'npm:1.0.1'],
         ['@ampproject/remapping', 'npm:2.1.2'],
         [
           '@babel/cli',
@@ -1877,7 +1876,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['resolve-from', 'npm:5.0.0'],
         ['resolve-global', 'npm:1.0.0'],
         ['resolve-pathname', 'npm:3.0.0'],
-        ['resolve-url', 'npm:0.2.1'],
         ['resolve.exports', 'npm:1.1.0'],
         ['responselike', 'npm:1.0.2'],
         ['restore-cursor', 'npm:3.1.0'],
@@ -1934,7 +1932,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['source-map-js', 'npm:0.6.2'],
         ['source-map-resolve', 'npm:0.6.0'],
         ['source-map-support', 'npm:0.5.20'],
-        ['source-map-url', 'npm:0.4.1'],
         ['sourcemap-codec', 'npm:1.4.8'],
         ['space-separated-tokens', 'npm:1.1.5'],
         ['spdx-correct', 'npm:3.1.1'],
@@ -2090,7 +2087,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['upper-case', 'npm:2.0.2'],
         ['upper-case-first', 'npm:2.0.2'],
         ['uri-js', 'npm:4.4.1'],
-        ['urix', 'npm:0.1.0'],
         [
           'url-loader',
           'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:4.1.1',
@@ -2785,23 +2781,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@algolia/cache-common', 'npm:4.13.0'],
                   ['@algolia/logger-common', 'npm:4.13.0'],
                   ['@algolia/requester-common', 'npm:4.13.0'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          '@americanexpress/css-to-js',
-          [
-            [
-              'npm:1.0.1',
-              {
-                packageLocation:
-                  './.yarn/cache/@americanexpress-css-to-js-npm-1.0.1-2fc3463fc4-61f138dd2c.zip/node_modules/@americanexpress/css-to-js/',
-                packageDependencies: [
-                  ['@americanexpress/css-to-js', 'npm:1.0.1'],
-                  ['css', 'npm:2.2.4'],
                 ],
                 linkType: 'HARD',
               },
@@ -24334,21 +24313,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'css',
           [
             [
-              'npm:2.2.4',
-              {
-                packageLocation:
-                  './.yarn/cache/css-npm-2.2.4-2a363d6a5d-a35d483c5c.zip/node_modules/css/',
-                packageDependencies: [
-                  ['css', 'npm:2.2.4'],
-                  ['inherits', 'npm:2.0.4'],
-                  ['source-map', 'npm:0.6.1'],
-                  ['source-map-resolve', 'npm:0.5.3'],
-                  ['urix', 'npm:0.1.0'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-            [
               'npm:3.0.0',
               {
                 packageLocation:
@@ -39877,20 +39841,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
-          'resolve-url',
-          [
-            [
-              'npm:0.2.1',
-              {
-                packageLocation:
-                  './.yarn/cache/resolve-url-npm-0.2.1-39edb8f908-7b7035b9ed.zip/node_modules/resolve-url/',
-                packageDependencies: [['resolve-url', 'npm:0.2.1']],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
           'resolve.exports',
           [
             [
@@ -40164,8 +40114,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: './packages/headless-styles/sandbox/',
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
-                  ['@americanexpress/css-to-js', 'npm:1.0.1'],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
+                  ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],
                   [
                     'react-dom',
@@ -41097,22 +41047,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           'source-map-resolve',
           [
             [
-              'npm:0.5.3',
-              {
-                packageLocation:
-                  './.yarn/cache/source-map-resolve-npm-0.5.3-6502ae65ba-c73fa44ac0.zip/node_modules/source-map-resolve/',
-                packageDependencies: [
-                  ['source-map-resolve', 'npm:0.5.3'],
-                  ['atob', 'npm:2.1.2'],
-                  ['decode-uri-component', 'npm:0.2.0'],
-                  ['resolve-url', 'npm:0.2.1'],
-                  ['source-map-url', 'npm:0.4.1'],
-                  ['urix', 'npm:0.1.0'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-            [
               'npm:0.6.0',
               {
                 packageLocation:
@@ -41153,20 +41087,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['buffer-from', 'npm:1.1.2'],
                   ['source-map', 'npm:0.6.1'],
                 ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'source-map-url',
-          [
-            [
-              'npm:0.4.1',
-              {
-                packageLocation:
-                  './.yarn/cache/source-map-url-npm-0.4.1-747a1f6eba-64c5c2c77a.zip/node_modules/source-map-url/',
-                packageDependencies: [['source-map-url', 'npm:0.4.1']],
                 linkType: 'HARD',
               },
             ],
@@ -43830,20 +43750,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['uri-js', 'npm:4.4.1'],
                   ['punycode', 'npm:2.1.1'],
                 ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'urix',
-          [
-            [
-              'npm:0.1.0',
-              {
-                packageLocation:
-                  './.yarn/cache/urix-npm-0.1.0-bd5e55a13a-4c076ecfbf.zip/node_modules/urix/',
-                packageDependencies: [['urix', 'npm:0.1.0']],
                 linkType: 'HARD',
               },
             ],

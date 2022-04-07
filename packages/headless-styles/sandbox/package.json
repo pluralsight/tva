@@ -8,11 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "css": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@americanexpress/css-to-js": "^1.0.1",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.8.0"
   }
