@@ -6,13 +6,13 @@ function getOutputPath(path) {
   return `${splitPath.join('/')}/generated`
 }
 
-function compileFileToJS(id) {
+function compileFileToTS(id) {
   const outputPath = getOutputPath(id)
   convert(id, { outputType: 'file', outputPath })
   return undefined
 }
 
-export default function transformCSStoJS(regexPath) {
+export default function transformCSStoTS(regexPath) {
   return {
     name: 'transform-css-to-js',
 
@@ -21,7 +21,7 @@ export default function transformCSStoJS(regexPath) {
 
       if (fileRegex.test(id)) {
         return {
-          code: compileFileToJS(id),
+          code: compileFileToTS(id),
           map: null, // provide source map if available
         }
       }

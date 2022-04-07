@@ -27,7 +27,7 @@ const writeToFile = (outPath, input, outputType) => {
 
     Object.entries(input.contents).forEach((key) => {
       const body = indentObject(key[1], 2)
-      writeFileSync(path.join(fileOutPath, `${key[0]}.js`), 'export default ')
+      writeFileSync(path.join(fileOutPath, `${key[0]}.ts`), 'export default ')
       appendFileSync(path.join(fileOutPath, `${key[0]}.ts`), body)
     })
   } else {
