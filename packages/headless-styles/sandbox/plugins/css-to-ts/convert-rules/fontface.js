@@ -41,13 +41,6 @@ const fontface = (rule, result) => {
       (resObj) => resObj[0].split('_')[0] === name
     ).length
     const finalName = sanitizeName(name, numVar)
-
-    // if (numVar > 0) {
-    //   name = `${name}_${numVar + 1}`
-    // }
-
-    // name = sanitize(name)
-
     return [finalName, obj]
   }
 
