@@ -13,6 +13,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@pluralsight/design-tokens": "alpha",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.8.0"
   }

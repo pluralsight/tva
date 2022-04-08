@@ -40114,6 +40114,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: './packages/headless-styles/sandbox/',
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
+                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],

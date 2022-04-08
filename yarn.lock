@@ -16355,6 +16355,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sandbox@workspace:packages/headless-styles/sandbox"
   dependencies:
+    "@pluralsight/design-tokens": alpha
     "@vitejs/plugin-react": ^1.0.7
     css: ^3.0.0
     react: ^18.0.0
