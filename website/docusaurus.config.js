@@ -30,8 +30,11 @@ const config = {
       '@docusaurus/preset-classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        gtag: {
+          trackingID: '3437648311',
+          anonymizeIP: true,
+        },
         docs: {
-          // TODO: update to site when going live
           editUrl: 'https://github.com/pluralsight/tva/edit/main/website/',
           remarkPlugins: [
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
@@ -41,19 +44,12 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          // TODO: update to site when going live
           editUrl: 'https://github.com/pluralsight/tva/edit/main/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
-      {
-        gtag: {
-          trackingID: '3437648311',
-          anonymizeIP: true,
-        },
-      },
     ],
   ],
 
