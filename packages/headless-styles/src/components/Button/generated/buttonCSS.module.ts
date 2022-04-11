@@ -33,7 +33,7 @@ export default {
       outline: 'none',
     },
     '&:focus': {
-      outline: '3px solid var(--ps-background-active)',
+      outline: '3px solid hsl(249deg 63% 34% / 100%)',
     },
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
@@ -41,51 +41,51 @@ export default {
     },
   },
   text: {
-    color: 'var(--ps-neutral-text-weak)',
+    color: 'hsl(235deg 30% 78% / 100%)',
     '&:hover': {
-      backgroundColor: 'var(--ps-neutral-background-hover)',
+      backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active)',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
   text_weak: {
-    color: 'var(--ps-text-medium)',
+    color: 'hsl(249deg 63% 67% / 100%)',
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover)',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active)',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
   weak: {
-    backgroundColor: 'var(--ps-neutral-background)',
-    color: 'var(--ps-neutral-text)',
+    backgroundColor: 'hsl(238deg 30% 32% / 100%)',
+    color: 'hsl(0deg 0% 100% / 100%)',
     '&:hover': {
-      backgroundColor: 'var(--ps-neutral-background-hover)',
+      backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-neutral-background-active)',
+      backgroundColor: 'hsl(240deg 31% 25% / 100%)',
     },
   },
   medium: {
-    backgroundColor: 'var(--ps-background)',
+    backgroundColor: 'hsl(249deg 63% 51% / 100%)',
     color: '#fff',
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover)',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active)',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
   strong: {
-    backgroundColor: 'var(--ps-background-weak)',
-    color: 'var(--ps-text)',
+    backgroundColor: 'hsl(249deg 63% 25% / 100%)',
+    color: 'hsl(249deg 62% 92% / 100%)',
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover)',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active)',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
   size_xs: {
@@ -104,12 +104,12 @@ export default {
   },
   light__base_text: {
     '&:hover': {
-      color: 'var(--ps-neutral-text-weak)',
+      color: 'hsl(235deg 30% 78% / 100%)',
     },
   },
   html_data_theme__light____base_text: {
     '&:hover': {
-      color: 'var(--ps-neutral-text-weak)',
+      color: 'hsl(235deg 30% 78% / 100%)',
     },
   },
   chakra: {
@@ -121,30 +121,30 @@ export default {
     outlineOffset: 'initial !important',
   },
   chakra_weak: {
-    backgroundColor: 'var(--ps-neutral-background) !important',
+    backgroundColor: 'hsl(238deg 30% 32% / 100%) !important',
     '&:hover': {
-      backgroundColor: 'var(--ps-neutral-background-hover) !important',
+      backgroundColor: 'hsl(237deg 30% 36% / 100%) !important',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-neutral-background-active) !important',
+      backgroundColor: 'hsl(240deg 31% 25% / 100%) !important',
     },
   },
   chakra_medium: {
-    backgroundColor: 'var(--ps-background) !important',
+    backgroundColor: 'hsl(249deg 63% 51% / 100%) !important',
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover) !important',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active) !important',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
     },
   },
   chakra_strong: {
-    backgroundColor: 'var(--ps-background-weak) !important',
+    backgroundColor: 'hsl(249deg 63% 25% / 100%) !important',
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover) !important',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active) !important',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
     },
   },
   chakra_size_xs: {
@@ -163,18 +163,18 @@ export default {
   },
   chakra_text_weak: {
     '&:hover': {
-      backgroundColor: 'var(--ps-background-hover) !important',
+      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active) !important',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
     },
   },
   chakra_text: {
     '&:hover': {
-      backgroundColor: 'var(--ps-neutral-background-hover) !important',
+      backgroundColor: 'hsl(237deg 30% 36% / 100%) !important',
     },
     '&:active': {
-      backgroundColor: 'var(--ps-background-active) !important',
+      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
     },
   },
 }
