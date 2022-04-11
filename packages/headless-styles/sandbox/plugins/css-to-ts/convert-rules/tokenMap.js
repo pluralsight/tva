@@ -114,6 +114,4 @@ const tokenMap = {
   '--ps-warning-text-medium': psWarningTextMedium,
 }
 
-const TokenMap = new Set(tokenMap)
-
-export default TokenMap
+export default tokenMap

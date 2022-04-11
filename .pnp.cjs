@@ -590,7 +590,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@npmcli/fs', 'npm:1.0.0'],
         ['@npmcli/move-file', 'npm:1.1.2'],
         ['@philpl/buble', 'npm:0.19.7'],
-        ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
+        ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
         [
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-1572ee-20220325',
@@ -16944,12 +16944,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/design-tokens',
           [
             [
-              'npm:0.0.0-alpha-11b7e9',
+              'npm:0.0.0-alpha-ea49e7',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-design-tokens-npm-0.0.0-alpha-11b7e9-08444b0ddd-614ac7c9b4.zip/node_modules/@pluralsight/design-tokens/',
+                  './.yarn/cache/@pluralsight-design-tokens-npm-0.0.0-alpha-ea49e7-15b398a2b7-7f5366bce3.zip/node_modules/@pluralsight/design-tokens/',
                 packageDependencies: [
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
+                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                 ],
                 linkType: 'HARD',
               },
@@ -16985,7 +16985,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     '@pluralsight/headless-styles',
                     'npm:0.0.0-experimental-1572ee-20220325',
                   ],
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
+                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                 ],
                 linkType: 'HARD',
               },
@@ -16999,7 +16999,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     '@pluralsight/headless-styles',
                     'workspace:packages/headless-styles',
                   ],
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
+                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                   ['@types/copyfiles', 'npm:2.4.1'],
                   ['@types/jest', 'npm:27.4.1'],
                   ['@types/react', 'npm:17.0.40'],
@@ -40114,7 +40114,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation: './packages/headless-styles/sandbox/',
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-11b7e9'],
+                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],

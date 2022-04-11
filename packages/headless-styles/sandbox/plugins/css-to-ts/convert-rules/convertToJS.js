@@ -3,48 +3,36 @@ import addProperty from '../utils/addProperty'
 import fontface from './fontface'
 import keyframes from './keyframes'
 import standard from './standard'
-import tokenMap from './tokenMap.js'
+// import tokenMap from './tokenMap.js'
 
-function returnVarContent(cssValToCheck) {
-  if (cssValToCheck.includes('var(')) {
-    return cssValToCheck.substring(3, cssValToCheck.length - 1)
+function replacePSVar(cssValue) {
+  if (cssValue.includes('var(')) {
+    console.log({ cssValue })
   }
 
-  return cssValToCheck
+  return cssValue
 }
 
-function replacePSVar(val) {
-  let currentVal
-
-  if (typeof val === 'string') {
-    currentVal = returnVarContent(val)
+function checkForNestedSelectors(propToCheck) {
+  if (typeof propToCheck === 'string') {
+    return replacePSVar(propToCheck)
   }
-
-  if (typeof val === 'object') {
-    // TODO: figure out how to get in here
-    return val
-  }
-
-  console.log({ currentVal })
-
-  return val
+  return findAndReplaceVars(propToCheck)
 }
 
-function sanitizeStyles(styleObject) {
-  let updatedObject = Object.keys(styleObject).reduce((prev, current) => {
+function findAndReplaceVars(styleObject) {
+  return Object.keys(styleObject).reduce((prev, current) => {
+    const sanitizedVal = checkForNestedSelectors(styleObject[current])
     return {
       ...prev,
-      [styleObject[current]]: replacePSVar(current),
+      [current]: sanitizedVal,
     }
   }, styleObject)
-
-  // console.log({updatedObject})
-
-  return styleObject
 }
 
 const convertRules = (rules, res = {}) => {
   let result = res
+
   rules.forEach((rule) => {
     if (rule.type === 'media') {
       // Convert @media rules
@@ -64,12 +52,14 @@ const convertRules = (rules, res = {}) => {
       // Convert standard CSS rules
       const standardProp = standard(rule, result)
       Object.entries(standardProp).forEach(([key, value]) => {
-        result = addProperty(result, key, value)
+        const sanitizedValue = findAndReplaceVars(value)
+        result = addProperty(result, key, sanitizedValue)
+        // console.log({ key, santizedValue })
       })
     }
   })
 
-  return sanitizeStyles(result)
+  return result
 }
 
 const convertToJS = (input) => {
