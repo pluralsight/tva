@@ -1,9 +1,47 @@
+const css = require('css')
 import addProperty from '../utils/addProperty'
 import fontface from './fontface'
 import keyframes from './keyframes'
 import standard from './standard'
+import tokenMap from './tokenMap.js'
 
-const css = require('css')
+function returnVarContent(cssValToCheck) {
+  if (cssValToCheck.includes('var(')) {
+    return cssValToCheck.substring(3, cssValToCheck.length - 1)
+  }
+
+  return cssValToCheck
+}
+
+function replacePSVar(val) {
+  let currentVal
+
+  if (typeof val === 'string') {
+    currentVal = returnVarContent(val)
+  }
+
+  if (typeof val === 'object') {
+    // TODO: figure out how to get in here
+    return val
+  }
+
+  console.log({ currentVal })
+
+  return val
+}
+
+function sanitizeStyles(styleObject) {
+  let updatedObject = Object.keys(styleObject).reduce((prev, current) => {
+    return {
+      ...prev,
+      [styleObject[current]]: replacePSVar(current),
+    }
+  }, styleObject)
+
+  // console.log({updatedObject})
+
+  return styleObject
+}
 
 const convertRules = (rules, res = {}) => {
   let result = res
@@ -11,10 +49,8 @@ const convertRules = (rules, res = {}) => {
     if (rule.type === 'media') {
       // Convert @media rules
       const name = `@media ${rule.media}`
-
       result[name] = result[name] || {}
       const media = result[name]
-
       convertRules(rule.rules, media)
     } else if (rule.type === 'font-face') {
       // Convert @font-face rules
@@ -33,12 +69,11 @@ const convertRules = (rules, res = {}) => {
     }
   })
 
-  return result
+  return sanitizeStyles(result)
 }
 
 const convertToJS = (input) => {
   // Parse CSS string into rules array
-
   try {
     const parsedCss = css.parse(input)
     const { rules } = parsedCss.stylesheet
