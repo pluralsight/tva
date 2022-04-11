@@ -1,6 +1,6 @@
 const yaml = require('yaml')
-const baseFilter = require('./filters/baseFilter')
-const jsFilter = require('./filters/jsFilter')
+const baseFilter = require('./filters/baseFilter.cjs')
+const jsFilter = require('./filters/jsFilter.cjs')
 
 // filters
 
@@ -41,7 +41,7 @@ const es6 = {
   files: [
     {
       ...jsFileConfig,
-      destination: 'index.js',
+      destination: 'wrapper.mjs',
       format: 'javascript/es6',
     },
   ],
@@ -50,11 +50,11 @@ const es6 = {
 const commonjs = {
   transformGroup: 'commonjs',
   transforms: jsTransforms,
-  buildPath: 'build/common/',
+  buildPath: 'build/',
   files: [
     {
       ...jsFileConfig,
-      destination: 'index.js',
+      destination: 'index.cjs',
       format: 'javascript/module-flat',
     },
   ],

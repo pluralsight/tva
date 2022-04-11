@@ -1,4 +1,4 @@
-const vars = require('./utils/vars')
+const vars = require('./utils/vars.cjs')
 
 const baseFileConfig = vars.baseFileConfig
 const transforms = vars.transforms

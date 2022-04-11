@@ -2,9 +2,14 @@
   "name": "@pluralsight/design-tokens",
   "version": "0.0.0",
   "description": "Design tokens for Pluralsight.",
-  "main": "build/common/index.js",
-  "module": "build/index.js",
+  "type": "module",
+  "main": "build/index.cjs",
+  "module": "build/wrapper.mjs",
   "types": "build/index.d.ts",
+  "exports": {
+    "import": "build/wrapper.mjs",
+    "require": "build/index.cjs"
+  },
   "files": [
     "build/**/*",
     "normalize.css",
@@ -16,9 +21,9 @@
   ],
   "scripts": {
     "build": "yarn build:skills && yarn build:flow",
-    "build:flow": "style-dictionary build --config ./flow.config.js",
-    "build:mobile": "style-dictionary build --config ./mobile.config.js",
-    "build:skills": "style-dictionary build",
+    "build:flow": "style-dictionary build --config ./flow.config.cjs",
+    "build:mobile": "style-dictionary build --config ./mobile.config.cjs",
+    "build:skills": "style-dictionary build --config ./config.cjs",
     "prebuild": "rm -rf build",
     "prepublishOnly": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"

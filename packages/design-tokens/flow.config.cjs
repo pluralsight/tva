@@ -1,4 +1,4 @@
-const vars = require('./utils/vars')
+const vars = require('./utils/vars.cjs')
 
 module.exports = {
   parsers: vars.parsers,
@@ -14,7 +14,7 @@ module.exports = {
     },
     common: {
       ...vars.commonjs,
-      buildPath: 'build/flow/common/',
+      buildPath: 'build/flow/',
     },
     ts: {
       ...vars.ts,
