@@ -5,6 +5,7 @@ module.exports = {
   source: [
     'tokens/base/*.yaml',
     'tokens/public/flow/color.yaml',
+    'tokens/public/flow/colorJS.yaml',
     'tokens/public/flow/lightJS.yaml',
   ],
   platforms: {
@@ -19,10 +20,6 @@ module.exports = {
     ts: {
       ...vars.ts,
       buildPath: 'build/flow/',
-    },
-    css: {
-      ...vars.css,
-      buildPath: 'build/flow/css/',
     },
     scss: {
       ...vars.scss,

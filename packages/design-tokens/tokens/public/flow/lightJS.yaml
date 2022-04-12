@@ -6,114 +6,115 @@
 # for each theme - not create additional unique ones).
 
 ps:
-  light:
-    background:
-      value: '{color.accent.background.flow-light.value}'
-    background-active:
-      value: '{color.accent.background-active.flow-light.value}'
-    background-hover:
-      value: '{color.accent.background-hover.flow-light.value}'
-    background-weak:
-      value: '{color.accent.background-weak.flow-light.value}'
-    background-weak-active:
-      value: '{color.accent.background-weak-active.flow-light.value}'
-    background-weak-hover:
-      value: '{color.accent.background-weak-hover.flow-light.value}'
-    border:
-      value: '{color.accent.border.flow-light.value}'
-    danger-background:
-      value: '{color.danger.background.flow-light.value}'
-    danger-background-active:
-      value: '{color.danger.background-active.flow-light.value}'
-    danger-background-hover:
-      value: '{color.danger.background-hover.flow-light.value}'
-    danger-background-weak:
-      value: '{color.danger.background-weak.flow-light.value}'
-    danger-border:
-      value: '{color.danger.border.flow-light.value}'
-    danger-text:
-      value: '{color.danger.label.flow-light.value}'
-    danger-text-weak:
-      value: '{color.danger.label-muted.flow-light.value}'
-    danger-text-medium:
-      value: '{color.danger.label-subtle.flow-light.value}'
-    info-background:
-      value: '{color.info.background.flow-light.value}'
-    info-background-active:
-      value: '{color.info.background-active.flow-light.value}'
-    info-background-hover:
-      value: '{color.info.background-hover.flow-light.value}'
-    info-background-weak:
-      value: '{color.info.background-weak.flow-light.value}'
-    info-border:
-      value: '{color.info.border.flow-light.value}'
-    info-text:
-      value: '{color.info.label.flow-light.value}'
-    info-text-weak:
-      value: '{color.info.label-muted.flow-light.value}'
-    info-text-medium:
-      value: '{color.info.label-subtle.flow-light.value}'
-    neutral-background:
-      value: '{color.neutral.background.flow-light.value}'
-    neutral-background-active:
-      value: '{color.neutral.background-active.flow-light.value}'
-    neutral-background-hover:
-      value: '{color.neutral.background-hover.flow-light.value}'
-    neutral-border:
-      value: '{color.neutral.border.flow-light.value}'
-    neutral-border-weak:
-      value: '{color.neutral.border-muted.flow-light.value}'
-    neutral-border-strong:
-      value: '{color.neutral.border-strong.flow-light.value}'
-    neutral-surface:
-      value: '{color.neutral.surface.flow-light.value}'
-    neutral-surface-weak:
-      value: '{color.neutral.surface-weak.flow-light.value}'
-    neutral-surface-medium:
-      value: '{color.neutral.surface-medium.flow-light.value}'
-    neutral-surface-strong:
-      value: '{color.neutral.surface-strong.flow-light.value}'
-    neutral-text:
-      value: '{color.neutral.label.flow-light.value}'
-    neutral-text-weak:
-      value: '{color.neutral.label-muted.flow-light.value}'
-    neutral-text-medium:
-      value: '{color.neutral.label-subtle.flow-light.value}'
-    success-background:
-      value: '{color.success.background.flow-light.value}'
-    success-background-active:
-      value: '{color.success.background-active.flow-light.value}'
-    success-background-hover:
-      value: '{color.success.background-hover.flow-light.value}'
-    success-background-weak:
-      value: '{color.success.background-weak.flow-light.value}'
-    success-border:
-      value: '{color.success.border.flow-light.value}'
-    success-text:
-      value: '{color.success.label.flow-light.value}'
-    success-text-weak:
-      value: '{color.success.label-muted.flow-light.value}'
-    success-text-medium:
-      value: '{color.success.label-subtle.flow-light.value}'
-    text:
-      value: '{color.accent.label.flow-light.value}'
-    text-weak:
-      value: '{color.accent.label-muted.flow-light.value}'
-    text-medium:
-      value: '{color.accent.label-subtle.flow-light.value}'
-    warning-background:
-      value: '{color.warning.background.flow-light.value}'
-    warning-background-active:
-      value: '{color.warning.background-active.flow-light.value}'
-    warning-background-hover:
-      value: '{color.warning.background-hover.flow-light.value}'
-    warning-background-weak:
-      value: '{color.warning.background-weak.flow-light.value}'
-    warning-border:
-      value: '{color.warning.border.flow-light.value}'
-    warning-text:
-      value: '{color.warning.label.flow-light.value}'
-    warning-text-weak:
-      value: '{color.warning.label-muted.flow-light.value}'
-    warning-text-medium:
-      value: '{color.warning.label-subtle.flow-light.value}'
+  flow:
+    light:
+      background:
+        value: '{color.accent.background.flow-light.value}'
+      background-active:
+        value: '{color.accent.background-active.flow-light.value}'
+      background-hover:
+        value: '{color.accent.background-hover.flow-light.value}'
+      background-weak:
+        value: '{color.accent.background-weak.flow-light.value}'
+      background-weak-active:
+        value: '{color.accent.background-weak-active.flow-light.value}'
+      background-weak-hover:
+        value: '{color.accent.background-weak-hover.flow-light.value}'
+      border:
+        value: '{color.accent.border.flow-light.value}'
+      danger-background:
+        value: '{color.danger.background.flow-light.value}'
+      danger-background-active:
+        value: '{color.danger.background-active.flow-light.value}'
+      danger-background-hover:
+        value: '{color.danger.background-hover.flow-light.value}'
+      danger-background-weak:
+        value: '{color.danger.background-weak.flow-light.value}'
+      danger-border:
+        value: '{color.danger.border.flow-light.value}'
+      danger-text:
+        value: '{color.danger.label.flow-light.value}'
+      danger-text-weak:
+        value: '{color.danger.label-muted.flow-light.value}'
+      danger-text-medium:
+        value: '{color.danger.label-subtle.flow-light.value}'
+      info-background:
+        value: '{color.info.background.flow-light.value}'
+      info-background-active:
+        value: '{color.info.background-active.flow-light.value}'
+      info-background-hover:
+        value: '{color.info.background-hover.flow-light.value}'
+      info-background-weak:
+        value: '{color.info.background-weak.flow-light.value}'
+      info-border:
+        value: '{color.info.border.flow-light.value}'
+      info-text:
+        value: '{color.info.label.flow-light.value}'
+      info-text-weak:
+        value: '{color.info.label-muted.flow-light.value}'
+      info-text-medium:
+        value: '{color.info.label-subtle.flow-light.value}'
+      neutral-background:
+        value: '{color.neutral.background.flow-light.value}'
+      neutral-background-active:
+        value: '{color.neutral.background-active.flow-light.value}'
+      neutral-background-hover:
+        value: '{color.neutral.background-hover.flow-light.value}'
+      neutral-border:
+        value: '{color.neutral.border.flow-light.value}'
+      neutral-border-weak:
+        value: '{color.neutral.border-muted.flow-light.value}'
+      neutral-border-strong:
+        value: '{color.neutral.border-strong.flow-light.value}'
+      neutral-surface:
+        value: '{color.neutral.surface.flow-light.value}'
+      neutral-surface-weak:
+        value: '{color.neutral.surface-weak.flow-light.value}'
+      neutral-surface-medium:
+        value: '{color.neutral.surface-medium.flow-light.value}'
+      neutral-surface-strong:
+        value: '{color.neutral.surface-strong.flow-light.value}'
+      neutral-text:
+        value: '{color.neutral.label.flow-light.value}'
+      neutral-text-weak:
+        value: '{color.neutral.label-muted.flow-light.value}'
+      neutral-text-medium:
+        value: '{color.neutral.label-subtle.flow-light.value}'
+      success-background:
+        value: '{color.success.background.flow-light.value}'
+      success-background-active:
+        value: '{color.success.background-active.flow-light.value}'
+      success-background-hover:
+        value: '{color.success.background-hover.flow-light.value}'
+      success-background-weak:
+        value: '{color.success.background-weak.flow-light.value}'
+      success-border:
+        value: '{color.success.border.flow-light.value}'
+      success-text:
+        value: '{color.success.label.flow-light.value}'
+      success-text-weak:
+        value: '{color.success.label-muted.flow-light.value}'
+      success-text-medium:
+        value: '{color.success.label-subtle.flow-light.value}'
+      text:
+        value: '{color.accent.label.flow-light.value}'
+      text-weak:
+        value: '{color.accent.label-muted.flow-light.value}'
+      text-medium:
+        value: '{color.accent.label-subtle.flow-light.value}'
+      warning-background:
+        value: '{color.warning.background.flow-light.value}'
+      warning-background-active:
+        value: '{color.warning.background-active.flow-light.value}'
+      warning-background-hover:
+        value: '{color.warning.background-hover.flow-light.value}'
+      warning-background-weak:
+        value: '{color.warning.background-weak.flow-light.value}'
+      warning-border:
+        value: '{color.warning.border.flow-light.value}'
+      warning-text:
+        value: '{color.warning.label.flow-light.value}'
+      warning-text-weak:
+        value: '{color.warning.label-muted.flow-light.value}'
+      warning-text-medium:
+        value: '{color.warning.label-subtle.flow-light.value}'
