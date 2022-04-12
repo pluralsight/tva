@@ -66,7 +66,7 @@ All of our web packages **depend on our normalize.css** file to be used in your 
 ```html
 <link
   rel="stylesheet"
-  href="https://unpkg.com/@pluralsight/design-tokens@alpha/normalize.css"
+  href="https://unpkg.com/@pluralsight/design-tokens@alpha/build/normalize/normalize.css"
 />
 ```
 
