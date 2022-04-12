@@ -5,7 +5,7 @@ module.exports = {
   source: [
     'tokens/base/*.yaml',
     'tokens/public/flow/color.yaml',
-    'tokens/public/flow/lightColors.yaml',
+    'tokens/public/flow/lightJS.yaml',
   ],
   platforms: {
     js: {

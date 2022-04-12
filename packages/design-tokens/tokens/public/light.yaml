@@ -1,0 +1,117 @@
+# THIS FILE IS ONLY CSS THEMES
+
+# This file should only export the light theme colors. This is to keep
+# performance high and prevent "token vomit" (i.e. we just need to overwrite
+# tokens for each theme - not create additional unique ones).
+
+ps:
+  background:
+    value: '{color.accent.background.light.value}'
+  background-active:
+    value: '{color.accent.background-active.light.value}'
+  background-hover:
+    value: '{color.accent.background-hover.light.value}'
+  background-weak:
+    value: '{color.accent.background-weak.light.value}'
+  background-weak-active:
+    value: '{color.accent.background-weak-active.light.value}'
+  background-weak-hover:
+    value: '{color.accent.background-weak-hover.light.value}'
+  border:
+    value: '{color.accent.border.light.value}'
+  danger-background:
+    value: '{color.danger.background.light.value}'
+  danger-background-active:
+    value: '{color.danger.background-active.light.value}'
+  danger-background-hover:
+    value: '{color.danger.background-hover.light.value}'
+  danger-background-weak:
+    value: '{color.danger.background-weak.light.value}'
+  danger-border:
+    value: '{color.danger.border.light.value}'
+  danger-text:
+    value: '{color.danger.label.light.value}'
+  danger-text-weak:
+    value: '{color.danger.label-muted.light.value}'
+  danger-text-medium:
+    value: '{color.danger.label-subtle.light.value}'
+  info-background:
+    value: '{color.info.background.light.value}'
+  info-background-active:
+    value: '{color.info.background-active.light.value}'
+  info-background-hover:
+    value: '{color.info.background-hover.light.value}'
+  info-background-weak:
+    value: '{color.info.background-weak.light.value}'
+  info-border:
+    value: '{color.info.border.light.value}'
+  info-text:
+    value: '{color.info.label.light.value}'
+  info-text-weak:
+    value: '{color.info.label-muted.light.value}'
+  info-text-medium:
+    value: '{color.info.label-subtle.light.value}'
+  neutral-background:
+    value: '{color.neutral.background.light.value}'
+  neutral-background-active:
+    value: '{color.neutral.background-active.light.value}'
+  neutral-background-hover:
+    value: '{color.neutral.background-hover.light.value}'
+  neutral-border:
+    value: '{color.neutral.border.light.value}'
+  neutral-border-weak:
+    value: '{color.neutral.border-muted.light.value}'
+  neutral-border-strong:
+    value: '{color.neutral.border-strong.light.value}'
+  neutral-surface:
+    value: '{color.neutral.surface.light.value}'
+  neutral-surface-weak:
+    value: '{color.neutral.surface-weak.light.value}'
+  neutral-surface-medium:
+    value: '{color.neutral.surface-medium.light.value}'
+  neutral-surface-strong:
+    value: '{color.neutral.surface-strong.light.value}'
+  neutral-text:
+    value: '{color.neutral.label.light.value}'
+  neutral-text-weak:
+    value: '{color.neutral.label-muted.light.value}'
+  neutral-text-medium:
+    value: '{color.neutral.label-subtle.light.value}'
+  success-background:
+    value: '{color.success.background.light.value}'
+  success-background-active:
+    value: '{color.success.background-active.light.value}'
+  success-background-hover:
+    value: '{color.success.background-hover.light.value}'
+  success-background-weak:
+    value: '{color.success.background-weak.light.value}'
+  success-border:
+    value: '{color.success.border.light.value}'
+  success-text:
+    value: '{color.success.label.light.value}'
+  success-text-weak:
+    value: '{color.success.label-muted.light.value}'
+  success-text-medium:
+    value: '{color.success.label-subtle.light.value}'
+  text:
+    value: '{color.accent.label.light.value}'
+  text-weak:
+    value: '{color.accent.label-muted.light.value}'
+  text-medium:
+    value: '{color.accent.label-subtle.light.value}'
+  warning-background:
+    value: '{color.warning.background.light.value}'
+  warning-background-active:
+    value: '{color.warning.background-active.light.value}'
+  warning-background-hover:
+    value: '{color.warning.background-hover.light.value}'
+  warning-background-weak:
+    value: '{color.warning.background-weak.light.value}'
+  warning-border:
+    value: '{color.warning.border.light.value}'
+  warning-text:
+    value: '{color.warning.label.light.value}'
+  warning-text-weak:
+    value: '{color.warning.label-muted.light.value}'
+  warning-text-medium:
+    value: '{color.warning.label-subtle.light.value}'

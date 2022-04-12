@@ -1,7 +1,7 @@
 function jsFilter(token) {
   if (
     token.filePath.includes('color.yaml') ||
-    token.filePath.includes('lightColors.yaml')
+    token.filePath.includes('lightJS.yaml')
   ) {
     return token
   }

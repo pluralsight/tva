@@ -29,7 +29,7 @@ const parsers = [
 const skillsSources = [
   'tokens/base/*.yaml',
   'tokens/public/color.yaml',
-  'tokens/public/lightColors.yaml',
+  'tokens/public/lightJS.yaml',
 ]
 
 // platforms

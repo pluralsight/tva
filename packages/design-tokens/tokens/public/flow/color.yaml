@@ -1,11 +1,6 @@
 # THIS FILE IS ONLY FOR THE FLOW TEAM
-
-# This file should only export the dark theme colors. Other themes
-# will be declared in our normalize.css file. This is to keep performance
-# high and prevent "token vomit" (i.e. we just need to overwrite tokens
-# for each theme - not create additional unique ones).
-
-# This file should only export the dark theme colors. Other themes
+#
+# This file should only export the dark theme colors. Themes
 # will be declared in our normalize.css file. This is to keep performance
 # high and prevent "token vomit" (i.e. we just need to overwrite tokens
 # for each theme - not create additional unique ones).

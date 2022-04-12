@@ -20,10 +20,11 @@
     "build/**/*.scss"
   ],
   "scripts": {
-    "build": "yarn build:skills && yarn build:flow",
+    "build": "yarn build:skills && yarn build:flow && yarn build:themes",
     "build:flow": "style-dictionary build --config ./flow.config.cjs",
     "build:mobile": "style-dictionary build --config ./mobile.config.cjs",
     "build:skills": "style-dictionary build --config ./config.cjs",
+    "build:themes": "style-dictionary build --config ./theme.config.cjs",
     "prebuild": "rm -rf build",
     "prepublishOnly": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
