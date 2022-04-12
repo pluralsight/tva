@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      description="The official design guides and developer tool suite for Pluralsight."
     >
       <HomepageHeader />
       <main>

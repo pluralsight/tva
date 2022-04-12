@@ -71,7 +71,7 @@
 
 :root {
   --ifm-code-font-size: 95%;
-  --ifm-color-primary: var(--ps-background);
+  --ifm-color-primary: var(--ps-text-weak);
   --ifm-font-color-base: var(--ps-neutral-text);
   --ifm-heading-font-family: 'PS TT Commons Roman', 'Gotham SSm A',
     'Gotham SSm B', arial, sans-serif;

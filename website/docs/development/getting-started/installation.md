@@ -11,7 +11,7 @@ This page is a work in progress.
 
 :::
 
-#### Install Pluralsight's headless UI framework that works with any library or tech stack.
+<p class="page-subheadline" markdown="1">Install Pluralsight's headless UI framework that works with any library or tech stack.</p>
 
 Pluralsight Design is available as a set of [npm packages](https://github.com/pluralsight/tva) for web and our `design-tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
 
@@ -69,6 +69,10 @@ All of our web packages **depend on our normalize.css** file to be used in your 
   href="https://unpkg.com/@pluralsight/design-tokens@alpha/build/normalize/normalize.css"
 />
 ```
+
+## Module Support
+
+All of our web packages use the latest [Node Standard](https://nodejs.org/api/packages.html#writing-dual-packages-while-avoiding-or-minimizing-hazards) for supporting both CommonJS and ES module environments.
 
 ## Design resources
 

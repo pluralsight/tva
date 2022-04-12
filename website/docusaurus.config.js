@@ -16,7 +16,7 @@ function createDocsPath(path) {
 const config = {
   title: 'Pluralsight Design',
   tagline:
-    'A single set of principles, guidelines, patterns, assets and components for Pluralsight.',
+    'A design and development platform for delivering Pluralsight guides and tools.',
   url: 'https://design.pluralsight.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

@@ -43,12 +43,20 @@ Themes **depend on the normalize.css** file to be used in your project. Check ou
 
 ### Flow theme tokens
 
-For any of our tokens, we highly recommend using the CSS solution as you will have a faster experience for your team or product. By nature, all of our themes are shipped with our normalize.css file.
+For any of our tokens, we highly recommend using the CSS solution as you will have a faster experience for your team or product. By nature, all of our themes are shipped in our normalize.css file.
 
 However, if you prefer to use CSS-in-JS, you can easily import the Flow theme by targeting its directory in our package.
 
+The default solution returns a commonjs build.
+
 ```javascript title="Importing Flow CSS-in-JS Variables"
 import { psText } from '@pluralsight/design-tokens/build/flow'
+```
+
+If you would rather use ES Modules, you can import the wrapped version.
+
+```javascript title="Importing Flow CSS-in-JS ESM Variables"
+import { psText } from '@pluralsight/design-tokens/build/flow/wrapper.mjs'
 ```
 
 ### Example solutions for CSS-in-JS

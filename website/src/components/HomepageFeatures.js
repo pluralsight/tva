@@ -4,29 +4,29 @@ import styles from './HomepageFeatures.module.css'
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Design',
     description: (
       <>
-        This system was designed to be your one stop shop whether you're a
-        designer or developer!
+        Check out all our design resources in <strong>Foundations</strong>,{' '}
+        <strong>Content</strong>, and <strong>Components</strong>.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Development',
     description: (
       <>
-        Foundations, Content, and Components are design resources and everything
-        a developer needs is in Development.
+        View our flexible UI tool suite to build a PS branded app in{' '}
+        <strong>Development</strong>.
       </>
     ),
   },
   {
-    title: 'Compound Design',
+    title: 'Announcements',
     description: (
       <>
-        Extend or customize our library suite to fit your needs. Use one or
-        combine them all to make your own powerful solution.
+        Stay up to date with our latest development releases in the{' '}
+        <strong>Blog</strong> tab.
       </>
     ),
   },
