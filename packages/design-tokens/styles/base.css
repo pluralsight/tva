@@ -1,0 +1,96 @@
+@import url('https://unpkg.com/normalize.css@latest/normalize.css');
+
+html {
+  box-sizing: border-box;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-feature-settings: 'tnum' on, 'lnum' on;
+  font-size: 1em;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+  line-height: 1.5;
+  text-size-adjust: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+blockquote,
+p,
+address,
+hr,
+table,
+fieldset,
+figure,
+pre {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+}
+
+ul,
+ol,
+dd {
+  line-height: 1.5;
+  margin-left: 24px;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+img[width],
+img[height] {
+  max-width: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.psds-screenreader-only {
+  border: 0;
+  height: 1px;
+  left: -10000px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: auto;
+  width: 1px;
+}

@@ -1267,6 +1267,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['ignore', 'npm:5.1.9'],
         ['image-size', 'npm:1.0.1'],
         ['immer', 'npm:9.0.12'],
+        ['immutable', 'npm:4.0.0'],
         ['import-fresh', 'npm:3.3.0'],
         ['import-lazy', 'npm:4.0.0'],
         ['import-local', 'npm:3.0.3'],
@@ -1890,6 +1891,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['safe-buffer', 'npm:5.1.2'],
         ['safer-buffer', 'npm:2.1.2'],
         ['sandbox', 'workspace:packages/headless-styles/sandbox'],
+        ['sass', 'npm:1.50.0'],
         ['sax', 'npm:1.2.4'],
         ['saxes', 'npm:5.0.1'],
         ['scheduler', 'npm:0.21.0'],
@@ -1929,7 +1931,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['sort-css-media-queries', 'npm:2.0.4'],
         ['source-list-map', 'npm:2.0.1'],
         ['source-map', 'npm:0.6.1'],
-        ['source-map-js', 'npm:0.6.2'],
+        ['source-map-js', 'npm:1.0.2'],
         ['source-map-resolve', 'npm:0.6.0'],
         ['source-map-support', 'npm:0.5.20'],
         ['sourcemap-codec', 'npm:1.4.8'],
@@ -16964,6 +16966,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     'workspace:packages/design-tokens',
                   ],
                   ['@types/yaml', 'npm:1.9.6'],
+                  ['sass', 'npm:1.50.0'],
                   ['style-dictionary', 'npm:3.7.0'],
                   ['yaml', 'npm:1.10.2'],
                 ],
@@ -30185,6 +30188,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
+          'immutable',
+          [
+            [
+              'npm:4.0.0',
+              {
+                packageLocation:
+                  './.yarn/cache/immutable-npm-4.0.0-74b844f82e-4b5e9181e4.zip/node_modules/immutable/',
+                packageDependencies: [['immutable', 'npm:4.0.0']],
+                linkType: 'HARD',
+              },
+            ],
+          ],
+        ],
+        [
           'import-fresh',
           [
             [
@@ -40128,6 +40145,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                 ],
                 linkType: 'SOFT',
+              },
+            ],
+          ],
+        ],
+        [
+          'sass',
+          [
+            [
+              'npm:1.50.0',
+              {
+                packageLocation:
+                  './.yarn/cache/sass-npm-1.50.0-80262d33a1-43738cc83a.zip/node_modules/sass/',
+                packageDependencies: [
+                  ['sass', 'npm:1.50.0'],
+                  ['chokidar', 'npm:3.5.3'],
+                  ['immutable', 'npm:4.0.0'],
+                  ['source-map-js', 'npm:1.0.2'],
+                ],
+                linkType: 'HARD',
               },
             ],
           ],
