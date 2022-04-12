@@ -25,15 +25,24 @@ that are [recommended]('../../.vsode/extensions.json) are installed in order to 
 
 There are two types of tokens to create: private or public.
 
-### Creating private tokens
+### Base Tokens
 
-To create a new private token, simply add the token to the **base** directory. Everything inside here will get filtered out during the build process. Private tokens are only meant to be used as reference items for public tokens.
+These our all of the projects private tokens and single source of truth for each custom theme value (i.e. light, dark, flow-dark, etc.). Everything inside here will get filtered out during the build process. Private tokens are only meant to be used as reference items for public tokens.
 
 ### Creating public tokens
 
-Public tokens are the [semantic tokens](https://design.pluralsight.com/development/packages/tokens/intro#naming-convention) we ship to each team/product within Pluralsight. Therefore, it should rarely be updated or added to unless there is a new branding **color** change.
+Public tokens are the [semantic tokens](https://design.pluralsight.com/development/packages/tokens/intro#naming-convention) we ship to each team/product within Pluralsight. Therefore, it should rarely be updated or added to unless there is a new branding color/theme change.
 
 This is to help keep all of our teams apps as performant as possible since the quanity and _usage_ of tokens **can make a negative impact** in browsers.
+
+### Updating custom themes
+
+If a theme needs to be updated (i.e. light, dark, flow-dark, etc.), all you need to do is edit the `value` in the `tokens/base/<file>.yaml` location. However, due to the custom tooling we are using, there are a few rules to consider:
+
+- **DO NOT EDIT ANYTHING IN THE PUBLIC DIRECTORY**. These values source all the base tokens and should never be altered.
+- **DO NOT CHANGE PROJECT STRUCTURE OR FILE NAMES**. We use a strict and complex filtering sytems that depends on both of these to be consistent.
+
+Our base directory uses a file system that matches the PS Brand Theme color guide to help keep all of our themes consistent. For all themes, the "accent" correlates to the "default" semantic tokens.
 
 ## Testing your updates
 
