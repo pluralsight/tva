@@ -1,0 +1,183 @@
+.ps_btn_base {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-size: 1rem;
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+  height: 2.5rem;
+  justify-content: center;
+  outline: none;
+  padding-inline: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.ps_btn_text {
+  color: var(--ps-neutral-text-weak);
+}
+
+.ps_btn_text-weak {
+  color: var(--ps-text-medium);
+}
+
+.ps_btn_weak {
+  background-color: var(--ps-neutral-background);
+  color: var(--ps-neutral-text);
+}
+
+.ps_btn_medium {
+  background-color: var(--ps-background);
+  color: #fff;
+}
+
+.ps_btn_strong {
+  background-color: var(--ps-background-weak);
+  color: var(--ps-text);
+}
+
+.ps_btn_size-xs {
+  font-size: 0.75rem;
+  height: 1.5rem;
+  padding-inline: 8px;
+}
+
+.ps_btn_size-s {
+  font-size: 0.875rem;
+  height: 2rem;
+  padding-inline: 12px;
+}
+
+.ps_btn_size-l {
+  height: 3rem;
+  padding-inline: 24px;
+}
+
+/* hover styles */
+
+.ps_btn_text:hover,
+.ps_btn_text-weak:hover,
+.ps_btn_medium:hover,
+.ps_btn_strong:hover {
+  color: #fff;
+}
+
+.ps_btn_text-weak:hover,
+.ps_btn_medium:hover,
+.ps_btn_strong:hover {
+  background-color: var(--ps-background-hover);
+}
+
+.ps_btn_text:hover,
+.ps_btn_weak:hover {
+  background-color: var(--ps-neutral-background-hover);
+}
+
+/* active styles */
+
+.ps_btn_base:active {
+  outline: none;
+}
+
+.ps_btn_text:active,
+.ps_btn_text-weak:active,
+.ps_btn_medium:active,
+.ps_btn_strong:active {
+  background-color: var(--ps-background-active);
+}
+
+.ps_btn_weak:active {
+  background-color: var(--ps-neutral-background-active);
+}
+
+/* focus styles */
+
+.ps_btn_base:focus {
+  outline: 3px solid var(--ps-background-active);
+}
+
+.ps_btn_base:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+/* light theme */
+
+.ps_btn_light .ps_btn_base.ps_btn_text:hover,
+html[data-theme='light'] .base.text:hover {
+  color: var(--ps-neutral-text-weak);
+}
+
+/* chakra styles */
+
+.ps_btn_chakra {
+  background-color: transparent !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  height: 2.5rem !important;
+  outline-offset: initial !important;
+}
+
+.ps_btn_chakra.weak {
+  background-color: var(--ps-neutral-background) !important;
+}
+
+.ps_btn_chakra.medium {
+  background-color: var(--ps-background) !important;
+}
+
+.ps_btn_chakra.strong {
+  background-color: var(--ps-background-weak) !important;
+}
+
+.ps_btn_chakra.size-xs {
+  font-size: 0.75rem !important;
+  height: 1.5rem !important;
+  padding-inline: 8px !important;
+}
+
+.ps_btn_chakra.size-s {
+  font-size: 0.875rem !important;
+  height: 2rem !important;
+  padding-inline: 12px !important;
+}
+
+.ps_btn_chakra.size-l {
+  height: 3rem !important;
+  padding-inline: 24px !important;
+}
+
+.ps_btn_chakra.text-weak:hover,
+.ps_btn_chakra.medium:hover,
+.ps_btn_chakra.strong:hover {
+  background-color: var(--ps-background-hover) !important;
+}
+
+.ps_btn_chakra.text:hover,
+.ps_btn_chakra.weak:hover {
+  background-color: var(--ps-neutral-background-hover) !important;
+}
+
+.ps_btn_chakra.text:active,
+.ps_btn_chakra.text-weak:active,
+.ps_btn_chakra.medium:active,
+.ps_btn_chakra.strong:active {
+  background-color: var(--ps-background-active) !important;
+}
+
+.ps_btn_chakra.weak:active {
+  background-color: var(--ps-neutral-background-active) !important;
+}
