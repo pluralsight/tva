@@ -2,6 +2,6 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "build/common"
+    "outDir": "build"
   }
 }

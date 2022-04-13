@@ -2,9 +2,14 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "main": "build/common/index.js",
-  "module": "build/index.js",
+  "type": "module",
+  "main": "build/index.js",
+  "module": "build/es/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    "import": "build/es/index.js",
+    "require": "build/index.js"
+  },
   "files": [
     "build/**/*"
   ],
