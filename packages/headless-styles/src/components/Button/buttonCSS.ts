@@ -5,7 +5,7 @@ import './buttonCSS.css'
 export function getButtonProps(options?: ButtonOptions) {
   const { kind, size, tech } = getDefaultOptions(options)
   const formattedSize = `size-${size}`
-  const techClass = tech ? 'ps_btn_tech' : ''
+  const techClass = tech ? `ps_btn_${tech}` : ''
 
   return {
     className: `ps_btn ps_btn_base ps_btn_${kind} ps_btn_${formattedSize} ${techClass}`,
