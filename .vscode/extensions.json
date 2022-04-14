@@ -8,6 +8,7 @@
     "VisualStudioExptTeam.vscodeintellicode",
     "stylelint.vscode-stylelint",
     "sonarsource.sonarlint-vscode",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "silvenon.mdx"
   ]
 }

@@ -5,7 +5,6 @@ describe('Button CSS', () => {
     const baseClass = 'ps-btn base'
     const result = {
       className: `${baseClass} text size-m `,
-      rawClass: 'base text size-m ',
       type: 'button',
     }
 
@@ -18,22 +17,18 @@ describe('Button CSS', () => {
       expect(getButtonProps({ kind: 'text-weak' })).toEqual({
         ...result,
         className: `${baseClass} text-weak size-m `,
-        rawClass: 'base text-weak size-m ',
       })
       expect(getButtonProps({ kind: 'weak' })).toEqual({
         ...result,
         className: `${baseClass} weak size-m `,
-        rawClass: 'base weak size-m ',
       })
       expect(getButtonProps({ kind: 'medium' })).toEqual({
         ...result,
         className: `${baseClass} medium size-m `,
-        rawClass: 'base medium size-m ',
       })
       expect(getButtonProps({ kind: 'strong' })).toEqual({
         ...result,
         className: `${baseClass} strong size-m `,
-        rawClass: 'base strong size-m ',
       })
     })
 
@@ -42,17 +37,14 @@ describe('Button CSS', () => {
       expect(getButtonProps({ size: 'xs' })).toEqual({
         ...result,
         className: `${baseClass} text size-xs `,
-        rawClass: 'base text size-xs ',
       })
       expect(getButtonProps({ size: 's' })).toEqual({
         ...result,
         className: `${baseClass} text size-s `,
-        rawClass: 'base text size-s ',
       })
       expect(getButtonProps({ size: 'l' })).toEqual({
         ...result,
         className: `${baseClass} text size-l `,
-        rawClass: 'base text size-l ',
       })
     })
 
@@ -60,7 +52,10 @@ describe('Button CSS', () => {
       expect(getButtonProps({ tech: 'chakra' })).toEqual({
         ...result,
         className: `${baseClass} text size-m chakra`,
-        rawClass: 'base text size-m chakra',
+      })
+
+      expect(getButtonProps({ tech: 'svelte' })).toEqual({
+        class: `base text size-m`,
       })
     })
   })
