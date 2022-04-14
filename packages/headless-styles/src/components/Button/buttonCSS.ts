@@ -9,6 +9,7 @@ export function getButtonProps(options?: ButtonOptions) {
 
   return {
     className: `ps-btn ${styles.base} ${styles[kind]} ${styles[formattedSize]} ${framework}`,
+    rawClass: `base ${kind} ${formattedSize} ${framework}`,
     type: 'button' as ButtonType,
   }
 }
