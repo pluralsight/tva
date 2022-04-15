@@ -34,3 +34,11 @@
 .icon path {
   fill: var(--ps-neutral-text-weak);
 }
+
+.icon path.svelteBackground {
+  fill: var(--ps-neutral-surface);
+}
+
+.svelteOutline {
+  fill: var(--ps-neutral-text-weak);
+}

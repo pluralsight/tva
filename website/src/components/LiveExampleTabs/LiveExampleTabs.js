@@ -4,9 +4,9 @@ import styles from './LiveExampleTabs.module.css'
 
 const codeIcon = (
   <svg
+    aria-hidden="true"
     className={styles.icon}
     focusable="false"
-    aria-hidden="true"
     viewBox="0 0 24 24"
   >
     <path
@@ -17,23 +17,41 @@ const codeIcon = (
 )
 const sandboxIcon = (
   <svg
+    aria-hidden="true"
     className={styles.icon}
     focusable="false"
-    aria-hidden="true"
     viewBox="0 0 1024 1024"
   >
     <path d="M755 140.3l0.5-0.3h0.3L512 0 268.3 140h-0.3l0.8 0.4L68.6 256v512L512 1024l443.4-256V256L755 140.3z m-30 506.4v171.2L548 920.1V534.7L883.4 341v215.7l-158.4 90z m-584.4-90.6V340.8L476 534.4v385.7L300 818.5V646.7l-159.4-90.6zM511.7 280l171.1-98.3 166.3 96-336.9 194.5-337-194.6 165.7-95.7L511.7 280z"></path>
   </svg>
 )
-
+const svelteLogo = (
+  <svg
+    aria-hidden="true"
+    className={`${styles.icon}`}
+    fill="none"
+    focusable="false"
+    viewBox="0 0 98.1 118"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      className={styles.svelteOutline}
+      d="M91.8 15.6C80.9-.1 59.2-4.7 43.6 5.2L16.1 22.8C8.6 27.5 3.4 35.2 1.9 43.9c-1.3 7.3-.2 14.8 3.3 21.3-2.4 3.6-4 7.6-4.7 11.8-1.6 8.9.5 18.1 5.7 25.4 11 15.7 32.6 20.3 48.2 10.4l27.5-17.5c7.5-4.7 12.7-12.4 14.2-21.1 1.3-7.3.2-14.8-3.3-21.3 2.4-3.6 4-7.6 4.7-11.8 1.7-9-.4-18.2-5.7-25.5"
+    />
+    <path
+      className={styles.svelteBackground}
+      d="M40.9 103.9c-8.9 2.3-18.2-1.2-23.4-8.7-3.2-4.4-4.4-9.9-3.5-15.3.2-.9.4-1.7.6-2.6l.5-1.6 1.4 1c3.3 2.4 6.9 4.2 10.8 5.4l1 .3-.1 1c-.1 1.4.3 2.9 1.1 4.1 1.6 2.3 4.4 3.4 7.1 2.7.6-.2 1.2-.4 1.7-.7L65.5 72c1.4-.9 2.3-2.2 2.6-3.8.3-1.6-.1-3.3-1-4.6-1.6-2.3-4.4-3.3-7.1-2.6-.6.2-1.2.4-1.7.7l-10.5 6.7c-1.7 1.1-3.6 1.9-5.6 2.4-8.9 2.3-18.2-1.2-23.4-8.7-3.1-4.4-4.4-9.9-3.4-15.3.9-5.2 4.1-9.9 8.6-12.7l27.5-17.5c1.7-1.1 3.6-1.9 5.6-2.5 8.9-2.3 18.2 1.2 23.4 8.7 3.2 4.4 4.4 9.9 3.5 15.3-.2.9-.4 1.7-.7 2.6l-.5 1.6-1.4-1c-3.3-2.4-6.9-4.2-10.8-5.4l-1-.3.1-1c.1-1.4-.3-2.9-1.1-4.1-1.6-2.3-4.4-3.3-7.1-2.6-.6.2-1.2.4-1.7.7L32.4 46.1c-1.4.9-2.3 2.2-2.6 3.8s.1 3.3 1 4.6c1.6 2.3 4.4 3.3 7.1 2.6.6-.2 1.2-.4 1.7-.7l10.5-6.7c1.7-1.1 3.6-1.9 5.6-2.5 8.9-2.3 18.2 1.2 23.4 8.7 3.2 4.4 4.4 9.9 3.5 15.3-.9 5.2-4.1 9.9-8.6 12.7l-27.5 17.5c-1.7 1.1-3.6 1.9-5.6 2.5"
+    />
+  </svg>
+)
 const chakraLogo = (
   <svg
-    className={`${styles.icon} ${styles.chakra}`}
-    viewBox="0 0 582 582"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    focusable="false"
     aria-hidden="true"
+    className={`${styles.icon} ${styles.chakra}`}
+    fill="none"
+    focusable="false"
+    viewBox="0 0 582 582"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <rect className={styles.chakraCircle} width="582" height="582" rx="291" />
     <path d="M157.521 303.421L355.881 106.426C359.587 102.746 365.55 107.225 363.049 111.809L289.22 247.123C287.573 250.141 289.758 253.821 293.196 253.821H420.782C424.892 253.821 426.877 258.857 423.872 261.661L200.293 470.326C196.284 474.067 190.317 468.796 193.536 464.356L299.373 318.351C301.543 315.357 299.404 311.164 295.706 311.164H160.713C156.67 311.164 154.653 306.27 157.521 303.421Z" />
@@ -42,12 +60,12 @@ const chakraLogo = (
 
 const muiLogo = (
   <svg
+    aria-hidden="true"
     className={styles.icon}
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 36 32"
     fill="none"
     focusable="false"
-    aria-hidden="true"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 36 32"
   >
     <path
       fillRule="evenodd"
@@ -87,7 +105,7 @@ const tabs = {
       label: 'View MUI / Joy',
     },
     svelte: {
-      icon: sandboxIcon,
+      icon: svelteLogo,
       id: 'svelte',
       label: 'View Svelte',
     },
