@@ -1,0 +1,28 @@
+.base {
+  background-color: var(--ps-neutral-background-hover);
+  border-radius: 4px;
+  color: var(--ps-neutral-text-weak);
+  display: inline-block;
+  font-size: 0.75rem;
+  font-variation-settings: 'wght' 500;
+  font-weight: 500;
+  padding-inline-end: 4px;
+  padding-inline-start: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.weak,
+.medium,
+.strong {
+  composes: base;
+}
+
+.weak {
+  background-color: transparent;
+  border: 1px solid var(--ps-neutral-border-weak);
+}
+
+.medium {
+  background-color: var(--ps-neutral-border-weak);
+}

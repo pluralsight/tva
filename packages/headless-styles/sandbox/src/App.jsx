@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getButtonProps } from '../../src'
 import Button from './components/Button'
+import Badge from './components/Badge'
 import './App.css'
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           {theme === 'dark' ? '🌞' : '🌙'}
         </button>
       </header>
+
+      <Badge />
       <Button />
     </div>
   )

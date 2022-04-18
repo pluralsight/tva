@@ -26,6 +26,12 @@ function transformValue(style: NestedStyleValue): NestedStyleValue {
   return `{${psuedoStyles}}`
 }
 
+// Public
+
+export function createSvelteObj(classname = '') {
+  return { class: classname }
+}
+
 export function transformStyles(styleObject: StyleObject) {
   return Object.keys(styleObject)
     .reduce((prev, current) => {

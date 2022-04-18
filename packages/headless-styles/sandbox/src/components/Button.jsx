@@ -1,10 +1,13 @@
 import { getButtonProps, getJSButtonProps } from '../../../src'
 
-export default function Button() {
-  console.log({ jsStyles: getJSButtonProps({ kind: 'medium', size: 'xs' }) })
+export default function Button(props) {
+  if (props.logJS) {
+    console.log({ jsStyles: getJSButtonProps({ kind: 'medium', size: 'xs' }) })
+  }
 
   return (
-    <div>
+    <div id="button">
+      <h3>Button</h3>
       <div className="App-container">
         <button {...getButtonProps()}>default</button>
         <button {...getButtonProps({ kind: 'text-weak' })}>text-weak</button>

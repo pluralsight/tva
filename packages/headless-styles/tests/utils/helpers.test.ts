@@ -1,6 +1,12 @@
-import { transformStyles } from '../../src/utils/helpers'
+import { createSvelteObj, transformStyles } from '../../src/utils/helpers'
 
 describe('helpers', () => {
+  test('should return a Svelte Obj if true', () => {
+    expect(createSvelteObj('testClass')).toEqual({
+      class: 'testClass',
+    })
+  })
+
   test('should return a JS literal style string', () => {
     const styles = {
       background: 'black',
