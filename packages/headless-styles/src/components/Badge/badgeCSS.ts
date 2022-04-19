@@ -7,7 +7,7 @@ export function getBadgeProps(options?: BadgeOptions) {
   const { kind, tech } = getDefaultBadgeOptions(options)
 
   if (tech === 'svelte') {
-    return createSvelteObj(`ps-badge ${kind}`)
+    return createSvelteObj(`ps-badge ${styles.base} ${kind}`)
   }
 
   return {

@@ -25,7 +25,7 @@ describe('Badge CSS', () => {
 
     test('should accept a tech type', () => {
       expect(getBadgeProps({ tech: 'svelte' })).toEqual({
-        class: 'ps-badge strong',
+        class: 'ps-badge base strong',
       })
     })
   })
