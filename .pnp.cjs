@@ -17009,7 +17009,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                     '@pluralsight/headless-styles',
                     'workspace:packages/headless-styles',
                   ],
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                   ['@types/copyfiles', 'npm:2.4.1'],
                   ['@types/jest', 'npm:27.4.1'],
                   ['@types/react', 'npm:17.0.40'],
@@ -17017,6 +17016,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['identity-obj-proxy', 'npm:3.0.0'],
                   ['kebab-case', 'npm:1.0.1'],
                   ['renamer', 'npm:4.0.0'],
+                  ['tslib', 'npm:2.3.1'],
                   [
                     'typescript',
                     'patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8',
