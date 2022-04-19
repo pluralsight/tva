@@ -15,15 +15,18 @@
   ],
   "sideEffects": [
     "**/*.css",
-    "build/index.js"
+    "build/es/**/*.css",
+    "build/index.js",
+    "build/es/index.js"
   ],
   "workspaces": [
     "sandbox"
   ],
   "scripts": {
     "build": "yarn build:common && yarn build:es",
-    "build:common": "tsc --project tsconfig.cjs.json",
-    "build:es": "yarn copy:css && tsc --project tsconfig.build.json",
+    "build:common": "yarn copy:css && tsc --project tsconfig.cjs.json",
+    "build:es": "yarn copy:es-css && tsc --project tsconfig.build.json",
+    "copy:es-css": "copyfiles --up 1 ./src/**/*.module.css build/es",
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
