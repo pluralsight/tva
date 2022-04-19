@@ -3,31 +3,30 @@
 //
 // Manual changes will be lost - proceed with caution!
 
-
 export default {
-  "base": {
-    "backgroundColor": "hsl(237deg 30% 36% / 100%)",
-    "borderRadius": "4px",
-    "color": "hsl(235deg 30% 78% / 100%)",
-    "display": "inline-block",
-    "fontSize": "0.75rem",
-    "fontVariationSettings": "'wght' 500",
-    "fontWeight": "500",
-    "paddingInlineEnd": "4px",
-    "paddingInlineStart": "4px",
-    "verticalAlign": "middle",
-    "whiteSpace": "nowrap"
+  psBadge: {
+    backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+    borderRadius: '4px',
+    color: 'hsl(235deg 30% 78% / 100%)',
+    display: 'inline-block',
+    fontSize: '0.75rem',
+    fontVariationSettings: "'wght' 500",
+    fontWeight: '500',
+    paddingInlineEnd: '4px',
+    paddingInlineStart: '4px',
+    verticalAlign: 'middle',
+    whiteSpace: 'nowrap',
   },
-  "weak": {
-    "composes": "base",
-    "backgroundColor": "transparent",
-    "border": "1px solid hsl(240deg 31% 25% / 100%)"
+  weak: {
+    composes: 'psBadge',
+    backgroundColor: 'transparent',
+    border: '1px solid hsl(240deg 31% 25% / 100%)',
   },
-  "medium": {
-    "composes": "base",
-    "backgroundColor": "hsl(240deg 31% 25% / 100%)"
+  medium: {
+    composes: 'psBadge',
+    backgroundColor: 'hsl(240deg 31% 25% / 100%)',
   },
-  "strong": {
-    "composes": "base"
-  }
+  strong: {
+    composes: 'psBadge',
+  },
 }

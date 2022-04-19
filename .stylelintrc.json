@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
   "plugins": ["stylelint-order", "stylelint-prettier"],
   "rules": {
+    "value-keyword-case": null,
     "no-missing-end-of-source-newline": null,
     "order/properties-alphabetical-order": true,
     "selector-class-pattern": null

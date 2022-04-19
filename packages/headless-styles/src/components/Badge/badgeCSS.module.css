@@ -1,4 +1,4 @@
-.base {
+.psBadgeBase {
   background-color: var(--ps-neutral-background-hover);
   border-radius: 4px;
   color: var(--ps-neutral-text-weak);
@@ -15,7 +15,7 @@
 .weak,
 .medium,
 .strong {
-  composes: base;
+  composes: psBadgeBase;
 }
 
 .weak {
