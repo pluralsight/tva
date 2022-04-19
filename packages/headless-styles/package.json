@@ -4,10 +4,10 @@
   "description": "Headless styles for Pluralsight.",
   "type": "module",
   "main": "build/index.js",
-  "module": "build/es/index.js",
+  "module": "build/wrapper.mjs",
   "types": "build/index.d.ts",
   "exports": {
-    "import": "build/es/index.js",
+    "import": "build/wrapper.mjs",
     "require": "build/index.js"
   },
   "files": [
@@ -17,7 +17,7 @@
     "**/*.css",
     "build/es/**/*.css",
     "build/index.js",
-    "build/es/index.js"
+    "build/wrapper.mjs"
   ],
   "workspaces": [
     "sandbox"
@@ -25,9 +25,11 @@
   "scripts": {
     "build": "yarn build:common && yarn build:es",
     "build:common": "yarn copy:css && tsc --project tsconfig.cjs.json",
-    "build:es": "yarn copy:es-css && tsc --project tsconfig.build.json",
-    "copy:es-css": "copyfiles --up 1 ./src/**/*.module.css build/es",
+    "build:es": "yarn build:wrapper && yarn rename:wrapper && yarn copy:es",
+    "build:wrapper": "renamer --path-element name src/index.ts --find 'index' --replace 'wrapper'",
+    "copy:es": "copyfiles --up 1 ./src/wrapper.mjs build",
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
+    "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.mjs'",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
@@ -40,6 +42,7 @@
     "@types/react": "^17.0.40",
     "copyfiles": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
+    "renamer": "^4.0.0",
     "typescript": "4.4.4"
   },
   "keywords": [
