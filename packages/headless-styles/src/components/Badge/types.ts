@@ -1,8 +1,9 @@
 export interface BadgeOptions {
-  kind?: 'weak' | 'medium' | 'strong'
+  kind?: Kind
   tech?: Tech
 }
 
 // types
 
-export type Tech = 'svelte' | ''
+export type Kind = 'weak' | 'medium' | 'strong'
+export type Tech = 'svelte' | 'mui' | ''

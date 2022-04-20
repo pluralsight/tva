@@ -3,6 +3,13 @@ import { getDefaultBadgeOptions } from './shared'
 import styles from './generated/badgeCSS.module'
 import type { BadgeOptions } from './types'
 
+export const muiLabelOverride = `
+  .MuiChip-label {
+    padding-left: initial;
+    padding-right: initial;
+  }
+`
+
 export function getJSBadgeProps(options?: BadgeOptions) {
   const { kind } = getDefaultBadgeOptions(options)
   const jsStyles = {
