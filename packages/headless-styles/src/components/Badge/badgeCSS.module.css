@@ -3,11 +3,17 @@
   border-radius: 4px;
   color: var(--ps-neutral-text-weak);
   display: inline-block;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
   font-size: 0.75rem;
   font-variation-settings: 'wght' 500;
   font-weight: 500;
+  height: 1.2rem;
+  max-width: initial;
+  padding: initial;
   padding-inline-end: 4px;
   padding-inline-start: 4px;
+  transition: initial;
   vertical-align: middle;
   white-space: nowrap;
 }
