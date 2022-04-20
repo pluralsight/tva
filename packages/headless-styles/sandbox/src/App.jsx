@@ -25,7 +25,7 @@ function App() {
         </button>
       </header>
 
-      <Badge />
+      <Badge logJS />
       <Button />
     </div>
   )

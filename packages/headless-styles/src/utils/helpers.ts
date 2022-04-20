@@ -32,6 +32,18 @@ export function createSvelteObj(classname = '') {
   return { class: classname }
 }
 
+export function createJSProps(
+  cssProps: string,
+  styles: Record<string, unknown>,
+  additionalProps?: Record<string, unknown>
+) {
+  return {
+    cssProps,
+    styles,
+    ...additionalProps,
+  }
+}
+
 export function transformStyles(styleObject: StyleObject) {
   return Object.keys(styleObject)
     .reduce((prev, current) => {

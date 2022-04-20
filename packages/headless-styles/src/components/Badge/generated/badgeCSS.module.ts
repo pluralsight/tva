@@ -4,7 +4,7 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  psBadge: {
+  psBadgeBase: {
     backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     borderRadius: '4px',
     color: 'hsl(235deg 30% 78% / 100%)',
@@ -18,15 +18,15 @@ export default {
     whiteSpace: 'nowrap',
   },
   weak: {
-    composes: 'psBadge',
+    composes: 'psBadgeBase',
     backgroundColor: 'transparent',
     border: '1px solid hsl(240deg 31% 25% / 100%)',
   },
   medium: {
-    composes: 'psBadge',
+    composes: 'psBadgeBase',
     backgroundColor: 'hsl(240deg 31% 25% / 100%)',
   },
   strong: {
-    composes: 'psBadge',
+    composes: 'psBadgeBase',
   },
 }

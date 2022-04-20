@@ -2,7 +2,7 @@ import { getButtonProps, getJSButtonProps } from '../../../src'
 
 export default function Button(props) {
   if (props.logJS) {
-    console.log({ jsStyles: getJSButtonProps({ kind: 'medium', size: 'xs' }) })
+    console.log({ ...getJSButtonProps({ kind: 'medium', size: 'xs' }) })
   }
 
   return (
