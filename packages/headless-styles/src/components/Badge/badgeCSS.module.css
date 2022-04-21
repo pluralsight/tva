@@ -10,9 +10,9 @@
   font-weight: 500;
   height: 1.2rem;
   max-width: initial;
-  padding: initial;
   padding-inline-end: 4px;
   padding-inline-start: 4px;
+  text-transform: initial;
   transition: initial;
   vertical-align: middle;
   white-space: nowrap;

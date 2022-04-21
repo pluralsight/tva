@@ -4,6 +4,8 @@ import styles from './generated/badgeCSS.module'
 import type { BadgeOptions } from './types'
 
 export const muiLabelOverride = `
+  padding: initial;
+
   .MuiChip-label {
     padding-left: initial;
     padding-right: initial;
