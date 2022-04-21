@@ -12,7 +12,7 @@ export const muiLabelOverride = `
   }
 `
 
-export const Badge = {
+export const ChakraBadge = {
   baseStyle: styles.psBadgeBase,
   defaultProps: {
     variant: 'strong',

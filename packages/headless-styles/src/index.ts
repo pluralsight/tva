@@ -1,6 +1,6 @@
 export { getBadgeProps } from './components/Badge/badgeCSS'
 export {
-  Badge,
+  ChakraBadge,
   getJSBadgeProps,
   muiLabelOverride,
 } from './components/Badge/badgeJS'
