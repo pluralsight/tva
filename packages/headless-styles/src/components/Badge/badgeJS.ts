@@ -10,6 +10,18 @@ export const muiLabelOverride = `
   }
 `
 
+export const Badge = {
+  baseStyle: styles.psBadgeBase,
+  defaultProps: {
+    variant: 'strong',
+  },
+  variants: {
+    weak: styles.weak,
+    medium: styles.medium,
+    strong: styles.strong,
+  },
+}
+
 export function getJSBadgeProps(options?: BadgeOptions) {
   const { kind } = getDefaultBadgeOptions(options)
   const jsStyles = {
