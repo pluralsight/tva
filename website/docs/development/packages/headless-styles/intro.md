@@ -29,7 +29,7 @@ Some component examples use the [Icons](../icons/intro.md) package. Not all comp
 
 ## Headless design
 
-The Headless Styles library is a component-less tool that allows you to obtain all the styles needed for components without dictating a tech-stack for your team to use. This means that you can theorhetically use any combination of technology (i.e. React, Svelte, MUI, etc.) and the library should still work successfully for your team.
+The Headless Styles library is a component-less tool that allows you to obtain all the styles needed for components without dictating a tech-stack for your team to use. This means that you can theoretically use any combination of technology (i.e. React, Svelte, MUI, etc.) and the library should still work successfully for your team.
 
 Having said that, it will always be impossible to cover every single use case so if your team comes across an instance where the styles are not matching the doc examples, please [file a bug report](https://github.com/pluralsight/tva/issues/new?assignees=&labels=bug%2Cneeds+triage&template=bug.yml&title=%5BBug%3F%5D%3A+) so we can make sure that use case is covered.
 
