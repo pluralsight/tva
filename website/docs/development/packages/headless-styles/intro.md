@@ -47,7 +47,7 @@ If there is an additional library you would like to see provided in the examples
 
 ## CSS & CSS-in-JS
 
-Each of our Headless Styles component will deliver APIs for both CSS and CSS-in-JS use cases. Both APIs also come with some requirements for your project that you should be aware of for the most success.
+Each of our Headless Styles components will deliver APIs for both CSS and CSS-in-JS use cases. Both APIs also come with some requirements for your project that you should be aware of for the most success.
 
 ### Themeing
 
