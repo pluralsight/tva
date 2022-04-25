@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-tags: [Development, Packages, Components, Headless Styles, Button, Chakra]
+tags: [Development, Packages, Components, Headless Styles, Badge, Chakra]
 ---
 
 <!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
@@ -10,14 +10,9 @@ tags: [Development, Packages, Components, Headless Styles, Button, Chakra]
 import CodeBlock from '@theme/CodeBlock'
 import BasicBadge from '@site/src/components/Badge/BasicBadge'
 import {
-  BasicButtonPreview,
-  BasicButtonFullPreview,
-} from '@site/src/components/Button/BasicButton.preview'
-import {
-  ButtonSizesPreview,
-  ButtonSizesFullPreview,
-} from '@site/src/components/Button/ButtonSizes.preview'
-import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+  BasicBadgePreview,
+  BasicBadgeFullPreview,
+} from '@site/src/components/Badge/BasicBadge.preview'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
 :::caution
@@ -42,15 +37,15 @@ The `Badge` comes with three variants: strong (default), medium, and weak.
 
 <BasicBadge />
 <LiveExampleTabs
-  fullCode={<BasicButtonFullPreview />}
+  fullCode={<BasicBadgeFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'basic-chakra-gns4x8',
+    joy: 'basic-mui-nbrcn0',
+    styled: 'basic-yp3h8b',
+    svelte: 'basic-svelte-03mp2y',
   }}
 >
-  <BasicButtonPreview />
+  <BasicBadgePreview />
 </LiveExampleTabs>
 
 ## CSS API
