@@ -863,7 +863,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['capital-case', 'npm:1.0.4'],
         ['caseless', 'npm:0.12.0'],
         ['ccount', 'npm:1.1.0'],
-        ['chainsaw', 'npm:0.0.9'],
         ['chalk', 'npm:2.4.2'],
         ['change-case', 'npm:4.1.2'],
         ['char-regex', 'npm:1.0.2'],
@@ -1223,7 +1222,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['has-tostringtag', 'npm:1.0.0'],
         ['has-unicode', 'npm:2.0.1'],
         ['has-yarn', 'npm:2.1.0'],
-        ['hashish', 'npm:0.0.4'],
         ['hast-to-hyperscript', 'npm:9.0.1'],
         ['hast-util-from-parse5', 'npm:6.0.1'],
         ['hast-util-parse-selector', 'npm:2.2.5'],
@@ -1869,7 +1867,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['remark-mdx', 'npm:1.6.22'],
         ['remark-parse', 'npm:8.0.3'],
         ['remark-squeeze-paragraphs', 'npm:4.0.0'],
-        ['remove', 'npm:0.1.5'],
         ['renamer', 'npm:4.0.0'],
         ['renderkid', 'npm:3.0.0'],
         ['repeat-string', 'npm:1.6.1'],
@@ -1893,7 +1890,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['retry', 'npm:0.12.0'],
         ['reusify', 'npm:1.0.4'],
         ['rimraf', 'npm:3.0.2'],
-        ['rollup', 'npm:2.70.2'],
+        ['rollup', 'npm:2.70.1'],
         ['rtl-detect', 'npm:1.0.4'],
         ['rtlcss', 'npm:3.5.0'],
         ['run-parallel', 'npm:1.2.0'],
@@ -1913,7 +1910,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['semver-diff', 'npm:3.1.1'],
         ['send', 'npm:0.16.2'],
         ['sentence-case', 'npm:3.0.4'],
-        ['seq', 'npm:0.3.5'],
         ['serialize-javascript', 'npm:6.0.0'],
         ['serve-handler', 'npm:6.1.3'],
         ['serve-index', 'npm:1.9.1'],
@@ -2045,7 +2041,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['totalist', 'npm:1.1.0'],
         ['tough-cookie', 'npm:4.0.0'],
         ['tr46', 'npm:2.1.0'],
-        ['traverse', 'npm:0.3.9'],
         ['trim', 'npm:0.0.1'],
         ['trim-newlines', 'npm:3.0.1'],
         ['trim-trailing-lines', 'npm:1.1.4'],
@@ -17021,9 +17016,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['copyfiles', 'npm:2.4.1'],
                   ['identity-obj-proxy', 'npm:3.0.0'],
                   ['kebab-case', 'npm:1.0.1'],
-                  ['remove', 'npm:0.1.5'],
                   ['renamer', 'npm:4.0.0'],
-                  ['rollup', 'npm:2.70.2'],
                   ['tslib', 'npm:2.3.1'],
                   [
                     'typescript',
@@ -22728,23 +22721,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/ccount-npm-1.1.0-c87febc594-b335a79d0a.zip/node_modules/ccount/',
                 packageDependencies: [['ccount', 'npm:1.1.0']],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'chainsaw',
-          [
-            [
-              'npm:0.0.9',
-              {
-                packageLocation:
-                  './.yarn/cache/chainsaw-npm-0.0.9-c0f530c3e6-88d1995695.zip/node_modules/chainsaw/',
-                packageDependencies: [
-                  ['chainsaw', 'npm:0.0.9'],
-                  ['traverse', 'npm:0.3.9'],
-                ],
                 linkType: 'HARD',
               },
             ],
@@ -29446,23 +29422,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageLocation:
                   './.yarn/cache/has-yarn-npm-2.1.0-b73f6750d9-5eb1d0bb85.zip/node_modules/has-yarn/',
                 packageDependencies: [['has-yarn', 'npm:2.1.0']],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'hashish',
-          [
-            [
-              'npm:0.0.4',
-              {
-                packageLocation:
-                  './.yarn/cache/hashish-npm-0.0.4-e27a01a158-8571cee918.zip/node_modules/hashish/',
-                packageDependencies: [
-                  ['hashish', 'npm:0.0.4'],
-                  ['traverse', 'npm:0.6.6'],
-                ],
                 linkType: 'HARD',
               },
             ],
@@ -39819,23 +39778,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],
         ],
         [
-          'remove',
-          [
-            [
-              'npm:0.1.5',
-              {
-                packageLocation:
-                  './.yarn/cache/remove-npm-0.1.5-9acc617ce3-5ee886cb35.zip/node_modules/remove/',
-                packageDependencies: [
-                  ['remove', 'npm:0.1.5'],
-                  ['seq', 'npm:0.3.5'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
           'renamer',
           [
             [
@@ -40255,21 +40197,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   './.yarn/cache/rollup-npm-2.70.1-13154f7180-06c62933e6.zip/node_modules/rollup/',
                 packageDependencies: [
                   ['rollup', 'npm:2.70.1'],
-                  [
-                    'fsevents',
-                    'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
-                  ],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-            [
-              'npm:2.70.2',
-              {
-                packageLocation:
-                  './.yarn/cache/rollup-npm-2.70.2-1f9eb89050-eb04eb9b87.zip/node_modules/rollup/',
-                packageDependencies: [
-                  ['rollup', 'npm:2.70.2'],
                   [
                     'fsevents',
                     'patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7',
@@ -40763,24 +40690,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['no-case', 'npm:3.0.4'],
                   ['tslib', 'npm:2.3.1'],
                   ['upper-case-first', 'npm:2.0.2'],
-                ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'seq',
-          [
-            [
-              'npm:0.3.5',
-              {
-                packageLocation:
-                  './.yarn/cache/seq-npm-0.3.5-f5988797e9-5b35acaadb.zip/node_modules/seq/',
-                packageDependencies: [
-                  ['seq', 'npm:0.3.5'],
-                  ['chainsaw', 'npm:0.0.9'],
-                  ['hashish', 'npm:0.0.4'],
                 ],
                 linkType: 'HARD',
               },
@@ -43188,29 +43097,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['tr46', 'npm:2.1.0'],
                   ['punycode', 'npm:2.1.1'],
                 ],
-                linkType: 'HARD',
-              },
-            ],
-          ],
-        ],
-        [
-          'traverse',
-          [
-            [
-              'npm:0.3.9',
-              {
-                packageLocation:
-                  './.yarn/cache/traverse-npm-0.3.9-913743c694-982982e4e2.zip/node_modules/traverse/',
-                packageDependencies: [['traverse', 'npm:0.3.9']],
-                linkType: 'HARD',
-              },
-            ],
-            [
-              'npm:0.6.6',
-              {
-                packageLocation:
-                  './.yarn/cache/traverse-npm-0.6.6-584cfa4b5f-e2afa72f11.zip/node_modules/traverse/',
-                packageDependencies: [['traverse', 'npm:0.6.6']],
                 linkType: 'HARD',
               },
             ],
