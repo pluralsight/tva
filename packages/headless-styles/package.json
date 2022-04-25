@@ -2,12 +2,11 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "type": "module",
   "main": "build/index.js",
-  "module": "build/wrapper.mjs",
+  "module": "build/wrapper.js",
   "types": "build/index.d.ts",
   "exports": {
-    "import": "build/wrapper.mjs",
+    "import": "build/wrapper.js",
     "require": "build/index.js"
   },
   "files": [
@@ -27,9 +26,9 @@
     "build:common": "yarn copy:css && tsc --project tsconfig.cjs.json",
     "build:es": "yarn build:wrapper && yarn rename:wrapper && yarn copy:es",
     "build:wrapper": "renamer --path-element name src/index.ts --find 'index' --replace 'wrapper'",
-    "copy:es": "copyfiles --up 1 ./src/wrapper.mjs build",
+    "copy:es": "copyfiles --up 1 ./src/wrapper.js build",
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
-    "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.mjs'",
+    "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.js'",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
