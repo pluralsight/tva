@@ -4,6 +4,11 @@
   padding-inline-end: 0.4rem;
 }
 
+.npmIcon {
+  composes: icon;
+  height: 2rem;
+}
+
 .link:hover {
   color: var(--ps-neutral-text);
   text-decoration: none;

@@ -3,6 +3,8 @@ sidebar_position: 1
 tags: [Development, Packages, Components, Headless Styles, Chakra]
 ---
 
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+
 # Intro
 
 :::caution
@@ -11,7 +13,14 @@ This is **unreleased** documentation for **headless-styles** package.
 
 :::
 
-<p class="page-subheadline" markdown="1">Install Pluralsight's headless UI framework that works with any library or tech stack.</p>
+<p class="page-subheadline" markdown="1">
+  Install Pluralsight's headless UI framework that works with any library or
+  tech stack.
+</p>
+
+<ViewSourceLink href="https://www.npmjs.com/package/@pluralsight/headless-styles">
+  @pluralsight/headless-styles
+</ViewSourceLink>
 
 ## npm
 
@@ -45,6 +54,14 @@ For each component, we provide mutliple examples using the most popular librarie
 
 If there is an additional library you would like to see provided in the examples, please [start a poll](https://github.com/pluralsight/tva/discussions/categories/polls) and if it receives enough support, we will be happy to add it in. :smile:
 
+## Dependencies
+
+:::caution
+
+Headless Styles requires the use of our fonts and normalize setup. Please see the [installation guide](../../getting-started/installation) for more information.
+
+:::
+
 ## CSS & CSS-in-JS
 
 Each of our Headless Styles components will deliver APIs for both CSS and CSS-in-JS use cases. Both APIs also come with some requirements for your project that you should be aware of for the most success.
@@ -71,10 +88,10 @@ If you would like the Design System to provide a ThemeProvider solution, please 
 
 :::
 
-## Dependencies
+### Chakra UI
 
-:::caution
+We prefer not to cater to frameworks (which is the reason we designed this package the way we have). However, Chakra does provide a way for us to deliver [style objects](https://chakra-ui.com/docs/styled-system/theming/component-style) to overwrite their UI while not having to add it as a dependency to ours. :boom:
 
-Headless Styles requires the use of our fonts and normalize setup. Please see the [installation guide](../../getting-started/installation) for more information.
+**Because of this, all of our "components" will return Chakra style objects instead of using a prop-getter function.**
 
-:::
+If you use Chakra, please be mindful of this and all the examples we provide (which should work in your favor).
