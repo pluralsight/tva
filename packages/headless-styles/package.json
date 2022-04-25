@@ -2,7 +2,6 @@
   "name": "@pluralsight/headless-styles",
   "version": "0.0.0",
   "description": "Headless styles for Pluralsight.",
-  "type": "module",
   "main": "build/index.js",
   "module": "build/wrapper.js",
   "types": "build/index.d.ts",
