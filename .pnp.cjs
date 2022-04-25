@@ -593,7 +593,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
         [
           '@pluralsight/headless-styles',
-          'npm:0.0.0-experimental-1572ee-20220325',
+          'npm:0.0.0-experimental-fd6746-20220422',
         ],
         ['@pluralsight/icons', 'workspace:packages/icons'],
         ['@polka/url', 'npm:1.0.0-next.21'],
@@ -16987,16 +16987,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           [
             [
-              'npm:0.0.0-experimental-1572ee-20220325',
+              'npm:0.0.0-experimental-fd6746-20220422',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-1572ee-20220325-02746b2c26-a2fcae6a7b.zip/node_modules/@pluralsight/headless-styles/',
+                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-fd6746-20220422-1b31eb3a88-8317e646b3.zip/node_modules/@pluralsight/headless-styles/',
                 packageDependencies: [
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-1572ee-20220325',
+                    'npm:0.0.0-experimental-fd6746-20220422',
                   ],
-                  ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
+                  ['kebab-case', 'npm:1.0.1'],
+                  ['tslib', 'npm:2.3.1'],
                 ],
                 linkType: 'HARD',
               },
@@ -45014,7 +45015,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-1572ee-20220325',
+                    'npm:0.0.0-experimental-fd6746-20220422',
                   ],
                   ['@svgr/webpack', 'npm:5.5.0'],
                   ['clsx', 'npm:1.1.1'],

@@ -1,0 +1,174 @@
+---
+sidebar_position: 2
+tags: [Development, Packages, Components, Headless Styles, Button, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicBadge from '@site/src/components/Badge/BasicBadge'
+import {
+  BasicButtonPreview,
+  BasicButtonFullPreview,
+} from '@site/src/components/Button/BasicButton.preview'
+import {
+  ButtonSizesPreview,
+  ButtonSizesFullPreview,
+} from '@site/src/components/Button/ButtonSizes.preview'
+import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The Badge is used to highlight a category for quick recognition.
+
+<!-- TODO: add "view source", and npm source buttons -->
+
+## Import
+
+```javascript
+import { getBadgeProps } from '@pluralsight/headless-styles'
+```
+
+## Basic Badge
+
+The `Badge` comes with three variants: strong (default), medium, and weak.
+
+<BasicBadge />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+## CSS API
+
+### getBadgeProps
+
+```typescript
+getBadgeProps(options: BadgeOptions): BadgeProps
+```
+
+The `Badge` prop-getter takes in [BadgeOptions](#badgeoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+```js title="Return value example"
+{
+  className: `ps-badge ${...internal-style-modules}`
+}
+```
+
+#### BadgeProps
+
+```typescript
+interface BadgeProps {
+  className: string
+}
+```
+
+:::note
+If you are using **Styled-Components**, see "getJSBadgeProps" section.
+:::
+
+## CSS in JS API
+
+### getJSBadgeProps
+
+```typescript
+getJSBadgeProps(options: BadgeOptions): JSBadgeProps
+```
+
+If you prefer to use CSS-in-JS, use the `getJSBadgeProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: #fff;
+    background-color: #000;
+    ...
+  `,
+  styles: {
+    color: '#fff',
+    backgroundColor: '#000'
+    '&:hover': {
+      ...
+    }
+  }
+}
+```
+
+#### JSBadgeProps
+
+```typescript
+interface JSBadgeProps {
+  cssProps: string
+  styles: Record<CSSProps, string>
+}
+```
+
+## Extending
+
+There are times you may need to make a slight adjustment to the `Badge` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
+
+Here is an example of using `styled-components` to extend a `Badge` color.
+
+```jsx title=page/Login/components/SubmitButton.jsx
+import styled from 'styled-components'
+import { getJSBadgeProps } from '@pluralsight/headless-styles'
+
+const psBadgeProps = getJSBadgeProps({ kind: 'medium' })
+
+const SuccessBadge = styled.span`
+  ${psBadgeProps.cssProps}
+  background-color: 'green'
+`
+
+export default SuccessBadge
+```
+
+## Using with other frameworks
+
+`headless-styles` was built with the mindset that any tech stack should work with our helpers. However, when making the decision to support multiple UI frameworks, styles can get out of hand very quickly. In order to scale styles without creating negative impacts to other platforms, we have included the optional `tech` option to [BadgeOptions](#badgeoptions). This small inclusion allows us to ship specific styles per platform you choose to use without conflicting with others. :boom:
+
+:::tip
+When combining `headless-styles` with other frameworks, please follow the guides in the example codesandboxes for the best experience. **Not all frameworks require special CSS support**.
+:::
+
+## API
+
+| Name              | Argument Type                              | Default            | Description            |
+| ----------------- | ------------------------------------------ | ------------------ | ---------------------- |
+| `getBadgeProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get main badge styles. |
+| `getJSBadgeProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strogn' | Get main badge styles. |
+
+## BadgeOptions
+
+```typescript
+interface BadgeOptions {
+  kind?: 'weak' | 'medium' | 'strong'
+  tech?: 'svelte'
+}
+```
+
+## Badge color guide
+
+Badge colors are relative to the `background` style and have a direct correlation from the `kind` to the [`design-tokens`](../tokens/intro.md) package. Here is an interface that gives the color guide.
+
+```typescript title="Example interface - does not exist in types"
+interface BadgeColorGuide {
+  weak: 'var(--ps-neutral-border-weak)'
+  medium: 'var(--ps-neutral-border-weak)'
+  strong: 'var(--ps-neutral-background-hover)'
+}
+```
