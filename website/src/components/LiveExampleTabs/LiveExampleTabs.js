@@ -122,6 +122,7 @@ function TechLink(props) {
       aria-label={data.label}
       className={`${className} ${styles.button}`}
       href={href}
+      name={data.label}
       rel="noopener noreferrer"
       target="_blank"
       title={data.label}

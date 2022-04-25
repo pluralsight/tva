@@ -1,7 +1,7 @@
 .button {
-  border-radius: 50%;
-  height: 2.5rem;
-  inline-padding: 10.5px;
+  border-radius: 50% !important;
+  height: 2.5rem !important;
+  inline-padding: 10.5px !important;
   width: 2.5rem;
 }
 

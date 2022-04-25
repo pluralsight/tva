@@ -1,0 +1,10 @@
+.icon {
+  display: inline-block;
+  height: 1.2rem;
+  padding-inline-end: 0.4rem;
+}
+
+.link:hover {
+  color: var(--ps-neutral-text);
+  text-decoration: none;
+}

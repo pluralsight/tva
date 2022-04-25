@@ -13,6 +13,7 @@ import {
   BasicBadgePreview,
   BasicBadgeFullPreview,
 } from '@site/src/components/Badge/BasicBadge.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
 :::caution
@@ -23,7 +24,12 @@ This is **unreleased** documentation for **headless-styles** package.
 
 The Badge is used to highlight a category for quick recognition.
 
-<!-- TODO: add "view source", and npm source buttons -->
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Badge"
+>
+  View source
+</ViewSourceLink>
 
 ## Import
 
@@ -56,7 +62,7 @@ The `Badge` comes with three variants: strong (default), medium, and weak.
 getBadgeProps(options: BadgeOptions): BadgeProps
 ```
 
-The `Badge` prop-getter takes in [BadgeOptions](#badgeoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+The `Badge` prop-getter takes in [BadgeOptions](#badgeoptions) returns an Object that contains all the a11y attributes and styles for you to use in any fashion you like - or easily extend/overwrite when needed.
 
 ```js title="Return value example"
 {
@@ -114,9 +120,9 @@ interface JSBadgeProps {
 
 ## Extending
 
-There are times you may need to make a slight adjustment to the `Badge` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
+There are times you may need to make a slight adjustment to the Badge which is easy since we are giving you an Object. You can easily extend the Badge in any way that you like.
 
-Here is an example of using `styled-components` to extend a `Badge` color.
+Here is an example of using `styled-components` to extend a Badge color.
 
 ```jsx title=page/Login/components/SubmitButton.jsx
 import styled from 'styled-components'
@@ -142,10 +148,10 @@ When combining `headless-styles` with other frameworks, please follow the guides
 
 ## API
 
-| Name              | Argument Type                              | Default            | Description            |
-| ----------------- | ------------------------------------------ | ------------------ | ---------------------- |
-| `getBadgeProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get main badge styles. |
-| `getJSBadgeProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strogn' | Get main badge styles. |
+| Name              | Argument Type                              | Default            | Description       |
+| ----------------- | ------------------------------------------ | ------------------ | ----------------- |
+| `getBadgeProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
+| `getJSBadgeProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
 
 ## BadgeOptions
 
