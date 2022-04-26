@@ -9,7 +9,13 @@
 }
 
 .base {
-  animation: 0.8s linear infinite alternate none running fadeInOut;
+  animation-direction: alternate;
+  animation-duration: 800ms;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-name: fadeInOut;
+  animation-play-state: running;
+  animation-timing-function: linear;
   background-color: var(--ps-neutral-background);
   border-radius: 2px;
   color: transparent;
