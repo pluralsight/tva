@@ -1,9 +1,9 @@
 import kebabCase from 'kebab-case'
 
-type StyleProps = Record<string, unknown>
-type NestedStyleValue = string | StyleProps
+export type StyleProps = Record<string, unknown>
+export type NestedStyleValue = string | StyleProps
 
-interface StyleObject {
+export interface StyleObject {
   cssProps: string
   styles: StyleProps
   keyframes?: Record<string, unknown>
