@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { getButtonProps } from '../../src'
 import Button from './components/Button'
 import Badge from './components/Badge'
+import Skeleton from './components/Skeleton'
 import './App.css'
 
 function App() {
@@ -25,8 +26,9 @@ function App() {
         </button>
       </header>
 
-      <Badge logJS />
+      <Badge />
       <Button />
+      <Skeleton />
     </div>
   )
 }

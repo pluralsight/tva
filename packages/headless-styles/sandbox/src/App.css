@@ -2,6 +2,7 @@
   background-color: var(--ps-neutral-surface);
   color: var(--ps-neutral-text);
   min-height: 100vh;
+  padding-bottom: 2.6rem;
   text-align: center;
 }
 
