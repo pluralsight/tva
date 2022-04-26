@@ -28,7 +28,7 @@ function App() {
 
       <Badge />
       <Button />
-      <Skeleton />
+      <Skeleton logJS />
     </div>
   )
 }

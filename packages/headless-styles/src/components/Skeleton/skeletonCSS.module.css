@@ -31,9 +31,8 @@
 }
 
 .circle {
-  composes: base;
-  /* stylelint-disable-next-line order/properties-alphabetical-order */
   border-radius: 50%;
+  composes: base;
   height: 4rem;
   width: 4rem;
 }
