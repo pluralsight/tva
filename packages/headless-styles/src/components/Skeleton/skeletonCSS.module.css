@@ -1,4 +1,4 @@
-@keyframes fade-in-out {
+@keyframes fadeInOut {
   from {
     opacity: 0.4;
   }
@@ -9,7 +9,7 @@
 }
 
 .base {
-  animation: 0.8s linear infinite alternate none running fade-in-out;
+  animation: 0.8s linear infinite alternate none running fadeInOut;
   background-color: var(--ps-neutral-background);
   border-radius: 2px;
   color: transparent;
@@ -25,8 +25,9 @@
 }
 
 .circle {
-  border-radius: 50%;
   composes: base;
+  /* stylelint-disable-next-line order/properties-alphabetical-order */
+  border-radius: 50%;
   height: 4rem;
   width: 4rem;
 }

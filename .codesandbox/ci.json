@@ -6,5 +6,11 @@
     "packages/headless-styles",
     "packages/icons"
   ],
-  "sandboxes": ["new", "react-typescript-react-ts", "next-js", "svelte"]
+  "sandboxes": [
+    "new",
+    "react-typescript-react-ts",
+    "react-ts-jsbi1q",
+    "next-js",
+    "svelte"
+  ]
 }

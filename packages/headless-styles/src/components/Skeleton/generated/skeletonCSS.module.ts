@@ -5,7 +5,7 @@
 
 export default {
   keyframesFadeInOut: {
-    '@keyframes fade-in-out': {
+    '@keyframes fadeInOut': {
       from: {
         opacity: '0.4',
       },
@@ -15,7 +15,7 @@ export default {
     },
   },
   base: {
-    animation: '0.8s linear infinite alternate none running fade-in-out',
+    animation: '0.8s linear infinite alternate none running fadeInOut',
     backgroundColor: 'hsl(238deg 30% 32% / 100%)',
     borderRadius: '2px',
     color: 'transparent',
