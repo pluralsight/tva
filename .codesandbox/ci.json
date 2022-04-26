@@ -6,5 +6,10 @@
     "packages/headless-styles",
     "packages/icons"
   ],
-  "sandboxes": ["ps-react-pr-jtu00r", "react-ts-jsbi1q", "svelte"]
+  "sandboxes": [
+    "ps-react-pr-jtu00r",
+    "react-ts-jsbi1q",
+    "ps-react-chakra-kzvgth",
+    "ps-svelte-yjlrmb"
+  ]
 }

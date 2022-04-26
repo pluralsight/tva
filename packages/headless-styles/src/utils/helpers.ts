@@ -1,7 +1,14 @@
 import kebabCase from 'kebab-case'
 
-type StyleObject = Record<string, unknown>
-type NestedStyleValue = string | StyleObject
+type StyleProps = Record<string, unknown>
+type NestedStyleValue = string | StyleProps
+
+interface StyleObject {
+  cssProps: string
+  styles: StyleProps
+  keyframes?: Record<string, unknown>
+  type?: 'submit' | 'reset' | 'button'
+}
 
 function formatCSSPropName(propName: string) {
   if (propName.includes('&')) {
@@ -34,9 +41,9 @@ export function createSvelteObj(classname = '') {
 
 export function createJSProps(
   cssProps: string,
-  styles: Record<string, unknown>,
-  additionalProps?: Record<string, unknown>
-) {
+  styles: StyleProps,
+  additionalProps?: StyleProps
+): StyleObject {
   return {
     cssProps,
     styles,
@@ -44,7 +51,7 @@ export function createJSProps(
   }
 }
 
-export function transformStyles(styleObject: StyleObject) {
+export function transformStyles(styleObject: StyleProps) {
   return Object.keys(styleObject)
     .reduce((prev, current) => {
       const propName = formatCSSPropName(current)
