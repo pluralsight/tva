@@ -116,7 +116,7 @@ The `Skeleton` prop-getter takes in [SkeletonOptions](#Skeletonoptions) returns 
 
 ```js title="Return value example"
 {
-  className: `ps-badge ${...internal-style-modules}`
+  className: `ps-skeleton ${...internal-style-modules}`
 }
 ```
 
@@ -127,10 +127,6 @@ interface SkeletonProps {
   className: string
 }
 ```
-
-:::note
-If you are using **Styled-Components**, see "getJSSkeletonProps" section.
-:::
 
 ## CSS in JS API
 
@@ -172,20 +168,20 @@ interface JSSkeletonProps {
 
 There are times you may need to make a slight adjustment to the Badge which is easy since we are giving you an Object. You can easily extend the Badge in any way that you like.
 
-Here is an example of using `styled-components` to extend a Badge color.
+Here is an example of using `styled-components` to extend a Skeleton color.
 
-```jsx title=page/Login/components/SubmitButton.jsx
+```jsx title=page/Login/components/TextSkeleton.jsx
 import styled from 'styled-components'
 import { getJSSkeletonProps } from '@pluralsight/headless-styles'
 
-const psSkeletonProps = getJSSkeletonProps({ kind: 'medium' })
+const psSkeletonProps = getJSSkeletonProps({ kind: 'content' })
 
-const SuccessBadge = styled.span`
+const TextSkeleton = styled.div`
   ${psSkeletonProps.cssProps}
   background-color: 'green'
 `
 
-export default SuccessBadge
+export default TextSkeleton
 ```
 
 ## Using with other frameworks
