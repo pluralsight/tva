@@ -95,3 +95,26 @@ We prefer not to cater to frameworks (which is the reason we designed this packa
 **Because of this, all of our "components" will return Chakra style objects instead of using a prop-getter function.**
 
 If you use Chakra, please be mindful of this and all the examples we provide (which should work in your favor).
+
+```javascript title="How to use with Chakra"
+import { theme } from '@chakra-ui/react'
+import { chakraPSTheme } from '@pluralsight/headless-styles'
+
+const theme = extendTheme(chakraPSTheme)
+```
+
+Once you add the `theme` to your `ChakraProvider` you can use Chakra-UI components and the ones our Web UI Kit supports will automatically be styled for you!
+
+:::note
+
+Some components (like the [Skeleton](./Skeleton)) will require some additional configuration setup to the theme config (see the Chakra example) due to the nature of Chakra being tightly coupled with Emotion.
+
+:::
+
+## Recommendation
+
+Our recommendation for the best user experience is to stay 3rd-party free and just stick with your Native library (i.e. React, Svelte, etc.) which will yield the best experience of our library.
+
+Having said that, we know people are very passionate about UI libraries and believe they must be used in a project. Whatever your decision is, Headless-Styles aims to work with as many libraries as possible - there just may be a little extra work you will have to put in, whether updating `types` or customizing for CSS animations.
+
+This is due to our decision to stay as light-weight as possible and not require any additional requirements for you to use our project (i.e. you will not have to install any other package to use any of our libraries).

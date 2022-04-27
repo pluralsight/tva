@@ -4277,12 +4277,12 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:experimental":
-  version: 0.0.0-experimental-9616ce-20220425
-  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-9616ce-20220425"
+  version: 0.0.0-experimental-fee97f-20220427
+  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-fee97f-20220427"
   dependencies:
     kebab-case: ^1.0.1
     tslib: ^2.3.1
-  checksum: 9d1b9dbe8342a7c762bf3691c4b9e86eab8d423a130b6a357102b7592876d6895a369847ec246a55117452eac50a6e2d92671067dfc536c8a0a76c9478dfc4f8
+  checksum: b23f32df18c807a3bd1373a91df165e5e1ec3498a4da0066c6af11424c0d8b37ed042a54b0ede34375aa454043a7726f7208b776e3e3c700b3da58872b0d9d20
   languageName: node
   linkType: hard
 

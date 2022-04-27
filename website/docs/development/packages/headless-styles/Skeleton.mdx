@@ -1,0 +1,213 @@
+---
+sidebar_position: 4
+tags: [Development, Packages, Components, Headless Styles, Skeleton, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicSkeleton from '@site/src/components/Skeleton/BasicSkeleton'
+import WrappedSkeleton from '@site/src/components/Skeleton/WrappedSkeleton'
+import FetchSkeleton from '@site/src/components/Skeleton/FetchSkeleton'
+import {
+  BasicSkeletonPreview,
+  BasicSkeletonFullPreview,
+} from '@site/src/components/Skeleton/BasicSkeleton.preview'
+import {
+  WrappedSkeletonPreview,
+  WrappedSkeletonFullPreview,
+} from '@site/src/components/Skeleton/WrappedSkeleton.preview'
+import {
+  FetchSkeletonPreview,
+  FetchSkeletonFullPreview,
+} from '@site/src/components/Skeleton/FetchSkeleton.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The Skeleton is used to display a loading state for page content.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Skeleton"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getSkeletonProps } from '@pluralsight/headless-styles'
+```
+
+## Standalone Skeleton
+
+The `Skeleton` comes with three variants: content (default), text, and circle.
+
+<BasicSkeleton />
+<LiveExampleTabs
+  fullCode={<BasicSkeletonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-chakra-onn468',
+    joy: 'basic-mui-ficnpf',
+    styled: 'styled-components-qwmlsr',
+    svelte: 'basic-svelte-0i3or4',
+  }}
+>
+  <BasicSkeletonPreview />
+</LiveExampleTabs>
+
+## Wrapped Skeleton
+
+You can use the `Skeleton` to wrap another component to take the same height and width.
+
+<WrappedSkeleton />
+<LiveExampleTabs
+  fullCode={<WrappedSkeletonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-chakra-onn468',
+    joy: 'basic-mui-ficnpf',
+    styled: 'styled-components-qwmlsr',
+    svelte: 'basic-svelte-0i3or4',
+  }}
+>
+  <WrappedSkeletonPreview />
+</LiveExampleTabs>
+
+:::note
+
+If you see content show up when using the wrapped solution, it means you have content overriding our styles. For text, use `color: transparent`. For all other elements, use `visibility: hidden`.
+
+:::
+
+## Fetch Fallback
+
+You can also create a fallback component to display during a fetch loading state (like with the React `Suspense` component).
+
+<FetchSkeleton />
+<LiveExampleTabs
+  fullCode={<FetchSkeletonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-chakra-onn468',
+    joy: 'basic-mui-ficnpf',
+    styled: 'styled-components-qwmlsr',
+    svelte: 'basic-svelte-0i3or4',
+  }}
+>
+  <FetchSkeletonPreview />
+</LiveExampleTabs>
+
+## CSS API
+
+### getSkeletonProps
+
+```typescript
+getSkeletonProps(options: SkeletonOptions): SkeletonProps
+```
+
+The `Skeleton` prop-getter takes in [SkeletonOptions](#Skeletonoptions) returns an Object that contains all the a11y attributes and styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+```js title="Return value example"
+{
+  className: `ps-badge ${...internal-style-modules}`
+}
+```
+
+#### SkeletonProps
+
+```typescript
+interface SkeletonProps {
+  className: string
+}
+```
+
+:::note
+If you are using **Styled-Components**, see "getJSSkeletonProps" section.
+:::
+
+## CSS in JS API
+
+### getJSSkeletonProps
+
+```typescript
+getJSSkeletonProps(options: SkeletonOptions): JSSkeletonProps
+```
+
+If you prefer to use CSS-in-JS, use the `getJSSkeletonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: #fff;
+    background-color: #000;
+    ...
+  `,
+  styles: {
+    color: '#fff',
+    backgroundColor: '#000'
+    '&:hover': {
+      ...
+    }
+  }
+}
+```
+
+#### JSSkeletonProps
+
+```typescript
+interface JSSkeletonProps {
+  cssProps: string
+  styles: Record<CSSProps, string>
+}
+```
+
+## Extending
+
+There are times you may need to make a slight adjustment to the Badge which is easy since we are giving you an Object. You can easily extend the Badge in any way that you like.
+
+Here is an example of using `styled-components` to extend a Badge color.
+
+```jsx title=page/Login/components/SubmitButton.jsx
+import styled from 'styled-components'
+import { getJSSkeletonProps } from '@pluralsight/headless-styles'
+
+const psSkeletonProps = getJSSkeletonProps({ kind: 'medium' })
+
+const SuccessBadge = styled.span`
+  ${psSkeletonProps.cssProps}
+  background-color: 'green'
+`
+
+export default SuccessBadge
+```
+
+## Using with other frameworks
+
+`headless-styles` was built with the mindset that any tech stack should work with our helpers. However, when making the decision to support multiple UI frameworks, styles can get out of hand very quickly. In order to scale styles without creating negative impacts to other platforms, we have included the optional `tech` option to [SkeletonOptions](#Skeletonoptions). This small inclusion allows us to ship specific styles per platform you choose to use without conflicting with others. :boom:
+
+:::tip
+When combining `headless-styles` with other frameworks, please follow the guides in the example codesandboxes for the best experience. **Not all frameworks require special CSS support**.
+:::
+
+## API
+
+| Name                 | Argument Type                                    | Default             | Description          |
+| -------------------- | ------------------------------------------------ | ------------------- | -------------------- |
+| `getSkeletonProps`   | **options**: [SkeletonOptions](#Skeletonoptions) | **kind**: 'content' | Get skeleton styles. |
+| `getJSSkeletonProps` | **options**: [SkeletonOptions](#Skeletonoptions) | **kind**: 'content' | Get skeleton styles. |
+
+## SkeletonOptions
+
+```typescript
+interface SkeletonOptions {
+  kind?: 'content' | 'text' | 'circle'
+  tech?: 'svelte'
+}
+```
