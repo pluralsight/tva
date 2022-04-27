@@ -3,8 +3,13 @@ import { getDefaultSkeletonOptions } from './shared'
 import styles from './generated/skeletonCSS.module'
 import type { SkeletonOptions } from './types'
 
+function getChakraSkeletonBaseConfig() {
+  const { animationName, ...restOfStyles } = styles.base
+  return restOfStyles
+}
+
 export const ChakraSkeleton = {
-  baseStyle: styles.base,
+  baseStyle: getChakraSkeletonBaseConfig(),
   defaultProps: {
     variant: 'content',
   },
