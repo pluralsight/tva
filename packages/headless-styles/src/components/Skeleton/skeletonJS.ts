@@ -4,6 +4,7 @@ import styles from './generated/skeletonCSS.module'
 import type { SkeletonOptions } from './types'
 
 function getChakraSkeletonBaseConfig() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { animationName, ...restOfStyles } = styles.base
   return restOfStyles
 }
