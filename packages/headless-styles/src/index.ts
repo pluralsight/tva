@@ -5,7 +5,10 @@ export {
   getButtonProps,
   getDangerButtonProps,
 } from './components/Button/buttonCSS'
-export { getJSButtonProps } from './components/Button/buttonJS'
+export {
+  getJSButtonProps,
+  getJSDangerButtonProps,
+} from './components/Button/buttonJS'
 
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
