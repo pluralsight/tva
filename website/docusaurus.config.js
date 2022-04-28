@@ -67,10 +67,10 @@ const config = {
         searchParameters: {},
       },
       announcementBar: {
-        id: 'announcementBar-beta',
-        backgroundColor: 'hsla(204, 100%, 20%, 1)',
+        id: 'announcementBar',
+        backgroundColor: 'hsla(202, 100%, 17%, 1)',
         content: `⭐️ If you like TVA, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/pluralsight/tva/tree/main">GitHub</a>`,
-        textColor: '#fff',
+        textColor: 'hsla(201, 100%, 92%, 1)',
       },
       liveCodeBlock: {
         playgroundPosition: 'top',

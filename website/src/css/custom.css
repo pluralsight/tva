@@ -167,6 +167,17 @@ html[data-theme='light'] .DocSearch {
   --docsearch-searchbox-focus-background: var(--ps-search-background);
 }
 
+::selection {
+  background: var(--ps-background);
+  color: var(--ps-text);
+}
+
+.close {
+  color: var(--ps-text);
+  opacity: 1;
+  transition: initial;
+}
+
 .DocSearch-Button {
   border: 1px solid var(--ps-neutral-border) !important;
   border-radius: 6px !important;
