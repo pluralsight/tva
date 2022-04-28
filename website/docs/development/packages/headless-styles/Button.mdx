@@ -9,6 +9,8 @@ tags: [Development, Packages, Components, Headless Styles, Button, Chakra]
 
 import CodeBlock from '@theme/CodeBlock'
 import BasicButton from '@site/src/components/Button/BasicButton'
+import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+import DangerButton from '@site/src/components/Button/DangerButton'
 import {
   BasicButtonPreview,
   BasicButtonFullPreview,
@@ -17,7 +19,10 @@ import {
   ButtonSizesPreview,
   ButtonSizesFullPreview,
 } from '@site/src/components/Button/ButtonSizes.preview'
-import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+import {
+  DangerButtonPreview,
+  DangerButtonFullPreview,
+} from '@site/src/components/Button/DangerButton.preview'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -118,6 +123,23 @@ function EditIconButton(props) {
   )
 }
 ```
+
+## Danger Button
+
+The `DangerButton` comes with three variants: text (default), medium, and strong.
+
+<DangerButton />
+<LiveExampleTabs
+  fullCode={<DangerButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <DangerButtonPreview />
+</LiveExampleTabs>
 
 ## Button styled links
 
@@ -223,6 +245,21 @@ interface IconButtonProps {
 }
 ```
 
+### getDangerButtonProps
+
+```typescript
+getDangerButtonProps(options: DangerButtonOptions): ButtonProps
+```
+
+The `DangerButton` prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+```js title="Return value example"
+{
+  className: `ps-danger-btn ${...internal-style-modules}`
+  type: 'button'
+}
+```
+
 ## CSS in JS API
 
 ### getJSButtonProps
@@ -261,6 +298,32 @@ interface JSButtonProps {
 }
 ```
 
+### getJSDangerButtonProps
+
+```typescript
+getJSDangerButtonProps(options: DangerOptions): JSButtonProps
+```
+
+The CSS-in-JS API for Danger buttons (same as `getJSButtonProps`).
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: #fff;
+    background-color: #000;
+    ...
+  `,
+  styles: {
+    color: '#fff',
+    backgroundColor: '#000'
+    '&:hover': {
+      ...
+    }
+  },
+  type: 'button',
+}
+```
+
 ## Extending
 
 There are times you may need to make a slight adjustment to the `Button` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
@@ -293,12 +356,14 @@ When combining `headless-styles` with other frameworks, please follow the guides
 
 ## API
 
-| Name                 | Argument Type                                | Default                               | Description                            |
-| -------------------- | -------------------------------------------- | ------------------------------------- | -------------------------------------- |
-| `getButtonProps`     | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
-| `getJSButtonProps`   | **options**: [ButtonOptions](#buttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps`  |                                              |                                       | Get button with icon and label styles. |
-| `getIconButtonProps` | **ariaLabel**: string                        |                                       | Get icon button styles.                |
+| Name                     | Argument Type                                            | Default                               | Description                            |
+| ------------------------ | -------------------------------------------------------- | ------------------------------------- | -------------------------------------- |
+| `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
+| `getIconLabelProps`      |                                                          |                                       | Get button with icon and label styles. |
+| `getIconButtonProps`     | **ariaLabel**: string                                    |                                       | Get icon button styles.                |
+| `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles.              |
+| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
+| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles.              |
 
 ## ButtonOptions
 
@@ -310,7 +375,17 @@ interface ButtonOptions
   > {
   kind?: 'text' | 'text-weak' | 'weak' | 'medium' | 'strong'
   size?: 'xs' | 's' | 'm' | 'l'
-  tech?: 'chakra' | 'svelte'
+  tech?: 'svelte'
+}
+```
+
+## DangerButtonOptions
+
+```typescript
+interface DangerButtonOptions extends ButtonOptions {
+  kind?: 'text' | 'medium' | 'strong'
+  size?: 'xs' | 's' | 'm' | 'l'
+  tech?: 'svelte'
 }
 ```
 
@@ -321,20 +396,24 @@ Button sizes are relative to the `padding` and `font-size` styles. Here is an in
 ```typescript title="Example interface - does not exist in types"
 interface ButtonSizeGuide {
   xs: {
-    fontSize: '12px'
-    padding: '4px 8px'
+    fontSize: '0.75rem'
+    paddingInlineStart: '0.5rem'
+    paddingInlineEnd: '0.5rem'
   }
   s: {
-    fontSize: '14px'
-    padding: '6px 12px'
+    fontSize: '0.875rem'
+    paddingInlineStart: '0.75rem'
+    paddingInlineEnd: '0.75rem'
   }
   m: {
-    fontSize: '16px'
-    padding: '10px 16px'
+    fontSize: '1rem'
+    paddingInlineStart: '1rem'
+    paddingInlineEnd: '1rem'
   }
   l: {
-    fontSize: '16px'
-    padding: '14.5px 24px'
+    fontSize: '1rem'
+    paddingInlineStart: '1.5rem'
+    paddingInlineEnd: '1.5rem'
   }
 }
 ```
@@ -350,5 +429,11 @@ interface ButtonColorGuide {
   weak: 'var(--ps-neutral-background)'
   medium: 'var(--ps-background)'
   strong: 'var(--ps-background-weak)'
+}
+
+interface DangerButtonColorGuide {
+  text: 'transparent'
+  medium: 'var(--ps-danger-background)'
+  strong: 'var(--ps-danger-background-weak)'
 }
 ```

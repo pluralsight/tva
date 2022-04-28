@@ -4,7 +4,7 @@ import CodeBlock from '@theme/CodeBlock'
 export function BasicButtonPreview() {
   return (
     <CodeBlock>{`<button {...getButtonProps()}>default</button>
-<button {...getButtonProps({ kind: 'text-weak' })}>text-weak</button>
+<button {...getButtonProps({ kind: 'textWeak' })}>textWeak</button>
 <button {...getButtonProps({ kind: 'weak' })}>weak</button>
 <button {...getButtonProps({ kind: 'medium' })}>medium</button>
 <button {...getButtonProps({ kind: 'strong' })}>strong</button>`}</CodeBlock>
@@ -19,7 +19,7 @@ export default function BasicButtons() {
   return (
     <div>
       <button {...getButtonProps()}>default</button>
-      <button {...getButtonProps({ kind: 'text-weak' })}>text-weak</button>
+      <button {...getButtonProps({ kind: 'textWeak' })}>textWeak</button>
       <button {...getButtonProps({ kind: 'weak' })}>weak</button>
       <button {...getButtonProps({ kind: 'medium' })}>medium</button>
       <button {...getButtonProps({ kind: 'strong' })}>strong</button>
