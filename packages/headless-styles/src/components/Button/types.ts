@@ -18,6 +18,6 @@ export interface DangerOptions extends ButtonOptions {
 
 export type ButtonType = 'button' | 'submit' | 'reset' | undefined
 export type Kind = 'text' | 'textWeak' | 'weak' | 'medium' | 'strong'
-export type DangerKind = 'weak' | 'medium' | 'strong'
+export type DangerKind = 'text' | 'medium' | 'strong'
 export type Size = 'xs' | 's' | 'm' | 'l'
 export type Tech = 'svelte' | ''
