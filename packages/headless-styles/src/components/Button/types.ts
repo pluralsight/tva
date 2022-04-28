@@ -10,9 +10,14 @@ export interface ButtonOptions
   tech?: Tech
 }
 
+export interface DangerOptions extends ButtonOptions {
+  kind?: DangerKind
+}
+
 // types
 
 export type ButtonType = 'button' | 'submit' | 'reset' | undefined
-export type Kind = 'text' | 'text-weak' | 'weak' | 'medium' | 'strong'
+export type Kind = 'text' | 'textWeak' | 'weak' | 'medium' | 'strong'
+export type DangerKind = 'weak' | 'medium' | 'strong'
 export type Size = 'xs' | 's' | 'm' | 'l'
-export type Tech = 'chakra' | 'svelte' | ''
+export type Tech = 'svelte' | ''

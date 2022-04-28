@@ -8,12 +8,12 @@ describe('Button JS', () => {
       expect(getJSButtonProps().type).toEqual('button')
     })
 
-    test('should accept a text-weak kind type', () => {
-      expect(getJSButtonProps({ kind: 'text-weak' }).cssProps).not.toHaveLength(
+    test('should accept a textWeak kind type', () => {
+      expect(getJSButtonProps({ kind: 'textWeak' }).cssProps).not.toHaveLength(
         0
       )
-      expect(getJSButtonProps({ kind: 'text-weak' }).styles).toBeDefined()
-      expect(getJSButtonProps({ kind: 'text-weak' }).type).toEqual('button')
+      expect(getJSButtonProps({ kind: 'textWeak' }).styles).toBeDefined()
+      expect(getJSButtonProps({ kind: 'textWeak' }).type).toEqual('button')
     })
 
     test('should accept a weak kind type', () => {

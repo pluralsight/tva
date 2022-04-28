@@ -29,6 +29,9 @@ export default {
     userSelect: 'none',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    '&:hover': {
+      color: '#fff',
+    },
     '&:active': {
       outline: 'none',
     },
@@ -42,6 +45,7 @@ export default {
   },
   text: {
     color: 'hsl(235deg 30% 78% / 100%)',
+    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
@@ -49,8 +53,9 @@ export default {
       backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
-  text_weak: {
+  textWeak: {
     color: 'hsl(249deg 63% 67% / 100%)',
+    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -61,6 +66,7 @@ export default {
   weak: {
     backgroundColor: 'hsl(238deg 30% 32% / 100%)',
     color: 'hsl(0deg 0% 100% / 100%)',
+    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
@@ -71,6 +77,7 @@ export default {
   medium: {
     backgroundColor: 'hsl(249deg 63% 51% / 100%)',
     color: '#fff',
+    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -81,6 +88,7 @@ export default {
   strong: {
     backgroundColor: 'hsl(249deg 63% 25% / 100%)',
     color: 'hsl(249deg 62% 92% / 100%)',
+    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -88,19 +96,54 @@ export default {
       backgroundColor: 'hsl(249deg 63% 34% / 100%)',
     },
   },
-  size_xs: {
+  xs: {
+    composes: 'base',
     fontSize: '0.75rem',
     height: '1.5rem',
     paddingInline: '8px',
   },
-  size_s: {
+  s: {
+    composes: 'base',
     fontSize: '0.875rem',
     height: '2rem',
     paddingInline: '12px',
   },
-  size_l: {
+  l: {
+    composes: 'base',
     height: '3rem',
     paddingInline: '24px',
+  },
+  textDanger: {
+    color: 'hsl(335deg 100% 82% / 100%)',
+    composes: 'base',
+    '&:hover': {
+      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
+    },
+    '&:active': {
+      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
+    },
+  },
+  mediumDanger: {
+    backgroundColor: 'hsl(336deg 100% 36% / 100%)',
+    color: 'hsl(336deg 100% 97% / 100%)',
+    composes: 'base',
+    '&:hover': {
+      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
+    },
+    '&:active': {
+      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
+    },
+  },
+  strongDanger: {
+    backgroundColor: 'hsl(335deg 100% 18% / 100%)',
+    color: 'hsl(336deg 100% 97% / 100%)',
+    composes: 'base',
+    '&:hover': {
+      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
+    },
+    '&:active': {
+      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
+    },
   },
   light__base_text: {
     '&:hover': {
@@ -110,71 +153,6 @@ export default {
   html_data_theme__light____base_text: {
     '&:hover': {
       color: 'hsl(235deg 30% 78% / 100%)',
-    },
-  },
-  chakra: {
-    backgroundColor: 'transparent !important',
-    borderRadius: '6px !important',
-    fontSize: '1rem !important',
-    fontWeight: '600 !important',
-    height: '2.5rem !important',
-    outlineOffset: 'initial !important',
-  },
-  chakra_weak: {
-    backgroundColor: 'hsl(238deg 30% 32% / 100%) !important',
-    '&:hover': {
-      backgroundColor: 'hsl(237deg 30% 36% / 100%) !important',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(240deg 31% 25% / 100%) !important',
-    },
-  },
-  chakra_medium: {
-    backgroundColor: 'hsl(249deg 63% 51% / 100%) !important',
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
-    },
-  },
-  chakra_strong: {
-    backgroundColor: 'hsl(249deg 63% 25% / 100%) !important',
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
-    },
-  },
-  chakra_size_xs: {
-    fontSize: '0.75rem !important',
-    height: '1.5rem !important',
-    paddingInline: '8px !important',
-  },
-  chakra_size_s: {
-    fontSize: '0.875rem !important',
-    height: '2rem !important',
-    paddingInline: '12px !important',
-  },
-  chakra_size_l: {
-    height: '3rem !important',
-    paddingInline: '24px !important',
-  },
-  chakra_text_weak: {
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%) !important',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
-    },
-  },
-  chakra_text: {
-    '&:hover': {
-      backgroundColor: 'hsl(237deg 30% 36% / 100%) !important',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%) !important',
     },
   },
 }

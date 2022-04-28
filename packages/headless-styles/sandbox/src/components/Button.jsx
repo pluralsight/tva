@@ -1,4 +1,8 @@
-import { getButtonProps, getJSButtonProps } from '../../../src'
+import {
+  getButtonProps,
+  getDangerButtonProps,
+  getJSButtonProps,
+} from '../../../src'
 
 export default function Button(props) {
   if (props.logJS) {
@@ -10,7 +14,7 @@ export default function Button(props) {
       <h3>Button</h3>
       <div className="App-container">
         <button {...getButtonProps()}>default</button>
-        <button {...getButtonProps({ kind: 'text-weak' })}>text-weak</button>
+        <button {...getButtonProps({ kind: 'textWeak' })}>text-weak</button>
         <button {...getButtonProps({ kind: 'weak' })}>weak</button>
         <button {...getButtonProps({ kind: 'medium' })}>medium</button>
         <button {...getButtonProps({ kind: 'strong' })}>strong</button>
@@ -26,6 +30,26 @@ export default function Button(props) {
           medium
         </button>
         <button {...getButtonProps({ kind: 'medium', size: 'l' })}>
+          large
+        </button>
+      </div>
+      <div className="App-container">
+        <button {...getDangerButtonProps()}>default</button>
+        <button {...getDangerButtonProps({ kind: 'text' })}>weak</button>
+        <button {...getDangerButtonProps({ kind: 'medium' })}>medium</button>
+        <button {...getDangerButtonProps({ kind: 'strong' })}>strong</button>
+      </div>
+      <div className="App-container">
+        <button {...getDangerButtonProps({ kind: 'medium', size: 'xs' })}>
+          xtra-small
+        </button>
+        <button {...getDangerButtonProps({ kind: 'medium', size: 's' })}>
+          small
+        </button>
+        <button {...getDangerButtonProps({ kind: 'medium', size: 'm' })}>
+          medium
+        </button>
+        <button {...getDangerButtonProps({ kind: 'medium', size: 'l' })}>
           large
         </button>
       </div>
