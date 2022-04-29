@@ -72,6 +72,10 @@ All of our web packages **depend on our normalize.css** file to be used in your 
 />
 ```
 
+### Using custom fonts
+
+Not interested in using the PS TT Commons font? Simply leave out the [font imports](#ps-tt-commons-font) and keep the normalize file. After that, all you have to do is just override the `font-family` for each Headless style you decide to use (we have to include this property to properly cater to 3rd party UI frameworks like MUI, etc.).
+
 ## Module Support
 
 All of our web packages use the latest [Node Standard](https://nodejs.org/api/packages.html#writing-dual-packages-while-avoiding-or-minimizing-hazards) for supporting both CommonJS and ES module environments.
