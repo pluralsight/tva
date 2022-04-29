@@ -135,9 +135,7 @@ const editIconBtnProps = getIconButtonProps('edit profile')
 function EditIconButton(props) {
   return (
     <button {...props} {...editIconBtnProps}>
-      <span {...getIconProps()}>
-        <EditIcon />
-      </span>
+      <EditIcon {...getIconProps()} />
     </button>
   )
 }
