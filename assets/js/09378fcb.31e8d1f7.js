@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5857],{613:function(s){s.exports=JSON.parse('{"name":"Issues","permalink":"/docs/tags/issues","docs":[{"id":"development/getting-started/support","title":"Support","description":"This page is a work in progress.","permalink":"/docs/development/getting-started/support"}],"allTagsPath":"/docs/tags"}')}}]);
