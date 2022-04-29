@@ -111,9 +111,7 @@ const iconProps = getIconProps()
 function EditButton(props) {
   return (
     <button {...props} {...defaultBtnProps}>
-      <span {...iconProps}>
-        <StarIcon />
-      </span>
+      <StarIcon {...iconProps} />
       Edit
     </button>
   )
