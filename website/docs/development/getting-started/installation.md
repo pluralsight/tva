@@ -33,6 +33,14 @@ Or if you want maximum flexibility, just install the `design-tokens` package:
 npm install @pluralsight/design-tokens@alpha
 ```
 
+## Responsive meta tag
+
+Pluralsight Design is developed with a mobile-first strategy in which we first write code for mobile devices, and then scale up "components" as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
+
+```html
+<meta name="viewport" content="initial-scale=1, width=device-width" />
+```
+
 ## PS TT Commons font
 
 Our libraries were designed with PS TT Commons (Pluralsight brand font) in mind. For the best results, install via an HTML `link` tag:

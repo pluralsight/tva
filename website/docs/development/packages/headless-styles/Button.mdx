@@ -44,12 +44,20 @@ The Button is used to perform an action or event, such as submitting a form, ope
 ## Import
 
 ```javascript
-import { getButtonProps } from '@pluralsight/headless-styles'
+import {
+  getButtonProps,
+  getDangerButtonProps,
+} from '@pluralsight/headless-styles'
 ```
 
-## Basic Button
+- **getButtonProps**: The styles for any button outside of status related
+- **getDangerButtonProps**: The styles for danger status buttons
 
-The `Button` comes with five variants: text (default), text-weak, weak, medium, and strong.
+## Usage
+
+### Button kinds
+
+`getButtonProps` comes with five kinds to change the visual style of a button. You can use `text` (default), `textWeak`, `weak`, `medium`, and `strong`.
 
 <BasicButton />
 <LiveExampleTabs
@@ -64,9 +72,9 @@ The `Button` comes with five variants: text (default), text-weak, weak, medium, 
   <BasicButtonPreview />
 </LiveExampleTabs>
 
-## Button sizes
+### Button sizes
 
-The `Button` comes with four size variants: xs, s, m (default), l.
+Use the `size` options to change the size of a button. The options are: `xs`, `s`, `m` (default), `l`.
 
 <ButtonSizes />
 <LiveExampleTabs
@@ -81,52 +89,63 @@ The `Button` comes with four size variants: xs, s, m (default), l.
   <ButtonSizesPreview />
 </LiveExampleTabs>
 
-## Button with icon and label
+:::tip
 
-You can combine icons with the `Button` using the `getIconLablProps` and and Icon from the PS Icons font library.
+We use the standard clothing size shorthand values for all `size` related options in any library we provide (i.e. xs-xxl).
+
+:::
+
+### Button with icon
+
+You can add left and right icons to a button using the `getIconProps` and an Icon from the [Icons](../icons/intro) library.
+
+<!-- TODO: ADD EXAMPLES TO REPLACE THIS CODE -->
 
 ```jsx title=components/EditButton.jsx
-import { getButtonProps, getIconLabelProps } from '@pluralsight/headless-styles'
+import { getIconProps } from '@pluralsight/headless-styles'
+import { StarIcon } from '@pluralsight/icons'
 
-const tvaButtonProps = getButtonProps({ kind: 'contained' })
-const tvaIconLabelProps = getIconLabelProps()
+const defaultBtnProps = getButtonProps({ kind: 'medium' })
+const iconProps = getIconProps()
 
 function EditButton(props) {
   return (
-    <button {...props} {...tvaButtonProps}>
-      {/* This icon is from the PS Icons font - unicode WIP!!  */}
-      <span {...tvaIconLabelProps}>w61</span>
-      <p>Edit</p>
+    <button {...props} {...defaultBtnProps}>
+      <span {...iconProps}>
+        <StarIcon />
+      </span>
+      Edit
     </button>
   )
 }
 ```
 
-## Button with icon (no label)
+### Button icon (no label)
 
-Icon buttons are commonly found in app bars, toolbars, or as an action such as "toggle".
+For icons acting as buttons, use the `getIconButtonProps` with your desired Icon.
+
+<!-- TODO: REPLACE CODE WITH LIVE EXAMPLES -->
 
 ```jsx title=components/EditIconButton.jsx
-import {
-  getIconButtonProps,
-  getIconLabelProps,
-} from '@pluralsight/headless-styles'
+import { getIconProps, getIconButtonProps } from '@pluralsight/headless-styles'
+import { EditIcon } from '@pluralsight/icons'
 
-const tvaEditIconBtnProps = getIconButtonProps('edit profile')
+const editIconBtnProps = getIconButtonProps('edit profile')
 
 function EditIconButton(props) {
   return (
-    <button {...props} {...tvaEditIconBtnProps}>
-      {/* This icon is from the new PS Icons font - unicode WIP!!  */}
-      <span {...tvaIconLabelProps}>w61</span>
+    <button {...props} {...editIconBtnProps}>
+      <span {...getIconProps()}>
+        <EditIcon />
+      </span>
     </button>
   )
 }
 ```
 
-## Danger Button
+### Danger Button
 
-The `DangerButton` comes with three variants: text (default), medium, and strong.
+`getDangerButtonProps` allows to use style a button with a danger theme. The `kind` options are: `text` (default), `medium`, and `strong`.
 
 <DangerButton />
 <LiveExampleTabs
@@ -141,12 +160,12 @@ The `DangerButton` comes with three variants: text (default), medium, and strong
   <DangerButtonPreview />
 </LiveExampleTabs>
 
-## Button styled links
+### Button styled links
 
-If you want to use the `Button` styles for an `a` element (no matter what framework you use), just omit the `type` property from the return Object we send.
+If you want to use button styles for an `a` element, just omit the `type` property from the return Object sent.
 
 ```jsx
-const psButtonProps = getButtonProps()
+const { className } = getButtonProps()
 const psButtonLinkProps = { className: psButtonProps.className }
 
 function BackLink() {
@@ -159,7 +178,9 @@ function BackLink() {
 ```
 
 :::tip
+
 With ES\* you could destructure the className out of the object (i.e. `{ className, ...rest }`). However, this approach forces you to declare an unused variable which will negatively impact performance at some point, make a negative impact on code readability, and fail sonarlint tests.
+
 :::
 
 ## CSS API
@@ -170,80 +191,15 @@ With ES\* you could destructure the className out of the object (i.e. `{ classNa
 getButtonProps(options: ButtonOptions): ButtonProps
 ```
 
-The `Button` prop-getter takes in [ButtonOptions](#buttonoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-```js title="Return value example"
-{
-  className: `ps-btn ${...internal-style-modules}`
-  type: 'button'
-}
-```
-
-#### ButtonProps
-
-```typescript
-interface ButtonProps {
-  className: string
-  type: 'button'
-}
-```
-
-### getIconLabelProps
-
-```typescript
-getIconLabelProps(): IconLabelButtonProps
-```
-
-Our eyes/brain recognize logos more easily than plain text, so you might want to add icons to certain buttons to enhance the UX. For example, if you have an edit button you can label it with a pencil icon.
-
-```jsx title="Return value example"
-{
-  'aria-hidden': 'true'
-  className: 'ps-icon'
-}
-```
-
-#### IconLabelButtonProps
-
-```typescript
-interface IconLabelButtonProps {
-  'aria-hidden': boolean
-}
-```
+The button prop-getter takes in [ButtonOptions](#buttonoptions) returns [ButtonProps](#buttonprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
 
 ### getIconButtonProps
 
 ```typescript
-getIconButtonProps(ariaLabel: string): IconButtonProps
+getIconButtonProps(): IconButtonProps
 ```
 
-Icon buttons are commonly found in app bars, toolbars, or as an action such as "toggle".
-
-```jsx title=components/EditIconButton.jsx
-import {
-  getIconButtonProps,
-  getIconLabelProps,
-} from '@pluralsight/tva-headless-styles'
-
-const tvaEditIconBtnProps = getIconButtonProps('edit profile')
-
-function EditIconButton(props) {
-  return (
-    <button {...props} {...tvaEditIconBtnProps}>
-      {/* This icon is from the new PS Icons font - unicode WIP!!  */}
-      <span {...getIconLabelProps()}>w61</span>
-    </button>
-  )
-}
-```
-
-#### IconButtonProps
-
-```typescript
-interface IconButtonProps {
-  'aria-label': string
-}
-```
+The icon button prop-getter doesn't take in any paramters and returns [IconButtonProps](#iconbuttonprops) that contains the a11y attributes needed for buttons with icons.
 
 ### getDangerButtonProps
 
@@ -251,14 +207,7 @@ interface IconButtonProps {
 getDangerButtonProps(options: DangerButtonOptions): ButtonProps
 ```
 
-The `DangerButton` prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) returns an Object that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-```js title="Return value example"
-{
-  className: `ps-danger-btn ${...internal-style-modules}`
-  type: 'button'
-}
-```
+The danger button prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) returns [ButtonProps](#buttonprops) that match the `getButtonProps` API.
 
 ## CSS in JS API
 
@@ -268,102 +217,49 @@ The `DangerButton` prop-getter takes in [DangerButtonOptions](#dangerbuttonoptio
 getJSButtonProps(options: ButtonOptions): JSButtonProps
 ```
 
-If you prefer to use CSS-in-JS, use the `getJSButtonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: #fff;
-    background-color: #000;
-    ...
-  `,
-  styles: {
-    color: '#fff',
-    backgroundColor: '#000'
-    '&:hover': {
-      ...
-    }
-  },
-  type: 'button',
-}
-```
-
-#### JSButtonProps
-
-```typescript
-interface JSButtonProps {
-  cssProps: string
-  styles: Record<CSSProps, string>
-  type: 'button'
-}
-```
+The CSS-in-JS prop-getter takes in the same [ButtonOptions](#buttonoptions) as the CSS API and returns [JSButtonProps](#jsbuttonprops) which caters to CSS Templates, StyleObject, and button specific attributes.
 
 ### getJSDangerButtonProps
 
 ```typescript
-getJSDangerButtonProps(options: DangerOptions): JSButtonProps
+getJSDangerButtonProps(options: DangerButtonOptions): JSButtonProps
 ```
 
-The CSS-in-JS API for Danger buttons (same as `getJSButtonProps`).
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: #fff;
-    background-color: #000;
-    ...
-  `,
-  styles: {
-    color: '#fff',
-    backgroundColor: '#000'
-    '&:hover': {
-      ...
-    }
-  },
-  type: 'button',
-}
-```
+The CSS-in-JS danger button prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) and returns [JSButtonProps](#jsbuttonprops).
 
 ## Extending
 
-There are times you may need to make a slight adjustment to the `Button` which is easy since we are giving you an Object. You can easily extend the Button in any way that you like.
+There are times you may need to make a slight adjustment to the button styles which is easy to do since we are giving you an Object.
 
-Here is an example of using `styled-components` to extend a `Button` for a Form.
+Here is an example of using `styled-components` to extend a button text color.
 
-```jsx title=page/Login/components/SubmitButton.jsx
+```jsx title=page/Login/components/CustomButton.jsx
 import styled from 'styled-components'
 import { getJSButtonProps } from '@pluralsight/headless-styles'
 
-const psBtnProps = getJSButtonProps({ kind: 'medium' })
-
-const Button = styled.button`
-  ${psBtnProps.cssProps}
+const CustomButton = styled.button`
+  ${getJSButtonProps({ kind: 'medium' }).cssProps}
   color: '#bfbfbf'
 `
 
-function SubmitButton(props) {
-  return <Button type="submit">{props.children}</Button>
-}
+export default CustomButton
 ```
 
-## Using with other frameworks
-
-`headless-styles` was built with the mindset that any tech stack should work with our helpers. However, when making the decision to support multiple UI frameworks, styles can get out of hand very quickly. In order to scale styles without creating negative impacts to other platforms, we have included the optional `tech` option to [ButtonOptions](#buttonoptions). This small inclusion allows us to ship specific styles per platform you choose to use without conflicting with others. :boom:
-
 :::tip
-When combining `headless-styles` with other frameworks, please follow the guides in the example codesandboxes for the best experience. **Not all frameworks require special CSS support**.
+
+When combining `headless-styles` with other libraries, please follow the guides in the example codesandboxes for the best experience. **Some libraries require special support**.
+
 :::
 
 ## API
 
-| Name                     | Argument Type                                            | Default                               | Description                            |
-| ------------------------ | -------------------------------------------------------- | ------------------------------------- | -------------------------------------- |
-| `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
-| `getIconLabelProps`      |                                                          |                                       | Get button with icon and label styles. |
-| `getIconButtonProps`     | **ariaLabel**: string                                    |                                       | Get icon button styles.                |
-| `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles.              |
-| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                |
-| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles.              |
+| Name                     | Argument Type                                            | Default                               | Description               |
+| ------------------------ | -------------------------------------------------------- | ------------------------------------- | ------------------------- |
+| `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
+| `getIconButtonProps`     | **ariaLabel**: string                                    |                                       | Get icon button styles.   |
+| `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
+| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
+| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
 
 ## ButtonOptions
 
@@ -386,6 +282,66 @@ interface DangerButtonOptions extends ButtonOptions {
   kind?: 'text' | 'medium' | 'strong'
   size?: 'xs' | 's' | 'm' | 'l'
   tech?: 'svelte'
+}
+```
+
+## ButtonProps
+
+```typescript
+interface ButtonProps {
+  className: string
+  type: 'button'
+}
+```
+
+```js title="Return value example"
+{
+  className: `ps-btn ${...internalStyles}`
+  type: 'button'
+}
+```
+
+## IconButtonProps
+
+```typescript
+interface IconButtonProps {
+  'aria-hidden': boolean
+  className: string
+}
+```
+
+```jsx title="Return value example"
+{
+  'aria-hidden': 'true'
+  className: 'ps-icon-btn ...'
+}
+```
+
+## JSButtonProps
+
+```typescript
+interface JSButtonProps {
+  cssProps: TemplateLiteralStringArray | string
+  styles: Record<CSSProps, string>
+  type: ButtonType
+}
+```
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: #fff;
+    background-color: #000;
+    ...
+  `,
+  styles: {
+    color: '#fff',
+    backgroundColor: '#000'
+    '&:hover': {
+      ...
+    }
+  },
+  type: 'button',
 }
 ```
 

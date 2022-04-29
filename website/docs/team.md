@@ -1,12 +1,14 @@
 # Team
 
-#### TVA development is led by a small dedicated team working full time at Pluralsight. It also receives contributions from people everywhere.
+<p class="page-subheadline" markdown="1">
+   Pluralsight Design development is led by a small dedicated team working full time at Pluralsight. It also receives contributions from people everywhere.
+</p>
 
-## Meet the TVA Team
+## Meet the Pluralsight Design Team
 
-The TVA team members work full time on the core package APIs, the tools that power TVA, and the TVA documentation website.
+The PD team members work full time on the core package APIs, the tools that power PD, and the PD documentation website.
 
-Current members of the TVA team are listed in alphabetical order below.
+Current members of the PD team are listed in alphabetical order below.
 
 ### Engineers
 

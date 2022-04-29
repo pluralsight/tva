@@ -5,21 +5,15 @@ tags: [Development, Support, Getting Started, Twitter, Github, Issues]
 
 # Support
 
-:::caution
-
-This page is a work in progress.
-
-:::
-
 ## Community help
 
 Welcome to the community! These are all the resources you can find for questions and advice about the UI library.
 
 ### Github
 
-TVA uses Github issues as a bug and feature request tracker. If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported or fixed](https://github.com/pluralsight/tva/issues?q=is%3Aissue+is%3Aclosed). You can search through existing issues, pull requests, and discussions to see if someone has reported one similar to yours.
+Pluralsight Design uses Github issues as a bug and feature request tracker. If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported or fixed](https://github.com/pluralsight/tva/issues?q=is%3Aissue+is%3Aclosed). You can search through existing issues, pull requests, and discussions to see if someone has reported one similar to yours.
 
-**Issue Steps**
+#### Issue Steps
 
 1. Check if issue has already been reported or closed
 2. Check if discussion has been created
@@ -38,16 +32,8 @@ TVA uses Github issues as a bug and feature request tracker. If you think you ha
 
 Stay up to date with the latest library updates on our [blog](/blog).
 
-## Twitter
-
-Receive the latest news for TVA.
-
-<!-- TODO: Replace handle with TVA -->
-
-[Follow us](https://twitter.com/pluralsight)
-
 ## Supported versions
 
-TVA Core has been open-source ([Apache 2.0](https://github.com/pluralsight/tva/blob/main/LICENSE)) since the very beginning, and always will be. Developers can ensure TVA is the right choice for any of their applications through TVA's community maintenance strategy. The TVA team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
+Pluralsight Design (PD) has been open-source ([Apache 2.0](https://github.com/pluralsight/tva/blob/main/LICENSE)) since the very beginning, and always will be. Developers can ensure PD is the right choice for any of their applications through PD's community maintenance strategy. The PD [team](../../team) regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
 
 Given the reality of time and resource constraints, as well as the desire to keep innovating, over time it becomes necessary to shift focus to newer versions of the framework ([our release schedule](../discover-more/roadmap)), while making the transition to newer versions as smooth as possible, including publishing migration guides. The open-source community is always welcome to submit new features and bug fixes as well.

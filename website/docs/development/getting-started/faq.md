@@ -71,23 +71,19 @@ return (
 You can do this (in any framework or library - here we are combining MUI with headless-styles):
 
 ```jsx title="src/components/ActionButton.jsx"
-import { styled } from '@mui/material/styles';
-import Button, { ButtonProps } from '@mui/material/Button';
+import { styled } from '@mui/material/styles'
+import Button from '@mui/material/Button'
 import { getButtonProps } from '@pluralsight/headless-styles'
 
 // 💡 Keep the function out of the component for better performance
-const {styles as psStyles, ...a11yProps} = getButtonProps()
+const { cssProps } = getButtonProps()
 
-const BoostrapButton = styled(Button)({
-  ...psStyles
+const DefaultButton = styled(Button)({
+  ...cssProps,
 })
 
 function ActionButton(props) {
-  return (
-    <BootstrapButton {...a11yProps} variant="contained">
-      {props.children}
-    </BootstrapButton>
-  )
+  return <DefaultButton noRippleEffect>{props.children}</DefaultButton>
 }
 
 export default ActionButton

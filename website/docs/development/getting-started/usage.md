@@ -48,22 +48,12 @@ The above code shows that all you need is to import a helper function and that's
 
 This means you can use **any framework** or library of your choice (React, Svelte, Vue, MUI, Styled-Components, .etc).
 
-## Globals
-
-Pluralsight Design usage experience can be improved with a handful of important globals that you'll need to be aware of.
-
-### Responsive meta tag
-
-Pluralsight Design is developed with a mobile-first strategy in which we first write code for mobile devices, and then scale up "components" as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your `<head>` element.
-
-```html
-<meta name="viewport" content="initial-scale=1, width=device-width" />
-```
-
 ## Typescript
 
-Pluralsight Design is built using Typescript so we will include type definitions in the `headless-styles` package for any project that may require them.
+Pluralsight Design is built using Typescript so we will include type definitions in all of our packages that we provide.
 
 ## Versioned Documentation
 
-This documentation always reflects the latest stable version of Pluralsight Design. You can find older versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle. Additionally, we release our **next** version documentation which has the :construction: emoji next to it.
+This documentation always reflects the latest version of Pluralsight Design. You can find older or newer versions of the documentation in the dropdown located at the top right corner of the page next to the search bar and theme toggle.
+
+Additionally, we release our **next** version documentation which uses the emoji - :construction:.
