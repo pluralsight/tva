@@ -10,6 +10,8 @@ export {
   getJSDangerButtonProps,
 } from './components/Button/buttonJS'
 
+export { getProgressProps } from './components/Progress/progressCSS'
+
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
 

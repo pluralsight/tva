@@ -1,0 +1,25 @@
+.base {
+  background-color: var(--ps-neutral-text);
+  height: 100%;
+}
+
+.base::before {
+  background-color: var(--ps-neutral-border);
+  content: '';
+  height: 0.5rem;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.sSize,
+.xsSize {
+  composes: base;
+}
+
+.xsSize::before {
+  height: 0.25rem;
+}
+
+.inset {
+  border-radius: initial;
+}

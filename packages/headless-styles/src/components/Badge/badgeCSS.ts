@@ -1,5 +1,5 @@
-import { getDefaultBadgeOptions } from './shared'
 import { createSvelteObj } from '../../utils/helpers'
+import { getDefaultBadgeOptions } from './shared'
 import styles from './badgeCSS.module.css'
 import { BadgeOptions } from './types'
 
