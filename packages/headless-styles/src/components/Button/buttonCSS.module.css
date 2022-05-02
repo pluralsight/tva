@@ -80,7 +80,7 @@
 
 .mediumDanger {
   background-color: var(--ps-danger-background);
-  color: var(--ps-danger-text);
+  color: hsl(336deg 100% 97% / 100%);
   composes: base;
 }
 
