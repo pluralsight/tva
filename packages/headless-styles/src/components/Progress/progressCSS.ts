@@ -1,4 +1,4 @@
-import { createSvelteObj } from '../../utils/helpers'
+import { createCSSObj, createSvelteObj } from '../../utils/helpers'
 import { getDefaultProgressOptions } from './shared'
 import type { ProgressOptions } from './types'
 import styles from './progressCSS.module.css'
@@ -10,10 +10,16 @@ export function getProgressProps(options?: ProgressOptions) {
   const sizeClass = `${size}Size`
 
   if (tech === 'svelte') {
-    return createSvelteObj(`${PROGRESS} base ${sizeClass} ${kind}`)
+    return {
+      bar: createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
+      wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
+    }
   }
 
   return {
-    className: `${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`,
+    bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
+    wrapper: createCSSObj(
+      `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
+    ),
   }
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { getButtonProps } from '../../src'
 import Button from './components/Button'
 import Badge from './components/Badge'
+import Progress from './components/Progress'
 import Skeleton from './components/Skeleton'
 import './App.css'
 
@@ -28,7 +29,8 @@ function App() {
 
       <Badge />
       <Button />
-      <Skeleton logJS />
+      <Progress />
+      <Skeleton />
     </div>
   )
 }

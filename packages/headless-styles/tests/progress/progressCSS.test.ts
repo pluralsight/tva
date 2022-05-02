@@ -4,7 +4,12 @@ describe('Progress CSS', () => {
   describe('getProgressProps', () => {
     const baseClass = 'ps-progress'
     const result = {
-      className: `${baseClass} sSize linear`,
+      bar: {
+        className: `${baseClass} sSize linear`,
+      },
+      wrapper: {
+        className: `${baseClass} wrapper sSize linear`,
+      },
     }
 
     test('should allow no props to be passed in', () => {
@@ -14,14 +19,23 @@ describe('Progress CSS', () => {
     test('should accept a kind type', () => {
       expect(getProgressProps({ kind: 'linear' })).toEqual(result)
       expect(getProgressProps({ kind: 'inset' })).toEqual({
-        ...result,
-        className: `${baseClass} sSize inset`,
+        bar: {
+          className: `${baseClass} sSize inset`,
+        },
+        wrapper: {
+          className: `${baseClass} wrapper sSize inset`,
+        },
       })
     })
 
     test('should accept a tech type', () => {
       expect(getProgressProps({ tech: 'svelte' })).toEqual({
-        class: 'ps-progress base sSize linear',
+        bar: {
+          class: 'ps-progress bar sSize linear',
+        },
+        wrapper: {
+          class: 'ps-progress wrapper sSize linear',
+        },
       })
     })
   })

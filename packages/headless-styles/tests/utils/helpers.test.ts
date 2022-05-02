@@ -1,4 +1,5 @@
 import {
+  createCSSObj,
   createJSProps,
   createSvelteObj,
   transformStyles,
@@ -35,6 +36,19 @@ describe('helpers', () => {
   test('should return a Svelte Obj if true', () => {
     expect(createSvelteObj('testClass')).toEqual({
       class: 'testClass',
+    })
+  })
+
+  test('should return a CSS Obj', () => {
+    expect(createCSSObj('testClass')).toEqual({
+      className: 'testClass',
+    })
+  })
+
+  test('should return a CSS Obj w/ extra properties', () => {
+    expect(createCSSObj('testClass2', { 'aria-role': 'progress' })).toEqual({
+      className: 'testClass2',
+      'aria-role': 'progress',
     })
   })
 

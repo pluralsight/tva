@@ -39,6 +39,13 @@ export function createSvelteObj(classname = '') {
   return { class: classname }
 }
 
+export function createCSSObj(className: string, addtionalProps?: StyleProps) {
+  return {
+    className,
+    ...addtionalProps,
+  }
+}
+
 export function createJSProps(
   cssProps: string,
   styles: StyleProps,
