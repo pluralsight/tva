@@ -29,7 +29,7 @@ function App() {
 
       <Badge />
       <Button />
-      <Progress />
+      <Progress logJS />
       <Skeleton />
     </div>
   )

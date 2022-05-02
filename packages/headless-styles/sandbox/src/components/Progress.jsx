@@ -1,4 +1,4 @@
-import { getProgressProps } from '../../../src'
+import { getProgressProps, getJSProgressProps } from '../../../src'
 
 const { classes, ...defaultA11y } = getProgressProps()
 const { classes: xsStyles, ...xsA11y } = getProgressProps({
@@ -16,9 +16,9 @@ const { classes: insetStyles, ...insetA11y } = getProgressProps({
 })
 
 export default function Progress(props) {
-  // if (props.logJS) {
-  //   console.log({ ...getJSBadgeProps({ kind: 'medium' }) })
-  // }
+  if (props.logJS) {
+    console.log({ ...getJSProgressProps() })
+  }
 
   return (
     <div id="progress">
