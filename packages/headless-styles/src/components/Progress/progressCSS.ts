@@ -6,20 +6,32 @@ import styles from './progressCSS.module.css'
 const PROGRESS = 'ps-progress'
 
 export function getProgressProps(options?: ProgressOptions) {
-  const { kind, size, tech } = getDefaultProgressOptions(options)
+  const { kind, size, tech, ...a11y } = getDefaultProgressOptions(options)
   const sizeClass = `${size}Size`
+  const a11yProps = {
+    'aria-valuemax': a11y.max,
+    'aria-valuemin': a11y.min,
+    'aria-valuenow': a11y.now,
+    role: 'progressbar',
+  }
 
   if (tech === 'svelte') {
     return {
-      bar: createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
-      wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
+      ...a11yProps,
+      styles: {
+        bar: createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
+        wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
+      },
     }
   }
 
   return {
-    bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
-    wrapper: createCSSObj(
-      `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
-    ),
+    ...a11yProps,
+    styles: {
+      bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
+      wrapper: createCSSObj(
+        `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
+      ),
+    },
   }
 }

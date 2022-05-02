@@ -1,9 +1,21 @@
 import { getProgressProps } from '../../../src'
 
-const defaultBarProps = getProgressProps()
-const xsBarProps = getProgressProps({ size: 'xs' })
-const insetBarProps = getProgressProps({ kind: 'inset' })
-const insetXSBarProps = getProgressProps({ kind: 'inset', size: 'xs' })
+const { styles, ...defaultA11y } = getProgressProps()
+const { styles: xsStyles, ...xsA11y } = getProgressProps({
+  now: 50,
+  size: 'xs',
+})
+
+const { styles: insetStyles, ...insetA11y } = getProgressProps({
+  kind: 'inset',
+  now: 60,
+})
+
+const { styles: xsInsetStyles, ...xsInsetA11y } = getProgressProps({
+  kind: 'inset',
+  now: 80,
+  size: 'xs',
+})
 
 export default function Progress(props) {
   // if (props.logJS) {
@@ -14,23 +26,27 @@ export default function Progress(props) {
     <div id="progress">
       <h3>Progress</h3>
       <div className="App-container column">
-        <div {...xsBarProps.wrapper}>
-          <div {...xsBarProps.bar} />
+        <div {...styles.wrapper}>
+          <div {...defaultA11y} {...styles.bar} />
         </div>
       </div>
       <div className="App-container column">
-        <div {...defaultBarProps.wrapper}>
-          <div {...defaultBarProps.bar} />
+        <div {...xsStyles.wrapper}>
+          <div {...xsA11y} {...xsStyles.bar} style={{ width: '50%' }} />
         </div>
       </div>
       <div className="App-container column">
-        <div {...insetXSBarProps.wrapper}>
-          <div {...insetXSBarProps.bar} />
+        <div {...xsInsetStyles.wrapper}>
+          <div
+            {...xsInsetA11y}
+            {...xsInsetStyles.bar}
+            style={{ width: '60%' }}
+          />
         </div>
       </div>
       <div className="App-container column">
-        <div {...insetBarProps.wrapper}>
-          <div {...insetBarProps.bar} />
+        <div {...insetStyles.wrapper}>
+          <div {...insetA11y} {...insetStyles.bar} style={{ width: '80%' }} />
         </div>
       </div>
     </div>

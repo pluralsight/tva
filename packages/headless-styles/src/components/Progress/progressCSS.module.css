@@ -1,7 +1,7 @@
 .bar {
   background-color: var(--ps-neutral-text);
   height: 100%;
-  width: 50%;
+  width: 0;
 }
 
 .linear {

@@ -1,5 +1,8 @@
 export interface ProgressOptions {
   kind?: Kind
+  max?: number
+  min?: number
+  now?: number
   size?: Size
   tech?: Tech
 }

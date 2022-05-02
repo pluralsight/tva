@@ -3,31 +3,30 @@
 //
 // Manual changes will be lost - proceed with caution!
 
-
 export default {
-  "bar": {
-    "backgroundColor": "hsl(0deg 0% 100% / 100%)",
-    "height": "100%",
-    "width": "50%"
+  bar: {
+    backgroundColor: 'hsl(0deg 0% 100% / 100%)',
+    height: '100%',
+    width: '0',
   },
-  "linear": {
-    "borderRadius": "20px"
+  linear: {
+    borderRadius: '20px',
   },
-  "sSize": {
-    "composes": "bar"
+  sSize: {
+    composes: 'bar',
   },
-  "xsSize": {
-    "composes": "bar",
-    "height": "0.25rem"
+  xsSize: {
+    composes: 'bar',
+    height: '0.25rem',
   },
-  "wrapper": {
-    "backgroundColor": "hsl(237deg 30% 36% / 100%)",
-    "height": "0.5rem",
-    "overflowY": "hidden",
-    "position": "relative",
-    "width": "100%"
+  wrapper: {
+    backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+    height: '0.5rem',
+    overflowY: 'hidden',
+    position: 'relative',
+    width: '100%',
   },
-  "inset": {
-    "borderRadius": "initial"
-  }
+  inset: {
+    borderRadius: 'initial',
+  },
 }
