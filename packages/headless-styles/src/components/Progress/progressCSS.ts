@@ -14,11 +14,15 @@ export function getProgressProps(options?: ProgressOptions) {
     'aria-valuenow': a11y.now,
     role: 'progressbar',
   }
+  const style = {
+    width: `${a11y.now}%`,
+  }
 
   if (tech === 'svelte') {
     return {
       ...a11yProps,
-      styles: {
+      style,
+      classes: {
         bar: createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
         wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
       },
@@ -27,7 +31,8 @@ export function getProgressProps(options?: ProgressOptions) {
 
   return {
     ...a11yProps,
-    styles: {
+    style,
+    classes: {
       bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
       wrapper: createCSSObj(
         `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`

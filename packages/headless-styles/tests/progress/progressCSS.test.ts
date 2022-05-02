@@ -11,7 +11,10 @@ describe('Progress CSS', () => {
     }
     const result = {
       ...a11yProps,
-      styles: {
+      style: {
+        width: '0%',
+      },
+      classes: {
         bar: {
           className: `${baseClass} sSize linear`,
         },
@@ -27,9 +30,13 @@ describe('Progress CSS', () => {
 
     test('should accept a kind type', () => {
       expect(getProgressProps({ kind: 'linear' })).toEqual(result)
-      expect(getProgressProps({ kind: 'inset' })).toEqual({
+      expect(getProgressProps({ kind: 'inset', now: 80 })).toEqual({
         ...a11yProps,
-        styles: {
+        'aria-valuenow': 80,
+        style: {
+          width: '80%',
+        },
+        classes: {
           bar: {
             className: `${baseClass} sSize inset`,
           },
@@ -41,9 +48,13 @@ describe('Progress CSS', () => {
     })
 
     test('should accept a tech type', () => {
-      expect(getProgressProps({ tech: 'svelte' })).toEqual({
+      expect(getProgressProps({ tech: 'svelte', now: 60 })).toEqual({
         ...a11yProps,
-        styles: {
+        'aria-valuenow': 60,
+        style: {
+          width: '60%',
+        },
+        classes: {
           bar: {
             class: 'ps-progress bar sSize linear',
           },
