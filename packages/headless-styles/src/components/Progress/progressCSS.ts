@@ -1,5 +1,5 @@
 import { createCSSObj, createSvelteObj } from '../../utils/helpers'
-import { getDefaultProgressOptions } from './shared'
+import { getA11yProgressProps, getDefaultProgressOptions } from './shared'
 import type { ProgressOptions } from './types'
 import styles from './progressCSS.module.css'
 
@@ -7,13 +7,8 @@ const PROGRESS = 'ps-progress'
 
 export function getProgressProps(options?: ProgressOptions) {
   const { kind, size, tech, ...a11y } = getDefaultProgressOptions(options)
+  const a11yProps = getA11yProgressProps(a11y)
   const sizeClass = `${size}Size`
-  const a11yProps = {
-    'aria-valuemax': a11y.max,
-    'aria-valuemin': a11y.min,
-    'aria-valuenow': a11y.now,
-    role: 'progressbar',
-  }
   const style = {
     width: `${a11y.now}%`,
   }

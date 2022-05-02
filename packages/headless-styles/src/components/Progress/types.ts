@@ -1,8 +1,11 @@
-export interface ProgressOptions {
-  kind?: Kind
+export interface ProgressA11yOptions {
   max?: number
   min?: number
   now?: number
+}
+
+export interface ProgressOptions extends ProgressA11yOptions {
+  kind?: Kind
   size?: Size
   tech?: Tech
 }
