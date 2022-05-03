@@ -17,7 +17,7 @@ const { classes: insetStyles, ...insetA11y } = getProgressProps({
 
 export default function Progress(props) {
   if (props.logJS) {
-    console.log({ ...getJSProgressProps() })
+    console.log({ ...getJSProgressProps({ kind: 'inset' }) })
   }
 
   return (
