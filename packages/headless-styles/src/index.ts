@@ -10,6 +10,8 @@ export {
   getJSDangerButtonProps,
 } from './components/Button/buttonJS'
 
+export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
+
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 export type { ProgressOptions } from './components/Progress/types'

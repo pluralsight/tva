@@ -7,7 +7,6 @@ export interface CircularProgressA11yOptions {
 export interface CircularProgressOptions extends CircularProgressA11yOptions {
   kind?: Kind
   size?: Size
-  showValue?: boolean
   tech?: Tech
 }
 

@@ -18,7 +18,6 @@ const defaultCircularProgressOptions = {
   max: 100,
   min: 0,
   now: 0,
-  showValue: false,
   size: 'm' as Size,
   tech: '' as Tech,
 }
@@ -31,7 +30,6 @@ export function getDefaultCircularProgressOptions(
     max: options?.max ?? defaultCircularProgressOptions.max,
     min: options?.min ?? defaultCircularProgressOptions.min,
     now: options?.now ?? defaultCircularProgressOptions.now,
-    showValue: options?.showValue ?? defaultCircularProgressOptions.showValue,
     size: options?.size ?? defaultCircularProgressOptions.size,
     tech: options?.tech ?? defaultCircularProgressOptions.tech,
   }

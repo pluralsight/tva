@@ -7,6 +7,7 @@ import type { CircularProgressOptions } from './types'
 import styles from './circularProgressCSS.module.css'
 
 const CIRC_PROGRESS = 'ps-circular-progress'
+const DASH_OFFSET = '66'
 const baseCircleProps = {
   cx: '50',
   cy: '50',
@@ -20,9 +21,7 @@ function getDashArray(nowValue: number) {
   return `${dash} ${gap}`
 }
 
-export default function getCircularProgressProps(
-  options?: CircularProgressOptions
-) {
+export function getCircularProgressProps(options?: CircularProgressOptions) {
   const { kind, size, tech, ...a11y } =
     getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y)
@@ -33,7 +32,7 @@ export default function getCircularProgressProps(
   if (tech === 'svelte') {
     return {
       containerProps: {
-        a11yProps,
+        ...a11yProps,
         ...createSvelteObj(`${CIRC_PROGRESS} base ${kind}`),
       },
       svgBoxProps: {
@@ -47,7 +46,7 @@ export default function getCircularProgressProps(
       nowCircleProps: {
         ...baseCircleProps,
         ...createSvelteObj(`${CIRC_PROGRESS}_now circleNow`),
-        strokeDashoffset: '',
+        strokeDashoffset: DASH_OFFSET,
         strokeDasharray: getDashArray(now),
       },
       labelProps: {
@@ -59,7 +58,7 @@ export default function getCircularProgressProps(
 
   return {
     containerProps: {
-      a11yProps,
+      ...a11yProps,
       ...createCSSObj(`${CIRC_PROGRESS} ${styles.base} ${styles[kind]}`),
     },
     svgBoxProps: {
@@ -73,7 +72,7 @@ export default function getCircularProgressProps(
     nowCircleProps: {
       ...baseCircleProps,
       ...createCSSObj(`${CIRC_PROGRESS}_now ${styles.circleNow}`),
-      strokeDashoffset: '',
+      strokeDashoffset: DASH_OFFSET,
       strokeDasharray: getDashArray(now),
     },
     labelProps: {

@@ -19,7 +19,6 @@
   display: inline-block;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
-  font-size: 3rem;
   position: relative;
   vertical-align: middle;
 }
@@ -43,11 +42,12 @@
 }
 
 .text {
+  display: inline-block;
   font-size: 0.75rem;
   left: 50%;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 42%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
