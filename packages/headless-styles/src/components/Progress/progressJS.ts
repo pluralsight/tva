@@ -3,6 +3,15 @@ import { getA11yProgressProps, getDefaultProgressOptions } from './shared'
 import styles from './generated/progressCSS.module'
 import type { ProgressOptions } from './types'
 
+export const muiReset = {
+  bottom: 'initial',
+  display: 'block',
+  left: 'initial',
+  position: 'initial',
+  top: 'initial',
+  transformOrigin: 'initial',
+}
+
 export const ChakraProgress = {
   parts: ['filledTrack', 'track'],
   baseStyle: {

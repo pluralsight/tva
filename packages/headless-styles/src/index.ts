@@ -11,7 +11,7 @@ export {
 } from './components/Button/buttonJS'
 
 export { getProgressProps } from './components/Progress/progressCSS'
-export { getJSProgressProps } from './components/Progress/progressJS'
+export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
