@@ -1,0 +1,75 @@
+@keyframes spin {
+  0% {
+    stroke-dasharray: 1, 400;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 400, 400;
+    stroke-dashoffset: -100;
+  }
+
+  100% {
+    stroke-dasharray: 400, 400;
+    stroke-dashoffset: -260;
+  }
+}
+
+.base {
+  display: inline-block;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-size: 3rem;
+  position: relative;
+  vertical-align: middle;
+}
+
+.box {
+  height: 3rem;
+  width: 3rem;
+}
+
+.circle {
+  fill: transparent;
+  stroke: var(--ps-neutral-border);
+}
+
+.circleNow {
+  fill: transparent;
+  stroke: var(--ps-neutral-text);
+  transition-duration: 600ms;
+  transition-property: stroke-dasharray, stroke;
+  transition-timing-function: ease;
+}
+
+.text {
+  font-size: 0.75rem;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+/* size must be last */
+
+.determinate {
+  composes: circleNow;
+}
+
+.indeterminate {
+  animation-direction: normal;
+  animation-duration: 1.5s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  composes: circleNow;
+}
+
+.xsSize {
+  height: 1.25rem;
+  width: 1.25rem;
+}
