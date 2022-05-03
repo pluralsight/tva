@@ -75,10 +75,10 @@ The `inset` kind is to be used when pinned to the edges of a container.
 <LiveExampleTabs
   fullCode={<InsetProgressFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'ps-react-chakra-ykfp69',
+    joy: 'basic-mui-9sft2c',
+    styled: 'sc-wy6zrg',
+    svelte: 'basic-svelte-8tpcpg',
   }}
 >
   <InsetProgressPreview />
@@ -92,10 +92,10 @@ There are two sizes available for the progress. You can use `xs` or `s` (default
 <LiveExampleTabs
   fullCode={<ProgressSizesFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'ps-react-chakra-sizes-qrqx8s',
+    joy: 'basic-mui-sizes-58l1wz',
+    styled: 'sc-sizes-g9702j',
+    svelte: 'basic-svelte-sizes-isy608',
   }}
 >
   <ProgressSizesPreview />
@@ -143,12 +143,18 @@ The custom bar `width` percentage is added into the `cssProps` and `styles` for 
 
 ## ProgressOptions
 
+This interface is available as an `import` for use.
+
 ```typescript
 interface ProgressOptions extends ProgressA11yOptions {
   kind?: 'linear' | 'inset'
   size?: 'xs' | 's'
   tech?: 'svelte'
 }
+```
+
+```typescript title="Import example"
+import type { ProgressOptions } from '@pluralsight/headless-styles'
 ```
 
 ## ProgressA11yOptions
