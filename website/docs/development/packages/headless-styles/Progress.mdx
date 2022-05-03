@@ -13,17 +13,17 @@ import InsetProgress from '@site/src/components/Progress/InsetProgress'
 import ProgressSizes from '@site/src/components/Progress/ProgressSizes'
 import DangerButton from '@site/src/components/Button/DangerButton'
 import {
-  BasicButtonPreview,
-  BasicButtonFullPreview,
-} from '@site/src/components/Button/BasicButton.preview'
+  BasicProgressPreview,
+  BasicProgressFullPreview,
+} from '@site/src/components/Progress/BasicProgress.preview'
 import {
-  ButtonSizesPreview,
-  ButtonSizesFullPreview,
-} from '@site/src/components/Button/ButtonSizes.preview'
+  InsetProgressPreview,
+  InsetProgressFullPreview,
+} from '@site/src/components/Progress/InsetProgress.preview'
 import {
-  DangerButtonPreview,
-  DangerButtonFullPreview,
-} from '@site/src/components/Button/DangerButton.preview'
+  ProgressSizesPreview,
+  ProgressSizesFullPreview,
+} from '@site/src/components/Progress/ProgressSizes.preview'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -56,7 +56,7 @@ import { getProgressProps } from '@pluralsight/headless-styles'
 
 <BasicProgress />
 <LiveExampleTabs
-  fullCode={<BasicButtonFullPreview />}
+  fullCode={<BasicProgressFullPreview />}
   sandboxList={{
     chakra: 'ps-react-chakra-ykfp69',
     joy: 'basic-mui-9sft2c',
@@ -64,7 +64,7 @@ import { getProgressProps } from '@pluralsight/headless-styles'
     svelte: 'basic-svelte-8tpcpg',
   }}
 >
-  <BasicButtonPreview />
+  <BasicProgressPreview />
 </LiveExampleTabs>
 
 ### Inset Progress
@@ -73,7 +73,7 @@ The `inset` kind is to be used when pinned to the edges of a container.
 
 <InsetProgress />
 <LiveExampleTabs
-  fullCode={<BasicButtonFullPreview />}
+  fullCode={<InsetProgressFullPreview />}
   sandboxList={{
     chakra: 'basic-button-chakra-i02ytr',
     joy: 'basic-buttons-mui-bnzx9l',
@@ -81,7 +81,7 @@ The `inset` kind is to be used when pinned to the edges of a container.
     svelte: 'basic-button-svelte-4qu65y',
   }}
 >
-  <BasicButtonPreview />
+  <InsetProgressPreview />
 </LiveExampleTabs>
 
 ### Progress sizes
@@ -90,7 +90,7 @@ There are two sizes available for the progress. You can use `xs` or `s` (default
 
 <ProgressSizes />
 <LiveExampleTabs
-  fullCode={<BasicButtonFullPreview />}
+  fullCode={<ProgressSizesFullPreview />}
   sandboxList={{
     chakra: 'basic-button-chakra-i02ytr',
     joy: 'basic-buttons-mui-bnzx9l',
@@ -98,7 +98,7 @@ There are two sizes available for the progress. You can use `xs` or `s` (default
     svelte: 'basic-button-svelte-4qu65y',
   }}
 >
-  <BasicButtonPreview />
+  <ProgressSizesPreview />
 </LiveExampleTabs>
 
 ## Accessibility
