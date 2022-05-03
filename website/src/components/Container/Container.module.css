@@ -8,3 +8,8 @@
   padding: 36px;
   text-align: center;
 }
+
+.column {
+  composes: base;
+  flex-direction: column;
+}

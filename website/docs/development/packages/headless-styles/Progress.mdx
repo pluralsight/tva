@@ -1,0 +1,204 @@
+---
+sidebar_position: 4
+tags: [Development, Packages, Components, Headless Styles, Progress, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicProgress from '@site/src/components/Progress/BasicProgress'
+import InsetProgress from '@site/src/components/Progress/InsetProgress'
+import ProgressSizes from '@site/src/components/Progress/ProgressSizes'
+import DangerButton from '@site/src/components/Button/DangerButton'
+import {
+  BasicButtonPreview,
+  BasicButtonFullPreview,
+} from '@site/src/components/Button/BasicButton.preview'
+import {
+  ButtonSizesPreview,
+  ButtonSizesFullPreview,
+} from '@site/src/components/Button/ButtonSizes.preview'
+import {
+  DangerButtonPreview,
+  DangerButtonFullPreview,
+} from '@site/src/components/Button/DangerButton.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+Progress is used to display the progress status for a task that takes a long time or consists of several steps.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Progress"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getProgressProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+### Basic Progress
+
+`getProgressProps` comes with two kinds to change the visual style of the progress. You can use `linear` (default), and `inset`.
+
+<BasicProgress />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-ykfp69',
+    joy: 'basic-mui-9sft2c',
+    styled: 'sc-wy6zrg',
+    svelte: 'basic-svelte-8tpcpg',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+### Inset Progress
+
+The `inset` kind is to be used when pinned to the edges of a container.
+
+<InsetProgress />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+### Progress sizes
+
+There are two sizes available for the progress. You can use `xs` or `s` (default).
+
+<ProgressSizes />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+## Accessibility
+
+`getProgressProps` returns an [a11yProps](#a11yprops) Object to spread over the "bar" component.
+
+- It sets the `role` to `progressbar` to denote that it is a progress.
+- It uses `aria-valuenow` set to the `now` value passed into the [ProgressOptions](#progressoptions) to ensure the progress percent is visible to screen readers.
+
+## CSS API
+
+### getProgressProps
+
+```typescript
+getProgressProps(options: ProgressOptions): ProgressProps
+```
+
+The progress prop-getter takes in [ProgressOptions](#progressoptions) returns [ProgressProps](#progressprops) that contains the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+## JS API
+
+### getJSProgressProps
+
+```typescript
+getJSProgressProps(options: ProgressOptions): JSProgressProps
+```
+
+The CSS-in-JS prop-getter takes in the same [ProgressOptions](#progressoptions) as the CSS API and returns [JSProgressProps](#jsprogressprops) which caters to CSS Templates, StyleObject, and button specific attributes.
+
+:::note
+
+The custom bar `width` percentage is added into the `cssProps` and `styles` for the JS API.
+
+:::
+
+## API
+
+| Name                 | Argument Type                                    | Default                                 | Description               |
+| -------------------- | ------------------------------------------------ | --------------------------------------- | ------------------------- |
+| `getProgressProps`   | **options**: [ProgressOptions](#progressoptions) | **kind**: 'linear', <br />**size**: 's' | Get main progress styles. |
+| `getJSProgressProps` | **options**: [ProgressOptions](#progressoptions) | **kind**: 'linear', <br />**size**: 's' | Get main progress styles. |
+
+## ProgressOptions
+
+```typescript
+interface ProgressOptions extends ProgressA11yOptions {
+  kind?: 'linear' | 'inset'
+  size?: 'xs' | 's'
+  tech?: 'svelte'
+}
+```
+
+## ProgressA11yOptions
+
+```typescript
+interface ProgressA11yOptions {
+  max?: number
+  min?: number
+  now?: number
+}
+```
+
+## A11yProps
+
+```typescript
+interface A11yProps {
+  'aria-valuemax': number
+  'aria-valuemin': number
+  'aria-valuenow': number
+  role: 'progressbar'
+}
+```
+
+## ProgressProps
+
+```typescript
+interface ProgressProps {
+  a11yProps: A11yProps
+  style: {
+    width: number
+  }
+  classes: {
+    bar: { className: string }
+    wrapper: { className: string }
+  }
+}
+```
+
+## JSProgressProps
+
+```typescript
+interface JSProgressProps {
+  a11yProps: A11yProps
+  bar: {
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+  }
+  wrapper: {
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+  }
+}
+```
