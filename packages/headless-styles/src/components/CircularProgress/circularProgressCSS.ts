@@ -8,6 +8,7 @@ import styles from './circularProgressCSS.module.css'
 
 const CIRC_PROGRESS = 'ps-circular-progress'
 const DASH_OFFSET = '66'
+const VIEWBOX = '0 0 100 100'
 const baseCircleProps = {
   cx: '50',
   cy: '50',
@@ -19,6 +20,13 @@ function getDashArray(nowValue: number) {
   const dash = nowValue * 2.64
   const gap = 264 - dash
   return `${dash} ${gap}`
+}
+
+function getStrokeProps(now: number) {
+  return {
+    strokeDashoffset: DASH_OFFSET,
+    strokeDasharray: getDashArray(now),
+  }
 }
 
 export function getCircularProgressProps(options?: CircularProgressOptions) {
@@ -37,7 +45,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
       },
       svgBoxProps: {
         ...createSvelteObj(`${CIRC_PROGRESS}_box box ${sizeClass}`),
-        viewBox: '0 0 100 100',
+        viewBox: VIEWBOX,
       },
       baseCircleProps: {
         ...baseCircleProps,
@@ -46,8 +54,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
       nowCircleProps: {
         ...baseCircleProps,
         ...createSvelteObj(`${CIRC_PROGRESS}_now circleNow`),
-        strokeDashoffset: DASH_OFFSET,
-        strokeDasharray: getDashArray(now),
+        ...getStrokeProps(now),
       },
       labelProps: {
         ...createSvelteObj(`${CIRC_PROGRESS}_label text`),
@@ -63,7 +70,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
     },
     svgBoxProps: {
       ...createCSSObj(`${CIRC_PROGRESS}_box ${styles.box} ${sizeClass}`),
-      viewBox: '0 0 100 100',
+      viewBox: VIEWBOX,
     },
     baseCircleProps: {
       ...baseCircleProps,
@@ -72,8 +79,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
     nowCircleProps: {
       ...baseCircleProps,
       ...createCSSObj(`${CIRC_PROGRESS}_now ${styles.circleNow}`),
-      strokeDashoffset: DASH_OFFSET,
-      strokeDasharray: getDashArray(now),
+      ...getStrokeProps(now),
     },
     labelProps: {
       ...createCSSObj(`${CIRC_PROGRESS}_label ${styles.text}`),
