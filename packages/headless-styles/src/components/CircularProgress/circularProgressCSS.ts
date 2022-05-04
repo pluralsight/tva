@@ -44,7 +44,7 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
         ...createSvelteObj(`${CIRC_PROGRESS} base ${kind}`),
       },
       svgBoxProps: {
-        ...createSvelteObj(`${CIRC_PROGRESS}_box box ${sizeClass}`),
+        ...createSvelteObj(`${CIRC_PROGRESS}_box box ${styles[sizeClass]}`),
         viewBox: VIEWBOX,
       },
       baseCircleProps: {
@@ -69,7 +69,9 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
       ...createCSSObj(`${CIRC_PROGRESS} ${styles.base} ${styles[kind]}`),
     },
     svgBoxProps: {
-      ...createCSSObj(`${CIRC_PROGRESS}_box ${styles.box} ${sizeClass}`),
+      ...createCSSObj(
+        `${CIRC_PROGRESS}_box ${styles.box} ${styles[sizeClass]}`
+      ),
       viewBox: VIEWBOX,
     },
     baseCircleProps: {
