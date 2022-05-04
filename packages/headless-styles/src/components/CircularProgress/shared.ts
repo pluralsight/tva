@@ -36,8 +36,13 @@ export function getDefaultCircularProgressOptions(
 }
 
 export function getA11yCircularProgressProps(
-  a11yOptions?: CircularProgressA11yOptions
+  a11yOptions?: CircularProgressA11yOptions,
+  kind?: Kind
 ) {
+  if (kind === 'indeterminate') {
+    return { role: a11yRole }
+  }
+
   return {
     [a11yPropMap.valueMax]: a11yOptions?.max,
     [a11yPropMap.valueMin]: a11yOptions?.min,
