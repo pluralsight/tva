@@ -12,8 +12,7 @@ import styles from './generated/circularProgressCSS.module'
 export type StyleKey = keyof typeof styles
 
 export function getJSCircularProgressProps(options?: CircularProgressOptions) {
-  const { kind, size, tech, ...a11y } =
-    getDefaultCircularProgressOptions(options)
+  const { kind, size, ...a11y } = getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
   const sizeClass = `${size}Size`
   const now = a11y.now
