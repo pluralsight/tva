@@ -1,33 +1,15 @@
 import { createCSSObj, createSvelteObj } from '../../utils/helpers'
 import {
+  baseCircleProps,
   getA11yCircularProgressProps,
   getDefaultCircularProgressOptions,
+  getStrokeProps,
+  VIEWBOX,
 } from './shared'
 import type { CircularProgressOptions } from './types'
 import styles from './circularProgressCSS.module.css'
 
 const CIRC_PROGRESS = 'ps-circular-progress'
-const DASH_OFFSET = '66'
-const VIEWBOX = '0 0 100 100'
-const baseCircleProps = {
-  cx: '50',
-  cy: '50',
-  r: '42',
-  strokeWidth: '12px',
-}
-
-function getDashArray(nowValue: number) {
-  const dash = nowValue * 2.64
-  const gap = 264 - dash
-  return `${dash} ${gap}`
-}
-
-function getStrokeProps(now: number) {
-  return {
-    strokeDashoffset: DASH_OFFSET,
-    strokeDasharray: getDashArray(now),
-  }
-}
 
 export function getCircularProgressProps(options?: CircularProgressOptions) {
   const { kind, size, tech, ...a11y } =

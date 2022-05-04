@@ -13,6 +13,8 @@ const a11yPropMap = {
   valueNow: 'aria-valuenow',
 }
 
+const DASH_OFFSET = '66'
+
 const defaultCircularProgressOptions = {
   kind: 'determinate' as Kind,
   max: 100,
@@ -20,6 +22,29 @@ const defaultCircularProgressOptions = {
   now: 0,
   size: 'm' as Size,
   tech: '' as Tech,
+}
+
+function getDashArray(nowValue: number) {
+  const dash = nowValue * 2.64
+  const gap = 264 - dash
+  return `${dash} ${gap}`
+}
+
+// public
+
+export const VIEWBOX = '0 0 100 100'
+export const baseCircleProps = {
+  cx: '50',
+  cy: '50',
+  r: '42',
+  strokeWidth: '12px',
+}
+
+export function getStrokeProps(now: number) {
+  return {
+    strokeDashoffset: DASH_OFFSET,
+    strokeDasharray: getDashArray(now),
+  }
 }
 
 export function getDefaultCircularProgressOptions(

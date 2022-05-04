@@ -30,7 +30,7 @@ function App() {
 
       <Badge />
       <Button />
-      <CircularProgress />
+      <CircularProgress logJS />
       <Progress />
       <Skeleton />
     </div>
