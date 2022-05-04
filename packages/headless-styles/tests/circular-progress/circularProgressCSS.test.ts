@@ -49,7 +49,7 @@ describe('CircularProgress CSS', () => {
       expect(getCircularProgressProps({ kind: 'indeterminate' })).toEqual({
         ...result,
         containerProps: {
-          ...result.containerProps,
+          role: 'progressbar',
           className: `${baseClass} base indeterminate`,
         },
       })
