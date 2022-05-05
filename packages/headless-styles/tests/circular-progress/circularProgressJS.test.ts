@@ -12,7 +12,7 @@ describe('circular progress JS', () => {
     ).toEqual('spin')
   })
 
-  test('should return a distinct height difference based on the size', () => {
+  test('should return a distinct width difference based on the size', () => {
     expect(getJSCircularProgressProps().svgBoxProps.styles.width).toEqual(
       '3rem'
     )

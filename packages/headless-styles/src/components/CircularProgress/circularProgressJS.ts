@@ -9,6 +9,37 @@ import {
 import type { CircularProgressOptions } from './types'
 import styles from './generated/circularProgressCSS.module'
 
+export const ChakraCircularProgress = {
+  parts: ['filledTrack', 'track', 'label'],
+  baseStyle: {
+    filledTrack: styles.circleNow,
+    track: styles.circle,
+    label: styles.text,
+  },
+  defaultProps: {
+    variant: 'determinate',
+    size: 'm',
+  },
+  sizes: {
+    xs: {
+      track: styles.xsSize,
+    },
+    m: {
+      track: styles.base,
+    },
+  },
+  variants: {
+    determinate: {
+      filledTrack: styles.circleNow,
+      track: styles.circle,
+    },
+    indeterminate: {
+      filledTrack: styles.circleNow,
+      track: styles.circle,
+    },
+  },
+}
+
 export type StyleKey = keyof typeof styles
 
 export function getJSCircularProgressProps(options?: CircularProgressOptions) {
