@@ -12,7 +12,7 @@ function CircleProgress(props) {
         <circle {...determinateProps.baseCircleProps} />
         <circle {...determinateProps.nowCircleProps} />
       </svg>
-      {props.showValue && props.size === 's' && (
+      {props.showValue && props.size !== 'xs' && (
         <span {...determinateProps.labelProps}>
           {determinateProps.labelProps.value}
         </span>

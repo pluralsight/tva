@@ -1,4 +1,4 @@
-@keyframes spin {
+@keyframes loading {
   0% {
     stroke-dasharray: 1, 400;
     stroke-dashoffset: 0;
@@ -12,6 +12,16 @@
   100% {
     stroke-dasharray: 400, 400;
     stroke-dashoffset: -260;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -43,6 +53,8 @@
 
 .text {
   display: inline-block;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
   font-size: 0.75rem;
   left: 50%;
   position: absolute;
@@ -52,13 +64,13 @@
   width: 100%;
 }
 
-/* size must be last */
+/* custom props - order matters */
 
 .determinate {
-  composes: circleNow;
+  composes: box;
 }
 
-.indeterminate {
+.indeterminate.box {
   animation-direction: normal;
   animation-duration: 1.5s;
   animation-fill-mode: none;
@@ -66,10 +78,26 @@
   animation-name: spin;
   animation-play-state: running;
   animation-timing-function: linear;
-  composes: circleNow;
+}
+
+.indeterminate {
+  animation-direction: normal;
+  animation-duration: 1.5s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-name: loading;
+  animation-play-state: running;
+  animation-timing-function: linear;
+}
+
+/* sizes must be last */
+
+.mSize {
+  composes: box;
 }
 
 .xsSize {
+  composes: box;
   height: 1.25rem;
   width: 1.25rem;
 }

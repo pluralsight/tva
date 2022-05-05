@@ -4,8 +4,8 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  keyframesSpin: {
-    '@keyframes spin': {
+  keyframesLoading: {
+    '@keyframes loading': {
       '0%': {
         'stroke-dasharray': '1, 400',
         'stroke-dashoffset': '0',
@@ -17,6 +17,16 @@ export default {
       '100%': {
         'stroke-dasharray': '400, 400',
         'stroke-dashoffset': '-260',
+      },
+    },
+  },
+  keyframesSpin: {
+    '@keyframes spin': {
+      '0%': {
+        transform: 'rotate(0deg)',
+      },
+      '100%': {
+        transform: 'rotate(360deg)',
       },
     },
   },
@@ -44,6 +54,8 @@ export default {
   },
   text: {
     display: 'inline-block',
+    fontFamily:
+      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     fontSize: '0.75rem',
     left: '50%',
     position: 'absolute',
@@ -53,9 +65,9 @@ export default {
     width: '100%',
   },
   determinate: {
-    composes: 'circleNow',
+    composes: 'box',
   },
-  indeterminate: {
+  indeterminate_box: {
     animationDirection: 'normal',
     animationDuration: '1.5s',
     animationFillMode: 'none',
@@ -63,9 +75,21 @@ export default {
     animationName: 'spin',
     animationPlayState: 'running',
     animationTimingFunction: 'linear',
-    composes: 'circleNow',
+  },
+  indeterminate: {
+    animationDirection: 'normal',
+    animationDuration: '1.5s',
+    animationFillMode: 'none',
+    animationIterationCount: 'infinite',
+    animationName: 'loading',
+    animationPlayState: 'running',
+    animationTimingFunction: 'linear',
+  },
+  mSize: {
+    composes: 'box',
   },
   xsSize: {
+    composes: 'box',
     height: '1.25rem',
     width: '1.25rem',
   },

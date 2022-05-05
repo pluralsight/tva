@@ -12,8 +12,8 @@ import styles from './generated/circularProgressCSS.module'
 export const ChakraCircularProgress = {
   parts: ['filledTrack', 'track', 'label'],
   baseStyle: {
-    filledTrack: styles.circleNow,
-    track: styles.circle,
+    filledTrack: styles.circle,
+    track: styles.circleNow,
     label: styles.text,
   },
   defaultProps: {
@@ -30,12 +30,12 @@ export const ChakraCircularProgress = {
   },
   variants: {
     determinate: {
-      filledTrack: styles.circleNow,
-      track: styles.circle,
+      filledTrack: styles.circle,
+      track: styles.circleNow,
     },
     indeterminate: {
-      filledTrack: styles.circleNow,
-      track: styles.circle,
+      filledTrack: styles.circle,
+      track: styles.circleNow,
     },
   },
 }
