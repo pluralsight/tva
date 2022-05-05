@@ -27,21 +27,21 @@ export function getCircularProgressProps(options?: CircularProgressOptions) {
       },
       svgBoxProps: {
         ...createSvelteObj(
-          `${CIRC_PROGRESS}_box box ${styles[sizeClass]} ${kind}`
+          `${CIRC_PROGRESS}-box box ${styles[sizeClass]} ${kind}`
         ),
         viewBox: VIEWBOX,
       },
       baseCircleProps: {
         ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}_base circle`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-base circle`),
       },
       nowCircleProps: {
         ...baseCircleProps,
-        ...createSvelteObj(`${CIRC_PROGRESS}_now circleNow`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-now circleNow ${kind}`),
         ...getStrokeProps(now),
       },
       labelProps: {
-        ...createSvelteObj(`${CIRC_PROGRESS}_label text`),
+        ...createSvelteObj(`${CIRC_PROGRESS}-label text`),
         value,
       },
     }

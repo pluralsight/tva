@@ -45,26 +45,32 @@ export type StyleKey = keyof typeof styles
 export function getJSCircularProgressProps(options?: CircularProgressOptions) {
   const { kind, size, ...a11y } = getDefaultCircularProgressOptions(options)
   const a11yProps = getA11yCircularProgressProps(a11y, kind)
-  const sizeClass = `${size}Size`
+  const isIndeterminate = kind === 'indeterminate'
+  const kindKey = styles[kind]
   const now = a11y.now
   const value = `${now}%`
-  const containerStyles = {
-    ...styles.base,
-    ...styles[kind as StyleKey],
-  }
   const svgBoxStyles = {
-    ...styles.box,
-    ...styles[sizeClass as StyleKey],
+    ...kindKey,
+    ...styles[`${size}Size` as StyleKey],
+    animationName: isIndeterminate
+      ? styles.indeterminate_box.animationName
+      : '',
+    width: size === 'xs' ? styles.xsSize.width : styles.box.width,
+  }
+  const nowStyles = {
+    ...styles.circleNow,
+    ...kindKey,
+    animationName: isIndeterminate ? styles.indeterminate.animationName : '',
   }
 
   return {
     containerProps: {
       a11yProps,
-      keyframes: styles.keyframesSpin['@keyframes spin'],
-      ...createJSProps(transformStyles(containerStyles), containerStyles),
+      ...createJSProps(transformStyles(styles.base), styles.base),
     },
     svgBoxProps: {
       ...createJSProps(transformStyles(svgBoxStyles), svgBoxStyles),
+      keyframes: styles.keyframesSpin['@keyframes spin'],
       svgProps: {
         viewBox: VIEWBOX,
       },
@@ -74,11 +80,12 @@ export function getJSCircularProgressProps(options?: CircularProgressOptions) {
       ...createJSProps(transformStyles(styles.circle), styles.circle),
     },
     nowCircleProps: {
+      keyframes: styles.keyframesLoading['@keyframes loading'],
       svgProps: {
         ...baseCircleProps,
         ...getStrokeProps(now),
       },
-      ...createJSProps(transformStyles(styles.circleNow), styles.circleNow),
+      ...createJSProps(transformStyles(nowStyles), nowStyles),
     },
     labelProps: {
       ...createJSProps(transformStyles(styles.text), styles.text),

@@ -12,21 +12,21 @@ describe('CircularProgress CSS', () => {
     const result = {
       containerProps: {
         ...a11yProps,
-        className: `${baseClass} base determinate`,
+        className: `${baseClass} base`,
       },
       svgBoxProps: {
-        className: `${baseClass}_box box mSize`,
+        className: `${baseClass}-box mSize determinate`,
         viewBox: '0 0 100 100',
       },
       baseCircleProps: {
-        className: `${baseClass}_base circle`,
+        className: `${baseClass}-base circle`,
         cx: '50',
         cy: '50',
         r: '42',
         strokeWidth: '12px',
       },
       nowCircleProps: {
-        className: `${baseClass}_now circleNow`,
+        className: `${baseClass}-now circleNow determinate`,
         cx: '50',
         cy: '50',
         r: '42',
@@ -35,7 +35,7 @@ describe('CircularProgress CSS', () => {
         strokeDasharray: '0 264',
       },
       labelProps: {
-        className: `${baseClass}_label text`,
+        className: `${baseClass}-label text`,
         value: '0%',
       },
     }
@@ -50,7 +50,15 @@ describe('CircularProgress CSS', () => {
         ...result,
         containerProps: {
           role: 'progressbar',
-          className: `${baseClass} base indeterminate`,
+          className: `${baseClass} base`,
+        },
+        svgBoxProps: {
+          ...result.svgBoxProps,
+          className: `${baseClass}-box mSize indeterminate`,
+        },
+        nowCircleProps: {
+          ...result.nowCircleProps,
+          className: `${baseClass}-now circleNow indeterminate`,
         },
       })
     })
@@ -60,7 +68,7 @@ describe('CircularProgress CSS', () => {
         getCircularProgressProps({ tech: 'svelte', now: 60 }).labelProps
       ).toEqual({
         value: '60%',
-        class: 'ps-circular-progress_label text',
+        class: 'ps-circular-progress-label text',
       })
     })
   })
