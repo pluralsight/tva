@@ -1,0 +1,272 @@
+---
+sidebar_position: 4
+tags: [Development, Packages, Components, Headless Styles, Progress, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicProgress from '@site/src/components/Progress/BasicProgress'
+import InsetProgress from '@site/src/components/Progress/InsetProgress'
+import ProgressSizes from '@site/src/components/Progress/ProgressSizes'
+import {
+  BasicProgressPreview,
+  BasicProgressFullPreview,
+} from '@site/src/components/Progress/BasicProgress.preview'
+import {
+  InsetProgressPreview,
+  InsetProgressFullPreview,
+} from '@site/src/components/Progress/InsetProgress.preview'
+import {
+  ProgressSizesPreview,
+  ProgressSizesFullPreview,
+} from '@site/src/components/Progress/ProgressSizes.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The CircularProgress is used to display the progress status for a task that takes a long time or consists of several steps.
+
+:::note
+
+CircularProgress **should not be used for initial page loading**. This API is meant for action-based responses that usually require a fetch call. For page loading, use the [Skeleton API](./Skeleton).
+
+:::
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/CircularProgress"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getCircularProgressProps } from '@pluralsight/headless-styles'
+```
+
+- Determinate Progress: fills the ciruclar track with color as the indicator moves from 0 to 360 degrees.
+- Indeterminate progress: spins in a "loading" animation along the color track.
+
+## Usage
+
+### Basic CircularProgress
+
+`getCircularProgressProps` comes with two kinds to change the visual style of the progress. You can use `determinate` (default), and `indeterminate`.
+
+<BasicProgress />
+<LiveExampleTabs
+  fullCode={<BasicProgressFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-4w32pm',
+    joy: '',
+    styled: 'sc-1m7nrl',
+    svelte: 'svelte-0v8wrj',
+  }}
+>
+  <BasicProgressPreview />
+</LiveExampleTabs>
+
+### Indeterminate CircularProgress
+
+The `indeterminate` kind is to be used when replacing content during an action-based fetch call.
+
+<InsetProgress />
+<LiveExampleTabs
+  fullCode={<InsetProgressFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-4w32pm',
+    joy: '',
+    styled: 'sc-1m7nrl',
+    svelte: 'svelte-0v8wrj',
+  }}
+>
+  <InsetProgressPreview />
+</LiveExampleTabs>
+
+### CircularProgress sizes
+
+There are two sizes available for the circular-progress. You can use `xs` or `m` (default).
+
+<ProgressSizes />
+<LiveExampleTabs
+  fullCode={<ProgressSizesFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-4w32pm',
+    joy: '',
+    styled: 'sc-1m7nrl',
+    svelte: 'svelte-0v8wrj',
+  }}
+>
+  <ProgressSizesPreview />
+</LiveExampleTabs>
+
+### MUI
+
+The MUI library is incompatible with our CircularProgress API due to the fundamental difference in how they markup thier component (they use a single `circle` component and we require two).
+
+If you use MUI, we recommend using our vanilla React examples given in each section.
+
+## Accessibility
+
+`getCircularProgressProps` returns an [a11yProps](#a11yprops) Object to spread over the "container" component.
+
+- It sets the `role` to `progressbar` to denote that it is a progress.
+- It uses `aria-valuenow` set to the `now` value passed into the [CircularProgressOptions](#circularprogressoptions) to ensure the progress percent is visible to screen readers.
+
+## CSS API
+
+### getCircularProgressProps
+
+```typescript
+getCircularProgressProps(options: CircularProgressOptions): CircularProgressProps
+```
+
+The progress prop-getter takes in [CircularProgressOptions](#circularprogressoptions) returns [CircularProgressProps](#circularprogressprops) that contains the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
+
+## JS API
+
+### getJSCircularProgressProps
+
+```typescript
+getJSCircularProgressProps(options: CircularProgressOptions): JSCircularProgressProps
+```
+
+The CSS-in-JS prop-getter takes in the same [CircularProgressOptions](#circularprogressoptions) as the CSS API and returns [JSCircularProgressProps](#jscircularprogressprops) which caters to CSS Templates, StyleObject, and a11yProps.
+
+## API
+
+| Name                         | Argument Type                                                    | Default                                      | Description                        |
+| ---------------------------- | ---------------------------------------------------------------- | -------------------------------------------- | ---------------------------------- |
+| `getCircularProgressProps`   | **options**: [CircularProgressOptions](#circularprogressoptions) | **kind**: 'determinate', <br />**size**: 'm' | Get main circular-progress styles. |
+| `getJSCircularProgressProps` | **options**: [CircularProgressOptions](#circularprogressoptions) | **kind**: 'determinate', <br />**size**: 'm' | Get main circular-progress styles. |
+
+## CircularProgressOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface CircularProgressOptions extends CircularProgressA11yOptions {
+  kind?: 'determinate' | 'indeterminate'
+  size?: 'xs' | 'm'
+  tech?: 'svelte'
+}
+```
+
+```typescript title="Import example"
+import type { CircularProgressOptions } from '@pluralsight/headless-styles'
+```
+
+## CircularProgressA11yOptions
+
+```typescript
+interface CircularProgressA11yOptions {
+  max?: number
+  min?: number
+  now?: number
+}
+```
+
+## A11yProps
+
+```typescript
+interface A11yProps {
+  'aria-valuemax': number
+  'aria-valuemin': number
+  'aria-valuenow': number
+  role: 'progressbar'
+}
+```
+
+## CircularProgressProps
+
+```typescript
+interface ProgressProps {
+  containerProps: {
+    a11yProps: A11yProps,
+    className: string
+  }
+  svgBoxProps: {
+    className: string,
+    viewBox: string
+  },
+  baseCircleProps: {
+    cx: string,
+    cy: string,
+    r: string,
+    strokeWidth: string,
+    className: string
+  },
+  nowCircleProps: {
+    className: string,
+    cx: string,
+    cy: string,
+    r: string,
+    strokeWidth: string,,
+    strokeDashoffset: string,
+    strokeDasharray: string
+  },
+  labelProps: {
+    className: string,
+    value: string
+  }
+}
+```
+
+## JSCircularProgressProps
+
+```typescript
+interface JSProgressProps {
+  containerProps: {
+    a11yProps: A11yProps
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+  }
+  svgBoxProps: {
+    keyframes: Record<string, unknown>
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+    svgProps: {
+      viewBox: string
+    }
+  }
+  baseCircleProps: {
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+    svgProps: {
+      cx: string
+      cy: string
+      r: string
+      strokeWidth: string
+      viewBox: string
+    }
+  }
+  nowCircleProps: {
+    keyframes: Record<string, unknown>
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+    svgProps: {
+      cx: string
+      cy: string
+      r: string
+      strokeWidth: string
+      strokeDashoffset: string
+      strokeDasharray: string
+      viewBox: string
+    }
+  }
+  labelProps: {
+    cssProps: TemplateLiteralArray
+    styles: Record<string, unknown>
+    value: string
+  }
+}
+```
