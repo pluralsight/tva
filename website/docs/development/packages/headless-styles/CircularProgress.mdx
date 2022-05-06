@@ -8,21 +8,21 @@ tags: [Development, Packages, Components, Headless Styles, Progress, Chakra]
 <!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
 
 import CodeBlock from '@theme/CodeBlock'
-import BasicProgress from '@site/src/components/Progress/BasicProgress'
-import InsetProgress from '@site/src/components/Progress/InsetProgress'
-import ProgressSizes from '@site/src/components/Progress/ProgressSizes'
+import BasicCircularProgress from '@site/src/components/CircularProgress/BasicCircularProgress'
+import IndeterminateCircularProgress from '@site/src/components/CircularProgress/InsetProgress'
+import CircularProgressSizes from '@site/src/components/CircularProgress/CircularProgressSizes'
 import {
-  BasicProgressPreview,
-  BasicProgressFullPreview,
-} from '@site/src/components/Progress/BasicProgress.preview'
+  BasicCircularProgressPreview,
+  BasicCircularProgressFullPreview,
+} from '@site/src/components/CircularProgress/BasicCircularProgress.preview'
 import {
-  InsetProgressPreview,
-  InsetProgressFullPreview,
-} from '@site/src/components/Progress/InsetProgress.preview'
+  IndeterminateCircularProgressPreview,
+  IndeterminateCircularProgressFullPreview,
+} from '@site/src/components/CircularProgress/IndeterminateCircularProgress.preview'
 import {
-  ProgressSizesPreview,
-  ProgressSizesFullPreview,
-} from '@site/src/components/Progress/ProgressSizes.preview'
+  CircularProgressSizesPreview,
+  CircularProgressSizesFullPreview,
+} from '@site/src/components/CircularProgress/CircularProgressSizes.preview'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -62,9 +62,9 @@ import { getCircularProgressProps } from '@pluralsight/headless-styles'
 
 `getCircularProgressProps` comes with two kinds to change the visual style of the progress. You can use `determinate` (default), and `indeterminate`.
 
-<BasicProgress />
+<BasicCircularProgress />
 <LiveExampleTabs
-  fullCode={<BasicProgressFullPreview />}
+  fullCode={<BasicCircularProgressFullPreview />}
   sandboxList={{
     chakra: 'ps-react-chakra-4w32pm',
     joy: '',
@@ -72,16 +72,16 @@ import { getCircularProgressProps } from '@pluralsight/headless-styles'
     svelte: 'svelte-0v8wrj',
   }}
 >
-  <BasicProgressPreview />
+  <BasicCircularProgressPreview />
 </LiveExampleTabs>
 
 ### Indeterminate CircularProgress
 
 The `indeterminate` kind is to be used when replacing content during an action-based fetch call.
 
-<InsetProgress />
+<IndeterminateCircularProgress />
 <LiveExampleTabs
-  fullCode={<InsetProgressFullPreview />}
+  fullCode={<IndeterminateCircularProgressFullPreview />}
   sandboxList={{
     chakra: 'ps-react-chakra-4w32pm',
     joy: '',
@@ -89,16 +89,16 @@ The `indeterminate` kind is to be used when replacing content during an action-b
     svelte: 'svelte-0v8wrj',
   }}
 >
-  <InsetProgressPreview />
+  <IndeterminateCircularProgressPreview />
 </LiveExampleTabs>
 
 ### CircularProgress sizes
 
 There are two sizes available for the circular-progress. You can use `xs` or `m` (default).
 
-<ProgressSizes />
+<CircularProgressSizes />
 <LiveExampleTabs
-  fullCode={<ProgressSizesFullPreview />}
+  fullCode={<CircularProgressSizesFullPreview />}
   sandboxList={{
     chakra: 'ps-react-chakra-4w32pm',
     joy: '',
@@ -106,7 +106,7 @@ There are two sizes available for the circular-progress. You can use `xs` or `m`
     svelte: 'svelte-0v8wrj',
   }}
 >
-  <ProgressSizesPreview />
+  <CircularProgressSizesPreview />
 </LiveExampleTabs>
 
 ### MUI
