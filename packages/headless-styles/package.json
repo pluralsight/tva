@@ -10,7 +10,7 @@
       "import": "build/wrapper.js",
       "require": "build/index.js"
     },
-    "./types": "build/types"
+    "./types": "build/types.d.ts"
   },
   "files": [
     "build/**/*"
