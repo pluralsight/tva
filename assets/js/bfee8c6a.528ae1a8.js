@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5473],{1371:function(s){s.exports=JSON.parse('{"name":"grid","permalink":"/docs/tags/grid","docs":[{"id":"foundations/grid","title":"Grid","description":"This section is a work in progress.","permalink":"/docs/foundations/grid"}],"allTagsPath":"/docs/tags"}')}}]);

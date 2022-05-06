@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2380],{691:function(i){i.exports=JSON.parse('{"label":"i18n","permalink":"/docs/tags/i-18-n","allTagsPath":"/docs/tags","count":1,"items":[{"id":"foundations/i18n","title":"Internationalization","description":"This section is a work in progress.","permalink":"/docs/foundations/i18n"}]}')}}]);

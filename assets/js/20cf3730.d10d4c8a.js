@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7088],{902:function(a){a.exports=JSON.parse('{"name":"Vocabulary","permalink":"/docs/tags/vocabulary","docs":[{"id":"content/vocabulary","title":"Vocabulary","description":"This section is a work in progress.","permalink":"/docs/content/vocabulary"}],"allTagsPath":"/docs/tags"}')}}]);

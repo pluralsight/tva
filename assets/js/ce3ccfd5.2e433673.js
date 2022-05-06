@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2598],{1673:function(o){o.exports=JSON.parse('{"name":"color","permalink":"/docs/tags/color","docs":[{"id":"foundations/color","title":"Color","description":"This section is a work in progress.","permalink":"/docs/foundations/color"}],"allTagsPath":"/docs/tags"}')}}]);

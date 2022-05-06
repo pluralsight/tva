@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3686],[function(a){a.exports=JSON.parse('{"name":"Grammar","permalink":"/docs/tags/grammar","docs":[{"id":"content/grammar","title":"Grammar and Mechanics","description":"This section is a work in progress.","permalink":"/docs/content/grammar"}],"allTagsPath":"/docs/tags"}')}]]);

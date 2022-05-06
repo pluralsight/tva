@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5109],{9476:function(e){e.exports=JSON.parse('{"label":"Inclusive","permalink":"/docs/tags/inclusive","allTagsPath":"/docs/tags","count":1,"items":[{"id":"content/language","title":"Inclusive Language","description":"This section is a work in progress.","permalink":"/docs/content/language"}]}')}}]);

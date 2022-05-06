@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[8304],{2778:function(t){t.exports=JSON.parse('{"name":"Github","permalink":"/docs/tags/github","docs":[{"id":"development/getting-started/support","title":"Support","description":"Community help","permalink":"/docs/development/getting-started/support"}],"allTagsPath":"/docs/tags"}')}}]);

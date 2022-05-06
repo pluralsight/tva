@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2849],{6863:function(s){s.exports=JSON.parse('{"name":"Typography","permalink":"/docs/tags/typography","docs":[{"id":"foundations/typography","title":"Typography","description":"This section is a work in progress.","permalink":"/docs/foundations/typography"}],"allTagsPath":"/docs/tags"}')}}]);

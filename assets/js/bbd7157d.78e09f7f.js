@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[6048],{1876:function(e){e.exports=JSON.parse('{"name":"Voice","permalink":"/docs/tags/voice","docs":[{"id":"content/voice-tone","title":"Voice and Tone","description":"This section is a work in progress.","permalink":"/docs/content/voice-tone"}],"allTagsPath":"/docs/tags"}')}}]);

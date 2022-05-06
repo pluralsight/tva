@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2714],{7807:function(o){o.exports=JSON.parse('{"name":"Photography","permalink":"/docs/tags/photography","docs":[{"id":"foundations/photography","title":"Photography","description":"This section is a work in progress.","permalink":"/docs/foundations/photography"}],"allTagsPath":"/docs/tags"}')}}]);

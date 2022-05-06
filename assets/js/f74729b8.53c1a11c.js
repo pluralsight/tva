@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7214],{3198:function(s){s.exports=JSON.parse('{"label":"Logos","permalink":"/docs/tags/logos","allTagsPath":"/docs/tags","count":1,"items":[{"id":"foundations/logos","title":"Logos","description":"This section is a work in progress.","permalink":"/docs/foundations/logos"}]}')}}]);
