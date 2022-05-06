@@ -12,17 +12,26 @@ const loadingProps = getCircularProgressProps({
 export default function BasicProgress() {
   return (
     <Container>
-      <div {...progressProps.containerProps}>
-        <svg {...progressProps.svgBoxProps}>
-          <circle {...progressProps.baseCircleProps} />
-          <circle {...progressProps.nowCircleProps} />
-        </svg>
-      </div>
-      <div {...loadingProps.containerProps}>
-        <svg {...loadingProps.svgBoxProps}>
-          <circle {...loadingProps.baseCircleProps} />
-          <circle {...loadingProps.nowCircleProps} />
-        </svg>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: '0 auto',
+          width: '10rem',
+        }}
+      >
+        <div {...progressProps.containerProps}>
+          <svg {...progressProps.svgBoxProps}>
+            <circle {...progressProps.baseCircleProps} />
+            <circle {...progressProps.nowCircleProps} />
+          </svg>
+        </div>
+        <div {...loadingProps.containerProps}>
+          <svg {...loadingProps.svgBoxProps}>
+            <circle {...loadingProps.baseCircleProps} />
+            <circle {...loadingProps.nowCircleProps} />
+          </svg>
+        </div>
       </div>
     </Container>
   )

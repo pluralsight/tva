@@ -9,11 +9,19 @@ const loadingProps = getCircularProgressProps({
 export default function InsetCircularProgress() {
   return (
     <Container>
-      <div {...loadingProps.containerProps}>
-        <svg {...loadingProps.svgBoxProps}>
-          <circle {...loadingProps.baseCircleProps} />
-          <circle {...loadingProps.nowCircleProps} />
-        </svg>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: '0 auto',
+        }}
+      >
+        <div {...loadingProps.containerProps}>
+          <svg {...loadingProps.svgBoxProps}>
+            <circle {...loadingProps.baseCircleProps} />
+            <circle {...loadingProps.nowCircleProps} />
+          </svg>
+        </div>
       </div>
     </Container>
   )
