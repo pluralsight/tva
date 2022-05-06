@@ -6,8 +6,11 @@
   "module": "build/wrapper.js",
   "types": "build/index.d.ts",
   "exports": {
-    "import": "build/wrapper.js",
-    "require": "build/index.js"
+    ".": {
+      "import": "build/wrapper.js",
+      "require": "build/index.js"
+    },
+    "./types": "build/types"
   },
   "files": [
     "build/**/*"
