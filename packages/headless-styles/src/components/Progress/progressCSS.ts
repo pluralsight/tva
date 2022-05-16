@@ -34,15 +34,4 @@ export function getProgressProps(options?: ProgressOptions) {
       `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
     ),
   }
-
-  // return {
-  //   ...a11yProps,
-  //   style,
-  //   classes: {
-  //     bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
-  //     wrapper: createCSSObj(
-  //       `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
-  //     ),
-  //   },
-  // }
 }
