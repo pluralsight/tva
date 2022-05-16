@@ -2,8 +2,8 @@ import React from 'react'
 import Container from '../Container/Container'
 import { getProgressProps } from '@pluralsight/headless-styles'
 
-const { classes, ...a11yProps } = getProgressProps({ now: 50 })
-const { classes: insetClasses, ...insetA11yProps } = getProgressProps({
+const progress = getProgressProps({ now: 50 })
+const insetProgress = getProgressProps({
   kind: 'inset',
   now: 60,
 })
@@ -11,11 +11,11 @@ const { classes: insetClasses, ...insetA11yProps } = getProgressProps({
 export default function BasicProgress() {
   return (
     <Container column>
-      <div {...classes.wrapper} style={{ marginBottom: '1rem' }}>
-        <div {...a11yProps} {...classes.bar} />
+      <div {...progress.wrapper} style={{ marginBottom: '1rem' }}>
+        <div {...progress.bar} />
       </div>
-      <div {...insetClasses.wrapper}>
-        <div {...insetA11yProps} {...insetClasses.bar} />
+      <div {...insetProgress.wrapper}>
+        <div {...insetProgress.bar} />
       </div>
     </Container>
   )

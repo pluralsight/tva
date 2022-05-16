@@ -3,10 +3,10 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function BasicProgressPreview() {
   return (
-    <CodeBlock>{`const {classes, ...a11yProps} = getProgressProps({ now: 50 })
+    <CodeBlock>{`const progress = getProgressProps({ now: 50 })
 
-<div {...classes.wrapper}>
-  <div {...a11yProps} {...classes.bar} />
+<div {...progress.wrapper}>
+  <div {...progress.bar} />
 </div>`}</CodeBlock>
   )
 }
@@ -16,11 +16,11 @@ export function BasicProgressFullPreview() {
     <CodeBlock>{`import { getProgressProps } from '@pluralsight/headless-styles';
 
 export default function Progress(props) {
-  const {classes, ...a11yProps} = getProgressProps(props)
+  const progress = getProgressProps(props)
 
   return (
-    <div {...classes.wrapper}>
-      <div {...a11yProps} {...classes.bar} />
+    <div {...progress.wrapper}>
+      <div {...progress.bar} />
     </div>
   );
 }`}</CodeBlock>

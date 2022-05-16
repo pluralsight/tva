@@ -3,10 +3,10 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function InsetProgressPreview() {
   return (
-    <CodeBlock>{`const {classes, ...a11yProps} = getProgressProps({ kind: 'inset', now: 50 })
+    <CodeBlock>{`const insetProgress = getProgressProps({ kind: 'inset', now: 50 })
 
-<div {...classes.wrapper}>
-  <div {...a11yProps} {...classes.bar} />
+<div {...insetProgress.wrapper}>
+  <div {...insetProgress.bar} />
 </div>`}</CodeBlock>
   )
 }
@@ -16,11 +16,11 @@ export function InsetProgressFullPreview() {
     <CodeBlock>{`import { getProgressProps } from '@pluralsight/headless-styles';
 
 export default function Progress(props) {
-  const {classes, ...a11yProps} = getProgressProps({...props, kind: 'inset'})
+  const insetProgress = getProgressProps({...props, kind: 'inset'})
 
   return (
-    <div {...classes.wrapper}>
-      <div {...a11yProps} {...classes.bar} />
+    <div {...insetProgress.wrapper}>
+      <div {...insetProgress.bar} />
     </div>
   );
 }`}</CodeBlock>
