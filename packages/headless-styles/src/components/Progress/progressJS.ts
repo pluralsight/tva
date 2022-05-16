@@ -63,8 +63,10 @@ export function getJSProgressProps(options?: ProgressOptions) {
   }
 
   return {
-    a11yProps,
-    bar: createJSProps(transformStyles(barStyles), barStyles),
+    bar: {
+      a11yProps,
+      ...createJSProps(transformStyles(barStyles), barStyles),
+    },
     wrapper: createJSProps(transformStyles(wrapperStyles), wrapperStyles),
   }
 }

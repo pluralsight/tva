@@ -15,12 +15,12 @@ export function getProgressProps(options?: ProgressOptions) {
 
   if (tech === 'svelte') {
     return {
-      ...a11yProps,
-      style,
-      classes: {
-        bar: createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
-        wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
+      bar: {
+        ...a11yProps,
+        ...createSvelteObj(`${PROGRESS} bar ${sizeClass} ${kind}`),
+        style,
       },
+      wrapper: createSvelteObj(`${PROGRESS} wrapper ${sizeClass} ${kind}`),
     }
   }
 
