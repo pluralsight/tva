@@ -10,17 +10,15 @@ describe('Progress CSS', () => {
       role: 'progressbar',
     }
     const result = {
-      ...a11yProps,
-      style: {
-        width: '0%',
+      bar: {
+        ...a11yProps,
+        className: `${baseClass} sSize linear`,
+        style: {
+          width: '0%',
+        },
       },
-      classes: {
-        bar: {
-          className: `${baseClass} sSize linear`,
-        },
-        wrapper: {
-          className: `${baseClass} wrapper sSize linear`,
-        },
+      wrapper: {
+        className: `${baseClass} wrapper sSize linear`,
       },
     }
 
@@ -31,36 +29,32 @@ describe('Progress CSS', () => {
     test('should accept a kind type', () => {
       expect(getProgressProps({ kind: 'linear' })).toEqual(result)
       expect(getProgressProps({ kind: 'inset', now: 80 })).toEqual({
-        ...a11yProps,
-        'aria-valuenow': 80,
-        style: {
-          width: '80%',
+        bar: {
+          ...a11yProps,
+          'aria-valuenow': 80,
+          style: {
+            width: '80%',
+          },
+          className: `${baseClass} sSize inset`,
         },
-        classes: {
-          bar: {
-            className: `${baseClass} sSize inset`,
-          },
-          wrapper: {
-            className: `${baseClass} wrapper sSize inset`,
-          },
+        wrapper: {
+          className: `${baseClass} wrapper sSize inset`,
         },
       })
     })
 
     test('should accept a tech type', () => {
       expect(getProgressProps({ tech: 'svelte', now: 60 })).toEqual({
-        ...a11yProps,
-        'aria-valuenow': 60,
-        style: {
-          width: '60%',
+        bar: {
+          ...a11yProps,
+          'aria-valuenow': 60,
+          style: {
+            width: '60%',
+          },
+          class: 'ps-progress bar sSize linear',
         },
-        classes: {
-          bar: {
-            class: 'ps-progress bar sSize linear',
-          },
-          wrapper: {
-            class: 'ps-progress wrapper sSize linear',
-          },
+        wrapper: {
+          class: 'ps-progress wrapper sSize linear',
         },
       })
     })
