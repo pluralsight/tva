@@ -25,13 +25,24 @@ export function getProgressProps(options?: ProgressOptions) {
   }
 
   return {
-    ...a11yProps,
-    style,
-    classes: {
-      bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
-      wrapper: createCSSObj(
-        `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
-      ),
+    bar: {
+      ...a11yProps,
+      ...createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
+      style,
     },
+    wrapper: createCSSObj(
+      `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
+    ),
   }
+
+  // return {
+  //   ...a11yProps,
+  //   style,
+  //   classes: {
+  //     bar: createCSSObj(`${PROGRESS} ${styles[sizeClass]} ${styles[kind]}`),
+  //     wrapper: createCSSObj(
+  //       `${PROGRESS} ${styles.wrapper} ${styles[sizeClass]} ${styles[kind]}`
+  //     ),
+  //   },
+  // }
 }

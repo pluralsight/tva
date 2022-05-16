@@ -1,16 +1,16 @@
 import { getProgressProps, getJSProgressProps } from '../../../src'
 
-const { classes, ...defaultA11y } = getProgressProps()
-const { classes: xsStyles, ...xsA11y } = getProgressProps({
+const defaultBar = getProgressProps()
+const xsBar = getProgressProps({
   now: 50,
   size: 'xs',
 })
-const { classes: xsInsetStyles, ...xsInsetA11y } = getProgressProps({
+const xsInsetBar = getProgressProps({
   kind: 'inset',
   now: 80,
   size: 'xs',
 })
-const { classes: insetStyles, ...insetA11y } = getProgressProps({
+const insetBar = getProgressProps({
   kind: 'inset',
   now: 60,
 })
@@ -24,23 +24,23 @@ export default function Progress(props) {
     <div id="progress">
       <h3>Progress</h3>
       <div className="App-container column">
-        <div {...classes.wrapper}>
-          <div {...defaultA11y} {...classes.bar} />
+        <div {...defaultBar.wrapper}>
+          <div {...defaultBar.bar} />
         </div>
       </div>
       <div className="App-container column">
-        <div {...xsStyles.wrapper}>
-          <div {...xsA11y} {...xsStyles.bar} />
+        <div {...xsBar.wrapper}>
+          <div {...xsBar.bar} />
         </div>
       </div>
       <div className="App-container column">
-        <div {...xsInsetStyles.wrapper}>
-          <div {...xsInsetA11y} {...xsInsetStyles.bar} />
+        <div {...xsInsetBar.wrapper}>
+          <div {...xsInsetBar.bar} />
         </div>
       </div>
       <div className="App-container column">
-        <div {...insetStyles.wrapper}>
-          <div {...insetA11y} {...insetStyles.bar} />
+        <div {...insetBar.wrapper}>
+          <div {...insetBar.bar} />
         </div>
       </div>
     </div>
