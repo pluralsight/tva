@@ -6,8 +6,8 @@ import { SwitchOptions } from './types'
 const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
-  const { htmlFor, size, ...defaultOptions } = getDefaultSwitchOptions(options)
-  const sizeClass = `${size}Size`
+  const { htmlFor, size, value, ...defaultOptions } =
+    getDefaultSwitchOptions(options)
   const labelClass = `${size}Label`
   const trackClass = `${size}Track`
   const thumbClass = `${size}Thumb`
@@ -23,6 +23,10 @@ export function getSwitchProps(options?: SwitchOptions) {
   const a11yRole = {
     role: 'group',
   }
+  const inputValues = {
+    'data-checked': value,
+    'data-disabled': defaultOptions.disabled,
+  }
 
   if (defaultOptions.tech === 'svelte') {
     return {
@@ -37,12 +41,16 @@ export function getSwitchProps(options?: SwitchOptions) {
       switchContainer: createSvelteObj(`${SWITCH}-container container`),
       switchTrack: {
         ...a11yHidden,
+        ...inputValues,
         ...createSvelteObj(`${SWITCH}-track track ${size}Track`),
       },
-      switchThumb: createSvelteObj(`${SWITCH}-thumb thumb ${size}Thumb`),
+      switchThumb: {
+        ...inputValues,
+        ...createSvelteObj(`${SWITCH}-thumb thumb ${size}Thumb`),
+      },
       wrapper: {
         ...a11yRole,
-        ...createSvelteObj(`${SWITCH} ${sizeClass}`),
+        ...createSvelteObj(`${SWITCH} base`),
       },
     }
   }
@@ -59,12 +67,16 @@ export function getSwitchProps(options?: SwitchOptions) {
     switchContainer: createCSSObj(`${SWITCH}-container ${styles.container}`),
     switchTrack: {
       ...a11yHidden,
+      ...inputValues,
       ...createCSSObj(`${SWITCH}-track ${styles[trackClass]}`),
     },
-    switchThumb: createCSSObj(`${SWITCH}-thumb ${styles[thumbClass]}`),
+    switchThumb: {
+      ...inputValues,
+      ...createCSSObj(`${SWITCH}-thumb ${styles[thumbClass]}`),
+    },
     wrapper: {
       ...a11yRole,
-      ...createCSSObj(`${SWITCH} ${styles[sizeClass]}`),
+      ...createCSSObj(`${SWITCH} ${styles.base}`),
     },
   }
 }

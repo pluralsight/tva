@@ -22,4 +22,6 @@ export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
 
+export { getSwitchProps } from './components/Switch/switchCSS'
+
 export { chakraPSTheme } from './chakra'

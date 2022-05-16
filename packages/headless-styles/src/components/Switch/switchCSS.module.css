@@ -52,7 +52,6 @@
 .track {
   background: var(--ps-neutral-border-weak);
   border-radius: 1000px;
-  box-sizing: content-box;
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
@@ -69,6 +68,10 @@
 
 .thumb[data-checked='true'] {
   transform: translateX(calc(3rem - 1.5rem));
+}
+
+.thumb[data-disabled='true'] {
+  background: var(--ps-neutral-text-weak);
 }
 
 .track[data-checked='true'] {
@@ -98,6 +101,10 @@
   composes: thumb;
   height: 0.75rem;
   width: 0.75rem;
+}
+
+.sThumb[data-checked='true'] {
+  transform: translateX(calc(2rem - 1rem));
 }
 
 .mThumb {

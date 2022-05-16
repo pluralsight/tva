@@ -7,6 +7,7 @@ const defaultSwitchOptions = {
   label: '',
   size: 'm' as Size,
   tech: '' as Tech,
+  value: 'false' as A11yBoolean,
 }
 
 export function getDefaultSwitchOptions(options?: SwitchOptions) {
@@ -17,5 +18,6 @@ export function getDefaultSwitchOptions(options?: SwitchOptions) {
     label: options?.label ?? defaultSwitchOptions.label,
     size: options?.size ?? defaultSwitchOptions.size,
     tech: options?.tech ?? defaultSwitchOptions.tech,
+    value: options?.value ?? defaultSwitchOptions.value,
   }
 }
