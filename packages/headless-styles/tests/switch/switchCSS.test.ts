@@ -26,12 +26,12 @@ describe('Switch CSS', () => {
         'aria-hidden': 'true',
         'data-checked': options.checked,
         'data-disabled': 'false',
-        className: `${baseClass}-track mTrack`,
+        className: `${baseClass}-track track mTrack`,
       },
       switchThumb: {
         'data-checked': options.checked,
         'data-disabled': 'false',
-        className: `${baseClass}-thumb mThumb`,
+        className: `${baseClass}-thumb thumb`,
       },
       wrapper: {
         role: 'group',
@@ -68,11 +68,11 @@ describe('Switch CSS', () => {
         },
         switchTrack: {
           ...result.switchTrack,
-          className: `${baseClass}-track sTrack`,
+          className: `${baseClass}-track track sTrack`,
         },
         switchThumb: {
           ...result.switchThumb,
-          className: `${baseClass}-thumb sThumb`,
+          className: `${baseClass}-thumb thumb`,
         },
       })
     })
@@ -103,7 +103,7 @@ describe('Switch CSS', () => {
         switchThumb: {
           'data-checked': options.checked,
           'data-disabled': 'false',
-          class: `${baseClass}-thumb thumb mThumb`,
+          class: `${baseClass}-thumb thumb`,
         },
         wrapper: {
           role: 'group',

@@ -10,7 +10,6 @@ export function getSwitchProps(options?: SwitchOptions) {
     getDefaultSwitchOptions(options)
   const labelClass = `${size}Label`
   const trackClass = `${size}Track`
-  const thumbClass = `${size}Thumb`
   const a11yInputProps = {
     'aria-disabled': defaultOptions.disabled,
     'aria-invalid': defaultOptions.invalid,
@@ -38,13 +37,11 @@ export function getSwitchProps(options?: SwitchOptions) {
         for: htmlFor,
         ...createSvelteObj(`${SWITCH}-label label ${size}Label`),
       },
-      switchContainer: createSvelteObj(
-        `${SWITCH}-container container ${size}Container`
-      ),
+      switchContainer: createSvelteObj(`${SWITCH}-container container`),
       switchTrack: {
         ...a11yHidden,
         ...inputValues,
-        ...createSvelteObj(`${SWITCH}-track track`),
+        ...createSvelteObj(`${SWITCH}-track track ${size}Track`),
       },
       switchThumb: {
         ...inputValues,
