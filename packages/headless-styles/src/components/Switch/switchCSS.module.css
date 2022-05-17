@@ -43,25 +43,29 @@
 .thumb {
   background: white;
   border-radius: inherit;
-  height: 1.25rem;
+  height: var(--ps-thumb-size);
   transition-duration: 200ms;
   transition-property: transform;
-  width: 1.25rem;
+  width: var(--ps-thumb-size);
 }
 
 .track {
+  --ps-thumb-size: 1.25rem;
+  --ps-track-height: 1.5rem;
+  --ps-track-width: 3rem;
+
   background: var(--ps-neutral-border-weak);
   border-radius: 1000px;
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
-  height: 1.5rem;
+  height: var(--ps-track-height);
   justify-content: flex-start;
   padding: 2px;
   transition-duration: 150ms;
   transition-property: background-color, border-color, color, fill, stroke,
     opacity, box-shadow, transform;
-  width: 3rem;
+  width: var(--ps-track-width);
 }
 
 /* element states */
@@ -73,7 +77,7 @@
 /* sizes must be last */
 
 .thumb[data-checked='true'] {
-  transform: translateX(calc(3rem - 1.5rem));
+  transform: translateX(calc(var(--ps-track-width) - var(--ps-track-height)));
 }
 
 .thumb[data-disabled='true'] {
@@ -94,25 +98,11 @@
 }
 
 .sTrack {
-  composes: track;
-  height: 1rem;
-  width: 2rem;
+  --ps-thumb-size: 0.75rem;
+  --ps-track-height: 1rem;
+  --ps-track-width: 2rem;
 }
 
 .mTrack {
   composes: track;
-}
-
-.sThumb {
-  composes: thumb;
-  height: 0.75rem;
-  width: 0.75rem;
-}
-
-.sThumb[data-checked='true'] {
-  transform: translateX(calc(2rem - 1rem));
-}
-
-.mThumb {
-  composes: thumb;
 }

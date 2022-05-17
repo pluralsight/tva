@@ -38,15 +38,17 @@ export function getSwitchProps(options?: SwitchOptions) {
         for: htmlFor,
         ...createSvelteObj(`${SWITCH}-label label ${size}Label`),
       },
-      switchContainer: createSvelteObj(`${SWITCH}-container container`),
+      switchContainer: createSvelteObj(
+        `${SWITCH}-container container ${size}Container`
+      ),
       switchTrack: {
         ...a11yHidden,
         ...inputValues,
-        ...createSvelteObj(`${SWITCH}-track track ${size}Track`),
+        ...createSvelteObj(`${SWITCH}-track track`),
       },
       switchThumb: {
         ...inputValues,
-        ...createSvelteObj(`${SWITCH}-thumb thumb ${size}Thumb`),
+        ...createSvelteObj(`${SWITCH}-thumb thumb`),
       },
       wrapper: {
         ...a11yRole,
@@ -68,11 +70,11 @@ export function getSwitchProps(options?: SwitchOptions) {
     switchTrack: {
       ...a11yHidden,
       ...inputValues,
-      ...createCSSObj(`${SWITCH}-track ${styles[trackClass]}`),
+      ...createCSSObj(`${SWITCH}-track ${styles.track} ${styles[trackClass]}`),
     },
     switchThumb: {
       ...inputValues,
-      ...createCSSObj(`${SWITCH}-thumb ${styles[thumbClass]}`),
+      ...createCSSObj(`${SWITCH}-thumb ${styles.thumb}`),
     },
     wrapper: {
       ...a11yRole,

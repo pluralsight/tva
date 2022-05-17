@@ -48,27 +48,30 @@ export default {
   thumb: {
     background: 'white',
     borderRadius: 'inherit',
-    height: '1.25rem',
+    height: 'undefined',
     transitionDuration: '200ms',
     transitionProperty: 'transform',
-    width: '1.25rem',
+    width: 'undefined',
   },
   track: {
+    '-PsThumbSize': '1.25rem',
+    '-PsTrackHeight': '1.5rem',
+    '-PsTrackWidth': '3rem',
     background: 'hsl(240deg 31% 25% / 100%)',
     borderRadius: '1000px',
     cursor: 'pointer',
     display: 'inline-flex',
     flexShrink: '0',
-    height: '1.5rem',
+    height: 'undefined',
     justifyContent: 'flex-start',
     padding: '2px',
     transitionDuration: '150ms',
     transitionProperty:
       'background-color, border-color, color, fill, stroke,\n    opacity, box-shadow, transform',
-    width: '3rem',
+    width: 'undefined',
   },
   thumb_data_checked__true: {
-    transform: 'translateX(calc(3rem - 1.5rem))',
+    transform: 'translateX(calc(undefined - undefined))',
   },
   thumb_data_disabled__true: {
     background: 'hsl(235deg 30% 78% / 100%)',
@@ -84,22 +87,11 @@ export default {
     composes: 'label',
   },
   sTrack: {
-    composes: 'track',
-    height: '1rem',
-    width: '2rem',
+    '-PsThumbSize': '0.75rem',
+    '-PsTrackHeight': '1rem',
+    '-PsTrackWidth': '2rem',
   },
   mTrack: {
     composes: 'track',
-  },
-  sThumb: {
-    composes: 'thumb',
-    height: '0.75rem',
-    width: '0.75rem',
-  },
-  sThumb_data_checked__true: {
-    transform: 'translateX(calc(2rem - 1rem))',
-  },
-  mThumb: {
-    composes: 'thumb',
   },
 }
