@@ -21,3 +21,26 @@ export function getDefaultSwitchOptions(options?: SwitchOptions) {
     checked: options?.checked ?? defaultSwitchOptions.checked,
   }
 }
+
+export function getA11yProps(options: SwitchOptions) {
+  const { disabled } = options
+
+  return {
+    inputProps: {
+      'aria-disabled': disabled,
+      'aria-invalid': options.invalid,
+      id: options.htmlFor,
+      type: 'checkbox',
+    },
+    dataProps: {
+      'data-checked': options.checked,
+      'data-disabled': disabled,
+    },
+    hidden: {
+      'aria-hidden': 'true',
+    },
+    role: {
+      role: 'group',
+    },
+  }
+}

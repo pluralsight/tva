@@ -26,7 +26,7 @@ describe('Switch CSS', () => {
         'aria-hidden': 'true',
         'data-checked': options.checked,
         'data-disabled': 'false',
-        className: `${baseClass}-track track mTrack`,
+        className: `${baseClass}-track mTrack`,
       },
       switchThumb: {
         'data-checked': options.checked,
@@ -68,7 +68,7 @@ describe('Switch CSS', () => {
         },
         switchTrack: {
           ...result.switchTrack,
-          className: `${baseClass}-track track sTrack`,
+          className: `${baseClass}-track sTrack`,
         },
         switchThumb: {
           ...result.switchThumb,

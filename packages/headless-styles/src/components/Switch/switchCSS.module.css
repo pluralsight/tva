@@ -63,8 +63,7 @@
   justify-content: flex-start;
   padding: 2px;
   transition-duration: 150ms;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
+  transition-property: background-color, border-color, transform;
   width: var(--ps-track-width);
 }
 
@@ -98,6 +97,8 @@
 }
 
 .sTrack {
+  composes: track;
+
   --ps-thumb-size: 0.75rem;
   --ps-track-height: 1rem;
   --ps-track-width: 2rem;

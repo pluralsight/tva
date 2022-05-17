@@ -66,8 +66,7 @@ export default {
     justifyContent: 'flex-start',
     padding: '2px',
     transitionDuration: '150ms',
-    transitionProperty:
-      'background-color, border-color, color, fill, stroke,\n    opacity, box-shadow, transform',
+    transitionProperty: 'background-color, border-color, transform',
     width: 'undefined',
   },
   thumb_data_checked__true: {
@@ -87,6 +86,7 @@ export default {
     composes: 'label',
   },
   sTrack: {
+    composes: 'track',
     '-PsThumbSize': '0.75rem',
     '-PsTrackHeight': '1rem',
     '-PsTrackWidth': '2rem',

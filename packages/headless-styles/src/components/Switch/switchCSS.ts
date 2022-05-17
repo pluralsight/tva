@@ -1,36 +1,21 @@
 import { createCSSObj, createSvelteObj } from '../../utils/helpers'
-import { getDefaultSwitchOptions } from './shared'
+import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './switchCSS.module.css'
 import { SwitchOptions } from './types'
 
 const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
-  const { htmlFor, size, checked, ...defaultOptions } =
-    getDefaultSwitchOptions(options)
+  const defaultOptions = getDefaultSwitchOptions(options)
+  const { htmlFor, size } = defaultOptions
+  const { inputProps, dataProps, hidden, role } = getA11yProps(defaultOptions)
   const labelClass = `${size}Label`
   const trackClass = `${size}Track`
-  const a11yInputProps = {
-    'aria-disabled': defaultOptions.disabled,
-    'aria-invalid': defaultOptions.invalid,
-    id: htmlFor,
-    type: 'checkbox',
-  }
-  const a11yHidden = {
-    'aria-hidden': 'true',
-  }
-  const a11yRole = {
-    role: 'group',
-  }
-  const inputValues = {
-    'data-checked': checked,
-    'data-disabled': defaultOptions.disabled,
-  }
 
   if (defaultOptions.tech === 'svelte') {
     return {
       input: {
-        ...a11yInputProps,
+        ...inputProps,
         ...createSvelteObj(`${SWITCH}-input input`),
       },
       label: {
@@ -39,16 +24,16 @@ export function getSwitchProps(options?: SwitchOptions) {
       },
       switchContainer: createSvelteObj(`${SWITCH}-container container`),
       switchTrack: {
-        ...a11yHidden,
-        ...inputValues,
+        ...hidden,
+        ...dataProps,
         ...createSvelteObj(`${SWITCH}-track track ${size}Track`),
       },
       switchThumb: {
-        ...inputValues,
+        ...dataProps,
         ...createSvelteObj(`${SWITCH}-thumb thumb`),
       },
       wrapper: {
-        ...a11yRole,
+        ...role,
         ...createSvelteObj(`${SWITCH} base`),
       },
     }
@@ -56,7 +41,7 @@ export function getSwitchProps(options?: SwitchOptions) {
 
   return {
     input: {
-      ...a11yInputProps,
+      ...inputProps,
       ...createCSSObj(`${SWITCH}-input ${styles.input}`),
     },
     label: {
@@ -65,16 +50,16 @@ export function getSwitchProps(options?: SwitchOptions) {
     },
     switchContainer: createCSSObj(`${SWITCH}-container ${styles.container}`),
     switchTrack: {
-      ...a11yHidden,
-      ...inputValues,
-      ...createCSSObj(`${SWITCH}-track ${styles.track} ${styles[trackClass]}`),
+      ...hidden,
+      ...dataProps,
+      ...createCSSObj(`${SWITCH}-track ${styles[trackClass]}`),
     },
     switchThumb: {
-      ...inputValues,
+      ...dataProps,
       ...createCSSObj(`${SWITCH}-thumb ${styles.thumb}`),
     },
     wrapper: {
-      ...a11yRole,
+      ...role,
       ...createCSSObj(`${SWITCH} ${styles.base}`),
     },
   }
