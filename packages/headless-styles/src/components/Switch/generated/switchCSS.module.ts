@@ -26,6 +26,9 @@ export default {
     position: 'absolute',
     whiteSpace: 'nowrap',
     width: '1px',
+    '&:focus + .track': {
+      boxShadow: '0 0 0 3px hsl(249deg 63% 34% / 100%)',
+    },
   },
   label: {
     display: 'block',

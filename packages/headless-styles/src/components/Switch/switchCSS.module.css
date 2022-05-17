@@ -64,6 +64,12 @@
   width: 3rem;
 }
 
+/* element states */
+
+.input:focus + .track {
+  box-shadow: 0 0 0 3px var(--ps-background-active);
+}
+
 /* sizes must be last */
 
 .thumb[data-checked='true'] {

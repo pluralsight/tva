@@ -2,7 +2,7 @@ export interface SwitchA11yOptions {
   htmlFor: string
   disabled?: A11yBoolean
   invalid?: A11yBoolean
-  value: A11yBoolean
+  checked: A11yBoolean
 }
 
 export interface SwitchOptions extends SwitchA11yOptions {

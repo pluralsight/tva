@@ -6,7 +6,7 @@ import { SwitchOptions } from './types'
 const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
-  const { htmlFor, size, value, ...defaultOptions } =
+  const { htmlFor, size, checked, ...defaultOptions } =
     getDefaultSwitchOptions(options)
   const labelClass = `${size}Label`
   const trackClass = `${size}Track`
@@ -24,7 +24,7 @@ export function getSwitchProps(options?: SwitchOptions) {
     role: 'group',
   }
   const inputValues = {
-    'data-checked': value,
+    'data-checked': checked,
     'data-disabled': defaultOptions.disabled,
   }
 
@@ -35,7 +35,7 @@ export function getSwitchProps(options?: SwitchOptions) {
         ...createSvelteObj(`${SWITCH}-input input`),
       },
       label: {
-        htmlFor,
+        for: htmlFor,
         ...createSvelteObj(`${SWITCH}-label label ${size}Label`),
       },
       switchContainer: createSvelteObj(`${SWITCH}-container container`),

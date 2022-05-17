@@ -32,7 +32,7 @@ export default function Switch(props) {
           htmlFor="email-alerts"
           label="Email alerts"
           onClick={handleClick}
-          value={email.toString()}
+          checked={email.toString()}
         />
         <SwitchField
           disabled="true"
@@ -46,7 +46,7 @@ export default function Switch(props) {
           label="Small alerts"
           onClick={handleClick}
           size="s"
-          value={email.toString()}
+          checked={email.toString()}
         />
         <SwitchField
           disabled="true"

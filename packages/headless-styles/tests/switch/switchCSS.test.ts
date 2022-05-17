@@ -5,7 +5,7 @@ describe('Switch CSS', () => {
     const baseClass = 'ps-switch'
     const options = {
       htmlFor: 'email',
-      value: 'false' as 'false',
+      checked: 'false' as 'false',
     }
     const result = {
       input: {
@@ -24,12 +24,12 @@ describe('Switch CSS', () => {
       },
       switchTrack: {
         'aria-hidden': 'true',
-        'data-checked': options.value,
+        'data-checked': options.checked,
         'data-disabled': 'false',
         className: `${baseClass}-track mTrack`,
       },
       switchThumb: {
-        'data-checked': options.value,
+        'data-checked': options.checked,
         'data-disabled': 'false',
         className: `${baseClass}-thumb mThumb`,
       },
@@ -88,7 +88,7 @@ describe('Switch CSS', () => {
           class: `${baseClass}-input input`,
         },
         label: {
-          htmlFor: options.htmlFor,
+          for: options.htmlFor,
           class: `${baseClass}-label label mLabel`,
         },
         switchContainer: {
@@ -96,12 +96,12 @@ describe('Switch CSS', () => {
         },
         switchTrack: {
           'aria-hidden': 'true',
-          'data-checked': options.value,
+          'data-checked': options.checked,
           'data-disabled': 'false',
           class: `${baseClass}-track track mTrack`,
         },
         switchThumb: {
-          'data-checked': options.value,
+          'data-checked': options.checked,
           'data-disabled': 'false',
           class: `${baseClass}-thumb thumb mThumb`,
         },
