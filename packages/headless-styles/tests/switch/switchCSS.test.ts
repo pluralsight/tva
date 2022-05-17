@@ -17,6 +17,7 @@ describe('Switch CSS', () => {
       },
       label: {
         htmlFor: '',
+        value: '',
         className: `${baseClass}-label mLabel`,
       },
       switchContainer: {
@@ -89,6 +90,7 @@ describe('Switch CSS', () => {
         },
         label: {
           for: options.htmlFor,
+          value: '',
           class: `${baseClass}-label label mLabel`,
         },
         switchContainer: {

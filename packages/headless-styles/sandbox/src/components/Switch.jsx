@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import { getSwitchProps } from '../../../src'
+import { useState, useEffect } from 'react'
+import { getSwitchProps, getJSSwitchProps } from '../../../src'
 
 function SwitchField(props) {
   const switchProps = getSwitchProps(props)
 
   return (
     <div {...switchProps.wrapper}>
-      <label {...switchProps.label}>{props.label}</label>
+      <label {...switchProps.label}>{switchProps.label.value}</label>
       <label {...switchProps.switchContainer}>
         <input {...switchProps.input} onClick={props.onClick} />
         <span {...switchProps.switchTrack}>
@@ -17,12 +17,20 @@ function SwitchField(props) {
   )
 }
 
-export default function Switch(props) {
+export default function Switch({ logJS }) {
   const [email, setEmail] = useState(false)
 
   function handleClick(e) {
     setEmail(e.target.checked)
   }
+
+  useEffect(() => {
+    if (logJS) {
+      console.log({
+        ...getJSSwitchProps({ htmlFor: 'email-alerts', label: 'Email' }),
+      })
+    }
+  }, [logJS])
 
   return (
     <div id="switch">

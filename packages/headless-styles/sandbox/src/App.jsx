@@ -32,11 +32,11 @@ function App() {
 
       <Badge />
       <Button />
-      <CircularProgress logJS />
-      <Icon logJS />
+      <CircularProgress />
+      <Icon />
       <Progress />
       <Skeleton />
-      <Switch />
+      <Switch logJS />
     </div>
   )
 }

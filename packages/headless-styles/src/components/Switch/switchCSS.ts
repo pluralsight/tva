@@ -7,7 +7,7 @@ const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
-  const { htmlFor, size } = defaultOptions
+  const { htmlFor, size, label } = defaultOptions
   const { inputProps, dataProps, hidden, role } = getA11yProps(defaultOptions)
   const labelClass = `${size}Label`
   const trackClass = `${size}Track`
@@ -20,6 +20,7 @@ export function getSwitchProps(options?: SwitchOptions) {
       },
       label: {
         for: htmlFor,
+        value: label,
         ...createSvelteObj(`${SWITCH}-label label ${size}Label`),
       },
       switchContainer: createSvelteObj(`${SWITCH}-container container`),
@@ -46,6 +47,7 @@ export function getSwitchProps(options?: SwitchOptions) {
     },
     label: {
       htmlFor,
+      value: label,
       ...createCSSObj(`${SWITCH}-label ${styles[labelClass]}`),
     },
     switchContainer: createCSSObj(`${SWITCH}-container ${styles.container}`),

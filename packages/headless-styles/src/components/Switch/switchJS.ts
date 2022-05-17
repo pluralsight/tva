@@ -1,7 +1,7 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
 import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './generated/switchCSS.module'
-import type { SwitchOptions } from './types'
+import type { SwitchOptions, Size } from './types'
 
 // export const ChakraSwitch = {
 //   baseStyle: styles.psBadgeBase,
@@ -15,42 +15,77 @@ import type { SwitchOptions } from './types'
 //   },
 // }
 
+type TrackKey = '-PsTrackHeight' | '-PsTrackWidth' | '-PsThumbSize'
+
+function isSizeS(size: Size, key: TrackKey) {
+  if (size === 's') {
+    return styles.sTrack[key]
+  }
+
+  return styles.track[key]
+}
+
 export function getJSSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
   const { htmlFor, size } = defaultOptions
   const { inputProps, dataProps, hidden, role } = getA11yProps(defaultOptions)
-  const jsStyles = {
+  const thumbSize = isSizeS(size, '-PsThumbSize')
+  const trackHeight = isSizeS(size, '-PsTrackHeight')
+  const trackWidth = isSizeS(size, '-PsTrackWidth')
+  const labelStyles = {
+    ...styles.label,
+    ...styles[`${size}Label`],
+  }
+  const trackStyles = {
+    ...styles.track,
+    ...styles[`${size}Track`],
+    height: trackHeight,
+    width: trackWidth,
+    '&[data-checked="true"]': {
+      ...styles.track_data_checked__true,
+    },
+  }
+  const thumbStyles = {
+    ...styles.thumb,
+    height: thumbSize,
+    width: thumbSize,
+    '&[data-checked="true"]': {
+      transform: `translateX(calc(${trackWidth} - ${trackHeight}))`,
+    },
+    '&[data-disabled="true"]': {
+      ...styles.thumb_data_disabled__true,
+    },
+  }
+
+  return {
     input: {
       a11Props: inputProps,
-      ...styles.input,
+      ...createJSProps(transformStyles(styles.input), styles.input),
     },
     label: {
       a11yProps: { htmlFor },
-      ...styles.label,
-      ...styles[`${size}Label`],
+      ...createJSProps(transformStyles(labelStyles), labelStyles),
     },
-    switchContainer: {
-      ...styles.container,
-    },
+    switchContainer: createJSProps(
+      transformStyles(styles.container),
+      styles.container
+    ),
     switchTrack: {
       a11yProps: {
         ...hidden,
         ...dataProps,
       },
-      ...styles.track,
-      ...styles[`${size}Track`],
+      ...createJSProps(transformStyles(trackStyles), trackStyles),
     },
     switchThumb: {
       a11yProps: {
         ...dataProps,
       },
-      ...styles.thumb,
+      ...createJSProps(transformStyles(thumbStyles), thumbStyles),
     },
     wrapper: {
       a11yProps: { ...role },
-      ...styles.base,
+      ...createJSProps(transformStyles(styles.base), styles.base),
     },
   }
-
-  return createJSProps(transformStyles(jsStyles), jsStyles)
 }
