@@ -17,6 +17,7 @@ export { getFormControlProps } from './components/FormControl/formControlCSS'
 export { getJSFormControlProps } from './components/FormControl/formControlJS'
 
 export { getFormLabelProps } from './components/FormLabel/formLabelCSS'
+export { getJSFormLabelProps } from './components/FormLabel/formLabelJS'
 
 export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'

@@ -1,9 +1,9 @@
-import { getFormLabelProps } from '../../../src'
+import { getFormLabelProps, getJSFormLabelProps } from '../../../src'
 
 export default function FormLabel(props) {
-  // if (props.logJS) {
-  //   console.log({ ...getJSFormLabelProps({ htmlFor: 'tacos' }) })
-  // }
+  if (props.logJS) {
+    console.log({ ...getJSFormLabelProps({ htmlFor: 'tacos' }) })
+  }
 
   return (
     <div id="form-label">
