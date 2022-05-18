@@ -11,6 +11,7 @@ describe('Switch CSS', () => {
       input: {
         'aria-disabled': 'false',
         'aria-invalid': 'false',
+        disabled: 'false',
         id: '',
         type: 'checkbox',
         className: `${baseClass}-input input`,
@@ -27,11 +28,13 @@ describe('Switch CSS', () => {
         'aria-hidden': 'true',
         'data-checked': options.checked,
         'data-disabled': 'false',
+        'data-invalid': 'false',
         className: `${baseClass}-track mTrack`,
       },
       switchThumb: {
         'data-checked': options.checked,
         'data-disabled': 'false',
+        'data-invalid': 'false',
         className: `${baseClass}-thumb thumb`,
       },
       wrapper: {
@@ -84,6 +87,7 @@ describe('Switch CSS', () => {
         input: {
           'aria-disabled': 'false',
           'aria-invalid': 'false',
+          disabled: 'false',
           type: 'checkbox',
           id: options.htmlFor,
           class: `${baseClass}-input input`,
@@ -100,11 +104,13 @@ describe('Switch CSS', () => {
           'aria-hidden': 'true',
           'data-checked': options.checked,
           'data-disabled': 'false',
+          'data-invalid': 'false',
           class: `${baseClass}-track track mTrack`,
         },
         switchThumb: {
           'data-checked': options.checked,
           'data-disabled': 'false',
+          'data-invalid': 'false',
           class: `${baseClass}-thumb thumb`,
         },
         wrapper: {
