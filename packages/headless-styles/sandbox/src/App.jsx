@@ -3,6 +3,7 @@ import { getButtonProps } from '../../src'
 import Button from './components/Button'
 import Badge from './components/Badge'
 import CircularProgress from './components/CircularProgress'
+import FormControl from './components/FormControl'
 import Icon from './components/Icon'
 import Progress from './components/Progress'
 import Skeleton from './components/Skeleton'
@@ -33,6 +34,7 @@ function App() {
       <Badge />
       <Button />
       <CircularProgress />
+      <FormControl />
       <Icon />
       <Progress />
       <Skeleton />
