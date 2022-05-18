@@ -47,6 +47,11 @@ export default function Switch({ logJS }) {
           htmlFor="disabled-alerts"
           label="Disabled alerts"
         />
+        <SwitchField
+          invalid="true"
+          htmlFor="invalid-alerts"
+          label="Invalid alerts"
+        />
       </div>
       <div className="App-container">
         <SwitchField

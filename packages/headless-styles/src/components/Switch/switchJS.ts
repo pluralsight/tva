@@ -59,7 +59,7 @@ export function getJSSwitchProps(options?: SwitchOptions) {
 
   return {
     input: {
-      a11Props: inputProps,
+      a11yProps: inputProps,
       ...createJSProps(transformStyles(styles.input), styles.input),
     },
     label: {

@@ -87,6 +87,15 @@
   background: var(--ps-background);
 }
 
+.track[data-invalid='true'] {
+  background: var(--ps-danger-background);
+}
+
+.track[data-disabled='true'],
+.track[data-invalid='true'] {
+  cursor: default;
+}
+
 .sLabel {
   composes: label;
   font-size: 0.75rem;
