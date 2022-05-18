@@ -9,7 +9,7 @@ export default function FormControl(props) {
     <div id="form-control">
       <h3>Form Control</h3>
       <div className="App-container">
-        <label {...getFormControlProps().control}>Strong</label>
+        <div {...getFormControlProps().control}>Strong</div>
       </div>
     </div>
   )

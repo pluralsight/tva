@@ -16,6 +16,8 @@ export { getJSCircularProgressProps } from './components/CircularProgress/circul
 export { getFormControlProps } from './components/FormControl/formControlCSS'
 export { getJSFormControlProps } from './components/FormControl/formControlJS'
 
+export { getFormLabelProps } from './components/FormLabel/formLabelCSS'
+
 export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'
 
