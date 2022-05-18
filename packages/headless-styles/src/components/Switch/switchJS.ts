@@ -44,6 +44,9 @@ export function getJSSwitchProps(options?: SwitchOptions) {
     '&[data-checked="true"]': {
       ...styles.track_data_checked__true,
     },
+    '&[data-invalid="true"]': {
+      ...styles.track_data_invalid__true,
+    },
   }
   const thumbStyles = {
     ...styles.thumb,
