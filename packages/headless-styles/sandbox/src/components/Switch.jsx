@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react'
-import { getSwitchProps, getJSSwitchProps } from '../../../src'
+import {
+  getFormControlProps,
+  getFormLabelProps,
+  getSwitchProps,
+  getJSSwitchProps,
+} from '../../../src'
 
 function SwitchField(props) {
-  const switchProps = getSwitchProps(props)
+  const { control, fieldOptions } = getFormControlProps(props)
+  const switchProps = getSwitchProps({ ...props, ...fieldOptions })
 
   return (
-    <div {...switchProps.wrapper}>
-      <label {...switchProps.label}>{switchProps.label.value}</label>
+    <div {...control}>
+      <label {...getFormLabelProps({ htmlFor: props.id, size: props.size })}>
+        {props.label}
+      </label>
       <label {...switchProps.switchContainer}>
         <input {...switchProps.input} onClick={props.onClick} />
         <span {...switchProps.switchTrack}>
@@ -27,7 +35,7 @@ export default function Switch({ logJS }) {
   useEffect(() => {
     if (logJS) {
       console.log({
-        ...getJSSwitchProps({ htmlFor: 'email-alerts', label: 'Email' }),
+        ...getJSSwitchProps({ id: 'email-alerts', label: 'Email' }),
       })
     }
   }, [logJS])
@@ -37,25 +45,25 @@ export default function Switch({ logJS }) {
       <h3>Switch</h3>
       <div className="App-container">
         <SwitchField
-          htmlFor="email-alerts"
+          id="email-alerts"
           label="Email alerts"
           onClick={handleClick}
           checked={email.toString()}
         />
         <SwitchField
           disabled="true"
-          htmlFor="disabled-alerts"
+          id="disabled-alerts"
           label="Disabled alerts"
         />
         <SwitchField
           invalid="true"
-          htmlFor="invalid-alerts"
+          id="invalid-alerts"
           label="Invalid alerts"
         />
       </div>
       <div className="App-container">
         <SwitchField
-          htmlFor="s-alerts"
+          id="s-alerts"
           label="Small alerts"
           onClick={handleClick}
           size="s"
@@ -63,8 +71,9 @@ export default function Switch({ logJS }) {
         />
         <SwitchField
           disabled="true"
-          htmlFor="disabled-alerts"
+          id="disabled-alerts"
           label="Disabled alerts"
+          size="s"
         />
       </div>
     </div>

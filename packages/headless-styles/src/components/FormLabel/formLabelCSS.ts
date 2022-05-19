@@ -6,17 +6,18 @@ import { FormLabelOptions } from './types'
 const FORM_LABEL = 'ps-form-label'
 
 export function getFormLabelProps(options?: FormLabelOptions) {
-  const { htmlFor, tech } = getDefaultFormLabelOptions(options)
+  const { htmlFor, size, tech } = getDefaultFormLabelOptions(options)
+  const sizeClass = `${size}Label`
 
   if (tech === 'svelte') {
     return {
       for: htmlFor,
-      ...createSvelteObj(`${FORM_LABEL} base`),
+      ...createSvelteObj(`${FORM_LABEL} base ${size}Label`),
     }
   }
 
   return {
     htmlFor,
-    ...createCSSObj(`${FORM_LABEL} ${styles.base}`),
+    ...createCSSObj(`${FORM_LABEL} ${styles[sizeClass]}`),
   }
 }

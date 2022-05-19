@@ -10,3 +10,12 @@
   opacity: 1;
   text-align: start;
 }
+
+.sLabel {
+  composes: base;
+  font-size: 0.75rem;
+}
+
+.mLabel {
+  composes: base;
+}

@@ -1,8 +1,9 @@
 export interface SwitchA11yOptions {
-  htmlFor: string
+  id?: string
+  checked: A11yBoolean
   disabled?: A11yBoolean
   invalid?: A11yBoolean
-  checked: A11yBoolean
+  required?: A11yBoolean
 }
 
 export interface SwitchOptions extends SwitchA11yOptions {

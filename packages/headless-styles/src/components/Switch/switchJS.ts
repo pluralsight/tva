@@ -61,10 +61,6 @@ export function getJSSwitchProps(options?: SwitchOptions) {
   }
 
   return {
-    input: {
-      a11yProps: inputProps,
-      ...createJSProps(transformStyles(styles.input), styles.input),
-    },
     label: {
       a11yProps: { htmlFor },
       ...createJSProps(transformStyles(labelStyles), labelStyles),
@@ -85,10 +81,6 @@ export function getJSSwitchProps(options?: SwitchOptions) {
         ...dataProps,
       },
       ...createJSProps(transformStyles(thumbStyles), thumbStyles),
-    },
-    wrapper: {
-      a11yProps: { ...role },
-      ...createJSProps(transformStyles(styles.base), styles.base),
     },
   }
 }

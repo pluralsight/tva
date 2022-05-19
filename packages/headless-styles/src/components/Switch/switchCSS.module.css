@@ -1,10 +1,3 @@
-.base {
-  align-items: center;
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-
 .container {
   display: inline-block;
   line-height: 0;
@@ -22,22 +15,6 @@
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-.label {
-  display: block;
-  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
-    sans-serif;
-  font-size: 1rem;
-  font-variation-settings: "'wght' 400";
-  font-weight: 400;
-  margin-bottom: 0;
-  margin-inline-end: 0.625rem;
-  opacity: 1;
-  text-align: start;
-  transition-duration: 200ms;
-  transition-property: background-color, border-color, color, fill, stroke,
-    opacity, box-shadow, transform;
 }
 
 .thumb {
@@ -94,15 +71,6 @@
 .track[data-disabled='true'],
 .track[data-invalid='true'] {
   cursor: default;
-}
-
-.sLabel {
-  composes: label;
-  font-size: 0.75rem;
-}
-
-.mLabel {
-  composes: label;
 }
 
 .sTrack {

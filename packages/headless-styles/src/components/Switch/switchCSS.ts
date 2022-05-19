@@ -7,9 +7,8 @@ const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
-  const { htmlFor, size, label } = defaultOptions
-  const { inputProps, dataProps, hidden, role } = getA11yProps(defaultOptions)
-  const labelClass = `${size}Label`
+  const { size } = defaultOptions
+  const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
   const trackClass = `${size}Track`
 
   if (defaultOptions.tech === 'svelte') {
@@ -17,11 +16,6 @@ export function getSwitchProps(options?: SwitchOptions) {
       input: {
         ...inputProps,
         ...createSvelteObj(`${SWITCH}-input input`),
-      },
-      label: {
-        for: htmlFor,
-        value: label,
-        ...createSvelteObj(`${SWITCH}-label label ${size}Label`),
       },
       switchContainer: createSvelteObj(`${SWITCH}-container container`),
       switchTrack: {
@@ -33,10 +27,6 @@ export function getSwitchProps(options?: SwitchOptions) {
         ...dataProps,
         ...createSvelteObj(`${SWITCH}-thumb thumb`),
       },
-      wrapper: {
-        ...role,
-        ...createSvelteObj(`${SWITCH} base`),
-      },
     }
   }
 
@@ -44,11 +34,6 @@ export function getSwitchProps(options?: SwitchOptions) {
     input: {
       ...inputProps,
       ...createCSSObj(`${SWITCH}-input ${styles.input}`),
-    },
-    label: {
-      htmlFor,
-      value: label,
-      ...createCSSObj(`${SWITCH}-label ${styles[labelClass]}`),
     },
     switchContainer: createCSSObj(`${SWITCH}-container ${styles.container}`),
     switchTrack: {
@@ -59,10 +44,6 @@ export function getSwitchProps(options?: SwitchOptions) {
     switchThumb: {
       ...dataProps,
       ...createCSSObj(`${SWITCH}-thumb ${styles.thumb}`),
-    },
-    wrapper: {
-      ...role,
-      ...createCSSObj(`${SWITCH} ${styles.base}`),
     },
   }
 }
