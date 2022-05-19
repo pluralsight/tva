@@ -3,17 +3,44 @@ import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './generated/switchCSS.module'
 import type { SwitchOptions, Size } from './types'
 
-// export const ChakraSwitch = {
-//   baseStyle: styles.psBadgeBase,
-//   defaultProps: {
-//     variant: 'strong',
-//   },
-//   variants: {
-//     weak: styles.weak,
-//     medium: styles.medium,
-//     strong: styles.strong,
-//   },
-// }
+export const ChakraSwitch = {
+  baseStyle: {
+    container: styles.container,
+    thumb: {
+      ...styles.thumb,
+      _checked: {
+        ...styles.thumb_data_checked__true,
+      },
+      _disabled: {
+        ...styles.thumb_data_disabled__true,
+      },
+    },
+    track: {
+      ...styles.track,
+      _checked: {
+        ...styles.track_data_checked__true,
+      },
+      _disabled: {
+        ...styles.track_data_disabled__true,
+      },
+      _invalid: {
+        ...styles.track_data_invalid__true,
+      },
+    },
+  },
+  parts: ['container', 'track', 'thumb'],
+  defaultProps: {
+    size: 'm',
+  },
+  sizes: {
+    s: {
+      track: styles.sTrack,
+    },
+    m: {
+      track: styles.mTrack,
+    },
+  },
+}
 
 type TrackKey = '-PsTrackHeight' | '-PsTrackWidth' | '-PsThumbSize'
 
@@ -27,15 +54,11 @@ function isSizeS(size: Size, key: TrackKey) {
 
 export function getJSSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
-  const { htmlFor, size } = defaultOptions
-  const { inputProps, dataProps, hidden, role } = getA11yProps(defaultOptions)
+  const { size } = defaultOptions
+  const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
   const thumbSize = isSizeS(size, '-PsThumbSize')
   const trackHeight = isSizeS(size, '-PsTrackHeight')
   const trackWidth = isSizeS(size, '-PsTrackWidth')
-  const labelStyles = {
-    ...styles.label,
-    ...styles[`${size}Label`],
-  }
   const trackStyles = {
     ...styles.track,
     ...styles[`${size}Track`],
@@ -61,9 +84,9 @@ export function getJSSwitchProps(options?: SwitchOptions) {
   }
 
   return {
-    label: {
-      a11yProps: { htmlFor },
-      ...createJSProps(transformStyles(labelStyles), labelStyles),
+    input: {
+      ...inputProps,
+      ...createJSProps(transformStyles(styles.input), styles.input),
     },
     switchContainer: createJSProps(
       transformStyles(styles.container),

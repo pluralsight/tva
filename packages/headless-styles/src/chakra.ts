@@ -5,6 +5,7 @@ import { ChakraFormLabel } from './components/FormLabel/formLabelJS'
 import { ChakraIcon } from './components/Icon/iconJS'
 import { ChakraProgress } from './components/Progress/progressJS'
 import { ChakraSkeleton } from './components/Skeleton/skeletonJS'
+import { ChakraSwitch } from './components/Switch/switchJS'
 
 export const chakraPSTheme = {
   components: {
@@ -15,5 +16,6 @@ export const chakraPSTheme = {
     Icon: ChakraIcon,
     Progress: ChakraProgress,
     Skeleton: ChakraSkeleton,
+    Switch: ChakraSwitch,
   },
 }

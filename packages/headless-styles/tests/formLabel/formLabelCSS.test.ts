@@ -6,11 +6,18 @@ describe('FormLabel CSS', () => {
     const htmlFor = 'email'
     const result = {
       htmlFor: '',
-      className: `${baseClass} base`,
+      className: `${baseClass} mLabel`,
     }
 
     test('should allow no props to be passed in', () => {
       expect(getFormLabelProps()).toEqual(result)
+    })
+
+    test('should accept a size option', () => {
+      expect(getFormLabelProps({ htmlFor, size: 's' })).toEqual({
+        htmlFor,
+        className: `${baseClass} sLabel`,
+      })
     })
 
     test('should accept a htmlFor option', () => {
@@ -23,7 +30,7 @@ describe('FormLabel CSS', () => {
     test('should accept a tech type', () => {
       expect(getFormLabelProps({ htmlFor, tech: 'svelte' })).toEqual({
         for: htmlFor,
-        class: `${baseClass} base`,
+        class: `${baseClass} base mLabel`,
       })
     })
   })
