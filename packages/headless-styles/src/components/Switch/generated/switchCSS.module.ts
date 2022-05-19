@@ -38,6 +38,7 @@ export default {
     '-PsTrackWidth': '3rem',
     background: 'hsl(240deg 31% 25% / 100%)',
     borderRadius: '1000px',
+    boxSizing: 'border-box',
     cursor: 'pointer',
     display: 'inline-flex',
     flexShrink: '0',

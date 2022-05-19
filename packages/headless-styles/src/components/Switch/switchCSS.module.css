@@ -33,6 +33,7 @@
 
   background: var(--ps-neutral-border-weak);
   border-radius: 1000px;
+  box-sizing: border-box;
   cursor: pointer;
   display: inline-flex;
   flex-shrink: 0;
