@@ -3,20 +3,49 @@ import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './generated/switchCSS.module'
 import type { SwitchOptions, Size } from './types'
 
+const TRACK_HEIGHT = '-PsTrackHeight'
+const TRACK_WIDTH = '-PsTrackWidth'
+const THUMB_SIZE = '-PsThumbSize'
+
+type TrackKey = '-PsTrackHeight' | '-PsTrackWidth' | '-PsThumbSize'
+
+function isSizeS(size: Size, key: TrackKey) {
+  if (size === 's') {
+    return styles.sTrack[key]
+  }
+
+  return styles.track[key]
+}
+
+const sTrackHeight = isSizeS('s', TRACK_HEIGHT)
+const sTrackWidth = isSizeS('s', TRACK_WIDTH)
+const mTrackHeight = isSizeS('m', TRACK_HEIGHT)
+const mTrackWidth = isSizeS('m', TRACK_WIDTH)
+const baseTrackStyles = {
+  ...styles.track,
+  height: mTrackHeight,
+  width: mTrackWidth,
+}
+
+// Public
+
 export const ChakraSwitch = {
   baseStyle: {
     container: styles.container,
     thumb: {
       ...styles.thumb,
+      height: isSizeS('m', THUMB_SIZE),
+      width: isSizeS('m', THUMB_SIZE),
       _checked: {
         ...styles.thumb_data_checked__true,
+        transform: `translateX(calc(${mTrackWidth} - ${mTrackHeight}))`,
       },
       _disabled: {
         ...styles.thumb_data_disabled__true,
       },
     },
     track: {
-      ...styles.track,
+      ...baseTrackStyles,
       _checked: {
         ...styles.track_data_checked__true,
       },
@@ -34,31 +63,33 @@ export const ChakraSwitch = {
   },
   sizes: {
     s: {
-      track: styles.sTrack,
+      thumb: {
+        height: isSizeS('s', THUMB_SIZE),
+        width: isSizeS('s', THUMB_SIZE),
+        _checked: {
+          ...styles.thumb_data_checked__true,
+          transform: `translateX(calc(${sTrackWidth} - ${sTrackHeight}))`,
+        },
+      },
+      track: {
+        ...styles.sTrack,
+        height: sTrackHeight,
+        width: sTrackWidth,
+      },
     },
     m: {
-      track: styles.mTrack,
+      track: baseTrackStyles,
     },
   },
-}
-
-type TrackKey = '-PsTrackHeight' | '-PsTrackWidth' | '-PsThumbSize'
-
-function isSizeS(size: Size, key: TrackKey) {
-  if (size === 's') {
-    return styles.sTrack[key]
-  }
-
-  return styles.track[key]
 }
 
 export function getJSSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
   const { size } = defaultOptions
   const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
-  const thumbSize = isSizeS(size, '-PsThumbSize')
-  const trackHeight = isSizeS(size, '-PsTrackHeight')
-  const trackWidth = isSizeS(size, '-PsTrackWidth')
+  const thumbSize = isSizeS(size, THUMB_SIZE)
+  const trackHeight = isSizeS(size, TRACK_HEIGHT)
+  const trackWidth = isSizeS(size, TRACK_WIDTH)
   const trackStyles = {
     ...styles.track,
     ...styles[`${size}Track`],
