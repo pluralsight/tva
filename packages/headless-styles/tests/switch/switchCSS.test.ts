@@ -4,7 +4,7 @@ describe('Switch CSS', () => {
   describe('getSwitchProps', () => {
     const baseClass = 'ps-switch'
     const options = {
-      htmlFor: 'email',
+      id: 'email',
       checked: 'false' as 'false',
     }
     const result = {
@@ -15,11 +15,6 @@ describe('Switch CSS', () => {
         id: '',
         type: 'checkbox',
         className: `${baseClass}-input input`,
-      },
-      label: {
-        htmlFor: '',
-        value: '',
-        className: `${baseClass}-label mLabel`,
       },
       switchContainer: {
         className: `${baseClass}-container container`,
@@ -37,10 +32,6 @@ describe('Switch CSS', () => {
         'data-invalid': 'false',
         className: `${baseClass}-thumb thumb`,
       },
-      wrapper: {
-        role: 'group',
-        className: `${baseClass} base`,
-      },
     }
 
     test('should allow no props to be passed in', () => {
@@ -52,23 +43,14 @@ describe('Switch CSS', () => {
         ...result,
         input: {
           ...result.input,
-          id: options.htmlFor,
-        },
-        label: {
-          ...result.label,
-          htmlFor: options.htmlFor,
+          id: options.id,
         },
       })
       expect(getSwitchProps({ ...options, size: 's' })).toEqual({
         ...result,
         input: {
           ...result.input,
-          id: options.htmlFor,
-        },
-        label: {
-          ...result.label,
-          htmlFor: options.htmlFor,
-          className: `${baseClass}-label sLabel`,
+          id: options.id,
         },
         switchTrack: {
           ...result.switchTrack,
@@ -89,13 +71,8 @@ describe('Switch CSS', () => {
           'aria-invalid': 'false',
           disabled: 'false',
           type: 'checkbox',
-          id: options.htmlFor,
+          id: options.id,
           class: `${baseClass}-input input`,
-        },
-        label: {
-          for: options.htmlFor,
-          value: '',
-          class: `${baseClass}-label label mLabel`,
         },
         switchContainer: {
           class: `${baseClass}-container container`,
@@ -112,10 +89,6 @@ describe('Switch CSS', () => {
           'data-disabled': 'false',
           'data-invalid': 'false',
           class: `${baseClass}-thumb thumb`,
-        },
-        wrapper: {
-          role: 'group',
-          class: `${baseClass} base`,
         },
       })
     })
