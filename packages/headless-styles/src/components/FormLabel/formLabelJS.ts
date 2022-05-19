@@ -3,14 +3,16 @@ import { getDefaultFormLabelOptions } from './shared'
 import styles from './generated/formLabelCSS.module'
 import type { FormLabelOptions } from './types'
 
+const formLabelBase = styles.base
+
 export const ChakraFormLabel = {
-  baseStyle: styles.base,
+  baseStyle: formLabelBase,
   defaultProps: {
     size: 'm',
   },
   sizes: {
     s: styles.sLabel,
-    m: styles.mLabel,
+    m: formLabelBase,
   },
 }
 
@@ -18,7 +20,7 @@ export function getJSFormLabelProps(options?: FormLabelOptions) {
   const defaultOptions = getDefaultFormLabelOptions(options)
   const sizeClass = `${defaultOptions.size}Label` as 'mLabel' | 'sLabel'
   const formLabelStyles = {
-    ...styles.base,
+    ...formLabelBase,
     ...styles[sizeClass],
   }
 
