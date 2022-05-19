@@ -4,7 +4,7 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  base: {
+  formControlBase: {
     alignItems: 'center',
     display: 'flex',
     position: 'relative',

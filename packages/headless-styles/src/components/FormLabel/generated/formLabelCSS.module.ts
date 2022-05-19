@@ -4,7 +4,7 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  base: {
+  formLabelBase: {
     display: 'block',
     fontFamily:
       "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
@@ -17,10 +17,10 @@ export default {
     textAlign: 'start',
   },
   sLabel: {
-    composes: 'base',
+    composes: 'formLabelBase',
     fontSize: '0.75rem',
   },
   mLabel: {
-    composes: 'base',
+    composes: 'formLabelBase',
   },
 }

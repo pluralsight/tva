@@ -1,4 +1,4 @@
-.base {
+.formLabelBase {
   display: block;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
@@ -12,10 +12,10 @@
 }
 
 .sLabel {
-  composes: base;
+  composes: formLabelBase;
   font-size: 0.75rem;
 }
 
 .mLabel {
-  composes: base;
+  composes: formLabelBase;
 }

@@ -12,7 +12,7 @@ export function getFormLabelProps(options?: FormLabelOptions) {
   if (tech === 'svelte') {
     return {
       for: htmlFor,
-      ...createSvelteObj(`${FORM_LABEL} base ${size}Label`),
+      ...createSvelteObj(`${FORM_LABEL} formLabelBase ${size}Label`),
     }
   }
 

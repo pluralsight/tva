@@ -15,14 +15,17 @@ export function getFormControlProps(options?: FormControlOptions) {
     return {
       control: {
         ...role,
-        ...createSvelteObj(`${FORM_CONTROL} base`),
+        ...createSvelteObj(`${FORM_CONTROL} formControlBase`),
       },
       fieldOptions,
     }
   }
 
   return {
-    control: { ...role, ...createCSSObj(`${FORM_CONTROL} ${styles.base}`) },
+    control: {
+      ...role,
+      ...createCSSObj(`${FORM_CONTROL} ${styles.formControlBase}`),
+    },
     fieldOptions,
   }
 }

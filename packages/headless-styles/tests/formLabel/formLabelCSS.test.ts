@@ -30,7 +30,7 @@ describe('FormLabel CSS', () => {
     test('should accept a tech type', () => {
       expect(getFormLabelProps({ htmlFor, tech: 'svelte' })).toEqual({
         for: htmlFor,
-        class: `${baseClass} base mLabel`,
+        class: `${baseClass} formLabelBase mLabel`,
       })
     })
   })

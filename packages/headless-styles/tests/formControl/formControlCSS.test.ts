@@ -6,7 +6,7 @@ describe('FormControl CSS', () => {
     const result = {
       control: {
         role: 'group',
-        className: `${baseClass} base`,
+        className: `${baseClass} formControlBase`,
       },
       fieldOptions: {
         disabled: false,

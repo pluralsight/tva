@@ -3,7 +3,7 @@ import { getDefaultFormLabelOptions } from './shared'
 import styles from './generated/formLabelCSS.module'
 import type { FormLabelOptions } from './types'
 
-const formLabelBase = styles.base
+const formLabelBase = styles.formLabelBase
 
 export const ChakraFormLabel = {
   baseStyle: formLabelBase,
