@@ -85,7 +85,9 @@ export function getJSSwitchProps(options?: SwitchOptions) {
 
   return {
     input: {
-      ...inputProps,
+      a11yProps: {
+        ...inputProps,
+      },
       ...createJSProps(transformStyles(styles.input), styles.input),
     },
     switchContainer: createJSProps(
