@@ -6,7 +6,7 @@ import {
 import Container from '../Container/Container'
 
 function RadioGroup() {
-  const { control, fieldOptions } = getFormControlProps()
+  const { control } = getFormControlProps()
   const labelProps = getFormLabelProps({ htmlFor: 'email' })
 
   return (
