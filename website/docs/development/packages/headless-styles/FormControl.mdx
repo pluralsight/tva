@@ -1,0 +1,225 @@
+---
+sidebar_position: 3
+tags:
+  [
+    Development,
+    Packages,
+    Components,
+    Headless Styles,
+    FormControl,
+    FormLabel,
+    ErrorMessage,
+    Chakra,
+  ]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicFormControl from '@site/src/components/FormControl/BasicFormControl'
+import {
+  BasicFormControlPreview,
+  BasicFormControlFullPreview,
+} from '@site/src/components/FormControl/BasicFormControl.preview'
+import RadioGroup from '@site/src/components/FormControl/RadioGroup'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+FormControl provides context such as `invalid`, `disabled`, `required` to form elements in addition to following the [WAI specifications](https://www.w3.org/WAI/tutorials/forms/) for forms.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/FormControl"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import {
+  getFormControlProps,
+  getFormLabelProps,
+} from '@pluralsight/headless-styles'
+```
+
+Headless Styles exports two helpers for Form Control:
+
+- **getFormControlProps**: The wrapper that provides context for all children
+- **getFormLabelProps**: The label of a form section. The usage is similar to [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+
+## Usage
+
+### BasicExample
+
+<BasicFormControl />
+<LiveExampleTabs
+  fullCode={<BasicFormControlFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicFormControlPreview />
+</LiveExampleTabs>
+
+### Radio or checkbox group example
+
+<RadioGroup />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+### Error messasge
+
+`getFormErrorMessageProps` will return a styled error messaged when the `invalid` option is true (this should come from the `getFormControlProps.fieldOptions` property).
+
+<RadioGroup />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+### Making a field required
+
+When you pass `required` to `getFormControlProps` and use the `fieldOptions.required` as an option to the `getFormLabelProps`, the `getFormLabel` will add a "(required)" at the end of the label value.
+
+<RadioGroup />
+<LiveExampleTabs
+  fullCode={<BasicButtonFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicButtonPreview />
+</LiveExampleTabs>
+
+### Usage with Form Libraries
+
+[Formik](https://formik.org/) is just one example of how managing forms can be very easy. You can combine most form libraries with our API.
+
+```javascript
+function validateName(value) {
+  let error
+  if (!value) {
+    error = 'Name is required'
+  } else if (value.toLowerCase() !== 'naruto') {
+    error = "Jeez! You're not a fan 😱"
+  }
+  return error
+}
+
+function NameField(props) {
+  const { field, form } = props
+  const { control, fieldOptions } = getFieldControlProps({
+    invalid: form.errors.name && form.touched.name,
+  })
+  const { invalid } = fieldOptions
+  const { a11yProps, value } = getFieldLabelProps({
+    htmlFor: 'name',
+    invalid,
+  })
+
+  return (
+    <div {...control}>
+      <label {...a11yProps}>{value}</label>
+      <input value="TBD" />
+      <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+    </div>
+  )
+}
+
+function FormikExample() {
+  return (
+    <Formik
+      initialValues={{ name: 'Sasuke' }}
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2))
+          actions.setSubmitting(false)
+        }, 1000)
+      }}
+    >
+      {(props) => (
+        <Form>
+          <Field name="name" validate={validateName}>
+            {(props) => <NameField {...props} />}
+          </Field>
+          <button {...getButtonProps()} type="submit">
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
+  )
+}
+```
+
+## API
+
+| Name                     | Argument Type                                            | Default                      | Description                             |
+| ------------------------ | -------------------------------------------------------- | ---------------------------- | --------------------------------------- |
+| `getFormControlProps`    | **options**: [FormControlOptions](#formcontroloptions)   | `false` for all fieldOptions | Get form control styles & field states  |
+| `getFormLabelProps`      | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String    | Get form label styles and a11y props.   |
+| `getErrorMessageProps`   | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`         | Get error message styles and content.   |
+| `getJSFormControlProps`  | **options**: [FormControlOptions](#formcontroloptions)   | `false` for all fieldOptions | Get form control styles & field states. |
+| `getJSFormLabelProps`    | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String    | Get form label styles and a11y props.   |
+| `getJSErrorMessageProps` | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`         | Get error message styles and content.   |
+
+## FormControlOptions
+
+```typescript
+interface FormControlOptions {
+  disabled?: boolean
+  invalid?: boolean
+  readOnly?: boolean
+  required?: boolean
+  tech?: 'svelte'
+}
+```
+
+## FormLabelOptions
+
+```typescript
+interface FormLabelOptions {
+  htmlFor: string
+  size?: 's' | 'm'
+  tech?: 'svelte'
+}
+```
+
+## ErrorMessageOptions
+
+```typescript
+interface ErrorMessageOptions {
+  invalid?: boolean
+}
+```
