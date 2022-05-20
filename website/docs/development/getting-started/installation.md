@@ -11,7 +11,7 @@ This page is a work in progress.
 
 :::
 
-<p class="page-subheadline" markdown="1">Use Pluralsight's UI suite designed to help you build the right library for your team.</p>
+<p className="page-subheadline" markdown="1">Use Pluralsight's UI suite designed to help you build the right library for your team.</p>
 
 Pluralsight Design is available as a set of multiple npm packages for web and our `design-tokens` package is also compatable for iOS, Swift, Android, and Kotlin.
 

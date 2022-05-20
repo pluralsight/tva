@@ -5,7 +5,7 @@ tags: [Development, Getting Started, Migration, PSDS Classic]
 
 # Migration
 
-<p class="page-subheadline" markdown="1">
+<p className="page-subheadline" markdown="1">
   Learn how to migrate from <a href="https://github.com/pluralsight/design-system" target="_blank" rel="noopener noreferrer">PSDS Classic</a>.
 </p>
 

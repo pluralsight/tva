@@ -1,0 +1,104 @@
+---
+sidebar_position: 8
+tags: [Development, Packages, Components, Headless Styles, Switch, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicSwitch from '@site/src/components/Switch/BasicSwitch'
+import {
+  BasicSwitchPreview,
+  BasicSwitchFullPreview,
+} from '@site/src/components/Switch/BasicSwitch.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The `getSwitchProps` helper is used as an alternative for the [Checkbox](./button) for choosing between enabled and disabled states.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Switch"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getSwitchProps } from '@pluralsight/headless-styles'
+```
+
+The Switch must always be accompanied by a label, and follows the same keyboard workflow as a `checkbox` (spacebar to toggle states).
+
+## Usage
+
+### Basic Switch
+
+<BasicSwitch />
+<LiveExampleTabs
+  fullCode={<BasicSwitchFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicSwitchPreview />
+</LiveExampleTabs>
+
+### Sizes
+
+The `getSwitchProps` helper comes with two sizes: `s` and `m` (default).
+
+<BasicFormControl />
+<LiveExampleTabs
+  fullCode={<BasicSwitchFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicSwitchPreview />
+</LiveExampleTabs>
+
+### State depending behavior
+
+States like `disabled` have an impact on the usability of a Switch and on the styles, expect for `invalid` and `required`.
+
+<BasicFormControl />
+<LiveExampleTabs
+  fullCode={<BasicSwitchFullPreview />}
+  sandboxList={{
+    chakra: 'basic-button-chakra-i02ytr',
+    joy: 'basic-buttons-mui-bnzx9l',
+    styled: 'basic-button-css-in-js-sc-mbrwzb',
+    svelte: 'basic-button-svelte-4qu65y',
+  }}
+>
+  <BasicSwitchPreview />
+</LiveExampleTabs>
+
+## API
+
+| Name               | Argument Type                              | Default            | Description       |
+| ------------------ | ------------------------------------------ | ------------------ | ----------------- |
+| `getSwitchProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
+| `getJSSwitchProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
+
+## SwitchOptions
+
+## SwitchProps
+
+## SwitchJSProps
