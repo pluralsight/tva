@@ -5,18 +5,7 @@ import {
   getSwitchProps,
 } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
-
-function Switch(props) {
-  const switchProps = getSwitchProps(props)
-  return (
-    <label {...switchProps.switchContainer}>
-      <input {...switchProps.input} onClick={props.onClick} />
-      <span {...switchProps.switchTrack}>
-        <span {...switchProps.switchThumb} />
-      </span>
-    </label>
-  )
-}
+import Switch from './Switch'
 
 function BasicSwitch() {
   const [checked, setChecked] = useState(false)
