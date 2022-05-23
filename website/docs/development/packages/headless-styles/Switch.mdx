@@ -47,10 +47,10 @@ The Switch must always be accompanied by a label, and follows the same keyboard 
 <LiveExampleTabs
   fullCode={<BasicSwitchFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'ps-react-chakra-5fqh9c',
+    joy: 'basic-mui-exb122',
+    styled: 'sc-i8cynw',
+    svelte: 'ps-svelte-7kciqz',
   }}
 >
   <BasicSwitchPreview />
@@ -60,14 +60,14 @@ The Switch must always be accompanied by a label, and follows the same keyboard 
 
 The `getSwitchProps` helper comes with two sizes: `s` and `m` (default).
 
-<BasicFormControl />
+<BasicSwitch />
 <LiveExampleTabs
   fullCode={<BasicSwitchFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'ps-react-chakra-5fqh9c',
+    joy: 'basic-mui-exb122',
+    styled: 'sc-i8cynw',
+    svelte: 'ps-svelte-7kciqz',
   }}
 >
   <BasicSwitchPreview />
@@ -77,14 +77,14 @@ The `getSwitchProps` helper comes with two sizes: `s` and `m` (default).
 
 States like `disabled` have an impact on the usability of a Switch and on the styles, expect for `invalid` and `required`.
 
-<BasicFormControl />
+<BasicSwitch />
 <LiveExampleTabs
   fullCode={<BasicSwitchFullPreview />}
   sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
+    chakra: 'ps-react-chakra-5fqh9c',
+    joy: 'basic-mui-exb122',
+    styled: 'sc-i8cynw',
+    svelte: 'ps-svelte-7kciqz',
   }}
 >
   <BasicSwitchPreview />
@@ -98,6 +98,22 @@ States like `disabled` have an impact on the usability of a Switch and on the st
 | `getJSSwitchProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
 
 ## SwitchOptions
+
+```typescript
+
+```
+
+### SwitchA11yOptions
+
+```typescript
+interface SwitchA11yOptions {
+  id?: string
+  checked: boolean
+  disabled?: boolean
+  invalid?: boolean
+  required?: boolean
+}
+```
 
 ## SwitchProps
 

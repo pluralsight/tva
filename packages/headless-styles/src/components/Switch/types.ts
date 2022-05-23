@@ -1,9 +1,9 @@
 export interface SwitchA11yOptions {
   id?: string
-  checked: A11yBoolean
-  disabled?: A11yBoolean
-  invalid?: A11yBoolean
-  required?: A11yBoolean
+  checked: boolean
+  disabled?: boolean
+  invalid?: boolean
+  required?: boolean
 }
 
 export interface SwitchOptions extends SwitchA11yOptions {
@@ -14,6 +14,5 @@ export interface SwitchOptions extends SwitchA11yOptions {
 
 // types
 
-export type A11yBoolean = 'true' | 'false'
 export type Size = 's' | 'm'
 export type Tech = 'svelte'

@@ -1,14 +1,14 @@
-import type { A11yBoolean, SwitchOptions, Size, Tech } from './types'
+import type { SwitchOptions, Size, Tech } from './types'
 
 const defaultSwitchOptions = {
-  disabled: 'false' as A11yBoolean,
+  disabled: false,
   id: '',
-  invalid: 'false' as A11yBoolean,
+  invalid: false,
   label: '',
   size: 'm' as Size,
   tech: '' as Tech,
-  checked: 'false' as A11yBoolean,
-  required: 'false' as A11yBoolean,
+  checked: false,
+  required: false,
 }
 
 export function getDefaultSwitchOptions(options?: SwitchOptions) {

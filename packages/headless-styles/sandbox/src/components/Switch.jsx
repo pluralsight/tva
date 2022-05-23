@@ -48,7 +48,7 @@ export default function Switch({ logJS }) {
           id="email-alerts"
           label="Email alerts"
           onClick={handleClick}
-          checked={email.toString()}
+          checked={email}
         />
         <SwitchField
           disabled="true"
@@ -67,7 +67,7 @@ export default function Switch({ logJS }) {
           label="Small alerts"
           onClick={handleClick}
           size="s"
-          checked={email.toString()}
+          checked={email}
         />
         <SwitchField
           disabled="true"

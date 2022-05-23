@@ -5,13 +5,13 @@ describe('Switch CSS', () => {
     const baseClass = 'ps-switch'
     const options = {
       id: 'email',
-      checked: 'false' as 'false',
+      checked: false,
     }
     const result = {
       input: {
-        'aria-disabled': 'false',
-        'aria-invalid': 'false',
-        disabled: 'false',
+        'aria-disabled': false,
+        'aria-invalid': false,
+        disabled: false,
         id: '',
         type: 'checkbox',
         className: `${baseClass}-input input`,
@@ -22,14 +22,14 @@ describe('Switch CSS', () => {
       switchTrack: {
         'aria-hidden': 'true',
         'data-checked': options.checked,
-        'data-disabled': 'false',
-        'data-invalid': 'false',
+        'data-disabled': false,
+        'data-invalid': false,
         className: `${baseClass}-track mTrack`,
       },
       switchThumb: {
         'data-checked': options.checked,
-        'data-disabled': 'false',
-        'data-invalid': 'false',
+        'data-disabled': false,
+        'data-invalid': false,
         className: `${baseClass}-thumb thumb`,
       },
     }
@@ -67,9 +67,9 @@ describe('Switch CSS', () => {
       expect(getSwitchProps({ ...options, tech: 'svelte' })).toEqual({
         ...result,
         input: {
-          'aria-disabled': 'false',
-          'aria-invalid': 'false',
-          disabled: 'false',
+          'aria-disabled': false,
+          'aria-invalid': false,
+          disabled: false,
           type: 'checkbox',
           id: options.id,
           class: `${baseClass}-input input`,
@@ -80,14 +80,14 @@ describe('Switch CSS', () => {
         switchTrack: {
           'aria-hidden': 'true',
           'data-checked': options.checked,
-          'data-disabled': 'false',
-          'data-invalid': 'false',
+          'data-disabled': false,
+          'data-invalid': false,
           class: `${baseClass}-track track mTrack`,
         },
         switchThumb: {
           'data-checked': options.checked,
-          'data-disabled': 'false',
-          'data-invalid': 'false',
+          'data-disabled': false,
+          'data-invalid': false,
           class: `${baseClass}-thumb thumb`,
         },
       })
