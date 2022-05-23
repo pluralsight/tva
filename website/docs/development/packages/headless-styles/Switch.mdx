@@ -92,18 +92,22 @@ States like `disabled` have an impact on the usability of a Switch and on the st
 
 ## API
 
-| Name               | Argument Type                              | Default            | Description       |
-| ------------------ | ------------------------------------------ | ------------------ | ----------------- |
-| `getSwitchProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
-| `getJSSwitchProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
+| Name               | Argument Type                              | Default            | Description                           |
+| ------------------ | ------------------------------------------ | ------------------ | ------------------------------------- |
+| `getSwitchProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles for CSS usage.       |
+| `getJSSwitchProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles for CSS in JS usage. |
 
 ## SwitchOptions
 
 ```typescript
-
+interface SwitchOptions extends SwitchA11yOptions {
+  label?: string
+  size?: 's' | 'm'
+  tech?: 'svelte'
+}
 ```
 
-### SwitchA11yOptions
+## SwitchA11yOptions
 
 ```typescript
 interface SwitchA11yOptions {
@@ -117,4 +121,72 @@ interface SwitchA11yOptions {
 
 ## SwitchProps
 
+```typescript
+interface SwitchProps {
+  input {
+    'aria-disabled': boolean
+    'aria-invalid': boolean
+    disabled: boolean
+    id: string
+    type: 'checkbox'
+    className: string
+  }
+  switchContainer {
+    className: string
+  }
+  switchTrack {
+    'aria-hidden': boolean
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    className: string
+  }
+  switchThumb {
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    className: string
+  }
+}
+```
+
 ## SwitchJSProps
+
+```typescript
+interface SwitchJSProps {
+  input {
+    a11yProps: {
+      'aria-disabled': boolean
+      'aria-invalid': boolean
+      disabled: boolean
+      id: string
+      type: 'checkbox'
+    }
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  switchContainer {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  switchTrack {
+    a11yProps {
+      'aria-hidden': boolean
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+    }
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  switchThumb {
+    a11yProps: {
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+    }
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+}
+```
