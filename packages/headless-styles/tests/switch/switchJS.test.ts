@@ -11,7 +11,7 @@ describe('Badge JS', () => {
 
   test('should accept a small size type', () => {
     const options = {
-      checked: 'false',
+      checked: false,
       htmlFor: 'email',
       size: 's',
     } as SwitchOptions

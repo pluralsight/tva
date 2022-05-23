@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {
   getFormControlProps,
   getFormLabelProps,
-  getSwitchProps,
 } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
 import Switch from './Switch'
