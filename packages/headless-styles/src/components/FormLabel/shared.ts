@@ -17,3 +17,15 @@ export function getDefaultFormLabelOptions(options?: FormLabelOptions) {
     value: options?.value ?? defaultFormLabelOptions.value,
   }
 }
+
+export function getFormValue(value: string, required: boolean) {
+  let label = value
+
+  if (required) {
+    label = `${value} (required)`
+  }
+
+  return {
+    value: label,
+  }
+}

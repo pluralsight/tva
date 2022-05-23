@@ -13,9 +13,9 @@ describe('FormLabel JS', () => {
 
     test('should accept a htmlFor option', () => {
       const htmlFor = 'hogwarts'
-      expect(getJSFormLabelProps({ htmlFor }).a11yProps.htmlFor).toEqual(
-        htmlFor
-      )
+      expect(
+        getJSFormLabelProps({ htmlFor, value: '' }).a11yProps.htmlFor
+      ).toEqual(htmlFor)
     })
 
     test('should accept a size option', () => {

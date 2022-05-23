@@ -1,5 +1,5 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
-import { getDefaultFormLabelOptions } from './shared'
+import { getDefaultFormLabelOptions, getFormValue } from './shared'
 import styles from './generated/formLabelCSS.module'
 import type { FormLabelOptions } from './types'
 
@@ -17,8 +17,9 @@ export const ChakraFormLabel = {
 }
 
 export function getJSFormLabelProps(options?: FormLabelOptions) {
-  const defaultOptions = getDefaultFormLabelOptions(options)
+  const { value, ...defaultOptions } = getDefaultFormLabelOptions(options)
   const sizeClass = `${defaultOptions.size}Label` as 'mLabel' | 'sLabel'
+  const label = getFormValue(value, defaultOptions.required)
   const formLabelStyles = {
     ...formLabelBase,
     ...styles[sizeClass],
@@ -31,5 +32,6 @@ export function getJSFormLabelProps(options?: FormLabelOptions) {
     label: {
       ...createJSProps(transformStyles(formLabelStyles), formLabelStyles),
     },
+    value: label,
   }
 }
