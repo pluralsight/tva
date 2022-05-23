@@ -14,11 +14,14 @@ const controlStyles = {
 
 function CheckedSwitch() {
   const { control, fieldOptions } = getFormControlProps()
-  const labelProps = getFormLabelProps({ htmlFor: 'checked-example' })
+  const { value, ...labelProps } = getFormLabelProps({
+    htmlFor: 'checked-example',
+    value: 'checked:',
+  })
 
   return (
     <div {...control} style={{ ...controlStyles }}>
-      <label {...labelProps}>checked:</label>
+      <label {...labelProps}>{value}</label>
       <Switch {...fieldOptions} checked={true} />
     </div>
   )
@@ -28,11 +31,14 @@ function DisabledSwitch() {
   const { control, fieldOptions } = getFormControlProps({
     disabled: true,
   })
-  const labelProps = getFormLabelProps({ htmlFor: 'disabled-exampled' })
+  const { value, ...labelProps } = getFormLabelProps({
+    htmlFor: 'disabled-exampled',
+    value: 'disabled:',
+  })
 
   return (
     <div {...control} style={{ ...controlStyles }}>
-      <label {...labelProps}>disabled:</label>
+      <label {...labelProps}>{value}</label>
       <Switch {...fieldOptions} />
     </div>
   )
@@ -42,11 +48,14 @@ function InvalidSwitch() {
   const { control, fieldOptions } = getFormControlProps({
     invalid: true,
   })
-  const labelProps = getFormLabelProps({ htmlFor: 'invalid-exampled' })
+  const { value, ...labelProps } = getFormLabelProps({
+    htmlFor: 'invalid-exampled',
+    value: 'invalid:',
+  })
 
   return (
     <div {...control} style={controlStyles}>
-      <label {...labelProps}>invalid:</label>
+      <label {...labelProps}>{value}</label>
       <Switch {...fieldOptions} />
     </div>
   )
@@ -56,11 +65,14 @@ function ReadOnlySwitch() {
   const { control, fieldOptions } = getFormControlProps({
     readOnly: true,
   })
-  const labelProps = getFormLabelProps({ htmlFor: 'readOnly-exampled' })
+  const { value, ...labelProps } = getFormLabelProps({
+    htmlFor: 'readOnly-exampled',
+    value: 'readOnly:',
+  })
 
   return (
     <div {...control} style={{ ...controlStyles }}>
-      <label {...labelProps}>readOnly:</label>
+      <label {...labelProps}>{value}</label>
       <Switch {...fieldOptions} checked={true} />
     </div>
   )
@@ -70,7 +82,10 @@ function RequiredSwitch(props) {
   const { control, fieldOptions } = getFormControlProps({
     required: true,
   })
-  const labelProps = getFormLabelProps({ htmlFor: 'required-exampled' })
+  const labelProps = getFormLabelProps({
+    htmlFor: 'required-exampled',
+    value: '',
+  })
 
   return (
     <div {...control} style={{ ...controlStyles }}>

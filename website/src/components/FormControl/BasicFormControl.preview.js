@@ -4,10 +4,10 @@ import CodeBlock from '@theme/CodeBlock'
 export function BasicFormControlPreview() {
   return (
     <CodeBlock>{`const { control, fieldOptions } = getFormControlProps()
-const labelProps = getFormLabelProps({ htmlFor: 'email' })
+const {value, ...labelProps} = getFormLabelProps({ htmlFor: 'email', value: 'Email address' })
 
 <div {...control}>
-    <label {...labelProps}>Email address</label>
+    <label {...labelProps}>{value}</label>
 </div>`}</CodeBlock>
   )
 }
@@ -18,11 +18,11 @@ export function BasicFormControlFullPreview() {
 
 export default function EmailField(props) {
   const { control, fieldOptions } = getFormControlProps(props)
-  const labelProps = getFormLabelProps({ htmlFor: props.id })
+  const {value, ...labelProps} = getFormLabelProps({ htmlFor: props.id, value: 'Email address' })
 
   return (
     <div {...control}>
-      <label {...labelProps}>Email address</label>
+      <label {...labelProps}>{value}</label>
     </div>
   );
 }`}</CodeBlock>

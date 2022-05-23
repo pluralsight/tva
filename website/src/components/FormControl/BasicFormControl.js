@@ -7,12 +7,15 @@ import Container from '../Container/Container'
 
 function BasicFormControl() {
   const { control } = getFormControlProps()
-  const labelProps = getFormLabelProps({ htmlFor: 'email' })
+  const { value, ...labelProps } = getFormLabelProps({
+    htmlFor: 'email',
+    value: 'Email alerts',
+  })
 
   return (
     <Container>
       <div {...control}>
-        <label {...labelProps}>Email alerts</label>
+        <label {...labelProps}>{value}</label>
       </div>
     </Container>
   )

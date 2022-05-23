@@ -597,7 +597,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
         [
           '@pluralsight/headless-styles',
-          'npm:0.0.0-experimental-6ff3db-20220519',
+          'npm:0.0.0-experimental-41b280-20220523',
         ],
         ['@pluralsight/icons', 'npm:0.0.0-alpha-607d0e'],
         ['@polka/url', 'npm:1.0.0-next.21'],
@@ -17311,14 +17311,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           [
             [
-              'npm:0.0.0-experimental-6ff3db-20220519',
+              'npm:0.0.0-experimental-41b280-20220523',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-6ff3db-20220519-9da8020bd7-25eb74342a.zip/node_modules/@pluralsight/headless-styles/',
+                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-41b280-20220523-e86fea5f94-a930413865.zip/node_modules/@pluralsight/headless-styles/',
                 packageDependencies: [
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-6ff3db-20220519',
+                    'npm:0.0.0-experimental-41b280-20220523',
                   ],
                   ['kebab-case', 'npm:1.0.1'],
                   ['tslib', 'npm:2.3.1'],
@@ -45876,7 +45876,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-6ff3db-20220519',
+                    'npm:0.0.0-experimental-41b280-20220523',
                   ],
                   [
                     '@pluralsight/icons',

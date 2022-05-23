@@ -9,7 +9,11 @@ import Switch from './Switch'
 function BasicSwitch() {
   const [checked, setChecked] = useState(false)
   const { control, fieldOptions } = getFormControlProps()
-  const labelProps = getFormLabelProps(fieldOptions)
+  const { value, ...labelProps } = getFormLabelProps({
+    ...fieldOptions,
+    htmlFor: 'email',
+    value: 'Email alerts',
+  })
 
   function handleCheck(e) {
     setChecked(e.target.checked)
@@ -18,7 +22,7 @@ function BasicSwitch() {
   return (
     <Container>
       <div {...control}>
-        <label {...labelProps}>Email alerts</label>
+        <label {...labelProps}>{value}</label>
         <Switch {...fieldOptions} checked={checked} onClick={handleCheck} />
       </div>
     </Container>
