@@ -29,7 +29,7 @@ describe('Radio CSS', () => {
         className: `${baseClass}-container radioContainer radiorow`,
       },
       radioControl: {
-        'aria-hidden': 'true',
+        'aria-hidden': true,
         'data-checked': false,
         'data-disabled': false,
         'data-invalid': false,
@@ -61,7 +61,7 @@ describe('Radio CSS', () => {
           class: `${baseClass}-container radioContainer radiorow`,
         },
         radioControl: {
-          'aria-hidden': 'true',
+          'aria-hidden': true,
           'data-checked': false,
           'data-disabled': false,
           'data-invalid': false,

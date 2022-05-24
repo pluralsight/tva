@@ -49,7 +49,7 @@ export function getA11yProps(options: RadioOptions) {
       'data-readonly': options.readOnly,
     },
     hidden: {
-      'aria-hidden': 'true',
+      'aria-hidden': true,
     },
   }
 }
