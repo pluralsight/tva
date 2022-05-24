@@ -2,6 +2,7 @@ import type {
   ButtonOptions,
   DangerOptions,
   DangerKind,
+  IconLabelOptions,
   Kind,
   Size,
   Tech,
@@ -32,5 +33,18 @@ export function getDefaultDangerOptions(options?: DangerOptions) {
     kind: options?.kind ?? defaultDangerButtonOptions.kind,
     size: options?.size ?? defaultDangerButtonOptions.size,
     tech: options?.tech ?? defaultDangerButtonOptions.tech,
+  }
+}
+
+export const defaultIconLabelOptions = {
+  ...defaultButtonOptions,
+  position: 'start',
+}
+
+// @todo TJP convert options to ButtonOptions before using?
+export function getDefaultIconLabelOptions(options?: IconLabelOptions) {
+  return {
+    ...getDefaultOptions(options),
+    position: options?.position ?? defaultIconLabelOptions.position,
   }
 }

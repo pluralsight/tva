@@ -1,9 +1,21 @@
-import { getDefaultOptions, getDefaultDangerOptions } from './shared'
+import {
+  getDefaultOptions,
+  getDefaultDangerOptions,
+  getDefaultIconLabelOptions,
+} from './shared'
 import { createSvelteObj } from '../../utils/helpers'
-import type { ButtonOptions, ButtonType, DangerOptions } from './types'
+import type {
+  ButtonOptions,
+  ButtonType,
+  DangerOptions,
+  IconLabelOptions,
+  Size,
+} from './types'
 import styles from './buttonCSS.module.css'
+import { getIconProps } from '../Icon/iconCSS'
+import type { Size as IconSize } from '../Icon/types'
 
-type AllButtonOptions = ButtonOptions | DangerOptions
+type AllButtonOptions = ButtonOptions | DangerOptions | IconLabelOptions
 
 interface ButtonClass {
   defaultClass: string
@@ -42,4 +54,30 @@ export function getButtonProps(options?: ButtonOptions) {
     defaultClass: `ps-btn ${styles[kind]} ${styles[size]}`,
     svelteClass: `base ${kind} ${size}`,
   })
+}
+
+const iconSizeMap: Record<Size, IconSize> = {
+  xs: 's' as IconSize,
+  s: 's' as IconSize,
+  m: 'm' as IconSize,
+  l: 'm' as IconSize,
+}
+
+export function getButtonIconLabelProps(options?: IconLabelOptions) {
+  const defaultOptions = getDefaultIconLabelOptions(options)
+  const { kind, size, position, tech } = defaultOptions
+  const iconLabelPosition = `${position}IconLabel`
+
+  const buttonProps = createButton(defaultOptions, {
+    defaultClass: `ps-icon-label-btn ${styles[kind]} ${styles[size]} ${styles[iconLabelPosition]}`,
+    svelteClass: `base ${kind} ${size} ${iconLabelPosition}`,
+  })
+
+  const iconProps = getIconProps({
+    size: iconSizeMap[size],
+    ariaHidden: 'true',
+    tech: tech,
+  })
+
+  return { buttonProps, iconProps }
 }

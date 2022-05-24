@@ -90,6 +90,38 @@
   composes: base;
 }
 
+.startIconLabel {
+  padding-inline-start: 0;
+}
+
+.endIconLabel {
+  padding-inline-end: 0;
+}
+
+.xs.startIconLabel > svg,
+.xs.endIconLabel > svg {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.s.startIconLabel > svg,
+.s.endIconLabel > svg {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.m.startIconLabel > svg,
+.m.endIconLabel > svg {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.l.startIconLabel > svg,
+.l.endIconLabel > svg {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
 /* hover styles */
 
 .base:hover {
