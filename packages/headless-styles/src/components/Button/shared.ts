@@ -41,7 +41,6 @@ export const defaultIconLabelOptions = {
   position: 'start',
 }
 
-// @todo TJP convert options to ButtonOptions before using?
 export function getDefaultIconLabelOptions(options?: IconLabelOptions) {
   return {
     ...getDefaultOptions(options),
