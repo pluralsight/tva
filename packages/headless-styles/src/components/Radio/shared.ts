@@ -32,9 +32,6 @@ export function getA11yProps(options: RadioOptions) {
   const { disabled, invalid } = options
 
   return {
-    groupProps: {
-      role: 'radiogroup',
-    },
     inputProps: {
       'aria-disabled': disabled,
       'aria-invalid': invalid,

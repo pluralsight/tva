@@ -9,14 +9,15 @@ export const ChakraFormControl = {
 
 export function getJSFormControlProps(options?: FormControlOptions) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { tech, ...fieldOptions } = getDefaultFormControlOptions(options)
+  const { tech, groupType, ...fieldOptions } =
+    getDefaultFormControlOptions(options)
   const jsStyles = {
     ...styles.formControlBase,
   }
 
   return {
     a11yProps: {
-      role: 'group',
+      role: groupType,
     },
     control: {
       ...createJSProps(transformStyles(jsStyles), jsStyles),

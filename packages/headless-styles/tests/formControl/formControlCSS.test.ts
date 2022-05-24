@@ -60,6 +60,16 @@ describe('FormControl CSS', () => {
       })
     })
 
+    test('should accept a groupType type', () => {
+      expect(getFormControlProps({ groupType: 'radiogroup' })).toEqual({
+        ...result,
+        control: {
+          ...result.control,
+          role: 'radiogroup',
+        },
+      })
+    })
+
     test('should accept a tech type', () => {
       expect(getFormControlProps({ tech: 'svelte' })).toEqual({
         ...result,

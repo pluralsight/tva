@@ -48,7 +48,10 @@ const stateFields = [
 ]
 
 function RadioInput(props) {
-  const { fieldOptions } = getFormControlProps(props)
+  const { fieldOptions } = getFormControlProps({
+    ...props,
+    groupType: 'radiogroup',
+  })
   const radio = getRadioProps({ ...fieldOptions, ...props })
   const { value, ...labelProps } = getFormLabelProps({
     ...props,
@@ -65,7 +68,7 @@ function RadioInput(props) {
 }
 
 function StateForm(props) {
-  const { control } = getFormControlProps()
+  const { control } = getFormControlProps({ groupType: 'radiogroup' })
   const [state, setState] = useState('2')
 
   function handleClick(e) {
@@ -88,7 +91,7 @@ function StateForm(props) {
 }
 
 export default function Radio({ logJS }) {
-  const { control } = getFormControlProps()
+  const { control } = getFormControlProps({ groupType: 'radiogroup' })
   const [email, setEmail] = useState(null)
 
   function handleClick(e) {
