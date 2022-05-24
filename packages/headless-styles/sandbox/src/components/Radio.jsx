@@ -3,6 +3,7 @@ import {
   getFormControlProps,
   getFormLabelProps,
   getRadioProps,
+  getJSRadioProps,
 } from '../../../src'
 
 const stateFields = [
@@ -98,13 +99,13 @@ export default function Radio({ logJS }) {
     setEmail(e.target.value)
   }
 
-  // useEffect(() => {
-  //   if (logJS) {
-  //     console.log({
-  //       ...getJSSwitchProps({ id: 'email-alerts', label: 'Email' }),
-  //     })
-  //   }
-  // }, [logJS])
+  useEffect(() => {
+    if (logJS) {
+      console.log({
+        ...getJSRadioProps({ checked: true, id: 'email-alerts' }),
+      })
+    }
+  }, [logJS])
 
   return (
     <div id="radio">

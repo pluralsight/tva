@@ -1,7 +1,7 @@
 import { getJSSwitchProps } from '../../src'
 import type { SwitchOptions } from '../../src/types'
 
-describe('Badge JS', () => {
+describe('Switch JS', () => {
   test('should allow no props to be passed in', () => {
     expect(getJSSwitchProps().switchThumb.cssProps).toContain('height: 1.25rem')
     expect(getJSSwitchProps().switchThumb.styles.height).toEqual('1.25rem')
