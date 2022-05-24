@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[5473],{71371:function(s){s.exports=JSON.parse('{"label":"grid","permalink":"/docs/tags/grid","allTagsPath":"/docs/tags","count":1,"items":[{"id":"foundations/grid","title":"Grid","description":"This section is a work in progress.","permalink":"/docs/foundations/grid"}]}')}}]);

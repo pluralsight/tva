@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[7249],{69751:function(e){e.exports=JSON.parse('{"label":"FAQ","permalink":"/docs/tags/faq","allTagsPath":"/docs/tags","count":1,"items":[{"id":"development/getting-started/faq","title":"FAQ","description":"This page is a work in progress.","permalink":"/docs/development/getting-started/faq"}]}')}}]);
