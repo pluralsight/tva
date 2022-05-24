@@ -23,6 +23,10 @@ export default {
     '&:focus + .track': {
       boxShadow: '0 0 0 3px hsl(249deg 63% 34% / 100%)',
     },
+    '&:focus:not(:focus-visible) + .track': {
+      boxShadow: 'none',
+      outline: 'none',
+    },
   },
   thumb: {
     background: 'white',
@@ -60,10 +64,10 @@ export default {
   },
   track_data_invalid__true: {
     background: 'hsl(336deg 100% 36% / 100%)',
-    cursor: 'default',
+    cursor: 'not-allowed',
   },
   track_data_disabled__true: {
-    cursor: 'default',
+    cursor: 'not-allowed',
   },
   sTrack: {
     composes: 'track',

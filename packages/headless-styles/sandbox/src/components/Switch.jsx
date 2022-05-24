@@ -51,12 +51,12 @@ export default function Switch({ logJS }) {
           checked={email}
         />
         <SwitchField
-          disabled="true"
+          disabled={true}
           id="disabled-alerts"
           label="Disabled alerts"
         />
         <SwitchField
-          invalid="true"
+          invalid={true}
           id="invalid-alerts"
           label="Invalid alerts"
         />
@@ -70,7 +70,7 @@ export default function Switch({ logJS }) {
           checked={email}
         />
         <SwitchField
-          disabled="true"
+          disabled={true}
           id="disabled-alerts"
           label="Disabled alerts"
           size="s"

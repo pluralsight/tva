@@ -6,9 +6,10 @@ import { FormControlOptions } from './types'
 const FORM_CONTROL = 'ps-form-control'
 
 export function getFormControlProps(options?: FormControlOptions) {
-  const { tech, ...fieldOptions } = getDefaultFormControlOptions(options)
+  const { tech, groupType, ...fieldOptions } =
+    getDefaultFormControlOptions(options)
   const role = {
-    role: 'group',
+    role: groupType,
   }
 
   if (tech === 'svelte') {

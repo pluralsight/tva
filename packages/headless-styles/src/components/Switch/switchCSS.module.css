@@ -51,6 +51,11 @@
   box-shadow: 0 0 0 3px var(--ps-background-active);
 }
 
+.input:focus:not(:focus-visible) + .track {
+  box-shadow: none;
+  outline: none;
+}
+
 /* sizes must be last */
 
 .thumb[data-checked='true'] {
@@ -71,7 +76,7 @@
 
 .track[data-disabled='true'],
 .track[data-invalid='true'] {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .sTrack {

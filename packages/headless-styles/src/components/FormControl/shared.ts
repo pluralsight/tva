@@ -1,7 +1,8 @@
-import type { FormControlOptions, Tech } from './types'
+import type { FormControlOptions, GroupType, Tech } from './types'
 
 const defaultFormControlOptions = {
   disabled: false,
+  groupType: 'group' as GroupType,
   invalid: false,
   readOnly: false,
   required: false,
@@ -11,6 +12,7 @@ const defaultFormControlOptions = {
 export function getDefaultFormControlOptions(options?: FormControlOptions) {
   return {
     disabled: options?.disabled ?? defaultFormControlOptions.disabled,
+    groupType: options?.groupType ?? defaultFormControlOptions.groupType,
     invalid: options?.invalid ?? defaultFormControlOptions.invalid,
     readOnly: options?.readOnly ?? defaultFormControlOptions.readOnly,
     required: options?.required ?? defaultFormControlOptions.required,
