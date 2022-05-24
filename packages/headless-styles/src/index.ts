@@ -25,6 +25,8 @@ export { getJSIconProps } from './components/Icon/iconJS'
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
 
+export { getRadioProps } from './components/Radio/radioCSS'
+
 export { getSkeletonProps } from './components/Skeleton/skeletonCSS'
 export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
 

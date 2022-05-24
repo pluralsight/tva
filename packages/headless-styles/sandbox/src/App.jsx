@@ -7,6 +7,7 @@ import FormControl from './components/FormControl'
 import FormLabel from './components/FormLabel'
 import Icon from './components/Icon'
 import Progress from './components/Progress'
+import Radio from './components/Radio'
 import Skeleton from './components/Skeleton'
 import Switch from './components/Switch'
 import './App.css'
@@ -39,8 +40,9 @@ function App() {
       <FormLabel />
       <Icon />
       <Progress />
+      <Radio logJS />
       <Skeleton />
-      <Switch logJS />
+      <Switch />
     </div>
   )
 }

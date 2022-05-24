@@ -1,8 +1,6 @@
-export interface FormControlOptions {
-  disabled?: boolean
-  invalid?: boolean
-  readOnly?: boolean
-  required?: boolean
+import type { FieldOptions } from '../types'
+
+export interface FormControlOptions extends FieldOptions {
   tech?: Tech
 }
 

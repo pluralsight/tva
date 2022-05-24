@@ -1,9 +1,8 @@
-export interface SwitchA11yOptions {
+import type { FieldOptions } from '../types'
+
+export interface SwitchA11yOptions extends FieldOptions {
   id?: string
   checked: boolean
-  disabled?: boolean
-  invalid?: boolean
-  required?: boolean
 }
 
 export interface SwitchOptions extends SwitchA11yOptions {
