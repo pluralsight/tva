@@ -50,8 +50,11 @@ export default {
     justifyContent: 'flex-start',
     padding: '2px',
     transitionDuration: '150ms',
-    transitionProperty: 'background-color, border-color, transform',
+    transitionProperty: 'background, background-color, border-color, transform',
     width: 'undefined',
+    '&:hover': {
+      background: 'hsl(237deg 30% 36% / 100%)',
+    },
   },
   thumb_data_checked__true: {
     transform: 'translateX(calc(undefined - undefined))',
@@ -61,13 +64,24 @@ export default {
   },
   track_data_checked__true: {
     background: 'hsl(249deg 63% 51% / 100%)',
-  },
-  track_data_invalid__true: {
-    background: 'hsl(336deg 100% 36% / 100%)',
-    cursor: 'not-allowed',
+    '&:hover': {
+      background: 'hsl(249deg 63% 43% / 100%)',
+    },
   },
   track_data_disabled__true: {
     cursor: 'not-allowed',
+    '&:hover': {
+      background: 'hsl(240deg 31% 25% / 100%)',
+    },
+  },
+  track_data_readonly__true: {
+    cursor: 'not-allowed',
+  },
+  track_data_invalid__true: {
+    background: 'hsl(336deg 100% 36% / 100%)',
+    '&:hover': {
+      background: 'hsl(336deg 100% 27% / 100%)',
+    },
   },
   sTrack: {
     composes: 'track',

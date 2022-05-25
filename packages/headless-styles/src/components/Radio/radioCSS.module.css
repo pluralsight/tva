@@ -96,6 +96,10 @@
   border-color: var(--ps-danger-background-hover);
 }
 
+.radioControl[data-readonly='true']:hover {
+  background-color: initial;
+}
+
 .radiorow {
   composes: radioContainer;
 }

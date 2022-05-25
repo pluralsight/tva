@@ -41,8 +41,12 @@
   justify-content: flex-start;
   padding: 2px;
   transition-duration: 150ms;
-  transition-property: background-color, border-color, transform;
+  transition-property: background, background-color, border-color, transform;
   width: var(--ps-track-width);
+}
+
+.track:hover {
+  background: var(--ps-neutral-background-hover);
 }
 
 /* element states */
@@ -70,13 +74,25 @@
   background: var(--ps-background);
 }
 
+.track[data-checked='true']:hover {
+  background: var(--ps-background-hover);
+}
+
+.track[data-disabled='true'],
+.track[data-readonly='true'] {
+  cursor: not-allowed;
+}
+
+.track[data-disabled='true']:hover {
+  background: var(--ps-neutral-border-weak);
+}
+
 .track[data-invalid='true'] {
   background: var(--ps-danger-background);
 }
 
-.track[data-disabled='true'],
-.track[data-invalid='true'] {
-  cursor: not-allowed;
+.track[data-invalid='true']:hover {
+  background: var(--ps-danger-background-hover);
 }
 
 .sTrack {
