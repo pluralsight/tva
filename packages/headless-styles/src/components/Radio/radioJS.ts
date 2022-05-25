@@ -48,6 +48,9 @@ export function getJSRadioProps(options?: RadioOptions) {
     '&[data-checked="true"]': {
       ...styles.radioControl_data_checked__true,
     },
+    '&[data-checked="true"]::before': {
+      ...styles.radioControl_data_checked__true['&::before'],
+    },
     '&[data-disabled="true"]': {
       ...styles.radioControl_data_disabled__true,
     },
