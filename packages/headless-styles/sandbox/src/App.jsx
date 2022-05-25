@@ -40,9 +40,9 @@ function App() {
       <FormLabel />
       <Icon />
       <Progress />
-      <Radio logJS />
+      <Radio />
       <Skeleton />
-      <Switch />
+      <Switch logJS />
     </div>
   )
 }
