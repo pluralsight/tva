@@ -13,10 +13,19 @@ export const ChakraRadio = {
     },
     control: {
       ...styles.radioControl,
+      _hover: {
+        ...styles.radioControl['&:hover'],
+      },
+      _focus: {
+        ...styles.radioInput['&:focus + .radioControl'],
+      },
       _checked: {
         ...styles.radioControl_data_checked__true,
         _before: {
           ...styles.radioControl_data_checked__true['&::before'],
+        },
+        _hover: {
+          ...styles.radioControl_data_checked__true['&:hover'],
         },
       },
       _disabled: {
@@ -24,6 +33,9 @@ export const ChakraRadio = {
       },
       _invalid: {
         ...styles.radioControl_data_invalid__true,
+        _hover: {
+          ...styles.radioControl_data_invalid__true['&:hover'],
+        },
       },
     },
   },

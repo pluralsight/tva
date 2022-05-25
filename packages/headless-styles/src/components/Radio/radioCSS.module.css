@@ -37,18 +37,12 @@
   height: 1.125rem;
   margin-inline-end: 0.437rem;
   transition-duration: 150ms;
-  transition-property: box-shadow;
+  transition-property: background, box-shadow;
   width: 1.125rem;
 }
 
-.radioControl[data-checked='true']::before {
-  background: white;
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  height: 50%;
-  position: relative;
-  width: 50%;
+.radioControl:hover {
+  background: var(--ps-neutral-background);
 }
 
 /* states */
@@ -72,6 +66,21 @@
   border-color: var(--ps-background);
 }
 
+.radioControl[data-checked='true']:hover {
+  background: var(--ps-background-hover);
+  border-color: var(--ps-background-hover);
+}
+
+.radioControl[data-checked='true']::before {
+  background: white;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  height: 50%;
+  position: relative;
+  width: 50%;
+}
+
 .radioControl[data-disabled='true'] {
   background: var(--ps-neutral-background);
   border-color: var(--ps-neutral-background);
@@ -80,6 +89,11 @@
 .radioControl[data-invalid='true'] {
   background: var(--ps-danger-background);
   border-color: var(--ps-danger-background);
+}
+
+.radioControl[data-invalid='true']:hover {
+  background: var(--ps-danger-background-hover);
+  border-color: var(--ps-danger-background-hover);
 }
 
 .radiorow {

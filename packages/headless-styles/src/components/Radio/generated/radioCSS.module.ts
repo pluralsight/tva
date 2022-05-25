@@ -48,10 +48,25 @@ export default {
     "height": "1.125rem",
     "marginInlineEnd": "0.437rem",
     "transitionDuration": "150ms",
-    "transitionProperty": "box-shadow",
-    "width": "1.125rem"
+    "transitionProperty": "background, box-shadow",
+    "width": "1.125rem",
+    "&:hover": {
+      "background": "hsl(238deg 30% 32% / 100%)"
+    }
+  },
+  "radioContainer_data_disabled__true": {
+    "cursor": "not-allowed"
+  },
+  "radioContainer_data_readonly__true": {
+    "cursor": "not-allowed"
   },
   "radioControl_data_checked__true": {
+    "background": "hsl(249deg 63% 51% / 100%)",
+    "borderColor": "hsl(249deg 63% 51% / 100%)",
+    "&:hover": {
+      "background": "hsl(249deg 63% 43% / 100%)",
+      "borderColor": "hsl(249deg 63% 43% / 100%)"
+    },
     "&::before": {
       "background": "white",
       "borderRadius": "50%",
@@ -60,15 +75,7 @@ export default {
       "height": "50%",
       "position": "relative",
       "width": "50%"
-    },
-    "background": "hsl(249deg 63% 51% / 100%)",
-    "borderColor": "hsl(249deg 63% 51% / 100%)"
-  },
-  "radioContainer_data_disabled__true": {
-    "cursor": "not-allowed"
-  },
-  "radioContainer_data_readonly__true": {
-    "cursor": "not-allowed"
+    }
   },
   "radioControl_data_disabled__true": {
     "background": "hsl(238deg 30% 32% / 100%)",
@@ -76,7 +83,11 @@ export default {
   },
   "radioControl_data_invalid__true": {
     "background": "hsl(336deg 100% 36% / 100%)",
-    "borderColor": "hsl(336deg 100% 36% / 100%)"
+    "borderColor": "hsl(336deg 100% 36% / 100%)",
+    "&:hover": {
+      "background": "hsl(336deg 100% 27% / 100%)",
+      "borderColor": "hsl(336deg 100% 27% / 100%)"
+    }
   },
   "radiorow": {
     "composes": "radioContainer"
