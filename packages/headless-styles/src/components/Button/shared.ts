@@ -2,16 +2,17 @@ import type {
   ButtonOptions,
   DangerOptions,
   DangerKind,
-  IconLabelOptions,
   Kind,
   Size,
   Tech,
+  IconPosition,
 } from './types'
 
 export const defaultButtonOptions = {
   kind: 'text' as Kind,
   size: 'm' as Size,
   tech: '' as Tech,
+  iconPosition: '' as IconPosition,
 }
 
 export function getDefaultOptions(options?: ButtonOptions) {
@@ -19,6 +20,7 @@ export function getDefaultOptions(options?: ButtonOptions) {
     kind: options?.kind ?? defaultButtonOptions.kind,
     size: options?.size ?? defaultButtonOptions.size,
     tech: options?.tech ?? defaultButtonOptions.tech,
+    iconPosition: options?.iconPosition ?? defaultButtonOptions.iconPosition,
   }
 }
 
@@ -26,6 +28,7 @@ export const defaultDangerButtonOptions = {
   kind: 'text' as DangerKind,
   size: 'm' as Size,
   tech: '' as Tech,
+  iconPosition: '' as IconPosition,
 }
 
 export function getDefaultDangerOptions(options?: DangerOptions) {
@@ -33,17 +36,6 @@ export function getDefaultDangerOptions(options?: DangerOptions) {
     kind: options?.kind ?? defaultDangerButtonOptions.kind,
     size: options?.size ?? defaultDangerButtonOptions.size,
     tech: options?.tech ?? defaultDangerButtonOptions.tech,
-  }
-}
-
-export const defaultIconLabelOptions = {
-  ...defaultButtonOptions,
-  position: 'start',
-}
-
-export function getDefaultIconLabelOptions(options?: IconLabelOptions) {
-  return {
-    ...getDefaultOptions(options),
-    position: options?.position ?? defaultIconLabelOptions.position,
+    iconPosition: options?.iconPosition ?? defaultButtonOptions.iconPosition,
   }
 }

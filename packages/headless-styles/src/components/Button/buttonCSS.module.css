@@ -98,26 +98,22 @@
   padding-inline-end: 0;
 }
 
-.xs.startIconLabel > svg,
-.xs.endIconLabel > svg {
+.xs > .ps-icon {
   margin-left: 4px;
   margin-right: 4px;
 }
 
-.s.startIconLabel > svg,
-.s.endIconLabel > svg {
+.s > .ps-icon {
   margin-left: 8px;
   margin-right: 8px;
 }
 
-.m.startIconLabel > svg,
-.m.endIconLabel > svg {
+.m > .ps-icon {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.l.startIconLabel > svg,
-.l.endIconLabel > svg {
+.l > .ps-icon {
   margin-left: 14px;
   margin-right: 14px;
 }

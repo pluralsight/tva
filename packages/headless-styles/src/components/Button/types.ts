@@ -8,14 +8,11 @@ export interface ButtonOptions
   kind?: Kind
   size?: Size
   tech?: Tech
+  iconPosition?: IconPosition
 }
 
 export interface DangerOptions extends ButtonOptions {
   kind?: DangerKind
-}
-
-export interface IconLabelOptions extends ButtonOptions {
-  position?: IconPosition
 }
 
 // types
