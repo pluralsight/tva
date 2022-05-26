@@ -70,6 +70,7 @@
 }
 
 :root {
+  --docusaurus-highlighted-code-line-bg: #1f2128;
   --ifm-code-font-size: 95%;
   --ifm-color-primary: var(--ps-text-weak);
   --ifm-font-color-base: var(--ps-neutral-text);

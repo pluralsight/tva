@@ -1,0 +1,204 @@
+---
+sidebar_position: 8
+tags: [Development, Packages, Components, Headless Styles, Radio, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicRadio from '@site/src/components/Radio/BasicRadio'
+import {
+  BasicRadioPreview,
+  BasicRadioFullPreview,
+} from '@site/src/components/Radio/BasicRadio.preview'
+import RadioStates from '@site/src/components/Radio/RadioStates'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The `getRadioProps` helper is used when only one choice may be selected in a series of options.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Radio"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getRadioProps } from '@pluralsight/headless-styles'
+```
+
+The Radios must always be accompanied by a label (i.e. see [getFormLabelProps](./FormControl)), and follows the same keyboard workflow as a `checkbox` (spacebar to toggle states).
+
+Radios must also use the [getFormControlProps](./FormControl) with the `groupType` option set to `radiogroup` to ensure proper a11y usage.
+
+## Usage
+
+### Basic Radio
+
+<BasicRadio />
+<LiveExampleTabs
+  fullCode={<BasicRadioFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-5fqh9c',
+    joy: 'basic-mui-exb122',
+    styled: 'sc-i8cynw',
+    svelte: 'ps-svelte-7kciqz',
+  }}
+>
+  <BasicRadioPreview />
+</LiveExampleTabs>
+
+### State depending behavior
+
+States like `disabled` have an impact on the usability of a Radio and on the styles, expect for `invalid` and `required`. These values should come from the `getFormControlProps` helper.
+
+<RadioStates />
+
+### Note about `name` option
+
+We recommend passing the `name` option to the `getFormControlProps` helper, instead of passing it to each Radio helper. By default, the `name` prop of the `radiogroup` container takes precedence.
+
+```jsx
+// Do this ✅
+const { control, fieldOptions } = getFormControlProps({
+  // highlight-next-line
+  name: 'form-name',
+  groupType: 'radiogroup'
+})
+
+<div {...control}>...</div>
+
+// Don't do this ❌
+const { control, fieldOptions } = getFormControlProps({
+  groupType: 'radiogroup'
+})
+
+<div {...control}>
+  <Radio name="form-name" />
+  <Radio name="form-name" />
+  <Radio name="form-name" />
+</div>
+```
+
+## API
+
+| Name              | Argument Type                              | Default            | Description                     |
+| ----------------- | ------------------------------------------ | ------------------ | ------------------------------- |
+| `getRadioProps`   | **options**: [RadioOptions](#radiooptions) | **kind**: 'strong' | Get radio styles for CSS usage. |
+| `getJSRadioProps` | **options**: [RadioOptions](#radiooptions) | same as CSS API    | CSS-in-JS API                   |
+
+## RadioOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface RadioOptions extends FieldOptions {
+  checked: boolean
+  direction?: Direction
+  id: string
+  name?: string
+  tech?: Tech
+  value: string
+}
+```
+
+```typescript title="Import example"
+import type { RadioOptions } from '@pluralsight/headless-styles/types'
+```
+
+## FieldOptions
+
+```typescript
+interface FieldOptions {
+  disabled?: boolean
+  invalid?: boolean
+  readOnly?: boolean
+  required?: boolean
+}
+```
+
+## RadioProps
+
+```typescript
+interface RadioProps {
+  input: {
+    'aria-disabled': boolean
+    'aria-invalid': boolean
+    checked: boolean
+    disabled: boolean
+    id: string
+    name: string
+    type: 'radio'
+    value: string
+    className: string
+  }
+  radioContainer: {
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    'data-readonly': boolean
+    className: string
+  }
+  radioControl: {
+    'aria-hidden': true
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    'data-readonly': boolean
+    className: string
+  }
+}
+```
+
+## JSRadioProps
+
+```typescript
+interface JSRadioProps {
+  input: {
+    a11yProps: {
+      'aria-disabled': boolean
+      'aria-invalid': boolean
+      checked: boolean
+      disabled: boolean
+      id: string
+      name: string
+      type: 'radio'
+      value: string
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+  radioContainer: {
+    a11yProps: {
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+      'data-readonly': boolean
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+  radioControl: {
+    a11yProps: {
+      'aria-hidden': true
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+      'data-readonly': boolean
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+}
+```

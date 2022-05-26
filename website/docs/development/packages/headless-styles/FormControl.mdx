@@ -186,20 +186,21 @@ function FormikExample() {
 
 ## API
 
-| Name                     | Argument Type                                            | Default                      | Description                             |
-| ------------------------ | -------------------------------------------------------- | ---------------------------- | --------------------------------------- |
-| `getFormControlProps`    | **options**: [FormControlOptions](#formcontroloptions)   | `false` for all fieldOptions | Get form control styles & field states  |
-| `getFormLabelProps`      | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String    | Get form label styles and a11y props.   |
-| `getErrorMessageProps`   | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`         | Get error message styles and content.   |
-| `getJSFormControlProps`  | **options**: [FormControlOptions](#formcontroloptions)   | `false` for all fieldOptions | Get form control styles & field states. |
-| `getJSFormLabelProps`    | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String    | Get form label styles and a11y props.   |
-| `getJSErrorMessageProps` | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`         | Get error message styles and content.   |
+| Name                     | Argument Type                                            | Default                                                  | Description                                           |
+| ------------------------ | -------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------- |
+| `getFormControlProps`    | **options**: [FormControlOptions](#formcontroloptions)   | groupType: `default`, <br />`false` for all fieldOptions | Get form control styles & field states for CSS usage. |
+| `getFormLabelProps`      | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String                                | Get form label styles and a11y props for CSS usage.   |
+| `getErrorMessageProps`   | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`                                     | Get error message styles and content for CSS usage.   |
+| `getJSFormControlProps`  | **options**: [FormControlOptions](#formcontroloptions)   | same as CSS API                                          | CSS-in-JS API                                         |
+| `getJSFormLabelProps`    | **options**: [FormLabelOptions](#formlabeloptions)       | same as CSS API                                          | CSS-in-JS API                                         |
+| `getJSErrorMessageProps` | **options**: [ErrorMessageOptions](#errormessageoptions) | same as CSS API                                          | CSS-in-JS API                                         |
 
 ## FormControlOptions
 
 ```typescript
 interface FormControlOptions {
   disabled?: boolean
+  groupType?: 'default' | 'radiogroup'
   invalid?: boolean
   readOnly?: boolean
   required?: boolean

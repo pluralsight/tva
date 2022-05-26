@@ -6,7 +6,7 @@ export function BasicSwitchPreview() {
     <CodeBlock>{`const switchProps = getSwitchProps()
 
 <label {...switchProps.switchContainer}>
-  <input {...switchProps.input} onClick={handleCheck} />
+  <input {...switchProps.input} onChange={handleCheck} />
   <span {...switchProps.switchTrack}>
     <span {...switchProps.switchThumb} />
   </span>
@@ -23,7 +23,7 @@ export default function BasicSwitch(props) {
 
   return (
     <label {...switchProps.switchContainer}>
-      <input {...switchProps.input} onClick={props.onClick} />
+      <input {...switchProps.input} onChange={props.onClick} />
       <span {...switchProps.switchTrack}>
         <span {...switchProps.switchThumb} />
       </span>
