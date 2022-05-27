@@ -3,9 +3,11 @@ import { getErrorMessageProps } from '../../src'
 describe('ErrorMessage CSS', () => {
   const baseClass = 'ps-error-message'
   const message = 'We do not speak his name.'
+  const id = 'voldemort:1'
   const result = {
     container: {
       'aria-live': 'polite',
+      id,
     },
     message: {
       className: `${baseClass} errorMessage`,
@@ -16,6 +18,10 @@ describe('ErrorMessage CSS', () => {
   test('should allow no props to be passed in', () => {
     expect(getErrorMessageProps()).toEqual({
       ...result,
+      container: {
+        ...result.container,
+        id: '',
+      },
       message: {
         ...result.message,
         value: '',
@@ -24,12 +30,12 @@ describe('ErrorMessage CSS', () => {
   })
 
   test('should accept a invalid option', () => {
-    expect(getErrorMessageProps({ invalid: true, message })).toEqual(result)
+    expect(getErrorMessageProps({ id, invalid: true, message })).toEqual(result)
   })
 
   test('should accept a tech type', () => {
     expect(
-      getErrorMessageProps({ invalid: false, message, tech: 'svelte' })
+      getErrorMessageProps({ id, invalid: false, message, tech: 'svelte' })
     ).toEqual({
       ...result,
       message: {

@@ -38,7 +38,7 @@ function App() {
       <Badge />
       <Button />
       <CircularProgress />
-      <ErrorMessage />
+      <ErrorMessage logJS />
       <FormControl />
       <FormLabel />
       <Icon />
@@ -46,7 +46,7 @@ function App() {
       <Progress />
       <Radio />
       <Skeleton />
-      <Switch logJS />
+      <Switch />
     </div>
   )
 }

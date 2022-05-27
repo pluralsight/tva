@@ -1,17 +1,28 @@
-import { getErrorMessageProps } from '../../../src'
+import { useEffect } from 'react'
+import { getErrorMessageProps, getJSErrorMessageProps } from '../../../src'
 
 const defaultErrorMessage = getErrorMessageProps({
+  id: 'failed-one',
   message: 'This should not show up.',
 })
 const errorMessage = getErrorMessageProps({
+  id: 'passed-one',
   invalid: true,
   message: 'First name is required.',
 })
 
-export default function ErrorMessage(props) {
-  // if (props.logJS) {
-  //   console.log({ ...getJSBadgeProps({ kind: 'medium' }) })
-  // }
+export default function ErrorMessage({ logJS }) {
+  useEffect(() => {
+    if (logJS) {
+      console.log({
+        ...getJSErrorMessageProps({
+          id: 'hello',
+          invalid: true,
+          message: 'Wrong, wrong, wrong.',
+        }),
+      })
+    }
+  }, [logJS])
 
   return (
     <div id="ErrorMessage">
