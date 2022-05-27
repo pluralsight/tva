@@ -52,6 +52,14 @@ export function createCSSObj(className: string, additionalProps?: StyleProps) {
   }
 }
 
+export function createClassProp(tech: Tech, classes: ClassOptions) {
+  if (tech === 'svelte') {
+    return createSvelteObj(classes.svelteClass)
+  }
+
+  return createCSSObj(classes.defaultClass)
+}
+
 export function createJSProps(
   cssProps: string,
   styles: StyleProps,
@@ -76,12 +84,4 @@ export function transformStyles(styleObject: StyleProps) {
     }, '')
     .trim()
     .replace(/^ {2,12}/gm, '')
-}
-
-export function createClassProp(tech: Tech, classes: ClassOptions) {
-  if (tech === 'svelte') {
-    return createSvelteObj(classes.svelteClass)
-  }
-
-  return createCSSObj(classes.defaultClass)
 }

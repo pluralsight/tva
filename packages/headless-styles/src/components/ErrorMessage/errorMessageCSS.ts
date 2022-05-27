@@ -1,4 +1,4 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import {
   getDefaultErrorMessageOptions,
   createErrorMessageProps,
@@ -12,21 +12,14 @@ export function getErrorMessageProps(options?: ErrorMessageOptions) {
   const { tech, ...defaultOptions } = getDefaultErrorMessageOptions(options)
   const errorProps = createErrorMessageProps(defaultOptions)
 
-  if (tech === 'svelte') {
-    return {
-      ...errorProps,
-      message: {
-        ...errorProps.message,
-        ...createSvelteObj(`${ERROR_MESSAGE} errorMessage`),
-      },
-    }
-  }
-
   return {
     ...errorProps,
     message: {
       ...errorProps.message,
-      ...createCSSObj(`${ERROR_MESSAGE} ${styles.errorMessage}`),
+      ...createClassProp(tech, {
+        defaultClass: `${ERROR_MESSAGE} ${styles.errorMessage}`,
+        svelteClass: `${ERROR_MESSAGE} errorMessage`,
+      }),
     },
   }
 }

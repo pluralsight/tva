@@ -113,6 +113,26 @@ export default {
     height: '3rem',
     paddingInline: '24px',
   },
+  xsIconButton: {
+    composes: 'xs',
+    paddingInline: '0',
+    width: '1.5rem',
+  },
+  sIconButton: {
+    composes: 's',
+    paddingInline: '0',
+    width: '2rem',
+  },
+  mIconButton: {
+    composes: 'base',
+    paddingInline: '0',
+    width: '2.5rem',
+  },
+  lIconButton: {
+    composes: 'l',
+    paddingInline: '0',
+    width: '3rem',
+  },
   textDanger: {
     color: 'hsl(335deg 100% 82% / 100%)',
     composes: 'base',
@@ -144,6 +164,9 @@ export default {
     '&:active': {
       backgroundColor: 'hsl(335deg 100% 18% / 100%)',
     },
+  },
+  round: {
+    borderRadius: '50%',
   },
   light__base_text: {
     '&:hover': {
