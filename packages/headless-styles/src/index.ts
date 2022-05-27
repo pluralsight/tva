@@ -13,6 +13,8 @@ export {
 export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
 export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
 
+export { getErrorMessageProps } from './components/ErrorMessage/errorMessageCSS'
+
 export { getFormControlProps } from './components/FormControl/formControlCSS'
 export { getJSFormControlProps } from './components/FormControl/formControlJS'
 
