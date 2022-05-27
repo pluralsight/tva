@@ -1,5 +1,6 @@
 import { ChakraBadge } from './components/Badge/badgeJS'
 import { ChakraButton } from './components/Button/buttonJS'
+import { ChakraErrorMessage } from './components/ErrorMessage/errorMessageJS'
 import { ChakraFormControl } from './components/FormControl/formControlJS'
 import { ChakraFormLabel } from './components/FormLabel/formLabelJS'
 import { ChakraIcon } from './components/Icon/iconJS'
@@ -13,6 +14,7 @@ export const chakraPSTheme = {
     Badge: ChakraBadge,
     Button: ChakraButton,
     FormControl: ChakraFormControl,
+    FormErrorMessage: ChakraErrorMessage,
     FormLabel: ChakraFormLabel,
     Icon: ChakraIcon,
     Progress: ChakraProgress,
