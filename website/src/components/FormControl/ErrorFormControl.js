@@ -6,8 +6,11 @@ import {
 } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
 
-function BasicFormControl() {
-  const { control, fieldOptions } = getFormControlProps()
+function ErrorFormControl() {
+  const { control, fieldOptions } = getFormControlProps({
+    invalid: true,
+    required: true,
+  })
   const { value, ...labelProps } = getFormLabelProps({
     ...fieldOptions,
     htmlFor: 'email',
@@ -35,4 +38,4 @@ function BasicFormControl() {
   )
 }
 
-export default BasicFormControl
+export default ErrorFormControl

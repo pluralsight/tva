@@ -24,6 +24,8 @@ import {
   BasicFormControlFullPreview,
 } from '@site/src/components/FormControl/BasicFormControl.preview'
 import RadioGroup from '@site/src/components/FormControl/RadioGroup'
+import ErrorFormControl from '@site/src/components/FormControl/ErrorFormControl'
+import RequiredFormControl from '@site/src/components/FormControl/RequiredFormControl'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 
@@ -94,7 +96,7 @@ Headless Styles exports two helpers for Form Control:
 
 `getFormErrorMessageProps` will return a styled error message when the `invalid` option is true (this should come from the `getFormControlProps.fieldOptions` property).
 
-<RadioGroup />
+<ErrorFormControl />
 <LiveExampleTabs
   fullCode={<BasicFormControlFullPreview />}
   sandboxList={{
@@ -111,7 +113,7 @@ Headless Styles exports two helpers for Form Control:
 
 When you pass `required` to `getFormControlProps` and use the `fieldOptions.required` as an option to the `getFormLabelProps`, the `getFormLabel` will add a "(required)" at the end of the label value.
 
-<RadioGroup />
+<RequiredFormControl />
 <LiveExampleTabs
   fullCode={<BasicFormControlFullPreview />}
   sandboxList={{
@@ -215,8 +217,10 @@ interface FormControlOptions {
 ```typescript
 interface FormLabelOptions {
   htmlFor: string
+  required?: boolean
   size?: 's' | 'm'
   tech?: 'svelte'
+  value: string
 }
 ```
 
@@ -224,6 +228,75 @@ interface FormLabelOptions {
 
 ```typescript
 interface ErrorMessageOptions {
-  invalid?: boolean
+  id: string
+  invalid: boolean
+  message: string
+  tech?: 'svelte'
+}
+```
+
+## ErrorMessageProps
+
+```typecript
+interface ErrorMessageProps {
+  container: {
+    'aria-live': 'polite',
+    id: string,
+  },
+  message: {
+    className: string,
+    value: string,
+  }
+}
+```
+
+## JSFormControlProps
+
+```typescript
+interface JSFormControlProps {
+  a11yProps: {
+    role: string
+  }
+  control: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<CSSProps, unknown>
+  }
+  fieldOptions: {
+    disabled?: boolean
+    invalid?: boolean
+    readOnly?: boolean
+    required?: boolean
+  }
+}
+```
+
+## JSFormLabelProps
+
+```typescript
+interface JSFormLabelProps {
+  a11yProps: {
+    htmlFor: string
+  }
+  label: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<CSSProps, unknown>
+  }
+  value: string
+}
+```
+
+## JSErrorMessageProps
+
+```typecript
+interface JSErrorMessageProps {
+  container: {
+    'aria-live': 'polite',
+    id: string,
+  },
+  message: {
+    cssProps: TemplateStringLiteralArray,
+    styles: Record<CSSProps, unknown>,
+    value: string,
+  }
 }
 ```
