@@ -12,5 +12,6 @@ export default {
     fontVariationSettings: "'wght' 400",
     fontWeight: '400',
     paddingTop: '8px',
+    textAlign: 'left',
   },
 }
