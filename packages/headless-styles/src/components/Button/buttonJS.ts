@@ -28,6 +28,25 @@ const baseStyles = {
   ...styles.base,
 }
 
+function getChakraSize(props: { padding: string; size: string }) {
+  const keySuffix = props.padding === '0' ? 'IconButton' : ''
+  const sizeKey = props.size === 'm' ? 'base' : `${props.size}${keySuffix}`
+
+  return styles[sizeKey as keyof typeof styles]
+}
+
+function getChakraVariant(props: {
+  variant: string
+  borderRadius: string
+}): Styles {
+  const roundStyles = props.borderRadius === 'full' ? styles.round : {}
+
+  return {
+    ...styles[props.variant as keyof typeof styles],
+    ...roundStyles,
+  }
+}
+
 // Public
 
 export const ChakraButton = {
@@ -37,19 +56,19 @@ export const ChakraButton = {
     variant: 'text',
   },
   sizes: {
-    xs: styles.xs,
-    s: styles.s,
-    m: styles.base,
-    l: styles.l,
+    xs: getChakraSize,
+    s: getChakraSize,
+    m: getChakraSize,
+    l: getChakraSize,
   },
   variants: {
-    text: styles.text,
-    textWeak: styles.textWeak,
-    medium: styles.medium,
-    strong: styles.strong,
-    textDanger: styles.textDanger,
-    mediumDanger: styles.mediumDanger,
-    strongDanger: styles.strongDanger,
+    text: getChakraVariant,
+    textWeak: getChakraVariant,
+    medium: getChakraVariant,
+    strong: getChakraVariant,
+    textDanger: getChakraVariant,
+    mediumDanger: getChakraVariant,
+    strongDanger: getChakraVariant,
   },
 }
 
