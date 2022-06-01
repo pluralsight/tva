@@ -26,6 +26,7 @@ export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'
 
 export { getIconButtonProps } from './components/Button/iconButtonCSS'
+export { getJSIconButtonProps } from './components/Button/iconButtonJS'
 
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'

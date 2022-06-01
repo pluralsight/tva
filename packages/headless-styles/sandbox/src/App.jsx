@@ -38,11 +38,11 @@ function App() {
       <Badge />
       <Button />
       <CircularProgress />
-      <ErrorMessage logJS />
+      <ErrorMessage />
       <FormControl />
       <FormLabel />
       <Icon />
-      <IconButton />
+      <IconButton logJS />
       <Progress />
       <Radio />
       <Skeleton />

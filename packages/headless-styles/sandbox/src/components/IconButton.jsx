@@ -1,4 +1,8 @@
-import { getIconButtonProps, getIconProps } from '../../../src'
+import {
+  getIconButtonProps,
+  getIconProps,
+  getJSIconButtonProps,
+} from '../../../src'
 import { CodeIcon } from '@pluralsight/icons'
 
 function PSIconButton(props) {
@@ -11,10 +15,17 @@ function PSIconButton(props) {
   )
 }
 
-export default function IconButton() {
-  // if (props.logJS) {
-  //   console.log({ ...getJSIconButtonProps({ ariaLabel: 'button', kind: 'medium', size: 'xs', variant: 'round' }) })
-  // }
+export default function IconButton(props) {
+  if (props.logJS) {
+    console.log({
+      ...getJSIconButtonProps({
+        ariaLabel: 'button',
+        kind: 'medium',
+        size: 'xs',
+        variant: 'round',
+      }),
+    })
+  }
 
   return (
     <div id="icon-button">
