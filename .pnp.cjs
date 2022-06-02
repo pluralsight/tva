@@ -598,7 +598,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           'npm:0.0.0-experimental-815dc1-20220527',
         ],
-        ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
+        [
+          '@pluralsight/icons',
+          'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-alpha-ec347e',
+        ],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@rollup/pluginutils', 'npm:4.2.0'],
         ['@sideway/address', 'npm:4.1.3'],
@@ -18039,29 +18042,63 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/icons',
           [
             [
-              'npm:0.0.0-alpha-5fed0c',
+              'npm:0.0.0-alpha-ec347e',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-alpha-5fed0c-95e4679f20-b59d0a0681.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-alpha-ec347e-8339513ea2-0ddf3c9c71.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
-                  ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
+                  ['@pluralsight/icons', 'npm:0.0.0-alpha-ec347e'],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'npm:0.0.0-experimental-ec347e-20220602',
+              {
+                packageLocation:
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-ec347e-20220602-70601fac30-c0dc211f99.zip/node_modules/@pluralsight/icons/',
+                packageDependencies: [
+                  [
+                    '@pluralsight/icons',
+                    'npm:0.0.0-experimental-ec347e-20220602',
+                  ],
+                ],
+                linkType: 'SOFT',
+              },
+            ],
+            [
+              'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-ec347e-20220602',
+              {
+                packageLocation:
+                  './.yarn/__virtual__/@pluralsight-icons-virtual-8134a0263e/0/cache/@pluralsight-icons-npm-0.0.0-experimental-ec347e-20220602-70601fac30-c0dc211f99.zip/node_modules/@pluralsight/icons/',
+                packageDependencies: [
+                  [
+                    '@pluralsight/icons',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-ec347e-20220602',
+                  ],
+                  ['@types/react', null],
+                  ['react', 'npm:18.0.0'],
                   ['tslib', 'npm:2.3.1'],
                 ],
+                packagePeers: ['@types/react', 'react'],
                 linkType: 'HARD',
               },
             ],
             [
-              'npm:0.0.0-experimental-5fed0c-20220523',
+              'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-alpha-ec347e',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-5fed0c-20220523-d03885de02-16bdf2555f.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/__virtual__/@pluralsight-icons-virtual-0a22804286/0/cache/@pluralsight-icons-npm-0.0.0-alpha-ec347e-8339513ea2-0ddf3c9c71.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
                   [
                     '@pluralsight/icons',
-                    'npm:0.0.0-experimental-5fed0c-20220523',
+                    'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-alpha-ec347e',
                   ],
+                  ['@types/react', null],
+                  ['react', 'npm:18.0.0'],
                   ['tslib', 'npm:2.3.1'],
                 ],
+                packagePeers: ['@types/react', 'react'],
                 linkType: 'HARD',
               },
             ],
@@ -41873,7 +41910,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                 packageDependencies: [
                   ['sandbox', 'workspace:packages/headless-styles/sandbox'],
                   ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
-                  ['@pluralsight/icons', 'npm:0.0.0-alpha-5fed0c'],
+                  [
+                    '@pluralsight/icons',
+                    'virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-alpha-ec347e',
+                  ],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
                   ['react', 'npm:18.0.0'],
@@ -46605,7 +46645,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     '@pluralsight/icons',
-                    'npm:0.0.0-experimental-5fed0c-20220523',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-ec347e-20220602',
                   ],
                   ['@svgr/webpack', 'npm:5.5.0'],
                   ['clsx', 'npm:1.1.1'],
@@ -51858,10 +51898,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         /******/
       }
       /******/
-    })()
+    })() /* webpack/runtime/define property getters */
     /******/
-    /******/ /* webpack/runtime/define property getters */
-    /******/ ;(() => {
+    /******/
+    /******/
+    ;(() => {
       /******/ // define getter functions for harmony exports
       /******/ __webpack_require__.d = (exports, definition) => {
         /******/ for (var key in definition) {
@@ -51880,10 +51921,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         /******/
       }
       /******/
-    })()
+    })() /* webpack/runtime/hasOwnProperty shorthand */
     /******/
-    /******/ /* webpack/runtime/hasOwnProperty shorthand */
-    /******/ ;(() => {
+    /******/
+    /******/
+    ;(() => {
       /******/ __webpack_require__.o = (obj, prop) =>
         Object.prototype.hasOwnProperty.call(obj, prop)
       /******/
@@ -51924,7 +51966,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       var external_path_default =
         /*#__PURE__*/ __webpack_require__.n(external_path_) // CONCATENATED MODULE: ../yarnpkg-fslib/sources/path.ts
       var PathType
-
       ;(function (PathType) {
         PathType[(PathType['File'] = 0)] = 'File'
         PathType[(PathType['Portable'] = 1)] = 'Portable'
@@ -52030,7 +52071,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       } // CONCATENATED MODULE: ../yarnpkg-fslib/sources/algorithms/copyPromise.ts
       const defaultTime = new Date(SAFE_TIME * 1000)
       var LinkStrategy
-
       ;(function (LinkStrategy) {
         LinkStrategy['Allow'] = 'allow'
         LinkStrategy['ReadOnly'] = 'readOnly'
@@ -54396,14 +54436,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         return true
       } // CONCATENATED MODULE: ../yarnpkg-fslib/sources/algorithms/watchFile/CustomStatWatcher.ts
       var Event
-
       ;(function (Event) {
         Event['Change'] = 'change'
         Event['Stop'] = 'stop'
       })(Event || (Event = {}))
 
       var Status
-
       ;(function (Status) {
         Status['Ready'] = 'ready'
         Status['Running'] = 'running'
@@ -57367,7 +57405,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         `number`, // high
       ]
       var Errors
-
       ;(function (Errors) {
         Errors[(Errors['ZIP_ER_OK'] = 0)] = 'ZIP_ER_OK'
         Errors[(Errors['ZIP_ER_MULTIDISK'] = 1)] = 'ZIP_ER_MULTIDISK'
@@ -57923,7 +57960,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }
       } // CONCATENATED MODULE: ./sources/loader/internalTools.ts
       var ErrorCode
-
       ;(function (ErrorCode) {
         ErrorCode['API_ERROR'] = 'API_ERROR'
         ErrorCode['BUILTIN_NODE_RESOLUTION_FAILED'] =

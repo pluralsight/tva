@@ -44,7 +44,7 @@ function App() {
       <FormLabel />
       <Icon />
       <IconButton />
-      <Input />
+      <Input logJS />
       <Progress />
       <Radio />
       <Skeleton />

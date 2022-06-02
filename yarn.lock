@@ -5162,20 +5162,30 @@ __metadata:
   linkType: soft
 
 "@pluralsight/icons@npm:alpha":
-  version: 0.0.0-alpha-5fed0c
-  resolution: "@pluralsight/icons@npm:0.0.0-alpha-5fed0c"
+  version: 0.0.0-alpha-ec347e
+  resolution: "@pluralsight/icons@npm:0.0.0-alpha-ec347e"
   dependencies:
     tslib: ^2.3.1
-  checksum: b59d0a06818b8dcaa256a21f3bc155926bda2db1ccddc4cc9e8047bb23c3e665d47fc2b12cade3aff42698b2cfdc4c19e4ec5dd0e9d6aeae9ff25d710822cd95
+  peerDependencies:
+    react: "*"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 0ddf3c9c71eb8b1622bd6d5361052db5e8b5368515eaec1e6d68fde1735a9979fe3958efe019b9fc1ba417f986c54ff0fc4980ee4b11e9427a6ad935946a7335
   languageName: node
   linkType: hard
 
 "@pluralsight/icons@npm:experimental":
-  version: 0.0.0-experimental-5fed0c-20220523
-  resolution: "@pluralsight/icons@npm:0.0.0-experimental-5fed0c-20220523"
+  version: 0.0.0-experimental-ec347e-20220602
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-ec347e-20220602"
   dependencies:
     tslib: ^2.3.1
-  checksum: 16bdf2555fffdc34f8e24ca5ceeb74b38d3f7d5fc001525f19a61845a558dd30eeedce21d79bcf5f0cde91c23505c5471a86387a3344df69b301d5b358e58346
+  peerDependencies:
+    react: "*"
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: c0dc211f996e0feafda9c81c2bd97cc756a5711c5c5ebb8f82b3f0469f915a72be1bfa5246500874285eb2f9da4f0ce49576cf87ffc98e01677f10c290f0fd22
   languageName: node
   linkType: hard
 
