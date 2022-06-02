@@ -16,7 +16,7 @@ export function getIconButtonProps(options?: IconButtonOptions) {
       type: 'button' as ButtonType,
       ...createClassProp(tech, {
         defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
-        svelteClass: `base ${kind} ${sizeClass} ${variant}`,
+        svelteClass: `base ${kind} ${size} ${sizeClass} ${variant}`,
       }),
     },
     iconOptions,
