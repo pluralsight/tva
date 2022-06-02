@@ -13,7 +13,9 @@ export function getJSInputProps(options?: InputOptions) {
   const jsStyles = {
     ...styles.inputBase,
     ...styles[`${defaultOptions.size}InputSize`],
-    ...styles['']['&::placeholder'],
+    ['&::placeholder']: {
+      ...styles['']['&::placeholder'],
+    },
     ['&[data-disabled="true"]']: {
       ...styles.inputBase_data_disabled__true,
     },
