@@ -22,11 +22,13 @@ export { getJSFormControlProps } from './components/FormControl/formControlJS'
 export { getFormLabelProps } from './components/FormLabel/formLabelCSS'
 export { getJSFormLabelProps } from './components/FormLabel/formLabelJS'
 
+export { getIconButtonProps } from './components/Button/iconButtonCSS'
+export { getJSIconButtonProps } from './components/Button/iconButtonJS'
+
 export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'
 
-export { getIconButtonProps } from './components/Button/iconButtonCSS'
-export { getJSIconButtonProps } from './components/Button/iconButtonJS'
+export { getInputProps } from './components/Input/inputCSS'
 
 export { getProgressProps } from './components/Progress/progressCSS'
 export { getJSProgressProps, muiReset } from './components/Progress/progressJS'
