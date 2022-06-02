@@ -1,4 +1,5 @@
-import type { Tech } from '../types'
+import { A11yBoolean } from 'components/Icon/types'
+import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,
   DangerOptions,
@@ -45,12 +46,25 @@ export const defaultIconButtonOptions = {
   ariaLabel: '',
 }
 
+const iconButtonSizeMap: Record<Size, IconSize> = {
+  xs: 's',
+  s: 'm',
+  m: 'm',
+  l: 'l',
+}
+
 export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
+  const size = options?.size ?? defaultIconButtonOptions.size
+
   return {
     kind: options?.kind ?? defaultIconButtonOptions.kind,
-    size: options?.size ?? defaultIconButtonOptions.size,
+    size,
     tech: options?.tech ?? defaultIconButtonOptions.tech,
     ariaLabel: options?.ariaLabel ?? defaultIconButtonOptions.ariaLabel,
     variant: options?.variant ?? defaultIconButtonOptions.variant,
+    iconOptions: {
+      ariaHidden: 'true' as A11yBoolean,
+      size: iconButtonSizeMap[size],
+    },
   }
 }

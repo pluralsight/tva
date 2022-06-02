@@ -3,14 +3,18 @@ import { transformStyles } from '../../utils/helpers'
 import type { IconButtonOptions, ButtonType } from './types'
 import styles from './generated/buttonCSS.module'
 import { getJSButtonProps } from './buttonJS'
+import { IconOptions } from 'types'
 
 type CSSProps = TemplateStringsArray | string
 type Styles = Record<string, unknown>
 type IconButtonReturn = {
-  cssProps: CSSProps
-  styles: Styles
-  type: ButtonType
-  a11yProps: { 'aria-label': string }
+  button: {
+    cssProps: CSSProps
+    styles: Styles
+    type: ButtonType
+    a11yProps: { 'aria-label': string }
+  }
+  iconOptions: IconOptions
 }
 
 // Public
@@ -23,7 +27,7 @@ type IconButtonReturn = {
 export function getJSIconButtonProps(
   options?: IconButtonOptions
 ): IconButtonReturn {
-  const { ariaLabel, variant, ...buttonOptions } =
+  const { variant, ariaLabel, iconOptions, ...buttonOptions } =
     getDefaultIconButtonOptions(options)
   const sizeKey = `${buttonOptions.size}IconButton` as keyof typeof styles
   const buttonProps = getJSButtonProps(buttonOptions)
@@ -34,11 +38,14 @@ export function getJSIconButtonProps(
   }
 
   return {
-    cssProps: transformStyles(JsStyles),
-    styles: JsStyles,
-    type: buttonProps.type,
-    a11yProps: {
-      'aria-label': ariaLabel,
+    button: {
+      cssProps: transformStyles(JsStyles),
+      styles: JsStyles,
+      type: buttonProps.type,
+      a11yProps: {
+        'aria-label': ariaLabel,
+      },
     },
+    iconOptions,
   }
 }
