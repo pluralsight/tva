@@ -29,10 +29,14 @@ const baseStyles = {
 }
 
 function getChakraSize(props: { padding: string; size: string }) {
-  const keySuffix = props.padding === '0' ? 'IconButton' : ''
-  const sizeKey = props.size === 'm' ? 'base' : `${props.size}${keySuffix}`
+  const buttonSizeKey = props.size === 'm' ? 'base' : props.size
+  const iconButtonSizeKey =
+    props.padding === '0' ? `${props.size}IconButton` : ''
 
-  return styles[sizeKey as keyof typeof styles]
+  return {
+    ...styles[buttonSizeKey as keyof typeof styles],
+    ...styles[iconButtonSizeKey as keyof typeof styles],
+  }
 }
 
 function getChakraVariant(props: {
