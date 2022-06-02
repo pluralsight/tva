@@ -4,6 +4,7 @@ import { ChakraErrorMessage } from './components/ErrorMessage/errorMessageJS'
 import { ChakraFormControl } from './components/FormControl/formControlJS'
 import { ChakraFormLabel } from './components/FormLabel/formLabelJS'
 import { ChakraIcon } from './components/Icon/iconJS'
+import { ChakraInput } from './components/Input/inputJS'
 import { ChakraProgress } from './components/Progress/progressJS'
 import { ChakraRadio } from './components/Radio/radioJS'
 import { ChakraSkeleton } from './components/Skeleton/skeletonJS'
@@ -17,6 +18,7 @@ export const chakraPSTheme = {
     FormErrorMessage: ChakraErrorMessage,
     FormLabel: ChakraFormLabel,
     Icon: ChakraIcon,
+    Input: ChakraInput,
     Progress: ChakraProgress,
     Radio: ChakraRadio,
     Skeleton: ChakraSkeleton,

@@ -3,15 +3,32 @@ import { createInputOptions, getDefaultInputOptions } from './shared'
 import styles from './generated/InputCSS.module'
 import type { InputOptions } from './types'
 
+const baseInputStyles = styles.inputBase
+
 export const ChakraInput = {
-  baseStyle: styles.inputBase,
+  baseStyle: baseInputStyles,
+  sizes: {
+    m: {
+      ...baseInputStyles,
+      ...styles.mInputSize,
+    },
+    l: {
+      ...baseInputStyles,
+    },
+  },
+  variants: {
+    outline: baseInputStyles,
+    filled: baseInputStyles,
+    flushed: baseInputStyles,
+    unstyled: baseInputStyles,
+  },
 }
 
 export function getJSInputProps(options?: InputOptions) {
   const defaultOptions = getDefaultInputOptions(options)
   const inputProps = createInputOptions(defaultOptions)
   const jsStyles = {
-    ...styles.inputBase,
+    ...baseInputStyles,
     ...styles[`${defaultOptions.size}InputSize`],
     ['&::placeholder']: {
       ...styles['']['&::placeholder'],
