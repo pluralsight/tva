@@ -3,7 +3,7 @@ import { transformStyles } from '../../utils/helpers'
 import type { IconButtonOptions, ButtonType } from './types'
 import styles from './generated/buttonCSS.module'
 import { getJSButtonProps } from './buttonJS'
-import { IconOptions } from 'types'
+import { IconOptions } from '../../types'
 
 type CSSProps = TemplateStringsArray | string
 type Styles = Record<string, unknown>

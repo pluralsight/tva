@@ -1,4 +1,4 @@
-import { A11yBoolean } from 'components/Icon/types'
+import { A11yBoolean } from '../Icon/types'
 import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,

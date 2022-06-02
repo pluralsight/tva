@@ -1,5 +1,5 @@
 import { createClassProp } from '../../utils/helpers'
-import type { ButtonType, IconButtonOptions, Size } from './types'
+import type { ButtonType, IconButtonOptions } from './types'
 import { getDefaultIconButtonOptions } from './shared'
 import styles from './buttonCSS.module.css'
 
