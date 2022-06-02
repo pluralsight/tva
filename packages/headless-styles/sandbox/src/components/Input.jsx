@@ -4,6 +4,7 @@ import {
   getFormControlProps,
   getFormLabelProps,
   getInputProps,
+  getJSInputProps,
 } from '../../../src'
 
 function InputField(props) {
@@ -40,12 +41,24 @@ function InputField(props) {
   )
 }
 
-export default function Input(props) {
+export default function Input({ logJS }) {
   const [email, setEmail] = useState('')
 
   function handleEmailChange(e) {
     setEmail(e.target.value)
   }
+
+  useEffect(() => {
+    if (logJS) {
+      console.log(
+        getJSInputProps({
+          id: 'test',
+          name: 'test-name',
+          value: 'hello',
+        }).cssProps
+      )
+    }
+  }, [logJS])
 
   return (
     <div id="input">

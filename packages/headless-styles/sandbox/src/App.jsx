@@ -39,12 +39,12 @@ function App() {
       <Badge />
       <Button />
       <CircularProgress />
-      <ErrorMessage logJS />
+      <ErrorMessage />
       <FormControl />
       <FormLabel />
       <Icon />
       <IconButton />
-      <Input />
+      <Input logJS />
       <Progress />
       <Radio />
       <Skeleton />
