@@ -13,7 +13,7 @@ export function getInputProps(options?: InputOptions) {
     ...createInputOptions(defaultOptions),
     ...createClassProp(tech, {
       defaultClass: `${INPUT_MESSAGE} ${styles[sizeClass]}`,
-      svelteClass: `${INPUT_MESSAGE} baseInput ${sizeClass}`,
+      svelteClass: `${INPUT_MESSAGE} inputBase ${sizeClass}`,
     }),
   }
 }

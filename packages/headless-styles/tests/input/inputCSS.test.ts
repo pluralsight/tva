@@ -59,7 +59,7 @@ describe('Input CSS', () => {
         required: false,
         type: options.type,
         value: options.value,
-        class: `${baseClass} baseInput lInputSize`,
+        class: `${baseClass} inputBase lInputSize`,
       })
     })
   })
