@@ -48,6 +48,7 @@ export default {
   mInputSize: {
     composes: 'inputBase',
     height: '2rem',
+    fontSize: '0.875rem',
     paddingInlineStart: '0.75rem',
     paddingInlineEnd: '0.75rem',
   },

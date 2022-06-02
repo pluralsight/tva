@@ -93,6 +93,17 @@ export default function Input(props) {
           readOnly
           type="email"
         />
+        <InputField
+          defaultValue="Hello there"
+          htmlFor="email"
+          id="one"
+          placeholder="Enter email"
+          name="email"
+          label="Medium Email"
+          readOnly
+          size="m"
+          type="email"
+        />
       </div>
     </div>
   )
