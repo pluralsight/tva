@@ -101,7 +101,7 @@ describe('Icon Button CSS', () => {
         button: {
           'aria-label': 'button',
           type: 'button',
-          class: 'base text mIconButton default',
+          class: 'base text m mIconButton default',
         },
         iconOptions: result.iconOptions,
       })
