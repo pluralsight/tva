@@ -13,6 +13,7 @@
   font-variation-settings: 'wght' 400;
   font-weight: 400;
   height: 2.5rem;
+  margin-top: 8px;
   min-width: 0;
   outline: transparent solid 2px;
   outline-offset: 2px;
@@ -33,6 +34,11 @@
 
 .lInputSize {
   composes: inputBase;
+}
+
+::placeholder {
+  color: var(--ps-neutral-border);
+  opacity: 1;
 }
 
 /* states */
@@ -69,4 +75,5 @@
 .inputBase[data-disabled='true']:hover,
 .inputBase[data-readonly='true']:hover {
   border-color: var(--ps-neutral-border);
+  border-width: 1px;
 }

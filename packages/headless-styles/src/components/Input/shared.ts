@@ -18,10 +18,10 @@ const defaultInputOptions = {
 export function getDefaultInputOptions(options?: InputOptions) {
   return {
     disabled: options?.disabled ?? defaultInputOptions.disabled,
-    placeholder: options?.placeholder ?? defaultInputOptions.placeholder,
     id: options?.id ?? defaultInputOptions.id,
     invalid: options?.invalid ?? defaultInputOptions.invalid,
     name: options?.name ?? defaultInputOptions.name,
+    placeholder: options?.placeholder ?? defaultInputOptions.placeholder,
     readOnly: options?.readOnly ?? defaultInputOptions.readOnly,
     required: options?.required ?? defaultInputOptions.required,
     size: options?.size ?? defaultInputOptions.size,
@@ -31,15 +31,21 @@ export function getDefaultInputOptions(options?: InputOptions) {
   }
 }
 
-export function createA11yOptions(options: InputOptions) {
-  const { disabled, required } = options
+export function createInputOptions(options: InputOptions) {
+  const { disabled, readOnly, required } = options
 
   return {
     ['data-disabled']: disabled,
     ['data-invalid']: options?.invalid,
-    ['data-readonly']: options?.readOnly,
+    ['data-readonly']: readOnly,
     ['data-required']: required,
     disabled,
+    id: options.id,
+    name: options.name,
+    placeholder: options.placeholder,
+    readOnly,
     required,
+    type: options.type,
+    value: options.value,
   }
 }

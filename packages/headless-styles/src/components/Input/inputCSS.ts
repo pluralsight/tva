@@ -1,5 +1,5 @@
 import { createClassProp } from '../../utils/helpers'
-import { createA11yOptions, getDefaultInputOptions } from './shared'
+import { createInputOptions, getDefaultInputOptions } from './shared'
 import type { InputOptions } from './types'
 import styles from './inputCSS.module.css'
 
@@ -10,7 +10,7 @@ export function getInputProps(options?: InputOptions) {
   const sizeClass = `${size}InputSize`
 
   return {
-    ...createA11yOptions(defaultOptions),
+    ...createInputOptions(defaultOptions),
     ...createClassProp(tech, {
       defaultClass: `${INPUT_MESSAGE} ${styles[sizeClass]}`,
       svelteClass: `${INPUT_MESSAGE} baseInput ${sizeClass}`,
