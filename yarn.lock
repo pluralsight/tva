@@ -5192,6 +5192,11 @@ __metadata:
     svgo: ^2.8.0
     tslib: ^2.3.1
     typescript: 4.4.4
+  peerDependencies:
+    react: "*"
+  peerDependenciesMeta:
+    react:
+      optional: true
   languageName: unknown
   linkType: soft
 
