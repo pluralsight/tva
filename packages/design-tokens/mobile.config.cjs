@@ -1,7 +1,6 @@
 const vars = require('./utils/vars.cjs')
 
 const baseFileConfig = vars.baseFileConfig
-const transforms = vars.transforms
 
 module.exports = {
   parsers: vars.parsers,
@@ -9,8 +8,7 @@ module.exports = {
   platforms: {
     android: {
       transformGroup: 'android',
-      transforms,
-      buildPath: 'build/android/',
+      buildPath: 'build-mobile/android/',
       files: [
         {
           ...baseFileConfig,
@@ -21,8 +19,7 @@ module.exports = {
     },
     ios: {
       transformGroup: 'ios',
-      transforms,
-      buildPath: 'build/ios/',
+      buildPath: 'build-mobile/ios/',
       files: [
         {
           ...baseFileConfig,
@@ -76,7 +73,7 @@ module.exports = {
     },
     'ios-swift': {
       transformGroup: 'ios-swift',
-      buildPath: 'build/ios-swift/',
+      buildPath: 'build-mobile/ios-swift/',
       files: [
         {
           ...baseFileConfig,
@@ -89,7 +86,7 @@ module.exports = {
     },
     'ios-swift-separate-enums': {
       transformGroup: 'ios-swift-separate',
-      buildPath: 'build/ios-swift/',
+      buildPath: 'build-mobile/ios-swift/',
       files: [
         {
           ...baseFileConfig,
