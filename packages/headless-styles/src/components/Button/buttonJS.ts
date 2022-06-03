@@ -29,53 +29,7 @@ const baseStyles = {
   ...styles.base,
 }
 
-function getChakraSize(props: { padding: string; size: string }) {
-  const buttonSizeKey = props.size === 'm' ? 'base' : props.size
-  const iconButtonSizeKey =
-    props.padding === '0' ? `${props.size}IconButton` : ''
-
-  return {
-    ...styles[buttonSizeKey as keyof typeof styles],
-    ...styles[iconButtonSizeKey as keyof typeof styles],
-  }
-}
-
-function getChakraVariant(props: {
-  variant: string
-  borderRadius: string
-}): Styles {
-  const roundStyles = props.borderRadius === 'full' ? styles.round : {}
-
-  return {
-    ...styles[props.variant as keyof typeof styles],
-    ...roundStyles,
-  }
-}
-
 // Public
-
-export const ChakraButton = {
-  baseStyle: styles.base,
-  defaultProps: {
-    size: 'm',
-    variant: 'text',
-  },
-  sizes: {
-    xs: getChakraSize,
-    s: getChakraSize,
-    m: getChakraSize,
-    l: getChakraSize,
-  },
-  variants: {
-    text: getChakraVariant,
-    textWeak: getChakraVariant,
-    medium: getChakraVariant,
-    strong: getChakraVariant,
-    textDanger: getChakraVariant,
-    mediumDanger: getChakraVariant,
-    strongDanger: getChakraVariant,
-  },
-}
 
 export function getJSDangerButtonProps(options?: DangerOptions): ButtonReturn {
   const { kind, size } = getDefaultDangerOptions(options)

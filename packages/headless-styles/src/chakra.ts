@@ -1,5 +1,5 @@
 import { ChakraBadge } from './components/Badge/badgeJS'
-import { ChakraButton } from './components/Button/buttonJS'
+import { ChakraButton } from './components/Button/chakraButton'
 import { ChakraErrorMessage } from './components/ErrorMessage/errorMessageJS'
 import { ChakraFormControl } from './components/FormControl/formControlJS'
 import { ChakraFormLabel } from './components/FormLabel/formLabelJS'

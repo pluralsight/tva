@@ -20,8 +20,8 @@ type IconButtonReturn = {
 
 // Public
 
-// Chakra IconButton uses Button theming
-// see ../Button/buttonJS.ts for details
+// Chakra theming uses Button for IconButton as well
+// see ../Button/chakraButton.ts for details
 //
 // export const ChakraIconButton = {}
 
