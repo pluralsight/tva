@@ -1,0 +1,27 @@
+.xsIconButton {
+  height: 1.5rem;
+  padding-inline: 0;
+  width: 1.5rem;
+}
+
+.sIconButton {
+  height: 2rem;
+  padding-inline: 0;
+  width: 2rem;
+}
+
+.mIconButton {
+  height: 2.5rem;
+  padding-inline: 0;
+  width: 2.5rem;
+}
+
+.lIconButton {
+  height: 3rem;
+  padding-inline: 0;
+  width: 3rem;
+}
+
+.round {
+  border-radius: 50%;
+}

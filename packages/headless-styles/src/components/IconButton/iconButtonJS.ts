@@ -1,9 +1,10 @@
-import { getDefaultIconButtonOptions } from './shared'
 import { transformStyles } from '../../utils/helpers'
-import type { IconButtonOptions, ButtonType } from './types'
-import styles from './generated/buttonCSS.module'
-import { getJSButtonProps } from './buttonJS'
+import { getJSButtonProps } from '../../../src'
 import { IconOptions } from '../../types'
+import type { ButtonType } from '../types'
+import type { IconButtonOptions } from './types'
+import { getDefaultIconButtonOptions } from './shared'
+import styles from './generated/iconButtonCSS.module'
 
 type CSSProps = TemplateStringsArray | string
 type Styles = Record<string, unknown>
@@ -20,7 +21,7 @@ type IconButtonReturn = {
 // Public
 
 // Chakra IconButton uses Button theming
-// see ./buttonJS.ts for details
+// see ../Button/buttonJS.ts for details
 //
 // export const ChakraIconButton = {}
 

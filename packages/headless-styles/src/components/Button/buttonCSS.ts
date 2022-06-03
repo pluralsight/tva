@@ -1,6 +1,7 @@
 import { getDefaultOptions, getDefaultDangerOptions } from './shared'
 import { createSvelteObj } from '../../utils/helpers'
-import type { ButtonOptions, ButtonType, DangerOptions } from './types'
+import type { ButtonType } from '../types'
+import type { ButtonOptions, DangerOptions } from './types'
 import styles from './buttonCSS.module.css'
 
 type AllButtonOptions = ButtonOptions | DangerOptions

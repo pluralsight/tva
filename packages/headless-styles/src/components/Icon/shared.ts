@@ -1,5 +1,5 @@
-import type { IconOptions, IconA11yOptions, Tech, A11yBoolean } from './types'
-import { IconSize } from '../types'
+import { A11yBoolean, IconSize } from '../types'
+import type { IconOptions, IconA11yOptions, Tech } from './types'
 
 const a11yRole = 'img'
 const a11yPropMap = {

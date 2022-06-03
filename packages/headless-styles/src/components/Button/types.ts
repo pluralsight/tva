@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
-import type { Tech } from '../types'
+import type { ButtonKind, ButtonSize, Tech } from '../types'
 
 export interface ButtonOptions
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  kind?: Kind
-  size?: Size
+  kind?: ButtonKind
+  size?: ButtonSize
   tech?: Tech
 }
 
@@ -22,8 +22,5 @@ export interface IconButtonOptions extends ButtonOptions {
 
 // types
 
-export type ButtonType = 'button' | 'submit' | 'reset' | undefined
-export type Kind = 'text' | 'textWeak' | 'weak' | 'medium' | 'strong'
 export type DangerKind = 'text' | 'medium' | 'strong'
-export type Size = 'xs' | 's' | 'm' | 'l'
 export type Variant = 'default' | 'round'

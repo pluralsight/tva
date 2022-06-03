@@ -73,30 +73,6 @@
   padding-inline: 24px;
 }
 
-.xsIconButton {
-  composes: xs;
-  padding-inline: 0;
-  width: 1.5rem;
-}
-
-.sIconButton {
-  composes: s;
-  padding-inline: 0;
-  width: 2rem;
-}
-
-.mIconButton {
-  composes: base;
-  padding-inline: 0;
-  width: 2.5rem;
-}
-
-.lIconButton {
-  composes: l;
-  padding-inline: 0;
-  width: 3rem;
-}
-
 .textDanger {
   color: var(--ps-danger-text-weak);
   composes: base;
@@ -112,10 +88,6 @@
   background-color: var(--ps-danger-background-weak);
   color: var(--ps-danger-text);
   composes: base;
-}
-
-.round {
-  border-radius: 50%;
 }
 
 /* hover styles */
