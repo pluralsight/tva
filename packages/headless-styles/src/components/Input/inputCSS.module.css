@@ -21,7 +21,7 @@
   padding-inline-start: 1rem;
   padding-inline-end: 1rem;
   transition-duration: 150ms;
-  transition-property: border-color, color, opacity, box-shadow, transform;
+  transition-property: box-shadow, opacity, transform;
   width: 100%;
 }
 
@@ -46,8 +46,7 @@
 
 .inputBase:active,
 .inputBase:hover {
-  border-color: var(--ps-neutral-border-strong);
-  border-width: 2px;
+  box-shadow: var(--ps-neutral-border-strong) 0 0 0 1px;
 }
 
 .inputBase:focus {
@@ -67,7 +66,7 @@
 
 .inputBase[data-invalid='true'] {
   border-color: var(--ps-danger-border);
-  border-width: 2px;
+  box-shadow: var(--ps-danger-border) 0 0 0 1px;
 }
 
 .inputBase[data-disabled='true'],
@@ -77,6 +76,5 @@
 
 .inputBase[data-disabled='true']:hover,
 .inputBase[data-readonly='true']:hover {
-  border-color: var(--ps-neutral-border);
-  border-width: 1px;
+  box-shadow: none;
 }
