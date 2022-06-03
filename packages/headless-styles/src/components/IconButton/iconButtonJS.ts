@@ -1,5 +1,5 @@
 import { transformStyles } from '../../utils/helpers'
-import { getJSButtonProps } from '../../../src'
+import { getJSButtonProps } from '../Button/buttonJS'
 import { IconOptions } from '../../types'
 import type { ButtonType } from '../types'
 import type { IconButtonOptions } from './types'
