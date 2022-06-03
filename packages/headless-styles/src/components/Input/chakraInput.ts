@@ -6,6 +6,9 @@ function getChakraInputStyle() {
   return {
     field: {
       ...baseInputStyles,
+      _active: {
+        ...styles.inputBase['&:active'],
+      },
       _hover: {
         ...styles.inputBase['&:hover'],
       },
@@ -14,13 +17,23 @@ function getChakraInputStyle() {
       },
       _disabled: {
         ...styles.inputBase_data_disabled__true,
+        _hover: {
+          ...styles.inputBase_data_disabled__true['&:hover'],
+        },
       },
       _invalid: {
         ...styles.inputBase_data_invalid__true,
       },
       _readOnly: {
         ...styles.inputBase_data_readonly__true,
+        _hover: {
+          ...styles.inputBase_data_readonly__true['&:hover'],
+        },
       },
+    },
+    addon: {
+      bg: 'none',
+      border: 'none',
     },
   }
 }

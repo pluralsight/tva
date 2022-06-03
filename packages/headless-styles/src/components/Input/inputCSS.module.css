@@ -51,9 +51,11 @@
 }
 
 .inputBase:focus {
+  box-shadow: none;
   outline: 3px solid var(--ps-background-active);
 }
 
+.inputBase:active,
 .inputBase:focus:not(:focus-visible) {
   box-shadow: none;
   outline: none;

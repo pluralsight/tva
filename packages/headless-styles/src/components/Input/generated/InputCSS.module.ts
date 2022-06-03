@@ -30,14 +30,15 @@ export default {
     transitionProperty: 'border-color, color, opacity, box-shadow, transform',
     width: '100%',
     '&:active': {
-      borderColor: 'hsl(234deg 30% 49% / 100%)',
-      borderWidth: '2px',
+      boxShadow: 'none',
+      outline: 'none',
     },
     '&:hover': {
       borderColor: 'hsl(234deg 30% 49% / 100%)',
       borderWidth: '2px',
     },
     '&:focus': {
+      boxShadow: 'none',
       outline: '3px solid hsl(249deg 63% 34% / 100%)',
     },
     '&:focus:not(:focus-visible)': {
