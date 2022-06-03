@@ -1,4 +1,4 @@
-import { A11yBoolean, IconSize } from '../types'
+import type { A11yBoolean, IconSize } from '../types'
 import type { IconOptions, IconA11yOptions, Tech } from './types'
 
 const a11yRole = 'img'
