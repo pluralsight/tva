@@ -4,8 +4,6 @@ import styles from './iconButtonCSS.module.css'
 import type { IconButtonOptions } from './types'
 import { getDefaultIconButtonOptions } from './shared'
 
-// Public
-
 export function getIconButtonProps(options?: IconButtonOptions) {
   const { variant, ariaLabel, iconOptions, tech, ...buttonOptions } =
     getDefaultIconButtonOptions(options)

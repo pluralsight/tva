@@ -18,8 +18,6 @@ type IconButtonReturn = {
   iconOptions: IconOptions
 }
 
-// Public
-
 // Chakra theming uses Button for IconButton as well
 // see ../Button/chakraButton.ts for details
 //
