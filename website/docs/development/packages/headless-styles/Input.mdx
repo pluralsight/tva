@@ -1,0 +1,137 @@
+---
+sidebar_position: 8
+tags: [Development, Packages, Components, Headless Styles, Input, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicInput from '@site/src/components/Input/BasicInput'
+import {
+  BasicRadioPreview,
+  BasicRadioFullPreview,
+} from '@site/src/components/Radio/BasicRadio.preview'
+import RadioStates from '@site/src/components/Radio/RadioStates'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The `getInputProps` helper is used to get user input in a text-like field.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Input"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getInputProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+### Basic Input
+
+<BasicInput />
+<LiveExampleTabs
+  fullCode={<BasicRadioFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-5of7jo',
+    joy: 'basic-mui-wjvohy',
+    styled: 'sc-qeofuk',
+    svelte: 'ps-svelte-o1yfdy',
+  }}
+>
+  <BasicRadioPreview />
+</LiveExampleTabs>
+
+## API
+
+| Name              | Argument Type                              | Default         | Description                     |
+| ----------------- | ------------------------------------------ | --------------- | ------------------------------- |
+| `getInputProps`   | **options**: [InputOptions](#inputoptions) | **size**: 'l'   | Get input styles for CSS usage. |
+| `getJSInputProps` | **options**: [InputOptions](#inputoptions) | same as CSS API | CSS-in-JS API                   |
+
+## InputOptions
+
+```typescript
+interface InputOptions extends FieldOptions {
+  placeholder: string
+  id: string
+  name: string
+  size?: 'm' | 'l'
+  tech?: 'svelte'
+  type: 'text' | 'email' | 'password' | 'tel' | 'url'
+  value: string
+}
+```
+
+```typescript title="Import example"
+import type { InputOptions } from '@pluralsight/headless-styles/types'
+```
+
+## FieldOptions
+
+```typescript
+interface FieldOptions {
+  disabled?: boolean
+  invalid?: boolean
+  readOnly?: boolean
+  required?: boolean
+}
+```
+
+## InputProps
+
+```typescript
+interface RadioProps {
+  'aria-disabled': boolean
+  'aria-invalid': boolean
+  'aria-readonly': boolean
+  'aria-required': boolean
+  className: string
+  disabled: boolean
+  id: string
+  invalid: boolean
+  name: string
+  placeholder: string
+  readOnly: boolean
+  required: boolean
+  type: string
+  value: string
+}
+```
+
+## JSInputProps
+
+```typescript
+interface JSInputProps {
+  a11yProps: {
+    'aria-disabled': boolean
+    'aria-invalid': boolean
+    'aria-readonly': boolean
+    'aria-required': boolean
+    disabled: boolean
+    id: string
+    invalid: boolean
+    name: string
+    placeholder: string
+    readOnly: boolean
+    required: boolean
+    type: string
+    value: string
+  }
+  styles: Record<string, unknown>
+  cssProps: TemplateLiteralString
+}
+```
