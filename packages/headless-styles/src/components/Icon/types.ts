@@ -1,4 +1,4 @@
-import { A11yBoolean, IconSize } from '../types'
+import type { A11yBoolean, IconSize } from '../types'
 
 export interface IconA11yOptions {
   label?: string
