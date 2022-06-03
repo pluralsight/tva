@@ -31,11 +31,13 @@ export function getJSIconButtonProps(
   const { variant, ariaLabel, iconOptions, ...buttonOptions } =
     getDefaultIconButtonOptions(options)
   const sizeKey = `${buttonOptions.size}IconButton` as keyof typeof styles
+  const variantKey = `${variant}IconButton` as keyof typeof styles
   const buttonProps = getJSButtonProps(buttonOptions)
   const JsStyles = {
     ...buttonProps.styles,
+    ...styles.baseIconButton,
     ...styles[sizeKey],
-    ...styles[variant as keyof typeof styles],
+    ...styles[variantKey],
   }
 
   return {

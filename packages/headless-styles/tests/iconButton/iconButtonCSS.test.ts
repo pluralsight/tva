@@ -6,7 +6,7 @@ describe('Icon Button CSS', () => {
     const result = {
       button: {
         'aria-label': 'button',
-        className: `ps-btn text m ${baseClass} mIconButton default`,
+        className: `ps-btn text m ${baseClass} mIconButton defaultIconButton`,
         type: 'button',
       },
       iconOptions: {
@@ -28,7 +28,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn textWeak m ${baseClass} mIconButton default`,
+          className: `ps-btn textWeak m ${baseClass} mIconButton defaultIconButton`,
         },
         iconOptions: result.iconOptions,
       })
@@ -36,7 +36,7 @@ describe('Icon Button CSS', () => {
         {
           button: {
             ...result.button,
-            className: `ps-btn weak m ${baseClass} mIconButton default`,
+            className: `ps-btn weak m ${baseClass} mIconButton defaultIconButton`,
           },
           iconOptions: result.iconOptions,
         }
@@ -46,7 +46,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn medium m ${baseClass} mIconButton default`,
+          className: `ps-btn medium m ${baseClass} mIconButton defaultIconButton`,
         },
         iconOptions: result.iconOptions,
       })
@@ -55,7 +55,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn strong m ${baseClass} mIconButton default`,
+          className: `ps-btn strong m ${baseClass} mIconButton defaultIconButton`,
         },
         iconOptions: result.iconOptions,
       })
@@ -68,7 +68,7 @@ describe('Icon Button CSS', () => {
       expect(getIconButtonProps({ ariaLabel: 'button', size: 'xs' })).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn text xs ${baseClass} xsIconButton default`,
+          className: `ps-btn text xs ${baseClass} xsIconButton defaultIconButton`,
         },
         iconOptions: {
           ...result.iconOptions,
@@ -78,14 +78,14 @@ describe('Icon Button CSS', () => {
       expect(getIconButtonProps({ ariaLabel: 'button', size: 's' })).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn text s ${baseClass} sIconButton default`,
+          className: `ps-btn text s ${baseClass} sIconButton defaultIconButton`,
         },
         iconOptions: result.iconOptions,
       })
       expect(getIconButtonProps({ ariaLabel: 'button', size: 'l' })).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn text l ${baseClass} lIconButton default`,
+          className: `ps-btn text l ${baseClass} lIconButton defaultIconButton`,
         },
         iconOptions: {
           ...result.iconOptions,
@@ -100,7 +100,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           'aria-label': 'button',
-          class: 'base text m mIconButton default',
+          class: 'base text m baseIconButton mIconButton defaultIconButton',
         },
         iconOptions: result.iconOptions,
       })
@@ -112,7 +112,7 @@ describe('Icon Button CSS', () => {
       ).toEqual({
         button: {
           ...result.button,
-          className: `ps-btn text m ${baseClass} mIconButton round`,
+          className: `ps-btn text m ${baseClass} mIconButton roundIconButton`,
         },
         iconOptions: result.iconOptions,
       })

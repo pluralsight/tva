@@ -10,6 +10,7 @@ export function getIconButtonProps(options?: IconButtonOptions) {
   const { variant, ariaLabel, iconOptions, tech, ...buttonOptions } =
     getDefaultIconButtonOptions(options)
   const sizeClass = `${buttonOptions.size}IconButton`
+  const variantClass = `${variant}IconButton`
   const buttonPropsDefault = getButtonProps(buttonOptions)
   const buttonPropsSvelte = getButtonProps({
     ...buttonOptions,
@@ -26,8 +27,8 @@ export function getIconButtonProps(options?: IconButtonOptions) {
       ...buttonProps,
       'aria-label': ariaLabel,
       ...createClassProp(tech, {
-        defaultClass: `${defaultClass} ps-icon-btn ${styles[sizeClass]} ${styles[variant]}`,
-        svelteClass: `${svelteClass} ${sizeClass} ${variant}`,
+        defaultClass: `${defaultClass} ps-icon-btn ${styles[sizeClass]} ${styles[variantClass]}`,
+        svelteClass: `${svelteClass} baseIconButton ${sizeClass} ${variantClass}`,
       }),
     },
     iconOptions,

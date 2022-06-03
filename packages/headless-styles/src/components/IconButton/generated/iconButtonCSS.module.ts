@@ -4,27 +4,30 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  xsIconButton: {
-    height: '1.5rem',
+  baseIconButton: {
     paddingInline: '0',
+  },
+  xsIconButton: {
+    composes: 'baseIconButton',
+    height: '1.5rem',
     width: '1.5rem',
   },
   sIconButton: {
+    composes: 'baseIconButton',
     height: '2rem',
-    paddingInline: '0',
     width: '2rem',
   },
   mIconButton: {
+    composes: 'baseIconButton',
     height: '2.5rem',
-    paddingInline: '0',
     width: '2.5rem',
   },
   lIconButton: {
+    composes: 'baseIconButton',
     height: '3rem',
-    paddingInline: '0',
     width: '3rem',
   },
-  round: {
+  roundIconButton: {
     borderRadius: '50%',
   },
 }

@@ -19,7 +19,7 @@ function getChakraVariant(props: {
   borderRadius: string
 }): Styles {
   const roundStyles =
-    props.borderRadius === 'full' ? iconButtonStyles.round : {}
+    props.borderRadius === 'full' ? iconButtonStyles.roundIconButton : {}
 
   return {
     ...buttonStyles[props.variant as keyof typeof buttonStyles],
