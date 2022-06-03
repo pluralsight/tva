@@ -27,17 +27,17 @@ export default {
     paddingInlineStart: '1rem',
     paddingInlineEnd: '1rem',
     transitionDuration: '150ms',
-    transitionProperty: 'border-color, color, opacity, box-shadow, transform',
+    transitionProperty: 'box-shadow, opacity, transform',
     width: '100%',
     '&:active': {
-      borderColor: 'hsl(234deg 30% 49% / 100%)',
-      borderWidth: '2px',
+      boxShadow: 'none',
+      outline: 'none',
     },
     '&:hover': {
-      borderColor: 'hsl(234deg 30% 49% / 100%)',
-      borderWidth: '2px',
+      boxShadow: 'hsl(234deg 30% 49% / 100%) 0 0 0 1px',
     },
     '&:focus': {
+      boxShadow: 'none',
       outline: '3px solid hsl(249deg 63% 34% / 100%)',
     },
     '&:focus:not(:focus-visible)': {
@@ -65,19 +65,17 @@ export default {
     opacity: '0.7',
     cursor: 'not-allowed',
     '&:hover': {
-      borderColor: 'hsl(237deg 30% 36% / 100%)',
-      borderWidth: '1px',
+      boxShadow: 'none',
     },
   },
   inputBase_data_invalid__true: {
     borderColor: 'hsl(336deg 100% 54% / 100%)',
-    borderWidth: '2px',
+    boxShadow: 'hsl(336deg 100% 54% / 100%) 0 0 0 1px',
   },
   inputBase_data_readonly__true: {
     cursor: 'not-allowed',
     '&:hover': {
-      borderColor: 'hsl(237deg 30% 36% / 100%)',
-      borderWidth: '1px',
+      boxShadow: 'none',
     },
   },
 }
