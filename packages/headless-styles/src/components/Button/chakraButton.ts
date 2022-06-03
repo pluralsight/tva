@@ -10,7 +10,7 @@ function getChakraSize(props: { padding: string; size: string }) {
 
   return {
     ...buttonStyles[buttonSizeKey as keyof typeof buttonStyles],
-    ...buttonStyles[iconButtonSizeKey as keyof typeof buttonStyles],
+    ...iconButtonStyles[iconButtonSizeKey as keyof typeof iconButtonStyles],
   }
 }
 
