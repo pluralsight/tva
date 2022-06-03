@@ -3,6 +3,18 @@ import iconButtonStyles from '../IconButton/generated/iconButtonCSS.module'
 
 type Styles = Record<string, unknown>
 
+function getChakraBase(props: { padding: string }) {
+  // props.padding === '0' is our only indication that this is an icon button
+  if (props.padding === '0') {
+    return {
+      ...buttonStyles.base,
+      ...iconButtonStyles.baseIconButton,
+    }
+  }
+
+  return buttonStyles.base
+}
+
 function getChakraSize(props: { padding: string; size: string }) {
   const buttonSizeKey = props.size === 'm' ? 'base' : props.size
   const iconButtonSizeKey =
@@ -18,6 +30,7 @@ function getChakraVariant(props: {
   variant: string
   borderRadius: string
 }): Styles {
+  // props.borderRadius === 'full' indicates that `isRound` is true
   const roundStyles =
     props.borderRadius === 'full' ? iconButtonStyles.roundIconButton : {}
 
@@ -30,7 +43,7 @@ function getChakraVariant(props: {
 // Public
 
 export const ChakraButton = {
-  baseStyle: buttonStyles.base,
+  baseStyle: getChakraBase,
   defaultProps: {
     size: 'm',
     variant: 'text',
