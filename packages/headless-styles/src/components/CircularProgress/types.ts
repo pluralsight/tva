@@ -1,3 +1,5 @@
+import type { Tech } from '../types'
+
 export interface CircularProgressA11yOptions {
   max?: number
   min?: number
@@ -14,4 +16,3 @@ export interface CircularProgressOptions extends CircularProgressA11yOptions {
 
 export type Kind = 'determinate' | 'indeterminate'
 export type Size = 'xs' | 'm'
-export type Tech = 'svelte'

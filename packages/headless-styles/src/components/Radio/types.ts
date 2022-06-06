@@ -1,4 +1,4 @@
-import type { FieldOptions } from '../types'
+import type { FieldOptions, Tech } from '../types'
 
 export interface RadioOptions extends FieldOptions {
   checked: boolean
@@ -12,4 +12,3 @@ export interface RadioOptions extends FieldOptions {
 // types
 
 export type Direction = 'row' | 'col'
-export type Tech = 'svelte'

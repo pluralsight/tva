@@ -1,10 +1,5 @@
-import type {
-  ProgressA11yOptions,
-  ProgressOptions,
-  Kind,
-  Size,
-  Tech,
-} from './types'
+import type { Tech } from '../types'
+import type { ProgressA11yOptions, ProgressOptions, Kind, Size } from './types'
 
 const a11yRole = 'progressbar'
 const a11yPropMap = {

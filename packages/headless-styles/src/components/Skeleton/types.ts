@@ -1,3 +1,5 @@
+import type { Tech } from '../types'
+
 export interface SkeletonOptions {
   kind?: Kind
   tech?: Tech
@@ -6,4 +8,3 @@ export interface SkeletonOptions {
 // types
 
 export type Kind = 'content' | 'text' | 'circle'
-export type Tech = 'svelte' | ''

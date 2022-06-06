@@ -1,4 +1,5 @@
-import type { ErrorMessageOptions, Tech } from './types'
+import type { Tech } from '../types'
+import type { ErrorMessageOptions } from './types'
 
 function getErrorMessageA11yProps() {
   return {

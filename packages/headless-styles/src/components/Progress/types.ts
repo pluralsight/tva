@@ -1,3 +1,5 @@
+import type { Tech } from '../types'
+
 export interface ProgressA11yOptions {
   max?: number
   min?: number
@@ -14,4 +16,3 @@ export interface ProgressOptions extends ProgressA11yOptions {
 
 export type Kind = 'linear' | 'inset'
 export type Size = 'xs' | 's'
-export type Tech = 'svelte'

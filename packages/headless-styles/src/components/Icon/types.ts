@@ -1,4 +1,4 @@
-import { IconSize } from '../types'
+import { IconSize, Tech } from '../types'
 
 export interface IconA11yOptions {
   ariaLabel?: string
@@ -9,7 +9,3 @@ export interface IconOptions extends IconA11yOptions {
   size?: IconSize
   tech?: Tech
 }
-
-// types
-
-export type Tech = 'svelte' | ''

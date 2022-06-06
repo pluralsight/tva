@@ -1,4 +1,4 @@
-import type { FieldOptions } from '../types'
+import type { FieldOptions, Tech } from '../types'
 
 export interface SwitchA11yOptions extends FieldOptions {
   id?: string
@@ -14,4 +14,3 @@ export interface SwitchOptions extends SwitchA11yOptions {
 // types
 
 export type Size = 's' | 'm'
-export type Tech = 'svelte'

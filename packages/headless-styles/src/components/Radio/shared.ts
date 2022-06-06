@@ -1,4 +1,5 @@
-import type { RadioOptions, Direction, Tech } from './types'
+import type { Tech } from '../types'
+import type { RadioOptions, Direction } from './types'
 
 const defaultRadioOptions = {
   disabled: false,

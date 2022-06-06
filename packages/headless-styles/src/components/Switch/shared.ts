@@ -1,4 +1,5 @@
-import type { SwitchOptions, Size, Tech } from './types'
+import type { Tech } from '../types'
+import type { SwitchOptions, Size } from './types'
 
 const defaultSwitchOptions = {
   disabled: false,

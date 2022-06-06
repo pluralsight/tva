@@ -1,4 +1,5 @@
-import type { SkeletonOptions, Kind, Tech } from './types'
+import type { Tech } from '../types'
+import type { SkeletonOptions, Kind } from './types'
 
 const defaultSkeletonOptions = {
   kind: 'content' as Kind,

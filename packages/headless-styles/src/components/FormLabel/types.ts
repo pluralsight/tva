@@ -1,3 +1,5 @@
+import type { Tech } from '../types'
+
 export interface FormLabelOptions {
   htmlFor: string
   required?: boolean
@@ -9,4 +11,3 @@ export interface FormLabelOptions {
 // types
 
 export type Size = 's' | 'm'
-export type Tech = 'svelte'

@@ -1,5 +1,5 @@
-import type { IconOptions, IconA11yOptions, Tech } from './types'
-import { IconSize } from '../types'
+import type { IconSize, Tech } from '../types'
+import type { IconOptions, IconA11yOptions } from './types'
 
 export const defaultIconOptions = {
   size: 'm' as IconSize,

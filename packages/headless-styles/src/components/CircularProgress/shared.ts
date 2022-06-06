@@ -1,9 +1,9 @@
+import type { Tech } from '../types'
 import type {
   CircularProgressA11yOptions,
   CircularProgressOptions,
   Kind,
   Size,
-  Tech,
 } from './types'
 
 const a11yRole = 'progressbar'
