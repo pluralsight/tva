@@ -1,36 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
-  getErrorMessageProps,
   getFormControlProps,
   getFormLabelProps,
+  getInputProps,
 } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
 
+const formId = 'basic'
+const formName = 'basic-example'
+
 function BasicFormControl() {
-  const { control, fieldOptions } = getFormControlProps()
+  const [email, setEmail] = useState('')
+  const { fieldOptions } = getFormControlProps()
   const { value, ...labelProps } = getFormLabelProps({
     ...fieldOptions,
-    htmlFor: 'email',
+    htmlFor: formId,
     value: 'Email alerts',
   })
-  const error = getErrorMessageProps({
+  const inputProps = getInputProps({
     ...fieldOptions,
-    id: 'email-address',
-    message: 'Email address is required.',
+    id: formId,
+    name: formName,
+    placeholder: 'email@example.com',
+    type: 'email',
+    value: email,
   })
 
-  console.log(error)
+  function handleChange(e) {
+    setEmail(e.target.value)
+  }
 
   return (
-    <Container>
-      <div>
-        <div {...control}>
-          <label {...labelProps}>{value}</label>
-        </div>
-        <div {...error.container}>
-          <p {...error.message}>{error.message.value}</p>
-        </div>
-      </div>
+    <Container column>
+      <label
+        {...labelProps}
+        style={{
+          marginInlineEnd: 'initial',
+          width: '100%',
+        }}
+      >
+        {value}
+      </label>
+      <input {...inputProps} onChange={handleChange} />
     </Container>
   )
 }

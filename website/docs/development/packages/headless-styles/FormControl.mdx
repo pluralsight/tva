@@ -19,10 +19,6 @@ tags:
 
 import CodeBlock from '@theme/CodeBlock'
 import BasicFormControl from '@site/src/components/FormControl/BasicFormControl'
-import {
-  BasicFormControlPreview,
-  BasicFormControlFullPreview,
-} from '@site/src/components/FormControl/BasicFormControl.preview'
 import RadioGroup from '@site/src/components/FormControl/RadioGroup'
 import ErrorFormControl from '@site/src/components/FormControl/ErrorFormControl'
 import RequiredFormControl from '@site/src/components/FormControl/RequiredFormControl'
@@ -65,66 +61,226 @@ Headless Styles exports two helpers for Form Control:
 ### BasicExample
 
 <BasicFormControl />
-<LiveExampleTabs
-  fullCode={<BasicFormControlFullPreview />}
-  sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
-  }}
->
-  <BasicFormControlPreview />
-</LiveExampleTabs>
+
+```jsx
+import { useState } from 'react'
+import {
+  getFormControlProps,
+  getFormLabelProps,
+  getInputProps,
+} from '@pluralsight/headless-styles'
+
+function BasicFormControl(props) {
+  const { formId, ...formProps } = props
+  const [email, setEmail] = useState('')
+  const { fieldOptions } = getFormControlProps(formProps)
+  const { value, ...labelProps } = getFormLabelProps({
+    ...fieldOptions,
+    htmlFor: formId,
+    value: 'Email alerts',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    id: formId,
+    name: props.formName,
+    placeholder: 'email@example.com',
+    type: 'email',
+    value: email,
+  })
+
+  function handleChange(e) {
+    setEmail(e.target.value)
+  }
+
+  return (
+    <div>
+      <label
+        {...labelProps}
+        style={{
+          marginInlineEnd: 'initial',
+          width: '100%',
+        }}
+      >
+        {value}
+      </label>
+      <input {...inputProps} onChange={handleChange} />
+    </div>
+  )
+}
+```
 
 ### Radio or checkbox group example
 
 <RadioGroup />
-<LiveExampleTabs
-  fullCode={<BasicFormControlFullPreview />}
-  sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
-  }}
->
-  <BasicFormControlPreview />
-</LiveExampleTabs>
+
+```jsx
+import { useState } from 'react'
+import { getFormControlProps } from '@pluralsight/headless-styles'
+import Radio from './Radio'
+
+function BasicRadio() {
+  const [checked, setChecked] = useState(null)
+  const { control, fieldOptions } = getFormControlProps({
+    groupType: 'radiogroup',
+  })
+
+  function handleCheck(e) {
+    setChecked(e.target.value)
+  }
+
+  return (
+    <div>
+      <div {...control}>
+        <Radio
+          {...fieldOptions}
+          checked={checked === '0'}
+          htmlFor="First"
+          id="first"
+          label="First"
+          value="0"
+          onClick={handleCheck}
+        />
+        <Radio
+          {...fieldOptions}
+          checked={checked === '1'}
+          htmlFor="Second"
+          id="second"
+          label="Second"
+          value="1"
+          onClick={handleCheck}
+        />
+        <Radio
+          {...fieldOptions}
+          checked={checked === '2'}
+          htmlFor="Third"
+          id="third"
+          label="Third"
+          value="2"
+          onClick={handleCheck}
+        />
+      </div>
+    </div>
+  )
+}
+```
 
 ### Error messasge
 
 `getFormErrorMessageProps` will return a styled error message when the `invalid` option is true (this should come from the `getFormControlProps.fieldOptions` property).
 
 <ErrorFormControl />
-<LiveExampleTabs
-  fullCode={<BasicFormControlFullPreview />}
-  sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
-  }}
->
-  <BasicFormControlPreview />
-</LiveExampleTabs>
+
+```jsx
+import { useState } from 'react'
+import {
+  getFormControlProps,
+  getFormLabelProps,
+  getInputProps,
+} from '@pluralsight/headless-styles'
+
+function BasicFormControl(props) {
+  const { id, ...formOptions } = props
+  const [email, setEmail] = useState('')
+  const { fieldOptions } = getFormControlProps(formOptions)
+  const { value, ...labelProps } = getFormLabelProps({
+    ...fieldOptions,
+    htmlFor: 'email',
+    value: 'Email alerts',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    id,
+    name: 'email_alerts',
+    placeholder: 'email@example.com',
+    value: email,
+  })
+  const error = getErrorMessageProps({
+    ...fieldOptions,
+    id,
+    message: 'Email address is required.',
+  })
+
+  function handleChange(e) {
+    setEmail(e.target.value)
+  }
+
+  return (
+    <div>
+      <label
+        {...labelProps}
+        style={{
+          marginInlineEnd: 'initial',
+          width: '100%',
+        }}
+      >
+        {value}
+      </label>
+      <input {...inputProps} onChange={handleChange} />
+      {fieldOptions.invalid && (
+        <div {...error.container}>
+          <p {...error.message}>{error.message.value}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+```
 
 ### Making a field required
 
 When you pass `required` to `getFormControlProps` and use the `fieldOptions.required` as an option to the `getFormLabelProps`, the `getFormLabel` will add a "(required)" at the end of the label value.
 
 <RequiredFormControl />
-<LiveExampleTabs
-  fullCode={<BasicFormControlFullPreview />}
-  sandboxList={{
-    chakra: 'basic-button-chakra-i02ytr',
-    joy: 'basic-buttons-mui-bnzx9l',
-    styled: 'basic-button-css-in-js-sc-mbrwzb',
-    svelte: 'basic-button-svelte-4qu65y',
-  }}
->
-  <BasicFormControlPreview />
-</LiveExampleTabs>
+
+```jsx
+import { useState } from 'react'
+import {
+  getFormControlProps,
+  getFormLabelProps,
+  getInputProps,
+} from '@pluralsight/headless-styles'
+
+function BasicFormControl(props) {
+  const { formId, ...formProps } = props
+  const [email, setEmail] = useState('')
+  const { fieldOptions } = getFormControlProps({
+    ...formProps,
+    required: true,
+  })
+  const { value, ...labelProps } = getFormLabelProps({
+    ...fieldOptions,
+    htmlFor: formId,
+    value: 'Email alerts',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    id: formId,
+    name: props.formName,
+    placeholder: 'email@example.com',
+    type: 'email',
+    value: email,
+  })
+
+  function handleChange(e) {
+    setEmail(e.target.value)
+  }
+
+  return (
+    <div>
+      <label
+        {...labelProps}
+        style={{
+          marginInlineEnd: 'initial',
+          width: '100%',
+        }}
+      >
+        {value}
+      </label>
+      <input {...inputProps} onChange={handleChange} />
+    </div>
+  )
+}
+```
 
 ### Usage with Form Libraries
 
