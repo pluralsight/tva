@@ -1,7 +1,7 @@
 .icon {
-  display: inline-block;
-  height: 1.2rem;
-  padding-inline-end: 0.4rem;
+  display: flex;
+  margin-top: -1px;
+  padding-inline-end: 5.37px;
 }
 
 .npmIcon {
