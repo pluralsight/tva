@@ -1,8 +1,8 @@
 import { createClassProp } from '../../utils/helpers'
+import { Tech } from '../types'
 import { getDefaultFormLabelOptions, getFormValue } from './shared'
 import styles from './formLabelCSS.module.css'
 import { FormLabelOptions } from './types'
-import { Tech } from 'components/types'
 
 const FORM_LABEL = 'ps-form-label'
 
