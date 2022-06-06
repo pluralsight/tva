@@ -51,6 +51,7 @@ describe('Button CSS', () => {
     test('should accept a tech type', () => {
       expect(getButtonProps({ tech: 'svelte' })).toEqual({
         class: 'base text m',
+        type: 'button',
       })
     })
   })
@@ -97,6 +98,7 @@ describe('Button CSS', () => {
     test('should accept a tech type', () => {
       expect(getDangerButtonProps({ tech: 'svelte' })).toEqual({
         class: 'base textDanger m',
+        type: 'button',
       })
     })
   })

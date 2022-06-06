@@ -11,9 +11,12 @@ export function getInputProps(options?: InputOptions) {
 
   return {
     ...createInputOptions(defaultOptions),
-    ...createClassProp(tech, {
-      defaultClass: `${INPUT_MESSAGE} ${styles[sizeClass]}`,
-      svelteClass: `${INPUT_MESSAGE} inputBase ${sizeClass}`,
-    }),
+    ...createClassProp(
+      {
+        defaultClass: `${INPUT_MESSAGE} ${styles[sizeClass]}`,
+        svelteClass: `${INPUT_MESSAGE} inputBase ${sizeClass}`,
+      },
+      tech
+    ),
   }
 }

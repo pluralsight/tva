@@ -1,3 +1,5 @@
+import type { Tech } from '../types'
+
 export interface BadgeOptions {
   kind?: Kind
   tech?: Tech
@@ -6,4 +8,3 @@ export interface BadgeOptions {
 // types
 
 export type Kind = 'weak' | 'medium' | 'strong'
-export type Tech = 'svelte' | 'mui' | ''

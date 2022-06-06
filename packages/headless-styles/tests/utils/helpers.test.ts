@@ -83,11 +83,11 @@ describe('helpers', () => {
       svelteClass: 'svelte',
     }
 
-    expect(createClassProp('', classOptions)).toEqual({
+    expect(createClassProp(classOptions)).toEqual({
       className: classOptions.defaultClass,
     })
 
-    expect(createClassProp('svelte', classOptions)).toEqual({
+    expect(createClassProp(classOptions, 'svelte')).toEqual({
       class: classOptions.svelteClass,
     })
   })

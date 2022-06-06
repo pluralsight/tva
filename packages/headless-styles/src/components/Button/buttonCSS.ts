@@ -1,22 +1,13 @@
 import { getDefaultOptions, getDefaultDangerOptions } from './shared'
-import { createSvelteObj } from '../../utils/helpers'
+import { createClassProp, ClassOptions } from '../../utils/helpers'
 import type { ButtonOptions, ButtonType, DangerOptions } from './types'
 import styles from './buttonCSS.module.css'
 
 type AllButtonOptions = ButtonOptions | DangerOptions
 
-interface ButtonClass {
-  defaultClass: string
-  svelteClass: string
-}
-
-function createButton(options: AllButtonOptions, classes: ButtonClass) {
-  if (options.tech === 'svelte') {
-    return createSvelteObj(classes.svelteClass)
-  }
-
+function createButton(options: AllButtonOptions, classes: ClassOptions) {
   return {
-    className: classes.defaultClass,
+    ...createClassProp(classes, options.tech),
     type: 'button' as ButtonType,
   }
 }

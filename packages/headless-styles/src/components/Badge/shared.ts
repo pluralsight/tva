@@ -1,4 +1,5 @@
-import type { BadgeOptions, Kind, Tech } from './types'
+import type { Tech } from '../types'
+import type { BadgeOptions, Kind } from './types'
 
 const defaultBadgeOptions = {
   kind: 'strong' as Kind,

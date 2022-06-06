@@ -1,4 +1,4 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import { getA11yProps, getDefaultSwitchOptions } from './shared'
 import styles from './switchCSS.module.css'
 import { SwitchOptions } from './types'
@@ -7,43 +7,48 @@ const SWITCH = 'ps-switch'
 
 export function getSwitchProps(options?: SwitchOptions) {
   const defaultOptions = getDefaultSwitchOptions(options)
-  const { size } = defaultOptions
+  const { size, tech } = defaultOptions
   const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
   const trackClass = `${size}Track`
-
-  if (defaultOptions.tech === 'svelte') {
-    return {
-      input: {
-        ...inputProps,
-        ...createSvelteObj(`${SWITCH}-input input`),
-      },
-      switchContainer: createSvelteObj(`${SWITCH}-container container`),
-      switchTrack: {
-        ...hidden,
-        ...dataProps,
-        ...createSvelteObj(`${SWITCH}-track track ${size}Track`),
-      },
-      switchThumb: {
-        ...dataProps,
-        ...createSvelteObj(`${SWITCH}-thumb thumb`),
-      },
-    }
-  }
 
   return {
     input: {
       ...inputProps,
-      ...createCSSObj(`${SWITCH}-input ${styles.input}`),
+      ...createClassProp(
+        {
+          svelteClass: `${SWITCH}-input input`,
+          defaultClass: `${SWITCH}-input ${styles.input}`,
+        },
+        tech
+      ),
     },
-    switchContainer: createCSSObj(`${SWITCH}-container ${styles.container}`),
+    switchContainer: createClassProp(
+      {
+        svelteClass: `${SWITCH}-container container`,
+        defaultClass: `${SWITCH}-container ${styles.container}`,
+      },
+      tech
+    ),
     switchTrack: {
       ...hidden,
       ...dataProps,
-      ...createCSSObj(`${SWITCH}-track ${styles[trackClass]}`),
+      ...createClassProp(
+        {
+          svelteClass: `${SWITCH}-track track ${size}Track`,
+          defaultClass: `${SWITCH}-track ${styles[trackClass]}`,
+        },
+        tech
+      ),
     },
     switchThumb: {
       ...dataProps,
-      ...createCSSObj(`${SWITCH}-thumb ${styles.thumb}`),
+      ...createClassProp(
+        {
+          svelteClass: `${SWITCH}-thumb thumb`,
+          defaultClass: `${SWITCH}-thumb ${styles.thumb}`,
+        },
+        tech
+      ),
     },
   }
 }

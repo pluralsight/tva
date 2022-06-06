@@ -39,6 +39,10 @@ function transformValue(style: NestedStyleValue): NestedStyleValue {
   return `{${psuedoStyles}}`
 }
 
+function getDefaultTech(tech?: Tech) {
+  return tech ? tech : ''
+}
+
 // Public
 
 export function createSvelteObj(classname = '') {
@@ -52,8 +56,10 @@ export function createCSSObj(className: string, additionalProps?: StyleProps) {
   }
 }
 
-export function createClassProp(tech: Tech, classes: ClassOptions) {
-  if (tech === 'svelte') {
+export function createClassProp(classes: ClassOptions, tech?: Tech) {
+  const techVal = getDefaultTech(tech)
+
+  if (techVal === 'svelte') {
     return createSvelteObj(classes.svelteClass)
   }
 
