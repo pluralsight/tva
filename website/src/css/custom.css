@@ -99,6 +99,7 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='light'] {
+  --docusaurus-highlighted-code-line-bg: hsl(210deg 29% 87%);
   --docsearch-searchbox-background: var(--ps-search-background) !important;
   --ifm-font-color-base: hsl(0deg 0% 0% / 90%);
   --ifm-heading-color: hsl(0deg 0% 0% / 90%);
@@ -330,17 +331,6 @@ html[data-theme='light'] .DocSearch-Button:hover {
 
 .alert.alert--success {
   color: var(--ps-success-text);
-}
-
-.docusaurus-highlight-code-line {
-  background-color: rgb(0 0 0 / 10%);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
-}
-
-html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgb(0 0 0 / 30%);
 }
 
 .footer--dark {
