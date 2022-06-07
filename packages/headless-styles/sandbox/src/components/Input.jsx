@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import {
   getErrorMessageProps,
+  getFieldMessageProps,
   getFormControlProps,
   getFormLabelProps,
   getInputProps,
@@ -15,13 +16,21 @@ function InputField(props) {
     htmlFor: options.htmlFor,
     value: options.label,
   })
+  const error = getErrorMessageProps({
+    ...fieldOptions,
+    id: 'bad:input',
+    message: props.errorMessage,
+  })
+  const { value: helpText, ...fieldMessage } = getFieldMessageProps({
+    ...fieldOptions,
+    id: 'input:help',
+    message: props.helpText,
+  })
   const { value, ...inputProps } = getInputProps({
     ...options,
     ...fieldOptions,
-  })
-  const error = getErrorMessageProps({
-    ...fieldOptions,
-    message: props.errorMessage,
+    // TODO: Update API to use "describedBy" option - not errorId
+    errorId: `${error.message.id},${fieldMessage.id}`,
   })
 
   return (
@@ -31,6 +40,9 @@ function InputField(props) {
         <input {...inputProps} onChange={onChange} value={value} />
       ) : (
         <input {...inputProps} defaultValue={props.defaultValue} />
+      )}
+      {props.helpText && !fieldOptions.invalid && (
+        <p {...fieldMessage}>{helpText}</p>
       )}
       {fieldOptions.invalid && (
         <div {...error.container}>
@@ -98,6 +110,7 @@ export default function Input({ logJS }) {
         />
         <InputField
           defaultValue="Hello there"
+          helpText="We won't share your email."
           htmlFor="email"
           id="one"
           placeholder="Enter email"
@@ -113,7 +126,6 @@ export default function Input({ logJS }) {
           placeholder="Enter email"
           name="email"
           label="Medium Email"
-          readOnly
           size="m"
           type="email"
         />
