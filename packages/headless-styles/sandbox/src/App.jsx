@@ -4,6 +4,7 @@ import Button from './components/Button'
 import Badge from './components/Badge'
 import CircularProgress from './components/CircularProgress'
 import ErrorMessage from './components/ErrorMessage'
+import FieldMessage from './components/FieldMessage'
 import FormControl from './components/FormControl'
 import FormLabel from './components/FormLabel'
 import Icon from './components/Icon'
@@ -40,6 +41,7 @@ function App() {
       <Button />
       <CircularProgress />
       <ErrorMessage />
+      <FieldMessage logJS />
       <FormControl />
       <FormLabel />
       <Icon />

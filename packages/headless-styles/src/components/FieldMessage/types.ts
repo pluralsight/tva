@@ -1,8 +1,7 @@
 import type { Tech } from '../types'
 
-export interface ErrorMessageOptions {
+export interface FieldMessageOptions {
   id: string
-  invalid: boolean
   message: string
   tech?: Tech
 }
