@@ -168,9 +168,15 @@ function BasicRadio() {
 
 `getFormErrorMessageProps` will return a styled error message when the `invalid` option is true (this should come from the `getFormControlProps.fieldOptions` property).
 
+:::tip
+
+When using Error messages for [Input](./Input) fields, it is recommended to pass the `ErrorMessageOptions.id` to the `InputOptions.errorId` value in order to allow your error message to be fully accessble to all users.
+
+:::
+
 <ErrorFormControl />
 
-```jsx
+```jsx title="Make your error messages accessible by passing the same value to the InputOptions.errorId"
 import { useState } from 'react'
 import {
   getFormControlProps,
@@ -187,17 +193,20 @@ function BasicFormControl(props) {
     htmlFor: 'email',
     value: 'Email alerts',
   })
+  const error = getErrorMessageProps({
+    ...fieldOptions,
+    // highlight-next-line
+    id: 'bad-email-alert',
+    message: 'Email address is required.',
+  })
   const inputProps = getInputProps({
     ...fieldOptions,
+    // highlight-next-line
+    errorId: error.container.id,
     id,
     name: 'email_alerts',
     placeholder: 'email@example.com',
     value: email,
-  })
-  const error = getErrorMessageProps({
-    ...fieldOptions,
-    id,
-    message: 'Email address is required.',
   })
 
   function handleChange(e) {

@@ -230,9 +230,21 @@ html[data-theme='light'] .DocSearch-Button:hover {
   color: var(--ps-background);
 }
 
-.alert--warning a,
+.alert--danger a {
+  color: var(--ps-danger-text-medium);
+}
+
+.alert--info a,
 .alert--secondary a {
-  color: var(--ps-text-weak);
+  color: var(--ps-info-text-medium);
+}
+
+.alert--success a {
+  color: var(--ps-success-text-medium);
+}
+
+.alert--warning a {
+  color: var(--ps-warning-text-medium);
 }
 
 .alert-danger,
