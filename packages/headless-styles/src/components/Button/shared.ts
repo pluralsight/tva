@@ -1,4 +1,4 @@
-import type { Tech } from '../types'
+import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,
   DangerOptions,
@@ -7,6 +7,7 @@ import type {
   Kind,
   Size,
   Variant,
+  ButtonType,
 } from './types'
 
 export const defaultButtonOptions = {
@@ -52,5 +53,25 @@ export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
     tech: options?.tech ?? defaultIconButtonOptions.tech,
     ariaLabel: options?.ariaLabel ?? defaultIconButtonOptions.ariaLabel,
     variant: options?.variant ?? defaultIconButtonOptions.variant,
+  }
+}
+
+export function getIconButtonReturnProps(options: IconButtonOptions) {
+  const iconButtonSizeMap: Record<Size, IconSize> = {
+    xs: 's',
+    s: 'm',
+    m: 'm',
+    l: 'l',
+  }
+
+  return {
+    button: {
+      'aria-label': options.ariaLabel,
+      type: 'button' as ButtonType,
+    },
+    iconOptions: {
+      ariaHidden: true,
+      size: iconButtonSizeMap[options.size as Size],
+    },
   }
 }

@@ -1,35 +1,22 @@
 import { createClassProp } from '../../utils/helpers'
-import type { IconSize } from '../types'
-import type { ButtonType, IconButtonOptions, Size } from './types'
-import { getDefaultIconButtonOptions } from './shared'
+import { getDefaultIconButtonOptions, getIconButtonReturnProps } from './shared'
+import type { IconButtonOptions } from './types'
 import styles from './buttonCSS.module.css'
-
-// Public
-
-const iconButtonSizeMap: Record<Size, IconSize> = {
-  xs: 's',
-  s: 'm',
-  m: 'm',
-  l: 'l',
-}
 
 export function getIconButtonProps(options?: IconButtonOptions) {
   const defaultOptions = getDefaultIconButtonOptions(options)
-  const { kind, size, variant, ariaLabel, tech } = defaultOptions
-  const sizeClass = `${size}IconButton`
+  const { kind, variant } = defaultOptions
+  const sizeClass = `${defaultOptions.size}IconButton`
+  const props = getIconButtonReturnProps(defaultOptions)
 
   return {
+    ...props,
     button: {
-      'aria-label': ariaLabel,
-      type: 'button' as ButtonType,
-      ...createClassProp(tech, {
+      ...props.button,
+      ...createClassProp(defaultOptions.tech, {
         defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
         svelteClass: `base ${kind} ${sizeClass} ${variant}`,
       }),
-    },
-    iconOptions: {
-      ariaHidden: true,
-      size: iconButtonSizeMap[size],
     },
   }
 }

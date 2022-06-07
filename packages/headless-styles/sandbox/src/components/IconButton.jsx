@@ -1,12 +1,40 @@
 import { getIconButtonProps, getIconProps } from '../../../src'
-import { CodeIcon } from '@pluralsight/icons'
+import {
+  ArrowDownRightIcon,
+  CodeIcon,
+  PluralsightIcon,
+  ShareIcon,
+} from '@pluralsight/icons'
+
+const BTN_KINDS = ['text', 'textWeak', 'weak', 'medium', 'strong']
+const BTN_SIZES = ['xs', 's', 'm', 'l']
+const BTN_ICONS = [ArrowDownRightIcon, CodeIcon, PluralsightIcon, ShareIcon]
+
+function getRandomArrayIdx(arr) {
+  return Math.floor(Math.random() * arr.length)
+}
+
+function getRandomButton() {
+  return {
+    kind: BTN_KINDS[getRandomArrayIdx(BTN_KINDS)],
+    icon: BTN_ICONS[getRandomArrayIdx(BTN_ICONS)],
+    size: BTN_SIZES[getRandomArrayIdx(BTN_SIZES)],
+  }
+}
 
 function PSIconButton(props) {
-  const { button, iconOptions } = getIconButtonProps(props)
+  const btn = getRandomButton()
+  const buttonProps = getIconButtonProps({
+    ...props,
+    ...btn,
+  })
+  const Icon = btn.icon
+
+  console.log(btn, buttonProps)
 
   return (
-    <button {...button}>
-      <CodeIcon {...getIconProps(iconOptions)} />
+    <button {...buttonProps.button}>
+      <Icon {...getIconProps(buttonProps.iconOptions)} />
     </button>
   )
 }
@@ -21,54 +49,18 @@ export default function IconButton() {
       <h3>Icon Button</h3>
       <div className="App-container">
         <PSIconButton ariaLabel="default" />
-        <PSIconButton ariaLabel="textWeak" kind="textWeak" />
-        <PSIconButton ariaLabel="weak" kind="weak" />
-        <PSIconButton ariaLabel="medium" kind="medium" />
-        <PSIconButton ariaLabel="strong" kind="strong" />
-      </div>
-      <div className="App-container">
-        <PSIconButton ariaLabel="extra small" kind="medium" size="xs" />
-        <PSIconButton ariaLabel="small" kind="medium" size="s" />
-        <PSIconButton ariaLabel="medium" kind="medium" size="m" />
-        <PSIconButton ariaLabel="large" kind="medium" size="l" />
+        <PSIconButton ariaLabel="textWeak" />
+        <PSIconButton ariaLabel="weak" />
+        <PSIconButton ariaLabel="medium" />
+        <PSIconButton ariaLabel="strong" />
       </div>
       <h3>Round Icon Button</h3>
       <div className="App-container">
         <PSIconButton ariaLabel="default round" variant="round" />
-        <PSIconButton
-          ariaLabel="textWeak round"
-          kind="textWeak"
-          variant="round"
-        />
-        <PSIconButton ariaLabel="weak round" kind="weak" variant="round" />
-        <PSIconButton ariaLabel="medium round" kind="medium" variant="round" />
-        <PSIconButton ariaLabel="strong round" kind="strong" variant="round" />
-      </div>
-      <div className="App-container">
-        <PSIconButton
-          ariaLabel="extra small round"
-          kind="medium"
-          size="xs"
-          variant="round"
-        />
-        <PSIconButton
-          ariaLabel="small round"
-          kind="medium"
-          size="s"
-          variant="round"
-        />
-        <PSIconButton
-          ariaLabel="medium round"
-          kind="medium"
-          size="m"
-          variant="round"
-        />
-        <PSIconButton
-          ariaLabel="large round"
-          kind="medium"
-          size="l"
-          variant="round"
-        />
+        <PSIconButton ariaLabel="textWeak round" variant="round" />
+        <PSIconButton ariaLabel="weak round" variant="round" />
+        <PSIconButton ariaLabel="medium round" variant="round" />
+        <PSIconButton ariaLabel="strong round" variant="round" />
       </div>
     </div>
   )
