@@ -141,6 +141,10 @@ function PasswordInput() {
 export default PasswordInput
 ```
 
+## About `errorId` and accessibility
+
+x
+
 ## API
 
 | Name              | Argument Type                              | Default         | Description                     |
@@ -152,9 +156,10 @@ export default PasswordInput
 
 ```typescript
 interface InputOptions extends FieldOptions {
-  placeholder: string
+  errorId?: string
   id: string
   name: string
+  placeholder: string
   size?: 'm' | 'l'
   tech?: 'svelte'
   type: 'text' | 'email' | 'password' | 'tel' | 'url'
@@ -181,14 +186,15 @@ interface FieldOptions {
 
 ```typescript
 interface InputProps {
-  'aria-disabled': boolean
+  'aria-describedby': string
   'aria-invalid': boolean
-  'aria-readonly': boolean
-  'aria-required': boolean
+  'data-disabled': boolean
+  'data-invalid': boolean
+  'data-readonly': boolean
+  'data-required': boolean
   className: string
   disabled: boolean
   id: string
-  invalid: boolean
   name: string
   placeholder: string
   readOnly: boolean
@@ -203,13 +209,14 @@ interface InputProps {
 ```typescript
 interface JSInputProps {
   a11yProps: {
-    'aria-disabled': boolean
+    'aria-describedby': string
     'aria-invalid': boolean
-    'aria-readonly': boolean
-    'aria-required': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    'data-readonly': boolean
+    'data-required': boolean
     disabled: boolean
     id: string
-    invalid: boolean
     name: string
     placeholder: string
     readOnly: boolean

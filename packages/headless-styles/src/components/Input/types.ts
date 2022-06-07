@@ -1,9 +1,10 @@
 import { FieldOptions, Tech } from '../types'
 
 export interface InputOptions extends FieldOptions {
-  placeholder: string
+  errorId?: string
   id: string
   name: string
+  placeholder: string
   size?: Size
   tech?: Tech
   type: InputType

@@ -46,6 +46,13 @@ describe('Input CSS', () => {
       expect(getInputProps({ ...options, size: 'l' })).toEqual(result)
     })
 
+    test('should accept an errorId option', () => {
+      expect(getInputProps({ ...options, errorId: 'bad-email' })).toEqual({
+        ...result,
+        ['aria-describedby']: 'bad-email',
+      })
+    })
+
     test('should accept a tech type', () => {
       expect(getInputProps({ ...options, tech: 'svelte' })).toEqual({
         ['aria-invalid']: false,
