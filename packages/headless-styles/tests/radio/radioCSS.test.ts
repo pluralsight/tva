@@ -9,31 +9,33 @@ describe('Radio CSS', () => {
       value: '1',
       checked: false,
     }
+    const dataPropResults = {
+      'data-checked': false,
+      'data-disabled': false,
+      'data-invalid': false,
+      'data-readonly': false,
+      'data-required': false,
+    }
     const result = {
       input: {
-        'aria-disabled': false,
         'aria-invalid': false,
         checked: false,
         disabled: false,
         id: '',
         name: '',
+        readOnly: false,
+        required: false,
         type: 'radio',
         value: '',
         className: `${baseClass}-input radioInput`,
       },
       radioContainer: {
-        'data-checked': false,
-        'data-disabled': false,
-        'data-invalid': false,
-        'data-readonly': false,
+        ...dataPropResults,
         className: `${baseClass}-container radioContainer radiorow`,
       },
       radioControl: {
+        ...dataPropResults,
         'aria-hidden': true,
-        'data-checked': false,
-        'data-disabled': false,
-        'data-invalid': false,
-        'data-readonly': false,
         className: `${baseClass}-control radioControl`,
       },
     }
@@ -46,26 +48,24 @@ describe('Radio CSS', () => {
       expect(getRadioProps({ ...options, tech: 'svelte' })).toEqual({
         ...result,
         input: {
-          ...options,
-          'aria-disabled': false,
           'aria-invalid': false,
+          checked: options.checked,
           disabled: false,
+          id: options.id,
+          name: options.name,
+          readOnly: false,
+          required: false,
           type: 'radio',
+          value: options.value,
           class: `${baseClass}-input radioInput`,
         },
         radioContainer: {
-          'data-checked': false,
-          'data-disabled': false,
-          'data-invalid': false,
-          'data-readonly': false,
+          ...dataPropResults,
           class: `${baseClass}-container radioContainer radiorow`,
         },
         radioControl: {
+          ...dataPropResults,
           'aria-hidden': true,
-          'data-checked': false,
-          'data-disabled': false,
-          'data-invalid': false,
-          'data-readonly': false,
           class: `${baseClass}-control radioControl`,
         },
       })

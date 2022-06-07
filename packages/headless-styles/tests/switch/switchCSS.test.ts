@@ -7,29 +7,33 @@ describe('Switch CSS', () => {
       id: 'email',
       checked: false,
     }
+    const dataPropResults = {
+      'data-checked': options.checked,
+      'data-disabled': false,
+      'data-invalid': false,
+      'data-readonly': false,
+      'data-required': false,
+    }
     const result = {
       input: {
-        'aria-disabled': false,
         'aria-invalid': false,
         disabled: false,
         id: '',
         type: 'checkbox',
+        readOnly: false,
+        required: false,
         className: `${baseClass}-input input`,
       },
       switchContainer: {
         className: `${baseClass}-container container`,
       },
       switchTrack: {
+        ...dataPropResults,
         'aria-hidden': 'true',
-        'data-checked': options.checked,
-        'data-disabled': false,
-        'data-invalid': false,
         className: `${baseClass}-track mTrack`,
       },
       switchThumb: {
-        'data-checked': options.checked,
-        'data-disabled': false,
-        'data-invalid': false,
+        ...dataPropResults,
         className: `${baseClass}-thumb thumb`,
       },
     }
@@ -67,27 +71,24 @@ describe('Switch CSS', () => {
       expect(getSwitchProps({ ...options, tech: 'svelte' })).toEqual({
         ...result,
         input: {
-          'aria-disabled': false,
           'aria-invalid': false,
           disabled: false,
-          type: 'checkbox',
           id: options.id,
+          readOnly: false,
+          required: false,
+          type: 'checkbox',
           class: `${baseClass}-input input`,
         },
         switchContainer: {
           class: `${baseClass}-container container`,
         },
         switchTrack: {
+          ...dataPropResults,
           'aria-hidden': 'true',
-          'data-checked': options.checked,
-          'data-disabled': false,
-          'data-invalid': false,
           class: `${baseClass}-track track mTrack`,
         },
         switchThumb: {
-          'data-checked': options.checked,
-          'data-disabled': false,
-          'data-invalid': false,
+          ...dataPropResults,
           class: `${baseClass}-thumb thumb`,
         },
       })

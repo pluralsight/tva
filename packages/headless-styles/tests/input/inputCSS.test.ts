@@ -12,6 +12,7 @@ describe('Input CSS', () => {
       value: '',
     } as InputOptions
     const result = {
+      ['aria-invalid']: false,
       ['data-disabled']: false,
       ['data-invalid']: false,
       ['data-readonly']: false,
@@ -47,6 +48,7 @@ describe('Input CSS', () => {
 
     test('should accept a tech type', () => {
       expect(getInputProps({ ...options, tech: 'svelte' })).toEqual({
+        ['aria-invalid']: false,
         ['data-disabled']: false,
         ['data-invalid']: false,
         ['data-readonly']: false,

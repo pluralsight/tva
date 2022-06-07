@@ -2,14 +2,15 @@ import { createA11yProps } from '../../utils/helpers'
 import type { SwitchOptions, Size, Tech } from './types'
 
 const defaultSwitchOptions = {
+  checked: false,
   disabled: false,
   id: '',
   invalid: false,
   label: '',
+  readOnly: false,
+  required: false,
   size: 'm' as Size,
   tech: '' as Tech,
-  checked: false,
-  required: false,
 }
 
 export function getDefaultSwitchOptions(options?: SwitchOptions) {
@@ -19,6 +20,7 @@ export function getDefaultSwitchOptions(options?: SwitchOptions) {
     id: options?.id ?? defaultSwitchOptions.id,
     invalid: options?.invalid ?? defaultSwitchOptions.invalid,
     label: options?.label ?? defaultSwitchOptions.label,
+    readOnly: options?.readOnly ?? defaultSwitchOptions.readOnly,
     required: options?.required ?? defaultSwitchOptions.required,
     size: options?.size ?? defaultSwitchOptions.size,
     tech: options?.tech ?? defaultSwitchOptions.tech,
