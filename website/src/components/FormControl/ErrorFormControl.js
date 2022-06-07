@@ -17,17 +17,18 @@ function ErrorFormControl() {
     htmlFor: 'email',
     value: 'Email alerts',
   })
-  const inputProps = getInputProps({
-    ...fieldOptions,
-    id: 'email',
-    name: 'required',
-    placeholder: 'email@example.com',
-    value: email,
-  })
   const error = getErrorMessageProps({
     ...fieldOptions,
     id: 'email-address',
     message: 'Email address is required.',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    errorId: error.container.id,
+    id: 'email',
+    name: 'required',
+    placeholder: 'email@example.com',
+    value: email,
   })
 
   function handleChange() {
