@@ -1,3 +1,4 @@
+import { createA11yProps } from '../../utils/helpers'
 import type { SwitchOptions, Size, Tech } from './types'
 
 const defaultSwitchOptions = {
@@ -25,20 +26,29 @@ export function getDefaultSwitchOptions(options?: SwitchOptions) {
 }
 
 export function getA11yProps(options: SwitchOptions) {
-  const { disabled, invalid } = options
+  const a11yProps = createA11yProps(options)
+  const inputA11yProps = {
+    ['aria-invalid']: a11yProps['aria-invalid'],
+    disabled: a11yProps.disabled,
+    readOnly: a11yProps.readOnly,
+    required: a11yProps.required,
+  }
+  const dataProps = {
+    ['data-disabled']: a11yProps['data-disabled'],
+    ['data-invalid']: a11yProps['data-invalid'],
+    ['data-readonly']: a11yProps['data-readonly'],
+    ['data-required']: a11yProps['data-required'],
+  }
 
   return {
     inputProps: {
-      'aria-disabled': disabled,
-      'aria-invalid': invalid,
-      disabled,
+      ...inputA11yProps,
       id: options.id,
       type: 'checkbox',
     },
     dataProps: {
+      ...dataProps,
       'data-checked': options.checked,
-      'data-disabled': disabled,
-      'data-invalid': invalid,
     },
     hidden: {
       'aria-hidden': 'true',
