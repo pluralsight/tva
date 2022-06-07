@@ -1,3 +1,4 @@
+import { createA11yProps } from '../../utils/helpers'
 import type { RadioOptions, Direction, Tech } from './types'
 
 const defaultRadioOptions = {
@@ -29,24 +30,32 @@ export function getDefaultRadioOptions(options?: RadioOptions) {
 }
 
 export function getA11yProps(options: RadioOptions) {
-  const { disabled, invalid } = options
+  const a11yProps = createA11yProps(options)
+  const inputA11yProps = {
+    ['aria-invalid']: a11yProps['aria-invalid'],
+    disabled: a11yProps.disabled,
+    readOnly: a11yProps.readOnly,
+    required: a11yProps.required,
+  }
+  const dataProps = {
+    ['data-disabled']: a11yProps['data-disabled'],
+    ['data-invalid']: a11yProps['data-invalid'],
+    ['data-readonly']: a11yProps['data-readonly'],
+    ['data-required']: a11yProps['data-required'],
+  }
 
   return {
     inputProps: {
-      'aria-disabled': disabled,
-      'aria-invalid': invalid,
+      ...inputA11yProps,
       checked: options.checked,
-      disabled,
       id: options.id,
       name: options.name,
       type: 'radio',
       value: options.value,
     },
     dataProps: {
+      ...dataProps,
       'data-checked': options.checked,
-      'data-disabled': disabled,
-      'data-invalid': invalid,
-      'data-readonly': options.readOnly,
     },
     hidden: {
       'aria-hidden': true,

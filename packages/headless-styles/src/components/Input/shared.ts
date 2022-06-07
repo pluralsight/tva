@@ -1,3 +1,4 @@
+import { createA11yProps } from '../../utils/helpers'
 import type { Tech } from '../types'
 import type { InputOptions, InputType, Size } from './types'
 
@@ -32,19 +33,13 @@ export function getDefaultInputOptions(options?: InputOptions) {
 }
 
 export function createInputOptions(options: InputOptions) {
-  const { disabled, readOnly, required } = options
+  const a11yProps = createA11yProps(options)
 
   return {
-    ['data-disabled']: disabled,
-    ['data-invalid']: options?.invalid,
-    ['data-readonly']: readOnly,
-    ['data-required']: required,
-    disabled,
+    ...a11yProps,
     id: options.id,
     name: options.name,
     placeholder: options.placeholder,
-    readOnly,
-    required,
     type: options.type,
     value: options.value,
   }
