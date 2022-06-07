@@ -1,4 +1,5 @@
 import {
+  createA11yProps,
   createCSSObj,
   createJSProps,
   createSvelteObj,
@@ -7,6 +8,26 @@ import {
 } from '../../src/utils/helpers'
 
 describe('helpers', () => {
+  test('should return a a11y props Object', () => {
+    const a11yOptions = {
+      disabled: false,
+      invalid: true,
+      readOnly: false,
+      required: true,
+    }
+
+    expect(createA11yProps(a11yOptions)).toMatchObject({
+      ['aria-invalid']: a11yOptions.invalid,
+      ['data-disabled']: a11yOptions.disabled,
+      ['data-invalid']: a11yOptions.invalid,
+      ['data-readonly']: a11yOptions.readOnly,
+      ['data-required']: a11yOptions.required,
+      disabled: a11yOptions.disabled,
+      readOnly: a11yOptions.readOnly,
+      required: a11yOptions.required,
+    })
+  })
+
   test('should return a JS props Object', () => {
     const styles = {
       backgroundColor: 'blue',

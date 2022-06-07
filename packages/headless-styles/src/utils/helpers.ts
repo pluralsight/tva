@@ -1,5 +1,5 @@
 import kebabCase from 'kebab-case'
-import { Tech } from '../components/types'
+import type { FieldOptions, Tech } from '../components/types'
 
 export type StyleProps = Record<string, unknown>
 export type NestedStyleValue = string | StyleProps
@@ -40,6 +40,21 @@ function transformValue(style: NestedStyleValue): NestedStyleValue {
 }
 
 // Public
+
+export function createA11yProps(options: FieldOptions) {
+  const { disabled, invalid, required, readOnly } = options
+
+  return {
+    ['aria-invalid']: invalid,
+    ['data-disabled']: disabled,
+    ['data-invalid']: invalid,
+    ['data-readonly']: readOnly,
+    ['data-required']: required,
+    disabled,
+    readOnly,
+    required,
+  }
+}
 
 export function createSvelteObj(classname = '') {
   return { class: classname }
