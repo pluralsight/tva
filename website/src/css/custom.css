@@ -213,19 +213,6 @@ html[data-theme='light'] .DocSearch-Button:hover {
   padding-left: 48px;
 }
 
-.admonition-caution {
-  --ra-admonition-icon-color: var(--ps-warning-text-weak);
-}
-
-.admonition-tip {
-  --ra-admonition-icon-color: var(--ps-success-text-weak);
-}
-
-.admonition-note,
-.admonition-info {
-  --ra-admonition-icon-color: var(--ps-info-text-weak);
-}
-
 .admonition-heading {
   padding-left: 13px;
 }
@@ -248,6 +235,7 @@ html[data-theme='light'] .DocSearch-Button:hover {
   color: var(--ps-text-weak);
 }
 
+.alert-danger,
 .alert--warning,
 .alert--secondary,
 .alert--info,
@@ -271,6 +259,12 @@ html[data-theme='light'] .DocSearch-Button:hover {
   --ifm-alert-border-color: var(--ps-success-border);
 }
 
+.alert--danger {
+  --ifm-alert-background-color: var(--ps-danger-background-weak);
+  --ifm-alert-border-color: var(--ps-danger-border);
+}
+
+.alert--danger::before,
 .alert--warning::before,
 .alert--secondary::before,
 .alert--info::before,
@@ -287,19 +281,41 @@ html[data-theme='light'] .DocSearch-Button:hover {
   z-index: 1;
 }
 
-.alert--warning h5,
+.alert.alert--danger {
+  color: var(--ps-danger-text);
+}
+
+.alert--warning .admonition-icon svg {
+  fill: var(--ps-warning-text-medium);
+  stroke: var(--ps-warning-text-medium);
+}
+
+.alert--danger .admonition-icon svg {
+  fill: var(--ps-danger-text-medium);
+  stroke: var(--ps-danger-text-medium);
+}
+
+.alert--info .admonition-icon svg,
+.alert--secondary .admonition-icon svg {
+  fill: var(--ps-info-text-medium);
+  stroke: var(--ps-info-text-medium);
+}
+
+.alert--success .admonition-icon svg {
+  fill: var(--ps-success-text-medium);
+  stroke: var(--ps-success-text-medium);
+}
+
 .alert.alert--warning {
   color: var(--ps-warning-text);
 }
 
-.alert--secondary h5,
-.alert--info h5,
+.alert--info .admonition-heading,
 .alert.alert--secondary,
 .alert.alert--info {
   color: var(--ps-info-text);
 }
 
-.alert--success h5,
 .alert.alert--success {
   color: var(--ps-success-text);
 }

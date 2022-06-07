@@ -141,9 +141,15 @@ function PasswordInput() {
 export default PasswordInput
 ```
 
-## About `errorId` and accessibility
+## Accessibility and error messages
 
-x
+When displaying [Error Messages](./FormControl#error-messasge) it is required to pass the `ErrorMessageOptions.id` value to the `InputOptions.errorId` field. This will add a [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute to the `input` which establishes a relationship between the `input` and error message you are displaying.
+
+:::danger
+
+Not providing an `errorId` option that matches the Error Message `id` will result in a poor accessbility experience. Please make sure you are using both of these in order to provide the best experience to all of your users.
+
+:::
 
 ## API
 
