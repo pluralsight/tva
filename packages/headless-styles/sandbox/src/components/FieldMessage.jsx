@@ -1,19 +1,18 @@
 import { useEffect } from 'react'
-import { getFieldMessageProps, getJSErrorMessageProps } from '../../../src'
+import { getFieldMessageProps, getJSFieldMessageProps } from '../../../src'
 
 const { value, ...fieldProps } = getFieldMessageProps({
   id: 'test-one',
   message: "We'll never share your email...maybe.",
 })
 
-export default function ErrorMessage({ logJS }) {
+export default function FieldMessage({ logJS }) {
   useEffect(() => {
     if (logJS) {
       console.log({
-        ...getJSErrorMessageProps({
+        ...getJSFieldMessageProps({
           id: 'hello',
-          invalid: true,
-          message: 'Wrong, wrong, wrong.',
+          message: 'Hello there you good person!',
         }),
       })
     }

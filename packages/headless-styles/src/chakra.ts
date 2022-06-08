@@ -1,6 +1,7 @@
 import { ChakraBadge } from './components/Badge/badgeJS'
 import { ChakraButton } from './components/Button/buttonJS'
 import { ChakraErrorMessage } from './components/ErrorMessage/errorMessageJS'
+import { ChakraFieldMessage } from './components/FieldMessage/fieldMessageJS'
 import { ChakraFormControl } from './components/FormControl/formControlJS'
 import { ChakraFormLabel } from './components/FormLabel/formLabelJS'
 import { ChakraIcon } from './components/Icon/iconJS'
@@ -10,10 +11,18 @@ import { ChakraRadio } from './components/Radio/radioJS'
 import { ChakraSkeleton } from './components/Skeleton/skeletonJS'
 import { ChakraSwitch } from './components/Switch/switchJS'
 
+const Form = {
+  parts: ['container', 'requiredIndicator', 'helperText'],
+  baseStyle: {
+    helperText: ChakraFieldMessage.baseStyle,
+  },
+}
+
 export const chakraPSTheme = {
   components: {
     Badge: ChakraBadge,
     Button: ChakraButton,
+    Form,
     FormControl: ChakraFormControl,
     FormErrorMessage: ChakraErrorMessage,
     FormLabel: ChakraFormLabel,
