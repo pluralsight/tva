@@ -1,4 +1,4 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
+import { createClassProp } from '../../utils/helpers'
 import { getDefaultFormControlOptions } from './shared'
 import styles from './formControlCSS.module.css'
 import { FormControlOptions } from './types'
@@ -12,20 +12,13 @@ export function getFormControlProps(options?: FormControlOptions) {
     role: groupType,
   }
 
-  if (tech === 'svelte') {
-    return {
-      control: {
-        ...role,
-        ...createSvelteObj(`${FORM_CONTROL} formControlBase`),
-      },
-      fieldOptions,
-    }
-  }
-
   return {
     control: {
       ...role,
-      ...createCSSObj(`${FORM_CONTROL} ${styles.formControlBase}`),
+      ...createClassProp(tech, {
+        svelteClass: `${FORM_CONTROL} formControlBase`,
+        defaultClass: `${FORM_CONTROL} ${styles.formControlBase}`,
+      }),
     },
     fieldOptions,
   }

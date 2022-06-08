@@ -1,4 +1,4 @@
-import type { FieldOptions } from '../types'
+import type { FieldOptions, Tech } from '../types'
 
 export interface FormControlOptions extends FieldOptions {
   groupType?: GroupType
@@ -8,4 +8,3 @@ export interface FormControlOptions extends FieldOptions {
 // types
 
 export type GroupType = 'group' | 'radiogroup'
-export type Tech = 'svelte'

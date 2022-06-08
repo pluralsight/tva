@@ -1,4 +1,5 @@
-import type { FormControlOptions, GroupType, Tech } from './types'
+import type { Tech } from '../types'
+import type { FormControlOptions, GroupType } from './types'
 
 const defaultFormControlOptions = {
   disabled: false,
