@@ -31,7 +31,7 @@ This is **unreleased** documentation for **headless-styles** package.
 
 :::
 
-FormControl provides context such as `invalid`, `disabled`, `required` to form elements in addition to following the [WAI specifications](https://www.w3.org/WAI/tutorials/forms/) for forms.
+FormControl provides context such as `invalid`, `disabled`, `required`, and `readOnly` to form elements in addition to following the [WAI specifications](https://www.w3.org/WAI/tutorials/forms/) for forms.
 
 <ViewSourceLink
   icon="github"
@@ -46,6 +46,7 @@ FormControl provides context such as `invalid`, `disabled`, `required` to form e
 import {
   getFormControlProps,
   getFormLabelProps,
+  getFieldMessageProps,
   getErrorMessageProps,
 } from '@pluralsight/headless-styles'
 ```
@@ -54,6 +55,7 @@ Headless Styles exports two helpers for Form Control:
 
 - **getFormControlProps**: The wrapper that provides context for all children
 - **getFormLabelProps**: The label of a form section. The usage is similar to [html label](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label)
+- **getFieldMessageProps**: The helper text that tells users more information about a form field.
 - **getErrorMessageProps**: The message that shows up when an error occurs.
 
 ## Usage
@@ -65,6 +67,7 @@ Headless Styles exports two helpers for Form Control:
 ```jsx
 import { useState } from 'react'
 import {
+  getFieldMessageProps,
   getFormControlProps,
   getFormLabelProps,
   getInputProps,
@@ -79,8 +82,13 @@ function BasicFormControl(props) {
     htmlFor: formId,
     value: 'Email alerts',
   })
+  const { value: helpText, ...message } = getFieldMessageProps({
+    id: 'email:help',
+    message: 'We will never share your email'
+  })
   const inputProps = getInputProps({
     ...fieldOptions,
+    describedBy: message.id
     id: formId,
     name: props.formName,
     placeholder: 'email@example.com',
@@ -104,6 +112,7 @@ function BasicFormControl(props) {
         {value}
       </label>
       <input {...inputProps} onChange={handleChange} />
+      <p {...message}>{helpText}<p>
     </div>
   )
 }
@@ -170,17 +179,18 @@ function BasicRadio() {
 
 :::tip
 
-When using Error messages for [Input](./Input) fields, it is recommended to pass the `ErrorMessageOptions.id` to the `InputOptions.errorId` value in order to allow your error message to be fully accessble to all users.
+When using Error messages for [Input](./Input) fields, it is recommended to pass the `ErrorMessageOptions.id` to the `InputOptions.describedBy` value in order to allow your error message to be fully accessble to all users.
 
 :::
 
 <ErrorFormControl />
 
-```jsx title="Make your error messages accessible by passing the same value to the InputOptions.errorId"
+```jsx title="Make your error messages accessible by passing the same value to the InputOptions.describedBy"
 import { useState } from 'react'
 import {
   getFormControlProps,
   getFormLabelProps,
+  getErrorMessageProps,
   getInputProps,
 } from '@pluralsight/headless-styles'
 
@@ -202,7 +212,7 @@ function BasicFormControl(props) {
   const inputProps = getInputProps({
     ...fieldOptions,
     // highlight-next-line
-    errorId: error.container.id,
+    describedBy: error.container.id,
     id,
     name: 'email_alerts',
     placeholder: 'email@example.com',
@@ -230,6 +240,73 @@ function BasicFormControl(props) {
           <p {...error.message}>{error.message.value}</p>
         </div>
       )}
+    </div>
+  )
+}
+```
+
+### Help Text
+
+`getFieldMessageProps` will return a styled help text message for your input field.
+
+:::tip
+
+When using help text messages for [Input](./Input) fields, it is recommended to pass the `FieldMessageOptions.id` to the `InputOptions.describedBy` value in order to allow your error message to be fully accessble to all users.
+
+:::
+
+<BasicFormControl />
+
+```jsx title="Make your help messages accessible by passing the same value to the InputOptions.describedBy"
+import { useState } from 'react'
+import {
+  getFieldMessageProps,
+  getFormControlProps,
+  getFormLabelProps,
+  getInputProps,
+} from '@pluralsight/headless-styles'
+
+function BasicFormControl(props) {
+  const { id, ...formOptions } = props
+  const [email, setEmail] = useState('')
+  const { fieldOptions } = getFormControlProps(formOptions)
+  const { value, ...labelProps } = getFormLabelProps({
+    ...fieldOptions,
+    htmlFor: 'email',
+    value: 'Email alerts',
+  })
+  const { value: helpText, ...message } = getFieldMessageProps({
+    // highlight-next-line
+    id: 'email:help',
+    message: 'We will never share your email.',
+  })
+  const inputProps = getInputProps({
+    ...fieldOptions,
+    // highlight-next-line
+    describedBy: message.id,
+    id,
+    name: 'email_alerts',
+    placeholder: 'email@example.com',
+    value: email,
+  })
+
+  function handleChange(e) {
+    setEmail(e.target.value)
+  }
+
+  return (
+    <div>
+      <label
+        {...labelProps}
+        style={{
+          marginInlineEnd: 'initial',
+          width: '100%',
+        }}
+      >
+        {value}
+      </label>
+      <input {...inputProps} onChange={handleChange} />
+      <p {...message}>{helpText}</p>
     </div>
   )
 }
@@ -359,9 +436,11 @@ function FormikExample() {
 | ------------------------ | -------------------------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------- |
 | `getFormControlProps`    | **options**: [FormControlOptions](#formcontroloptions)   | groupType: `default`, <br />`false` for all fieldOptions | Get form control styles & field states for CSS usage. |
 | `getFormLabelProps`      | **options**: [FormLabelOptions](#formlabeloptions)       | **htmlFor**: empty String                                | Get form label styles and a11y props for CSS usage.   |
+| `getFieldMessageProps`   | **options**: [FieldMessageOptions](#fieldmessageoptions) | **id**: empty String<br />**message**: empty String      | Get help message styles and content for CSS usage.    |
 | `getErrorMessageProps`   | **options**: [ErrorMessageOptions](#errormessageoptions) | **invalid**: `false`                                     | Get error message styles and content for CSS usage.   |
 | `getJSFormControlProps`  | **options**: [FormControlOptions](#formcontroloptions)   | same as CSS API                                          | CSS-in-JS API                                         |
 | `getJSFormLabelProps`    | **options**: [FormLabelOptions](#formlabeloptions)       | same as CSS API                                          | CSS-in-JS API                                         |
+| `getJSFieldMessageProps` | **options**: [FieldMessageOptions](#fieldmessageoptions) | same as CSS API                                          | CSS-in-JS API                                         |
 | `getJSErrorMessageProps` | **options**: [ErrorMessageOptions](#errormessageoptions) | same as CSS API                                          | CSS-in-JS API                                         |
 
 ## FormControlOptions
@@ -389,6 +468,16 @@ interface FormLabelOptions {
 }
 ```
 
+## FieldMessageOptions
+
+```typescript
+interface FieldMessageOptions {
+  id: string
+  message: string
+  tech?: 'svelte'
+}
+```
+
 ## ErrorMessageOptions
 
 ```typescript
@@ -400,17 +489,54 @@ interface ErrorMessageOptions {
 }
 ```
 
+## FormControlProps
+
+```typescript
+interface FormControlProps {
+  control: {
+    role: string
+    className: string
+  }
+  fieldOptions: {
+    disabled: boolean
+    invalid: boolean
+    readOnly: boolean
+    required: boolean
+  }
+}
+```
+
+## FormLabelProps
+
+```typescript
+interface FormLabelProps {
+  htmlFor: string
+  className: string
+  value: string
+}
+```
+
+## FieldMessageProps
+
+```typescript
+interface FieldMessageProps {
+  className: string
+  id: string
+  value: string
+}
+```
+
 ## ErrorMessageProps
 
-```typecript
+```typescript
 interface ErrorMessageProps {
   container: {
-    'aria-live': 'polite',
-    id: string,
-  },
+    'aria-live': 'polite'
+    id: string
+  }
   message: {
-    className: string,
-    value: string,
+    className: string
+    value: string
   }
 }
 ```
@@ -450,18 +576,29 @@ interface JSFormLabelProps {
 }
 ```
 
+## JSFieldMessageProps
+
+```typescript
+interface JSFieldMessageProps {
+  id: string
+  cssProps: TemplateStringLiteralArray
+  styles: Record<CSSProps, unknown>
+  value: string
+}
+```
+
 ## JSErrorMessageProps
 
-```typecript
+```typescript
 interface JSErrorMessageProps {
   container: {
-    'aria-live': 'polite',
-    id: string,
-  },
+    'aria-live': 'polite'
+    id: string
+  }
   message: {
-    cssProps: TemplateStringLiteralArray,
-    styles: Record<CSSProps, unknown>,
-    value: string,
+    cssProps: TemplateStringLiteralArray
+    styles: Record<CSSProps, unknown>
+    value: string
   }
 }
 ```
