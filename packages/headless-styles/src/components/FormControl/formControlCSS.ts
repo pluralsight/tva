@@ -1,7 +1,7 @@
 import { createClassProp } from '../../utils/helpers'
 import { getDefaultFormControlOptions } from './shared'
 import styles from './formControlCSS.module.css'
-import { FormControlOptions } from './types'
+import type { FormControlOptions } from './types'
 
 const FORM_CONTROL = 'ps-form-control'
 
