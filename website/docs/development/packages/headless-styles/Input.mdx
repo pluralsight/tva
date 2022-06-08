@@ -141,15 +141,39 @@ function PasswordInput() {
 export default PasswordInput
 ```
 
-## Accessibility and error messages
+## Accessibility and messages
 
-When displaying [Error Messages](./FormControl#error-messasge) it is required to pass the `ErrorMessageOptions.id` value to the `InputOptions.errorId` field. This will add a [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute to the `input` which establishes a relationship between the `input` and error message you are displaying.
+When displaying [Error Messages](./FormControl#error-messasge) or [Help Text](./FormControl#help-text) it is required to pass the `options.id` value to the `InputOptions.describedBy` field. This will add a [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute to the `input` which establishes a relationship between the `input` and message you are displaying.
 
 :::danger
 
-Not providing an `errorId` option that matches the Error Message `id` will result in a poor accessbility experience. Please make sure you are using both of these in order to provide the best experience to all of your users.
+Not providing a `describedBy` option that matches the Error/Field Message `id` will result in a poor accessbility experience. Please make sure you are using both of these in order to provide the best experience to all of your users.
 
 :::
+
+### Using both error & field messages
+
+When using both the field message and error message API, pass a comma-separated String to the `InputOptions.describedBy` option.
+
+```javascript title="Example using both messages for an input"
+const { value: helpText, ...message } = getFieldMessageProps({
+  id: 'email:help',
+  message: 'We will never share your email.',
+})
+const error = getErrorMessageProps({
+  id: 'bad:email',
+  invalid,
+  message: 'An email address is required.',
+})
+const inputProps = getInputProps({
+  ...fieldOptions,
+  // highlight-next-line
+  describedBy: `${message.id},${error.container.id}`,
+  id: 'email',
+  name: 'user_email',
+  value,
+})
+```
 
 ## API
 
@@ -162,7 +186,7 @@ Not providing an `errorId` option that matches the Error Message `id` will resul
 
 ```typescript
 interface InputOptions extends FieldOptions {
-  errorId?: string
+  describedBy?: string
   id: string
   name: string
   placeholder: string
