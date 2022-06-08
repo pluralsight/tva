@@ -29,8 +29,7 @@ function InputField(props) {
   const { value, ...inputProps } = getInputProps({
     ...options,
     ...fieldOptions,
-    // TODO: Update API to use "describedBy" option - not errorId
-    errorId: `${error.message.id},${fieldMessage.id}`,
+    describedBy: `${error.container.id},${fieldMessage.id}`,
   })
 
   return (

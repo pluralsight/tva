@@ -4,7 +4,7 @@ import type { InputOptions, InputType, Size } from './types'
 
 const defaultInputOptions = {
   disabled: false,
-  errorId: '',
+  describedBy: '',
   id: '',
   invalid: false,
   name: '',
@@ -20,7 +20,7 @@ const defaultInputOptions = {
 export function getDefaultInputOptions(options?: InputOptions) {
   return {
     disabled: options?.disabled ?? defaultInputOptions.disabled,
-    errorId: options?.errorId ?? defaultInputOptions.errorId,
+    describedBy: options?.describedBy ?? defaultInputOptions.describedBy,
     id: options?.id ?? defaultInputOptions.id,
     invalid: options?.invalid ?? defaultInputOptions.invalid,
     name: options?.name ?? defaultInputOptions.name,
@@ -35,15 +35,15 @@ export function getDefaultInputOptions(options?: InputOptions) {
 }
 
 export function createInputOptions(options: InputOptions) {
-  const { errorId } = options
+  const { describedBy } = options
   const a11yProps = createA11yProps(options)
-  const errorIdProps = errorId && {
-    ['aria-describedby']: errorId,
+  const describedByProps = describedBy && {
+    ['aria-describedby']: describedBy,
   }
 
   return {
     ...a11yProps,
-    ...errorIdProps,
+    ...describedByProps,
     id: options.id,
     name: options.name,
     placeholder: options.placeholder,
