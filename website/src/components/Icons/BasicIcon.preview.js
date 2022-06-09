@@ -1,10 +1,7 @@
 import React from 'react'
 import CodeBlock from '@theme/CodeBlock'
 
-const preview = `<MenuIcon {...getIconProps()} />
-<MenuIcon {...getIconProps({ size: 's' })} />
-<MenuIcon {...getIconProps({ size: 'm' })} />
-<MenuIcon {...getIconProps({ size: 'l' })} />`
+const preview = `<MenuIcon {...getIconProps()} />`
 
 export function BasicIconPreview() {
   return <CodeBlock>{preview}</CodeBlock>
