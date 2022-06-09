@@ -1,6 +1,6 @@
 import React from 'react'
 import { getIconProps } from '@pluralsight/headless-styles'
-import { MegaphoneIcon } from '@pluralsight/icons'
+import { MenuIcon } from '@pluralsight/icons'
 import Container from '../Container/Container'
 
 const psSmallIconProps = getIconProps({ size: 's' })
@@ -10,9 +10,10 @@ const psLargeIconProps = getIconProps({ size: 'l' })
 function BasicIcon() {
   return (
     <Container>
-      <MegaphoneIcon {...psSmallIconProps} />
-      <MegaphoneIcon {...psIconProps} />
-      <MegaphoneIcon {...psLargeIconProps} />
+      <MenuIcon {...psIconProps} />
+      <MenuIcon {...psSmallIconProps} />
+      <MenuIcon {...psIconProps} />
+      <MenuIcon {...psLargeIconProps} />
     </Container>
   )
 }
