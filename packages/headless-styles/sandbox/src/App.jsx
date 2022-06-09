@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { getButtonProps } from '../../src'
 import Button from './components/Button'
 import Badge from './components/Badge'
+import Checkbox from './components/Checkbox'
 import CircularProgress from './components/CircularProgress'
 import ErrorMessage from './components/ErrorMessage'
 import FieldMessage from './components/FieldMessage'
@@ -39,9 +40,10 @@ function App() {
 
       <Badge />
       <Button />
+      <Checkbox />
       <CircularProgress />
       <ErrorMessage />
-      <FieldMessage logJS />
+      <FieldMessage />
       <FormControl />
       <FormLabel />
       <Icon />

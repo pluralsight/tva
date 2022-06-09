@@ -1,50 +1,43 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
-import { getA11yProps, getDefaultCheckboxOptions } from './shared'
+import { createClassProp } from '../../utils/helpers'
+import { createCheckboxFieldProps } from '../sharedDeafultOptions'
+import { getDefaultCheckboxOptions } from './shared'
 import type { CheckboxOptions } from './types'
-import styles from './radioCSS.module.css'
+import styles from './checkboxCSS.module.css'
 
 const CHECKBOX = 'ps-checkbox'
 
 export function getCheckboxProps(options?: CheckboxOptions) {
-  const { direction, ...defaultOptions } = getDefaultCheckboxOptions(options)
-  const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
+  const { direction, tech, ...defaultOptions } =
+    getDefaultCheckboxOptions(options)
+  const props = createCheckboxFieldProps(defaultOptions)
   const directionClass = `checkbox${direction}`
 
-  if (defaultOptions.tech === 'svelte') {
-    return {
-      input: {
-        ...inputProps,
-        ...createSvelteObj(`${CHECKBOX}-input radioInput`),
-      },
-      radioContainer: {
-        ...dataProps,
-        ...createSvelteObj(
-          `${CHECKBOX}-container radioContainer radio${direction}`
-        ),
-      },
-      radioControl: {
-        ...hidden,
-        ...dataProps,
-        ...createSvelteObj(`${CHECKBOX}-control radioControl`),
-      },
-    }
-  }
-
   return {
+    ...props,
+    iconOptions: {
+      size: 's',
+    },
     input: {
-      ...inputProps,
-      ...createCSSObj(`${CHECKBOX}-input ${styles.radioInput}`),
+      ...props.input,
+      type: 'checkbox',
+      ...createClassProp(tech, {
+        defaultClass: `${CHECKBOX}-input ${styles.checkboxInput}`,
+        svelteClass: `${CHECKBOX}-input checkboxInput`,
+      }),
     },
-    radioContainer: {
-      ...dataProps,
-      ...createCSSObj(
-        `${CHECKBOX}-container ${styles.radioContainer} ${styles[directionClass]}`
-      ),
+    checkboxContainer: {
+      ...props.container,
+      ...createClassProp(tech, {
+        defaultClass: `${CHECKBOX}-container ${styles.checkboxContainer} ${styles[directionClass]}`,
+        svelteClass: `${CHECKBOX}-container checkboxContainer ${directionClass}`,
+      }),
     },
-    radioControl: {
-      ...hidden,
-      ...dataProps,
-      ...createCSSObj(`${CHECKBOX}-control ${styles.radioControl}`),
+    checkboxControl: {
+      ...props.control,
+      ...createClassProp(tech, {
+        defaultClass: `${CHECKBOX}-control ${styles.checkboxControl}`,
+        svelteClass: `${CHECKBOX}-control checkboxControl`,
+      }),
     },
   }
 }

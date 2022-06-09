@@ -43,10 +43,10 @@ export function createCheckboxFieldProps(options: AllCheckboxFieldOptions) {
     input: {
       ...inputProps,
     },
-    radioContainer: {
+    container: {
       ...dataProps,
     },
-    radioControl: {
+    control: {
       ...hidden,
       ...dataProps,
     },

@@ -9,6 +9,7 @@
   margin-inline-end: 0.625rem;
   opacity: 1;
   text-align: start;
+  user-select: none;
 }
 
 .sLabel {

@@ -30,8 +30,6 @@ function PSIconButton(props) {
   })
   const Icon = btn.icon
 
-  console.log(btn, buttonProps)
-
   return (
     <button {...buttonProps.button}>
       <Icon {...getIconProps(buttonProps.iconOptions)} />

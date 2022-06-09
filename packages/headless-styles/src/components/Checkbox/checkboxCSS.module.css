@@ -1,18 +1,14 @@
-.radioGroup {
-  align-items: center;
-  display: flex;
-}
-
-.radioContainer {
+.checkboxContainer {
   align-items: center;
   cursor: pointer;
   display: inline-flex;
-  margin-inline-start: 1rem;
+  position: relative;
   vertical-align: top;
 }
 
-.radioInput {
+.checkboxInput {
   border: 0;
+  box-sizing: border-box;
   clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
@@ -23,90 +19,83 @@
   width: 1px;
 }
 
-.radioControl {
+.checkboxControl {
   align-items: center;
-  border-color: var(--ps-neutral-border);
+  border-color: var(--ps-neutral-border-strong);
   border-image: initial;
-  border-radius: 50%;
+  border-radius: 2px;
   border-style: solid;
   border-width: 1px;
-  color: var(--ps-text);
+  color: white;
   display: inline-flex;
   flex-shrink: 0;
-  justify-content: center;
   height: 1.125rem;
+  justify-content: center;
   margin-bottom: 2px;
   margin-inline-end: 0.437rem;
   transition-duration: 150ms;
-  transition-property: background, box-shadow;
+  transition-property: background, background-color, border, box-shadow;
+  user-select: none;
+  vertical-align: top;
   width: 1.125rem;
-}
-
-.radioControl:hover {
-  background: var(--ps-neutral-background);
 }
 
 /* states */
 
-.radioInput:focus + .radioControl {
-  box-shadow: 0 0 0 3px var(--ps-background-active);
-}
-
-.radioInput:focus:not(:focus-visible) + .radioControl {
-  box-shadow: none;
-  outline: none;
-}
-
-.radioContainer[data-disabled='true'],
-.radioContainer[data-readonly='true'] {
-  cursor: not-allowed;
-}
-
-.radioControl[data-checked='true'] {
-  background: var(--ps-background);
-  border-color: var(--ps-background);
-}
-
-.radioControl[data-checked='true']:hover {
-  background: var(--ps-background-hover);
-  border-color: var(--ps-background-hover);
-}
-
-.radioControl[data-checked='true']::before {
-  background: white;
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  height: 50%;
-  position: relative;
-  width: 50%;
-}
-
-.radioControl[data-disabled='true'] {
+.checkboxControl:hover {
   background: var(--ps-neutral-background);
   border-color: var(--ps-neutral-background);
 }
 
-.radioControl[data-invalid='true'] {
+.checkboxInput:focus + .checkboxControl {
+  box-shadow: 0 0 0 3px var(--ps-background-active);
+}
+
+.checkboxInput:focus:not(:focus-visible) + .checkboxControl {
+  box-shadow: none;
+  outline: none;
+}
+
+.checkboxContainer[data-disabled='true'],
+.checkboxContainer[data-readonly='true'] {
+  cursor: not-allowed;
+}
+
+.checkboxControl[data-checked='true'] {
+  background: var(--ps-background);
+  border-color: var(--ps-background);
+}
+
+.checkboxControl[data-checked='true']:hover {
+  background: var(--ps-background-hover);
+  border-color: var(--ps-background-hover);
+}
+
+.checkboxControl[data-disabled='true'] {
+  background: var(--ps-neutral-background);
+  border-color: var(--ps-neutral-background);
+}
+
+.checkboxControl[data-invalid='true'] {
   background: var(--ps-danger-background);
   border-color: var(--ps-danger-background);
 }
 
-.radioControl[data-invalid='true']:hover {
+.checkboxControl[data-invalid='true']:hover {
   background: var(--ps-danger-background-hover);
   border-color: var(--ps-danger-background-hover);
 }
 
-.radioControl[data-readonly='true']:hover {
+.checkboxControl[data-readonly='true']:hover {
   background-color: initial;
 }
 
-.radiorow {
-  composes: radioContainer;
+.checkboxrow {
+  composes: checkboxContainer;
 }
 
-.radiocol {
+.checkboxcol {
   align-items: flex-start;
-  composes: radioContainer;
+  composes: checkboxContainer;
   flex-direction: column;
 }

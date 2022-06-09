@@ -15,6 +15,7 @@ export default {
     marginInlineEnd: '0.625rem',
     opacity: '1',
     textAlign: 'start',
+    userSelect: 'none',
   },
   sLabel: {
     composes: 'formLabelBase',

@@ -45,6 +45,7 @@ export default {
     flexShrink: '0',
     justifyContent: 'center',
     height: '1.125rem',
+    marginBottom: '2px',
     marginInlineEnd: '0.437rem',
     transitionDuration: '150ms',
     transitionProperty: 'background, box-shadow',

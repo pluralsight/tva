@@ -10,6 +10,8 @@ export {
   getJSDangerButtonProps,
 } from './components/Button/buttonJS'
 
+export { getCheckboxProps } from './components/Checkbox/checkboxCSS'
+
 export { getCircularProgressProps } from './components/CircularProgress/circularProgressCSS'
 export { getJSCircularProgressProps } from './components/CircularProgress/circularProgressJS'
 

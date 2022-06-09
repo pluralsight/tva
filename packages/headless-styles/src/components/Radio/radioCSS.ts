@@ -22,14 +22,14 @@ export function getRadioProps(options?: RadioOptions) {
       }),
     },
     radioContainer: {
-      ...props.radioContainer,
+      ...props.container,
       ...createClassProp(tech, {
         defaultClass: `${RADIO}-container ${styles.radioContainer} ${styles[directionClass]}`,
         svelteClass: `${RADIO}-container radioContainer radio${direction}`,
       }),
     },
     radioControl: {
-      ...props.radioControl,
+      ...props.control,
       ...createClassProp(tech, {
         defaultClass: `${RADIO}-control ${styles.radioControl}`,
         svelteClass: `${RADIO}-control radioControl`,

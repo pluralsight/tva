@@ -82,13 +82,13 @@ export function getJSRadioProps(options?: RadioOptions) {
     },
     radioContainer: {
       a11yProps: {
-        ...props.radioContainer,
+        ...props.container,
       },
       ...createJSProps(transformStyles(containerStyles), containerStyles),
     },
     radioControl: {
       a11yProps: {
-        ...props.radioControl,
+        ...props.control,
       },
       ...createJSProps(transformStyles(controlStyles), controlStyles),
     },
