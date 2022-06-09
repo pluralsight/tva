@@ -12,7 +12,6 @@ export function getRadioProps(options?: RadioOptions) {
   const directionClass = `radio${direction}`
 
   return {
-    ...props,
     input: {
       ...props.input,
       type: 'radio',

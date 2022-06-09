@@ -13,7 +13,6 @@ export function getCheckboxProps(options?: CheckboxOptions) {
   const directionClass = `checkbox${direction}`
 
   return {
-    ...props,
     iconOptions: {
       size: 's',
     },
