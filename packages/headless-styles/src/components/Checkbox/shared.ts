@@ -1,7 +1,7 @@
 import {
   getCheckboxFieldA11yProps,
   getDefaultCheckboxFieldOptions,
-} from '../sharedDeafultOptions'
+} from '../sharedDefaultOptions'
 import type { CheckboxOptions } from './types'
 
 export function getDefaultCheckboxOptions(options?: CheckboxOptions) {

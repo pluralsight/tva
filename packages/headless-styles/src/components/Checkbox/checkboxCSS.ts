@@ -1,5 +1,5 @@
 import { createClassProp } from '../../utils/helpers'
-import { createCheckboxFieldProps } from '../sharedDeafultOptions'
+import { createCheckboxFieldProps } from '../sharedDefaultOptions'
 import { getDefaultCheckboxOptions } from './shared'
 import type { CheckboxOptions } from './types'
 import styles from './checkboxCSS.module.css'

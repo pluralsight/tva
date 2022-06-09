@@ -1,4 +1,4 @@
-import { getDefaultCheckboxFieldOptions } from '../sharedDeafultOptions'
+import { getDefaultCheckboxFieldOptions } from '../sharedDefaultOptions'
 import type { RadioOptions } from './types'
 
 export function getDefaultRadioOptions(options?: RadioOptions) {
