@@ -1,5 +1,5 @@
 import type { CheckboxFieldOptions, Tech } from '../types'
 
-export interface RadioOptions extends CheckboxFieldOptions {
+export interface CheckboxOptions extends CheckboxFieldOptions {
   tech?: Tech
 }

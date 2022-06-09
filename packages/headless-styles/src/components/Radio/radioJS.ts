@@ -1,5 +1,6 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
-import { getA11yProps, getDefaultRadioOptions } from './shared'
+import { createCheckboxFieldProps } from '../sharedDeafultOptions'
+import { getDefaultRadioOptions } from './shared'
 import styles from './generated/radioCSS.module'
 import type { RadioOptions } from './types'
 
@@ -44,7 +45,7 @@ export const ChakraRadio = {
 
 export function getJSRadioProps(options?: RadioOptions) {
   const defaultOptions = getDefaultRadioOptions(options)
-  const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
+  const props = createCheckboxFieldProps(defaultOptions)
   const containerStyles = {
     ...styles.radioContainer,
     ...styles[defaultOptions.direction as keyof typeof styles],
@@ -74,20 +75,20 @@ export function getJSRadioProps(options?: RadioOptions) {
   return {
     input: {
       a11yProps: {
-        ...inputProps,
+        ...props.input,
+        type: 'radio',
       },
       ...createJSProps(transformStyles(styles.radioInput), styles.radioInput),
     },
     radioContainer: {
       a11yProps: {
-        ...dataProps,
+        ...props.radioContainer,
       },
       ...createJSProps(transformStyles(containerStyles), containerStyles),
     },
     radioControl: {
       a11yProps: {
-        ...hidden,
-        ...dataProps,
+        ...props.radioControl,
       },
       ...createJSProps(transformStyles(controlStyles), controlStyles),
     },

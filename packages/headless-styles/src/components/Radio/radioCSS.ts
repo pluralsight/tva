@@ -1,50 +1,39 @@
-import { createCSSObj, createSvelteObj } from '../../utils/helpers'
-import { getA11yProps, getDefaultRadioOptions } from './shared'
+import { createClassProp } from '../../utils/helpers'
+import { createCheckboxFieldProps } from '../sharedDeafultOptions'
+import { getDefaultRadioOptions } from './shared'
+import type { RadioOptions } from './types'
 import styles from './radioCSS.module.css'
-import { RadioOptions } from './types'
 
 const RADIO = 'ps-radio'
 
 export function getRadioProps(options?: RadioOptions) {
-  const { direction, ...defaultOptions } = getDefaultRadioOptions(options)
-  const { inputProps, dataProps, hidden } = getA11yProps(defaultOptions)
+  const { direction, tech, ...defaultOptions } = getDefaultRadioOptions(options)
+  const props = createCheckboxFieldProps(defaultOptions)
   const directionClass = `radio${direction}`
 
-  if (defaultOptions.tech === 'svelte') {
-    return {
-      input: {
-        ...inputProps,
-        ...createSvelteObj(`${RADIO}-input radioInput`),
-      },
-      radioContainer: {
-        ...dataProps,
-        ...createSvelteObj(
-          `${RADIO}-container radioContainer radio${direction}`
-        ),
-      },
-      radioControl: {
-        ...hidden,
-        ...dataProps,
-        ...createSvelteObj(`${RADIO}-control radioControl`),
-      },
-    }
-  }
-
   return {
+    ...props,
     input: {
-      ...inputProps,
-      ...createCSSObj(`${RADIO}-input ${styles.radioInput}`),
+      ...props.input,
+      type: 'radio',
+      ...createClassProp(tech, {
+        defaultClass: `${RADIO}-input ${styles.radioInput}`,
+        svelteClass: `${RADIO}-input radioInput`,
+      }),
     },
     radioContainer: {
-      ...dataProps,
-      ...createCSSObj(
-        `${RADIO}-container ${styles.radioContainer} ${styles[directionClass]}`
-      ),
+      ...props.radioContainer,
+      ...createClassProp(tech, {
+        defaultClass: `${RADIO}-container ${styles.radioContainer} ${styles[directionClass]}`,
+        svelteClass: `${RADIO}-container radioContainer radio${direction}`,
+      }),
     },
     radioControl: {
-      ...hidden,
-      ...dataProps,
-      ...createCSSObj(`${RADIO}-control ${styles.radioControl}`),
+      ...props.radioControl,
+      ...createClassProp(tech, {
+        defaultClass: `${RADIO}-control ${styles.radioControl}`,
+        svelteClass: `${RADIO}-control radioControl`,
+      }),
     },
   }
 }

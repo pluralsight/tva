@@ -3,6 +3,7 @@ export type {
   ButtonOptions,
   IconButtonOptions,
 } from './components/Button/types'
+export type { CheckboxOptions } from './components/Checkbox/types'
 export type { CircularProgressOptions } from './components/CircularProgress/types'
 export type { ErrorMessageOptions } from './components/ErrorMessage/types'
 export type { FieldMessageOptions } from './components/FieldMessage/types'

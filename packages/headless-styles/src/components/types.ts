@@ -1,3 +1,11 @@
+export interface CheckboxFieldOptions extends FieldOptions {
+  checked: boolean
+  direction?: CheckboxDirection
+  id: string
+  name?: string
+  value: string
+}
+
 export interface FieldOptions {
   disabled?: boolean
   invalid?: boolean
@@ -5,5 +13,8 @@ export interface FieldOptions {
   required?: boolean
 }
 
-export type Tech = 'svelte' | ''
+// types
+
+export type CheckboxDirection = 'row' | 'col'
 export type IconSize = 's' | 'm' | 'l'
+export type Tech = 'svelte' | ''
