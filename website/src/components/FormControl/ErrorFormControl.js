@@ -24,7 +24,7 @@ function ErrorFormControl() {
   })
   const inputProps = getInputProps({
     ...fieldOptions,
-    errorId: error.container.id,
+    describedBy: error.container.id,
     id: 'email',
     name: 'required',
     placeholder: 'email@example.com',
