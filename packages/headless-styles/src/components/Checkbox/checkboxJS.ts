@@ -1,12 +1,11 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
-import { createCheckboxFieldProps } from '../sharedDefaultOptions'
-import { getDefaultCheckboxOptions } from './shared'
+import { createCheckboxProps, getDefaultCheckboxOptions } from './shared'
 import styles from './generated/checkboxCSS.module'
 import type { CheckboxOptions } from './types'
 
 export function getJSCheckboxProps(options?: CheckboxOptions) {
   const defaultOptions = getDefaultCheckboxOptions(options)
-  const props = createCheckboxFieldProps(defaultOptions)
+  const props = createCheckboxProps(defaultOptions)
   const containerStyles = {
     ...styles.checkboxContainer,
     ...styles[defaultOptions.direction as keyof typeof styles],
@@ -37,10 +36,10 @@ export function getJSCheckboxProps(options?: CheckboxOptions) {
   }
 
   return {
+    ...props,
     input: {
       a11yProps: {
         ...props.input,
-        type: 'checkbox',
       },
       ...createJSProps(
         transformStyles(styles.checkboxInput),
@@ -49,13 +48,13 @@ export function getJSCheckboxProps(options?: CheckboxOptions) {
     },
     checkboxContainer: {
       a11yProps: {
-        ...props.container,
+        ...props.checkboxContainer,
       },
       ...createJSProps(transformStyles(containerStyles), containerStyles),
     },
     checkboxControl: {
       a11yProps: {
-        ...props.control,
+        ...props.checkboxControl,
       },
       ...createJSProps(transformStyles(controlStyles), controlStyles),
     },
