@@ -8,7 +8,7 @@ const preview = `<div
   }}
 >
   <WarningIcon {...getIconProps} />
-  &nbsp; This is a warning!
+  &nbsp; Thanos has all the stones.
 </div>`
 
 export function IconColorPreview() {
