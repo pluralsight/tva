@@ -70,17 +70,17 @@ theming while still allowing for control over the icon's color directly.
 
 <IconColor />
 
-<LiveExampleTabs
-  fullCode={<IconColorFullPreview />}
-  sandboxList={{
-    chakra: 'basic-icons-chakra-vnew2e',
-    joy: 'basic-icons-mui-q0ww53',
-    styled: 'basic-icon-css-in-js-sc-rk9wxq',
-    svelte: 'basic-icons-svelte-r0dtoj',
+```jsx
+<div
+  style={{
+    color: 'var(--ps-danger-text)',
+    backgroundColor: 'var(--ps-danger-background-weak)',
   }}
 >
-  <IconColorPreview />
-</LiveExampleTabs>
+  <WarningIcon {...getIconProps} />
+  &nbsp; Watch for demogorgons.
+</div>
+```
 
 ## Icon sizes
 
