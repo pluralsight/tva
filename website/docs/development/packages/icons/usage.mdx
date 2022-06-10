@@ -137,8 +137,12 @@ import { MenuIcon } from '@pluralsight/icons/svelte'
 
 If needed, you can import SVGs directly. The approach will vary based on your framework and tooling.
 
-```javascript title="Importing SVG in React with create-react-app"
-import { ReactComponent as MenuArrowLeftIcon } from '@pluralsight/icons/svg/navigation/menu-arrow-left.svg'
+```jsx
+import menuArrowLeftSvg from '@pluralsight/icons/svg/navigation/menu-arrow-left.svg'
+
+function MenuIcon() {
+  return <img alt="" src={menuArrowLeftSvg} />
+}
 ```
 
 :::note
