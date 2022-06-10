@@ -12,7 +12,7 @@ export function BasicIconFullPreview() {
     <CodeBlock>{`import { MenuIcon } from '@pluralsight/icons'
 import { getIconProps } from '@pluralsight/headless-styles'
 
-export default function PSMenuIcon() {
+export default function NavMenuIcon() {
   return (
     <MenuIcon {...getIconProps()} />
   )
