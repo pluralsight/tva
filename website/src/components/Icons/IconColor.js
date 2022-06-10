@@ -20,7 +20,7 @@ function IconColor() {
         }}
       >
         <WarningIcon {...psIconProps} />
-        &nbsp; This is a warning!
+        &nbsp; Watch for demogorgons.
       </div>
     </Container>
   )
