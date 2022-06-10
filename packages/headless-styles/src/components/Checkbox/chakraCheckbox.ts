@@ -32,6 +32,10 @@ export const ChakraCheckbox = {
         },
       },
     },
+    icon: {
+      stroke: 'white',
+      strokeWidth: 1,
+    },
   },
   parts: ['label', 'icon', 'container', 'control'],
 }
