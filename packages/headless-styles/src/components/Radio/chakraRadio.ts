@@ -1,3 +1,4 @@
+import labelStyles from '../FormLabel/generated/formLabelCSS.module'
 import styles from './generated/radioCSS.module'
 
 export const ChakraRadio = {
@@ -34,6 +35,9 @@ export const ChakraRadio = {
           ...styles.radioControl_data_invalid__true['&:hover'],
         },
       },
+    },
+    label: {
+      ...labelStyles,
     },
   },
   parts: ['label', 'container', 'control'],

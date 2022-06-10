@@ -1,3 +1,4 @@
+import labelStyles from '../FormLabel/generated/formLabelCSS.module'
 import styles from './generated/checkboxCSS.module'
 
 export const ChakraCheckbox = {
@@ -32,6 +33,9 @@ export const ChakraCheckbox = {
           ...styles.checkboxControl_data_invalid__true['&:hover'],
         },
       },
+    },
+    label: {
+      ...labelStyles,
     },
   },
   parts: ['label', 'icon', 'container', 'control'],
