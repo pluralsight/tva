@@ -18,6 +18,7 @@ export const ChakraCheckbox = {
       },
       _checked: {
         ...styles.checkboxControl_data_checked__true,
+        color: 'white',
         _hover: {
           ...styles.checkboxControl_data_checked__true['&:hover'],
         },
@@ -31,10 +32,6 @@ export const ChakraCheckbox = {
           ...styles.checkboxControl_data_invalid__true['&:hover'],
         },
       },
-    },
-    icon: {
-      stroke: 'white',
-      strokeWidth: 1,
     },
   },
   parts: ['label', 'icon', 'container', 'control'],
