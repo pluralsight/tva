@@ -1,41 +1,38 @@
 import { createJSProps, transformStyles } from '../../utils/helpers'
 import { createCheckboxFieldProps } from '../sharedDefaultOptions'
-import { getDefaultRadioOptions } from './shared'
-import styles from './generated/radioCSS.module'
-import type { RadioOptions } from './types'
+import { getDefaultCheckboxOptions } from './shared'
+import styles from './generated/checkboxCSS.module'
+import type { CheckboxOptions } from './types'
 
-export function getJSRadioProps(options?: RadioOptions) {
-  const defaultOptions = getDefaultRadioOptions(options)
+export function getJSCheckboxProps(options?: CheckboxOptions) {
+  const defaultOptions = getDefaultCheckboxOptions(options)
   const props = createCheckboxFieldProps(defaultOptions)
   const containerStyles = {
-    ...styles.radioContainer,
+    ...styles.checkboxContainer,
     ...styles[defaultOptions.direction as keyof typeof styles],
     '&[data-disabled="true"]': {
-      ...styles.radioContainer_data_disabled__true,
+      ...styles.checkboxContainer_data_disabled__true,
     },
     '&[data-readonly="true"]': {
-      ...styles.radioContainer_data_readonly__true,
+      ...styles.checkboxContainer_data_readonly__true,
     },
   }
   const controlStyles = {
-    ...styles.radioControl,
+    ...styles.checkboxControl,
     '&[data-checked="true"]': {
-      ...styles.radioControl_data_checked__true,
+      ...styles.checkboxControl_data_checked__true,
     },
     '&[data-checked="true"]:hover': {
-      ...styles.radioControl_data_checked__true['&:hover'],
-    },
-    '&[data-checked="true"]::before': {
-      ...styles.radioControl_data_checked__true['&::before'],
+      ...styles.checkboxControl_data_checked__true['&:hover'],
     },
     '&[data-disabled="true"]': {
-      ...styles.radioControl_data_disabled__true,
+      ...styles.checkboxControl_data_disabled__true,
     },
     '&[data-invalid="true"]': {
-      ...styles.radioControl_data_invalid__true,
+      ...styles.checkboxControl_data_invalid__true,
     },
     '&[data-invalid="true"]:hover': {
-      ...styles.radioControl_data_invalid__true['&:hover'],
+      ...styles.checkboxControl_data_invalid__true['&:hover'],
     },
   }
 
@@ -43,17 +40,20 @@ export function getJSRadioProps(options?: RadioOptions) {
     input: {
       a11yProps: {
         ...props.input,
-        type: 'radio',
+        type: 'checkbox',
       },
-      ...createJSProps(transformStyles(styles.radioInput), styles.radioInput),
+      ...createJSProps(
+        transformStyles(styles.checkboxInput),
+        styles.checkboxInput
+      ),
     },
-    radioContainer: {
+    checkboxContainer: {
       a11yProps: {
         ...props.container,
       },
       ...createJSProps(transformStyles(containerStyles), containerStyles),
     },
-    radioControl: {
+    checkboxControl: {
       a11yProps: {
         ...props.control,
       },

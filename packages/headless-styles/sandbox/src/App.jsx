@@ -40,7 +40,7 @@ function App() {
 
       <Badge />
       <Button />
-      <Checkbox />
+      <Checkbox logJS />
       <CircularProgress />
       <ErrorMessage />
       <FieldMessage />

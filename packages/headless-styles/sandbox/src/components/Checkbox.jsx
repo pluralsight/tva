@@ -4,7 +4,7 @@ import {
   getFormControlProps,
   getFormLabelProps,
   getIconProps,
-  getJSRadioProps,
+  getJSCheckboxProps,
 } from '../../../src'
 import { CheckIcon } from '@pluralsight/icons'
 
@@ -112,7 +112,7 @@ export default function Checkbox({ logJS }) {
   useEffect(() => {
     if (logJS) {
       console.log({
-        ...getJSRadioProps({ checked: true, id: 'email-alerts' }),
+        ...getJSCheckboxProps({ checked: true, id: 'email-alerts' }),
       })
     }
   }, [logJS])
