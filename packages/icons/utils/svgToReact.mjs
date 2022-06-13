@@ -2,29 +2,18 @@ import path from 'path'
 import fs from 'fs'
 import { transform } from '@svgr/core'
 import svgrOptions from '../svgr.config.cjs'
+import iterateSvgs from './iterateSvgs.mjs'
 
 const srcPath = path.join('build', 'svg')
 const buildRoot = path.join('build', 'generated')
 const buildPath = path.join(buildRoot, 'react')
 const indexFile = path.resolve(buildRoot, 'index.ts')
 
-function toPascalCase(name) {
-  return name
-    .replace(/-(\w)/g, (x) => x.toUpperCase())
-    .replace(/-/g, '')
-    .replace(/^([a-z])/, (x) => x.toUpperCase())
+function getOutputDir(pathName) {
+  return pathName.replace(srcPath, buildPath)
 }
 
-function formatAndWriteTsx(reactIconContent, varName, outputPath) {
-  const outputFile = `${varName}.tsx`
-
-  fs.writeFileSync(path.resolve(outputPath, outputFile), reactIconContent)
-
-  fs.appendFileSync(
-    path.resolve(outputPath, 'index.ts'),
-    `export { default as ${varName} } from './${varName}'\n`
-  )
-
+function addIndexReference(outputPath, varName) {
   // JS import always uses '/', but system may be different
   const tsxUrl = path
     .relative(buildRoot, outputPath)
@@ -38,45 +27,49 @@ function formatAndWriteTsx(reactIconContent, varName, outputPath) {
   )
 }
 
-function buildTsxFiles(pathName) {
-  const files = fs.readdirSync(pathName, { withFileTypes: true })
-  const outputPath = pathName.replace(srcPath, buildPath)
+function formatAndWriteTsx(reactIconContent, varName, outputPath) {
+  const outputFile = `${varName}.tsx`
+
+  fs.writeFileSync(path.resolve(outputPath, outputFile), reactIconContent)
+
+  fs.appendFileSync(
+    path.resolve(outputPath, 'index.ts'),
+    `export { default as ${varName} } from './${varName}'\n`
+  )
+
+  addIndexReference(outputPath, varName)
+}
+
+async function svgToReact(pathName, varName, svgContent) {
+  const outputPath = getOutputDir(pathName)
+
+  await transform(svgContent, svgrOptions, { componentName: varName }).then(
+    (tsxContent) => {
+      formatAndWriteTsx(tsxContent, varName, outputPath)
+    }
+  )
+}
+
+function removeIndexFile() {
+  if (fs.existsSync(indexFile)) {
+    fs.rmSync(indexFile)
+  }
+}
+
+function createOutputDir(pathName) {
+  const outputPath = getOutputDir(pathName)
 
   if (!fs.existsSync(path.resolve(outputPath))) {
     fs.mkdirSync(path.resolve(outputPath), { recursive: true })
   }
 
-  files.forEach(async (file) => {
-    if (file.isDirectory()) {
-      const dirIndexFile = path.resolve(outputPath, file.name, 'index.ts')
-      if (fs.existsSync(dirIndexFile)) {
-        fs.rmSync(dirIndexFile)
-      }
-
-      svgToReact(path.join(pathName, file.name))
-    } else if (/\.svg$/.test(file.name)) {
-      const fileName = path.basename(file.name, '.svg')
-      const varName = `${toPascalCase(fileName)}Icon`
-      const svgIconContent = fs.readFileSync(path.resolve(pathName, file.name))
-
-      transform(svgIconContent, svgrOptions, { componentName: varName }).then(
-        (tsxContent) => {
-          formatAndWriteTsx(tsxContent, varName, outputPath)
-        }
-      )
-    }
-  })
-}
-
-function svgToReact(currentPath) {
-  if (/generated/.test(currentPath)) {
-    return
+  const dirIndexFile = path.resolve(outputPath, pathName, 'index.ts')
+  if (fs.existsSync(dirIndexFile)) {
+    fs.rmSync(dirIndexFile)
   }
-
-  buildTsxFiles(currentPath)
 }
 
-if (fs.existsSync(indexFile)) {
-  fs.rmSync(indexFile)
-}
-svgToReact(srcPath)
+console.log('Generating React icons...')
+removeIndexFile()
+iterateSvgs(srcPath, svgToReact, createOutputDir)
+console.log('done!')
