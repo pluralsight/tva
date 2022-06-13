@@ -60,22 +60,21 @@ The Checkboxes must always be accompanied by a label (i.e. see [getFormLabelProp
 
 Use the `indeterminate` option when you are displaying a list of items that utilize a "select all" type feature.
 
-<BasicCheckbox />
-<LiveExampleTabs
-  fullCode={<BasicCheckboxFullPreview />}
-  sandboxList={{
-    chakra: 'ps-react-chakra-w5cyts',
-    joy: 'basic-mui-evcjvj',
-    styled: 'sc-7f8dpo',
-    svelte: 'ps-svelte-pgwm8l',
-  }}
->
-  <BasicCheckboxPreview />
-</LiveExampleTabs>
+:::caution
+
+This is **unreleased** documentation for **getCheckboxProps** helper.
+
+:::
 
 ### State depending behavior
 
 States like `disabled` have an impact on the usability of a Checkbox and on the styles, except for `invalid` and `required`. These values should come from the `getFormControlProps` helper.
+
+:::caution
+
+This is **unreleased** documentation for **getCheckboxProps** helper.
+
+:::
 
 ## API
 
@@ -93,6 +92,7 @@ interface CheckboxOptions extends FieldOptions {
   checked: boolean
   direction?: Direction
   id: string
+  indeterminate?: boolean
   name?: string
   tech?: Tech
   value: string
@@ -124,6 +124,7 @@ interface CheckboxProps {
     checked: boolean
     disabled: boolean
     id: string
+    indeterminate: boolean
     name: string
     type: 'checkbox'
     value: string
@@ -158,9 +159,11 @@ interface JSCheckboxProps {
       checked: boolean
       disabled: boolean
       id: string
+      indeterminate: boolean
       name: string
-      type: 'radio'
+      type: 'checkbox'
       value: string
+      className: string
     }
     styles: Record<string, unknown>
     cssProps: TemplateLiteralString
