@@ -1,67 +1,56 @@
 import path from 'path'
 import fs from 'fs'
+import iterateSvgs from './iterateSvgs.mjs'
 
 const srcPath = path.join('build', 'svg')
 const buildPath = path.join('build', 'generated', 'svelte')
-const indexFile = path.resolve(buildPath, 'index.ts')
+const indexFile = path.join(buildPath, 'index.ts')
 
-function toPascalCase(name) {
-  return name
-    .replace(/-(\w)/g, (x) => x.toUpperCase())
-    .replace(/-/g, '')
-    .replace(/^([a-z])/, (x) => x.toUpperCase())
+function getOutputDir(pathName) {
+  return pathName.replace(srcPath, buildPath)
 }
 
-function buildSvelteFiles(pathName) {
-  const files = fs.readdirSync(pathName, { withFileTypes: true })
-  const outputPath = pathName.replace(srcPath, buildPath)
+function addIndexReference(outputPath, outputFile, varName) {
+  const importUrl = path
+    .relative(buildPath, outputPath)
+    .split(path.sep)
+    .concat([outputFile])
+    .join('/')
+
+  fs.appendFileSync(
+    indexFile,
+    `export { default as ${varName} } from './${importUrl}'\n`
+  )
+}
+
+function svgToSvelte(pathName, varName, svgContent) {
+  const outputPath = getOutputDir(pathName)
+  const outputFile = `${varName}.svelte`
+  const svelteIconContent = svgContent.replace(
+    /<svg (.*?)>/gm,
+    `<svg $1 {...$$$$restProps}>`
+  )
+
+  fs.writeFileSync(path.resolve(outputPath, outputFile), svelteIconContent)
+
+  addIndexReference(outputPath, outputFile, varName)
+}
+
+function removeIndexFile() {
+  if (fs.existsSync(indexFile)) {
+    fs.rmSync(indexFile)
+  }
+}
+
+function createOutputDir(pathName) {
+  const outputPath = getOutputDir(pathName)
 
   if (!fs.existsSync(path.resolve(outputPath))) {
     fs.mkdirSync(path.resolve(outputPath), { recursive: true })
   }
-
-  files.forEach(async (file) => {
-    if (file.isDirectory()) {
-      svgToSvelte(path.join(pathName, file.name))
-    } else if (/\.svg$/.test(file.name)) {
-      const fileName = path.basename(file.name, '.svg')
-      const varName = `${toPascalCase(fileName)}Icon`
-      const outputFile = `${varName}.svelte`
-
-      const svgIconContent = fs.readFileSync(
-        path.resolve(pathName, file.name),
-        { encoding: 'utf-8' }
-      )
-
-      const svelteIconContent = svgIconContent.replace(
-        /<svg (.*?)>/gm,
-        `<svg $1 {...$$$$restProps}>`
-      )
-
-      fs.writeFileSync(path.resolve(outputPath, outputFile), svelteIconContent)
-
-      const importUrl = path
-        .relative(buildPath, outputPath)
-        .split(path.sep)
-        .concat([outputFile])
-        .join('/')
-
-      fs.appendFileSync(
-        indexFile,
-        `export { default as ${varName} } from './${importUrl}'\n`
-      )
-    }
-  })
-}
-
-function svgToSvelte(currentPath) {
-  buildSvelteFiles(currentPath)
-}
-
-if (fs.existsSync(indexFile)) {
-  fs.rmSync(indexFile)
 }
 
 console.log('Generating Svelte icons...')
-svgToSvelte(srcPath)
+removeIndexFile()
+iterateSvgs(srcPath, svgToSvelte, createOutputDir)
 console.log('done!')
