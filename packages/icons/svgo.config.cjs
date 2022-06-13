@@ -4,7 +4,6 @@ const squareViewBox = require('./utils/squareViewBox.cjs')
 module.exports = {
   plugins: [
     'preset-default',
-    'removeXMLNS',
     'removeDimensions',
     {
       name: 'removeAttrs',
