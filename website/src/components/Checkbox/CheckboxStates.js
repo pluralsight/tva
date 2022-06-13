@@ -4,14 +4,14 @@ import {
   getFormControlProps,
 } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
-import Radio from './Radio'
+import Checkbox from './Checkbox'
 
 const controlStyles = {
   justifyContent: 'space-between',
   width: '100%',
 }
 
-function CheckedRadio() {
+function Checked() {
   const { control, fieldOptions } = getFormControlProps()
   const { value, ...labelProps } = getFormLabelProps({
     htmlFor: 'checked-example',
@@ -21,27 +21,27 @@ function CheckedRadio() {
   return (
     <div {...control} style={{ ...controlStyles }}>
       <label {...labelProps}>{value}</label>
-      <Radio {...fieldOptions} checked={true} />
+      <Checkbox {...fieldOptions} checked={true} />
     </div>
   )
 }
 
-function IndeterminateRadio() {
+function Indeterminate() {
   const { control, fieldOptions } = getFormControlProps()
   const { value, ...labelProps } = getFormLabelProps({
-    htmlFor: 'checked-example',
-    value: 'checked:',
+    htmlFor: 'indeterminate-example',
+    value: 'indeterminate:',
   })
 
   return (
     <div {...control} style={{ ...controlStyles }}>
       <label {...labelProps}>{value}</label>
-      <Radio {...fieldOptions} checked={true} indeterminate={true} />
+      <Checkbox {...fieldOptions} checked={true} indeterminate={true} />
     </div>
   )
 }
 
-function DisabledRadio() {
+function Disabled() {
   const { control, fieldOptions } = getFormControlProps({
     disabled: true,
   })
@@ -53,12 +53,12 @@ function DisabledRadio() {
   return (
     <div {...control} style={{ ...controlStyles }}>
       <label {...labelProps}>{value}</label>
-      <Radio {...fieldOptions} />
+      <Checkbox {...fieldOptions} />
     </div>
   )
 }
 
-function InvalidRadio() {
+function Invalid() {
   const { control, fieldOptions } = getFormControlProps({
     invalid: true,
   })
@@ -70,12 +70,12 @@ function InvalidRadio() {
   return (
     <div {...control} style={controlStyles}>
       <label {...labelProps}>{value}</label>
-      <Radio {...fieldOptions} checked={true} />
+      <Checkbox {...fieldOptions} checked={true} />
     </div>
   )
 }
 
-function ReadOnlyRadio() {
+function ReadOnly() {
   const { control, fieldOptions } = getFormControlProps({
     readOnly: true,
   })
@@ -87,12 +87,12 @@ function ReadOnlyRadio() {
   return (
     <div {...control} style={{ ...controlStyles }}>
       <label {...labelProps}>{value}</label>
-      <Radio {...fieldOptions} />
+      <Checkbox {...fieldOptions} />
     </div>
   )
 }
 
-function RequiredRadio(props) {
+function Required(props) {
   const { control, fieldOptions } = getFormControlProps({
     required: true,
   })
@@ -104,7 +104,7 @@ function RequiredRadio(props) {
   return (
     <div {...control} style={{ ...controlStyles }}>
       <label {...labelProps}>required:</label>
-      <Radio
+      <Checkbox
         {...fieldOptions}
         checked={props.checked}
         onClick={props.onClick}
@@ -130,14 +130,12 @@ function CheckboxStates() {
           width: '75%',
         }}
       >
-        <CheckedRadio />
-        <DisabledRadio />
-        <InvalidRadio />
-        <ReadOnlyRadio />
-        <RequiredRadio
-          checked={requiredChecked}
-          onClick={handleRequiredChecked}
-        />
+        <Checked />
+        <Disabled />
+        <Invalid />
+        <ReadOnly />
+        <Required checked={requiredChecked} onClick={handleRequiredChecked} />
+        <Indeterminate />
       </div>
     </Container>
   )

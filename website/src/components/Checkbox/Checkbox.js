@@ -16,7 +16,7 @@ function Check(props) {
   }
 
   if (props.indeterminate) {
-    // TODO: Add IndeterminateIcon when available
+    // TODO: Add IndeterminateIcon when available & update Checkbox prop
     return <p>-</p>
   }
 
