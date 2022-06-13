@@ -24,19 +24,24 @@ function Check(props) {
 }
 
 export default function Checkbox(props) {
+  const { onClick } = props
   const { fieldOptions } = getFormControlProps({ ...props })
   const checkbox = getCheckboxProps({ ...fieldOptions, ...props })
   const { value, ...labelProps } = getFormLabelProps({
     ...props,
     value: props.label,
   })
+  const { checked, ...inputProps } = checkbox.input
 
   return (
     <label {...checkbox.checkboxContainer}>
-      <input {...checkbox.input} onChange={props.onClick} />
+      {onClick && (
+        <input {...inputProps} checked={checked} onChange={props.onClick} />
+      )}
+      {!onClick && <input {...inputProps} defaultChecked={checked} />}
       <span {...checkbox.checkboxControl}>
         <Check
-          checked={checkbox.input.checked}
+          checked={checked}
           iconOptions={checkbox.iconOptions}
           indeterminate={false}
         />

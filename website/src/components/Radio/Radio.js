@@ -8,10 +8,14 @@ export default function Radio(props) {
     ...radioOptions,
     value: props.label,
   })
+  const { checked, ...inputProps } = radioProps.input
 
   return (
     <label {...radioProps.radioContainer}>
-      <input {...radioProps.input} onChange={onClick} />
+      {onClick && (
+        <input {...inputProps} onChange={onClick} checked={checked} />
+      )}
+      {!onClick && <input {...inputProps} defaultChecked={checked} />}
       <span {...radioProps.radioControl} />
       <span {...labelProps}>{value}</span>
     </label>
