@@ -44,8 +44,10 @@ function removeIndexFile() {
 function createOutputDir(pathName) {
   const outputPath = getOutputDir(pathName)
 
-  if (!fs.existsSync(resolve(outputPath))) {
+  try {
     fs.mkdirSync(resolve(outputPath), { recursive: true })
+  } catch (err) {
+    console.log(`Failed to create ${outputPath}`)
   }
 }
 
