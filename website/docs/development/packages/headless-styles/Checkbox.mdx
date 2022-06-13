@@ -1,0 +1,190 @@
+---
+sidebar_position: 4
+tags: [Development, Packages, Components, Headless Styles, Checkbox, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicCheckbox from '@site/src/components/Checkbox/BasicCheckbox'
+import {
+  BasicCheckboxPreview,
+  BasicCheckboxFullPreview,
+} from '@site/src/components/Checkbox/BasicCheckbox.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+
+:::caution
+
+This is **unreleased** documentation for **headless-styles** package.
+
+:::
+
+The `getCheckboxProps` helper is used when a user needs to select multiple values from options.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Checkbox"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getCheckboxProps } from '@pluralsight/headless-styles'
+```
+
+The Checkboxes must always be accompanied by a label (i.e. see [getFormLabelProps](./FormControl)).
+
+## Usage
+
+### Basic Checkbox
+
+<BasicCheckbox />
+<LiveExampleTabs
+  fullCode={<BasicCheckboxFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-w5cyts',
+    joy: 'basic-mui-evcjvj',
+    styled: 'sc-7f8dpo',
+    svelte: 'ps-svelte-pgwm8l',
+  }}
+>
+  <BasicCheckboxPreview />
+</LiveExampleTabs>
+
+### Indeterminate Checkbox
+
+Use the `indeterminate` option when you are displaying a list of items that utilize a "select all" type feature.
+
+<BasicCheckbox />
+<LiveExampleTabs
+  fullCode={<BasicCheckboxFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-w5cyts',
+    joy: 'basic-mui-evcjvj',
+    styled: 'sc-7f8dpo',
+    svelte: 'ps-svelte-pgwm8l',
+  }}
+>
+  <BasicCheckboxPreview />
+</LiveExampleTabs>
+
+### State depending behavior
+
+States like `disabled` have an impact on the usability of a Checkbox and on the styles, except for `invalid` and `required`. These values should come from the `getFormControlProps` helper.
+
+## API
+
+| Name                 | Argument Type                                    | Default            | Description                        |
+| -------------------- | ------------------------------------------------ | ------------------ | ---------------------------------- |
+| `getCheckboxProps`   | **options**: [CheckboxOptions](#checkboxoptions) | **kind**: 'strong' | Get checkbox styles for CSS usage. |
+| `getJSCheckboxProps` | **options**: [CheckboxOptions](#checkboxoptions) | same as CSS API    | CSS-in-JS API                      |
+
+## CheckboxOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface CheckboxOptions extends FieldOptions {
+  checked: boolean
+  direction?: Direction
+  id: string
+  name?: string
+  tech?: Tech
+  value: string
+}
+```
+
+```typescript title="Import example"
+import type { CheckboxOptions } from '@pluralsight/headless-styles/types'
+```
+
+## FieldOptions
+
+```typescript
+interface FieldOptions {
+  disabled?: boolean
+  invalid?: boolean
+  readOnly?: boolean
+  required?: boolean
+}
+```
+
+## CheckboxProps
+
+```typescript
+interface CheckboxProps {
+  input: {
+    'aria-disabled': boolean
+    'aria-invalid': boolean
+    checked: boolean
+    disabled: boolean
+    id: string
+    name: string
+    type: 'checkbox'
+    value: string
+    className: string
+  }
+  checkboxContainer: {
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    'data-readonly': boolean
+    className: string
+  }
+  checkboxControl: {
+    'aria-hidden': true
+    'data-checked': boolean
+    'data-disabled': boolean
+    'data-invalid': boolean
+    'data-readonly': boolean
+    className: string
+  }
+}
+```
+
+## JSCheckboxProps
+
+```typescript
+interface JSCheckboxProps {
+  input: {
+    a11yProps: {
+      'aria-disabled': boolean
+      'aria-invalid': boolean
+      checked: boolean
+      disabled: boolean
+      id: string
+      name: string
+      type: 'radio'
+      value: string
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+  checkboxContainer: {
+    a11yProps: {
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+      'data-readonly': boolean
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+  checkboxControl: {
+    a11yProps: {
+      'aria-hidden': true
+      'data-checked': boolean
+      'data-disabled': boolean
+      'data-invalid': boolean
+      'data-readonly': boolean
+    }
+    styles: Record<string, unknown>
+    cssProps: TemplateLiteralString
+  }
+}
+```
