@@ -1,13 +1,13 @@
-import path from 'path'
+import { join, resolve, relative, sep } from 'path'
 import fs from 'fs'
 import { transform } from '@svgr/core'
 import svgrOptions from '../svgr.config.cjs'
 import iterateSvgs from './iterateSvgs.mjs'
 
-const srcPath = path.join('build', 'svg')
-const buildRoot = path.join('build', 'generated')
-const buildPath = path.join(buildRoot, 'react')
-const indexFile = path.resolve(buildRoot, 'index.ts')
+const srcPath = join('build', 'svg')
+const buildRoot = join('build', 'generated')
+const buildPath = join(buildRoot, 'react')
+const indexFile = resolve(buildRoot, 'index.ts')
 
 function getOutputDir(pathName) {
   return pathName.replace(srcPath, buildPath)
@@ -15,9 +15,8 @@ function getOutputDir(pathName) {
 
 function addIndexReference(outputPath, varName) {
   // JS import always uses '/', but system may be different
-  const tsxUrl = path
-    .relative(buildRoot, outputPath)
-    .split(path.sep)
+  const tsxUrl = relative(buildRoot, outputPath)
+    .split(sep)
     .concat([varName])
     .join('/')
 
@@ -30,10 +29,10 @@ function addIndexReference(outputPath, varName) {
 function formatAndWriteTsx(reactIconContent, varName, outputPath) {
   const outputFile = `${varName}.tsx`
 
-  fs.writeFileSync(path.resolve(outputPath, outputFile), reactIconContent)
+  fs.writeFileSync(resolve(outputPath, outputFile), reactIconContent)
 
   fs.appendFileSync(
-    path.resolve(outputPath, 'index.ts'),
+    resolve(outputPath, 'index.ts'),
     `export { default as ${varName} } from './${varName}'\n`
   )
 
@@ -59,11 +58,11 @@ function removeIndexFile() {
 function createOutputDir(pathName) {
   const outputPath = getOutputDir(pathName)
 
-  if (!fs.existsSync(path.resolve(outputPath))) {
-    fs.mkdirSync(path.resolve(outputPath), { recursive: true })
+  if (!fs.existsSync(resolve(outputPath))) {
+    fs.mkdirSync(resolve(outputPath), { recursive: true })
   }
 
-  const dirIndexFile = path.resolve(outputPath, pathName, 'index.ts')
+  const dirIndexFile = resolve(outputPath, pathName, 'index.ts')
   if (fs.existsSync(dirIndexFile)) {
     fs.rmSync(dirIndexFile)
   }

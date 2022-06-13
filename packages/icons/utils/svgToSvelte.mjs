@@ -1,19 +1,18 @@
-import path from 'path'
+import { join, relative, resolve, sep } from 'path'
 import fs from 'fs'
 import iterateSvgs from './iterateSvgs.mjs'
 
-const srcPath = path.join('build', 'svg')
-const buildPath = path.join('build', 'generated', 'svelte')
-const indexFile = path.join(buildPath, 'index.ts')
+const srcPath = join('build', 'svg')
+const buildPath = join('build', 'generated', 'svelte')
+const indexFile = join(buildPath, 'index.ts')
 
 function getOutputDir(pathName) {
   return pathName.replace(srcPath, buildPath)
 }
 
 function addIndexReference(outputPath, outputFile, varName) {
-  const importUrl = path
-    .relative(buildPath, outputPath)
-    .split(path.sep)
+  const importUrl = relative(buildPath, outputPath)
+    .split(sep)
     .concat([outputFile])
     .join('/')
 
@@ -31,7 +30,7 @@ function svgToSvelte(pathName, varName, svgContent) {
     `<svg $1 {...$$$$restProps}>`
   )
 
-  fs.writeFileSync(path.resolve(outputPath, outputFile), svelteIconContent)
+  fs.writeFileSync(resolve(outputPath, outputFile), svelteIconContent)
 
   addIndexReference(outputPath, outputFile, varName)
 }
@@ -45,8 +44,8 @@ function removeIndexFile() {
 function createOutputDir(pathName) {
   const outputPath = getOutputDir(pathName)
 
-  if (!fs.existsSync(path.resolve(outputPath))) {
-    fs.mkdirSync(path.resolve(outputPath), { recursive: true })
+  if (!fs.existsSync(resolve(outputPath))) {
+    fs.mkdirSync(resolve(outputPath), { recursive: true })
   }
 }
 
