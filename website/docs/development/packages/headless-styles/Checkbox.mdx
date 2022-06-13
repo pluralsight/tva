@@ -13,6 +13,7 @@ import {
   BasicCheckboxPreview,
   BasicCheckboxFullPreview,
 } from '@site/src/components/Checkbox/BasicCheckbox.preview'
+import SelectAllCheckbox from '@site/src/components/Checkbox/SelectAllCheckbox'
 import CheckboxStates from '@site/src/components/Checkbox/CheckboxStates'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
@@ -59,13 +60,47 @@ The Checkboxes must always be accompanied by a label (i.e. see [getFormLabelProp
 
 ### Indeterminate Checkbox
 
-Use the `indeterminate` option when you are displaying a list of items that utilize a "select all" type feature.
+Use the `indeterminate` option when you are displaying a list of items that indicate the user has selected **some** items in the list, but not all.
 
 :::caution
 
 This is **unreleased** documentation for **getCheckboxProps** helper.
 
 :::
+
+```jsx
+const [options, setOptions] = useState({
+  email: false,
+  sms: false,
+  phone: false
+})
+const checkedItems = Object.keys(options).map((optionItem) => (
+  return options[optionItem]
+))
+const allChecked = checkedItems.every(Boolean)
+// highlight-next-line
+const isIndeterminate = checkedItems.some(Boolean) && !allChecked
+```
+
+#### Select all checkbox list state
+
+Use the `checked` option when you are displaying a list of items that indicate the user has selected **all** items in the list.
+
+<SelectAllCheckbox />
+
+```jsx
+const [options, setOptions] = useState({
+  email: false,
+  sms: false,
+  phone: false
+})
+const checkedItems = Object.keys(options).map((optionItem) => (
+  return options[optionItem]
+))
+// highlight-next-line
+const allChecked = checkedItems.every(Boolean)
+const isIndeterminate = checkedItems.some(Boolean) && !allChecked
+```
 
 ### State depending behavior
 

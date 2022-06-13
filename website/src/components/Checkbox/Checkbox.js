@@ -16,8 +16,7 @@ function Check(props) {
   }
 
   if (props.indeterminate) {
-    // TODO: Add IndeterminateIcon when available & update Checkbox prop
-    return <p>-</p>
+    return <CheckIcon {...icon} />
   }
 
   return <CheckIcon {...icon} />
@@ -43,7 +42,7 @@ export default function Checkbox(props) {
         <Check
           checked={checked}
           iconOptions={checkbox.iconOptions}
-          indeterminate={false}
+          indeterminate={checkbox.indeterminate ?? false}
         />
       </span>
       <label {...labelProps}>{value}</label>

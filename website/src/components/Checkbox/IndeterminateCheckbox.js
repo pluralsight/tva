@@ -3,7 +3,7 @@ import { getFormControlProps } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
 import Checkbox from './Checkbox'
 
-export default function BasicCheckbox() {
+export default function IndeterminateCheckbox() {
   const { control } = getFormControlProps()
   const [contactOptions, setContactOptions] = useState({
     email: false,
