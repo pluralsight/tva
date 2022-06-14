@@ -31,7 +31,7 @@ Since the first concept of a component framework (Polymer), components have swep
 
 However, in the past couple of years, we have realized that just because we _can_ create component libraries...doesn't necessarily mean we _need_ to. This school of thought has brought us into the "headless" era where we can provide the maximum flexibility to consumers without sacrificing the control for them.
 
-To put simply, in order to give our users the most flexibility so they can have whatever starting point or tech stack they would like, going "headless" is the answer. Having a vanilla Javascript library (headless-styles) will always scale better than a vendor specific library.
+To put it simply, in order to give our users the most flexibility so they can have whatever starting point or tech stack they would like, going "headless" is the answer. Having a plain Javascript library (headless-styles) will always scale better than a vendor-specific library.
 
 _This allows our library to scale/work no matter the stack and accomodate everyone which is one of our core values - to be inclusive to all projects and platforms._
 
