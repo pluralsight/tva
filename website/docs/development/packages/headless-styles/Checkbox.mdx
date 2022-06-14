@@ -13,6 +13,7 @@ import {
   BasicCheckboxPreview,
   BasicCheckboxFullPreview,
 } from '@site/src/components/Checkbox/BasicCheckbox.preview'
+import IndeterminateCheckbox from '@site/src/components/Checkbox/IndeterminateCheckbox'
 import SelectAllCheckbox from '@site/src/components/Checkbox/SelectAllCheckbox'
 import CheckboxStates from '@site/src/components/Checkbox/CheckboxStates'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
@@ -62,11 +63,7 @@ The Checkboxes must always be accompanied by a label (i.e. see [getFormLabelProp
 
 Use the `indeterminate` option when you are displaying a list of items that indicate the user has selected **some** items in the list, but not all.
 
-:::caution
-
-This is **unreleased** documentation for **getCheckboxProps** helper.
-
-:::
+<IndeterminateCheckbox />
 
 ```jsx
 const [options, setOptions] = useState({
@@ -81,6 +78,12 @@ const allChecked = checkedItems.every(Boolean)
 // highlight-next-line
 const isIndeterminate = checkedItems.some(Boolean) && !allChecked
 ```
+
+:::note
+
+Due to the nature of `indeterminate` not being an attribute for the native `input` tag, (only a CSS psuedo-selector: `:indeterminate`) the `input.indeterminate` value returned from the checkbox helper is a **boolean String**.
+
+:::
 
 #### Select all checkbox list state
 
@@ -156,7 +159,7 @@ interface CheckboxProps {
     checked: boolean
     disabled: boolean
     id: string
-    indeterminate: boolean
+    indeterminate: string
     name: string
     type: 'checkbox'
     value: string

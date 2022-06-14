@@ -1,55 +1,53 @@
-import React, { useState } from 'react'
-import { getFormControlProps } from '@pluralsight/headless-styles'
+import React from 'react'
 import Container from '../Container/Container'
 import Checkbox from './Checkbox'
+import styles from './selectAll.module.css'
 
 export default function IndeterminateCheckbox() {
-  const { control } = getFormControlProps()
-  const [contactOptions, setContactOptions] = useState({
-    email: false,
-    sms: false,
-  })
-
-  function handleClick(event) {
-    const { target } = event
-
-    setContactOptions((prev) => ({
-      ...prev,
-      [target.value]: target.checked,
-    }))
-  }
-
   return (
-    <Container>
-      <div {...control}>
-        <Checkbox
-          htmlFor="email"
-          value="email"
-          id="email"
-          label="Email"
-          onClick={handleClick}
-          name="contact"
-          checked={contactOptions.email}
-        />
-        <Checkbox
-          htmlFor="sms"
-          value="sms"
-          id="sms"
-          label="SMS"
-          onClick={handleClick}
-          name="contact"
-          checked={contactOptions.sms}
-        />
-        <Checkbox
-          htmlFor="phone"
-          value="phone"
-          id="phone"
-          label="Phone"
-          onClick={handleClick}
-          name="contact"
-          checked={contactOptions.phone}
-        />
-      </div>
+    <Container textAlign="initial">
+      <ul className={styles.list}>
+        <li>
+          <Checkbox
+            value="all-selected"
+            id="all-selected"
+            label="Select all"
+            name="select-all"
+            indeterminate={true}
+            checked={true}
+          />
+        </li>
+        <li className={styles.listItem}>
+          <Checkbox
+            htmlFor="email"
+            value="email"
+            id="email"
+            label="Email"
+            name="contact"
+            checked={false}
+          />
+        </li>
+        <li className={styles.listItem}>
+          <Checkbox
+            htmlFor="sms"
+            value="sms"
+            id="sms"
+            label="SMS"
+            name="contact"
+            checked={false}
+          />
+        </li>
+        <li className={styles.listItem}>
+          <Checkbox
+            htmlFor="phone"
+            value="phone"
+            id="phone"
+            label="Phone"
+            name="contact"
+            checked={true}
+          />
+        </li>
+      </ul>
     </Container>
   )
 }

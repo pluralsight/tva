@@ -5,7 +5,7 @@ import styles from './selectAll.module.css'
 
 export default function SelectAllCheckbox() {
   return (
-    <Container>
+    <Container textAlign="initial">
       <ul className={styles.list}>
         <li>
           <Checkbox

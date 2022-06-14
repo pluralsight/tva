@@ -5,7 +5,7 @@ import {
   getIconProps,
   getFormLabelProps,
 } from '@pluralsight/headless-styles'
-import { CheckIcon } from '@pluralsight/icons'
+import { CheckIcon, IndeterminateIcon } from '@pluralsight/icons'
 
 function Check(props) {
   const { checked } = props
@@ -15,8 +15,8 @@ function Check(props) {
     return null
   }
 
-  if (props.indeterminate) {
-    return <CheckIcon {...icon} />
+  if (props.indeterminate === 'true') {
+    return <IndeterminateIcon {...icon} />
   }
 
   return <CheckIcon {...icon} />
@@ -42,7 +42,7 @@ export default function Checkbox(props) {
         <Check
           checked={checked}
           iconOptions={checkbox.iconOptions}
-          indeterminate={checkbox.indeterminate ?? false}
+          indeterminate={checkbox.input.indeterminate}
         />
       </span>
       <span {...labelProps}>{value}</span>

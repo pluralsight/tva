@@ -5136,12 +5136,12 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:experimental":
-  version: 0.0.0-experimental-746bbe-20220610
-  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-746bbe-20220610"
+  version: 0.0.0-experimental-f973ae-20220614
+  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-f973ae-20220614"
   dependencies:
     kebab-case: ^1.0.1
     tslib: ^2.3.1
-  checksum: aec8001bdc4e01dcff11a8d563dac8a9b5df6ca00f646076c66fe2f64fe9bd8cfc4bd0757653232f0a708702aa1d9373fd5acd0931d2ab645d319876ca39c45a
+  checksum: daf839fac20b46668f93e1f9bde68976faced74bb3b413445280788ca1c593dbe6749d8ca9264408833375fff407261e40dff073fd6f17b65b6fa17851593673
   languageName: node
   linkType: hard
 
@@ -5162,8 +5162,8 @@ __metadata:
   linkType: soft
 
 "@pluralsight/icons@npm:experimental":
-  version: 0.0.0-experimental-43902d-20220614
-  resolution: "@pluralsight/icons@npm:0.0.0-experimental-43902d-20220614"
+  version: 0.0.0-experimental-f973ae-20220614
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-f973ae-20220614"
   dependencies:
     tslib: ^2.3.1
   peerDependencies:
@@ -5171,7 +5171,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 038d13493f3a0d857bafb905ba25ebb9e55fe892334e990a8059242b7d5d5ff402133bcc25e124eef44fe2666e39079d5fae2b6b7f09c4e7a4869972e952f6ef
+  checksum: b6a2703114509af4e533455b1fea26502dfeec8896aab43f31792617c2c00c83431a2c81c21744512abf9f500ddb63f26fa430b058ba2f33e81b677c1f5bc7db
   languageName: node
   linkType: hard
 
