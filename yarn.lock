@@ -5161,23 +5161,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pluralsight/icons@npm:alpha":
-  version: 0.0.0-alpha-ec347e
-  resolution: "@pluralsight/icons@npm:0.0.0-alpha-ec347e"
-  dependencies:
-    tslib: ^2.3.1
-  peerDependencies:
-    react: "*"
-  peerDependenciesMeta:
-    react:
-      optional: true
-  checksum: 0ddf3c9c71eb8b1622bd6d5361052db5e8b5368515eaec1e6d68fde1735a9979fe3958efe019b9fc1ba417f986c54ff0fc4980ee4b11e9427a6ad935946a7335
-  languageName: node
-  linkType: hard
-
 "@pluralsight/icons@npm:experimental":
-  version: 0.0.0-experimental-ec347e-20220602
-  resolution: "@pluralsight/icons@npm:0.0.0-experimental-ec347e-20220602"
+  version: 0.0.0-experimental-43902d-20220614
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-43902d-20220614"
   dependencies:
     tslib: ^2.3.1
   peerDependencies:
@@ -5185,7 +5171,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: c0dc211f996e0feafda9c81c2bd97cc756a5711c5c5ebb8f82b3f0469f915a72be1bfa5246500874285eb2f9da4f0ce49576cf87ffc98e01677f10c290f0fd22
+  checksum: 038d13493f3a0d857bafb905ba25ebb9e55fe892334e990a8059242b7d5d5ff402133bcc25e124eef44fe2666e39079d5fae2b6b7f09c4e7a4869972e952f6ef
   languageName: node
   linkType: hard
 
@@ -17399,7 +17385,7 @@ __metadata:
   resolution: "sandbox@workspace:packages/headless-styles/sandbox"
   dependencies:
     "@pluralsight/design-tokens": alpha
-    "@pluralsight/icons": alpha
+    "@pluralsight/icons": experimental
     "@vitejs/plugin-react": ^1.0.7
     css: ^3.0.0
     react: ^18.0.0

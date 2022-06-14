@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@pluralsight/design-tokens": "alpha",
-    "@pluralsight/icons": "alpha",
+    "@pluralsight/icons": "experimental",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.8.0"
   }

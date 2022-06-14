@@ -6,7 +6,7 @@ import {
   getIconProps,
   getJSCheckboxProps,
 } from '../../../src'
-import { CheckIcon } from '@pluralsight/icons'
+import { CheckIcon, IndeterminateIcon } from '@pluralsight/icons'
 
 const stateFields = [
   {
@@ -23,6 +23,7 @@ const stateFields = [
     checked: true,
     disabled: false,
     id: 2,
+    invalid: true,
     label: 'Invalid',
     name: 'invalid',
     readOnly: false,
@@ -48,7 +49,37 @@ const stateFields = [
     required: false,
     value: '4',
   },
+  {
+    checked: true,
+    disabled: false,
+    indeterminate: true,
+    id: 5,
+    label: 'Indeterminate',
+    name: 'indeterminate',
+    readOnly: false,
+    required: false,
+    value: '5',
+  },
 ]
+
+function Icon(props) {
+  const { checked, indeterminate } = props
+  const icon = getIconProps(props.iconOptions)
+
+  if (!checked) {
+    return null
+  }
+
+  if (indeterminate === 'true') {
+    return <IndeterminateIcon {...icon} />
+  }
+
+  if (checked) {
+    return <CheckIcon {...icon} />
+  }
+
+  return null
+}
 
 function CheckboxInput(props) {
   const { fieldOptions } = getFormControlProps({ ...props })
@@ -57,22 +88,25 @@ function CheckboxInput(props) {
     ...props,
     value: props.label,
   })
-  const icon = getIconProps(checkbox.iconOptions)
 
   return (
     <label {...checkbox.checkboxContainer}>
       <input {...checkbox.input} onChange={props.onClick} />
       <span {...checkbox.checkboxControl}>
-        {checkbox.input.checked && <CheckIcon {...icon} />}
+        <Icon
+          checked={checkbox.input.checked}
+          indeterminate={checkbox.input.indeterminate}
+          iconOptions={checkbox.iconOptions}
+        />
       </span>
       <label {...labelProps}>{value}</label>
     </label>
   )
 }
 
-function StateForm(props) {
-  const { control } = getFormControlProps({ groupType: 'radiogroup' })
-  const [state, setState] = useState('2')
+function StateForm() {
+  const { control } = getFormControlProps()
+  const [state, setState] = useState('')
 
   function handleClick(e) {
     setState(e.target.value)
@@ -85,8 +119,7 @@ function StateForm(props) {
           {...option}
           onClick={handleClick}
           key={option.id}
-          invalid={option.name === 'invalid'}
-          checked={state === option.value}
+          checked={option.checked ?? state === options.value}
         />
       ))}
     </div>
