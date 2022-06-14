@@ -11,7 +11,7 @@ function toPascalCase(name) {
 export default function iterateSvgs(currentPath, processFile, onEnterDir) {
   const files = readdirSync(currentPath, { withFileTypes: true })
 
-  onEnterDir(currentPath)
+  onEnterDir && onEnterDir(currentPath)
 
   files.forEach((file) => {
     if (file.isDirectory()) {

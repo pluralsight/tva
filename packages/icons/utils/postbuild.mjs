@@ -14,6 +14,11 @@ renameSync(
   resolve(buildPath, 'svelte', indexFileOut)
 )
 
+copyFileSync(
+  resolve(srcPath, 'string', indexFileIn),
+  resolve(buildPath, 'string', indexFileOut)
+)
+
 function createModuleWrappers(currentPath) {
   const files = readdirSync(currentPath, { withFileTypes: true })
 

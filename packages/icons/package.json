@@ -25,6 +25,10 @@
       "require": "./build/svelte/index.js"
     },
     "./svelte/*": "./build/svelte/*.svelte",
+    "./string": {
+      "import": "./build/string/wrapper.js",
+      "require": "./build/string/index.js"
+    },
     "./svg/": "./build/svg/",
     "./package.json": "./package.json"
   },
@@ -41,8 +45,9 @@
     "build/wrapper.js"
   ],
   "scripts": {
-    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run build:ts && yarn run create:entryFiles",
+    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run build:strings && yarn run build:ts && yarn run create:entryFiles",
     "build:ts": "tsc --project ./tsconfig.cjs.json",
+    "build:strings": "yarn node ./utils/svgToStrings.mjs",
     "build:react": "yarn node ./utils/svgToReact.mjs",
     "build:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "build:svg": "svgo --recursive --folder src --output build/svg",

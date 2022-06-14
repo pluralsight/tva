@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "include": ["build/generated/**/*"],
-  "exclude": [],
+  "exclude": ["src"],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": "src",
