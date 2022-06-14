@@ -12,7 +12,7 @@ const icon = getIconProps(checkbox.iconOptions)
   <span {...checkbox.checkboxControl}>
     {checkbox.input.checked && <CheckIcon {...icon} />}
   </span>
-  <label {...labelProps}>{value}</label>
+  <span {...labelProps}>{value}</span>
 </label>`}</CodeBlock>
   )
 }
@@ -42,7 +42,7 @@ export default function Checkbox(props) {
       <span {...checkbox.checkboxControl}>
         {checkbox.input.checked && <CheckIcon {...icon} />}
       </span>
-      <label {...labelProps}>{value}</label>
+      <span {...labelProps}>{value}</span>
     </label>
   )
 }`}</CodeBlock>

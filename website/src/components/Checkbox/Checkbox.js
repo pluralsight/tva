@@ -45,7 +45,7 @@ export default function Checkbox(props) {
           indeterminate={checkbox.indeterminate ?? false}
         />
       </span>
-      <label {...labelProps}>{value}</label>
+      <span {...labelProps}>{value}</span>
     </label>
   )
 }
