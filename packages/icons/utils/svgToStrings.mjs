@@ -1,5 +1,6 @@
 import { join, resolve } from 'path'
-import { existsSync, rmSync, mkdirSync, writeFileSync, cpSync } from 'fs'
+import { existsSync, rmSync, mkdirSync, writeFileSync } from 'fs'
+import fse from 'fs-extra'
 import iterateSvgs from './iterateSvgs.mjs'
 
 const srcPath = join('build', 'svg')
@@ -43,7 +44,5 @@ clean()
 createOutputDir(buildPath)
 iterateSvgs(srcPath, svgToString)
 writeDataFile()
-cpSync(resolve('src', 'string'), join('build', 'generated', 'string'), {
-  recursive: true,
-})
+fse.copySync(resolve('src', 'string'), join('build', 'generated', 'string'))
 console.log('done!')
