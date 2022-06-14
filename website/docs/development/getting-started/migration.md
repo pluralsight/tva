@@ -44,7 +44,7 @@ All of our packages are lightweight because they only use vanilla JS/TS, so you 
 
 ### Step 2 - Create
 
-Since PD is a headless library (i.e., not a component library), you will (and should) create a new Button component in your project. This will allow you to have full control of what matters while PD controls the "small things" (styles and accessiblity).
+Since PD is a headless library (i.e., not a component library), you will (and should) create a new Button component in your project. This will allow you to have full control of your implementation while PD provides the styles and accessibility.
 
 :::tip
 It is considered a React/Component library best practice to create Button components with a **specific purpose**. An example would be to create an "EditButton" or "PrimaryButton". This helps you to create components that will contain less props which will have better performance and scale easier. **This design by nature will have less risk of bugs and code impact.**
