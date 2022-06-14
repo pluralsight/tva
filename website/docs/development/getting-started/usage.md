@@ -7,7 +7,7 @@ tags: [Development, Usage, Getting Started, Web, React Native]
 
 :::caution
 
-This is **unreleased** documentation for the **headless-styles** and **icons** package.
+This page is a work in progress.
 
 :::
 

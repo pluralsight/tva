@@ -20,12 +20,8 @@ Pluralsight Design is available as a set of multiple npm packages for web and ou
 For the entire kitchen sink up front, just install the `headless-styles` and `icons` package.
 
 ```bash npm2yarn
-npm install @pluralsight/headless-styles@alpha @pluralsight/icons@alpha
+npm install @pluralsight/headless-styles@experimental @pluralsight/icons@experimental
 ```
-
-:::caution
-The `headless-styles` and `icons` packages will be available in the future.
-:::
 
 Or if you want maximum flexibility, just install the `design-tokens` package:
 

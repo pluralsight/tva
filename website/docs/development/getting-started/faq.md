@@ -5,12 +5,6 @@ tags: [Development, FAQ, Getting Started]
 
 # FAQ
 
-:::caution
-
-This page is a work in progress.
-
-:::
-
 Missing something? Check out some of these common questions first.
 
 If you still can't find what you're looking for, you can refer to our [support page](https://github.com/pluralsight/tva/discussions/categories/q-a)
@@ -31,46 +25,38 @@ There are a few ways to support Pluralsight Design:
   - Improve our documentation, fix bugs, or add features by [submitting a pull request](https://github.com/pluralsight/tva/pulls).
 - **Star the repo**. The quickest way to help us get a win is by clicking that "star" button in Github!
 
-## Why doesn't your library export React components?
+## Why doesn't your headless-styles library export components?
 
-Since the first concept of a Component framework (Polymer), Components have swept the frontend industry introducing us to such libraries as React, Vue, and Svelte. Even Angular joined the club! However, this concept quickly changed the UI libraries we have known to instead be frontend vendor specific (MUI - React, React Bootstrap, etc.). This movement has been great in helping us understand Components and provide a great experience to users with the frameworks we have chosen to use.
+Since the first concept of a component framework (Polymer), components have swept the frontend industry introducing us to such libraries as React, Vue, and Svelte. Even Angular joined the club! However, this concept quickly changed the UI libraries we have known to be frontend vendor specific (MUI - React, React Bootstrap, etc.). This movement has been great in helping us understand components and provide a great experience to users with the frameworks we have chosen to use.
 
-However, in the past couple of years, we have realized that just because we _can_ create Component libraries...doesn't necessarily mean we _need_ to. This school of thought has brought us into the "headless" era where we can provide the maximum flexibility to consumers without sacrificing the control for them.
+However, in the past couple of years, we have realized that just because we _can_ create component libraries...doesn't necessarily mean we _need_ to. This school of thought has brought us into the "headless" era where we can provide the maximum flexibility to consumers without sacrificing the control for them.
 
-To put simply, in order to give our users the most flexibility so they can use whatever starting point or tech stack they would like, going "headless" is the answer.
+To put simply, in order to give our users the most flexibility so they can have whatever starting point or tech stack they would like, going "headless" is the answer. Having a vanilla Javascript library (headless-styles) will always scale better than a vendor specific library.
 
-_This allows us to scale no matter the stack and accomodate everyone which is one of our core values - to be inclusive to all projects and platforms._
+_This allows our library to scale/work no matter the stack and accomodate everyone which is one of our core values - to be inclusive to all projects and platforms._
 
 ## What packages are available for mobile platforms?
 
-Because mobile platforms are fundamentally different than the web, only the `tokens` package is available for mobile platforms (all iOS and Android). However, `tokens` does come with everything you could possibly need for any platform (web and mobile):
+Because mobile platforms are fundamentally different than the web, only the `design-tokens` package is available for mobile platforms (all iOS and Android). However, `design-tokens` does come with everything you could possibly need for any platform (web and mobile): our Themes.
 
-- Style Properties
-- Fonts
-- Icon assets (mobile platform specific)
-
-This is why we recommend _only_ using the `tokens` package if you want the most flexibility and own as much as possible to prevent roadblocks from releases.
+This is why we recommend _only_ using the `design-tokens` package if you want the most flexibility and own as much as possible to prevent roadblocks from releases.
 
 ## What is a headless component?
 
-The term "headless" just refers to creating a compatible function that works along with a Component definition. This means that instead of exporting a framework specific Component, we are just exporting a vanilla Javascript function that returns an Object which contains all the accessbility and style properties you need for the best UI presentation. How you choose to use it, is completely up to you - and there are a _thousand_ different ways to use headless components to the benefit of your unique project.
+The term "headless" just refers to creating a compatible function that works along with a component definition. This means that instead of exporting a framework specific component, we are just exporting a vanilla Javascript function that returns an Object which contains all the accessbility and style properties you need for the best UI presentation. How you choose to use it, is completely up to you - and there are a _thousand_ different ways to use headless components to the benefit of your unique project.
 
 Instead of this:
 
-```jsx title="src/pages/SomePage.jsx"
+```jsx title="Old way via a component library"
 import Button from '@pluralsight/design-system-button'
 
-...
-
-return (
-  // Only compatible for React and can only use allowed props
-  <Button appearance="Primary">Click me</Button>
-)
+// Only compatible for React and can only use allowed props
+;<Button appearance="Primary">Click me</Button>
 ```
 
 You can do this (in any framework or library - here we are combining MUI with headless-styles):
 
-```jsx title="src/components/ActionButton.jsx"
+```jsx title="New way - headless UI library"
 import { styled } from '@mui/material/styles'
 import Button from '@mui/material/Button'
 import { getButtonProps } from '@pluralsight/headless-styles'
@@ -99,4 +85,4 @@ Yes! We build our libraries using React 18 concurrent mode to ensure our product
 
 TVA is a reference to the Marvel Universe faction which monitors the timeline to make sure everything is how it should be (Time Variance Authority). Just like the TVA, we on the design system team are similar in that we monitor and make sure everything is how it should be for the brand!
 
-To be clear, this is our alias for the engineering side of all packages for the Pluralsight Design suite.
+To be clear, this is our alias for the engineering side of all packages for the Pluralsight Design suite (our repo).

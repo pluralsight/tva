@@ -17,7 +17,7 @@ Pluralsight Design uses Github issues as a bug and feature request tracker. If y
 
 1. Check if issue has already been reported or closed
 2. Check if discussion has been created
-3. If you answered "no" to 1 and 2, [open an issue on TVA](https://github.com/pluralsight/tva/issues/new/choose)
+3. If you answered "no" to 1 and 2, [open an issue on the TVA repo](https://github.com/pluralsight/tva/issues/new/choose)
 
 ### New issue guidelines
 

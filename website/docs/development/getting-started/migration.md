@@ -37,30 +37,28 @@ Below we'll look at migrating the Button component which will be the same patter
 In order to use PD, we need to get it into your project first. For most projects, you will only need to install the components and icons packages.
 
 ```bash npm2yarn
-npm install @pluralsight/headless-styles @pluralsight/icons
+npm install @pluralsight/headless-styles@experimental @pluralsight/icons@experimental
 ```
 
 All of our packages are lightweight because they only use vanilla JS/TS, so you don't have to worry about adding additional overhead to your bundle size.
 
 ### Step 2 - Create
 
-Since PD is headless library and not a component one, you will (and should) create a new Button component in your project. This will allow you to have full control while not worrying about styles and accessiblity.
+Since PD is a headless library (i.e., not a component library), you will (and should) create a new Button component in your project. This will allow you to have full control of what matters while PD controls the "small things" (styles and accessiblity).
 
 :::tip
-It is considered a React/Component library best practice to create Button components with a **specific purpose**. An example would be to create an "EditButton" or "PrimaryButton". This helps you to create components that will contain less props which will have better performance and scale easier.
+It is considered a React/Component library best practice to create Button components with a **specific purpose**. An example would be to create an "EditButton" or "PrimaryButton". This helps you to create components that will contain less props which will have better performance and scale easier. **This design by nature will have less risk of bugs and code impact.**
 :::
 
-In this example, we are creating a `PrimaryButton` for your project.
+In this example, we are creating a `TextButton` for your project.
 
-```typescript title="components/PrimaryButton.tsx"
+```jsx title="components/TextButton.tsx"
 import { getButtonProps } from '@pluralsight/headless-styles'
-import type { ButtonHTMLAttributes } from 'react'
+import type { ButtonOptions } from '@pluralsight/headless-styles/types'
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement>
-
-export default function PrimaryButton(props: Props) {
+export default function TextButton(props: ButtonOptions) {
   const psProps = getButtonProps({
-    kind: 'default',
+    kind: 'text',
     size: props.size || 'm',
   })
   const classes = `${props.className} ${psProps.className}`
@@ -73,47 +71,50 @@ export default function PrimaryButton(props: Props) {
 }
 ```
 
-Now, you can migrate all your Primary buttons over to use the PS created ones which will also give you more control as a team. This approach allows you to have a easier and low risk migration path without forcing a tech-debt lump that must ship everything at once.
+Now, you can migrate all your Text buttons over to use the newly created ones which will also give you more control as a team. This approach allows you to have an easier and low risk migration path without forcing a tech-debt lump that must ship everything at once.
 
 ### Step 2 - Create (CSS-in-JS example)
 
-If you are a team that uses CSS-in-JS, you can just as easily use the same strategy above with your preferred tech stack. In this example, we'll use React with styled components.
+If you are a team that uses CSS-in-JS, you can just as easily use the same strategy above with your preferred tech stack. In this example, we'll use React with styled-components.
 
-```typescript title="components/PrimaryButton.tsx"
+```typescript title="components/TextButton.tsx"
 import styled from 'styled-components'
 import { getButtonProps } from '@pluralsight/headless-styles'
+import type { ButtonOptions } from '@pluralsight/headless-styles/types'
 
-const PrimaryButton = styled.button`
-  ${getJSButtonProps().cssProps},
+const TextButton = styled.button`
+  ${(props: ButtonOptions) =>
+    getJSButtonProps({
+      kind: 'text',
+      size: props.size ?? 'm',
+    }).cssProps},
 `
 
-export default PrimaryButton
+export default TextButton
 ```
 
 ### Step 3 - Replace
 
-Now that you have created your new component, depending on your migration strategy, you can search all for `appearance={Button.appearances.primary}` and update the code with your new `PrimaryButton`. If you follow the examples we have, your `PrimaryButtons` will automatically accept all HTML Button properties which means that you will have a new Button API that is more flexible and easier to read/maintain for all developers.
+Now that you have created your new component, depending on your migration strategy, you can search all for `appearance={Button.appearances.flat}` and update the code with your new `TextButton`. If you follow the examples in this guide, your `TextButtons` will automatically accept all HTML Button properties which means that you will have a new Button API that is more flexible and easier to read/maintain for all developers.
 
-```typescript title="Old Button"
+```jsx title="Old Button"
 import Button from '@pluralsight/ps-design-system-button'
 
-...
-
-<Button appearance={Button.appearances.primary} onClick={handleClick} type="submit">
+;<Button
+  appearance={Button.appearances.primary}
+  onClick={handleClick}
+  type="button"
+>
   Do something
 </Button>
 ```
 
 Now becomes...
 
-```typescript title="New Button"
-import PrimaryButton from 'components/PrimaryButton'
+```jsx title="New Button"
+import TextButton from 'components/TextButton'
 
-...
-
-<PrimaryButton onClick={handleClick} type="submit">
-  Do something
-</PrimaryButton>
+;<TextButton onClick={handleClick}>Do something</TextButton>
 ```
 
 ## General Advices
