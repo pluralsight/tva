@@ -99,45 +99,11 @@ We use the standard clothing size shorthand values for all `size` related option
 
 You can add left and right icons to a button using the `getIconProps` and an Icon from the [Icons](../icons/intro) library.
 
-<!-- TODO: ADD EXAMPLES TO REPLACE THIS CODE -->
+:::caution
 
-```jsx title=components/EditButton.jsx
-import { getIconProps } from '@pluralsight/headless-styles'
-import { PencilIcon } from '@pluralsight/icons'
+This is **unreleased** documentation for the `getButtonWithIcon` helper.
 
-const defaultBtnProps = getButtonProps({ kind: 'medium' })
-const iconProps = getIconProps({ ariaHidden: true })
-
-function EditButton(props) {
-  return (
-    <button {...props} {...defaultBtnProps}>
-      <PencilIcon {...iconProps} />
-      Edit
-    </button>
-  )
-}
-```
-
-### Button icon (no label)
-
-For icons acting as buttons, use the `getIconButtonProps` with your desired Icon.
-
-<!-- TODO: REPLACE CODE WITH LIVE EXAMPLES -->
-
-```jsx title=components/EditIconButton.jsx
-import { getIconProps, getIconButtonProps } from '@pluralsight/headless-styles'
-import { PencilIcon } from '@pluralsight/icons'
-
-const editIconBtnProps = getIconButtonProps('edit profile')
-
-function EditIconButton(props) {
-  return (
-    <button {...props} {...editIconBtnProps}>
-      <PencilIcon {...getIconProps()} />
-    </button>
-  )
-}
-```
+:::
 
 ### Danger Button
 
@@ -188,14 +154,6 @@ getButtonProps(options: ButtonOptions): ButtonProps
 ```
 
 The button prop-getter takes in [ButtonOptions](#buttonoptions) returns [ButtonProps](#buttonprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-### getIconButtonProps
-
-```typescript
-getIconButtonProps(): IconButtonProps
-```
-
-The icon button prop-getter doesn't take in any paramters and returns [IconButtonProps](#iconbuttonprops) that contains the a11y attributes needed for buttons with icons.
 
 ### getDangerButtonProps
 
@@ -252,7 +210,6 @@ When combining `headless-styles` with other libraries, please follow the guides 
 | Name                     | Argument Type                                            | Default                               | Description               |
 | ------------------------ | -------------------------------------------------------- | ------------------------------------- | ------------------------- |
 | `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
-| `getIconButtonProps`     | **ariaLabel**: string                                    |                                       | Get icon button styles.   |
 | `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
 | `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
 | `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
@@ -294,22 +251,6 @@ interface ButtonProps {
 {
   className: `ps-btn ${...internalStyles}`
   type: 'button'
-}
-```
-
-## IconButtonProps
-
-```typescript
-interface IconButtonProps {
-  'aria-hidden': boolean
-  className: string
-}
-```
-
-```jsx title="Return value example"
-{
-  'aria-hidden': 'true'
-  className: 'ps-icon-btn ...'
 }
 ```
 

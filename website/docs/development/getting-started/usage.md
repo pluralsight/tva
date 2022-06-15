@@ -13,7 +13,7 @@ This page is a work in progress.
 
 Pluralsight Design packages and "components" work in isolation. **They are self-supporting**, and will only inject the styles they need to display.
 
-You can use any of the packages as demonstrated in the documentation. Please refer to each "component's" [page](../packages/headless-styles/button) to see how they should be imported and used.
+You can use any of the packages as demonstrated in the documentation. Please refer to each "component's" [page](../headless-styles/button) to see how they should be imported and used.
 
 ## Headless design
 

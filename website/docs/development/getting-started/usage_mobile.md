@@ -11,7 +11,7 @@ This page is a work in progress.
 
 :::
 
-Currently, our [Design Tokens](../packages/tokens/intro.md) come with mobile support. If you are interested in helping contribute to our mobile docs, click the "Edit this page" button in the bottom left corner of this page to submit a pull request to our repo.
+Currently, our [Design Tokens](../tokens/intro.md) come with mobile support. If you are interested in helping contribute to our mobile docs, click the "Edit this page" button in the bottom left corner of this page to submit a pull request to our repo.
 
 :::note
 

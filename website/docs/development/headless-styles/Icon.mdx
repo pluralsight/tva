@@ -79,8 +79,10 @@ Depending on the usage, you will need to provide additional information.
 The icon is purely cosmetic and conveys no real semantic meaning.
 In this case, the icon should be hidden from assistive technology.
 
-```javascript
-const briefcaseIconProps = getIconProps({ ariaHidden: true })
+<!-- TODO: Add visual example here -->
+
+```jsx
+<BriefcaseIcon {...getIconProps({ ariaHidden: true })} />
 ```
 
 ### Interactive icons
@@ -89,46 +91,38 @@ SVG elements are not semantically interactive elements;
 when the user would interact with an icon, a more appropriate element should "own" the interaction:
 
 - The icon element should be a child of a `<button>` or `<a>` element.
-- The `<button>` or `<a>` should have a meaningful label provided either through direct text content, `aria-label`, or `aria-labelledby`.
+- The `button` or `a` tag should have a meaningful label provided either through direct text content, `aria-label`, or `aria-labelledby`.
 
-See the [Button wth icon](./Button.mdx#button-with-icon) and [Button icon (no label)](./Button.mdx#button-icon-no-label) examples.
+<!-- TODO: Add visual example here -->
+<!-- TODO: Add code example here -->
+
+:::tip
+
+We provide `iconOptions` for you to pass into the `getIconProps` helper if you are adding icons into a [button with text](./Button.mdx#button-with-icon). The `iconOptions` will pass all necessary a11y settings on your behalf to `getIconProps`.
+
+:::
 
 ### Indicator icons
 
 When an icon visually communicates some information (such as a status), that information must also be made available to screen readers.
 Use the `label` option to add a non-visible, accessible label to the icon.
 
-```javascript
-const volumeOffIconProps = getIconProps({ label: 'Volume is off' })
+<!-- TODO: Add visual example here -->
+
+```jsx
+<VolumeOffIcon {...getIconProps({ label: 'Volume is off' })} />
 ```
-
-## CSS API
-
-### getIconProps
-
-```typescript
-getIconProps(options: IconOptions): IconProps
-```
-
-The icon prop-getter takes in [IconOptions](#iconoptions) returns [IconProps](#iconprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-## JS API
-
-### getJSIconProps
-
-```typescript
-getJSIconProps(options: IconOptions): JSIconProps
-```
-
-the CSS-in-JS prop-getter takes in the same [IconOptions](#iconoptions) as the CSS API and returns [JSIconProps](#jsiconprops) which caters to CSS Templates, StyleObject, and a11yProps.
 
 ## API
 
-| Name           | Argument Type                            | Default       | Description           |
-| -------------- | ---------------------------------------- | ------------- | --------------------- |
-| `getIconProps` | **options**: [IconOptions](#iconoptions) | **size**: 'm' | Get main icon styles. |
+| Name             | Argument Type                            | Default       | Description           |
+| ---------------- | ---------------------------------------- | ------------- | --------------------- |
+| `getIconProps`   | **options**: [IconOptions](#iconoptions) | **size**: 'm' | Get main icon styles. |
+| `getJSIconProps` | **options**: [IconOptions](#iconoptions) | **size**: 'm' | CSS-in-JS API         |
 
-## IconOptions
+## Options
+
+### IconOptions
 
 ```typescript
 export interface IconOptions extends IconA11yOptions {
@@ -137,7 +131,7 @@ export interface IconOptions extends IconA11yOptions {
 }
 ```
 
-## IconA11yOptions
+### IconA11yOptions
 
 ```typescript
 export interface IconA11yOptions {
@@ -146,7 +140,9 @@ export interface IconA11yOptions {
 }
 ```
 
-## IconA11yProps
+## Props
+
+### IconA11yProps
 
 ```typescript
 interface IconA11yProps {
@@ -156,7 +152,7 @@ interface IconA11yProps {
 }
 ```
 
-## IconProps
+### IconProps
 
 ```typescript
 interface IconProps {
@@ -165,7 +161,7 @@ interface IconProps {
 }
 ```
 
-## JSIconProps
+### JSIconProps
 
 ```typescript
 interface IconProps {
@@ -175,9 +171,11 @@ interface IconProps {
 }
 ```
 
-## Icon size guide
+## Guides
 
-Here is an interface that gives the sizing guide.
+### Icon size guide
+
+Icon sizes do not have any relativity to any other elements. Here is an interface that gives the sizing guide.
 
 ```typescript title="Example interface - does not exist in types"
 interface IconSizeGuide {
@@ -195,9 +193,3 @@ interface IconSizeGuide {
   }
 }
 ```
-
-## Icon color guide
-
-Icon colors are inherited from their context using `currentColor`. Here is an example of icon coloring.
-
-**TBD**
