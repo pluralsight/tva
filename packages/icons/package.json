@@ -36,6 +36,7 @@
     "build/svg/**/*",
     "build/react/**/*",
     "build/svelte/**/*",
+    "build/string/**/*",
     "build/index.js",
     "build/index.d.ts",
     "build/wrapper.js"
