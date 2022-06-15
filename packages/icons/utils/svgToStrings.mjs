@@ -16,12 +16,6 @@ function svgToString(pathName, varName, svgContent) {
   iconHash[varName] = svgContent
 }
 
-function clean() {
-  if (existsSync(dataFile)) {
-    rmSync(dataFile)
-  }
-}
-
 function createOutputDir(pathName) {
   const outputPath = getOutputDir(pathName)
 
@@ -45,7 +39,6 @@ function writeDataFile() {
 }
 
 console.log('Generating icon strings...')
-clean()
 createOutputDir(buildPath)
 iterateSvgs(srcPath, svgToString)
 writeDataFile()
