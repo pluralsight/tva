@@ -54,66 +54,6 @@ The `Badge` comes with three variants: strong (default), medium, and weak.
   <BasicBadgePreview />
 </LiveExampleTabs>
 
-## CSS API
-
-### getBadgeProps
-
-```typescript
-getBadgeProps(options: BadgeOptions): BadgeProps
-```
-
-The `Badge` prop-getter takes in [BadgeOptions](#badgeoptions) returns an Object that contains all the a11y attributes and styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-```js title="Return value example"
-{
-  className: `ps-badge ${...internal-style-modules}`
-}
-```
-
-#### BadgeProps
-
-```typescript
-interface BadgeProps {
-  className: string
-}
-```
-
-## CSS in JS API
-
-### getJSBadgeProps
-
-```typescript
-getJSBadgeProps(options: BadgeOptions): JSBadgeProps
-```
-
-If you prefer to use CSS-in-JS, use the `getJSBadgeProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: #fff;
-    background-color: #000;
-    ...
-  `,
-  styles: {
-    color: '#fff',
-    backgroundColor: '#000'
-    '&:hover': {
-      ...
-    }
-  }
-}
-```
-
-#### JSBadgeProps
-
-```typescript
-interface JSBadgeProps {
-  cssProps: string
-  styles: Record<CSSProps, string>
-}
-```
-
 ## Extending
 
 There are times you may need to make a slight adjustment to the Badge which is easy since we are giving you an Object. You can easily extend the Badge in any way that you like.
@@ -139,7 +79,9 @@ export default SuccessBadge
 `headless-styles` was built with the mindset that any tech stack should work with our helpers. However, when making the decision to support multiple UI frameworks, styles can get out of hand very quickly. In order to scale styles without creating negative impacts to other platforms, we have included the optional `tech` option to [BadgeOptions](#badgeoptions). This small inclusion allows us to ship specific styles per platform you choose to use without conflicting with others. :boom:
 
 :::tip
+
 When combining `headless-styles` with other frameworks, please follow the guides in the example codesandboxes for the best experience. **Not all frameworks require special CSS support**.
+
 :::
 
 ## API
@@ -147,9 +89,13 @@ When combining `headless-styles` with other frameworks, please follow the guides
 | Name              | Argument Type                              | Default            | Description       |
 | ----------------- | ------------------------------------------ | ------------------ | ----------------- |
 | `getBadgeProps`   | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
-| `getJSBadgeProps` | **options**: [BadgeOptions](#badgeoptions) | **kind**: 'strong' | Get badge styles. |
+| `getJSBadgeProps` | **options**: [BadgeOptions](#badgeoptions) | same as CSS API    | CSS-in-JS API.    |
 
-## BadgeOptions
+## Options
+
+### BadgeOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface BadgeOptions {
@@ -158,7 +104,32 @@ interface BadgeOptions {
 }
 ```
 
-## Badge color guide
+```typescript title="Import example"
+import type { BadgeOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### BadgeProps
+
+```typescript
+interface BadgeProps {
+  className: string
+}
+```
+
+### JSBadgeProps
+
+```typescript
+interface JSBadgeProps {
+  cssProps: string
+  styles: Record<CSSProps, string>
+}
+```
+
+## Guides
+
+### Badge color guide
 
 Badge colors are relative to the `background` style and have a direct correlation from the `kind` to the [`design-tokens`](../tokens/intro.md) package. Here is an interface that gives the color guide.
 

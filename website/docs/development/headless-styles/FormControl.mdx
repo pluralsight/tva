@@ -443,7 +443,11 @@ function FormikExample() {
 | `getJSFieldMessageProps` | **options**: [FieldMessageOptions](#fieldmessageoptions) | same as CSS API                                          | CSS-in-JS API                                         |
 | `getJSErrorMessageProps` | **options**: [ErrorMessageOptions](#errormessageoptions) | same as CSS API                                          | CSS-in-JS API                                         |
 
-## FormControlOptions
+## Options
+
+### FormControlOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface FormControlOptions {
@@ -456,7 +460,13 @@ interface FormControlOptions {
 }
 ```
 
-## FormLabelOptions
+```typescript title="Import example"
+import type { FormControlOptions } from '@pluralsight/headless-styles/types'
+```
+
+### FormLabelOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface FormLabelOptions {
@@ -468,7 +478,13 @@ interface FormLabelOptions {
 }
 ```
 
-## FieldMessageOptions
+```typescript title="Import example"
+import type { FormLabelOptions } from '@pluralsight/headless-styles/types'
+```
+
+### FieldMessageOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface FieldMessageOptions {
@@ -478,7 +494,13 @@ interface FieldMessageOptions {
 }
 ```
 
-## ErrorMessageOptions
+```typescript title="Import example"
+import type { FieldMessageOptions } from '@pluralsight/headless-styles/types'
+```
+
+### ErrorMessageOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface ErrorMessageOptions {
@@ -489,7 +511,13 @@ interface ErrorMessageOptions {
 }
 ```
 
-## FormControlProps
+```typescript title="Import example"
+import type { ErrorMessageOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### FormControlProps
 
 ```typescript
 interface FormControlProps {
@@ -506,7 +534,7 @@ interface FormControlProps {
 }
 ```
 
-## FormLabelProps
+### FormLabelProps
 
 ```typescript
 interface FormLabelProps {
@@ -516,7 +544,7 @@ interface FormLabelProps {
 }
 ```
 
-## FieldMessageProps
+### FieldMessageProps
 
 ```typescript
 interface FieldMessageProps {
@@ -526,7 +554,7 @@ interface FieldMessageProps {
 }
 ```
 
-## ErrorMessageProps
+### ErrorMessageProps
 
 ```typescript
 interface ErrorMessageProps {
@@ -541,7 +569,7 @@ interface ErrorMessageProps {
 }
 ```
 
-## JSFormControlProps
+### JSFormControlProps
 
 ```typescript
 interface JSFormControlProps {
@@ -561,7 +589,7 @@ interface JSFormControlProps {
 }
 ```
 
-## JSFormLabelProps
+### JSFormLabelProps
 
 ```typescript
 interface JSFormLabelProps {
@@ -576,7 +604,7 @@ interface JSFormLabelProps {
 }
 ```
 
-## JSFieldMessageProps
+### JSFieldMessageProps
 
 ```typescript
 interface JSFieldMessageProps {
@@ -587,7 +615,7 @@ interface JSFieldMessageProps {
 }
 ```
 
-## JSErrorMessageProps
+### JSErrorMessageProps
 
 ```typescript
 interface JSErrorMessageProps {

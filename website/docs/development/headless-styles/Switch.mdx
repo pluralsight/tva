@@ -217,7 +217,11 @@ function SwitchStates() {
 | `getSwitchProps`   | **options**: [SwitchOptions](#switchoptions) | **kind**: 'strong' | Get switch styles for CSS usage. |
 | `getJSSwitchProps` | **options**: [SwitchOptions](#switchoptions) | same as CSS API    | CSS-in-JS API                    |
 
-## SwitchOptions
+## Options
+
+### SwitchOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface SwitchOptions extends SwitchA11yOptions {
@@ -227,7 +231,11 @@ interface SwitchOptions extends SwitchA11yOptions {
 }
 ```
 
-## SwitchA11yOptions
+```typescript title="Import example"
+import type { SwitchOptions } from '@pluralsight/headless-styles/types'
+```
+
+### SwitchA11yOptions
 
 ```typescript
 interface SwitchA11yOptions {
@@ -239,7 +247,9 @@ interface SwitchA11yOptions {
 }
 ```
 
-## SwitchProps
+## Props
+
+### SwitchProps
 
 ```typescript
 interface SwitchProps {
@@ -270,7 +280,7 @@ interface SwitchProps {
 }
 ```
 
-## SwitchJSProps
+### SwitchJSProps
 
 ```typescript
 interface SwitchJSProps {

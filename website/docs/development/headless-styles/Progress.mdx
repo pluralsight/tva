@@ -107,40 +107,16 @@ There are two sizes available for the progress. You can use `xs` or `s` (default
 - It sets the `role` to `progressbar` to denote that it is a progress.
 - It uses `aria-valuenow` set to the `now` value passed into the [ProgressOptions](#progressoptions) to ensure the progress percent is visible to screen readers.
 
-## CSS API
-
-### getProgressProps
-
-```typescript
-getProgressProps(options: ProgressOptions): ProgressProps
-```
-
-The progress prop-getter takes in [ProgressOptions](#progressoptions) returns [ProgressProps](#progressprops) that contains the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-## JS API
-
-### getJSProgressProps
-
-```typescript
-getJSProgressProps(options: ProgressOptions): JSProgressProps
-```
-
-The CSS-in-JS prop-getter takes in the same [ProgressOptions](#progressoptions) as the CSS API and returns [JSProgressProps](#jsprogressprops) which caters to CSS Templates, StyleObject, and a11yProps.
-
-:::note
-
-The custom bar `width` percentage is added into the `cssProps` and `styles` for the JS API.
-
-:::
-
 ## API
 
 | Name                 | Argument Type                                    | Default                                 | Description               |
 | -------------------- | ------------------------------------------------ | --------------------------------------- | ------------------------- |
 | `getProgressProps`   | **options**: [ProgressOptions](#progressoptions) | **kind**: 'linear', <br />**size**: 's' | Get main progress styles. |
-| `getJSProgressProps` | **options**: [ProgressOptions](#progressoptions) | **kind**: 'linear', <br />**size**: 's' | Get main progress styles. |
+| `getJSProgressProps` | **options**: [ProgressOptions](#progressoptions) | same as CSS API                         | CSS-IN-JS API             |
 
-## ProgressOptions
+## Options
+
+### ProgressOptions
 
 This interface is available as an `import` for use.
 
@@ -156,7 +132,7 @@ interface ProgressOptions extends ProgressA11yOptions {
 import type { ProgressOptions } from '@pluralsight/headless-styles/types'
 ```
 
-## ProgressA11yOptions
+### ProgressA11yOptions
 
 ```typescript
 interface ProgressA11yOptions {
@@ -166,7 +142,9 @@ interface ProgressA11yOptions {
 }
 ```
 
-## A11yProps
+## Props
+
+### A11yProps
 
 ```typescript
 interface A11yProps {
@@ -177,7 +155,7 @@ interface A11yProps {
 }
 ```
 
-## ProgressProps
+### ProgressProps
 
 ```typescript
 interface ProgressProps {
@@ -192,7 +170,7 @@ interface ProgressProps {
 }
 ```
 
-## JSProgressProps
+### JSProgressProps
 
 ```typescript
 interface JSProgressProps {

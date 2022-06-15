@@ -145,42 +145,6 @@ With ES\* you could destructure the className out of the object (i.e. `{ classNa
 
 :::
 
-## CSS API
-
-### getButtonProps
-
-```typescript
-getButtonProps(options: ButtonOptions): ButtonProps
-```
-
-The button prop-getter takes in [ButtonOptions](#buttonoptions) returns [ButtonProps](#buttonprops) that contains all the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-### getDangerButtonProps
-
-```typescript
-getDangerButtonProps(options: DangerButtonOptions): ButtonProps
-```
-
-The danger button prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) returns [ButtonProps](#buttonprops) that match the `getButtonProps` API.
-
-## CSS in JS API
-
-### getJSButtonProps
-
-```typescript
-getJSButtonProps(options: ButtonOptions): JSButtonProps
-```
-
-The CSS-in-JS prop-getter takes in the same [ButtonOptions](#buttonoptions) as the CSS API and returns [JSButtonProps](#jsbuttonprops) which caters to CSS Templates, StyleObject, and button specific attributes.
-
-### getJSDangerButtonProps
-
-```typescript
-getJSDangerButtonProps(options: DangerButtonOptions): JSButtonProps
-```
-
-The CSS-in-JS danger button prop-getter takes in [DangerButtonOptions](#dangerbuttonoptions) and returns [JSButtonProps](#jsbuttonprops).
-
 ## Extending
 
 There are times you may need to make a slight adjustment to the button styles which is easy to do since we are giving you an Object.
@@ -211,10 +175,14 @@ When combining `headless-styles` with other libraries, please follow the guides 
 | ------------------------ | -------------------------------------------------------- | ------------------------------------- | ------------------------- |
 | `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
 | `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
-| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
-| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
+| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | same as CSS API                       | CSS-in-JS API             |
+| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | same as CSS API                       | CSS-in-JS API             |
 
-## ButtonOptions
+## Options
+
+### ButtonOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface ButtonOptions
@@ -228,7 +196,11 @@ interface ButtonOptions
 }
 ```
 
-## DangerButtonOptions
+```typescript title="Import example"
+import type { ButtonOptions } from '@pluralsight/headless-styles/types'
+```
+
+### DangerButtonOptions
 
 ```typescript
 interface DangerButtonOptions extends ButtonOptions {
@@ -238,7 +210,9 @@ interface DangerButtonOptions extends ButtonOptions {
 }
 ```
 
-## ButtonProps
+## Props
+
+### ButtonProps
 
 ```typescript
 interface ButtonProps {
@@ -254,7 +228,7 @@ interface ButtonProps {
 }
 ```
 
-## JSButtonProps
+### JSButtonProps
 
 ```typescript
 interface JSButtonProps {
@@ -282,7 +256,9 @@ interface JSButtonProps {
 }
 ```
 
-## Button size guide
+## Guides
+
+### Button size guide
 
 Button sizes are relative to the `padding` and `font-size` styles. Here is an interface that gives the sizing guide. Variables are referenced from the [`tokens`](../tokens/intro.md) package.
 
@@ -311,7 +287,7 @@ interface ButtonSizeGuide {
 }
 ```
 
-## Button color guide
+### Button color guide
 
 Button colors are relative to the `background` style and have a direct correlation from the `kind` to the [`design-tokens`](../tokens/intro.md) package. Here is an interface that gives the color guide.
 

@@ -115,20 +115,26 @@ Use the `label` option to add a non-visible, accessible label to the icon.
 
 ## API
 
-| Name             | Argument Type                            | Default       | Description           |
-| ---------------- | ---------------------------------------- | ------------- | --------------------- |
-| `getIconProps`   | **options**: [IconOptions](#iconoptions) | **size**: 'm' | Get main icon styles. |
-| `getJSIconProps` | **options**: [IconOptions](#iconoptions) | **size**: 'm' | CSS-in-JS API         |
+| Name             | Argument Type                            | Default         | Description           |
+| ---------------- | ---------------------------------------- | --------------- | --------------------- |
+| `getIconProps`   | **options**: [IconOptions](#iconoptions) | **size**: 'm'   | Get main icon styles. |
+| `getJSIconProps` | **options**: [IconOptions](#iconoptions) | same as CSS API | CSS-in-JS API         |
 
 ## Options
 
 ### IconOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 export interface IconOptions extends IconA11yOptions {
   size?: 's' | 'm' | 'l'
   tech?: 'svelte'
 }
+```
+
+```typescript title="Import example"
+import type { IconOptions } from '@pluralsight/headless-styles/types'
 ```
 
 ### IconA11yOptions

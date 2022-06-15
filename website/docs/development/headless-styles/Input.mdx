@@ -182,7 +182,11 @@ const inputProps = getInputProps({
 | `getInputProps`   | **options**: [InputOptions](#inputoptions) | **size**: 'l'   | Get input styles for CSS usage. |
 | `getJSInputProps` | **options**: [InputOptions](#inputoptions) | same as CSS API | CSS-in-JS API                   |
 
-## InputOptions
+## Options
+
+### InputOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface InputOptions extends FieldOptions {
@@ -201,7 +205,7 @@ interface InputOptions extends FieldOptions {
 import type { InputOptions } from '@pluralsight/headless-styles/types'
 ```
 
-## FieldOptions
+### FieldOptions
 
 ```typescript
 interface FieldOptions {
@@ -212,7 +216,9 @@ interface FieldOptions {
 }
 ```
 
-## InputProps
+## Props
+
+### InputProps
 
 ```typescript
 interface InputProps {
@@ -234,7 +240,7 @@ interface InputProps {
 }
 ```
 
-## JSInputProps
+### JSInputProps
 
 ```typescript
 interface JSInputProps {

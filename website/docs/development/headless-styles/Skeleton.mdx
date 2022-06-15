@@ -104,66 +104,6 @@ You can also create a fallback component to display during a fetch loading state
   <FetchSkeletonPreview />
 </LiveExampleTabs>
 
-## CSS API
-
-### getSkeletonProps
-
-```typescript
-getSkeletonProps(options: SkeletonOptions): SkeletonProps
-```
-
-The `Skeleton` prop-getter takes in [SkeletonOptions](#Skeletonoptions) returns an Object that contains all the a11y attributes and styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-```js title="Return value example"
-{
-  className: `ps-skeleton ${...internal-style-modules}`
-}
-```
-
-#### SkeletonProps
-
-```typescript
-interface SkeletonProps {
-  className: string
-}
-```
-
-## CSS in JS API
-
-### getJSSkeletonProps
-
-```typescript
-getJSSkeletonProps(options: SkeletonOptions): JSSkeletonProps
-```
-
-If you prefer to use CSS-in-JS, use the `getJSSkeletonProps` function. This will return a stringified version of the styles via the `cssProps` property along with a `styles` property that matches the common emotion framework syntax.
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: #fff;
-    background-color: #000;
-    ...
-  `,
-  styles: {
-    color: '#fff',
-    backgroundColor: '#000'
-    '&:hover': {
-      ...
-    }
-  }
-}
-```
-
-#### JSSkeletonProps
-
-```typescript
-interface JSSkeletonProps {
-  cssProps: string
-  styles: Record<CSSProps, string>
-}
-```
-
 ## Extending
 
 There are times you may need to make a slight adjustment to the Skeleton which is easy since we are giving you an Object. You can easily extend the Skeleton in any way that you like.
@@ -197,13 +137,41 @@ When combining `headless-styles` with other frameworks, please follow the guides
 | Name                 | Argument Type                                    | Default             | Description          |
 | -------------------- | ------------------------------------------------ | ------------------- | -------------------- |
 | `getSkeletonProps`   | **options**: [SkeletonOptions](#Skeletonoptions) | **kind**: 'content' | Get skeleton styles. |
-| `getJSSkeletonProps` | **options**: [SkeletonOptions](#Skeletonoptions) | **kind**: 'content' | Get skeleton styles. |
+| `getJSSkeletonProps` | **options**: [SkeletonOptions](#Skeletonoptions) | same as CSS API     | CSS-in-JS API        |
 
-## SkeletonOptions
+## Options
+
+### SkeletonOptions
+
+This interface is available as an `import` for use.
 
 ```typescript
 interface SkeletonOptions {
   kind?: 'content' | 'text' | 'circle'
   tech?: 'svelte'
+}
+```
+
+```typescript title="Import example"
+import type { SkeletonOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### SkeletonProps
+
+```typescript
+interface SkeletonProps {
+  className: string
+}
+```
+
+### JSSkeletonProps
+
+```typescript
+interface JSSkeletonProps {
+  keyframes: TemplateStringLiteralArray
+  cssProps: TemplateStringLiteralArray
+  styles: Record<CSSProp, unknown>
 }
 ```

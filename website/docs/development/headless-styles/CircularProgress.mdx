@@ -122,34 +122,16 @@ If you use MUI, we recommend using our code examples displayed in each section.
 - It sets the `role` to `progressbar` to denote that it is a progress.
 - It uses `aria-valuenow` set to the `now` value passed into the [CircularProgressOptions](#circularprogressoptions) to ensure the progress percent is visible to screen readers.
 
-## CSS API
-
-### getCircularProgressProps
-
-```typescript
-getCircularProgressProps(options: CircularProgressOptions): CircularProgressProps
-```
-
-The progress prop-getter takes in [CircularProgressOptions](#circularprogressoptions) returns [CircularProgressProps](#circularprogressprops) that contains the a11y attributes needed along with all the styles for you to use in any fashion you like - or easily extend/overwrite when needed.
-
-## JS API
-
-### getJSCircularProgressProps
-
-```typescript
-getJSCircularProgressProps(options: CircularProgressOptions): JSCircularProgressProps
-```
-
-The CSS-in-JS prop-getter takes in the same [CircularProgressOptions](#circularprogressoptions) as the CSS API and returns [JSCircularProgressProps](#jscircularprogressprops) which caters to CSS Templates, StyleObject, and a11yProps.
-
 ## API
 
 | Name                         | Argument Type                                                    | Default                                      | Description                        |
 | ---------------------------- | ---------------------------------------------------------------- | -------------------------------------------- | ---------------------------------- |
 | `getCircularProgressProps`   | **options**: [CircularProgressOptions](#circularprogressoptions) | **kind**: 'determinate', <br />**size**: 'm' | Get main circular-progress styles. |
-| `getJSCircularProgressProps` | **options**: [CircularProgressOptions](#circularprogressoptions) | **kind**: 'determinate', <br />**size**: 'm' | Get main circular-progress styles. |
+| `getJSCircularProgressProps` | **options**: [CircularProgressOptions](#circularprogressoptions) | same as CSS API                              | CSS-in-JS API.                     |
 
-## CircularProgressOptions
+## Options
+
+### CircularProgressOptions
 
 This interface is available as an `import` for use.
 
@@ -165,7 +147,7 @@ interface CircularProgressOptions extends CircularProgressA11yOptions {
 import type { CircularProgressOptions } from '@pluralsight/headless-styles/types'
 ```
 
-## CircularProgressA11yOptions
+### CircularProgressA11yOptions
 
 ```typescript
 interface CircularProgressA11yOptions {
@@ -175,7 +157,9 @@ interface CircularProgressA11yOptions {
 }
 ```
 
-## A11yProps
+## Props
+
+### A11yProps
 
 ```typescript
 interface A11yProps {
@@ -186,7 +170,7 @@ interface A11yProps {
 }
 ```
 
-## CircularProgressProps
+### CircularProgressProps
 
 ```typescript
 interface ProgressProps {
@@ -221,7 +205,7 @@ interface ProgressProps {
 }
 ```
 
-## JSCircularProgressProps
+### JSCircularProgressProps
 
 ```typescript
 interface JSProgressProps {
