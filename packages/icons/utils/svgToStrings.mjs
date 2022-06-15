@@ -33,9 +33,14 @@ function createOutputDir(pathName) {
 }
 
 function writeDataFile() {
+  const iconObjectString = Object.keys(iconHash).reduce(
+    (prev, current) =>
+      `${prev}\n  ${current}: "${iconHash[current].replace(/"/g, "'")}",`,
+    ''
+  )
   writeFileSync(
     resolve(dataFile),
-    `export const iconStrings = ${JSON.stringify(iconHash, null, 2)}`
+    `export const iconStrings = {\n${iconObjectString}\n}`
   )
 }
 
