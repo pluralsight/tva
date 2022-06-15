@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 tags: [Development, Packages, Components, Headless Styles, Progress, Chakra]
+title: Circular Progress
 ---
 
 <!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
@@ -25,18 +26,15 @@ import {
 } from '@site/src/components/CircularProgress/CircularProgressSizes.preview'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 
-:::caution
+<ReleaseNote />
 
-This is **unreleased** documentation for **headless-styles** package.
-
-:::
-
-The CircularProgress is used to display the progress status for a task that takes a long time or consists of several steps.
+The Circular Progress is used to display the progress status for a task that takes a long time or consists of several steps.
 
 :::note
 
-CircularProgress **should not be used for initial page loading**. This API is meant for action-based responses that usually require a fetch call. For page loading, use the [Skeleton API](./Skeleton).
+Circular Progress **should not be used for initial page loading**. This API is meant for action-based responses that usually require a fetch call. For page loading, use the [Skeleton API](./Skeleton).
 
 :::
 
@@ -58,7 +56,7 @@ import { getCircularProgressProps } from '@pluralsight/headless-styles'
 
 ## Usage
 
-### Basic CircularProgress
+### Basic Circular Progress
 
 `getCircularProgressProps` comes with two kinds to change the visual style of the progress. You can use `determinate` (default), and `indeterminate`.
 
@@ -92,7 +90,7 @@ The `indeterminate` kind is to be used when replacing content during an action-b
   <IndeterminateCircularProgressPreview />
 </LiveExampleTabs>
 
-### CircularProgress sizes
+### Circular Progress sizes
 
 There are two sizes available for the circular-progress. You can use `xs` or `m` (default).
 
@@ -111,7 +109,7 @@ There are two sizes available for the circular-progress. You can use `xs` or `m`
 
 ### MUI
 
-The MUI library is incompatible with the Pluralsight Design CircularProgress due to the fundamental difference in how the component is built (they use a single `circle` component and our design requires two. This is important for accessibility).
+The MUI library is incompatible with the Pluralsight Design Circular Progress due to the fundamental difference in how the component is built (they use a single `circle` component and our design requires two. This is important for accessibility).
 
 If you use MUI, we recommend using our code examples displayed in each section.
 
