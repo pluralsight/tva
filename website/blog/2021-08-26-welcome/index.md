@@ -7,7 +7,7 @@ tags: [pluralsight, hello, headless-styles, ui-library, design-tokens]
 
 :::caution
 
-Our first blog is coming around October! Keep and eye out! :eyes:
+Our first blog is coming around October! Keep an eye out! :eyes:
 
 :::
 
