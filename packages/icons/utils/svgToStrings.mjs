@@ -1,5 +1,5 @@
 import { join, resolve } from 'path'
-import { existsSync, rmSync, mkdirSync, writeFileSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import fse from 'fs-extra'
 import iterateSvgs from './iterateSvgs.mjs'
 
