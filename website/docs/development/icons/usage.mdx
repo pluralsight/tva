@@ -100,27 +100,6 @@ theming while still allowing for control over the icon's color directly.
   <IconSizesPreview />
 </LiveExampleTabs>
 
-## Icon size guide
-
-We have defined four standard sizes for icons. This sizing should be applied using the [headless-styles](../headless-styles/Icon.mdx#icon-sizes) package.
-
-```typescript title="Example interface - does not exist in types"
-interface IconSizeGuide {
-  s: {
-    height: '1rem'
-    width: '1rem'
-  }
-  m: {
-    height: '1.25rem'
-    width: '1.25rem'
-  }
-  l: {
-    height: '1.5rem'
-    width: '1.5rem'
-  }
-}
-```
-
 ## Importing by framework
 
 We export React components by default, which can be imported by name from the package root.
@@ -150,3 +129,24 @@ function MenuIcon() {
 If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](#minimizing-bundle-size)
 
 :::
+
+## Icon size guide
+
+We have defined four standard sizes for icons. This sizing should be applied using the [headless-styles](../headless-styles/Icon.mdx#icon-sizes) package.
+
+```typescript title="Example interface - does not exist in types"
+interface IconSizeGuide {
+  s: {
+    height: '1rem'
+    width: '1rem'
+  }
+  m: {
+    height: '1.25rem'
+    width: '1.25rem'
+  }
+  l: {
+    height: '1.5rem'
+    width: '1.5rem'
+  }
+}
+```
