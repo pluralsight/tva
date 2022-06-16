@@ -15,6 +15,7 @@ import Progress from './components/Progress'
 import Radio from './components/Radio'
 import Skeleton from './components/Skeleton'
 import Switch from './components/Switch'
+import Textarea from './components/Textarea'
 import './App.css'
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
       <Badge />
       <Button />
-      <Checkbox logJS />
+      <Checkbox />
       <CircularProgress />
       <ErrorMessage />
       <FieldMessage />
@@ -53,6 +54,7 @@ function App() {
       <Radio />
       <Skeleton />
       <Switch />
+      <Textarea logJS />
     </div>
   )
 }

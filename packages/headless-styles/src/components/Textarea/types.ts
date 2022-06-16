@@ -7,4 +7,4 @@ export interface TextareaOptions extends InputFieldOptions {
 
 // types
 
-export type Resize = 'horizontal' | 'vertical' | 'none'
+export type Resize = 'horizontal' | 'vertical' | 'none' | 'initial'

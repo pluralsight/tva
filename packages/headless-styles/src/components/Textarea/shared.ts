@@ -11,7 +11,7 @@ const defaultTextareaOptions = {
   placeholder: 'Enter text',
   readOnly: false,
   required: false,
-  resize: '' as Resize,
+  resize: 'initial' as Resize,
   tech: '' as Tech,
   value: '',
 }
@@ -26,6 +26,7 @@ export function getDefaultTextareaOptions(options?: TextareaOptions) {
     placeholder: options?.placeholder ?? defaultTextareaOptions.placeholder,
     readOnly: options?.readOnly ?? defaultTextareaOptions.readOnly,
     required: options?.required ?? defaultTextareaOptions.required,
+    resize: options?.resize ?? defaultTextareaOptions.resize,
     tech: options?.tech ?? defaultTextareaOptions.tech,
     value: options?.value ?? defaultTextareaOptions.value,
   }
@@ -44,7 +45,6 @@ export function createTextareaOptions(options: TextareaOptions) {
     id: options.id,
     name: options.name,
     placeholder: options.placeholder,
-    type: options.type,
     value: options.value,
   }
 }
