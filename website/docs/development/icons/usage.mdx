@@ -74,7 +74,7 @@ import { getIconString } from '@pluralsight/icons/string'
 function MenuIcon(props) {
   return (
     // highlight-next-line
-    <img alt="menu arrow left" src={getIconString('MenuIcon', props.color)} />
+    <img alt="menu icon" src={getIconString('MenuIcon', props.color)} />
   )
 }
 ```
@@ -87,6 +87,7 @@ import { getIconString } from '@pluralsight/icons/string'
 function MenuIcon(props) {
   return (
     <span
+      aria-label="menu icon"
       style={{
         display: 'inline-block',
         width: '1rem',
