@@ -1,14 +1,9 @@
-import { FieldOptions, Tech } from '../types'
+import { InputFieldOptions, Tech } from '../types'
 
-export interface InputOptions extends FieldOptions {
-  describedBy?: string
-  id: string
-  name: string
-  placeholder: string
+export interface InputOptions extends InputFieldOptions {
   size?: Size
   tech?: Tech
   type: InputType
-  value: string
 }
 
 // types

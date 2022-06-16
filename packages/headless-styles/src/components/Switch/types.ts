@@ -1,7 +1,6 @@
 import type { FieldOptions, Tech } from '../types'
 
 export interface SwitchA11yOptions extends FieldOptions {
-  id?: string
   checked: boolean
 }
 

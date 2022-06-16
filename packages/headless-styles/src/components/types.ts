@@ -5,7 +5,7 @@ export interface CheckboxFieldOptions extends FieldOptions {
 
 export interface FieldOptions extends FieldStates {
   id: string
-  name?: string
+  name: string
   value: string
 }
 
