@@ -11,6 +11,7 @@ import CodeBlock from '@theme/CodeBlock'
 import BasicIcon from '@site/src/components/Icons/BasicIcon'
 import DecorativeIcon from '@site/src/components/Icons/DecorativeIcon'
 import IconSizes from '@site/src/components/Icons/IconSizes'
+import IndicatorIcon from '@site/src/components/Icons/IndicatorIcon'
 import InteractiveIcon from '@site/src/components/Icons/InteractiveIcon'
 import {
   BasicIconPreview,
@@ -129,7 +130,7 @@ We provide `iconOptions` for you to pass into the `getIconProps` helper if you a
 When an icon visually communicates some information (such as a status), that information must also be made available to screen readers.
 Use the `label` option to add a non-visible, accessible label to the icon.
 
-<!-- TODO: Add visual example here -->
+<IndicatorIcon />
 
 ```jsx
 <VolumeOffIcon {...getIconProps({ label: 'Volume is off' })} />
