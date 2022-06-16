@@ -128,12 +128,12 @@ We provide `iconOptions` for you to pass into the `getIconProps` helper if you a
 ### Indicator icons
 
 When an icon visually communicates some information (such as a status), that information must also be made available to screen readers.
-Use the `label` option to add a non-visible, accessible label to the icon.
+Use the `ariaLabel` option to add a non-visible, accessible label to the icon.
 
 <IndicatorIcon />
 
 ```jsx
-<VolumeOffIcon {...getIconProps({ label: 'Volume is off' })} />
+<VolumeOffIcon {...getIconProps({ ariaLabel: 'Volume is off' })} />
 ```
 
 ## API
@@ -164,7 +164,7 @@ import type { IconOptions } from '@pluralsight/headless-styles/types'
 
 ```typescript
 export interface IconA11yOptions {
-  label?: string
+  ariaLabel?: string
   ariaHidden?: boolean
 }
 ```
