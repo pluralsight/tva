@@ -1,25 +1,39 @@
 import React from 'react'
-import { getIconProps } from '@pluralsight/headless-styles'
+import {
+  getIconProps,
+  getIconButtonProps,
+  getButtonProps,
+} from '@pluralsight/headless-styles'
 import { HomeIcon } from '@pluralsight/icons'
 import Container from '../Container/Container'
 
-const psIconProps = getIconProps({ ariaHidden: true })
+const { button, iconOptions } = getIconButtonProps({
+  ariaLabel: 'Navivgate to home page',
+})
+const homeIconProps = getIconProps(iconOptions)
+
+const { type, ...linkProps } = getButtonProps()
 
 function InteractiveIcon() {
   return (
     <Container>
-      <span
-        style={{ display: 'inline-flex', alignItems: 'center', gap: '.5em' }}
-      >
-        <a
-          href="/"
-          aria-label="Navigate to home page"
-          style={{ lineHeight: 0 }}
-        >
-          <HomeIcon {...psIconProps} />
+      <div style={{ display: 'flex' }}>
+        <a href="/" {...button}>
+          <HomeIcon {...homeIconProps} />
         </a>
-        &nbsp;|&nbsp;<a href="#">Page 1</a>&nbsp;|&nbsp;<a href="#">Page 2</a>
-      </span>
+        <a href="#" {...linkProps}>
+          Page 1
+        </a>
+        <a href="#" {...linkProps}>
+          Page 2
+        </a>
+        <a href="#" {...linkProps}>
+          Page 3
+        </a>
+        <a href="#" {...linkProps}>
+          Page 4
+        </a>
+      </div>
     </Container>
   )
 }
