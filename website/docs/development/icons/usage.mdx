@@ -78,6 +78,26 @@ function MenuIcon(props) {
 }
 ```
 
+Here is an example using `getIconString` as a CSS value.
+
+```jsx title="Exmaple using a CSS property value"
+import { getIconString } from '@pluralsight/icons/string'
+
+function MenuIcon(props) {
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        width: '1rem',
+        height: '1rem',
+        /* highlight-next-line */
+        backgroundImage: `url("${getIconString('MenuIcon', props.color)}")`,
+      }}
+    ></span>
+  )
+}
+```
+
 ### Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
