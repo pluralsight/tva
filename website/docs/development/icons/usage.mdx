@@ -36,7 +36,9 @@ To use icons in your application, install the npm package.
 npm install @pluralsight/icons@alpha
 ```
 
-## Basic example
+## Usage
+
+### Basic example
 
 Icons are provided as either SVG or component exports based on your choosing.
 
@@ -62,7 +64,21 @@ the [headless-styles](../headless-styles/Icon.mdx) package, which can also be ap
 
 :::
 
-## Icon colors
+### Data URI
+
+If you need to embed an icon in an `img` tag or using CSS `background-image`, you can use the `getIconString` method.
+
+```jsx
+import { getIconString } from '@pluralsight/icons/string'
+
+function MenuIcon(props) {
+  return (
+    <img alt="menu arrow left" src={getIconString('MenuIcon', props.color)} />
+  )
+}
+```
+
+### Icon colors
 
 By default the icons are monochromatic and will inherit the `color` of their parent.
 This ensures the icon color matches its context by default and facilitates
@@ -82,7 +98,7 @@ theming while still allowing for control over the icon's color directly.
 </div>
 ```
 
-## Icon sizes
+### Icon sizes
 
 `Icons` come in three size variants: s, m (default), l.
 
@@ -100,7 +116,11 @@ theming while still allowing for control over the icon's color directly.
   <IconSizesPreview />
 </LiveExampleTabs>
 
-## Importing by framework
+## Components by framework
+
+The Icons package provides ready-to-use components for popular frameworks.
+
+### React
 
 We export React components by default, which can be imported by name from the package root.
 
@@ -108,20 +128,10 @@ We export React components by default, which can be imported by name from the pa
 import { MenuIcon } from '@pluralsight/icons'
 ```
 
-We also export Svelte components.
+### Svelte
 
 ```javascript
 import { MenuIcon } from '@pluralsight/icons/svelte'
-```
-
-If needed, you can import SVGs directly. The approach will vary based on your framework and tooling.
-
-```jsx
-import menuArrowLeftSvg from '@pluralsight/icons/svg/navigation/menu-arrow-left.svg'
-
-function MenuIcon() {
-  return <img alt="menu arrow left" src={menuArrowLeftSvg} />
-}
 ```
 
 :::tip
