@@ -5,6 +5,7 @@ describe('Switch CSS', () => {
     const baseClass = 'ps-switch'
     const options = {
       id: 'email',
+      name: '',
       checked: false,
     }
     const dataPropResults = {

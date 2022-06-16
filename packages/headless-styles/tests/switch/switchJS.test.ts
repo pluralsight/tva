@@ -13,6 +13,8 @@ describe('Switch JS', () => {
     const options = {
       checked: false,
       htmlFor: 'email',
+      id: '',
+      name: '',
       size: 's',
     } as SwitchOptions
     expect(getJSSwitchProps(options).switchThumb.cssProps).toContain(

@@ -1,5 +1,5 @@
 import kebabCase from 'kebab-case'
-import type { FieldOptions, Tech } from '../components/types'
+import type { FieldStates, Tech } from '../components/types'
 
 export type NestedStyleValue = string | StyleProps
 export type StyleProps = Record<string, unknown>
@@ -50,7 +50,7 @@ const propertyMap: Record<string, string> = {
 
 // Public
 
-export function createA11yProps(options: FieldOptions) {
+export function createA11yProps(options: FieldStates) {
   const { disabled, invalid, required, readOnly } = options
 
   return {
