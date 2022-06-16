@@ -12,7 +12,8 @@ const { button, iconOptions } = getIconButtonProps({
 })
 const homeIconProps = getIconProps(iconOptions)
 
-const { type, ...linkProps } = getButtonProps()
+const linkProps = getButtonProps()
+delete linkProps.type
 
 function InteractiveIcon() {
   return (
