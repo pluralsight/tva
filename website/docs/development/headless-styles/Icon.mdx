@@ -9,6 +9,7 @@ tags: [Development, Packages, Components, Headless Styles, Icon, Chakra]
 
 import CodeBlock from '@theme/CodeBlock'
 import BasicIcon from '@site/src/components/Icons/BasicIcon'
+import DecorativeIcon from '@site/src/components/Icons/DecorativeIcon'
 import IconSizes from '@site/src/components/Icons/IconSizes'
 import {
   BasicIconPreview,
@@ -76,10 +77,12 @@ Depending on the usage, you will need to provide additional information.
 The icon is purely cosmetic and conveys no real semantic meaning.
 In this case, the icon should be hidden from assistive technology.
 
-<!-- TODO: Add visual example here -->
+<DecorativeIcon />
 
 ```jsx
-<BriefcaseIcon {...getIconProps({ ariaHidden: true })} />
+<span>
+  <BriefcaseIcon {...getIconProps({ ariaHidden: true })} /> Business Account
+</span>
 ```
 
 ### Interactive icons
