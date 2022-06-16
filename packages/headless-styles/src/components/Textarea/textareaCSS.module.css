@@ -6,7 +6,7 @@
   border-radius: 6px;
   border-style: solid;
   border-width: 1px;
-  color: white;
+  color: var(--ps-neutral-text);
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
   font-size: 1rem;

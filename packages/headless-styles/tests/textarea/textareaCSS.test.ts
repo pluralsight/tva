@@ -43,6 +43,10 @@ describe('Textarea CSS', () => {
       ...result,
       className: `${baseClass} verticalTextarea`,
     })
+    expect(getTextareaProps({ ...options, resize: 'none' })).toEqual({
+      ...result,
+      className: `${baseClass} noneTextarea`,
+    })
   })
 
   test('should accept a tech type', () => {
