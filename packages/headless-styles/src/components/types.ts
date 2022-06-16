@@ -6,7 +6,6 @@ export interface CheckboxFieldOptions extends FieldOptions {
 export interface FieldOptions extends FieldStates {
   id: string
   name: string
-  value: string
 }
 
 export interface FieldStates {
@@ -19,6 +18,7 @@ export interface FieldStates {
 export interface InputFieldOptions extends FieldOptions {
   describedBy?: string
   placeholder: string
+  value: string
 }
 
 // types

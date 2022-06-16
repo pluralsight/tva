@@ -8,6 +8,7 @@ const defaultSwitchOptions = {
   id: '',
   invalid: false,
   label: '',
+  name: '',
   readOnly: false,
   required: false,
   size: 'm' as Size,
@@ -21,6 +22,7 @@ export function getDefaultSwitchOptions(options?: SwitchOptions) {
     id: options?.id ?? defaultSwitchOptions.id,
     invalid: options?.invalid ?? defaultSwitchOptions.invalid,
     label: options?.label ?? defaultSwitchOptions.label,
+    name: options?.name ?? defaultSwitchOptions.name,
     readOnly: options?.readOnly ?? defaultSwitchOptions.readOnly,
     required: options?.required ?? defaultSwitchOptions.required,
     size: options?.size ?? defaultSwitchOptions.size,
@@ -47,6 +49,7 @@ export function getA11yProps(options: SwitchOptions) {
     inputProps: {
       ...inputA11yProps,
       id: options.id,
+      name: options.name,
       type: 'checkbox',
     },
     dataProps: {

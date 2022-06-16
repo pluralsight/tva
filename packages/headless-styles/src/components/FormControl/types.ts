@@ -1,6 +1,6 @@
-import type { FieldOptions, Tech } from '../types'
+import type { FieldStates, Tech } from '../types'
 
-export interface FormControlOptions extends FieldOptions {
+export interface FormControlOptions extends FieldStates {
   groupType?: GroupType
   tech?: Tech
 }
