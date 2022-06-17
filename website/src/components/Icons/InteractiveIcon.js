@@ -11,9 +11,7 @@ const { button, iconOptions } = getIconButtonProps({
   ariaLabel: 'Navivgate to home page',
 })
 const homeIconProps = getIconProps(iconOptions)
-
 const linkProps = getButtonProps()
-delete linkProps.type
 
 function InteractiveIcon() {
   return (
@@ -22,16 +20,16 @@ function InteractiveIcon() {
         <a className={button.className} href="/">
           <HomeIcon {...homeIconProps} />
         </a>
-        <a href="#" {...linkProps}>
+        <a href="#" className={linkProps.className}>
           Page 1
         </a>
-        <a href="#" {...linkProps}>
+        <a href="#" className={linkProps.className}>
           Page 2
         </a>
-        <a href="#" {...linkProps}>
+        <a href="#" className={linkProps.className}>
           Page 3
         </a>
-        <a href="#" {...linkProps}>
+        <a href="#" className={linkProps.className}>
           Page 4
         </a>
       </div>
