@@ -2,36 +2,30 @@ import styles from './generated/textareaCSS.module'
 
 const baseTextareaStyles = styles.textareaBase
 const chakraTextareaStyle = {
-  field: {
-    ...baseTextareaStyles,
-    _active: {
-      ...baseTextareaStyles['&:active'],
-    },
+  ...baseTextareaStyles,
+  _active: {
+    ...baseTextareaStyles['&:active'],
+  },
+  _hover: {
+    ...baseTextareaStyles['&:hover'],
+  },
+  _focus: {
+    ...baseTextareaStyles['&:focus'],
+  },
+  _disabled: {
+    ...styles.textareaBase_data_disabled__true,
     _hover: {
-      ...baseTextareaStyles['&:hover'],
-    },
-    _focus: {
-      ...baseTextareaStyles['&:focus'],
-    },
-    _disabled: {
-      ...styles.textareaBase_data_disabled__true,
-      _hover: {
-        ...styles.textareaBase_data_disabled__true['&:hover'],
-      },
-    },
-    _invalid: {
-      ...styles.textareaBase_data_invalid__true,
-    },
-    _readOnly: {
-      ...styles.textareaBase_data_readonly__true,
-      _hover: {
-        ...styles.textareaBase_data_readonly__true['&:hover'],
-      },
+      ...styles.textareaBase_data_disabled__true['&:hover'],
     },
   },
-  addon: {
-    bg: 'none',
-    border: 'none',
+  _invalid: {
+    ...styles.textareaBase_data_invalid__true,
+  },
+  _readOnly: {
+    ...styles.textareaBase_data_readonly__true,
+    _hover: {
+      ...styles.textareaBase_data_readonly__true['&:hover'],
+    },
   },
 }
 
