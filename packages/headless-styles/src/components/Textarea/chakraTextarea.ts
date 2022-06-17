@@ -3,6 +3,7 @@ import styles from './generated/textareaCSS.module'
 const baseTextareaStyles = styles.textareaBase
 const chakraTextareaStyle = {
   ...baseTextareaStyles,
+  border: `${baseTextareaStyles.borderWidth} ${baseTextareaStyles.borderStyle} ${baseTextareaStyles.borderColor}`,
   _active: {
     ...baseTextareaStyles['&:active'],
   },
