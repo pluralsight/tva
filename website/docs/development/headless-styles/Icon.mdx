@@ -98,9 +98,22 @@ when the user would interact with an icon, a more appropriate element should "ow
 <InteractiveIcon />
 
 ```jsx title="Labelling with aria-label"
-<a href="/" aria-label="Navigate to home page">
-  <HomeIcon {...getIconProps({ ariaHidden: true })} />
-</a>
+import { getIconProps, getIconButtonProps } from '@pluralsight/headless-styles'
+import { HomeIcon } from '@pluralsight/icons'
+
+const { button, iconOptions } = getIconButtonProps({
+  // highlight-next-line
+  ariaLabel: 'Navivgate to home page',
+})
+delete button.type
+
+function HomeButton() {
+  return (
+    <a {...button} href="/">
+      <HomeIcon {...getIconProps(iconOptions)} />
+    </a>
+  )
+}
 ```
 
 ```jsx title="Labelling with aria-labelledby"
