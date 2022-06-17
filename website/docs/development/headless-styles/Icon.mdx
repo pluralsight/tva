@@ -124,7 +124,7 @@ const buttonProps = getButtonProps()
 function HomeButton() {
   return (
     {/* highlight-next-line */}
-    <a {...buttonProps} href="/" aria-labelledby="homeLink">
+    <a aria-labelledby="homeLink" className={buttonProps.className} href="/">
       {/* highlight-next-line */}
       <HomeIcon {...getIconProps({ ariaHidden: true })} />
       {/* highlight-next-line */}
