@@ -108,7 +108,7 @@ const { button, iconOptions } = getIconButtonProps({
 
 function HomeButton() {
   return (
-    <a {...button} href="/">
+    <a className={button.className} href="/">
       <HomeIcon {...getIconProps(iconOptions)} />
     </a>
   )
