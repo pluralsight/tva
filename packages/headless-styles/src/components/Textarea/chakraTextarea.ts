@@ -12,6 +12,7 @@ const chakraTextareaStyle = {
   },
   _focus: {
     ...baseTextareaStyles['&:focus'],
+    borderColor: 'none',
   },
   _disabled: {
     ...styles.textareaBase_data_disabled__true,
