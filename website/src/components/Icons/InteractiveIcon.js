@@ -10,7 +10,6 @@ import Container from '../Container/Container'
 const { button, iconOptions } = getIconButtonProps({
   ariaLabel: 'Navivgate to home page',
 })
-delete button.type
 const homeIconProps = getIconProps(iconOptions)
 
 const linkProps = getButtonProps()
