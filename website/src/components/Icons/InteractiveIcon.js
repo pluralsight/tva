@@ -20,7 +20,7 @@ function InteractiveIcon() {
   return (
     <Container>
       <div style={{ display: 'flex' }}>
-        <a href="/" {...button}>
+        <a className={button.className} href="/">
           <HomeIcon {...homeIconProps} />
         </a>
         <a href="#" {...linkProps}>
