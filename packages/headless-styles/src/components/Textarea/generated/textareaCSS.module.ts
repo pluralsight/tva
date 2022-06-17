@@ -3,82 +3,82 @@
 //
 // Manual changes will be lost - proceed with caution!
 
-
 export default {
-  "textareaBase": {
-    "appearance": "none",
-    "background": "hsl(246deg 37% 15% / 100%)",
-    "borderColor": "hsl(237deg 30% 36% / 100%)",
-    "borderImage": "initial",
-    "borderRadius": "6px",
-    "borderStyle": "solid",
-    "borderWidth": "1px",
-    "color": "white",
-    "fontFamily": "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
-    "fontSize": "1rem",
-    "fontVariationSettings": "'wght' 400",
-    "fontWeight": "400",
-    "height": "5rem",
-    "lineHeight": "inherit",
-    "minHeight": "5rem",
-    "minWidth": "0",
-    "outline": "transparent solid 2px",
-    "outlineOffset": "2px",
-    "paddingBottom": "8px",
-    "paddingInlineStart": "1rem",
-    "paddingInlineEnd": "1rem",
-    "paddingTop": "8px",
-    "position": "relative",
-    "transitionDuration": "150ms",
-    "transitionProperty": "background, border, box-shadow, outline",
-    "verticalAlign": "top",
-    "width": "100%",
-    "&:active": {
-      "boxShadow": "none",
-      "outline": "none"
+  textareaBase: {
+    appearance: 'none',
+    background: 'hsl(246deg 37% 15% / 100%)',
+    borderColor: 'hsl(237deg 30% 36% / 100%)',
+    borderImage: 'initial',
+    borderRadius: '6px',
+    borderStyle: 'solid',
+    borderWidth: '1px',
+    color: 'hsl(0deg 0% 100% / 100%)',
+    fontFamily:
+      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
+    fontSize: '1rem',
+    fontVariationSettings: "'wght' 400",
+    fontWeight: '400',
+    height: '5rem',
+    lineHeight: 'inherit',
+    minHeight: '5rem',
+    minWidth: '0',
+    outline: 'transparent solid 2px',
+    outlineOffset: '2px',
+    paddingBottom: '8px',
+    paddingInlineStart: '1rem',
+    paddingInlineEnd: '1rem',
+    paddingTop: '8px',
+    position: 'relative',
+    transitionDuration: '150ms',
+    transitionProperty: 'background, border, box-shadow, outline',
+    verticalAlign: 'top',
+    width: '100%',
+    '&:active': {
+      boxShadow: 'none',
+      outline: 'none',
     },
-    "&:hover": {
-      "boxShadow": "hsl(234deg 30% 49% / 100%) 0 0 0 1px"
+    '&:hover': {
+      boxShadow: 'hsl(234deg 30% 49% / 100%) 0 0 0 1px',
     },
-    "&:focus": {
-      "boxShadow": "none",
-      "outline": "3px solid hsl(249deg 63% 34% / 100%)"
+    '&:focus': {
+      boxShadow: 'none',
+      outline: '3px solid hsl(249deg 63% 34% / 100%)',
     },
-    "&:focus:not(:focus-visible)": {
-      "boxShadow": "none",
-      "outline": "none"
-    }
+    '&:focus:not(:focus-visible)': {
+      boxShadow: 'none',
+      outline: 'none',
+    },
   },
-  "initialTextarea": {
-    "composes": "textareaBase"
+  initialTextarea: {
+    composes: 'textareaBase',
   },
-  "noneTextarea": {
-    "composes": "textareaBase",
-    "resize": "none"
+  noneTextarea: {
+    composes: 'textareaBase',
+    resize: 'none',
   },
-  "horizontalTextarea": {
-    "composes": "textareaBase",
-    "resize": "horizontal"
+  horizontalTextarea: {
+    composes: 'textareaBase',
+    resize: 'horizontal',
   },
-  "verticalTextarea": {
-    "composes": "textareaBase",
-    "resize": "vertical"
+  verticalTextarea: {
+    composes: 'textareaBase',
+    resize: 'vertical',
   },
-  "textareaBase_data_disabled__true": {
-    "opacity": "0.7",
-    "cursor": "not-allowed",
-    "&:hover": {
-      "boxShadow": "none"
-    }
+  textareaBase_data_disabled__true: {
+    opacity: '0.7',
+    cursor: 'not-allowed',
+    '&:hover': {
+      boxShadow: 'none',
+    },
   },
-  "textareaBase_data_invalid__true": {
-    "borderColor": "hsl(336deg 100% 54% / 100%)",
-    "boxShadow": "hsl(336deg 100% 54% / 100%) 0 0 0 1px"
+  textareaBase_data_invalid__true: {
+    borderColor: 'hsl(336deg 100% 54% / 100%)',
+    boxShadow: 'hsl(336deg 100% 54% / 100%) 0 0 0 1px',
   },
-  "textareaBase_data_readonly__true": {
-    "cursor": "not-allowed",
-    "&:hover": {
-      "boxShadow": "none"
-    }
-  }
+  textareaBase_data_readonly__true: {
+    cursor: 'not-allowed',
+    '&:hover': {
+      boxShadow: 'none',
+    },
+  },
 }
