@@ -1,12 +1,18 @@
-import { useState } from 'react'
-import { getTextareaProps } from '../../../src'
+import { useEffect, useState } from 'react'
+import { getTextareaProps, getJSTextareaProps } from '../../../src'
 
-export default function Textarea() {
+export default function Textarea({ logJS }) {
   const [text, setText] = useState('')
 
   function handleChange(e) {
     setText(e.target.value)
   }
+
+  useEffect(() => {
+    if (logJS) {
+      console.log({ ...getJSTextareaProps() })
+    }
+  }, [logJS])
 
   return (
     <div id="textarea">
