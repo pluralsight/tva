@@ -49,5 +49,6 @@ export { getSwitchProps } from './components/Switch/switchCSS'
 export { getJSSwitchProps } from './components/Switch/switchJS'
 
 export { getTextareaProps } from './components/Textarea/textareaCSS'
+export { getJSTextareaProps } from './components/Textarea/textareaJS'
 
 export { chakraPSTheme } from './chakra'
