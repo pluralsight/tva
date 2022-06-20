@@ -13,6 +13,7 @@
   font-weight: 600;
   height: 2.5rem;
   justify-content: center;
+  min-width: 2.5rem;
   outline: none;
   padding-inline: 16px;
   position: relative;
@@ -57,6 +58,7 @@
   composes: base;
   font-size: 0.75rem;
   height: 1.5rem;
+  min-width: 1.5rem;
   padding-inline: 8px;
 }
 
@@ -64,37 +66,15 @@
   composes: base;
   font-size: 0.875rem;
   height: 2rem;
+  min-width: 2rem;
   padding-inline: 12px;
 }
 
 .l {
   composes: base;
   height: 3rem;
+  min-width: 3rem;
   padding-inline: 24px;
-}
-
-.xsIconButton {
-  composes: xs;
-  padding-inline: 0;
-  width: 1.5rem;
-}
-
-.sIconButton {
-  composes: s;
-  padding-inline: 0;
-  width: 2rem;
-}
-
-.mIconButton {
-  composes: base;
-  padding-inline: 0;
-  width: 2.5rem;
-}
-
-.lIconButton {
-  composes: l;
-  padding-inline: 0;
-  width: 3rem;
 }
 
 .textDanger {
@@ -112,6 +92,13 @@
   background-color: var(--ps-danger-background-weak);
   color: var(--ps-danger-text);
   composes: base;
+}
+
+.xs.iconButton,
+.s.iconButton,
+.m.iconButton,
+.l.iconButton {
+  padding-inline: 0;
 }
 
 .round {

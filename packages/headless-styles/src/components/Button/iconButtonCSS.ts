@@ -6,7 +6,7 @@ import styles from './buttonCSS.module.css'
 export function getIconButtonProps(options?: IconButtonOptions) {
   const defaultOptions = getDefaultIconButtonOptions(options)
   const { kind, variant } = defaultOptions
-  const sizeClass = `${defaultOptions.size}IconButton`
+  const sizeClass = `${defaultOptions.size}`
   const props = getIconButtonReturnProps(defaultOptions)
 
   return {
@@ -14,8 +14,8 @@ export function getIconButtonProps(options?: IconButtonOptions) {
     button: {
       ...props.button,
       ...createClassProp(defaultOptions.tech, {
-        defaultClass: `ps-icon-btn ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
-        svelteClass: `base ${kind} ${sizeClass} ${variant}`,
+        defaultClass: `ps-icon-btn ${styles.iconButton} ${styles[kind]} ${styles[sizeClass]} ${styles[variant]}`,
+        svelteClass: `base iconButton ${kind} ${sizeClass} ${variant}`,
       }),
     },
   }
