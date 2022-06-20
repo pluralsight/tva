@@ -30,29 +30,6 @@ const baseStyles = {
 
 // Public
 
-export const ChakraButton = {
-  baseStyle: styles.base,
-  defaultProps: {
-    size: 'm',
-    variant: 'text',
-  },
-  sizes: {
-    xs: styles.xs,
-    s: styles.s,
-    m: styles.base,
-    l: styles.l,
-  },
-  variants: {
-    text: styles.text,
-    textWeak: styles.textWeak,
-    medium: styles.medium,
-    strong: styles.strong,
-    textDanger: styles.textDanger,
-    mediumDanger: styles.mediumDanger,
-    strongDanger: styles.strongDanger,
-  },
-}
-
 export function getJSDangerButtonProps(options?: DangerOptions): ButtonReturn {
   const { kind, size } = getDefaultDangerOptions(options)
   const kindKey = styles[`${kind}Danger` as keyof typeof styles]
