@@ -72,6 +72,7 @@ export function getIconButtonReturnProps(options: IconButtonOptions) {
     iconOptions: {
       ariaHidden: true,
       size: iconButtonSizeMap[options.size as Size],
+      tech: options.tech,
     },
   }
 }

@@ -12,6 +12,7 @@ describe('Icon Button CSS', () => {
       iconOptions: {
         size: 'm',
         ariaHidden: true,
+        tech: '',
       },
     }
 
@@ -103,7 +104,7 @@ describe('Icon Button CSS', () => {
           type: 'button',
           class: 'base iconButton text m default',
         },
-        iconOptions: result.iconOptions,
+        iconOptions: { ...result.iconOptions, tech: 'svelte' },
       })
     })
 
