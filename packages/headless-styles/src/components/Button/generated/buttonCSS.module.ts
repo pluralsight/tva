@@ -19,6 +19,7 @@ export default {
     fontWeight: '600',
     height: '2.5rem',
     justifyContent: 'center',
+    minWidth: '2.5rem',
     outline: 'none',
     paddingInline: '16px',
     position: 'relative',
@@ -100,38 +101,21 @@ export default {
     composes: 'base',
     fontSize: '0.75rem',
     height: '1.5rem',
+    minWidth: '1.5rem',
     paddingInline: '8px',
   },
   s: {
     composes: 'base',
     fontSize: '0.875rem',
     height: '2rem',
+    minWidth: '2rem',
     paddingInline: '12px',
   },
   l: {
     composes: 'base',
     height: '3rem',
+    minWidth: '3rem',
     paddingInline: '24px',
-  },
-  xsIconButton: {
-    composes: 'xs',
-    paddingInline: '0',
-    width: '1.5rem',
-  },
-  sIconButton: {
-    composes: 's',
-    paddingInline: '0',
-    width: '2rem',
-  },
-  mIconButton: {
-    composes: 'base',
-    paddingInline: '0',
-    width: '2.5rem',
-  },
-  lIconButton: {
-    composes: 'l',
-    paddingInline: '0',
-    width: '3rem',
   },
   textDanger: {
     color: 'hsl(335deg 100% 82% / 100%)',
@@ -165,7 +149,11 @@ export default {
       backgroundColor: 'hsl(335deg 100% 18% / 100%)',
     },
   },
-  round: {
+  defaultIconButton: {
+    paddingInline: '0',
+  },
+  roundIconButton: {
+    composes: 'defaultIconButton',
     borderRadius: '50%',
   },
   light__base_text: {

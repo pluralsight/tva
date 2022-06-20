@@ -94,14 +94,12 @@
   composes: base;
 }
 
-.xs.iconButton,
-.s.iconButton,
-.m.iconButton,
-.l.iconButton {
+.defaultIconButton {
   padding-inline: 0;
 }
 
-.round {
+.roundIconButton {
+  composes: defaultIconButton;
   border-radius: 50%;
 }
 
