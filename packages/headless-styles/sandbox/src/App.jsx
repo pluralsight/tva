@@ -40,7 +40,7 @@ function App() {
       </header>
 
       <Badge />
-      <Button />
+      <Button logJS />
       <Checkbox />
       <CircularProgress />
       <ErrorMessage />
@@ -54,7 +54,7 @@ function App() {
       <Radio />
       <Skeleton />
       <Switch />
-      <Textarea logJS />
+      <Textarea />
     </div>
   )
 }

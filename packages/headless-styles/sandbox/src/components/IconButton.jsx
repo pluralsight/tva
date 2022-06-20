@@ -1,4 +1,9 @@
-import { getIconButtonProps, getIconProps } from '../../../src'
+import { useEffect } from 'react'
+import {
+  getIconButtonProps,
+  getIconProps,
+  getJSIconButtonProps,
+} from '../../../src'
 import {
   ArrowDownRightIcon,
   CodeIcon,
@@ -37,10 +42,17 @@ function PSIconButton(props) {
   )
 }
 
-export default function IconButton() {
-  // if (props.logJS) {
-  //   console.log({ ...getJSIconButtonProps({ ariaLabel: 'button', kind: 'medium', size: 'xs', variant: 'round' }) })
-  // }
+export default function IconButton(props) {
+  useEffect(() => {
+    console.log({
+      ...getJSIconButtonProps({
+        ariaLabel: 'button',
+        kind: 'medium',
+        size: 'xs',
+        variant: 'round',
+      }),
+    })
+  }, [props.logJS])
 
   return (
     <div id="icon-button">
