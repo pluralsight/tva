@@ -16,6 +16,7 @@ function getChakraVariant(props: {
   padding: string
 }): Styles {
   const buttonStyles = styles[props.variant as keyof typeof styles]
+
   if (isIconButton(props)) {
     const iconButtonStyles = isRound(props)
       ? styles.roundIconButton
