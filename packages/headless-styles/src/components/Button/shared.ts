@@ -1,13 +1,14 @@
 import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,
+  ButtonType,
   DangerOptions,
+  DangerIconButtonOptions,
   DangerKind,
   IconButtonOptions,
   Kind,
   Size,
   Variant,
-  ButtonType,
 } from './types'
 
 export const defaultButtonOptions = {
@@ -56,7 +57,27 @@ export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
   }
 }
 
-export function getIconButtonReturnProps(options: IconButtonOptions) {
+export const defaultDangerIconButtonOptions = {
+  ...defaultDangerButtonOptions,
+  variant: 'default' as Variant,
+  ariaLabel: '',
+}
+
+export function getDefaultDangerIconButtonOptions(
+  options?: DangerIconButtonOptions
+) {
+  return {
+    kind: options?.kind ?? defaultDangerIconButtonOptions.kind,
+    size: options?.size ?? defaultDangerIconButtonOptions.size,
+    tech: options?.tech ?? defaultDangerIconButtonOptions.tech,
+    ariaLabel: options?.ariaLabel ?? defaultDangerIconButtonOptions.ariaLabel,
+    variant: options?.variant ?? defaultDangerIconButtonOptions.variant,
+  }
+}
+
+export function getIconButtonReturnProps(
+  options: IconButtonOptions | DangerIconButtonOptions
+) {
   const iconButtonSizeMap: Record<Size, IconSize> = {
     xs: 's',
     s: 'm',
