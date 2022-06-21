@@ -20,6 +20,10 @@ export interface IconButtonOptions extends ButtonOptions {
   variant?: Variant
 }
 
+export interface DangerIconButtonOptions extends IconButtonOptions {
+  kind?: DangerKind
+}
+
 // types
 
 export type ButtonType = 'button' | 'submit' | 'reset' | undefined
