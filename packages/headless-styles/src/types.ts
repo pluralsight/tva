@@ -2,6 +2,7 @@ export type { BadgeOptions } from './components/Badge/types'
 export type {
   ButtonOptions,
   IconButtonOptions,
+  DangerIconButtonOptions,
 } from './components/Button/types'
 export type { CheckboxOptions } from './components/Checkbox/types'
 export type { CircularProgressOptions } from './components/CircularProgress/types'

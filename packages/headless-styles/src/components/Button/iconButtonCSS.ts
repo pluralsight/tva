@@ -1,22 +1,52 @@
 import { createClassProp } from '../../utils/helpers'
-import { getDefaultIconButtonOptions, getIconButtonReturnProps } from './shared'
-import type { IconButtonOptions } from './types'
+import { Tech } from '../types'
+import {
+  getDefaultIconButtonOptions,
+  getDefaultDangerIconButtonOptions,
+  getIconButtonReturnProps,
+} from './shared'
+import type { IconButtonOptions, DangerIconButtonOptions } from './types'
 import styles from './buttonCSS.module.css'
 
-export function getIconButtonProps(options?: IconButtonOptions) {
-  const defaultOptions = getDefaultIconButtonOptions(options)
-  const { kind, size } = defaultOptions
-  const variantClass = `${defaultOptions.variant}IconButton`
-  const props = getIconButtonReturnProps(defaultOptions)
+function createIconButton(
+  tech: Tech,
+  options: IconButtonOptions | DangerIconButtonOptions,
+  classes: { global: string; variant: string; kind: string; size: string }
+) {
+  const props = getIconButtonReturnProps(options)
 
   return {
     ...props,
     button: {
       ...props.button,
-      ...createClassProp(defaultOptions.tech, {
-        defaultClass: `ps-icon-btn ${styles[variantClass]} ${styles[kind]} ${styles[size]}`,
-        svelteClass: `base ${variantClass} ${kind} ${size}`,
+      ...createClassProp(tech, {
+        defaultClass: `${classes.global} ${styles[classes.variant]} ${
+          styles[classes.kind]
+        } ${styles[classes.size]}`,
+        svelteClass: `base ${classes.variant} ${classes.kind} ${classes.size}`,
       }),
     },
   }
+}
+
+export function getDangerIconButtonProps(options?: DangerIconButtonOptions) {
+  const defaultOptions = getDefaultDangerIconButtonOptions(options)
+
+  return createIconButton(defaultOptions.tech, defaultOptions, {
+    global: 'ps-danger-icon-btn',
+    variant: `${defaultOptions.variant}IconButton`,
+    kind: `${defaultOptions.kind}Danger`,
+    size: defaultOptions.size,
+  })
+}
+
+export function getIconButtonProps(options?: IconButtonOptions) {
+  const defaultOptions = getDefaultIconButtonOptions(options)
+
+  return createIconButton(defaultOptions.tech, defaultOptions, {
+    global: 'ps-icon-btn',
+    variant: `${defaultOptions.variant}IconButton`,
+    kind: defaultOptions.kind,
+    size: defaultOptions.size,
+  })
 }
