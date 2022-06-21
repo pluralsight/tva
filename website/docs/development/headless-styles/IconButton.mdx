@@ -17,6 +17,347 @@ tags:
 <!-- Keep an eye out so we can kill the components we are importing in. -->
 <!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
 
+import CodeBlock from '@theme/CodeBlock'
+import BasicIconButton from '@site/src/components/IconButton/BasicIconButton'
+import IconButtonSizes from '@site/src/components/IconButton/IconButtonSizes'
+import IconButtonVariants from '@site/src/components/IconButton/IconButtonVariants'
+import DangerIconButton from '@site/src/components/IconButton/DangerIconButton'
+import {
+  BasicIconButtonPreview,
+  BasicIconButtonFullPreview,
+} from '@site/src/components/IconButton/BasicIconButton.preview'
+import {
+  IconButtonSizesPreview,
+  IconButtonSizesFullPreview,
+} from '@site/src/components/IconButton/IconButtonSizes.preview'
+import {
+  IconButtonVariantsPreview,
+  IconButtonVariantsFullPreview,
+} from '@site/src/components/IconButton/IconButtonVariants.preview'
+import {
+  DangerIconButtonPreview,
+  DangerIconButtonFullPreview,
+} from '@site/src/components/IconButton/DangerIconButton.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 
 <ReleaseNote />
+
+The Icon Button is used to perform an action or event, such as submitting a form, opening a dialog, using a cancel action, or to nagivate.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Button"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import {
+  getIconButtonProps,
+  getDangerIconButtonProps,
+} from '@pluralsight/headless-styles'
+```
+
+- **getIconButtonProps**: The styles for any button outside of status related
+- **getDangerIconButtonProps**: The styles for danger status buttons
+
+## Usage
+
+### Icon Button kinds
+
+`getIconButtonProps` comes with five kinds to change the visual style of an icon button. You can use `text` (default), `textWeak`, `weak`, `medium`, and `strong`.
+
+<BasicIconButton />
+<LiveExampleTabs
+  fullCode={<BasicIconButtonFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-mvskqy',
+    joy: 'basic-icon-button-css-wc6kwi',
+    styled: 'basic-icon-button-css-in-js-sc-fgz3t6',
+    svelte: 'ps-svelte-pey4jg',
+  }}
+>
+  <BasicIconButtonPreview />
+</LiveExampleTabs>
+
+### Icon Button sizes
+
+Use the `size` options to change the size of an icon button. The options are: `xs`, `s`, `m` (default), `l`.
+
+<IconButtonSizes />
+<LiveExampleTabs
+  fullCode={<IconButtonSizesFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-mvskqy',
+    joy: 'basic-icon-button-css-wc6kwi',
+    styled: 'basic-icon-button-css-in-js-sc-fgz3t6',
+    svelte: 'ps-svelte-pey4jg',
+  }}
+>
+  <IconButtonSizesPreview />
+</LiveExampleTabs>
+
+:::tip
+
+We use the standard clothing size shorthand values for all `size` related options in any library we provide (i.e. xs-xxl).
+
+:::
+
+### Icon Button variants
+
+Use the `variant` options to change the appearance of the icon button. The options are: `default` (default) or `round`.
+
+<IconButtonVariants />
+<LiveExampleTabs
+  fullCode={<IconButtonVariantsFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-mvskqy',
+    joy: 'basic-icon-button-css-wc6kwi',
+    styled: 'basic-icon-button-css-in-js-sc-fgz3t6',
+    svelte: 'ps-svelte-pey4jg',
+  }}
+>
+  <IconButtonVariantsPreview />
+</LiveExampleTabs>
+
+### Danger Icon Button
+
+`getDangerIconButtonProps` allows to style an icon button with a danger theme. The `kind` options are: `text` (default), `medium`, and `strong`.
+
+<DangerIconButton />
+<LiveExampleTabs
+  fullCode={<DangerIconButtonFullPreview />}
+  sandboxList={{
+    chakra: 'ps-react-chakra-mvskqy',
+    joy: 'basic-icon-button-css-wc6kwi',
+    styled: 'basic-icon-button-css-in-js-sc-fgz3t6',
+    svelte: 'ps-svelte-pey4jg',
+  }}
+>
+  <DangerIconButtonPreview />
+</LiveExampleTabs>
+
+### Icon Button styled links
+
+If you want to use icon button styles for an `a` element, just omit the `type` property from the returned button object.
+
+```jsx
+const { button, iconOptions } = getIconButtonProps({ ariaLabel: 'Go back' })
+const linkProps = {
+  'aria-label' = button['aria-label'],
+  className: button.className,
+}
+
+function BackLink() {
+  return (
+    <a href="#" {...linkProps}>
+      <ArrowLeftIcon {...getIconProps(iconOptions)} />
+    </a>
+  )
+}
+```
+
+## Extending
+
+There are times you may need to make a slight adjustment to the icon button styles, which is easy to do since we are giving you an Object.
+
+Here is an example of using `styled-components` to extend an icon button text color.
+
+```jsx title=page/Login/components/CustomMenuButton.jsx
+import styled from 'styled-components'
+import {
+  getJSIconButtonProps,
+  getIconProps,
+} from '@pluralsight/headless-styles'
+
+const { button, iconOptions } = getJSIconButtonProps({
+  ariaLabel: '',
+  kind: 'medium',
+})
+
+const CustomButton = styled.button`
+  ${button.cssProps}
+  color: '#bfbfbf'
+`
+
+const CustomMenuIcon = styled(MenuIcon)`
+  ${getIconProps(iconOptions).cssProps}
+`
+
+export default function CustomMenuButton(props) {
+  return (
+    <CustomButton {...props}>
+      <CustomMenuIcon />
+    </CustomButton>
+  )
+}
+```
+
+:::tip
+
+When combining `headless-styles` with other libraries, please follow the guides in the example codesandboxes for the best experience. **Some libraries require special support**.
+
+:::
+
+## API
+
+| Name                         | Argument Type                                                    | Default                                                             | Description                    |
+| ---------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------ |
+| `getIconButtonProps`         | **options**: [IconButtonOptions](#iconbuttonoptions)             | **kind**: 'text', <br />**size**: 'm', <br />**variant**: 'default' | Get main icon button styles.   |
+| `getDangerIconButtonProps`   | **options**: [DangerIconButtonOptions](#dangericonbuttonoptions) | **kind**: 'text', <br />**size**: 'm', <br />**variant**: 'default' | Get danger icon button styles. |
+| `getJSIconButtonProps`       | **options**: [IconButtonOptions](#iconbuttonoptions)             | same as CSS API                                                     | CSS-in-JS API                  |
+| `getJSDangerIconButtonProps` | **options**: [DangerIconButtonOptions](#dangericonbuttonoptions) | same as CSS API                                                     | CSS-in-JS API                  |
+
+## Options
+
+### IconButtonOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface IconButtonOptions extends ButtonOptions {
+  ariaLabel: string
+  variant?: 'default' | 'round'
+}
+```
+
+```typescript title="Import example"
+import type { IconButtonOptions } from '@pluralsight/headless-styles/types'
+```
+
+### DangerIconButtonOptions
+
+```typescript
+interface DangerIconButtonOptions extends IconButtonOptions {
+  kind?: 'text' | 'medium' | 'strong'
+}
+```
+
+## Props
+
+### IconButtonProps
+
+```typescript
+interface IconButtonProps {
+  button: {
+    'aria-label': string
+    className: string
+    type: 'button'
+  }
+  iconOptions: {
+    ariaHidden: true
+    size: 's' | 'm' | 'l'
+    tech: '' | 'svelte'
+  }
+}
+```
+
+```js title="Return value example"
+{
+  button: {
+    'aria-label': 'Close dialog'
+    className: `ps-icon-btn ${...internalStyles}`
+    type: 'button'
+  },
+  iconOptions: {
+    ariaHidden: true,
+    size: 'm',
+    tech: '',
+  }
+}
+```
+
+### JSIconButtonProps
+
+```typescript
+interface JSIconButtonProps {
+  button: {
+    'aria-label': string
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+    type: ButtonType
+  }
+  iconOptions: {
+    ariaHidden: true
+    size: 'm'
+    tech: ''
+  }
+}
+```
+
+```js title="Return value example"
+{
+  button: {
+    'aria-label': 'Close dialog'
+    cssProps: `
+      color: #fff;
+      background-color: #000;
+      ...
+    `,
+    styles: {
+      color: '#fff',
+      backgroundColor: '#000'
+      '&:hover': {
+        ...
+      }
+    },
+    type: 'button',
+  },
+  iconOptions: {
+    ariaHidden: true,
+    size: 'm',
+    tech: '',
+  }
+}
+```
+
+## Guides
+
+### Icon Button size guide
+
+Icon Button sizes are designed to be square (1:1 aspect ratio). Here is an interface that gives the sizing guide.
+
+```typescript title="Example interface - does not exist in types"
+interface IconButtonSizeGuide {
+  xs: {
+    width: '1.5rem'
+    height: '1.5rem'
+  }
+  s: {
+    width: '2rem'
+    height: '2rem'
+  }
+  m: {
+    width: '2.5rem'
+    height: '2.5rem'
+  }
+  l: {
+    width: '3rem'
+    height: '3rem'
+  }
+}
+```
+
+### Icon Button color guide
+
+Icon Button colors are relative to the `background` style and have a direct correlation from the `kind` to the [`design-tokens`](../tokens/intro.md) package. Here is an interface that gives the color guide.
+
+```typescript title="Example interface - does not exist in types"
+interface IconButtonColorGuide {
+  text: 'transparent'
+  textWeak: 'transparent'
+  weak: 'var(--ps-neutral-background)'
+  medium: 'var(--ps-background)'
+  strong: 'var(--ps-background-weak)'
+}
+
+interface DangerIconButtonColorGuide {
+  text: 'transparent'
+  medium: 'var(--ps-danger-background)'
+  strong: 'var(--ps-danger-background-weak)'
+}
+```
