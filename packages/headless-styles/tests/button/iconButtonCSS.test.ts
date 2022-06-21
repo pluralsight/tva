@@ -1,4 +1,4 @@
-import { getIconButtonProps } from '../../src'
+import { getIconButtonProps, getDangerIconButtonProps } from '../../src'
 
 describe('Icon Button CSS', () => {
   describe('getIconButtonProps', () => {
@@ -115,6 +115,113 @@ describe('Icon Button CSS', () => {
         button: {
           ...result.button,
           className: `ps-icon-btn roundIconButton text m`,
+        },
+        iconOptions: result.iconOptions,
+      })
+    })
+  })
+  describe('getDangerIconButtonProps', () => {
+    const baseClass = 'ps-danger-icon-btn defaultIconButton'
+    const result = {
+      button: {
+        'aria-label': 'button',
+        className: `${baseClass} textDanger m`,
+        type: 'button',
+      },
+      iconOptions: {
+        size: 'm',
+        ariaHidden: true,
+        tech: '',
+      },
+    }
+
+    test('should accept an ariaLabel argument', () => {
+      expect(getDangerIconButtonProps({ ariaLabel: 'button' })).toEqual(result)
+    })
+
+    test('should accept a kind type', () => {
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', kind: 'text' })
+      ).toEqual(result)
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', kind: 'medium' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} mediumDanger m`,
+        },
+        iconOptions: result.iconOptions,
+      })
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', kind: 'strong' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} strongDanger m`,
+        },
+        iconOptions: result.iconOptions,
+      })
+    })
+
+    test('should accept a size type', () => {
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', size: 'm' })
+      ).toEqual(result)
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', size: 'xs' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger xs`,
+        },
+        iconOptions: {
+          ...result.iconOptions,
+          size: 's',
+        },
+      })
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', size: 's' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger s`,
+        },
+        iconOptions: result.iconOptions,
+      })
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', size: 'l' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger l`,
+        },
+        iconOptions: {
+          ...result.iconOptions,
+          size: 'l',
+        },
+      })
+    })
+
+    test('should accept a tech type', () => {
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', tech: 'svelte' })
+      ).toEqual({
+        button: {
+          'aria-label': 'button',
+          type: 'button',
+          class: 'base defaultIconButton textDanger m',
+        },
+        iconOptions: { ...result.iconOptions, tech: 'svelte' },
+      })
+    })
+
+    test('should accept a variant', () => {
+      expect(
+        getDangerIconButtonProps({ ariaLabel: 'button', variant: 'round' })
+      ).toEqual({
+        button: {
+          ...result.button,
+          className: `ps-danger-icon-btn roundIconButton textDanger m`,
         },
         iconOptions: result.iconOptions,
       })
