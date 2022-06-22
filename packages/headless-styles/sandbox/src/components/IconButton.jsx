@@ -3,6 +3,7 @@ import {
   getDangerIconButtonProps,
   getIconButtonProps,
   getIconProps,
+  getJSDangerIconButtonProps,
   getJSIconButtonProps,
 } from '../../../src'
 import {
@@ -65,6 +66,14 @@ export default function IconButton(props) {
   useEffect(() => {
     console.log({
       ...getJSIconButtonProps({
+        ariaLabel: 'button',
+        kind: 'medium',
+        size: 'xs',
+        variant: 'round',
+      }),
+    })
+    console.log({
+      ...getJSDangerIconButtonProps({
         ariaLabel: 'button',
         kind: 'medium',
         size: 'xs',
