@@ -1,19 +1,27 @@
 import { transformStyles } from '../../utils/helpers'
-import { IconOptions } from '../../types'
 import styles from './generated/buttonCSS.module'
-import type { ButtonType, IconButtonOptions } from './types'
-import { getDefaultIconButtonOptions, getIconButtonReturnProps } from './shared'
+import type {
+  ButtonType,
+  DangerIconButtonOptions,
+  IconButtonCommonReturn,
+  IconButtonOptions,
+} from './types'
+import {
+  getDefaultDangerIconButtonOptions,
+  getDefaultIconButtonOptions,
+  getIconButtonReturnProps,
+} from './shared'
 
 type CSSProps = TemplateStringsArray | string
 type Styles = Record<string, unknown>
-type IconButtonReturn = {
+type StyleKey = keyof typeof styles
+interface IconButtonReturn extends IconButtonCommonReturn {
   button: {
+    'aria-label': string
     cssProps: CSSProps
     styles: Styles
     type: ButtonType
-    'aria-label': string
   }
-  iconOptions: IconOptions
 }
 
 // Chakra theming uses Button for IconButton as well
@@ -21,39 +29,70 @@ type IconButtonReturn = {
 //
 // export const ChakraIconButton = {}
 
+function getJSIconButtonStyles(
+  sizeKey: StyleKey,
+  variantKey: StyleKey,
+  kindStyles: Styles
+) {
+  return {
+    ...styles.base,
+    ...styles[sizeKey],
+    ...styles[variantKey],
+    ...kindStyles,
+    '&:hover': {
+      ...(kindStyles['&:hover' as keyof typeof kindStyles] as typeof styles),
+    },
+    '&:active': {
+      ...styles.base['&:active'],
+      ...(kindStyles['&:active' as keyof typeof kindStyles] as typeof styles),
+    },
+  }
+}
+
+function buildJSIconButton(
+  returnProps: IconButtonCommonReturn,
+  jsStyles: Styles
+): IconButtonReturn {
+  return {
+    button: {
+      ...returnProps.button,
+      cssProps: transformStyles(jsStyles),
+      styles: jsStyles,
+    },
+    iconOptions: returnProps.iconOptions,
+  }
+}
+
+export function getJSDangerIconButtonProps(
+  options?: DangerIconButtonOptions
+): IconButtonReturn {
+  const defaultOptions = getDefaultDangerIconButtonOptions(options)
+  const variantKey = `${defaultOptions.variant}IconButton` as StyleKey
+  const kindStyles = styles[`${defaultOptions.kind}Danger`]
+
+  return buildJSIconButton(
+    getIconButtonReturnProps(defaultOptions),
+    getJSIconButtonStyles(
+      defaultOptions.size as StyleKey,
+      variantKey,
+      kindStyles
+    )
+  )
+}
+
 export function getJSIconButtonProps(
   options?: IconButtonOptions
 ): IconButtonReturn {
   const defaultOptions = getDefaultIconButtonOptions(options)
-  const { variant, kind, size } = defaultOptions
-  const { button, iconOptions } = getIconButtonReturnProps(defaultOptions)
-  const variantKey = `${variant}IconButton` as keyof typeof styles
-  const kindStyles = styles[kind]
-  const JsStyles = {
-    ...styles.base,
-    ...styles[size as keyof typeof styles],
-    ...styles[variantKey],
-    ...kindStyles,
-    '&:hover': {
-      ...(kindStyles[
-        '&:hover' as unknown as keyof typeof kindStyles
-      ] as unknown as typeof styles),
-      color: '#fff',
-    },
-    '&:active': {
-      ...styles.base['&:active'],
-      ...(kindStyles[
-        '&:active' as unknown as keyof typeof kindStyles
-      ] as unknown as typeof styles),
-    },
-  }
+  const variantKey = `${defaultOptions.variant}IconButton` as StyleKey
+  const kindStyles = styles[defaultOptions.kind]
 
-  return {
-    button: {
-      ...button,
-      cssProps: transformStyles(JsStyles),
-      styles: JsStyles,
-    },
-    iconOptions,
-  }
+  return buildJSIconButton(
+    getIconButtonReturnProps(defaultOptions),
+    getJSIconButtonStyles(
+      defaultOptions.size as StyleKey,
+      variantKey,
+      kindStyles
+    )
+  )
 }

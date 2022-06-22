@@ -32,7 +32,10 @@ export {
   getIconButtonProps,
   getDangerIconButtonProps,
 } from './components/Button/iconButtonCSS'
-export { getJSIconButtonProps } from './components/Button/iconButtonJS'
+export {
+  getJSIconButtonProps,
+  getJSDangerIconButtonProps,
+} from './components/Button/iconButtonJS'
 
 export { getIconProps } from './components/Icon/iconCSS'
 export { getJSIconProps } from './components/Icon/iconJS'
