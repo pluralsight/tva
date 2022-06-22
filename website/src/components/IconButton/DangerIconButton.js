@@ -1,18 +1,34 @@
 import React from 'react'
-// import { getDangerIconButtonProps } from '@pluralsight/headless-styles'
+import {
+  getDangerIconButtonProps,
+  getIconProps,
+} from '@pluralsight/headless-styles'
+import { DeleteIcon } from '@pluralsight/icons'
 import Container from '../Container/Container'
 
-// const psButtonProps = getDangerButtonProps()
-// const psMediumButtonProps = getDangerButtonProps({ kind: 'medium' })
-// const psStrongButtonProps = getDangerButtonProps({ kind: 'strong' })
+function DeleteButton(props) {
+  const { button, iconOptions } = getDangerIconButtonProps({
+    kind: props.kind,
+    variant: props.variant,
+  })
+  const iconProps = getIconProps(iconOptions)
+
+  return (
+    <button {...button}>
+      <DeleteIcon {...iconProps} />
+    </button>
+  )
+}
 
 function DangerIconButton() {
   return (
     <Container>
-      TBD
-      {/* <button {...psButtonProps}>default</button> */}
-      {/* <button {...psMediumButtonProps}>medium</button> */}
-      {/* <button {...psStrongButtonProps}>strong</button> */}
+      <DeleteButton />
+      <DeleteButton variant="round" />
+      <DeleteButton kind="medium" />
+      <DeleteButton variant="round" kind="medium" />
+      <DeleteButton kind="strong" />
+      <DeleteButton variant="round" kind="strong" />
     </Container>
   )
 }
