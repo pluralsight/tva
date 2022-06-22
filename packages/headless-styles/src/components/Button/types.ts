@@ -15,8 +15,11 @@ export interface DangerOptions extends ButtonOptions {
   kind?: DangerKind
 }
 
-export interface IconButtonOptions extends ButtonOptions {
+export interface IconButtonOptions {
   ariaLabel: string
+  kind?: Kind
+  size?: Size
+  tech?: Tech
   variant?: Variant
 }
 

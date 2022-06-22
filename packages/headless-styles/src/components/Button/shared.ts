@@ -48,7 +48,9 @@ export const defaultIconButtonOptions = {
   ariaLabel: '',
 }
 
-export function getDefaultIconButtonOptions(options?: IconButtonOptions) {
+export function getDefaultIconButtonOptions(
+  options?: IconButtonOptions
+): Required<IconButtonOptions> {
   return {
     kind: options?.kind ?? defaultIconButtonOptions.kind,
     size: options?.size ?? defaultIconButtonOptions.size,
@@ -66,7 +68,7 @@ export const defaultDangerIconButtonOptions = {
 
 export function getDefaultDangerIconButtonOptions(
   options?: DangerIconButtonOptions
-) {
+): Required<DangerIconButtonOptions> {
   return {
     kind: options?.kind ?? defaultDangerIconButtonOptions.kind,
     size: options?.size ?? defaultDangerIconButtonOptions.size,
@@ -77,7 +79,7 @@ export function getDefaultDangerIconButtonOptions(
 }
 
 export function getIconButtonReturnProps(
-  options: IconButtonOptions | DangerIconButtonOptions
+  options: Required<IconButtonOptions> | Required<DangerIconButtonOptions>
 ): IconButtonCommonReturn {
   const iconButtonSizeMap: Record<Size, IconSize> = {
     xs: 's',
@@ -93,7 +95,7 @@ export function getIconButtonReturnProps(
     },
     iconOptions: {
       ariaHidden: true,
-      size: iconButtonSizeMap[options.size as Size],
+      size: iconButtonSizeMap[options.size],
       tech: options.tech,
     },
   }

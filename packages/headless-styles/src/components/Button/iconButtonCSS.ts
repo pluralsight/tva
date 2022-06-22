@@ -10,7 +10,7 @@ import styles from './buttonCSS.module.css'
 
 function createIconButton(
   tech: Tech,
-  options: IconButtonOptions | DangerIconButtonOptions,
+  options: Required<IconButtonOptions> | Required<DangerIconButtonOptions>,
   classes: { global: string; variant: string; kind: string; size: string }
 ) {
   const props = getIconButtonReturnProps(options)
