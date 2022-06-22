@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
-import type { Tech } from '../types'
+import type { IconSize, Tech } from '../types'
 
 export interface ButtonOptions
   extends DetailedHTMLProps<
@@ -22,6 +22,18 @@ export interface IconButtonOptions extends ButtonOptions {
 
 export interface DangerIconButtonOptions extends IconButtonOptions {
   kind?: DangerKind
+}
+
+export interface IconButtonCommonReturn {
+  button: {
+    'aria-label': string
+    type: ButtonType
+  }
+  iconOptions: {
+    ariaHidden: true
+    size: IconSize
+    tech: Tech
+  }
 }
 
 // types

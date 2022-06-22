@@ -5,6 +5,7 @@ import type {
   DangerOptions,
   DangerIconButtonOptions,
   DangerKind,
+  IconButtonCommonReturn,
   IconButtonOptions,
   Kind,
   Size,
@@ -77,7 +78,7 @@ export function getDefaultDangerIconButtonOptions(
 
 export function getIconButtonReturnProps(
   options: IconButtonOptions | DangerIconButtonOptions
-) {
+): IconButtonCommonReturn {
   const iconButtonSizeMap: Record<Size, IconSize> = {
     xs: 's',
     s: 'm',
