@@ -23,7 +23,7 @@ function createIconButton(
         defaultClass: `${classes.global} ${styles[classes.variant]} ${
           styles[classes.kind]
         } ${styles[classes.size]}`,
-        svelteClass: `base ${classes.variant} ${classes.kind} ${classes.size}`,
+        svelteClass: `base baseIconButton ${classes.variant} ${classes.kind} ${classes.size}`,
       }),
     },
   }

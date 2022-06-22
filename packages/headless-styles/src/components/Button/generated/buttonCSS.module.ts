@@ -149,11 +149,14 @@ export default {
       backgroundColor: 'hsl(335deg 100% 18% / 100%)',
     },
   },
-  defaultIconButton: {
+  baseIconButton: {
     paddingInline: '0',
   },
+  defaultIconButton: {
+    composes: 'baseIconButton',
+  },
   roundIconButton: {
-    composes: 'defaultIconButton',
+    composes: 'baseIconButton',
     borderRadius: '50%',
   },
   light__base_text: {

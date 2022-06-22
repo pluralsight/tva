@@ -102,7 +102,7 @@ describe('Icon Button CSS', () => {
         button: {
           'aria-label': 'button',
           type: 'button',
-          class: 'base defaultIconButton text m',
+          class: 'base baseIconButton defaultIconButton text m',
         },
         iconOptions: { ...result.iconOptions, tech: 'svelte' },
       })
@@ -209,7 +209,7 @@ describe('Icon Button CSS', () => {
         button: {
           'aria-label': 'button',
           type: 'button',
-          class: 'base defaultIconButton textDanger m',
+          class: 'base baseIconButton defaultIconButton textDanger m',
         },
         iconOptions: { ...result.iconOptions, tech: 'svelte' },
       })

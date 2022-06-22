@@ -37,8 +37,9 @@ function getJSIconButtonStyles(
   return {
     ...styles.base,
     ...styles[sizeKey],
-    ...styles[variantKey],
     ...kindStyles,
+    ...styles.baseIconButton,
+    ...styles[variantKey],
     '&:hover': {
       ...(kindStyles['&:hover' as keyof typeof kindStyles] as typeof styles),
     },
