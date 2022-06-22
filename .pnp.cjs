@@ -596,11 +596,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
         [
           '@pluralsight/headless-styles',
-          'npm:0.0.0-experimental-f973ae-20220614',
+          'npm:0.0.0-experimental-4a1740-20220622',
         ],
         [
           '@pluralsight/icons',
-          'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-f973ae-20220614',
+          'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622',
         ],
         ['@polka/url', 'npm:1.0.0-next.21'],
         ['@rollup/pluginutils', 'npm:4.2.0'],
@@ -17996,14 +17996,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/headless-styles',
           [
             [
-              'npm:0.0.0-experimental-f973ae-20220614',
+              'npm:0.0.0-experimental-4a1740-20220622',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-f973ae-20220614-7ba7468533-daf839fac2.zip/node_modules/@pluralsight/headless-styles/',
+                  './.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-4a1740-20220622-a99d3c8b20-6ed2d29e80.zip/node_modules/@pluralsight/headless-styles/',
                 packageDependencies: [
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-f973ae-20220614',
+                    'npm:0.0.0-experimental-4a1740-20220622',
                   ],
                   ['kebab-case', 'npm:1.0.1'],
                   ['tslib', 'npm:2.3.1'],
@@ -18042,28 +18042,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           '@pluralsight/icons',
           [
             [
-              'npm:0.0.0-experimental-f973ae-20220614',
+              'npm:0.0.0-experimental-4a1740-20220622',
               {
                 packageLocation:
-                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-f973ae-20220614-ed302103a6-b6a2703114.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/cache/@pluralsight-icons-npm-0.0.0-experimental-4a1740-20220622-301d121e0c-3f6a7d73aa.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
                   [
                     '@pluralsight/icons',
-                    'npm:0.0.0-experimental-f973ae-20220614',
+                    'npm:0.0.0-experimental-4a1740-20220622',
                   ],
                 ],
                 linkType: 'SOFT',
               },
             ],
             [
-              'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-f973ae-20220614',
+              'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622',
               {
                 packageLocation:
-                  './.yarn/__virtual__/@pluralsight-icons-virtual-c83245e758/0/cache/@pluralsight-icons-npm-0.0.0-experimental-f973ae-20220614-ed302103a6-b6a2703114.zip/node_modules/@pluralsight/icons/',
+                  './.yarn/__virtual__/@pluralsight-icons-virtual-3cd6d560b2/0/cache/@pluralsight-icons-npm-0.0.0-experimental-4a1740-20220622-301d121e0c-3f6a7d73aa.zip/node_modules/@pluralsight/icons/',
                 packageDependencies: [
                   [
                     '@pluralsight/icons',
-                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-f973ae-20220614',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622',
                   ],
                   ['@types/react', null],
                   ['react', 'npm:18.0.0'],
@@ -41883,7 +41883,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ['@pluralsight/design-tokens', 'npm:0.0.0-alpha-ea49e7'],
                   [
                     '@pluralsight/icons',
-                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-f973ae-20220614',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622',
                   ],
                   ['@vitejs/plugin-react', 'npm:1.2.0'],
                   ['css', 'npm:3.0.0'],
@@ -46612,11 +46612,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
                   ],
                   [
                     '@pluralsight/headless-styles',
-                    'npm:0.0.0-experimental-f973ae-20220614',
+                    'npm:0.0.0-experimental-4a1740-20220622',
                   ],
                   [
                     '@pluralsight/icons',
-                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-f973ae-20220614',
+                    'virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622',
                   ],
                   ['@svgr/webpack', 'npm:5.5.0'],
                   ['clsx', 'npm:1.1.1'],
