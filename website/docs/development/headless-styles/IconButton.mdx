@@ -219,8 +219,11 @@ When combining `headless-styles` with other libraries, please follow the guides 
 This interface is available as an `import` for use.
 
 ```typescript
-interface IconButtonOptions extends ButtonOptions {
+interface IconButtonOptions {
   ariaLabel: string
+  kind?: 'text' | 'textWeak' | 'weak' | 'medium' | 'strong'
+  size?: 'xs' | 's' | 'm' | 'l'
+  tech?: '' | 'svelte'
   variant?: 'default' | 'round'
 }
 ```
