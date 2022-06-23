@@ -10,8 +10,9 @@ describe('Icon Button CSS', () => {
         type: 'button',
       },
       iconOptions: {
-        size: 'm',
         ariaHidden: true,
+        ariaLabel: '',
+        size: 'm',
         tech: '',
       },
     }
@@ -129,8 +130,9 @@ describe('Icon Button CSS', () => {
         type: 'button',
       },
       iconOptions: {
-        size: 'm',
         ariaHidden: true,
+        ariaLabel: '',
+        size: 'm',
         tech: '',
       },
     }

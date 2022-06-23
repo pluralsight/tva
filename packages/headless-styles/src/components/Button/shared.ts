@@ -1,3 +1,4 @@
+import type { IconOptions } from '../../types'
 import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,
@@ -78,25 +79,30 @@ export function getDefaultDangerIconButtonOptions(
   }
 }
 
+const iconButtonSizeMap: Record<Size, IconSize> = {
+  xs: 's',
+  s: 'm',
+  m: 'm',
+  l: 'l',
+}
+
+export function getButtonIconOptions(size: Size, tech: Tech): IconOptions {
+  return {
+    ariaHidden: true,
+    ariaLabel: '',
+    size: iconButtonSizeMap[size],
+    tech,
+  }
+}
+
 export function getIconButtonReturnProps(
   options: Required<IconButtonOptions> | Required<DangerIconButtonOptions>
 ): IconButtonCommonReturn {
-  const iconButtonSizeMap: Record<Size, IconSize> = {
-    xs: 's',
-    s: 'm',
-    m: 'm',
-    l: 'l',
-  }
-
   return {
     button: {
       'aria-label': options.ariaLabel,
       type: 'button' as ButtonType,
     },
-    iconOptions: {
-      ariaHidden: true,
-      size: iconButtonSizeMap[options.size],
-      tech: options.tech,
-    },
+    iconOptions: getButtonIconOptions(options.size, options.tech),
   }
 }
