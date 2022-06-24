@@ -1,7 +1,4 @@
-import {
-  getButtonWithIconProps,
-  // getDangerIconButtonProps
-} from '../../src'
+import { getButtonWithIconProps, getDangerButtonWithIconProps } from '../../src'
 
 describe('Button with icon CSS', () => {
   describe('getButtonWithIconProps', () => {
@@ -97,82 +94,82 @@ describe('Button with icon CSS', () => {
     })
   })
 
-  // describe('getDangerIconButtonProps', () => {
-  //   const baseClass = 'ps-danger-icon-btn defaultIconButton'
-  //   const result = {
-  //     button: {
-  //       className: `${baseClass} textDanger m`,
-  //       type: 'button',
-  //     },
-  //     iconOptions: {
-  //       ariaHidden: true,
-  //       ariaLabel: '',
-  //       size: 'm',
-  //       tech: '',
-  //     },
-  //   }
+  describe('getDangerButtonWithIconProps', () => {
+    const baseClass = 'ps-danger-btn'
+    const result = {
+      button: {
+        className: `${baseClass} textDanger m`,
+        type: 'button',
+      },
+      iconOptions: {
+        ariaHidden: true,
+        ariaLabel: '',
+        size: 'm',
+        tech: '',
+      },
+    }
 
-  //   test('should accept an ariaLabel argument', () => {
-  //     expect(getDangerIconButtonProps({ ariaLabel: 'button' })).toEqual(result)
-  //   })
+    test('should allow no props to be passed in', () => {
+      expect(getDangerButtonWithIconProps()).toEqual(result)
+    })
 
-  //   test('should accept a kind type', () => {
-  //     expect(getDangerIconButtonProps({ kind: 'text' })).toEqual(result)
-  //     expect(getDangerIconButtonProps({ kind: 'medium' })).toEqual({
-  //       button: {
-  //         ...result.button,
-  //         className: `${baseClass} mediumDanger m`,
-  //       },
-  //       iconOptions: result.iconOptions,
-  //     })
-  //     expect(getDangerIconButtonProps({ kind: 'strong' })).toEqual({
-  //       button: {
-  //         ...result.button,
-  //         className: `${baseClass} strongDanger m`,
-  //       },
-  //       iconOptions: result.iconOptions,
-  //     })
-  //   })
+    test('should accept a kind type', () => {
+      expect(getDangerButtonWithIconProps({ kind: 'text' })).toEqual(result)
+      expect(getDangerButtonWithIconProps({ kind: 'medium' })).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} mediumDanger m`,
+        },
+        iconOptions: result.iconOptions,
+      })
+      expect(getDangerButtonWithIconProps({ kind: 'strong' })).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} strongDanger m`,
+        },
+        iconOptions: result.iconOptions,
+      })
+    })
 
-  //   test('should accept a size type', () => {
-  //     expect(getDangerIconButtonProps({ size: 'm' })).toEqual(result)
-  //     expect(getDangerIconButtonProps({ size: 'xs' })).toEqual({
-  //       button: {
-  //         ...result.button,
-  //         className: `${baseClass} textDanger xs`,
-  //       },
-  //       iconOptions: {
-  //         ...result.iconOptions,
-  //         size: 's',
-  //       },
-  //     })
-  //     expect(getDangerIconButtonProps({ size: 's' })).toEqual({
-  //       button: {
-  //         ...result.button,
-  //         className: `${baseClass} textDanger s`,
-  //       },
-  //       iconOptions: result.iconOptions,
-  //     })
-  //     expect(getDangerIconButtonProps({ size: 'l' })).toEqual({
-  //       button: {
-  //         ...result.button,
-  //         className: `${baseClass} textDanger l`,
-  //       },
-  //       iconOptions: {
-  //         ...result.iconOptions,
-  //         size: 'l',
-  //       },
-  //     })
-  //   })
+    test('should accept a size type', () => {
+      expect(getDangerButtonWithIconProps({ size: 'm' })).toEqual(result)
+      expect(getDangerButtonWithIconProps({ size: 'xs' })).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger xs`,
+        },
+        iconOptions: {
+          ...result.iconOptions,
+          size: 's',
+        },
+      })
+      expect(getDangerButtonWithIconProps({ size: 's' })).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger s`,
+        },
+        iconOptions: result.iconOptions,
+      })
+      expect(getDangerButtonWithIconProps({ size: 'l' })).toEqual({
+        button: {
+          ...result.button,
+          className: `${baseClass} textDanger l`,
+        },
+        iconOptions: {
+          ...result.iconOptions,
+          size: 'l',
+        },
+      })
+    })
 
-  //   test('should accept a tech type', () => {
-  //     expect(getDangerIconButtonProps({ tech: 'svelte' })).toEqual({
-  //       button: {
-  //         type: 'button',
-  //         class: 'base textDanger m',
-  //       },
-  //       iconOptions: { ...result.iconOptions, tech: 'svelte' },
-  //     })
-  //   })
-  // })
+    test('should accept a tech type', () => {
+      expect(getDangerButtonWithIconProps({ tech: 'svelte' })).toEqual({
+        button: {
+          type: 'button',
+          class: 'base textDanger m',
+        },
+        iconOptions: { ...result.iconOptions, tech: 'svelte' },
+      })
+    })
+  })
 })

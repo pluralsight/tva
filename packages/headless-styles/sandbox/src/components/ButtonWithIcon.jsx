@@ -1,13 +1,9 @@
 import {
   getButtonWithIconProps,
-  // getDangerButtonWithIconProps,
+  getDangerButtonWithIconProps,
   getIconProps,
 } from '../../../src'
-import {
-  PencilIcon,
-  ChevronRightIcon,
-  // DeleteIcon
-} from '@pluralsight/icons'
+import { PencilIcon, ChevronRightIcon, DeleteIcon } from '@pluralsight/icons'
 
 function Button(props) {
   const { icon, label, side, ...buttonOptions } = props
@@ -20,38 +16,30 @@ function Button(props) {
 
   return (
     <button {...button}>
-      {side !== 'end' && (
-        <>
-          <Icon {...iconProps} />
-        </>
-      )}
+      {side !== 'end' && <Icon {...iconProps} />}
       {label}
-      {side === 'end' && (
-        <>
-          <Icon {...iconProps} />
-        </>
-      )}
+      {side === 'end' && <Icon {...iconProps} />}
     </button>
   )
 }
 
-// function DangerButton(props) {
-//   const { icon, label, side, ...buttonOptions } = props
-//   const { button, iconOptions } = getDangerButtonWithIconProps({
-//     ...buttonOptions,
-//     ariaLabel: label,
-//   })
-//   const iconProps = getIconProps(iconOptions)
-//   const Icon = icon
+function DangerButton(props) {
+  const { icon, label, side, ...buttonOptions } = props
+  const { button, iconOptions } = getDangerButtonWithIconProps({
+    ...buttonOptions,
+    ariaLabel: label,
+  })
+  const iconProps = getIconProps(iconOptions)
+  const Icon = icon
 
-//   return (
-//     <button {...button}>
-//       {side !== 'end' && <Icon {...iconProps} />}
-//       {label}
-//       {side === 'end' && <Icon {...iconProps} />}
-//     </button>
-//   )
-// }
+  return (
+    <button {...button}>
+      {side !== 'end' && <Icon {...iconProps} />}
+      {label}
+      {side === 'end' && <Icon {...iconProps} />}
+    </button>
+  )
+}
 
 export default function ButtonWithIcon() {
   return (
@@ -94,7 +82,7 @@ export default function ButtonWithIcon() {
           side="end"
         />
       </div>
-      {/* <div className="App-container">
+      <div className="App-container">
         <DangerButton icon={DeleteIcon} label="Delete" />
         <DangerButton icon={DeleteIcon} label="Delete" kind="text" />
         <DangerButton icon={DeleteIcon} label="Delete" kind="medium" />
@@ -106,11 +94,30 @@ export default function ButtonWithIcon() {
           label="Delete"
           kind="medium"
           size="xs"
+          side="end"
         />
-        <DangerButton icon={DeleteIcon} label="Delete" kind="medium" size="s" />
-        <DangerButton icon={DeleteIcon} label="Delete" kind="medium" size="m" />
-        <DangerButton icon={DeleteIcon} label="Delete" kind="medium" size="l" />
-      </div> */}
+        <DangerButton
+          icon={DeleteIcon}
+          label="Delete"
+          kind="medium"
+          size="s"
+          side="end"
+        />
+        <DangerButton
+          icon={DeleteIcon}
+          label="Delete"
+          kind="medium"
+          size="m"
+          side="end"
+        />
+        <DangerButton
+          icon={DeleteIcon}
+          label="Delete"
+          kind="medium"
+          size="l"
+          side="end"
+        />
+      </div>
     </div>
   )
 }
