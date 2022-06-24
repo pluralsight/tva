@@ -62,25 +62,27 @@ function PSDangerIconButton(props) {
   )
 }
 
-export default function IconButton(props) {
+export default function IconButton({ logJS }) {
   useEffect(() => {
-    console.log({
-      ...getJSIconButtonProps({
-        ariaLabel: 'button',
-        kind: 'medium',
-        size: 'xs',
-        variant: 'round',
-      }),
-    })
-    console.log({
-      ...getJSDangerIconButtonProps({
-        ariaLabel: 'button',
-        kind: 'medium',
-        size: 'xs',
-        variant: 'round',
-      }),
-    })
-  }, [props.logJS])
+    if (logJS) {
+      console.log({
+        ...getJSIconButtonProps({
+          ariaLabel: 'button',
+          kind: 'medium',
+          size: 'xs',
+          variant: 'round',
+        }),
+      })
+      console.log({
+        ...getJSDangerIconButtonProps({
+          ariaLabel: 'button',
+          kind: 'medium',
+          size: 'xs',
+          variant: 'round',
+        }),
+      })
+    }
+  }, [logJS])
 
   return (
     <div id="icon-button">
