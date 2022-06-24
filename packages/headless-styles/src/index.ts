@@ -10,6 +10,8 @@ export {
   getJSDangerButtonProps,
 } from './components/Button/buttonJS'
 
+export { getButtonWithIconProps } from './components/Button/buttonWithIcon/buttonWithIconCSS'
+
 export { getCheckboxProps } from './components/Checkbox/checkboxCSS'
 export { getJSCheckboxProps } from './components/Checkbox/checkboxJS'
 

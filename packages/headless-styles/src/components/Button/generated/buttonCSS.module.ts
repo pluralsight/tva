@@ -17,6 +17,7 @@ export default {
     fontSize: '1rem',
     fontVariationSettings: "'wght' 600",
     fontWeight: '600',
+    gap: '0.5rem',
     height: '2.5rem',
     justifyContent: 'center',
     minWidth: '2.5rem',
@@ -100,6 +101,7 @@ export default {
   xs: {
     composes: 'base',
     fontSize: '0.75rem',
+    gap: '0.25rem',
     height: '1.5rem',
     minWidth: '1.5rem',
     paddingInline: '8px',
@@ -107,6 +109,7 @@ export default {
   s: {
     composes: 'base',
     fontSize: '0.875rem',
+    gap: '0.375rem',
     height: '2rem',
     minWidth: '2rem',
     paddingInline: '12px',
