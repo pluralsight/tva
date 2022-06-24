@@ -1,7 +1,10 @@
+import { useEffect } from 'react'
 import {
   getButtonWithIconProps,
   getDangerButtonWithIconProps,
   getIconProps,
+  getJSButtonWithIconProps,
+  getJSDangerButtonWithIconProps,
 } from '../../../src'
 import { PencilIcon, ChevronRightIcon, DeleteIcon } from '@pluralsight/icons'
 
@@ -41,7 +44,24 @@ function DangerButton(props) {
   )
 }
 
-export default function ButtonWithIcon() {
+export default function ButtonWithIcon({ logJS }) {
+  useEffect(() => {
+    if (logJS) {
+      console.log({
+        ...getJSButtonWithIconProps({
+          kind: 'medium',
+          size: 'xs',
+        }),
+      })
+      console.log({
+        ...getJSDangerButtonWithIconProps({
+          kind: 'medium',
+          size: 'xs',
+        }),
+      })
+    }
+  }, [logJS])
+
   return (
     <div id="button">
       <h3>Button with icon</h3>

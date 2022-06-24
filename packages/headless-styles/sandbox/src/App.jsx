@@ -42,7 +42,7 @@ function App() {
 
       <Badge />
       <Button />
-      <ButtonWithIcon />
+      <ButtonWithIcon logJS />
       <Checkbox />
       <CircularProgress />
       <ErrorMessage />
