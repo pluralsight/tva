@@ -139,15 +139,16 @@ theming while still allowing for control over the icon's color directly.
 <IconColor />
 
 ```jsx
-<div
+<button
   style={{
-    color: 'var(--ps-danger-text)',
-    backgroundColor: 'var(--ps-danger-background-weak)',
+    backgroundColor: 'var(--ps-background-weak)',
+    borderRadius: '6px',
+    color: 'var(--ps-text)',
   }}
 >
-  <WarningIcon {...getIconProps} />
-  &nbsp; Watch for demogorgons.
-</div>
+  <PlaceholderIcon {...getIconProps()} />
+  Icon matches font color
+</button>
 ```
 
 ### Icon sizes

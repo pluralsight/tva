@@ -1,27 +1,21 @@
 import React from 'react'
-import { getIconProps } from '@pluralsight/headless-styles'
-import { WarningIcon } from '@pluralsight/icons'
+import {
+  getIconProps,
+  getButtonWithIconProps,
+} from '@pluralsight/headless-styles'
+import { PlaceholderIcon } from '@pluralsight/icons'
 import Container from '../Container/Container'
 
-const psIconProps = getIconProps()
+const { button, iconOptions } = getButtonWithIconProps({ kind: 'strong' })
+const iconProps = getIconProps(iconOptions)
 
 function IconColor() {
   return (
     <Container>
-      <div
-        style={{
-          color: 'var(--ps-danger-text)',
-          backgroundColor: 'var(--ps-danger-background-weak)',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '1em',
-          borderRadius: '3px',
-          width: '100%',
-        }}
-      >
-        <WarningIcon {...psIconProps} />
-        &nbsp; Watch for demogorgons.
-      </div>
+      <button {...button}>
+        <PlaceholderIcon {...iconProps} />
+        Icon matches font color
+      </button>
     </Container>
   )
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import CodeBlock from '@theme/CodeBlock'
 
-const preview = `<div
+const preview = `<button
   style={{
-    color: 'var(--ps-danger-text)',
-    backgroundColor: 'var(--ps-danger-background-weak)',
+    backgroundColor: 'var(--ps-background-weak)',
+    color: 'var(--ps-text)',
   }}
 >
-  <WarningIcon {...getIconProps} />
-  &nbsp; Thanos has all the stones.
-</div>`
+  <PlaceholderIcon {...getIconProps()} />
+  Icon matches font color
+</button>`
 
 export function IconColorPreview() {
   return <CodeBlock>{preview}</CodeBlock>
@@ -17,25 +17,18 @@ export function IconColorPreview() {
 
 export function IconColorFullPreview() {
   return (
-    <CodeBlock>{`import { WarningIcon } from '@pluralsight/icons'
-import { getIconProps } from '@pluralsight/headless-styles'
+    <CodeBlock>{`import { PlaceholderIcon } from '@pluralsight/icons'
+import { getIconProps, getButtonWithIconProps } from '@pluralsight/headless-styles'
 
-function Warning(props) {
+const { button, iconOptions } = getButtonWithIconProps({ kind: 'strong' })
+const iconProps = getIconProps(iconOptions)
+
+function DemoButton() {
   return (
-    <div
-      style={{
-        color: 'var(--ps-danger-text)',
-        backgroundColor: 'var(--ps-danger-background-weak)',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '1em',
-        borderRadius: '3px',
-        width: '100%',
-      }}
-    >
-      <WarningIcon {...getIconProps} />
-      &nbsp; {props.children}
-    </div>
+    <button {...button}>
+      <PlaceholderIcon {...iconProps} />
+      Icon matches font color
+    </button>
   )
 }`}</CodeBlock>
   )
