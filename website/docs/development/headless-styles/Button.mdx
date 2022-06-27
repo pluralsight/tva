@@ -10,6 +10,7 @@ tags: [Development, Packages, Components, Headless Styles, Button, Chakra]
 import CodeBlock from '@theme/CodeBlock'
 import BasicButton from '@site/src/components/Button/BasicButton'
 import ButtonSizes from '@site/src/components/Button/ButtonSizes'
+import ButtonWithIcon from '@site/src/components/Button/ButtonWithIcon'
 import DangerButton from '@site/src/components/Button/DangerButton'
 import {
   BasicButtonPreview,
@@ -19,6 +20,10 @@ import {
   ButtonSizesPreview,
   ButtonSizesFullPreview,
 } from '@site/src/components/Button/ButtonSizes.preview'
+import {
+  ButtonWithIconPreview,
+  ButtonWithIconFullPreview,
+} from '@site/src/components/Button/ButtonWithIcon.preview'
 import {
   DangerButtonPreview,
   DangerButtonFullPreview,
@@ -94,11 +99,24 @@ We use the standard clothing size shorthand values for all `size` related option
 
 ### Button with icon
 
-You can add left and right icons to a button using the `getIconProps` and an Icon from the [Icons](../icons/intro) library.
+You can add icons to the start or end of a button using the `getButtonWithIconProps` and [getIconProps](./Icon.mdx) helpers with an Icon from the [Icons](../icons/intro) library.
 
-:::caution
+<ButtonWithIcon />
+<LiveExampleTabs
+  fullCode={<ButtonWithIconFullPreview />}
+  sandboxList={{
+    chakra: 'button-with-icon-chakra-2st397',
+    joy: 'button-with-icon-mui-lg9n42',
+    styled: 'button-with-icon-css-in-js-sc-x7lvu5',
+    svelte: 'button-with-icon-svelte-0p0jv0',
+  }}
+>
+  <ButtonWithIconPreview />
+</LiveExampleTabs>
 
-This is **unreleased** documentation for the `getButtonWithIcon` helper.
+:::tip
+
+For buttons with _only_ an icon and no visible text, use the [Icon Button (getIconButtonProps)](./IconButton.mdx) helper
 
 :::
 
@@ -168,12 +186,16 @@ When combining `headless-styles` with other libraries, please follow the guides 
 
 ## API
 
-| Name                     | Argument Type                                            | Default                               | Description               |
-| ------------------------ | -------------------------------------------------------- | ------------------------------------- | ------------------------- |
-| `getButtonProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.   |
-| `getDangerButtonProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles. |
-| `getJSButtonProps`       | **options**: [ButtonOptions](#buttonoptions)             | same as CSS API                       | CSS-in-JS API             |
-| `getJSDangerButtonProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | same as CSS API                       | CSS-in-JS API             |
+| Name                             | Argument Type                                            | Default                               | Description                                                          |
+| -------------------------------- | -------------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------- |
+| `getButtonProps`                 | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles.                                              |
+| `getDangerButtonProps`           | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles.                                            |
+| `getJSButtonProps`               | **options**: [ButtonOptions](#buttonoptions)             | same as CSS API                       | CSS-in-JS API                                                        |
+| `getJSDangerButtonProps`         | **options**: [DangerButtonOptions](#dangerbuttonoptions) | same as CSS API                       | CSS-in-JS API                                                        |
+| `getButtonWithIconProps`         | **options**: [ButtonOptions](#buttonoptions)             | **kind**: 'text', <br />**size**: 'm' | Get main button styles plus [iconOptions](./Icon.mdx#iconoptions).   |
+| `getDangerButtonWithIconProps`   | **options**: [DangerButtonOptions](#dangerbuttonoptions) | **kind**: 'text', <br />**size**: 'm' | Get danger button styles plus [iconOptions](./Icon.mdx#iconoptions). |
+| `getJSButtonWithIconProps`       | **options**: [ButtonOptions](#buttonoptions)             | same as CSS API                       | CSS-in-JS API plus [iconOptions](./Icon.mdx#iconoptions).            |
+| `getJSDangerButtonWithIconProps` | **options**: [DangerButtonOptions](#dangerbuttonoptions) | same as CSS API                       | CSS-in-JS API plus [iconOptions](./Icon.mdx#iconoptions).            |
 
 ## Options
 
@@ -250,6 +272,24 @@ interface JSButtonProps {
     }
   },
   type: 'button',
+}
+```
+
+### ButtonWithIconProps
+
+```typescript
+interface ButtonWithIconProps {
+  button: ButtonProps
+  iconOptions: IconOptions
+}
+```
+
+### JSButtonWithIconProps
+
+```typescript
+interface JSButtonWithIconProps {
+  button: JSButtonProps
+  iconOptions: IconOptions
 }
 ```
 
