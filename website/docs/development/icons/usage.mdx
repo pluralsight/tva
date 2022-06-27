@@ -29,6 +29,8 @@ This is **experimental** documentation for Pluralsight Design **icons** package.
 
 :::
 
+The Icons package provides inline SVG icons as ready-to-use components for popular frameworks as well as SVG files and data URIs.
+
 <ViewSourceLink
   icon="github"
   href="https://github.com/pluralsight/tva/tree/main/packages/icons"
@@ -36,13 +38,33 @@ This is **experimental** documentation for Pluralsight Design **icons** package.
   View source
 </ViewSourceLink>
 
-## Installation
+## Import
 
-To use icons in your application, install the npm package.
+We export React components by default, which can be imported by name from the package root.
 
-```bash npm2yarn
-npm install @pluralsight/icons@alpha
+### React
+
+```javascript
+import { MenuIcon } from '@pluralsight/icons'
 ```
+
+### Svelte
+
+```javascript
+import { MenuIcon } from '@pluralsight/icons/svelte'
+```
+
+### SVG
+
+```javascript
+import menuSvg from '@pluralsight/icons/svg/navigation/menu.svg'
+```
+
+:::tip
+
+If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](./intro.mdx#bundlers-without-tree-shaking)
+
+:::
 
 ## Usage
 
@@ -145,30 +167,6 @@ theming while still allowing for control over the icon's color directly.
 >
   <IconSizesPreview />
 </LiveExampleTabs>
-
-## Components by framework
-
-The Icons package provides ready-to-use components for popular frameworks.
-
-### React
-
-We export React components by default, which can be imported by name from the package root.
-
-```javascript
-import { MenuIcon } from '@pluralsight/icons'
-```
-
-### Svelte
-
-```javascript
-import { MenuIcon } from '@pluralsight/icons/svelte'
-```
-
-:::tip
-
-If your bundler does not support tree shaking, please see our notes on [minimizing bundle size](./intro.mdx#bundlers-without-tree-shaking)
-
-:::
 
 ## Icon size guide
 
