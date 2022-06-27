@@ -15,12 +15,6 @@ This is **experimental** documentation for Pluralsight Design **icons** package.
 
 Icons are used to convey meaning at a glance, therefore it is important that their usage is consistent and that any meaning conveyed visually is also available to those without vision.
 
-As symbols, the initial meaning may be different for each person, so it is also important that _our_ meaning is available for those who have not yet learned it, and that the symbol can be leveraged for those who have.
-
-## Purpose
-
-The purpose of this package is to provide the library of Pluralsight icons as simple, low-level elements that can be used to build content or higher-order components for the web.
-
 ## SVG vs. icon font
 
 After a [thorough and unbiased comparison of the performance and quality of icon fonts vs inline SVG](https://github.com/pluralsight/tva/discussions/70) we determined that the most performant approach will be to use inline SVG elements. In the [RFC for the Icons package](https://github.com/pluralsight/tva-rfcs/blob/main/text/0000-icons.md) we continued to refine our approach for delivering and rendering icons on the web.
