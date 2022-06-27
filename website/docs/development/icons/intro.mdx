@@ -56,37 +56,41 @@ In this case we should add `aria-label="opens in new window"` to the icon.
 
 :::
 
-## Minimizing bundle size
+## Bundlers without tree shaking
 
-:::note
-
-The following instructions are only needed if you are using an older bundler that doesn't support tree-shaking.
-
-:::
-
-Tree-shaking of `@pluralsight/icons` works out of the box in modern frameworks. If you're using ES6 modules and a bundler that supports tree-shaking you can safely use named imports and still get an optimized bundle size automatically:
+Tree shaking of `@pluralsight/icons` works out of the box in modern frameworks.
+If you're using ES6 modules and a bundler that supports tree shaking you can safely use named imports and still get an optimized bundle size automatically:
 
 ```javascript
 import { BookmarkIcon, MenuIcon } from '@pluralsight/icons'
 ```
 
-### Pathed imports
+Without tree shaking, you can reduce your bundle size by directly importing the icons you need with a pathed import.
+To do this, append the framework and category to the path.
 
-Without tree-shaking, you can reduce your bundle size by directly importing the icons you need. To do this, append the category to the path.
+### React
 
-```javascript title="Pathed import for React"
+```javascript
 import PlayIcon from '@pluralsight/icons/react/audio-video/PlayIcon'
 ```
 
-When importing for other frameworks, the framework comes before the category.
+### Svelte
 
-```javascript title="Pathed import for Svelte"
+```javascript
 import PlayIcon from '@pluralsight/icons/svelte/audio-video/PlayIcon'
+```
+
+### SVG
+
+```javascript
+import playSvg from '@pluralsight/icons/svg/audio-video/play.svg'
 ```
 
 :::tip
 
-Some systems may not support the package.json `exports` field. If the pathed imports are not working, you may need to reference the file directly. To do this, prepend `build/` to the path, and, in some cases, append the file extension.
+Some systems may not support the package.json `exports` field.
+If the pathed imports are not working, you may need to reference the file directly.
+To do this, prepend `build/` to the path, and, in some cases, append the file extension.
 
 `import PlayIcon from '@pluralsight/icons/build/svelte/audio-video/PlayIcon.svelte'`
 :::
