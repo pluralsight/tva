@@ -3,6 +3,9 @@ sidebar_position: 1
 tags: [Development, Usage, Intro, Icons]
 ---
 
+import { getIconProps } from '@pluralsight/headless-styles'
+import { ExternalLinkIcon } from '@pluralsight/icons'
+
 # Intro
 
 :::caution
@@ -11,7 +14,10 @@ This is **experimental** documentation for Pluralsight Design **icons** package.
 
 :::
 
-<p class="page-subheadline" markdown="1">The icons package provides icons ready to insert into your application as inline SVG elements.</p>
+<p class="page-subheadline" markdown="1">
+  The icons package provides icons ready to insert into your application as
+  inline SVG elements.
+</p>
 
 Icons are used to convey meaning at a glance, therefore it is important that their usage is consistent and that any meaning conveyed visually is also available to those without vision.
 
@@ -19,10 +25,12 @@ Icons are used to convey meaning at a glance, therefore it is important that the
 
 After a [thorough and unbiased comparison of the performance and quality of icon fonts vs inline SVG](https://github.com/pluralsight/tva/discussions/70) we determined that the most performant approach will be to use inline SVG elements. In the [RFC for the Icons package](https://github.com/pluralsight/tva-rfcs/blob/main/text/0000-icons.md) we continued to refine our approach for delivering and rendering icons on the web.
 
-## Accessibility
+## Icon labels and accessibility
 
-An accessible label is included in each SVG.
+An [accessible label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) is included in each SVG.
 In most cases the label describes the image (e.g., "arrow pointing left"), in others what it represents (e.g., "exit fullscreen").
+
+**By default, the label will be read by screen readers.** The label may be overridden or disabled when a different label is needed or provided as part of a higher-order component (such as a button).
 
 ```xml
 <svg
@@ -32,15 +40,19 @@ In most cases the label describes the image (e.g., "arrow pointing left"), in ot
   fill="currentColor"
   class="ps-icon-svg"
 >
-  <path d="M9.864 13.01a.5.5 0 0 1 0-.708L14.166 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h13.668L9.864 1.696a.5.5 0 0 1 0-.708l.707-.707a.5.5 0 0 1 .707 0l6.364 6.364a.5.5 0 0 1 0 .707l-6.364 6.364a.5.5 0 0 1-.707 0l-.707-.707Z"/>
+  <path d="M9.864 13.01a.5.5 0 0 1 0-.708L14.166 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5
+  6h13.668L9.864 1.696a.5.5 0 0 1 0-.708l.707-.707a.5.5 0 0 1 .707 0l6.364 6.364a.5.5
+  0 0 1 0 .707l-6.364 6.364a.5.5 0 0 1-.707 0l-.707-.707Z"/>
 </svg>
 ```
 
-**By default, the label will be read by screen readers.** The label may be overridden or disabled when a different label is needed or provided as part of a higher-order component (such as a button).
+:::tip
 
-:::caution
-
-If an icon provides meaning visually, be sure to provide the same meaning in an accessible way.
+If an icon provides meaning visually, be sure to provide the same meaning in the icon's `aria-label`.
+For example, the icon in this link:
+[W3C: Functional Images <ExternalLinkIcon className={getIconProps().className} aria-label="opens in new window" />](https://www.w3.org/WAI/tutorials/images/functional/)
+visually indicates that the link opens in a new window.
+In this case we should add `aria-label="opens in new window"` to the icon.
 
 :::
 
