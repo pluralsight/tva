@@ -3,72 +3,136 @@ color:
     background:
       dark:
         value: 'hsla(336, 100%, 36%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(336, 100%, 36%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     background-active:
       dark:
         value: 'hsla(335, 100%, 18%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(335, 100%, 18%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     background-hover:
       dark:
         value: 'hsla(336, 100%, 27%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(336, 100%, 27%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     background-weak:
       dark:
         value: 'hsla(335, 100%, 18%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(336, 100%, 91%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     border:
       dark:
         value: 'hsla(336, 100%, 54%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(335, 100%, 64%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     label:
       dark:
         value: 'hsla(336, 100%, 97%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(335, 100%, 18%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     label-muted:
       dark:
         value: 'hsla(335, 100%, 82%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(336, 100%, 36%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
     label-subtle:
       dark:
         value: 'hsla(336, 100%, 73%, 1)'
+        attributes:
+          category: color
       light:
         value: 'hsla(335, 100%, 64%, 1)'
+        attributes:
+          category: color
       flow-dark:
         value: 'hsl()'
+        attributes:
+          category: color
       flow-light:
         value: 'hsl()'
+        attributes:
+          category: color
