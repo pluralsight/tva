@@ -107,6 +107,7 @@ const vars = {
   scss,
   skillsSources,
   ts,
+  baseFileConfig,
 }
 
 module.exports = vars
