@@ -29,21 +29,21 @@ export default {
       zIndex: '50',
     },
   },
-  text: {
+  alertText: {
     color: 'inherit',
     fontFamily:
       "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     textAlign: 'left',
   },
   alertDescription: {
-    composes: 'text',
+    composes: 'alertText',
     fontSize: '0.875rem',
     fontVariationSettings: "'wght' 400",
     fontWeight: '400',
     marginTop: '4px',
   },
   alertTitle: {
-    composes: 'text',
+    composes: 'alertText',
     fontSize: '1rem',
     fontVariationSettings: "'wght' 600",
     fontWeight: '600',

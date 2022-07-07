@@ -106,16 +106,16 @@ describe('Alert CSS', () => {
           class: `${baseClass}-description alertDescription`,
         },
         iconWrapper: {
-          class: `${baseClass}-icon infoIconWrapper`,
+          class: `${baseClass}-icon alertIconWrapper infoIconWrapper`,
         },
         textContainer: {
-          class: `${baseClass}-text-container infoTextContainer`,
+          class: `${baseClass}-text-container alertTextContainer infoTextContainer`,
         },
         title: {
           class: `${baseClass}-title alertTitle`,
         },
         wrapper: {
-          class: `${baseClass} infoAlert`,
+          class: `${baseClass} alertWrapper infoAlert`,
           role: 'alert',
         },
       })

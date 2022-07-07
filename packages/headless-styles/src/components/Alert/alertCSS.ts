@@ -24,14 +24,14 @@ export function getAlertProps(options?: AlertOptions) {
     iconWrapper: {
       ...props.iconWrapper,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT}-icon ${iconClass}`,
+        svelteClass: `${ALERT}-icon alertIconWrapper ${iconClass}`,
         defaultClass: `${ALERT}-icon ${styles[iconClass]}`,
       }),
     },
     textContainer: {
       ...props.textContainer,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT}-text-container ${textClass}`,
+        svelteClass: `${ALERT}-text-container alertTextContainer ${textClass}`,
         defaultClass: `${ALERT}-text-container ${styles[textClass]}`,
       }),
     },
@@ -45,7 +45,7 @@ export function getAlertProps(options?: AlertOptions) {
     wrapper: {
       ...props.wrapper,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT} ${kindClass}`,
+        svelteClass: `${ALERT} alertWrapper ${kindClass}`,
         defaultClass: `${ALERT} ${styles[kindClass]}`,
       }),
     },
