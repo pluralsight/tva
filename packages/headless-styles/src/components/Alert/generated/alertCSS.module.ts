@@ -30,7 +30,7 @@ export default {
     },
   },
   text: {
-    color: 'hsl(201deg 100% 92% / 100%)',
+    color: 'inherit',
     fontFamily:
       "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     textAlign: 'left',
@@ -50,7 +50,6 @@ export default {
     paddingTop: '0.875rem',
   },
   alertIconWrapper: {
-    color: 'hsl(202deg 100% 58% / 100%)',
     display: 'inline-block',
     marginInlineEnd: '0.875rem',
     paddingTop: '0.875rem',
@@ -62,5 +61,58 @@ export default {
   },
   infoAlert: {
     composes: 'alertWrapper',
+  },
+  infoIconWrapper: {
+    color: 'hsl(202deg 100% 58% / 100%)',
+    composes: 'alertIconWrapper',
+  },
+  infoTextContainer: {
+    color: 'hsl(201deg 100% 92% / 100%)',
+    composes: 'alertTextContainer',
+  },
+  successAlert: {
+    background: 'hsl(156deg 97% 15% / 100%)',
+    composes: 'alertWrapper',
+    '&::before': {
+      backgroundColor: 'hsl(156deg 98% 44% / 100%)',
+    },
+  },
+  successIconWrapper: {
+    color: 'hsl(156deg 98% 37% / 100%)',
+    composes: 'alertIconWrapper',
+  },
+  successTextContainer: {
+    color: 'hsl(156deg 100% 91% / 100%)',
+    composes: 'alertTextContainer',
+  },
+  warningAlert: {
+    background: 'hsl(43deg 100% 21% / 100%)',
+    composes: 'alertWrapper',
+    '&::before': {
+      backgroundColor: 'hsl(43deg 100% 53% / 100%)',
+    },
+  },
+  warningIconWrapper: {
+    color: 'hsl(43deg 100% 69% / 100%)',
+    composes: 'alertIconWrapper',
+  },
+  warningTextContainer: {
+    color: 'hsl(43deg 100% 94% / 100%)',
+    composes: 'alertTextContainer',
+  },
+  dangerAlert: {
+    background: 'hsl(335deg 100% 18% / 100%)',
+    composes: 'alertWrapper',
+    '&::before': {
+      backgroundColor: 'hsl(336deg 100% 54% / 100%)',
+    },
+  },
+  dangerIconWrapper: {
+    color: 'hsl(336deg 100% 73% / 100%)',
+    composes: 'alertIconWrapper',
+  },
+  dangerTextContainer: {
+    color: 'hsl(336deg 100% 97% / 100%)',
+    composes: 'alertTextContainer',
   },
 }

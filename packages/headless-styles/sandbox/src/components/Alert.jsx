@@ -2,7 +2,7 @@ import { getAlertProps, getIconProps, getIconButtonProps } from '../../../src'
 import { CloseIcon, InfoCircleIcon } from '@pluralsight/icons'
 
 function AlertEl(props) {
-  const alert = getAlertProps(props.kind)
+  const alert = getAlertProps({ kind: props.kind })
   const { button, iconOptions } = getIconButtonProps(alert.iconButtonOptions)
 
   return (
@@ -37,6 +37,24 @@ export default function Alert() {
           alertTitle="Info alert"
           description="This is an example has a close button."
           showButton
+        />
+        <br />
+        <AlertEl
+          alertTitle="Success alert"
+          description="Your information was saved."
+          kind="success"
+        />
+        <br />
+        <AlertEl
+          alertTitle="Warning alert"
+          description="Your changes have not been saved. Proceed with caution."
+          kind="warning"
+        />
+        <br />
+        <AlertEl
+          alertTitle="Danger alert"
+          description="Your file has been permanently deleted."
+          kind="danger"
         />
       </div>
     </div>

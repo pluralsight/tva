@@ -26,7 +26,7 @@
 }
 
 .text {
-  color: var(--ps-info-text);
+  color: inherit;
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
   text-align: left;
@@ -49,7 +49,6 @@
 }
 
 .alertIconWrapper {
-  color: var(--ps-info-text-medium);
   display: inline-block;
   margin-inline-end: 0.875rem;
   padding-top: 0.875rem;
@@ -61,8 +60,81 @@
   flex-direction: column;
 }
 
-/* kinds */
+/* info */
 
 .infoAlert {
   composes: alertWrapper;
+}
+
+.infoIconWrapper {
+  color: var(--ps-info-text-medium);
+  composes: alertIconWrapper;
+}
+
+.infoTextContainer {
+  color: var(--ps-info-text);
+  composes: alertTextContainer;
+}
+
+/* success */
+
+.successAlert {
+  background: var(--ps-success-background-weak);
+  composes: alertWrapper;
+}
+
+.successAlert::before {
+  background-color: var(--ps-success-border);
+}
+
+.successIconWrapper {
+  color: var(--ps-success-text-medium);
+  composes: alertIconWrapper;
+}
+
+.successTextContainer {
+  color: var(--ps-success-text);
+  composes: alertTextContainer;
+}
+
+/* warning */
+
+.warningAlert {
+  background: var(--ps-warning-background-weak);
+  composes: alertWrapper;
+}
+
+.warningAlert::before {
+  background-color: var(--ps-warning-border);
+}
+
+.warningIconWrapper {
+  color: var(--ps-warning-text-medium);
+  composes: alertIconWrapper;
+}
+
+.warningTextContainer {
+  color: var(--ps-warning-text);
+  composes: alertTextContainer;
+}
+
+/* danger */
+
+.dangerAlert {
+  background: var(--ps-danger-background-weak);
+  composes: alertWrapper;
+}
+
+.dangerAlert::before {
+  background-color: var(--ps-danger-border);
+}
+
+.dangerIconWrapper {
+  color: var(--ps-danger-text-medium);
+  composes: alertIconWrapper;
+}
+
+.dangerTextContainer {
+  color: var(--ps-danger-text);
+  composes: alertTextContainer;
 }

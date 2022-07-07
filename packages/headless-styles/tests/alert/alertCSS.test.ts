@@ -16,10 +16,10 @@ describe('Alert CSS', () => {
         className: `${baseClass}-description alertDescription`,
       },
       iconWrapper: {
-        className: `${baseClass}-icon alertIconWrapper`,
+        className: `${baseClass}-icon infoIconWrapper`,
       },
       textContainer: {
-        className: `${baseClass}-text-container alertTextContainer`,
+        className: `${baseClass}-text-container infoTextContainer`,
       },
       title: {
         className: `${baseClass}-title alertTitle`,
@@ -34,8 +34,62 @@ describe('Alert CSS', () => {
       expect(getAlertProps()).toEqual(result)
     })
 
-    test('should accept a kind type', () => {
+    test('should accept a info kind type', () => {
       expect(getAlertProps({ kind: 'info' })).toEqual(result)
+    })
+
+    test('should accept a success kind type', () => {
+      expect(getAlertProps({ kind: 'success' })).toEqual({
+        ...result,
+        iconWrapper: {
+          ...result.iconWrapper,
+          className: `${baseClass}-icon successIconWrapper`,
+        },
+        textContainer: {
+          ...result.textContainer,
+          className: `${baseClass}-text-container successTextContainer`,
+        },
+        wrapper: {
+          ...result.wrapper,
+          className: `${baseClass} successAlert`,
+        },
+      })
+    })
+
+    test('should accept a warning kind type', () => {
+      expect(getAlertProps({ kind: 'warning' })).toEqual({
+        ...result,
+        iconWrapper: {
+          ...result.iconWrapper,
+          className: `${baseClass}-icon warningIconWrapper`,
+        },
+        textContainer: {
+          ...result.textContainer,
+          className: `${baseClass}-text-container warningTextContainer`,
+        },
+        wrapper: {
+          ...result.wrapper,
+          className: `${baseClass} warningAlert`,
+        },
+      })
+    })
+
+    test('should accept a danger kind type', () => {
+      expect(getAlertProps({ kind: 'danger' })).toEqual({
+        ...result,
+        iconWrapper: {
+          ...result.iconWrapper,
+          className: `${baseClass}-icon dangerIconWrapper`,
+        },
+        textContainer: {
+          ...result.textContainer,
+          className: `${baseClass}-text-container dangerTextContainer`,
+        },
+        wrapper: {
+          ...result.wrapper,
+          className: `${baseClass} dangerAlert`,
+        },
+      })
     })
 
     test('should accept a tech type', () => {
@@ -52,10 +106,10 @@ describe('Alert CSS', () => {
           class: `${baseClass}-description alertDescription`,
         },
         iconWrapper: {
-          class: `${baseClass}-icon alertIconWrapper`,
+          class: `${baseClass}-icon infoIconWrapper`,
         },
         textContainer: {
-          class: `${baseClass}-text-container alertTextContainer`,
+          class: `${baseClass}-text-container infoTextContainer`,
         },
         title: {
           class: `${baseClass}-title alertTitle`,

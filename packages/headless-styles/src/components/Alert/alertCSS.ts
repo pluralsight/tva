@@ -9,6 +9,8 @@ export function getAlertProps(options?: AlertOptions) {
   const { kind, tech } = getDefaultAlertOptions(options)
   const props = createAlertProps()
   const kindClass = `${kind}Alert`
+  const iconClass = `${kind}IconWrapper`
+  const textClass = `${kind}TextContainer`
 
   return {
     ...props,
@@ -22,15 +24,15 @@ export function getAlertProps(options?: AlertOptions) {
     iconWrapper: {
       ...props.iconWrapper,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT}-icon alertIconWrapper`,
-        defaultClass: `${ALERT}-icon ${styles.alertIconWrapper}`,
+        svelteClass: `${ALERT}-icon ${iconClass}`,
+        defaultClass: `${ALERT}-icon ${styles[iconClass]}`,
       }),
     },
     textContainer: {
       ...props.textContainer,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT}-text-container alertTextContainer`,
-        defaultClass: `${ALERT}-text-container ${styles.alertTextContainer}`,
+        svelteClass: `${ALERT}-text-container ${textClass}`,
+        defaultClass: `${ALERT}-text-container ${styles[textClass]}`,
       }),
     },
     title: {
