@@ -18,14 +18,16 @@ export function createAlertProps() {
     iconButtonOptions: {
       ariaLabel: 'Close alert',
       kind: 'text',
+      size: 'm',
     },
     iconOptions: {
       size: 'm',
     },
-    descriptionProps: {},
-    iconWrapperProps: {},
-    titleProps: {},
-    wrapperProps: {
+    description: {},
+    iconWrapper: {},
+    textContainer: {},
+    title: {},
+    wrapper: {
       role: 'alert',
     },
   }

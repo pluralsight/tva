@@ -1,13 +1,13 @@
 .alertWrapper {
-  align-items: center;
+  align-items: flex-start;
   background: var(--ps-info-background-weak);
-  color: var(--ps-info-text);
+  border-radius: 6px;
   display: flex;
   overflow: hidden;
-  padding-bottom: 0.75rem;
+  padding-bottom: 0.875rem;
   padding-inline-end: 0;
   padding-inline-start: 0.875rem;
-  padding-top: 0.875rem;
+  padding-top: 0;
   position: relative;
   width: 100%;
 }
@@ -26,8 +26,10 @@
 }
 
 .text {
+  color: var(--ps-info-text);
   font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
     sans-serif;
+  text-align: left;
 }
 
 .alertDescription {
@@ -43,8 +45,24 @@
   font-size: 1rem;
   font-variation-settings: 'wght' 600;
   font-weight: 600;
+  padding-top: 0.875rem;
 }
 
 .alertIconWrapper {
   color: var(--ps-info-text-medium);
+  display: inline-block;
+  margin-inline-end: 0.875rem;
+  padding-top: 0.875rem;
+}
+
+.alertTextContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* kinds */
+
+.infoAlert {
+  composes: alertWrapper;
 }

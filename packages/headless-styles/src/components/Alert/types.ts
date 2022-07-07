@@ -1,8 +1,8 @@
 import { Tech } from '../types'
 
 export interface AlertOptions {
-  kind: Kind
-  tech: Tech
+  kind?: Kind
+  tech?: Tech
 }
 
 // Types
