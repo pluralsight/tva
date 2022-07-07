@@ -1,3 +1,4 @@
+export type { AlertOptions } from './components/Alert/types'
 export type { BadgeOptions } from './components/Badge/types'
 export type {
   ButtonOptions,
