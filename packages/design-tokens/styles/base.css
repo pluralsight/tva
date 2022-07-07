@@ -6,9 +6,11 @@ html {
     sans-serif;
   font-feature-settings: 'tnum' on, 'lnum' on;
   font-size: 1em;
+  -webkit-font-smoothing: antialiased;
   font-variation-settings: 'wght' 400;
   font-weight: 400;
   line-height: 1.5;
+  text-rendering: geometricPrecision;
   text-size-adjust: 100%;
 }
 
