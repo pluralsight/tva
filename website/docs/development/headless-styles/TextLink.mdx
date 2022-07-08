@@ -1,0 +1,99 @@
+---
+sidebar_position: 15
+tags: [Development, Packages, Components, Headless Styles, Link, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
+
+<ReleaseNote />
+
+The Text Link is used to navigate.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/TextLink"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getTextLinkProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+TBD
+
+## API
+
+| Name                 | Argument Type                                    | Default | Description           |
+| -------------------- | ------------------------------------------------ | ------- | --------------------- |
+| `getTextLinkProps`   | **options**: [TextLinkOptions](#textlinkoptions) |         | Get main link styles. |
+| `getJSTextLinkProps` | **options**: [TextLinkOptions](#textlinkoptions) |         | CSS-in-JS API         |
+
+## Options
+
+### TextLinkOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+interface TextLinkOptions {
+  tech?: 'svelte'
+}
+```
+
+```typescript title="Import example"
+import type { TextLinkOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### TextLinkProps
+
+```typescript
+interface TextLinkProps {
+  className: string
+}
+```
+
+```js title="Return value example"
+{
+  className: `ps-text-link ${...internalStyles}`
+}
+```
+
+### JSTextLinkProps
+
+```typescript
+interface JSTextLinkProps {
+  cssProps: TemplateLiteralStringArray | string
+  styles: Record<CSSProps, string>
+}
+```
+
+```js title="Return value example"
+{
+  cssProps: `
+    color: #fff;
+    background-color: #000;
+    ...
+  `,
+  styles: {
+    color: '#fff',
+    backgroundColor: '#000'
+    '&:hover': {
+      ...
+    }
+  },
+}
+```
