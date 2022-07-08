@@ -44,7 +44,15 @@ import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 
 <ReleaseNote />
 
-The Icon Button is used to perform an action or event, such as submitting a form, opening a dialog, using a cancel action, or to nagivate.
+The Icon Button is used to perform an action or event, such as submitting a form, opening a dialog, or using a cancel action.
+
+:::note
+
+Buttons should not be used for inline text links or outbound links.
+This API is meant for action-based click selections.
+For displaying links, use the [Text Link API](./TextLink.mdx).
+
+:::
 
 <ViewSourceLink
   icon="github"
@@ -140,26 +148,6 @@ Use the `variant` options to change the appearance of the icon button. The optio
 >
   <DangerIconButtonPreview />
 </LiveExampleTabs>
-
-### Icon Button styled links
-
-If you want to use icon button styles for an `a` element, just omit the `type` property from the returned button object.
-
-```jsx
-const { button, iconOptions } = getIconButtonProps({ ariaLabel: 'Go back' })
-const linkProps = {
-  'aria-label' = button['aria-label'],
-  className: button.className,
-}
-
-function BackLink() {
-  return (
-    <a href="#" {...linkProps}>
-      <ArrowLeftIcon {...getIconProps(iconOptions)} />
-    </a>
-  )
-}
-```
 
 ## Extending
 
