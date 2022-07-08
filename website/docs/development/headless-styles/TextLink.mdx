@@ -66,34 +66,11 @@ interface TextLinkProps {
 }
 ```
 
-```js title="Return value example"
-{
-  className: `ps-text-link ${...internalStyles}`
-}
-```
-
 ### JSTextLinkProps
 
 ```typescript
 interface JSTextLinkProps {
   cssProps: TemplateLiteralStringArray | string
   styles: Record<CSSProps, string>
-}
-```
-
-```js title="Return value example"
-{
-  cssProps: `
-    color: #fff;
-    background-color: #000;
-    ...
-  `,
-  styles: {
-    color: '#fff',
-    backgroundColor: '#000'
-    '&:hover': {
-      ...
-    }
-  },
 }
 ```
