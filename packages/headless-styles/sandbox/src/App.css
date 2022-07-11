@@ -15,8 +15,12 @@
 }
 
 .App-header {
+  background: #fff;
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .bottomSpacing {
