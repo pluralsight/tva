@@ -1,0 +1,140 @@
+.alertWrapper {
+  align-items: flex-start;
+  background: var(--ps-info-background-weak);
+  border-radius: 6px;
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 0.875rem;
+  padding-inline-end: 0;
+  padding-inline-start: 0.875rem;
+  padding-top: 0;
+  position: relative;
+  width: 100%;
+}
+
+.alertWrapper::before {
+  background-color: var(--ps-info-border);
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  content: '';
+  height: 100%;
+  left: 0.5px;
+  position: absolute;
+  top: 0;
+  width: 4px;
+  z-index: 50;
+}
+
+.alertText {
+  color: inherit;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  text-align: left;
+}
+
+.alertDescription {
+  composes: alertText;
+  font-size: 0.875rem;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.alertTitle {
+  composes: alertText;
+  font-size: 1rem;
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+  padding-top: 0.875rem;
+}
+
+.alertIconWrapper {
+  display: inline-block;
+  margin-inline-end: 0.875rem;
+  padding-top: 0.875rem;
+}
+
+.alertTextContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* info */
+
+.infoAlert {
+  composes: alertWrapper;
+}
+
+.infoIconWrapper {
+  color: var(--ps-info-text-medium);
+  composes: alertIconWrapper;
+}
+
+.infoTextContainer {
+  color: var(--ps-info-text);
+  composes: alertTextContainer;
+}
+
+/* success */
+
+.successAlert {
+  background: var(--ps-success-background-weak);
+  composes: alertWrapper;
+}
+
+.successAlert::before {
+  background-color: var(--ps-success-border);
+}
+
+.successIconWrapper {
+  color: var(--ps-success-text-medium);
+  composes: alertIconWrapper;
+}
+
+.successTextContainer {
+  color: var(--ps-success-text);
+  composes: alertTextContainer;
+}
+
+/* warning */
+
+.warningAlert {
+  background: var(--ps-warning-background-weak);
+  composes: alertWrapper;
+}
+
+.warningAlert::before {
+  background-color: var(--ps-warning-border);
+}
+
+.warningIconWrapper {
+  color: var(--ps-warning-text-medium);
+  composes: alertIconWrapper;
+}
+
+.warningTextContainer {
+  color: var(--ps-warning-text);
+  composes: alertTextContainer;
+}
+
+/* danger */
+
+.dangerAlert {
+  background: var(--ps-danger-background-weak);
+  composes: alertWrapper;
+}
+
+.dangerAlert::before {
+  background-color: var(--ps-danger-border);
+}
+
+.dangerIconWrapper {
+  color: var(--ps-danger-text-medium);
+  composes: alertIconWrapper;
+}
+
+.dangerTextContainer {
+  color: var(--ps-danger-text);
+  composes: alertTextContainer;
+}

@@ -34,7 +34,15 @@ import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 
 <ReleaseNote />
 
-The Button is used to perform an action or event, such as submitting a form, opening a dialog, using a cancel action, or to nagivate.
+The Button is used to perform an action or event, such as submitting a form, opening a dialog, or using a cancel action.
+
+:::note
+
+Buttons **should not be used for inline text links or outbound links**.
+This API is meant for action-based click selections.
+For displaying links, use the [Text Link API](./TextLink.mdx).
+
+:::
 
 <ViewSourceLink
   icon="github"
@@ -136,29 +144,6 @@ For buttons with _only_ an icon and no visible text, use the [Icon Button (getIc
 >
   <DangerButtonPreview />
 </LiveExampleTabs>
-
-### Button styled links
-
-If you want to use button styles for an `a` element, just omit the `type` property from the return Object sent.
-
-```jsx
-const { className } = getButtonProps()
-const psButtonLinkProps = { className: psButtonProps.className }
-
-function BackLink() {
-  return (
-    <a href="#" {...psbButtonLinkProps}>
-      Back
-    </a>
-  )
-}
-```
-
-:::tip
-
-With ES\* you could destructure the className out of the object (i.e. `{ className, ...rest }`). However, this approach forces you to declare an unused variable which will negatively impact performance at some point, make a negative impact on code readability, and fail sonarlint tests.
-
-:::
 
 ## Extending
 

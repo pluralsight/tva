@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { getButtonProps } from '../../src'
+import Alert from './components/Alert'
 import Button from './components/Button'
 import ButtonWithIcon from './components/ButtonWithIcon'
 import Badge from './components/Badge'
@@ -41,9 +42,10 @@ function App() {
         </button>
       </header>
 
+      <Alert logJS />
       <Badge />
       <Button />
-      <ButtonWithIcon logJS />
+      <ButtonWithIcon />
       <Checkbox />
       <CircularProgress />
       <ErrorMessage />
