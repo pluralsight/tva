@@ -3,7 +3,6 @@ import { getDefaultOptions } from './shared'
 import type { TagOptions } from './types'
 import styles from './tagCSS.module.css'
 
-// Public
 
 export function getTagProps(options?: TagOptions) {
   const defaultOptions = getDefaultOptions(options)
