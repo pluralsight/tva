@@ -24,10 +24,6 @@
   white-space: nowrap;
 }
 
-[href].baseTag {
-  cursor: pointer;
-}
-
 .strongTag {
   background-color: var(--ps-background-weak);
   color: var(--ps-text);

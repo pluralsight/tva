@@ -41,9 +41,6 @@ export default {
       outline: 'none',
     },
   },
-  href__baseTag: {
-    cursor: 'pointer',
-  },
   strongTag: {
     backgroundColor: 'hsl(249deg 63% 25% / 100%)',
     color: 'hsl(249deg 62% 92% / 100%)',
