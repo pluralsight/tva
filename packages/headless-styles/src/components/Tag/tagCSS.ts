@@ -1,11 +1,10 @@
 import { createClassProp } from '../../utils/helpers'
-import { getDefaultOptions } from './shared'
+import { getDefaultTagOptions } from './shared'
 import type { TagOptions } from './types'
 import styles from './tagCSS.module.css'
 
-
 export function getTagProps(options?: TagOptions) {
-  const defaultOptions = getDefaultOptions(options)
+  const defaultOptions = getDefaultTagOptions(options)
   const { kind, size } = defaultOptions
   const kindClass = `${kind}Tag`
   const sizeClass = `${size}Tag`

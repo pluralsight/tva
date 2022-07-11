@@ -7,7 +7,7 @@ export const defaultTagOptions = {
   tech: '' as Tech,
 }
 
-export function getDefaultOptions(options?: TagOptions) {
+export function getDefaultTagOptions(options?: TagOptions) {
   return {
     kind: options?.kind ?? defaultTagOptions.kind,
     size: options?.size ?? defaultTagOptions.size,
