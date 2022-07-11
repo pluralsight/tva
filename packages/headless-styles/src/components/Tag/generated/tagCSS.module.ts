@@ -29,7 +29,12 @@ export default {
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
     '&:focus': {
-      outline: 'hsl(0deg 0% 100% / 80%) solid 2px',
+      boxShadow: 'none',
+      outline: '3px solid hsl(249deg 63% 34% / 100%)',
+    },
+    '&:active': {
+      boxShadow: 'none',
+      outline: 'none',
     },
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
@@ -65,15 +70,5 @@ export default {
     composes: 'baseTag',
     fontSize: '0.75rem',
     height: '1.25rem',
-  },
-  '': {
-    '&:global(.light) .baseTag:focus': {
-      outlineColor: 'hsl(0deg 0% 0% / 80%)',
-    },
-  },
-  html_data_theme__light____baseTag: {
-    '&:focus': {
-      outlineColor: 'hsl(0deg 0% 0% / 80%)',
-    },
   },
 }

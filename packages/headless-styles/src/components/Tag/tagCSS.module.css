@@ -69,17 +69,12 @@
 /* focus styles */
 
 .baseTag:focus {
-  outline: hsl(0deg 0% 100% / 80%) solid 2px;
+  box-shadow: none;
+  outline: 3px solid var(--ps-background-active);
 }
 
+.baseTag:active,
 .baseTag:focus:not(:focus-visible) {
   box-shadow: none;
   outline: none;
-}
-
-/* light theme */
-
-:global(.light) .baseTag:focus,
-html[data-theme='light'] .baseTag:focus {
-  outline-color: hsl(0deg 0% 0% / 80%);
 }
