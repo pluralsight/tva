@@ -1,4 +1,10 @@
-import { getAlertProps, getIconProps, getIconButtonProps } from '../../../src'
+import { useEffect } from 'react'
+import {
+  getAlertProps,
+  getIconProps,
+  getIconButtonProps,
+  getJSAlertProps,
+} from '../../../src'
 import { CloseIcon, InfoCircleIcon } from '@pluralsight/icons'
 
 function AlertEl(props) {
@@ -23,7 +29,13 @@ function AlertEl(props) {
   )
 }
 
-export default function Alert() {
+export default function Alert({ logJS }) {
+  useEffect(() => {
+    if (logJS) {
+      console.log({ ...getJSAlertProps({ kind: 'danger' }) })
+    }
+  }, [logJS])
+
   return (
     <div id="alert">
       <h3>Alert</h3>

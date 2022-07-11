@@ -1,4 +1,5 @@
 export { getAlertProps } from './components/Alert/alertCSS'
+export { getJSAlertProps } from './components/Alert/alertJS'
 
 export { getBadgeProps } from './components/Badge/badgeCSS'
 export { getJSBadgeProps, muiLabelOverride } from './components/Badge/badgeJS'
