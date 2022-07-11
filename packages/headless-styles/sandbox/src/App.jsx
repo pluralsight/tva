@@ -16,6 +16,7 @@ import Progress from './components/Progress'
 import Radio from './components/Radio'
 import Skeleton from './components/Skeleton'
 import Switch from './components/Switch'
+import Tag from './components/Tag'
 import Textarea from './components/Textarea'
 import './App.css'
 
@@ -56,6 +57,7 @@ function App() {
       <Radio />
       <Skeleton />
       <Switch />
+      <Tag />
       <Textarea />
     </div>
   )
