@@ -1,4 +1,4 @@
-import { ChakraAlert } from 'components/Alert/chakraAlert'
+import { ChakraAlert } from './components/Alert/chakraAlert'
 import { ChakraBadge } from './components/Badge/badgeJS'
 import { ChakraButton } from './components/Button/chakraButton'
 import { ChakraCheckbox } from './components/Checkbox/chakraCheckbox'
