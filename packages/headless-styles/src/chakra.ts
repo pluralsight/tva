@@ -1,3 +1,4 @@
+import { ChakraAlert } from 'components/Alert/chakraAlert'
 import { ChakraBadge } from './components/Badge/badgeJS'
 import { ChakraButton } from './components/Button/chakraButton'
 import { ChakraCheckbox } from './components/Checkbox/chakraCheckbox'
@@ -22,6 +23,7 @@ const Form = {
 
 export const chakraPSTheme = {
   components: {
+    Alert: ChakraAlert,
     Badge: ChakraBadge,
     Button: ChakraButton,
     Checkbox: ChakraCheckbox,
