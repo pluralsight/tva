@@ -20,7 +20,7 @@
   padding-top: 1.5rem;
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 1100;
 }
 
 .bottomSpacing {
