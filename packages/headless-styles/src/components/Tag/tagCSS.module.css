@@ -1,0 +1,85 @@
+.baseTag {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  display: inline-flex;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-size: 0.875rem;
+  font-variation-settings: 'wght' 500;
+  font-weight: 500;
+  gap: 0.25rem;
+  height: 1.5rem;
+  justify-content: center;
+  outline: none;
+  padding-inline: 4px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+[href].baseTag {
+  cursor: pointer;
+}
+
+.strongTag {
+  background-color: var(--ps-background-weak);
+  color: var(--ps-text);
+  composes: baseTag;
+}
+
+.weakTag {
+  background-color: var(--ps-neutral-background);
+  color: var(--ps-neutral-text);
+  composes: baseTag;
+}
+
+.sTag {
+  composes: baseTag;
+  font-size: 0.75rem;
+  height: 1.25rem;
+}
+
+/* hover styles */
+
+.strongTag:hover {
+  background-color: var(--ps-background-weak-hover);
+}
+
+.weakTag:hover {
+  background-color: var(--ps-neutral-background-hover);
+}
+
+/* active styles */
+
+.strongTag:active {
+  background-color: var(--ps-background-weak-active);
+}
+
+.weakTag:active {
+  background-color: var(--ps-neutral-background-active);
+}
+
+/* focus styles */
+
+.baseTag:focus {
+  outline: hsl(0deg 0% 100% / 80%) solid 2px;
+}
+
+.baseTag:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+/* light theme */
+
+:global(.light) .baseTag:focus,
+html[data-theme='light'] .baseTag:focus {
+  outline-color: hsl(0deg 0% 0% / 80%);
+}
