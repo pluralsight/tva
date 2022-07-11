@@ -8,6 +8,11 @@ import styles from './generated/alertCSS.module'
 import type { AlertOptions } from './types'
 
 type StylesKey = keyof typeof styles
+type WrapperKindKey =
+  | 'infoAlert'
+  | 'successAlert'
+  | 'warningAlert'
+  | 'dangerAlert'
 
 export function getJSAlertProps(options?: AlertOptions) {
   const defaultOptions = getDefaultAlertOptions(options)
@@ -29,7 +34,11 @@ export function getJSAlertProps(options?: AlertOptions) {
   }
   const wrapperStyles = {
     ...styles.alertWrapper,
-    ...styles[kindClass as StylesKey],
+    ...styles[kindClass as WrapperKindKey],
+    '&::before': {
+      ...styles.alertWrapper['&::before'],
+      ...styles[kindClass as WrapperKindKey]['&::before'],
+    },
   }
 
   return {

@@ -1,6 +1,5 @@
 .alertWrapper {
   align-items: flex-start;
-  background: var(--ps-info-background-weak);
   border-radius: 6px;
   display: flex;
   overflow: hidden;
@@ -13,7 +12,6 @@
 }
 
 .alertWrapper::before {
-  background-color: var(--ps-info-border);
   border-bottom-left-radius: 6px;
   border-top-left-radius: 6px;
   content: '';
@@ -63,7 +61,12 @@
 /* info */
 
 .infoAlert {
+  background: var(--ps-info-background-weak);
   composes: alertWrapper;
+}
+
+.infoAlert::before {
+  background-color: var(--ps-info-border);
 }
 
 .infoIconWrapper {

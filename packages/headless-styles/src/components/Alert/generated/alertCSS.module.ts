@@ -6,7 +6,6 @@
 export default {
   alertWrapper: {
     alignItems: 'flex-start',
-    background: 'hsl(202deg 100% 17% / 100%)',
     borderRadius: '6px',
     display: 'flex',
     overflow: 'hidden',
@@ -17,7 +16,6 @@ export default {
     position: 'relative',
     width: '100%',
     '&::before': {
-      backgroundColor: 'hsl(202deg 100% 50% / 100%)',
       borderBottomLeftRadius: '6px',
       borderTopLeftRadius: '6px',
       content: "''",
@@ -60,7 +58,11 @@ export default {
     flexDirection: 'column',
   },
   infoAlert: {
+    background: 'hsl(202deg 100% 17% / 100%)',
     composes: 'alertWrapper',
+    '&::before': {
+      backgroundColor: 'hsl(202deg 100% 50% / 100%)',
+    },
   },
   infoIconWrapper: {
     color: 'hsl(202deg 100% 58% / 100%)',
