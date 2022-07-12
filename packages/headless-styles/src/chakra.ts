@@ -12,6 +12,7 @@ import { ChakraProgress } from './components/Progress/progressJS'
 import { ChakraRadio } from './components/Radio/chakraRadio'
 import { ChakraSkeleton } from './components/Skeleton/skeletonJS'
 import { ChakraSwitch } from './components/Switch/switchJS'
+import { ChakraTag } from './components/Tag/chakraTag'
 import { ChakraTextarea } from './components/Textarea/chakraTextarea'
 
 const Form = {
@@ -37,6 +38,7 @@ export const chakraPSTheme = {
     Radio: ChakraRadio,
     Skeleton: ChakraSkeleton,
     Switch: ChakraSwitch,
+    Tag: ChakraTag,
     Textarea: ChakraTextarea,
   },
 }
