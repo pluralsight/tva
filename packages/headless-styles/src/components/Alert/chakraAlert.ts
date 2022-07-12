@@ -14,6 +14,7 @@ const chakraAlertStyle = {
   },
   icon: {
     ...styles.alertIconWrapper,
+    height: 'initial',
   },
   spinner: {},
 }
