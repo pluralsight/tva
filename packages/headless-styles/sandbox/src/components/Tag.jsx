@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { getJSTagProps, getTagProps } from '../../../src'
 
-export default function Tag(props) {
+export default function Tag({ logJS }) {
   useEffect(() => {
-    if (props.logJS) {
+    if (logJS) {
       console.log(
         getJSTagProps({
           kind: 'strong',
@@ -11,7 +11,7 @@ export default function Tag(props) {
         })
       )
     }
-  }, [props.logJS])
+  }, [logJS])
 
   return (
     <div id="tag">
