@@ -3,7 +3,6 @@ import { transformStyles } from '../../utils/helpers'
 import type { TagOptions } from './types'
 import styles from './generated/tagCSS.module'
 
-// Public
 
 export function getJSTagProps(options?: TagOptions) {
   const { kind, size } = getDefaultTagOptions(options)
