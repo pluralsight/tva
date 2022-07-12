@@ -1,5 +1,9 @@
 import { createClassProp } from '../../utils/helpers'
-import { getDefaultAlertOptions, createAlertProps } from './shared'
+import {
+  getDefaultAlertOptions,
+  createAlertProps,
+  createAlertSelectorClasses,
+} from './shared'
 import styles from './alertCSS.module.css'
 import type { AlertOptions } from './types'
 
@@ -8,9 +12,7 @@ const ALERT = 'ps-alert'
 export function getAlertProps(options?: AlertOptions) {
   const { kind, tech } = getDefaultAlertOptions(options)
   const props = createAlertProps()
-  const kindClass = `${kind}Alert`
-  const iconClass = `${kind}IconWrapper`
-  const textClass = `${kind}TextContainer`
+  const { kindClass, iconClass, textClass } = createAlertSelectorClasses(kind)
 
   return {
     ...props,

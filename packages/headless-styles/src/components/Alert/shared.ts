@@ -32,3 +32,11 @@ export function createAlertProps() {
     },
   }
 }
+
+export function createAlertSelectorClasses(kind: Kind) {
+  return {
+    kindClass: `${kind}Alert`,
+    iconClass: `${kind}IconWrapper`,
+    textClass: `${kind}TextContainer`,
+  }
+}
