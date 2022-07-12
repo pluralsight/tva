@@ -1,6 +1,18 @@
-import { getTagProps } from '../../../src'
+import { useEffect } from 'react'
+import { getJSTagProps, getTagProps } from '../../../src'
 
-export default function Tag() {
+export default function Tag(props) {
+  useEffect(() => {
+    if (props.logJS) {
+      console.log(
+        getJSTagProps({
+          kind: 'strong',
+          size: 's',
+        })
+      )
+    }
+  }, [props.logJS])
+
   return (
     <div id="tag">
       <h3>Tag</h3>

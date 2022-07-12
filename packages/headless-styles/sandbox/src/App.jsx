@@ -42,7 +42,7 @@ function App() {
         </button>
       </header>
 
-      <Alert logJS />
+      <Alert />
       <Badge />
       <Button />
       <ButtonWithIcon />
@@ -59,7 +59,7 @@ function App() {
       <Radio />
       <Skeleton />
       <Switch />
-      <Tag />
+      <Tag logJS />
       <Textarea />
     </div>
   )
