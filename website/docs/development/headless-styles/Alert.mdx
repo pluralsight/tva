@@ -7,11 +7,13 @@ tags: [Development, Packages, Components, Headless Styles, Alert]
 <!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
 
 import CodeBlock from '@theme/CodeBlock'
-import BasicTextarea from '@site/src/components/Textarea/BasicTextarea'
+import BasicAlert from '@site/src/components/Alert/BasicAlert'
 import {
-  BasicTextareaPreview,
-  BasicTextareaFullPreview,
-} from '@site/src/components/Textarea/BasicTextarea.preview'
+  BasicAlertPreview,
+  BasicAlertFullPreview,
+} from '@site/src/components/Alert/BasicAlert.preview'
+import StatusAlert from '@site/src/components/Alert/StatusAlert'
+import CloseAlert from '@site/src/components/Alert/CloseAlert'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
@@ -20,9 +22,15 @@ import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 
 The `getAlertProps` is used to communicate a state that affects a system, feature, or page.
 
+:::note
+
+The `getAlertProps` depends on the use of the `@pluralsight/icons` package to display the visual icons used in this markup group.
+
+:::
+
 <ViewSourceLink
   icon="github"
-  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Textarea"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Alert"
 >
   View source
 </ViewSourceLink>
@@ -33,128 +41,201 @@ The `getAlertProps` is used to communicate a state that affects a system, featur
 import { getTextareaProps } from '@pluralsight/headless-styles'
 ```
 
-The Textarea must always be accompanied by a label (i.e. see [getFormLabelProps](./FormControl)).
-
 ## Usage
 
-### Basic Textarea
+### Basic Alert
 
-<BasicTextarea />
+<BasicAlert />
 <LiveExampleTabs
-  fullCode={<BasicTextareaFullPreview />}
+  fullCode={<BasicAlertFullPreview />}
   sandboxList={{
-    chakra: 'ps-react-chakra-c15mx7',
-    joy: 'basic-mui-x99d4z',
-    styled: 'sc-yub7ly',
-    svelte: 'ps-svelte-grjw42',
+    chakra: 'ps-react-chakra-ikyl7q',
+    joy: 'basic-mui-gkbqbk',
+    styled: 'sc-13bstw',
+    svelte: 'ps-svelte-2tzs3k',
   }}
 >
-  <BasicTextareaPreview />
+  <BasicAlertPreview />
 </LiveExampleTabs>
 
-## Accessibility and messages
+### Status
 
-When displaying [Error Messages](./FormControl#error-messasge) or [Help Text](./FormControl#help-text) it is required to pass the `options.id` value to the `TextOptions.describedBy` field. This will add a [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) attribute to the `textarea` which establishes a relationship between the `textarea` and message you are displaying.
+The `getAlertProps` comes with 4 kinds to communicate a status: `info` (default), `success`, `warning`, `danger`.
 
-:::danger
+<StatusAlert />
 
-Not providing a `describedBy` option that matches the Error/Field Message `id` will result in a poor accessbility experience. Please make sure you are using both of these in order to provide the best experience to all of your users.
+:::note
+
+`getAlertProps` returns a set of options for you to pass into the `getIconProps` helper and the `getIconButtonProps` helper if you choose to use an alert with a closing button (see code example below).
 
 :::
 
-### Using both error & field messages
+```javascript title="Example for using Icon options given in AlertProps"
+export default function Alert(props) {
+  const alert = getAlertProps({ kind: props.kind })
 
-When using both the field message and error message API, pass a comma-separated String to the `TextOptions.describedBy` option.
+  return (
+    <div {...alert.wrapper}>
+      <span {...alert.iconWrapper}>
+        // highlight-next-line
+        <InfoCircleIcon {...getIconProps(alert.iconOptions)} />
+      </span>
+      <div {...alert.textContainer}>
+        <h3 {...alert.title}>{props.alertTitle}</h3>
+        <p {...alert.description}>{props.description}</p>
+      </div>
+    </div>
+  )
+}
+```
 
-```javascript title="Example using both messages for an textarea"
-const { value: helpText, ...message } = getFieldMessageProps({
-  id: 'email:help',
-  message: 'Tell us what we can improve.',
-})
-const error = getErrorMessageProps({
-  id: 'bad:email',
-  invalid,
-  message: 'An message is required.',
-})
-const inputProps = getTextareaProps({
-  ...fieldOptions,
+### Alert with close button
+
+To use an alert with a close button - just add in an [IconButton](./IconButton.mdx).
+
+<CloseAlert />
+
+```javascript
+export default function Alert(props) {
+  const alert = getAlertProps({ kind: props.kind })
   // highlight-next-line
-  describedBy: `${message.id},${error.container.id}`,
-  id: 'email',
-  name: 'user_email',
-  value,
-})
+  const { button, iconOptions } = getIconButtonProps(alert.iconButtonOptions)
+
+  return (
+    <div {...alert.wrapper}>
+      <span {...alert.iconWrapper}>
+        <InfoCircleIcon {...getIconProps(alert.iconOptions)} />
+      </span>
+      <div {...alert.textContainer}>
+        <h3
+          {...alert.title}
+          style={{
+            margin: 0,
+          }}
+        >
+          {props.alertTitle}
+        </h3>
+        <p
+          {...alert.description}
+          style={{
+            marginBottom: 'initial',
+          }}
+        >
+          {props.description}
+        </p>
+      </div>
+      // highlight-start
+      <button {...button}>
+        <CloseIcon {...getIconProps(iconOptions)} />
+      </button>
+      // highlight-end
+    </div>
+  )
+}
+```
+
+## Status Icon Mapping
+
+```typescript title="Example map of icon names to kind value"
+const AlertIconMap = {
+  info: 'InfoCircleIcon',
+  success: 'CheckCircleIcon',
+  warning: 'WarningTriangleIcon',
+  danger: 'WarningTriangleIcon',
+}
 ```
 
 ## API
 
-| Name                 | Argument Type                                    | Default         | Description                        |
-| -------------------- | ------------------------------------------------ | --------------- | ---------------------------------- |
-| `getTextareaProps`   | **options**: [TextareaOptions](#textareaoptions) | none            | Get textarea styles for CSS usage. |
-| `getJSTextareaProps` | **options**: [TextareaOptions](#textareaoptions) | same as CSS API | CSS-in-JS API                      |
+| Name              | Argument Type                              | Default         | Description                     |
+| ----------------- | ------------------------------------------ | --------------- | ------------------------------- |
+| `getAlertProps`   | **options**: [AlertOptions](#alertoptions) | kind: 'info'    | Get alert styles for CSS usage. |
+| `getJSAlertProps` | **options**: [AlertOptions](#alertoptions) | same as CSS API | CSS-in-JS API                   |
 
 ## Options
 
-### TextareaOptions
+### AlertOptions
 
 This interface is available as an `import` for use.
 
 ```typescript
-export interface TextareaOptions extends InputFieldOptions {
-  resize?: Resize
-  tech?: Tech
+export interface AlertOptions extends InputFieldOptions {
+  kind?: 'info' | 'success' | 'warning' | 'danger'
+  tech?: 'svelte'
 }
 ```
 
 ```typescript title="Import example"
-import type { TextareaOptions } from '@pluralsight/headless-styles/types'
-```
-
-### InputFieldOptions
-
-```typescript
-interface InputFieldOptions {
-  id: string
-  describedBy?: string
-  disabled?: boolean
-  invalid?: boolean
-  name: string
-  placeholder: string
-  readOnly?: boolean
-  required?: boolean
-  value: string
-}
+import type { AlertOptions } from '@pluralsight/headless-styles/types'
 ```
 
 ## Props
 
-### TextareaProps
+### AlertProps
 
 ```typescript
-interface TextareaProps {
-  className: string
+interface AlertProps {
+  iconButtonOptions: {
+    ariaLabel: 'Close alert'
+    kind: 'text'
+    size: 'm'
+  }
+  iconOptions: {
+    size: 'm'
+  }
+  description: {
+    className: string
+  }
+  iconWrapper: {
+    className: string
+  }
+  textContainer: {
+    className: string
+  }
+  title: {
+    className: string
+  }
+  wrapper: {
+    role: 'alert'
+    className: string
+  }
 }
 ```
 
-### TextareaJSProps
+### AlertJSProps
 
 ```typescript
-interface TextareaJSProps {
-  a11yProps: {
-    ['aria-invalid']: string
-    ['data-disabled']: string
-    ['data-invalid']: string
-    ['data-readonly']: string
-    ['data-required']: string
-    disabled: boolean
-    id: string
-    name: string
-    placeholder: string
-    readOnly: boolean
-    required: boolean
-    value: string
+interface AlertJSProps {
+  iconButtonOptions: {
+    ariaLabel: 'Close alert'
+    kind: 'text'
+    size: 'm'
   }
-  cssProps: TemplateStringLiteralArray
-  styles: Record<string, unknown>
+  iconOptions: {
+    size: 'm'
+  }
+  description: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  iconWrapper: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  textContainer: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  title: {
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
+  wrapper: {
+    a11yProps: {
+      role: 'alert'
+    }
+    cssProps: TemplateStringLiteralArray
+    styles: Record<string, unknown>
+  }
 }
 ```
