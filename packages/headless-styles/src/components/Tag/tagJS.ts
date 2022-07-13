@@ -6,8 +6,11 @@ import styles from './generated/tagCSS.module'
 type StylesKey = keyof typeof styles
 
 export function getJSTagProps(options?: TagOptions) {
-  const { kind, size } = getDefaultTagOptions(options)
-  const { kindClass, sizeClass } = createTagSelectorClasses(kind, size)
+  const defaultOptions = getDefaultTagOptions(options)
+  const { kindClass, sizeClass } = createTagSelectorClasses(
+    defaultOptions.kind,
+    defaultOptions.size
+  )
   const JsStyles = {
     ...styles.baseTag,
     ...styles[kindClass as StylesKey],

@@ -5,8 +5,10 @@ import styles from './tagCSS.module.css'
 
 export function getTagProps(options?: TagOptions) {
   const defaultOptions = getDefaultTagOptions(options)
-  const { kind, size } = defaultOptions
-  const { kindClass, sizeClass } = createTagSelectorClasses(kind, size)
+  const { kindClass, sizeClass } = createTagSelectorClasses(
+    defaultOptions.kind,
+    defaultOptions.size
+  )
 
   return {
     ...createClassProp(defaultOptions.tech, {
