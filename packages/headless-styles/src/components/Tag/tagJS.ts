@@ -1,17 +1,17 @@
-import { getDefaultTagOptions } from './shared'
+import { createTagSelectorClasses, getDefaultTagOptions } from './shared'
 import { transformStyles } from '../../utils/helpers'
 import type { TagOptions } from './types'
 import styles from './generated/tagCSS.module'
 
+type StylesKey = keyof typeof styles
 
 export function getJSTagProps(options?: TagOptions) {
   const { kind, size } = getDefaultTagOptions(options)
-  const sizeKey = `${size}Tag` as keyof typeof styles
-  const kindKey = `${kind}Tag` as keyof typeof styles
+  const { kindClass, sizeClass } = createTagSelectorClasses(kind, size)
   const JsStyles = {
     ...styles.baseTag,
-    ...styles[kindKey],
-    ...styles[sizeKey],
+    ...styles[kindClass as StylesKey],
+    ...styles[sizeClass as StylesKey],
   }
 
   return {

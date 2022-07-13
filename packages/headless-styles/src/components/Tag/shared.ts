@@ -14,3 +14,10 @@ export function getDefaultTagOptions(options?: TagOptions) {
     tech: options?.tech ?? defaultTagOptions.tech,
   }
 }
+
+export function createTagSelectorClasses(kind: Kind, size: Size) {
+  return {
+    kindClass: `${kind}Tag`,
+    sizeClass: `${size}Tag`,
+  }
+}
