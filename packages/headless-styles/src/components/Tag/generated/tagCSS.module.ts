@@ -28,6 +28,9 @@ export default {
     transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
     verticalAlign: 'middle',
     whiteSpace: 'nowrap',
+    '&:hover': {
+      textDecoration: 'none',
+    },
     '&:focus': {
       boxShadow: 'none',
       outline: '3px solid hsl(249deg 63% 34% / 100%)',

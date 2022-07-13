@@ -43,6 +43,9 @@
 }
 
 /* hover styles */
+.baseTag:hover {
+  text-decoration: none;
+}
 
 .strongTag:hover {
   background-color: var(--ps-background-weak-hover);
