@@ -25,16 +25,10 @@ export const ChakraTag = {
   },
   variants: {
     weak: {
-      container: {
-        ...baseTagStyles,
-        ...styles.weakTag,
-      },
+      container: styles.weakTag,
     },
     strong: {
-      container: {
-        ...baseTagStyles,
-        ...styles.strongTag,
-      },
+      container: styles.strongTag,
     },
   },
 }
