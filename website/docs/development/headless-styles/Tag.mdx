@@ -1,0 +1,126 @@
+---
+sidebar_position: 14
+tags: [Development, Packages, Components, Headless Styles, Tag, Chakra]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicTag from '@site/src/components/Tag/BasicTag'
+import {
+  BasicTagPreview,
+  BasicTagFullPreview,
+} from '@site/src/components/Tag/BasicTag.preview'
+import TagSizes from '@site/src/components/Tag/TagSizes'
+import {
+  TagSizesPreview,
+  TagSizesFullPreview,
+} from '@site/src/components/Tag/TagSizes.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
+
+<ReleaseNote />
+
+The Tag is used to label and link to categorized content.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Tag"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getTagProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+### Tag Kinds
+
+`getTagProps` comes with two kinds to change the visual style of a tag. You can use `weak` (default) and `strong`.
+
+<BasicTag />
+<LiveExampleTabs
+  fullCode={<BasicTagFullPreview />}
+  sandboxList={{
+    chakra: 'basic-tag-chakra-q17lsd',
+    joy: 'basic-tag-mui-xdhfm8',
+    styled: 'basic-tag-css-in-js-sc-ykiwwt',
+    svelte: 'ps-svelte-49dmmu',
+  }}
+>
+  <BasicTagPreview />
+</LiveExampleTabs>
+
+### Tag Sizes
+
+Use the `size` options to change the size of a tag. The options are: `s`, `m` (default).
+
+<TagSizes />
+<LiveExampleTabs
+  fullCode={<TagSizesFullPreview />}
+  sandboxList={{
+    chakra: 'basic-tag-chakra-q17lsd',
+    joy: 'basic-tag-mui-xdhfm8',
+    styled: 'basic-tag-css-in-js-sc-ykiwwt',
+    svelte: 'ps-svelte-49dmmu',
+  }}
+>
+  <TagSizesPreview />
+</LiveExampleTabs>
+
+:::tip
+
+We use the standard clothing size shorthand values for all `size` related options in any library we provide (i.e. xs-xxl).
+
+:::
+
+## API
+
+| Name            | Argument Type                          | Default | Description          |
+| --------------- | -------------------------------------- | ------- | -------------------- |
+| `getTagProps`   | **options**: [TagOptions](#tagoptions) |         | Get main tag styles. |
+| `getJSTagProps` | **options**: [TagOptions](#tagoptions) |         | CSS-in-JS API        |
+
+## Options
+
+### TagOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+export interface TagOptions {
+  kind?: 'weak' | 'strong'
+  size?: 's' | 'm'
+  tech?: 'svelte' | ''
+}
+```
+
+```typescript title="Import example"
+import type { TagOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### TagProps
+
+```typescript
+interface TagProps {
+  className: string
+}
+```
+
+### JSTagProps
+
+```typescript
+interface JSTagProps {
+  cssProps: TemplateLiteralStringArray | string
+  styles: Record<CSSProps, string>
+}
+```
