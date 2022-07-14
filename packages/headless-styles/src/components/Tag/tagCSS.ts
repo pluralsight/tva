@@ -29,6 +29,7 @@ export function getTagWithIconProps(options?: TagOptions) {
     tag: getTagProps(defaultOptions),
     iconOptions: {
       size: iconSizeMap[defaultOptions.size],
+      tech: defaultOptions.tech,
     },
   }
 }

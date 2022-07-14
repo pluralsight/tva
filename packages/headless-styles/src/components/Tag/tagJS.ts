@@ -34,6 +34,7 @@ export function getJSTagWithIconProps(options?: TagOptions) {
     tag: getJSTagProps(defaultOptions),
     iconOptions: {
       size: iconSizeMap[defaultOptions.size],
+      tech: defaultOptions.tech,
     },
   }
 }
