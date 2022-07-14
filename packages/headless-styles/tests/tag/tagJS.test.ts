@@ -1,4 +1,4 @@
-import { getJSTagProps } from '../../src'
+import { getJSTagProps, getJSTagWithIconProps } from '../../src'
 
 describe('Tag JS', () => {
   describe('getJSTagProps', () => {
@@ -27,6 +27,19 @@ describe('Tag JS', () => {
       expect(getJSTagProps({ size: 's' }).styles.height).toEqual('1.25rem')
       expect(getJSTagProps({ size: 'm' }).cssProps).toContain('height: 1.5rem')
       expect(getJSTagProps({ size: 'm' }).styles.height).toEqual('1.5rem')
+    })
+  })
+
+  describe('getJSTagWithIconProps', () => {
+    test('should return options for a corresponding icon size', () => {
+      expect(getJSTagWithIconProps({ size: 's' }).iconOptions).toEqual({
+        size: 's',
+        tech: '',
+      })
+      expect(getJSTagWithIconProps({ size: 'm' }).iconOptions).toEqual({
+        size: 'm',
+        tech: '',
+      })
     })
   })
 })

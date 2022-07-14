@@ -1,4 +1,4 @@
-import { getTagProps } from '../../src'
+import { getTagProps, getTagWithIconProps } from '../../src'
 
 describe('Tag CSS', () => {
   describe('getTagProps', () => {
@@ -30,6 +30,30 @@ describe('Tag CSS', () => {
     test('should accept a tech type', () => {
       expect(getTagProps({ tech: 'svelte' })).toEqual({
         class: 'baseTag weakTag mTag',
+      })
+    })
+  })
+
+  describe('getTagWithIconProps', () => {
+    const defaultResult = {
+      size: 'm',
+      tech: '',
+    }
+
+    test('should return options for a corresponding icon size', () => {
+      expect(getTagWithIconProps({ size: 'm' }).iconOptions).toEqual(
+        defaultResult
+      )
+      expect(getTagWithIconProps({ size: 's' }).iconOptions).toEqual({
+        size: 's',
+        tech: '',
+      })
+    })
+
+    test('should forward the tech type to the icon helper', () => {
+      expect(getTagWithIconProps({ tech: 'svelte' }).iconOptions).toEqual({
+        size: 'm',
+        tech: 'svelte',
       })
     })
   })
