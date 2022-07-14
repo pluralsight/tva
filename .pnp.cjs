@@ -919,7 +919,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@pluralsight/headless-styles",\
-        "npm:0.0.0-experimental-d55444-20220713"\
+        "npm:0.0.0-experimental-b35c81-20220714"\
       ],\
       [\
         "@pluralsight/icons",\
@@ -16320,10 +16320,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@pluralsight/headless-styles", [\
-        ["npm:0.0.0-experimental-d55444-20220713", {\
-          "packageLocation": "./.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-d55444-20220713-77f5c05672-1e6e1eb954.zip/node_modules/@pluralsight/headless-styles/",\
+        ["npm:0.0.0-experimental-b35c81-20220714", {\
+          "packageLocation": "./.yarn/cache/@pluralsight-headless-styles-npm-0.0.0-experimental-b35c81-20220714-604138e39d-7e13305769.zip/node_modules/@pluralsight/headless-styles/",\
           "packageDependencies": [\
-            ["@pluralsight/headless-styles", "npm:0.0.0-experimental-d55444-20220713"],\
+            ["@pluralsight/headless-styles", "npm:0.0.0-experimental-b35c81-20220714"],\
             ["kebab-case", "npm:1.0.1"],\
             ["tslib", "npm:2.3.1"]\
           ],\
@@ -34839,7 +34839,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@docusaurus/remark-plugin-npm2yarn", "npm:2.0.0-rc.1"],\
             ["@docusaurus/theme-live-codeblock", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:2.0.0-rc.1"],\
             ["@mdx-js/react", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:1.6.22"],\
-            ["@pluralsight/headless-styles", "npm:0.0.0-experimental-d55444-20220713"],\
+            ["@pluralsight/headless-styles", "npm:0.0.0-experimental-b35c81-20220714"],\
             ["@pluralsight/icons", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-4a1740-20220622"],\
             ["@svgr/webpack", "npm:5.5.0"],\
             ["clsx", "npm:1.1.1"],\
