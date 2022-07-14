@@ -1,4 +1,4 @@
-import type { Tech } from '../types'
+import type { Tech, IconSize } from '../types'
 import type { TagOptions, Kind, Size } from './types'
 
 export const defaultTagOptions = {
@@ -20,4 +20,9 @@ export function createTagSelectorClasses(kind: Kind, size: Size) {
     kindClass: `${kind}Tag`,
     sizeClass: `${size}Tag`,
   }
+}
+
+export const iconSizeMap: Record<Size, IconSize> = {
+  s: 's',
+  m: 'm',
 }
