@@ -110,8 +110,37 @@ Some components (like the [Skeleton](./Skeleton)) will require some additional c
 
 ## Recommendation
 
-Our recommendation for the best user experience is to stay 3rd-party free and just stick with your Native library (i.e. React, Svelte, etc.) which will yield the best experience of our library.
+Our recommendation for the best user experience is to **stay 3rd-party free** and just stick with your Native library (i.e. React, Svelte, etc.) which will yield the best experience of our library.
 
 Having said that, we know people are very passionate about UI libraries and believe they must be used in a project. Whatever your decision is, Headless-Styles aims to work with as many libraries as possible - there just may be a little extra work you will have to put in, whether updating `types` or customizing for CSS animations.
 
 This is due to our decision to stay as light-weight as possible and not require any additional requirements for you to use our project (i.e. you will not have to install any other package to use any of our libraries).
+
+## z-index values
+
+In the headless-styles package, we use a structured layering map to organize our `z-index` files. Here is the map we use for our API.
+
+For our map, we use the following strategy of reserving the 1k range values for our API and the `50` value for non-important style values (borders, etc.). This gives your product the freedom to use the 100-999 range which is more than enough for 99% of scenarios.
+
+```javascript title="CSS z-index values"
+const zIndexMap = {
+  hide: -1,
+  auto: 'auto',
+  base: 0,
+  decorator: 50, // psuedo elements, etc. for borders or other
+  dropdown: 1000,
+  sticky: 1100,
+  banner: 1200,
+  overlay: 1300,
+  modal: 1400,
+  popover: 1500,
+  toast: 1600,
+  tooltip: 1700,
+}
+```
+
+:::tip
+
+We recommend staying in the 100-999 range for your team's projects when using our suite. This will allow your code-base to scale better and reduce risks of UI bugs throughout the lifetime of the project.
+
+:::
