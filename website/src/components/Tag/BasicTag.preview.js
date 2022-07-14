@@ -15,7 +15,6 @@ export function BasicTagFullPreview() {
 
 export default function Tag(props) {
   const tagProps = getTagProps({
-    // highlight-next-line
     kind: props.kind,
     size: props.size,
   })
