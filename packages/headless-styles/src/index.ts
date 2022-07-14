@@ -67,8 +67,8 @@ export { getJSSkeletonProps } from './components/Skeleton/skeletonJS'
 export { getSwitchProps } from './components/Switch/switchCSS'
 export { getJSSwitchProps } from './components/Switch/switchJS'
 
-export { getTagProps } from './components/Tag/tagCSS'
-export { getJSTagProps } from './components/Tag/tagJS'
+export { getTagProps, getTagWithIconProps } from './components/Tag/tagCSS'
+export { getJSTagProps, getJSTagWithIconProps } from './components/Tag/tagJS'
 
 export { getTextareaProps } from './components/Textarea/textareaCSS'
 export { getJSTextareaProps } from './components/Textarea/textareaJS'
