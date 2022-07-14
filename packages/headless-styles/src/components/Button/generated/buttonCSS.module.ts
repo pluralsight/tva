@@ -7,7 +7,6 @@ export default {
   base: {
     alignItems: 'center',
     appearance: 'none',
-    backgroundColor: 'transparent',
     border: 'none',
     borderRadius: '6px',
     cursor: 'pointer',
@@ -46,8 +45,9 @@ export default {
     },
   },
   text: {
-    color: 'hsl(235deg 30% 78% / 100%)',
     composes: 'base',
+    backgroundColor: 'transparent',
+    color: 'hsl(235deg 30% 78% / 100%)',
     '&:hover': {
       backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
@@ -56,8 +56,9 @@ export default {
     },
   },
   textWeak: {
-    color: 'hsl(249deg 63% 67% / 100%)',
     composes: 'base',
+    backgroundColor: 'transparent',
+    color: 'hsl(249deg 63% 67% / 100%)',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -66,9 +67,9 @@ export default {
     },
   },
   weak: {
+    composes: 'base',
     backgroundColor: 'hsl(238deg 30% 32% / 100%)',
     color: 'hsl(0deg 0% 100% / 100%)',
-    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(237deg 30% 36% / 100%)',
     },
@@ -77,9 +78,9 @@ export default {
     },
   },
   medium: {
+    composes: 'base',
     backgroundColor: 'hsl(249deg 63% 51% / 100%)',
     color: '#fff',
-    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -88,9 +89,9 @@ export default {
     },
   },
   strong: {
+    composes: 'base',
     backgroundColor: 'hsl(249deg 63% 25% / 100%)',
     color: 'hsl(249deg 62% 92% / 100%)',
-    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(249deg 63% 43% / 100%)',
     },
@@ -114,6 +115,9 @@ export default {
     minWidth: '2rem',
     paddingInline: '12px',
   },
+  m: {
+    composes: 'base',
+  },
   l: {
     composes: 'base',
     height: '3rem',
@@ -121,8 +125,9 @@ export default {
     paddingInline: '24px',
   },
   textDanger: {
-    color: 'hsl(335deg 100% 82% / 100%)',
     composes: 'base',
+    backgroundColor: 'transparent',
+    color: 'hsl(335deg 100% 82% / 100%)',
     '&:hover': {
       backgroundColor: 'hsl(336deg 100% 27% / 100%)',
     },
@@ -131,9 +136,9 @@ export default {
     },
   },
   mediumDanger: {
+    composes: 'base',
     backgroundColor: 'hsl(336deg 100% 36% / 100%)',
     color: 'hsl(336deg 100% 97% / 100%)',
-    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(336deg 100% 27% / 100%)',
     },
@@ -142,9 +147,9 @@ export default {
     },
   },
   strongDanger: {
+    composes: 'base',
     backgroundColor: 'hsl(335deg 100% 18% / 100%)',
     color: 'hsl(336deg 100% 97% / 100%)',
-    composes: 'base',
     '&:hover': {
       backgroundColor: 'hsl(336deg 100% 27% / 100%)',
     },
