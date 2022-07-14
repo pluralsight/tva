@@ -1,7 +1,6 @@
 .base {
   align-items: center;
   appearance: none;
-  background-color: transparent;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -28,31 +27,33 @@
 }
 
 .text {
-  color: var(--ps-neutral-text-weak);
   composes: base;
+  background-color: transparent;
+  color: var(--ps-neutral-text-weak);
 }
 
 .textWeak {
-  color: var(--ps-text-medium);
   composes: base;
+  background-color: transparent;
+  color: var(--ps-text-medium);
 }
 
 .weak {
+  composes: base;
   background-color: var(--ps-neutral-background);
   color: var(--ps-neutral-text);
-  composes: base;
 }
 
 .medium {
+  composes: base;
   background-color: var(--ps-background);
   color: #fff;
-  composes: base;
 }
 
 .strong {
+  composes: base;
   background-color: var(--ps-background-weak);
   color: var(--ps-text);
-  composes: base;
 }
 
 .xs {
@@ -73,6 +74,10 @@
   padding-inline: 12px;
 }
 
+.m {
+  composes: base;
+}
+
 .l {
   composes: base;
   height: 3rem;
@@ -81,20 +86,21 @@
 }
 
 .textDanger {
-  color: var(--ps-danger-text-weak);
   composes: base;
+  background-color: transparent;
+  color: var(--ps-danger-text-weak);
 }
 
 .mediumDanger {
+  composes: base;
   background-color: var(--ps-danger-background);
   color: hsl(336deg 100% 97% / 100%);
-  composes: base;
 }
 
 .strongDanger {
+  composes: base;
   background-color: var(--ps-danger-background-weak);
   color: var(--ps-danger-text);
-  composes: base;
 }
 
 .baseIconButton {
