@@ -8,6 +8,7 @@ import type { TagOptions } from './types'
 import styles from './generated/tagCSS.module'
 
 type StylesKey = keyof typeof styles
+type KindKey = 'weakTag' | 'strongTag'
 
 export function getJSTagProps(options?: TagOptions) {
   const defaultOptions = getDefaultTagOptions(options)
@@ -15,10 +16,19 @@ export function getJSTagProps(options?: TagOptions) {
     defaultOptions.kind,
     defaultOptions.size
   )
+  const kindStyles = styles[kindClass as KindKey]
   const JsStyles = {
     ...styles.baseTag,
-    ...styles[kindClass as StylesKey],
+    ...kindStyles,
     ...styles[sizeClass as StylesKey],
+    '&:active': {
+      ...styles.baseTag['&:active'],
+      ...kindStyles['&:active'],
+    },
+    '&:hover': {
+      ...styles.baseTag['&:hover'],
+      ...kindStyles['&:hover'],
+    },
   }
 
   return {

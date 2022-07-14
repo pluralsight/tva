@@ -89,7 +89,7 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.1.0",
+  "packageManager": "yarn@3.2.1",
   "peerDependencies": {
     "react": "*"
   },
