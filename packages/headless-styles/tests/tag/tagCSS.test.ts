@@ -36,6 +36,7 @@ describe('Tag CSS', () => {
 
   describe('getTagWithIconProps', () => {
     const defaultResult = {
+      ariaHidden: true,
       size: 'm',
       tech: '',
     }
@@ -45,6 +46,7 @@ describe('Tag CSS', () => {
         defaultResult
       )
       expect(getTagWithIconProps({ size: 's' }).iconOptions).toEqual({
+        ariaHidden: true,
         size: 's',
         tech: '',
       })
@@ -52,6 +54,7 @@ describe('Tag CSS', () => {
 
     test('should forward the tech type to the icon helper', () => {
       expect(getTagWithIconProps({ tech: 'svelte' }).iconOptions).toEqual({
+        ariaHidden: true,
         size: 'm',
         tech: 'svelte',
       })

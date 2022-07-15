@@ -33,10 +33,12 @@ describe('Tag JS', () => {
   describe('getJSTagWithIconProps', () => {
     test('should return options for a corresponding icon size', () => {
       expect(getJSTagWithIconProps({ size: 's' }).iconOptions).toEqual({
+        ariaHidden: true,
         size: 's',
         tech: '',
       })
       expect(getJSTagWithIconProps({ size: 'm' }).iconOptions).toEqual({
+        ariaHidden: true,
         size: 'm',
         tech: '',
       })

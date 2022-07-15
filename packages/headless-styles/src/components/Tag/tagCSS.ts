@@ -2,7 +2,7 @@ import { createClassProp } from '../../utils/helpers'
 import {
   createTagSelectorClasses,
   getDefaultTagOptions,
-  iconSizeMap,
+  getTagIconOptions,
 } from './shared'
 import type { TagOptions } from './types'
 import styles from './tagCSS.module.css'
@@ -27,9 +27,6 @@ export function getTagWithIconProps(options?: TagOptions) {
 
   return {
     tag: getTagProps(defaultOptions),
-    iconOptions: {
-      size: iconSizeMap[defaultOptions.size],
-      tech: defaultOptions.tech,
-    },
+    iconOptions: getTagIconOptions(defaultOptions.size, defaultOptions.tech),
   }
 }

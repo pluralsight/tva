@@ -2,7 +2,7 @@ import { transformStyles } from '../../utils/helpers'
 import {
   createTagSelectorClasses,
   getDefaultTagOptions,
-  iconSizeMap,
+  getTagIconOptions,
 } from './shared'
 import type { TagOptions } from './types'
 import styles from './generated/tagCSS.module'
@@ -42,9 +42,6 @@ export function getJSTagWithIconProps(options?: TagOptions) {
 
   return {
     tag: getJSTagProps(defaultOptions),
-    iconOptions: {
-      size: iconSizeMap[defaultOptions.size],
-      tech: defaultOptions.tech,
-    },
+    iconOptions: getTagIconOptions(defaultOptions.size, defaultOptions.tech),
   }
 }
