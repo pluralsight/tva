@@ -4,7 +4,7 @@ import {
   createAlertDialogProps,
   createAlertDialogSelectorClasses,
 } from './shared'
-import styles from './alertCSS.module.css'
+import styles from './alertDialogCSS.module.css'
 import type { AlertDialogOptions } from './types'
 
 const ALERT_DIALOG = 'ps-alert-dialog'
