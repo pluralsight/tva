@@ -11,7 +11,10 @@ function NormalAlert(props) {
       <div {...alert.wrapper}>
         <section {...alert.section}>
           <header {...alert.alertTitle}>Test alert</header>
-          <p {...alert.alertBody}>This is an example alert body.</p>
+          <p {...alert.alertBody}>
+            This is an example alert body that has some really long content
+            because the copy writer is not good and has to say a lot.
+          </p>
           <footer {...alert.buttonGroup}>
             <button {...getButtonProps({ kind: 'weak' })} onClick={onClose}>
               Cancel

@@ -1,10 +1,22 @@
-:root {
-  --ps-backdrop: rgba(255 255 255 / 36%);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-[html-data-theme='light'],
+:root {
+  --ps-backdrop: rgba(0 0 0 / 65%);
+}
+
+html[data-theme='light'],
 .light {
-  --ps-backdrop: rgba(0 0 0 / 36%);
+  --ps-backdrop: rgba(255 255 255 / 65%);
 }
 
 .alertDialogBackdrop {
@@ -17,9 +29,72 @@
   z-index: 1300;
 }
 
-.section {
-  background: var(--ps-neutral-surface-weak);
+.alertDialogBtnGroup {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.alertDialogBtnGroup button:first-of-type {
+  margin-right: 1rem;
+}
+
+.alertDialogCancelBtn {
+  margin-right: 1rem;
+}
+
+.alertDialogSection {
+  animation-delay: 100ms;
+  animation-duration: 150ms;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out;
+  background: var(--ps-neutral-surface-strong);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0 0 0 / 1%),
+    0 4px 6px -2px rgba(0 0 0 / 05%);
+  color: var(--ps-text);
+  display: flex;
+  flex-direction: column;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  margin-bottom: 3.75rem;
+  margin-top: 3.75rem;
+  max-width: 30rem;
+  opacity: 0;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
   padding-bottom: 1.5rem;
   padding-inline-end: 1.5rem;
   padding-inline-start: 1.5rem;
+  position: relative;
+  width: 100%;
+  z-index: 1400;
+}
+
+.alertDialogWrapper {
+  -webkit-box-pack: center;
+  align-items: flex-start;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1400;
+}
+
+.alertDialogTitle {
+  font-size: 1.25rem;
+  font-variation-settings: 'wght' 600;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.alertDialogBody {
+  font-size: 1rem;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
 }
