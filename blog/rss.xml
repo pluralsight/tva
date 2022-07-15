@@ -14,7 +14,7 @@
             <guid>welcome</guid>
             <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Our first blog is coming around October! Keep an eye out!]]></description>
-            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-caution alert alert--warning admonition_iMl_"><div class="admonitionHeading_Xk4B"><span class="admonitionIcon_kdAk"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_kIue"><p>Our first blog is coming around October! Keep an eye out! 👀</p></div></div>]]></content:encoded>
+            <content:encoded><![CDATA[<div class="theme-admonition theme-admonition-caution alert alert--warning admonition_zB6w"><div class="admonitionHeading_v7vZ"><span class="admonitionIcon_D1qj"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>caution</div><div class="admonitionContent_HDYG"><p>Our first blog is coming around October! Keep an eye out! 👀</p></div></div>]]></content:encoded>
             <category>pluralsight</category>
             <category>hello</category>
             <category>headless-styles</category>
