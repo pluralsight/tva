@@ -3,3 +3,5 @@ build
 coverage
 .yarn/*
 website/.yarn/*
+.pnp.cjs
+.pnp.loader.mjs
