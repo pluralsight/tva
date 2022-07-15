@@ -1,0 +1,25 @@
+:root {
+  --ps-backdrop: rgba(255 255 255 / 36%);
+}
+
+[html-data-theme='light'],
+.light {
+  --ps-backdrop: rgba(0 0 0 / 36%);
+}
+
+.alertDialogBackdrop {
+  background: var(--ps-backdrop);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1300;
+}
+
+.section {
+  background: var(--ps-neutral-surface-weak);
+  padding-bottom: 1.5rem;
+  padding-inline-end: 1.5rem;
+  padding-inline-start: 1.5rem;
+}
