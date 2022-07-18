@@ -17,6 +17,11 @@ import {
   TagSizesPreview,
   TagSizesFullPreview,
 } from '@site/src/components/Tag/TagSizes.preview'
+import TagWithIcon from '@site/src/components/Tag/TagWithIcon'
+import {
+  TagWithIconPreview,
+  TagWithIconFullPreview,
+} from '@site/src/components/Tag/TagWithIcon.preview'
 import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
@@ -87,12 +92,31 @@ We use the standard clothing size shorthand values for all `size` related option
 
 :::
 
+### Tag with Icon
+
+Icons may be placed before or after text within a tag.
+
+<TagWithIcon />
+<LiveExampleTabs
+  fullCode={<TagWithIconFullPreview />}
+  sandboxList={{
+    chakra: 'tag-with-icon-chakra-1hxpjf',
+    joy: 'tag-with-icon-mui-94ttdw',
+    styled: 'tag-with-icon-css-in-js-sc-x3rhf3',
+    svelte: 'tag-with-icon-svelte-e26xnl',
+  }}
+>
+  <TagWithIconPreview />
+</LiveExampleTabs>
+
 ## API
 
-| Name            | Argument Type                          | Default                     | Description          |
-| --------------- | -------------------------------------- | --------------------------- | -------------------- |
-| `getTagProps`   | **options**: [TagOptions](#tagoptions) | kind: 'weak'<br />size: 'm' | Get main tag styles. |
-| `getJSTagProps` | **options**: [TagOptions](#tagoptions) | same as CSS API             | CSS-in-JS API        |
+| Name                    | Argument Type                          | Default                     | Description                      |
+| ----------------------- | -------------------------------------- | --------------------------- | -------------------------------- |
+| `getTagProps`           | **options**: [TagOptions](#tagoptions) | kind: 'weak'<br />size: 'm' | Get main tag styles.             |
+| `getJSTagProps`         | **options**: [TagOptions](#tagoptions) | same as CSS API             | CSS-in-JS API                    |
+| `getTagWithIconProps`   | **options**: [TagOptions](#tagoptions) | kind: 'weak'<br />size: 'm' | Get tag styles and icon options. |
+| `getJSTagWithIconProps` | **options**: [TagOptions](#tagoptions) | same as CSS API             | CSS-in-JS API                    |
 
 ## Options
 
@@ -128,5 +152,23 @@ interface TagProps {
 interface JSTagProps {
   cssProps: TemplateLiteralStringArray | string
   styles: Record<CSSProps, string>
+}
+```
+
+### TagWithIconProps
+
+```typescript
+interface TagWithIconProps {
+  tag: TagProps
+  iconOptions: IconOptions
+}
+```
+
+### JSTagWithIconProps
+
+```typescript
+interface JSTagWithIconProps {
+  tag: JSTagProps
+  iconOptions: IconOptions
 }
 ```
