@@ -179,3 +179,8 @@
 html[data-theme='light'] .base.text:hover {
   color: var(--ps-neutral-text-weak);
 }
+
+.light .weak:hover,
+html[data-theme='light'] .base.weak:hover {
+  color: var(--ps-neutral-weak);
+}

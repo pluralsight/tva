@@ -61,8 +61,7 @@ export default {
     color: 'hsl(249deg 62% 92% / 100%)',
     display: 'flex',
     flexDirection: 'column',
-    fontFamily:
-      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
+    fontFamily: 'inherit',
     marginBottom: '3.75rem',
     marginTop: '3.75rem',
     maxWidth: '30rem',

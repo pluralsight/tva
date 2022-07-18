@@ -61,9 +61,3 @@ export function createAlertDialogProps(options: AlertDialogOptions) {
     },
   }
 }
-
-export function createAlertDialogSelectorClasses(kind: Kind) {
-  return {
-    kindClass: `${kind}Dialog`,
-  }
-}

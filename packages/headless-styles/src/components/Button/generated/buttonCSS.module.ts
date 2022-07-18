@@ -3,178 +3,188 @@
 //
 // Manual changes will be lost - proceed with caution!
 
+
 export default {
-  base: {
-    alignItems: 'center',
-    appearance: 'none',
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
-    display: 'inline-flex',
-    fontFamily:
-      "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
-    fontSize: '1rem',
-    fontVariationSettings: "'wght' 600",
-    fontWeight: '600',
-    gap: '0.5rem',
-    height: '2.5rem',
-    justifyContent: 'center',
-    minWidth: '2.5rem',
-    outline: 'none',
-    paddingInline: '16px',
-    position: 'relative',
-    textAlign: 'center',
-    textDecoration: 'none',
-    textTransform: 'none',
-    transition: 'background-color 250ms ease-in-out, color 250ms ease-in-out',
-    userSelect: 'none',
-    verticalAlign: 'middle',
-    whiteSpace: 'nowrap',
-    '&:hover': {
-      color: '#fff',
+  "base": {
+    "alignItems": "center",
+    "appearance": "none",
+    "border": "none",
+    "borderRadius": "6px",
+    "cursor": "pointer",
+    "display": "inline-flex",
+    "fontFamily": "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
+    "fontSize": "1rem",
+    "fontVariationSettings": "'wght' 600",
+    "fontWeight": "600",
+    "gap": "0.5rem",
+    "height": "2.5rem",
+    "justifyContent": "center",
+    "minWidth": "2.5rem",
+    "outline": "none",
+    "paddingInline": "16px",
+    "position": "relative",
+    "textAlign": "center",
+    "textDecoration": "none",
+    "textTransform": "none",
+    "transition": "background-color 250ms ease-in-out, color 250ms ease-in-out",
+    "userSelect": "none",
+    "verticalAlign": "middle",
+    "whiteSpace": "nowrap",
+    "&:hover": {
+      "color": "#fff"
     },
-    '&:active': {
-      outline: 'none',
+    "&:active": {
+      "outline": "none"
     },
-    '&:focus': {
-      outline: '3px solid hsl(249deg 63% 34% / 100%)',
+    "&:focus": {
+      "outline": "3px solid hsl(249deg 63% 34% / 100%)"
     },
-    '&:focus:not(:focus-visible)': {
-      boxShadow: 'none',
-      outline: 'none',
-    },
+    "&:focus:not(:focus-visible)": {
+      "boxShadow": "none",
+      "outline": "none"
+    }
   },
-  text: {
-    composes: 'base',
-    backgroundColor: 'transparent',
-    color: 'hsl(235deg 30% 78% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+  "text": {
+    "composes": "base",
+    "backgroundColor": "transparent",
+    "color": "hsl(235deg 30% 78% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(237deg 30% 36% / 100%)"
     },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
-    },
+    "&:active": {
+      "backgroundColor": "hsl(249deg 63% 34% / 100%)"
+    }
   },
-  textWeak: {
-    composes: 'base',
-    backgroundColor: 'transparent',
-    color: 'hsl(249deg 63% 67% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
+  "textWeak": {
+    "composes": "base",
+    "backgroundColor": "transparent",
+    "color": "hsl(249deg 63% 67% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(249deg 63% 43% / 100%)"
     },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
+    "&:active": {
+      "backgroundColor": "hsl(249deg 63% 34% / 100%)"
+    }
+  },
+  "weak": {
+    "composes": "base",
+    "backgroundColor": "hsl(238deg 30% 32% / 100%)",
+    "color": "hsl(0deg 0% 100% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(237deg 30% 36% / 100%)"
     },
+    "&:active": {
+      "backgroundColor": "hsl(240deg 31% 25% / 100%)"
+    }
   },
-  weak: {
-    composes: 'base',
-    backgroundColor: 'hsl(238deg 30% 32% / 100%)',
-    color: 'hsl(0deg 0% 100% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+  "medium": {
+    "composes": "base",
+    "backgroundColor": "hsl(249deg 63% 51% / 100%)",
+    "color": "#fff",
+    "&:hover": {
+      "backgroundColor": "hsl(249deg 63% 43% / 100%)"
     },
-    '&:active': {
-      backgroundColor: 'hsl(240deg 31% 25% / 100%)',
+    "&:active": {
+      "backgroundColor": "hsl(249deg 63% 34% / 100%)"
+    }
+  },
+  "strong": {
+    "composes": "base",
+    "backgroundColor": "hsl(249deg 63% 25% / 100%)",
+    "color": "hsl(249deg 62% 92% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(249deg 63% 43% / 100%)"
     },
+    "&:active": {
+      "backgroundColor": "hsl(249deg 63% 34% / 100%)"
+    }
   },
-  medium: {
-    composes: 'base',
-    backgroundColor: 'hsl(249deg 63% 51% / 100%)',
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
+  "xs": {
+    "composes": "base",
+    "fontSize": "0.75rem",
+    "gap": "0.25rem",
+    "height": "1.5rem",
+    "minWidth": "1.5rem",
+    "paddingInline": "8px"
+  },
+  "s": {
+    "composes": "base",
+    "fontSize": "0.875rem",
+    "gap": "0.375rem",
+    "height": "2rem",
+    "minWidth": "2rem",
+    "paddingInline": "12px"
+  },
+  "m": {
+    "composes": "base"
+  },
+  "l": {
+    "composes": "base",
+    "height": "3rem",
+    "minWidth": "3rem",
+    "paddingInline": "24px"
+  },
+  "textDanger": {
+    "composes": "base",
+    "backgroundColor": "transparent",
+    "color": "hsl(335deg 100% 82% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(336deg 100% 27% / 100%)"
     },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
+    "&:active": {
+      "backgroundColor": "hsl(335deg 100% 18% / 100%)"
+    }
+  },
+  "mediumDanger": {
+    "composes": "base",
+    "backgroundColor": "hsl(336deg 100% 36% / 100%)",
+    "color": "hsl(336deg 100% 97% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(336deg 100% 27% / 100%)"
     },
+    "&:active": {
+      "backgroundColor": "hsl(335deg 100% 18% / 100%)"
+    }
   },
-  strong: {
-    composes: 'base',
-    backgroundColor: 'hsl(249deg 63% 25% / 100%)',
-    color: 'hsl(249deg 62% 92% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(249deg 63% 43% / 100%)',
+  "strongDanger": {
+    "composes": "base",
+    "backgroundColor": "hsl(335deg 100% 18% / 100%)",
+    "color": "hsl(336deg 100% 97% / 100%)",
+    "&:hover": {
+      "backgroundColor": "hsl(336deg 100% 27% / 100%)"
     },
-    '&:active': {
-      backgroundColor: 'hsl(249deg 63% 34% / 100%)',
-    },
+    "&:active": {
+      "backgroundColor": "hsl(335deg 100% 18% / 100%)"
+    }
   },
-  xs: {
-    composes: 'base',
-    fontSize: '0.75rem',
-    gap: '0.25rem',
-    height: '1.5rem',
-    minWidth: '1.5rem',
-    paddingInline: '8px',
+  "baseIconButton": {
+    "paddingInline": "0"
   },
-  s: {
-    composes: 'base',
-    fontSize: '0.875rem',
-    gap: '0.375rem',
-    height: '2rem',
-    minWidth: '2rem',
-    paddingInline: '12px',
+  "defaultIconButton": {
+    "composes": "baseIconButton"
   },
-  m: {
-    composes: 'base',
+  "roundIconButton": {
+    "composes": "baseIconButton",
+    "borderRadius": "50%"
   },
-  l: {
-    composes: 'base',
-    height: '3rem',
-    minWidth: '3rem',
-    paddingInline: '24px',
+  "light__base_text": {
+    "&:hover": {
+      "color": "hsl(235deg 30% 78% / 100%)"
+    }
   },
-  textDanger: {
-    composes: 'base',
-    backgroundColor: 'transparent',
-    color: 'hsl(335deg 100% 82% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
-    },
+  "html_data_theme__light____base_text": {
+    "&:hover": {
+      "color": "hsl(235deg 30% 78% / 100%)"
+    }
   },
-  mediumDanger: {
-    composes: 'base',
-    backgroundColor: 'hsl(336deg 100% 36% / 100%)',
-    color: 'hsl(336deg 100% 97% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
-    },
+  "light__weak": {
+    "&:hover": {
+      "color": "undefined"
+    }
   },
-  strongDanger: {
-    composes: 'base',
-    backgroundColor: 'hsl(335deg 100% 18% / 100%)',
-    color: 'hsl(336deg 100% 97% / 100%)',
-    '&:hover': {
-      backgroundColor: 'hsl(336deg 100% 27% / 100%)',
-    },
-    '&:active': {
-      backgroundColor: 'hsl(335deg 100% 18% / 100%)',
-    },
-  },
-  baseIconButton: {
-    paddingInline: '0',
-  },
-  defaultIconButton: {
-    composes: 'baseIconButton',
-  },
-  roundIconButton: {
-    composes: 'baseIconButton',
-    borderRadius: '50%',
-  },
-  light__base_text: {
-    '&:hover': {
-      color: 'hsl(235deg 30% 78% / 100%)',
-    },
-  },
-  html_data_theme__light____base_text: {
-    '&:hover': {
-      color: 'hsl(235deg 30% 78% / 100%)',
-    },
-  },
+  "html_data_theme__light____base_weak": {
+    "&:hover": {
+      "color": "undefined"
+    }
+  }
 }

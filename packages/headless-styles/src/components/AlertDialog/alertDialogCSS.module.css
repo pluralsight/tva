@@ -55,8 +55,7 @@ html[data-theme='light'],
   color: var(--ps-text);
   display: flex;
   flex-direction: column;
-  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
-    sans-serif;
+  font-family: inherit;
   margin-bottom: 3.75rem;
   margin-top: 3.75rem;
   max-width: 30rem;
