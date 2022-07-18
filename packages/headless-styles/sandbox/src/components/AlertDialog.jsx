@@ -8,6 +8,7 @@ function NormalAlert(props) {
   return (
     <div {...alert.backdrop}>
       <div {...alert.focusGuard} />
+
       <div {...alert.wrapper}>
         <section {...alert.section}>
           <header {...alert.alertTitle}>Test alert</header>
@@ -23,6 +24,8 @@ function NormalAlert(props) {
           </footer>
         </section>
       </div>
+
+      <div {...alert.focusGuard} />
     </div>
   )
 }

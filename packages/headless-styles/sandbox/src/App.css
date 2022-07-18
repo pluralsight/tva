@@ -16,8 +16,9 @@
 
 .App-header {
   background-color: var(--ps-neutral-surface-medium);
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.175rem;
+  padding-top: 0.175rem;
   position: sticky;
   top: 0;
   z-index: 1100;

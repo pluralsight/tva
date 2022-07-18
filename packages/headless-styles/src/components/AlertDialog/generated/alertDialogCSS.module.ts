@@ -57,7 +57,7 @@ export default {
     background: 'hsl(244deg 36% 24% / 100%)',
     borderRadius: '8px',
     boxShadow:
-      '0 10px 15px -3px rgba(0 0 0 / 1%), 0 4px 6px -2px rgba(0 0 0 / 05%)',
+      '0 10px 15px -3px rgba(0 0 0 / 1%),\n    0 4px 6px -2px rgba(0 0 0 / 05%)',
     color: 'hsl(249deg 62% 92% / 100%)',
     display: 'flex',
     flexDirection: 'column',
@@ -100,5 +100,14 @@ export default {
     fontSize: '1rem',
     fontVariationSettings: "'wght' 400",
     fontWeight: '400',
+  },
+  alertFocusGuard: {
+    height: '0',
+    left: '1px',
+    overflow: 'hidden',
+    padding: '0',
+    position: 'fixed',
+    top: '1px',
+    width: '1px',
   },
 }

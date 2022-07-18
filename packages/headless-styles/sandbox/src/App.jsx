@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getButtonProps } from '../../src'
 import AlertDialog from './components/AlertDialog'
 import Alert from './components/Alert'
@@ -30,13 +30,20 @@ function App() {
       if (prev === 'dark') {
         return 'light'
       }
-
       return 'dark'
     })
   }
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'light')
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark')
+    }
+  }, [theme])
+
   return (
-    <div className={`App ${theme}`}>
+    <div className="App">
       <header className="App-header">
         <button {...getButtonProps()} onClick={handleToggleTheme}>
           {theme === 'dark' ? '🌞' : '🌙'}

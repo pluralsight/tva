@@ -19,43 +19,50 @@ export function getAlertDialogProps(options?: AlertDialogOptions) {
     alertTitle: {
       ...props.alertTitle,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogTitle`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogTitle}`,
+        svelteClass: `${ALERT_DIALOG}-title alertDialogTitle`,
+        defaultClass: `${ALERT_DIALOG}-title ${styles.alertDialogTitle}`,
       }),
     },
     alertBody: {
       ...props.alertBody,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogBody`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogBody}`,
+        svelteClass: `${ALERT_DIALOG}-body alertDialogBody`,
+        defaultClass: `${ALERT_DIALOG}-body ${styles.alertDialogBody}`,
       }),
     },
     backdrop: {
       ...props.backdrop,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogBackdrop`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogBackdrop}`,
+        svelteClass: `${ALERT_DIALOG}-backdrop alertDialogBackdrop`,
+        defaultClass: `${ALERT_DIALOG}-backdrop ${styles.alertDialogBackdrop}`,
       }),
     },
     buttonGroup: {
       ...props.buttonGroup,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogBtnGroup`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogBtnGroup}`,
+        svelteClass: `${ALERT_DIALOG}-btn-group alertDialogBtnGroup`,
+        defaultClass: `${ALERT_DIALOG}-btn-group ${styles.alertDialogBtnGroup}`,
       }),
     },
     cancelButton: {
       ...props.cancelButton,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogCancelBtn`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogCancelBtn}`,
+        svelteClass: `${ALERT_DIALOG}-cancel alertDialogCancelBtn`,
+        defaultClass: `${ALERT_DIALOG}-cancel ${styles.alertDialogCancelBtn}`,
+      }),
+    },
+    focusGuard: {
+      ...props.focusGuard,
+      ...createClassProp(tech, {
+        svelteClass: `${ALERT_DIALOG}-focus-guard alertFocusGuard`,
+        defaultClass: `${ALERT_DIALOG}-focus-guard ${styles.alertFocusGuard}`,
       }),
     },
     section: {
       ...props.section,
       ...createClassProp(tech, {
-        svelteClass: `${ALERT_DIALOG} alertDialogSection`,
-        defaultClass: `${ALERT_DIALOG} ${styles.alertDialogSection}`,
+        svelteClass: `${ALERT_DIALOG}-section alertDialogSection`,
+        defaultClass: `${ALERT_DIALOG}-section ${styles.alertDialogSection}`,
       }),
     },
     wrapper: {
