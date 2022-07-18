@@ -5543,8 +5543,8 @@ __metadata:
   linkType: soft
 
 "@pluralsight/icons@npm:experimental":
-  version: 0.0.0-experimental-4a1740-20220622
-  resolution: "@pluralsight/icons@npm:0.0.0-experimental-4a1740-20220622"
+  version: 0.0.0-experimental-fae891-20220718
+  resolution: "@pluralsight/icons@npm:0.0.0-experimental-fae891-20220718"
   dependencies:
     tslib: ^2.3.1
   peerDependencies:
@@ -5552,7 +5552,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 3f6a7d73aa1fc2abb521b035c0fa6602b89fa5e0ed71011b50f35d2741754757f3c7840e81750d86a379005765af8a0486622100f87424a088386cb83883e260
+  checksum: b58cbfc3e3e9386e84da8f6c434076eba856500130e8896b92da1563da7ab3325ee1bbfe9a5674e6ce88d4220061879037eb929d27ca1131b093069f4d7512bd
   languageName: node
   linkType: hard
 
