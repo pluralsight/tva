@@ -6,6 +6,58 @@ import {
   getAlertDialogProps,
 } from '../../../src'
 
+function useFocusTrap(selectorList) {
+  const modalRef = useRef(null)
+
+  const getFocusItems = useCallback(() => {
+    const focusableItems = modalRef.current.querySelectorAll(selectorList)
+    return {
+      allItems: focusableItems,
+      firstItem: focusableItems[0],
+      lastItem: focusableItems[focusableItems.length - 1],
+    }
+  }, [modalRef])
+
+  const handleFocus = useCallback(
+    (event) => {
+      const { activeElement } = document
+      const { firstItem, lastItem } = getFocusItems()
+
+      if (event.key !== 'Tab') {
+        return
+      }
+
+      if (event.shiftKey) {
+        if (activeElement === firstItem) {
+          event.preventDefault()
+          lastItem.focus()
+        }
+      } else {
+        if (activeElement === lastItem) {
+          event.preventDefault()
+          firstItem.focus()
+        }
+      }
+    },
+    [getFocusItems, modalRef]
+  )
+
+  const handleInitFocusTrap = useCallback(() => {
+    if (modalRef.current != null) {
+      const { firstItem } = getFocusItems()
+      if (document.activeElement !== firstItem) {
+        firstItem.focus()
+      }
+    }
+  }, [getFocusItems, modalRef])
+
+  return {
+    ref: modalRef,
+    initFocusTrap: handleInitFocusTrap,
+    onKeydown: handleFocus,
+  }
+}
+
 function getButtonStyleProps(kind, btnOptions) {
   const { cancel, primary } = btnOptions
   const cancelBtnProps = getButtonProps(cancel)
@@ -28,14 +80,18 @@ function NormalAlert(props) {
     primary: alert.primaryBtnOptions,
   })
   const wrapperRef = useRef(null)
+  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button')
 
   function handleBackdropClick(event) {
     event.stopPropagation()
-
     if (wrapperRef.current === event.target) {
       onClose()
     }
   }
+
+  useEffect(() => {
+    initFocusTrap()
+  }, [initFocusTrap])
 
   useEffect(() => {
     function handleEscClose(event) {
@@ -56,7 +112,7 @@ function NormalAlert(props) {
       <div {...alert.focusGuard} />
 
       <div {...alert.wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
-        <section {...alert.section}>
+        <section {...alert.section} ref={ref} onKeyDown={onKeydown}>
           <header {...alert.alertTitle}>Test alert</header>
           <p {...alert.alertBody}>
             This is an example alert body that has some really long content

@@ -22,8 +22,10 @@ import Tag from './components/Tag'
 import Textarea from './components/Textarea'
 import './App.css'
 
+const initialTheme = localStorage.getItem('theme')
+
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(initialTheme)
 
   function handleToggleTheme() {
     setTheme((prev) => {
@@ -35,11 +37,8 @@ function App() {
   }
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'light')
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark')
-    }
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
   }, [theme])
 
   return (
