@@ -15,7 +15,7 @@ export function TagWithIconFullPreview() {
     <CodeBlock>{`import { getTagWithIconProps, getIconProps } from '@pluralsight/headless-styles'
 import { PlaceholderIcon } from '@pluralsight/icons'
 
-export default function IconTag(props) {
+export default function TagWithIcon(props) {
   const {tag, iconOptions} = getTagWithIconProps({
     kind: props.kind,
     size: props.size,
