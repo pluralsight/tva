@@ -159,8 +159,15 @@ interface JSTagProps {
 
 ```typescript
 interface TagWithIconProps {
-  tag: TagProps
-  iconOptions: IconOptions
+  tag: {
+    className: string
+  }
+  iconOptions: {
+    ariaLabel?: string
+    ariaHidden?: boolean
+    size?: 's' | 'm' | 'l'
+    tech?: 'svelte'
+  }
 }
 ```
 
@@ -168,7 +175,14 @@ interface TagWithIconProps {
 
 ```typescript
 interface JSTagWithIconProps {
-  tag: JSTagProps
-  iconOptions: IconOptions
+  tag: {
+    className: string
+  }
+  iconOptions: {
+    ariaLabel?: string
+    ariaHidden?: boolean
+    size?: 's' | 'm' | 'l'
+    tech?: 'svelte'
+  }
 }
 ```
