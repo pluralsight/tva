@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState, memo } from 'react'
+import React, { useCallback, useEffect, useRef, useState, memo } from 'react'
 import { createPortal } from 'react-dom'
 import {
   getButtonProps,
@@ -27,11 +27,20 @@ function NormalAlert(props) {
     cancel: alert.cancelBtnOptions,
     primary: alert.primaryBtnOptions,
   })
+  const wrapperRef = useRef(null)
+
+  function handleBackdropClick(event) {
+    event.stopPropagation()
+
+    if (wrapperRef.current === event.target) {
+      onClose()
+    }
+  }
 
   useEffect(() => {
-    function handleEscClose(e) {
-      if (e.key === 'Escape') {
-        e.stopPropagation()
+    function handleEscClose(event) {
+      if (event.key === 'Escape') {
+        event.stopPropagation()
         onClose()
       }
     }
@@ -43,10 +52,10 @@ function NormalAlert(props) {
   }, [onClose])
 
   return (
-    <div {...alert.backdrop} onClick={onClose}>
+    <div {...alert.backdrop}>
       <div {...alert.focusGuard} />
 
-      <div {...alert.wrapper}>
+      <div {...alert.wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
         <section {...alert.section}>
           <header {...alert.alertTitle}>Test alert</header>
           <p {...alert.alertBody}>
