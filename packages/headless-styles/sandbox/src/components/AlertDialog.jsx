@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState, memo } from 'react'
 import { createPortal } from 'react-dom'
 import {
   getButtonProps,
@@ -28,8 +28,22 @@ function NormalAlert(props) {
     primary: alert.primaryBtnOptions,
   })
 
+  useEffect(() => {
+    function handleEscClose(e) {
+      if (e.key === 'Escape') {
+        e.stopPropagation()
+        onClose()
+      }
+    }
+    window.addEventListener('keydown', handleEscClose, false)
+
+    return () => {
+      window.removeEventListener('keydown', handleEscClose, false)
+    }
+  }, [onClose])
+
   return (
-    <div {...alert.backdrop}>
+    <div {...alert.backdrop} onClick={onClose}>
       <div {...alert.focusGuard} />
 
       <div {...alert.wrapper}>
@@ -53,21 +67,23 @@ function NormalAlert(props) {
   )
 }
 
+const AlertDialogEl = memo(NormalAlert)
+
 export default function AlertDialog() {
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
 
-  function handleCloseAlert() {
+  const handleCloseAlert = useCallback(() => {
     setShowAlert(false)
-  }
+  }, [])
 
   function handleShowAlert() {
     setShowAlert(true)
   }
 
-  function handleCloseDestructiveAlert() {
+  const handleCloseDestructiveAlert = useCallback(() => {
     setShowDestructiveAlert(false)
-  }
+  }, [])
 
   function handleShowDestructiveAlert() {
     setShowDestructiveAlert(true)
@@ -93,7 +109,7 @@ export default function AlertDialog() {
 
       {showAlert &&
         createPortal(
-          <NormalAlert
+          <AlertDialogEl
             headerId="normalAlert-header"
             bodyId="normalAlert-body"
             id="normalAlert"
@@ -103,7 +119,7 @@ export default function AlertDialog() {
         )}
       {showDestructiveAlert &&
         createPortal(
-          <NormalAlert
+          <AlertDialogEl
             headerId="destructiveAlert-header"
             bodyId="destructiveAlert-body"
             id="destructiveAlert"
