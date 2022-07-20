@@ -6,6 +6,9 @@ import {
   getAlertDialogProps,
 } from '../../../src'
 
+// 1. Prevent BG scroll - should probably use normalize
+// 2. Collect trigger ref and refocus to that on dismount
+
 function useFocusTrap(selectorList) {
   const modalRef = useRef(null)
 
@@ -43,6 +46,8 @@ function useFocusTrap(selectorList) {
   )
 
   const handleInitFocusTrap = useCallback(() => {
+    document.body.setAttribute('data-modal-open', 'true')
+
     if (modalRef.current != null) {
       const { firstItem } = getFocusItems()
       if (document.activeElement !== firstItem) {
@@ -50,6 +55,12 @@ function useFocusTrap(selectorList) {
       }
     }
   }, [getFocusItems, modalRef])
+
+  useEffect(() => {
+    return () => {
+      document.body.removeAttribute('data-modal-open')
+    }
+  }, [])
 
   return {
     ref: modalRef,

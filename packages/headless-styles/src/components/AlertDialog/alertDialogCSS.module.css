@@ -97,13 +97,3 @@ html[data-theme='light'],
   font-variation-settings: 'wght' 400;
   font-weight: 400;
 }
-
-.alertFocusGuard {
-  height: 0;
-  left: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: fixed;
-  top: 1px;
-  width: 1px;
-}
