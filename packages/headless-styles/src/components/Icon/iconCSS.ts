@@ -17,5 +17,11 @@ export function getIconProps(options?: IconOptions) {
       svelteClass: `${ICON} psIcon ${sizeClass}`,
       defaultClass: `${ICON} ${styles[sizeClass]}`,
     }),
+    ...(options?.customSize && {
+      style: {
+        height: options.customSize,
+        width: options.customSize,
+      },
+    }),
   }
 }

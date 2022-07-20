@@ -9,10 +9,11 @@ export const defaultIconOptions = {
 
 export function getDefaultIconOptions(options?: IconOptions) {
   return {
-    size: options?.size ?? defaultIconOptions.size,
-    tech: options?.tech ?? defaultIconOptions.tech,
     ariaHidden: options?.ariaHidden ?? defaultIconOptions.ariaHidden,
     ariaLabel: options?.ariaLabel,
+    customSize: options?.customSize,
+    size: options?.size ?? defaultIconOptions.size,
+    tech: options?.tech ?? defaultIconOptions.tech,
   }
 }
 

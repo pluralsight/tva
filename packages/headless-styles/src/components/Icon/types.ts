@@ -6,6 +6,7 @@ export interface IconA11yOptions {
 }
 
 export interface IconOptions extends IconA11yOptions {
+  customSize?: string
   size?: IconSize
   tech?: Tech
 }

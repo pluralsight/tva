@@ -18,9 +18,15 @@ export const ChakraIcon = {
 export type StyleKey = keyof typeof styles
 
 export function getJSIconProps(options?: IconOptions) {
-  const { size, ...a11y } = getDefaultIconOptions(options)
+  const { size, customSize, ...a11y } = getDefaultIconOptions(options)
   const sizeKey = `${size}IconSize`
-  const jsStyles = styles[sizeKey as StyleKey]
+  const jsStyles = {
+    ...styles[sizeKey as StyleKey],
+    ...(customSize && {
+      height: customSize,
+      width: customSize,
+    }),
+  }
 
   return {
     a11yProps: getA11yIconProps(a11y),
