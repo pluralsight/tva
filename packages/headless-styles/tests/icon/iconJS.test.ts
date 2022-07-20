@@ -36,6 +36,15 @@ describe('icon JS', () => {
     expect(props.cssProps).toContain(`width: ${sizes['l']}`)
   })
 
+  test('should accept a custom size', () => {
+    const customSize = '5rem'
+    const props = getJSIconProps({ customSize: customSize })
+    expect(props.styles.height).toEqual(customSize)
+    expect(props.styles.width).toEqual(customSize)
+    expect(props.cssProps).toContain(`height: ${customSize}`)
+    expect(props.cssProps).toContain(`width: ${customSize}`)
+  })
+
   test('should accept an ariaLabel', () => {
     const customLabel = 'custom label'
     const a11yProps = {
