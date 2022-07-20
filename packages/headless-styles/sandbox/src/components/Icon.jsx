@@ -10,11 +10,20 @@ export default function Icon(props) {
     <div id="icon">
       <h3>Icon</h3>
       <div className="App-container">
-        <PluralsightIcon {...getIconProps({ label: 'small', size: 's' })} />
+        <PluralsightIcon {...getIconProps({ ariaLabel: 'small', size: 's' })} />
         <PluralsightIcon
-          {...getIconProps({ label: 'medium (default)', size: 'm' })}
+          {...getIconProps({ ariaLabel: 'medium (default)', size: 'm' })}
         />
-        <PluralsightIcon {...getIconProps({ label: 'large', size: 'l' })} />
+        <PluralsightIcon {...getIconProps({ ariaLabel: 'large', size: 'l' })} />
+        <PluralsightIcon
+          {...getIconProps({ ariaLabel: 'custom', customSize: '5rem' })}
+        />
+        <PluralsightIcon
+          style={
+            getJSIconProps({ ariaLabel: 'custom JS', customSize: '5rem' })
+              .styles
+          }
+        />
       </div>
     </div>
   )
