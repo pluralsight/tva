@@ -6,10 +6,7 @@ import {
   getAlertDialogProps,
 } from '../../../src'
 
-// 1. Prevent BG scroll - should probably use normalize
-// 2. Collect trigger ref and refocus to that on dismount
-
-function useFocusTrap(selectorList) {
+function useFocusTrap(selectorList, triggerRef) {
   const modalRef = useRef(null)
 
   const getFocusItems = useCallback(() => {
@@ -59,8 +56,9 @@ function useFocusTrap(selectorList) {
   useEffect(() => {
     return () => {
       document.body.removeAttribute('data-modal-open')
+      triggerRef.current.focus()
     }
-  }, [])
+  }, [triggerRef])
 
   return {
     ref: modalRef,
@@ -84,14 +82,14 @@ function getButtonStyleProps(kind, btnOptions) {
 }
 
 function NormalAlert(props) {
-  const { onClose, ...alertProps } = props
+  const { onClose, triggerRef, ...alertProps } = props
   const alert = getAlertDialogProps(alertProps)
   const { cancelBtnProps, primaryBtnProps } = getButtonStyleProps(props.kind, {
     cancel: alert.cancelBtnOptions,
     primary: alert.primaryBtnOptions,
   })
   const wrapperRef = useRef(null)
-  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button')
+  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button', triggerRef)
 
   function handleBackdropClick(event) {
     event.stopPropagation()
@@ -146,6 +144,7 @@ function NormalAlert(props) {
 const AlertDialogEl = memo(NormalAlert)
 
 export default function AlertDialog() {
+  const triggerRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
 
@@ -172,6 +171,7 @@ export default function AlertDialog() {
         <button
           {...getButtonProps({ kind: 'medium' })}
           onClick={handleShowAlert}
+          ref={triggerRef}
         >
           non-destructive
         </button>
@@ -190,6 +190,7 @@ export default function AlertDialog() {
             bodyId="normalAlert-body"
             id="normalAlert"
             onClose={handleCloseAlert}
+            triggerRef={triggerRef}
           />,
           document.getElementById('root')
         )}
