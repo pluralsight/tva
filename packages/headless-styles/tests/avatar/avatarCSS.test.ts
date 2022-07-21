@@ -22,8 +22,11 @@ describe('Avatar CSS -> getAvatarProps', () => {
     expect(getAvatarProps()).toEqual(defaultResult)
   })
 
-  test('should accept a kind type', () => {
+  test('should accept a neutral kind type', () => {
     expect(getAvatarProps({ kind: 'neutral' })).toEqual(defaultResult)
+  })
+
+  test('should accept a strong kind type', () => {
     expect(getAvatarProps({ kind: 'strong' })).toEqual({
       ...defaultResult,
       avatar: {
@@ -33,7 +36,7 @@ describe('Avatar CSS -> getAvatarProps', () => {
     })
   })
 
-  test('should accept a size type', () => {
+  test('should accept an xs size option', () => {
     expect(getAvatarProps({ size: 'xs' })).toEqual({
       ...defaultResult,
       avatar: {
@@ -45,6 +48,9 @@ describe('Avatar CSS -> getAvatarProps', () => {
         customSize: '1.5rem',
       },
     })
+  })
+
+  test('should accept an s size option', () => {
     expect(getAvatarProps({ size: 's' })).toEqual({
       ...defaultResult,
       avatar: {
@@ -56,7 +62,13 @@ describe('Avatar CSS -> getAvatarProps', () => {
         customSize: '2.5rem',
       },
     })
+  })
+
+  test('should accept an m size option', () => {
     expect(getAvatarProps({ size: 'm' })).toEqual(defaultResult)
+  })
+
+  test('should accept an l size option', () => {
     expect(getAvatarProps({ size: 'l' })).toEqual({
       ...defaultResult,
       avatar: {
@@ -68,6 +80,9 @@ describe('Avatar CSS -> getAvatarProps', () => {
         customSize: '6rem',
       },
     })
+  })
+
+  test('should accept an xl size option', () => {
     expect(getAvatarProps({ size: 'xl' })).toEqual({
       ...defaultResult,
       avatar: {
