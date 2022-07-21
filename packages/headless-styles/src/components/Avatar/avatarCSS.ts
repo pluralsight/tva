@@ -30,6 +30,7 @@ export function getAvatarProps(options?: AvatarOptions) {
     iconOptions: {
       ariaHidden: true,
       customSize: iconSizeMap[defaultOptions.size],
+      tech: defaultOptions.tech,
     },
   }
 }

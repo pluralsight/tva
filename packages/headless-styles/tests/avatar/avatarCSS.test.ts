@@ -13,6 +13,7 @@ describe('Avatar CSS -> getAvatarProps', () => {
     iconOptions: {
       ariaHidden: true,
       customSize: '4rem',
+      tech: '',
     },
   }
 
@@ -101,6 +102,7 @@ describe('Avatar CSS -> getAvatarProps', () => {
       iconOptions: {
         ariaHidden: true,
         customSize: '4rem',
+        tech: 'svelte',
       },
     })
   })
