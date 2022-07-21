@@ -8,7 +8,7 @@ export const ChakraAlertDialog = {
   baseStyle: {
     overlay: styles.alertDialogBackdrop,
     dialog: {
-      background: styles.alertDialogSection.background,
+      background: styles['']['&:root']['-PsBackdrop'],
     },
     header: styles.alertDialogTitle,
     body: styles.alertDialogBody,
