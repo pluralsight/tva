@@ -26,6 +26,10 @@ export function getAvatarProps(options?: AvatarOptions) {
     },
     image: {
       'aria-hidden': true,
+      ...createClassProp(defaultOptions.tech, {
+        svelteClass: `${AVATAR}-image avatarImage`,
+        defaultClass: `${AVATAR}-image ${styles.avatarImage}`,
+      }),
     },
     iconOptions: {
       ariaHidden: true,

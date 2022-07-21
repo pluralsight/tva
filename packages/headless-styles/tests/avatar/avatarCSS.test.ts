@@ -9,6 +9,7 @@ describe('Avatar CSS -> getAvatarProps', () => {
     },
     image: {
       'aria-hidden': true,
+      className: `${baseClass}-image avatarImage`,
     },
     iconOptions: {
       ariaHidden: true,
@@ -98,6 +99,7 @@ describe('Avatar CSS -> getAvatarProps', () => {
       },
       image: {
         'aria-hidden': true,
+        class: 'ps-avatar-image avatarImage',
       },
       iconOptions: {
         ariaHidden: true,

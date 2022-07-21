@@ -31,6 +31,14 @@ export default {
       outline: 'none',
     },
   },
+  avatarImage: {
+    height: '100%',
+    left: '0',
+    objectFit: 'cover',
+    position: 'absolute',
+    top: '0',
+    width: '100%',
+  },
   neutralAvatar: {
     composes: 'baseAvatar',
     backgroundColor: 'hsl(238deg 30% 32% / 100%)',
