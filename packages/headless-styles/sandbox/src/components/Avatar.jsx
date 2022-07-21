@@ -59,9 +59,9 @@ export default function Avatar() {
     <div id="avatar">
       <h3>Avatar</h3>
       <div className="App-container">
-        <Avatari kind="neutral" label="neutral" icon={<PersonIcon />} />
+        <Avatari kind="neutral" label="neutral" />
         <Avatari kind="neutral" label="neutral" firstName="neutral" />
-        <Avatari kind="strong" label="strong" icon={<PersonIcon />} />
+        <Avatari kind="strong" label="strong" />
         <Avatari kind="strong" label="strong" firstName="strong" />
       </div>
       <div className="App-container">
