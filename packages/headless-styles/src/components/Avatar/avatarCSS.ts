@@ -2,7 +2,7 @@ import { createClassProp } from '../../utils/helpers'
 import {
   createAvatarSelectorClasses,
   getDefaultAvatarOptions,
-  iconSizeMap,
+  createAvatarProps,
 } from './shared'
 import type { AvatarOptions } from './types'
 import styles from './avatarCSS.module.css'
@@ -15,26 +15,23 @@ export function getAvatarProps(options?: AvatarOptions) {
     defaultOptions.kind,
     defaultOptions.size
   )
+  const props = createAvatarProps(defaultOptions)
 
   return {
     avatar: {
-      'aria-label': defaultOptions.ariaLabel,
+      ...props.avatar,
       ...createClassProp(defaultOptions.tech, {
         svelteClass: `${AVATAR} baseAvatar ${kindClass} ${sizeClass}`,
         defaultClass: `${AVATAR} ${styles[kindClass]} ${styles[sizeClass]}`,
       }),
     },
     image: {
-      'aria-hidden': true,
+      ...props.image,
       ...createClassProp(defaultOptions.tech, {
         svelteClass: `${AVATAR}-image avatarImage`,
         defaultClass: `${AVATAR}-image ${styles.avatarImage}`,
       }),
     },
-    iconOptions: {
-      ariaHidden: true,
-      customSize: iconSizeMap[defaultOptions.size],
-      tech: defaultOptions.tech,
-    },
+    iconOptions: props.iconOptions,
   }
 }

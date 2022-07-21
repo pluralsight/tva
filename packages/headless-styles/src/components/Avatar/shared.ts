@@ -31,3 +31,19 @@ export function createAvatarSelectorClasses(kind: Kind, size: Size) {
     sizeClass: `${size}Avatar`,
   }
 }
+
+export function createAvatarProps(options: Required<AvatarOptions>) {
+  return {
+    avatar: {
+      'aria-label': options.ariaLabel,
+    },
+    image: {
+      'aria-hidden': true,
+    },
+    iconOptions: {
+      ariaHidden: true,
+      customSize: iconSizeMap[options.size],
+      tech: options.tech,
+    },
+  }
+}
