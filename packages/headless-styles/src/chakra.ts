@@ -1,4 +1,5 @@
 import { ChakraAlert } from './components/Alert/chakraAlert'
+import { ChakraAlertDialog } from './components/AlertDialog/chakraAlertDialog'
 import { ChakraBadge } from './components/Badge/badgeJS'
 import { ChakraButton } from './components/Button/chakraButton'
 import { ChakraCheckbox } from './components/Checkbox/chakraCheckbox'
@@ -34,6 +35,7 @@ export const chakraPSTheme = {
     FormLabel: ChakraFormLabel,
     Icon: ChakraIcon,
     Input: ChakraInput,
+    Modal: ChakraAlertDialog,
     Progress: ChakraProgress,
     Radio: ChakraRadio,
     Skeleton: ChakraSkeleton,
