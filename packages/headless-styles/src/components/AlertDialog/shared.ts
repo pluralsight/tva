@@ -40,9 +40,6 @@ export function createAlertDialogProps(options: AlertDialogOptions) {
     backdrop: {},
     buttonGroup: {},
     cancelButton: {},
-    container: {
-      tabIndex: -1,
-    },
     focusGuard: {
       ['data-aria-hidden']: true,
       ['data-focus-guard']: true,
@@ -58,6 +55,7 @@ export function createAlertDialogProps(options: AlertDialogOptions) {
     },
     wrapper: {
       ['data-focus-lock-disabled']: false,
+      tabIndex: -1,
     },
   }
 }

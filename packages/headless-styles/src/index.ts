@@ -1,4 +1,5 @@
 export { getAlertDialogProps } from './components/AlertDialog/alertDialogCSS'
+export { getJSAlertDialogProps } from './components/AlertDialog/alertDialogJS'
 
 export { getAlertProps } from './components/Alert/alertCSS'
 export { getJSAlertProps } from './components/Alert/alertJS'

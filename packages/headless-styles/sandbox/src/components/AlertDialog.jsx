@@ -4,6 +4,7 @@ import {
   getButtonProps,
   getDangerButtonProps,
   getAlertDialogProps,
+  getJSAlertDialogProps,
 } from '../../../src'
 
 function useFocusTrap(selectorList, triggerRef) {
@@ -143,7 +144,7 @@ function NormalAlert(props) {
 
 const AlertDialogEl = memo(NormalAlert)
 
-export default function AlertDialog() {
+export default function AlertDialog({ logJS }) {
   const triggerRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
@@ -163,6 +164,18 @@ export default function AlertDialog() {
   function handleShowDestructiveAlert() {
     setShowDestructiveAlert(true)
   }
+
+  useEffect(() => {
+    if (logJS) {
+      console.log(
+        getJSAlertDialogProps({
+          id: 'sb-id',
+          headerId: 'sb-headerId',
+          bodyId: 'sb-bodyId',
+        })
+      )
+    }
+  }, [logJS])
 
   return (
     <div id="alert-dialog">
