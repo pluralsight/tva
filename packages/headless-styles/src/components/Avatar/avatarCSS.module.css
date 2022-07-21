@@ -1,0 +1,80 @@
+.baseAvatar {
+  align-items: center;
+  appearance: none;
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-size: 0.875rem;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.neutralAvatar {
+  composes: baseAvatar;
+  background-color: var(--ps-neutral-background);
+  color: var(--ps-neutral-text);
+}
+
+.strongAvatar {
+  composes: baseAvatar;
+  background-color: var(--ps-background);
+  color: #fff;
+}
+
+.xsAvatar {
+  font-size: 0.875rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.sAvatar {
+  font-size: 1.25rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.mAvatar {
+  font-size: 2.25rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.lAvatar {
+  font-size: 3rem;
+  height: 7.5rem;
+  width: 7.5rem;
+}
+
+.xlAvatar {
+  font-size: 3.75rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+/* hover styles */
+
+a[href].baseAvatar:hover,
+button.baseAvatar:hover {
+  cursor: pointer;
+}
+
+/* focus styles */
+
+.baseAvatar:focus {
+  outline: 3px solid var(--ps-background-active);
+}
+
+.baseAvatar:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
