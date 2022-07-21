@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getButtonProps } from '../../src'
 import AlertDialog from './components/AlertDialog'
 import Alert from './components/Alert'
+import Avatar from './components/Avatar'
 import Button from './components/Button'
 import ButtonWithIcon from './components/ButtonWithIcon'
 import Badge from './components/Badge'
@@ -51,6 +52,7 @@ function App() {
 
       <AlertDialog logJS />
       <Alert />
+      <Avatar />
       <Badge />
       <Button />
       <ButtonWithIcon />
