@@ -18,6 +18,7 @@ export function getAvatarProps(options?: AvatarOptions) {
   const props = createAvatarProps(defaultOptions)
 
   return {
+    ...props,
     avatar: {
       ...props.avatar,
       ...createClassProp(defaultOptions.tech, {
@@ -32,6 +33,5 @@ export function getAvatarProps(options?: AvatarOptions) {
         defaultClass: `${AVATAR}-image ${styles.avatarImage}`,
       }),
     },
-    iconOptions: props.iconOptions,
   }
 }
