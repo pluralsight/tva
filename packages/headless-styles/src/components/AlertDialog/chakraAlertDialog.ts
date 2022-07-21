@@ -6,9 +6,11 @@ const modalExtend = ['header', 'closeButton', 'body', 'footer']
 export const ChakraAlertDialog = {
   parts: [...modalParts, ...modalExtend],
   baseStyle: {
-    overlay: styles.alertDialogBackdrop,
-    dialog: {
+    overlay: {
       background: styles['']['&:root']['-PsBackdrop'],
+    },
+    dialog: {
+      background: styles.alertDialogSection.background,
     },
     header: styles.alertDialogTitle,
     body: styles.alertDialogBody,
