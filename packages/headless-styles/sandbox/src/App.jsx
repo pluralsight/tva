@@ -69,7 +69,7 @@ function App() {
       <Radio />
       <Skeleton />
       <Switch />
-      <Tag logJS />
+      <Tag />
       <Textarea />
     </div>
   )

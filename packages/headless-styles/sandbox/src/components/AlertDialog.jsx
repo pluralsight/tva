@@ -4,9 +4,10 @@ import {
   getButtonProps,
   getDangerButtonProps,
   getAlertDialogProps,
+  getJSAlertDialogProps,
 } from '../../../src'
 
-function useFocusTrap(selectorList) {
+function useFocusTrap(selectorList, triggerRef) {
   const modalRef = useRef(null)
 
   const getFocusItems = useCallback(() => {
@@ -43,6 +44,8 @@ function useFocusTrap(selectorList) {
   )
 
   const handleInitFocusTrap = useCallback(() => {
+    document.body.setAttribute('data-modal-open', 'true')
+
     if (modalRef.current != null) {
       const { firstItem } = getFocusItems()
       if (document.activeElement !== firstItem) {
@@ -50,6 +53,13 @@ function useFocusTrap(selectorList) {
       }
     }
   }, [getFocusItems, modalRef])
+
+  useEffect(() => {
+    return () => {
+      document.body.removeAttribute('data-modal-open')
+      triggerRef.current.focus()
+    }
+  }, [triggerRef])
 
   return {
     ref: modalRef,
@@ -73,14 +83,14 @@ function getButtonStyleProps(kind, btnOptions) {
 }
 
 function NormalAlert(props) {
-  const { onClose, ...alertProps } = props
+  const { onClose, triggerRef, ...alertProps } = props
   const alert = getAlertDialogProps(alertProps)
   const { cancelBtnProps, primaryBtnProps } = getButtonStyleProps(props.kind, {
     cancel: alert.cancelBtnOptions,
     primary: alert.primaryBtnOptions,
   })
   const wrapperRef = useRef(null)
-  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button')
+  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button', triggerRef)
 
   function handleBackdropClick(event) {
     event.stopPropagation()
@@ -134,7 +144,8 @@ function NormalAlert(props) {
 
 const AlertDialogEl = memo(NormalAlert)
 
-export default function AlertDialog() {
+export default function AlertDialog({ logJS }) {
+  const triggerRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
 
@@ -154,6 +165,18 @@ export default function AlertDialog() {
     setShowDestructiveAlert(true)
   }
 
+  useEffect(() => {
+    if (logJS) {
+      console.log(
+        getJSAlertDialogProps({
+          id: 'sb-id',
+          headerId: 'sb-headerId',
+          bodyId: 'sb-bodyId',
+        })
+      )
+    }
+  }, [logJS])
+
   return (
     <div id="alert-dialog">
       <h3>Alert Dialog</h3>
@@ -161,6 +184,7 @@ export default function AlertDialog() {
         <button
           {...getButtonProps({ kind: 'medium' })}
           onClick={handleShowAlert}
+          ref={triggerRef}
         >
           non-destructive
         </button>
@@ -179,6 +203,7 @@ export default function AlertDialog() {
             bodyId="normalAlert-body"
             id="normalAlert"
             onClose={handleCloseAlert}
+            triggerRef={triggerRef}
           />,
           document.getElementById('root')
         )}

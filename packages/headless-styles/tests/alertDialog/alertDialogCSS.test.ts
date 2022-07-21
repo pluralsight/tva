@@ -27,9 +27,6 @@ describe('Alert Dialog CSS', () => {
       cancelButton: {
         className: `${baseClass}-cancel alertDialogCancelBtn`,
       },
-      container: {
-        tabIndex: -1,
-      },
       focusGuard: {
         ['data-aria-hidden']: true,
         ['data-focus-guard']: true,
@@ -47,6 +44,7 @@ describe('Alert Dialog CSS', () => {
       },
       wrapper: {
         ['data-focus-lock-disabled']: false,
+        tabIndex: -1,
         className: `${baseClass} alertDialogWrapper`,
       },
     }
@@ -141,9 +139,6 @@ describe('Alert Dialog CSS', () => {
         cancelButton: {
           class: `${baseClass}-cancel alertDialogCancelBtn`,
         },
-        container: {
-          tabIndex: -1,
-        },
         focusGuard: {
           ['data-aria-hidden']: true,
           ['data-focus-guard']: true,
@@ -161,6 +156,7 @@ describe('Alert Dialog CSS', () => {
         },
         wrapper: {
           ['data-focus-lock-disabled']: false,
+          tabIndex: -1,
           class: `${baseClass} alertDialogWrapper`,
         },
       })

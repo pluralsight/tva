@@ -42,6 +42,16 @@ html[data-theme='light'],
   margin-right: 1rem;
 }
 
+.alertFocusGuard {
+  height: 0;
+  left: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  top: 1px;
+  width: 1px;
+}
+
 .alertDialogSection {
   animation-delay: 100ms;
   animation-duration: 150ms;
@@ -96,14 +106,4 @@ html[data-theme='light'],
   font-size: 1rem;
   font-variation-settings: 'wght' 400;
   font-weight: 400;
-}
-
-.alertFocusGuard {
-  height: 0;
-  left: 1px;
-  overflow: hidden;
-  padding: 0;
-  position: fixed;
-  top: 1px;
-  width: 1px;
 }

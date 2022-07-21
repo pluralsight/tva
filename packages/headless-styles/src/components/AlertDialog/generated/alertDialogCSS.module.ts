@@ -48,6 +48,15 @@ export default {
   alertDialogCancelBtn: {
     marginRight: '1rem',
   },
+  alertFocusGuard: {
+    height: '0',
+    left: '1px',
+    overflow: 'hidden',
+    padding: '0',
+    position: 'fixed',
+    top: '1px',
+    width: '1px',
+  },
   alertDialogSection: {
     animationDelay: '100ms',
     animationDuration: '150ms',
@@ -99,14 +108,5 @@ export default {
     fontSize: '1rem',
     fontVariationSettings: "'wght' 400",
     fontWeight: '400',
-  },
-  alertFocusGuard: {
-    height: '0',
-    left: '1px',
-    overflow: 'hidden',
-    padding: '0',
-    position: 'fixed',
-    top: '1px',
-    width: '1px',
   },
 }
