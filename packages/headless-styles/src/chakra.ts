@@ -26,7 +26,6 @@ const Form = {
 export const chakraPSTheme = {
   components: {
     Alert: ChakraAlert,
-    AlertDialog: ChakraAlertDialog,
     Badge: ChakraBadge,
     Button: ChakraButton,
     Checkbox: ChakraCheckbox,
@@ -36,6 +35,7 @@ export const chakraPSTheme = {
     FormLabel: ChakraFormLabel,
     Icon: ChakraIcon,
     Input: ChakraInput,
+    Modal: ChakraAlertDialog,
     Progress: ChakraProgress,
     Radio: ChakraRadio,
     Skeleton: ChakraSkeleton,
