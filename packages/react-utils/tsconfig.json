@@ -3,6 +3,7 @@
   "include": ["src", "tests"],
   "exclude": [],
   "compilerOptions": {
+    "jsx": "react-jsxdev",
     "allowJs": true,
     "baseUrl": "src",
     "lib": ["DOM", "es2015"]
