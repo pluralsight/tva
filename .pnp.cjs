@@ -33,6 +33,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/icons"\
       },\
       {\
+        "name": "@pluralsight/react-utils",\
+        "reference": "workspace:packages/react-utils"\
+      },\
+      {\
         "name": "release-script",\
         "reference": "workspace:scripts"\
       },\
@@ -51,6 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@pluralsight/design-tokens", ["workspace:packages/design-tokens"]],\
       ["@pluralsight/headless-styles", ["workspace:packages/headless-styles"]],\
       ["@pluralsight/icons", ["workspace:packages/icons"]],\
+      ["@pluralsight/react-utils", ["workspace:packages/react-utils"]],\
       ["@pluralsight/tva", ["workspace:."]],\
       ["release-script", ["workspace:scripts"]],\
       ["sandbox", ["workspace:packages/headless-styles/sandbox"]],\
@@ -920,6 +925,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [\
         "@pluralsight/icons",\
         "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-fae891-20220718"\
+      ],\
+      [\
+        "@pluralsight/react-utils",\
+        "workspace:packages/react-utils"\
       ],\
       [\
         "@polka/url",\
@@ -16381,6 +16390,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@pluralsight/react-utils", [\
+        ["workspace:packages/react-utils", {\
+          "packageLocation": "./packages/react-utils/",\
+          "packageDependencies": [\
+            ["@pluralsight/react-utils", "workspace:packages/react-utils"],\
+            ["@types/copyfiles", "npm:2.4.1"],\
+            ["@types/jest", "npm:27.4.1"],\
+            ["@types/react", "npm:17.0.40"],\
+            ["copyfiles", "npm:2.4.1"],\
+            ["identity-obj-proxy", "npm:3.0.0"],\
+            ["react", "npm:18.2.0"],\
+            ["renamer", "npm:4.0.0"],\
+            ["tslib", "npm:2.3.1"],\
+            ["typescript", "patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=7ad353"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@pluralsight/tva", [\
         ["workspace:.", {\
           "packageLocation": "./",\
@@ -30482,6 +30509,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-npm-18.0.0-fdbcb4c477-293020b965.zip/node_modules/react/",\
           "packageDependencies": [\
             ["react", "npm:18.0.0"],\
+            ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.2.0", {\
+          "packageLocation": "./.yarn/cache/react-npm-18.2.0-1eae08fee2-88e38092da.zip/node_modules/react/",\
+          "packageDependencies": [\
+            ["react", "npm:18.2.0"],\
             ["loose-envify", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\

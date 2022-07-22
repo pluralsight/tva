@@ -38,4 +38,5 @@ export const experimentalPackages = [
   'design-tokens',
   'headless-styles',
   'icons',
+  'react-utils',
 ]
