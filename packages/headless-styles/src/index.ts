@@ -5,6 +5,7 @@ export { getAlertProps } from './components/Alert/alertCSS'
 export { getJSAlertProps } from './components/Alert/alertJS'
 
 export { getAvatarProps } from './components/Avatar/avatarCSS'
+export { getJSAvatarProps } from './components/Avatar/avatarJS'
 
 export { getBadgeProps } from './components/Badge/badgeCSS'
 export { getJSBadgeProps, muiLabelOverride } from './components/Badge/badgeJS'
