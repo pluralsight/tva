@@ -2,7 +2,7 @@ import React from 'react'
 import { getTagProps } from '@pluralsight/headless-styles'
 import Container from '../Container/Container'
 
-function BasicTag(props) {
+function Tag(props) {
   const tagProps = getTagProps({
     kind: props.kind,
     size: props.size,
@@ -15,18 +15,18 @@ function BasicTag(props) {
   )
 }
 
-function BasicButton() {
+function BasicTag() {
   return (
     <Container>
-      <BasicTag href="#tag">default</BasicTag>
-      <BasicTag href="#tag" kind="weak">
+      <Tag href="#tag">default</Tag>
+      <Tag href="#tag" kind="weak">
         weak
-      </BasicTag>
-      <BasicTag href="#tag" kind="strong">
+      </Tag>
+      <Tag href="#tag" kind="strong">
         strong
-      </BasicTag>
+      </Tag>
     </Container>
   )
 }
 
-export default BasicButton
+export default BasicTag
