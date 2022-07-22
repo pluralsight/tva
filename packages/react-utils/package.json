@@ -1,0 +1,72 @@
+{
+  "name": "@pluralsight/react-utils",
+  "version": "0.0.0",
+  "description": "A set of React custom hooks for Pluralsight.",
+  "main": "build/index.js",
+  "module": "build/wrapper.js",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "build/wrapper.js",
+      "require": "build/index.js"
+    },
+    "./types": "build/types.d.ts"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "sideEffects": [
+    "build/index.js",
+    "build/wrapper.mjs"
+  ],
+  "scripts": {
+    "build": "yarn build:common && yarn build:es",
+    "build:common": "tsc --project tsconfig.cjs.json",
+    "build:es": "yarn build:wrapper && yarn rename:wrapper && yarn copy:es",
+    "build:wrapper": "renamer --path-element name src/index.ts --find 'index' --replace 'wrapper'",
+    "copy:es": "copyfiles --up 1 ./src/wrapper.js build",
+    "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.js'",
+    "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/copyfiles": "^2",
+    "@types/jest": "^27.4.1",
+    "@types/react": "^17.0.40",
+    "copyfiles": "^2.4.1",
+    "identity-obj-proxy": "^3.0.0",
+    "react": "latest",
+    "typescript": "4.4.4"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "keywords": [
+    "pluralsight",
+    "pluralsight design",
+    "pluralsight react utils",
+    "react",
+    "utils",
+    "react-utils",
+    "custom hooks",
+    "hooks",
+    "react hooks"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Design System Team",
+  "bugs": {
+    "url": "https://github.com/pluralsight/tva/issues"
+  },
+  "homepage": "https://design.pluralsight.com/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pluralsight/tva.git",
+    "directory": "packages/react-utils"
+  },
+  "license": "Apache 2.0",
+  "packageManager": "yarn@3.2.1"
+}

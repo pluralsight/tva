@@ -5577,6 +5577,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@pluralsight/react-utils@workspace:packages/react-utils":
+  version: 0.0.0-use.local
+  resolution: "@pluralsight/react-utils@workspace:packages/react-utils"
+  dependencies:
+    "@types/copyfiles": ^2
+    "@types/jest": ^27.4.1
+    "@types/react": ^17.0.40
+    copyfiles: ^2.4.1
+    identity-obj-proxy: ^3.0.0
+    react: latest
+    tslib: ^2.3.1
+    typescript: 4.4.4
+  peerDependencies:
+    react: "*"
+  languageName: unknown
+  linkType: soft
+
 "@pluralsight/tva@workspace:.":
   version: 0.0.0-use.local
   resolution: "@pluralsight/tva@workspace:."
@@ -16960,6 +16977,15 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: 293020b96536b3c7113ee57ca5c990a3f25649d1751b1c7a3aabd16dff0691fe9f1eed1206616d0906d05933536052037340a0c8d0941ff870b0eb469a2f975b
+  languageName: node
+  linkType: hard
+
+"react@npm:latest":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
