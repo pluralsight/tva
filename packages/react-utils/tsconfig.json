@@ -4,6 +4,7 @@
   "exclude": [],
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "lib": ["DOM", "es2015"]
   }
 }
