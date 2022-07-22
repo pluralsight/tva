@@ -1,6 +1,6 @@
-import { cloneElement } from 'react'
+import { cloneElement, useEffect } from 'react'
 import { PersonIcon } from '@pluralsight/icons'
-import { getAvatarProps, getIconProps } from '../../../src'
+import { getAvatarProps, getJSAvatarProps, getIconProps } from '../../../src'
 import { weirdAl } from './Avatar.image'
 
 const profileImage = <img src={weirdAl} />
@@ -54,7 +54,19 @@ function AvatarSizes(props) {
   ))
 }
 
-export default function Avatar() {
+export default function Avatar({ logJS }) {
+  useEffect(() => {
+    if (logJS) {
+      console.log(
+        getJSAvatarProps({
+          ariaLabel: 'JS API',
+          kind: 'strong',
+          size: 'xl',
+        })
+      )
+    }
+  }, [logJS])
+
   return (
     <div id="avatar">
       <h3>Avatar</h3>

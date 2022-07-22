@@ -50,9 +50,9 @@ function App() {
         </button>
       </header>
 
-      <AlertDialog logJS />
+      <AlertDialog />
       <Alert />
-      <Avatar />
+      <Avatar logJS />
       <Badge />
       <Button />
       <ButtonWithIcon />
