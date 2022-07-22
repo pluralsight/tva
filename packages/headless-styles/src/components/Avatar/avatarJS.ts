@@ -28,6 +28,7 @@ export function getJSAvatarProps(options?: AvatarOptions) {
   }
 
   return {
+    ...props,
     avatar: {
       a11yProps: props.avatar,
       ...createJSProps(transformStyles(avatarStyles), avatarStyles),
@@ -36,6 +37,5 @@ export function getJSAvatarProps(options?: AvatarOptions) {
       a11yProps: props.image,
       ...createJSProps(transformStyles(imageStyles), imageStyles),
     },
-    iconOptions: props.iconOptions,
   }
 }
