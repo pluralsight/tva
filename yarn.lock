@@ -5609,12 +5609,12 @@ __metadata:
   linkType: soft
 
 "@pluralsight/headless-styles@npm:experimental":
-  version: 0.0.0-experimental-fae891-20220718
-  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-fae891-20220718"
+  version: 0.0.0-experimental-103a15-20220722
+  resolution: "@pluralsight/headless-styles@npm:0.0.0-experimental-103a15-20220722"
   dependencies:
     kebab-case: ^1.0.1
     tslib: ^2.3.1
-  checksum: bd6ad8af41e08aea4c31acaf63a1a6ff1ce50b1036fd9819cc50cfdbbd7e2c0cd41bc9b011312e9e1c76e44f57ff1427a4ad6dc4c5ddfadb3deb41902819a442
+  checksum: 07a7344e64bdac533823853d07277682c310a3ea05d267541beddf0725301690089a1db5c0553e0c48a7dae6814ea89b7911671c9c1f5e6f2d578ce3ee94cd3c
   languageName: node
   linkType: hard
 
