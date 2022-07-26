@@ -18,9 +18,9 @@ module.exports = {
     },
     {
       displayName: 'react-utils',
+      moduleDirectories: ['.', `${ROOT}/react-utils/tests`],
       testEnvironment: 'jsdom',
       testMatch: [`${ROOT}/react-utils/tests/**/*/?(*.)+(test).tsx`],
-      modulePaths: [`${ROOT}/src/`],
     },
   ],
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],

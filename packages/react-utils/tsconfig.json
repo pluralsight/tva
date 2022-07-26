@@ -3,9 +3,10 @@
   "include": ["src", "tests"],
   "exclude": [],
   "compilerOptions": {
-    "jsx": "react-jsx",
     "allowJs": true,
     "baseUrl": "src",
-    "lib": ["DOM", "es2015"]
+    "paths": {
+      "test-utils": ["./tests/test-utils.ts"]
+    }
   }
 }

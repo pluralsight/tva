@@ -1,11 +1,19 @@
-import { useCallback, useRef, useState } from 'react'
-import { createPortal } from 'react-dom'
-import { render } from '@testing-library/react'
-// import { useFocusTrap } from '../src'
+import {
+  StrictMode,
+  RefObject,
+  SyntheticEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
+import { createPortal, createRoot } from 'react-dom'
+import { render, user, screen } from 'test-utils'
+import { useFocusTrap } from '../../src'
 
 describe('useFocusTrap', () => {
   function Wrapper() {
-    const triggerRef = useRef(null)
+    const triggerRef = useRef<HTMLButtonElement>(null)
     const [open, setOpen] = useState(false)
 
     const handleCloseAlert = useCallback(() => {
@@ -17,7 +25,7 @@ describe('useFocusTrap', () => {
     }
 
     return (
-      <div>
+      <div className="Wrapper">
         <button onClick={handleShowAlert} ref={triggerRef} type="button">
           trigger
         </button>
@@ -28,24 +36,98 @@ describe('useFocusTrap', () => {
         </div>
         {open &&
           createPortal(
-            <AlertDialog onCancel={handleCloseAlert} />,
-            document.getElementById('root') as Element
+            <AlertDialog onClose={handleCloseAlert} triggerRef={triggerRef} />,
+            document.body
           )}
       </div>
     )
   }
 
   interface AlertProps {
-    onCancel: () => void
+    onClose: () => void
+    triggerRef: RefObject<HTMLButtonElement>
   }
 
   function AlertDialog(props: AlertProps) {
-    return <div onClick={props.onCancel}>working</div>
+    const { onClose } = props
+    const wrapperRef = useRef(null)
+    const { ref, onKeydown, initFocusTrap } = useFocusTrap(props.triggerRef)
+
+    function handleBackdropClick(event: SyntheticEvent) {
+      event.stopPropagation()
+      if (wrapperRef.current === event.target) {
+        onClose()
+      }
+    }
+
+    useEffect(() => {
+      initFocusTrap()
+    }, [initFocusTrap])
+
+    useEffect(() => {
+      function handleEscClose(event: KeyboardEvent) {
+        if (event.key === 'Escape') {
+          event.stopPropagation()
+          onClose()
+        }
+      }
+      window.addEventListener('keydown', handleEscClose, false)
+
+      return () => {
+        window.removeEventListener('keydown', handleEscClose, false)
+      }
+    }, [onClose])
+
+    return (
+      <div className="AlertDialog">
+        <div />
+
+        <div ref={wrapperRef} onClick={handleBackdropClick}>
+          <section ref={ref} onKeyDown={onKeydown}>
+            <header>Test alert</header>
+            <p>This is an example alert body.</p>
+            <footer>
+              <button onClick={onClose}>Cancel</button>
+              <button>Action</button>
+            </footer>
+          </section>
+        </div>
+
+        <div />
+      </div>
+    )
   }
 
-  test('hook should trap focus in UI alert dialog component', () => {
+  async function setupApp() {
+    try {
+      const rootEl = document.createElement('div')
+      rootEl.id = 'root'
+
+      const root = createRoot(rootEl)
+      root.render(
+        <StrictMode>
+          <Wrapper />
+        </StrictMode>
+      )
+    } catch (error) {
+      throw Error('setupApp failed.')
+    }
+  }
+
+  test('hook should trap focus in UI alert dialog component', async () => {
+    await setupApp()
     render(<Wrapper />)
+    await user.click(screen.getByText(/trigger/i))
+    screen.debug()
+    // validate focus is on cancel button
+    // validate cannot focus on other buttons outside of alert
+    // close alert via cancel click
   })
 
-  test('hook should return focus to triggerRef when dialog closed', () => {})
+  test('hook should return focus to triggerRef when dialog closed', () => {
+    // validate focus is on cancel button
+    // validate cannot focus on other buttons outside of alert
+    // close alert via cancel click
+    // validate focus is on trigger button
+  })
 })
