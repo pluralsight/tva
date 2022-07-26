@@ -12,11 +12,6 @@ import {
   BasicAvatarPreview,
   BasicAvatarFullPreview,
 } from '@site/src/components/Avatar/BasicAvatar.preview'
-import AvatarContent from '@site/src/components/Avatar/AvatarContent'
-import {
-  AvatarContentPreview,
-  AvatarContentFullPreview,
-} from '@site/src/components/Avatar/AvatarContent.preview'
 import AvatarSizes from '@site/src/components/Avatar/AvatarSizes'
 import {
   AvatarSizesPreview,
@@ -90,20 +85,18 @@ We use the standard clothing size shorthand values for all `size` related option
 
 ### Avatar Content
 
-An Avatar can display a profile image, initials, or a fallback icon.
+#### Image (preferred)
 
-<AvatarContent />
-<LiveExampleTabs
-  fullCode={<AvatarContentFullPreview />}
-  sandboxList={{
-    chakra: 'basic-avatar-react-chakra-tvxvqs',
-    joy: 'basic-avatar-mui-uv5bks',
-    styled: 'basic-avatar-css-in-js-sc-jb5imx',
-    svelte: 'basic-avatar-svelte-t60wvw',
-  }}
->
-  <AvatarContentPreview />
-</LiveExampleTabs>
+If a profile image is available, it should be used as the content for the avatar.
+
+#### Initials (fallback)
+
+In the absence of a profile image, the person's initials (up to 2 characters) should be displayed.
+
+#### Icon (fallback - last resort)
+
+If neither the image nor initials are available, display an icon
+that represents a person.
 
 ## API
 
