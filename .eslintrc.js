@@ -8,7 +8,7 @@ module.exports = {
     'website/build/**',
     'website/.yarn',
     'packages/*/build',
-    'packages/headless-styles/tests/**/*.test.ts',
+    'packages/*/tests/**/*.test.ts',
     'packages/headless-styles/src/components/**/generated',
   ],
   parser: require.resolve('@typescript-eslint/parser'),

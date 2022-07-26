@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@types/copyfiles": "^2",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^28.1.6",
     "@types/react": "^17.0.40",
     "copyfiles": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
