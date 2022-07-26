@@ -1,19 +1,33 @@
-const cssRegex = '^.+\\.css$'
-const cssModuleRegex = '^.+\\.module\\.css$'
+const ROOT = '<rootDir>/packages'
+const cssModuleRegex = '^.+\\.module\\.(css)$'
 
 module.exports = {
-  moduleNameMapper: {
-    [cssRegex]: 'identity-obj-proxy',
-    [cssModuleRegex]: 'identity-obj-proxy',
-  },
+  projects: [
+    {
+      displayName: 'headless-styles',
+      moduleDirectories: ['.', `${ROOT}/headless-styles/src`],
+      moduleNameMapper: {
+        [cssModuleRegex]: 'identity-obj-proxy',
+      },
+      testMatch: [`${ROOT}/headless-styles/tests/**/*/?(*.)+(test).ts`],
+      transformIgnorePatterns: [cssModuleRegex],
+    },
+    {
+      displayName: 'icons',
+      testMatch: [`${ROOT}/icons/tests/**/*/?(*.)+(test).(js|ts)`],
+    },
+    {
+      displayName: 'react-utils',
+      testEnvironment: 'jsdom',
+      testMatch: [`${ROOT}/react-utils/tests/**/*/?(*.)+(test).tsx`],
+      modulePaths: [`${ROOT}/src/`],
+    },
+  ],
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
   },
-  transformIgnorePatterns: [`/.pnp.cjs$`, cssRegex, cssModuleRegex],
-  testMatch: [
-    `<rootDir>/packages/**/*/?(*.)+(test).(js|ts|tsx)`,
-    '!<rootDir>/packages/design-tokens/**/*',
-  ],
+  transformIgnorePatterns: ['\\.pnp\\.[^\\/]+$'],
   testTimeout: 50000,
+  verbose: true,
 }
