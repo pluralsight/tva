@@ -4,10 +4,10 @@ import CodeBlock from '@theme/CodeBlock'
 export function AvatarContentPreview() {
   return (
     <CodeBlock>{`const { avatar, image, iconOptions } = getAvatarProps({
-  ariaLabel: "Weird Al's Avatar"
+  ariaLabel: "Jane Doe's Avatar"
 })
 
-<span {...avatar}><img {...image} src={weirdAlSrc} alt="Weird Al" /></span>
+<span {...avatar}><img {...image} src={profileSrc} alt="Jane Doe" /></span>
 <span {...avatar}>WA</span>
 <span {...avatar}><ProfileIcon {...getIconProps(iconOptions)} /></span>
 `}</CodeBlock>

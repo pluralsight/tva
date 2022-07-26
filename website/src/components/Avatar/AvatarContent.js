@@ -2,7 +2,7 @@ import React from 'react'
 import { getAvatarProps, getIconProps } from '@pluralsight/headless-styles'
 import { PersonIcon } from '@pluralsight/icons'
 import Container from '../Container/Container'
-import { weirdAl } from './avatar.image'
+import avatarSrc from './avatar.image.jpg'
 
 function FallbackAvatar(props) {
   const { avatar, iconOptions } = getAvatarProps(props)
@@ -43,16 +43,8 @@ function Avatar(props) {
 function AvatarContent() {
   return (
     <Container>
-      <Avatar
-        name="Weird Al Yankovic"
-        src={weirdAl}
-        ariaLabel="Weird Al's Profile"
-      />
-      <Avatar
-        name="Weird Al Yankovic"
-        initials="WA"
-        ariaLabel="Weird Al's Profile"
-      />
+      <Avatar name="Jane Doe" src={avatarSrc} ariaLabel="Jane Doe's Profile" />
+      <Avatar name="Jane Doe" initials="JD" ariaLabel="Jane Doe's Profile" />
       <Avatar ariaLabel="Anonymous Profile" />
     </Container>
   )
