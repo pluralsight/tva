@@ -1,0 +1,180 @@
+---
+tags: [Development, Packages, Components, Headless Styles, Avatar]
+---
+
+<!-- TODO: As of 2.0.0-beta.17 live-codeblock do not support imports. -->
+<!-- Keep an eye out so we can kill the components we are importing in. -->
+<!-- https://docusaurus.io/docs/markdown-features/code-blocks#imports -->
+
+import CodeBlock from '@theme/CodeBlock'
+import BasicAvatar from '@site/src/components/Avatar/BasicAvatar'
+import {
+  BasicAvatarPreview,
+  BasicAvatarFullPreview,
+} from '@site/src/components/Avatar/BasicAvatar.preview'
+import AvatarContent from '@site/src/components/Avatar/AvatarContent'
+import {
+  AvatarContentPreview,
+  AvatarContentFullPreview,
+} from '@site/src/components/Avatar/AvatarContent.preview'
+import AvatarSizes from '@site/src/components/Avatar/AvatarSizes'
+import {
+  AvatarSizesPreview,
+  AvatarSizesFullPreview,
+} from '@site/src/components/Avatar/AvatarSizes.preview'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
+import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
+
+<ReleaseNote />
+
+The Avatar is used to represent a user and is designed to display
+a profile image, initials, or an icon.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/tree/main/packages/headless-styles/src/components/Avatar"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { getAvatarProps } from '@pluralsight/headless-styles'
+```
+
+## Usage
+
+### Avatar Kinds
+
+`getAvatarProps` comes with two kinds to change the visual style of the avatar when displaying text or icons.
+You can use `neutral` (default) and `strong`.
+
+<BasicAvatar />
+<LiveExampleTabs
+  fullCode={<BasicAvatarFullPreview />}
+  sandboxList={{
+    chakra: 'basic-avatar-react-chakra-tvxvqs',
+    joy: 'basic-avatar-mui-uv5bks',
+    styled: 'basic-avatar-css-in-js-sc-jb5imx',
+    svelte: 'basic-avatar-svelte-t60wvw',
+  }}
+>
+  <BasicAvatarPreview />
+</LiveExampleTabs>
+
+### Avatar Sizes
+
+To change the size of an Avatar, use the `size` option.
+The options are: `xs`, `s`, `m` (default), `l`, and `xl`.
+
+<AvatarSizes />
+<LiveExampleTabs
+  fullCode={<AvatarSizesFullPreview />}
+  sandboxList={{
+    chakra: 'basic-avatar-react-chakra-tvxvqs',
+    joy: 'basic-avatar-mui-uv5bks',
+    styled: 'basic-avatar-css-in-js-sc-jb5imx',
+    svelte: 'basic-avatar-svelte-t60wvw',
+  }}
+>
+  <AvatarSizesPreview />
+</LiveExampleTabs>
+
+:::tip
+
+We use the standard clothing size shorthand values for all `size` related options in any library we provide (i.e. xs-xxl).
+
+:::
+
+### Avatar Content
+
+An Avatar can display a profile image, initials, or a fallback icon.
+
+<AvatarContent />
+<LiveExampleTabs
+  fullCode={<AvatarContentFullPreview />}
+  sandboxList={{
+    chakra: 'basic-avatar-react-chakra-tvxvqs',
+    joy: 'basic-avatar-mui-uv5bks',
+    styled: 'basic-avatar-css-in-js-sc-jb5imx',
+    svelte: 'basic-avatar-svelte-t60wvw',
+  }}
+>
+  <AvatarContentPreview />
+</LiveExampleTabs>
+
+## API
+
+| Name               | Argument Type                                | Default                        | Description                                                                  |
+| ------------------ | -------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------- |
+| `getAvatarProps`   | **options**: [AvatarOptions](#avataroptions) | kind: 'neutral'<br />size: 'm' | Get avatar container and image element props (CSS), and options for icon API |
+| `getJSAvatarProps` | **options**: [AvatarOptions](#avataroptions) | same as CSS API                | CSS-in-JS API                                                                |
+
+## Options
+
+### AvatarOptions
+
+This interface is available as an `import` for use.
+
+```typescript
+export interface AvatarOptions {
+  ariaLabel?: string
+  kind?: 'neutral' | 'strong'
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
+  tech?: 'svelte' | ''
+}
+```
+
+```typescript title="Import example"
+import type { AvatarOptions } from '@pluralsight/headless-styles/types'
+```
+
+## Props
+
+### AvatarProps
+
+```typescript
+interface AvatarProps {
+  avatar: {
+    'aria-label': string
+    className: string
+  }
+  image: {
+    'aria-hidden': true
+    className: string
+  }
+  iconOptions: {
+    ariaHidden: true
+    customSize: string
+    tech: string
+  }
+}
+```
+
+### JSAvatarProps
+
+```typescript
+interface JSAvatarProps {
+  avatar: {
+    a11yProps: {
+      'aria-label': string
+    }
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+  image: {
+    a11yProps: {
+      'aria-hidden': true
+    }
+    cssProps: TemplateLiteralStringArray | string
+    styles: Record<CSSProps, string>
+  }
+  iconOptions: {
+    ariaHidden: true
+    customSize: string
+    tech: string
+  }
+}
+```
