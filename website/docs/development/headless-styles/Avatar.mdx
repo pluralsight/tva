@@ -96,16 +96,22 @@ The DS Avatars have three different states to display to the user. Each state ha
 
 A profile image should be used for all Avatars no matter the context (i.e. person, platform, etc.). This will give the best visual experience for the user and should be used over all other options.
 
-```javascript
-// add code example
+```jsx
+const { avatar, image } = getAvatarProps({ ariaLabel:  name })
+
+<span {...avatar}>
+  <img {...image} src={src} alt={initials} />
+</span>
 ```
 
 #### Initials (fallback)
 
 In the absence of an image, the avatar's initials (up to 2 characters) should be displayed. **This is not ideal** but allows the user to still quickly put the dots together of who the avatar is meant to represent.
 
-```javascript
-// add code example
+```jsx
+const { avatar } = getAvatarProps({ ariaLabel:  name })
+
+<span {...avatar}>{initials}</span>
 ```
 
 #### Icon (last resort)
@@ -119,8 +125,12 @@ Although this option exists, **it is not recommended to be used** as it provides
 
 :::
 
-```javascript
-// add code example
+```jsx
+const { avatar, iconOptions } = getAvatarProps({ ariaLabel:  name })
+
+<span {...avatar}>
+  <PersonIcon {...getIconProps(iconOptions)} />
+</span>
 ```
 
 ## API
