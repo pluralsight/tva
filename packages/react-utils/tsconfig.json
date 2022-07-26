@@ -6,6 +6,6 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "baseUrl": "src",
-    "lib": ["dom", "es2015"]
+    "lib": ["DOM", "es2015"]
   }
 }
