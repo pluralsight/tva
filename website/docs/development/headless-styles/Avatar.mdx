@@ -24,7 +24,7 @@ import ReleaseNote from '@site/src/components/Admonitions/_hs-release-note.mdx'
 <ReleaseNote />
 
 The Avatar is used to represent a user and is designed to display
-a profile image, initials, or an icon.
+a profile image, initials, or fallback icon.
 
 <ViewSourceLink
   icon="github"
@@ -41,10 +41,15 @@ import { getAvatarProps } from '@pluralsight/headless-styles'
 
 ## Usage
 
-### Avatar Kinds
+### Avatar Kinds (fallback only)
 
-`getAvatarProps` comes with two kinds to change the visual style of the avatar when displaying text or icons.
-You can use `neutral` (default) and `strong`.
+The `getAvatarProps` helper has two kind's to change the visual color of the avatar fallback. You can use `neutral` (default) and `strong`.
+
+:::note
+
+When using Avatars, make sure there is a purpose behind the fallback colors you are choosing. [Follow our guide](#avatar-content) to learn how to display avatars for the best user experience.
+
+:::
 
 <BasicAvatar />
 <LiveExampleTabs
@@ -85,18 +90,38 @@ We use the standard clothing size shorthand values for all `size` related option
 
 ### Avatar Content
 
+The DS Avatars have three different states to display to the user. Each state has a different purpose for usage and should follow the guides below.
+
 #### Image (preferred)
 
-If a profile image is available, it should be used as the content for the avatar.
+A profile image should be used for all Avatars no matter the context (i.e. person, platform, etc.). This will give the best visual experience for the user and should be used over all other options.
+
+```javascript
+// add code example
+```
 
 #### Initials (fallback)
 
-In the absence of a profile image, the person's initials (up to 2 characters) should be displayed.
+In the absence of an image, the avatar's initials (up to 2 characters) should be displayed. **This is not ideal** but allows the user to still quickly put the dots together of who the avatar is meant to represent.
 
-#### Icon (fallback - last resort)
+```javascript
+// add code example
+```
+
+#### Icon (last resort)
 
 If neither the image nor initials are available, display an icon
-that represents a person.
+using the `iconOptions` from the [AvatarProps](#avatar-props) Object to represent a person.
+
+:::danger
+
+Although this option exists, **it is not recommended to be used** as it provides a vague user experience. If you have to use this option, you need to update your API to require a name for each user.
+
+:::
+
+```javascript
+// add code example
+```
 
 ## API
 
