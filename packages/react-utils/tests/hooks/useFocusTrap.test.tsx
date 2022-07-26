@@ -18,7 +18,7 @@ describe('useFocusTrap', () => {
 
     return (
       <div>
-        <button ref={triggerRef} type="button">
+        <button onClick={handleShowAlert} ref={triggerRef} type="button">
           trigger
         </button>
         <div>
@@ -28,15 +28,19 @@ describe('useFocusTrap', () => {
         </div>
         {open &&
           createPortal(
-            <AlertDialog />,
+            <AlertDialog onCancel={handleCloseAlert} />,
             document.getElementById('root') as Element
           )}
       </div>
     )
   }
 
-  function AlertDialog() {
-    return <div>working</div>
+  interface AlertProps {
+    onCancel: () => void
+  }
+
+  function AlertDialog(props: AlertProps) {
+    return <div onClick={props.onCancel}>working</div>
   }
 
   test('hook should trap focus in UI alert dialog component', () => {
