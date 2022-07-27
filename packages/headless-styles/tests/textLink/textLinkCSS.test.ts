@@ -7,6 +7,7 @@ describe('Text Link CSS - getTextLinkProps', () => {
       className: `${baseClass} baseTextLink`,
     },
     iconOptions: {
+      ariaHidden: true,
       customSize: '1em',
       tech: '',
     },

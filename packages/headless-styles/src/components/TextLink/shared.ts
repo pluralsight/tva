@@ -15,6 +15,7 @@ export function createTextLinkProps(tech: Tech) {
   return {
     link: {},
     iconOptions: {
+      ariaHidden: true,
       customSize: '1em',
       tech: tech,
     },
