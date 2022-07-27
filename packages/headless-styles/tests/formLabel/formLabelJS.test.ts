@@ -1,5 +1,5 @@
 import { getJSFormLabelProps } from '../../src'
-import type { FormLabelOptions } from '../../src/types'
+import type { FormLabelOptions } from '@pluralsight/headless-styles/types'
 
 describe('FormLabel JS', () => {
   describe('getJSFormLabelProps', () => {

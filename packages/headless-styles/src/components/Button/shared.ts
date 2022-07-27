@@ -1,4 +1,4 @@
-import type { IconOptions } from '../../types'
+import type { IconOptions } from '../Icon/types'
 import type { IconSize, Tech } from '../types'
 import type {
   ButtonOptions,

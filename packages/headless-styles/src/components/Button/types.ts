@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
-import { IconOptions } from '../../types'
+import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
+import type { IconOptions } from '../Icon/types'
 import type { Tech } from '../types'
 
 export interface ButtonOptions

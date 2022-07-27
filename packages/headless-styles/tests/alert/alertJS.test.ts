@@ -1,5 +1,5 @@
 import { getJSAlertProps } from '../../src'
-import type { AlertOptions } from '../../src/types'
+import type { AlertOptions } from '@pluralsight/headless-styles/types'
 
 describe('Alert JS', () => {
   test('should allow no props to be passed in', () => {
