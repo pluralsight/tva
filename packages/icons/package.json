@@ -54,7 +54,7 @@
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/postbuild.mjs",
     "lint:ts": "tsc --project tsconfig.json --noEmit",
-    "test": "echo \"'yarn test' should be run from root directory.\""
+    "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
     "tslib": "^2.3.1"

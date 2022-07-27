@@ -7,8 +7,8 @@
   "module": "build/wrapper.mjs",
   "types": "build/index.d.ts",
   "exports": {
-    "import": "build/wrapper.mjs",
-    "require": "build/index.cjs"
+    "import": "./build/wrapper.mjs",
+    "require": "./build/index.cjs"
   },
   "files": [
     "build/**/*",
@@ -26,7 +26,7 @@
     "build:themes": "style-dictionary build --config ./theme.config.cjs",
     "build:tokens": "yarn build:skills && yarn build:flow && yarn build:themes",
     "compile:normalize": "sass ./normalize.scss ./build/normalize/normalize.css",
-    "lint:ts": "echo \"Typescript is not used in design-tokens.\" && exit 1",
+    "lint:ts": "echo \"Typescript is not used in design-tokens.\"",
     "prebuild": "rm -rf build",
     "prepublishOnly": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
