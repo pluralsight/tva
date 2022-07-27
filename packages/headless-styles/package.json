@@ -7,10 +7,10 @@
   "types": "build/index.d.ts",
   "exports": {
     ".": {
-      "import": "build/wrapper.js",
-      "require": "build/index.js"
+      "import": "./build/wrapper.js",
+      "require": "./build/index.js"
     },
-    "./types": "build/types.d.ts"
+    "./types": "./build/types.d.ts"
   },
   "files": [
     "build/**/*"
