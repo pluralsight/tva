@@ -1,3 +1,6 @@
+// eslint-disable-next-line
+// @ts-nocheck
+
 export { AlertOptions } from './components/Alert/types'
 export { AlertDialogOptions } from './components/AlertDialog/types'
 export { AvatarOptions } from './components/Avatar/types'
