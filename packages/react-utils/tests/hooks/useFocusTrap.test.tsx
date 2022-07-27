@@ -1,5 +1,4 @@
 import {
-  StrictMode,
   RefObject,
   SyntheticEvent,
   useCallback,
@@ -7,8 +6,9 @@ import {
   useRef,
   useState,
 } from 'react'
-import { createPortal, createRoot } from 'react-dom'
-import { render, user, screen } from 'test-utils'
+import { createPortal } from 'react-dom'
+import { createRoot } from 'react-dom/client'
+import { render, user, screen, waitForElementToBeRemoved } from 'test-utils'
 import { useFocusTrap } from '../../src'
 
 describe('useFocusTrap', () => {
@@ -80,10 +80,16 @@ describe('useFocusTrap', () => {
 
     return (
       <div className="AlertDialog">
-        <div />
+        <div tab-index="0" />
 
-        <div ref={wrapperRef} onClick={handleBackdropClick}>
-          <section ref={ref} onKeyDown={onKeydown}>
+        <div ref={wrapperRef} onClick={handleBackdropClick} tab-index="-1">
+          <section
+            aria-modal="true"
+            ref={ref}
+            onKeyDown={onKeydown}
+            role="alertdialog"
+            tab-index="-1"
+          >
             <header>Test alert</header>
             <p>This is an example alert body.</p>
             <footer>
@@ -93,41 +99,52 @@ describe('useFocusTrap', () => {
           </section>
         </div>
 
-        <div />
+        <div tab-index="0" />
       </div>
     )
   }
 
-  async function setupApp() {
-    try {
-      const rootEl = document.createElement('div')
-      rootEl.id = 'root'
+  let rootEl = null as unknown as Element
 
-      const root = createRoot(rootEl)
-      root.render(
-        <StrictMode>
-          <Wrapper />
-        </StrictMode>
-      )
-    } catch (error) {
-      throw Error('setupApp failed.')
-    }
-  }
-
-  test('hook should trap focus in UI alert dialog component', async () => {
-    await setupApp()
-    render(<Wrapper />)
-    await user.click(screen.getByText(/trigger/i))
-    screen.debug()
-    // validate focus is on cancel button
-    // validate cannot focus on other buttons outside of alert
-    // close alert via cancel click
+  beforeEach(() => {
+    rootEl = document.createElement('div')
+    rootEl.id = 'root'
+    document.body.appendChild(rootEl)
+    createRoot(rootEl)
   })
 
-  test('hook should return focus to triggerRef when dialog closed', () => {
-    // validate focus is on cancel button
+  afterEach(() => {
+    document.body.removeChild(rootEl)
+    rootEl = null as unknown as Element
+  })
+
+  test('hook should trap focus in UI alert dialog component', async () => {
+    render(<Wrapper />)
+    // open dialog
+    user.click(screen.getByText(/trigger/i))
+    await screen.findByText(/cancel/i)
+    // check intial focus
+    expect(screen.getByText(/cancel/i)).toHaveFocus()
     // validate cannot focus on other buttons outside of alert
+    user.tab()
+    expect(screen.getByText(/action/i)).toHaveFocus()
+    user.tab()
+    user.tab()
+    expect(screen.getByText(/cancel/i)).toHaveFocus()
+    user.tab()
+    user.tab()
+    expect(screen.getByText(/action/i)).toHaveFocus()
+  })
+
+  test('hook should return focus to triggerRef when dialog closed', async () => {
+    render(<Wrapper />)
+    // open dialog
+    user.click(screen.getByText(/trigger/i))
+    await screen.findByText(/cancel/i)
     // close alert via cancel click
+    user.click(screen.getByText(/cancel/i))
+    await waitForElementToBeRemoved(() => screen.queryByText(/cancel/i))
     // validate focus is on trigger button
+    expect(screen.getByText(/trigger/i)).toHaveFocus()
   })
 })

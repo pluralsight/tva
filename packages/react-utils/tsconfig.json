@@ -6,7 +6,7 @@
     "allowJs": true,
     "baseUrl": "src",
     "paths": {
-      "test-utils": ["./tests/test-utils.ts"]
+      "test-utils": ["../tests/test-utils.ts"]
     }
   }
 }
