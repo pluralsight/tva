@@ -1,0 +1,37 @@
+.baseTextLink {
+  align-items: center;
+  background-color: transparent;
+  border-radius: 6px;
+  color: var(--ps-info-text-medium);
+  display: inline-flex;
+  font-family: 'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,
+    sans-serif;
+  font-variation-settings: 'wght' 400;
+  font-weight: 400;
+  gap: 0.25em;
+  outline: none;
+  text-decoration: underline;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+.baseTextLink:visited {
+  color: var(--ps-text-medium);
+}
+
+.baseTextLink:hover {
+  text-decoration: none;
+}
+
+.baseTextLink:active {
+  text-decoration: underline;
+}
+
+.baseTextLink:focus {
+  outline: 3px solid var(--ps-background-active);
+  outline-offset: 4px;
+}
+
+.baseTextLink:focus:not(:focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
