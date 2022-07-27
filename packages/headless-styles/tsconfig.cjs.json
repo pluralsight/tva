@@ -3,6 +3,7 @@
   "include": ["src"],
   "exclude": ["tests"],
   "compilerOptions": {
+    "isolatedModules": true,
     "declaration": true,
     "module": "commonjs",
     "outDir": "build"

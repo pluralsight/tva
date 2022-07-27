@@ -4,6 +4,7 @@
   "exclude": ["sandbox", "plugins"],
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "isolatedModules": false
   }
 }
