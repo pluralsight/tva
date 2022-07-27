@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "include": ["build/generated/**/*"],
   "compilerOptions": {
+    "declaration": true,
     "module": "commonjs",
     "outDir": "build",
     "rootDir": "./build/generated",
