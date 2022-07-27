@@ -16721,6 +16721,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@pluralsight/icons", "workspace:packages/icons"],\
             ["@svgr/core", "npm:6.2.1"],\
             ["@types/fs-extra", "npm:4.0.12"],\
+            ["@types/jest", "npm:28.1.6"],\
             ["@types/react", "npm:17.0.40"],\
             ["@types/svgo", "npm:2.6.3"],\
             ["fs-extra", "npm:4.0.3"],\

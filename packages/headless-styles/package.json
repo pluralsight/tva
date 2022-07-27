@@ -31,6 +31,7 @@
     "build:wrapper": "renamer --path-element name src/index.ts --find 'index' --replace 'wrapper'",
     "copy:es": "copyfiles --up 1 ./src/wrapper.js build",
     "copy:css": "copyfiles --up 1 ./src/**/*.module.css build",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
     "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.js'",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },

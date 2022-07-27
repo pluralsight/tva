@@ -53,14 +53,24 @@
     "build:svelte": "yarn node ./utils/svgToSvelte.mjs",
     "build:svg": "svgo --recursive --folder src --output build/svg",
     "create:entryFiles": "yarn node ./utils/postbuild.mjs",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {
     "tslib": "^2.3.1"
   },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@svgr/core": "^6.2.1",
     "@types/fs-extra": "^4",
+    "@types/jest": "^28.1.6",
     "@types/react": "^17.0.40",
     "@types/svgo": "^2",
     "fs-extra": "^4.0.2",
@@ -89,13 +99,5 @@
     "directory": "packages/icons"
   },
   "license": "Apache 2.0",
-  "packageManager": "yarn@3.2.1",
-  "peerDependencies": {
-    "react": "*"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    }
-  }
+  "packageManager": "yarn@3.2.1"
 }

@@ -29,5 +29,4 @@ module.exports = {
   },
   transformIgnorePatterns: ['\\.pnp\\.[^\\/]+$'],
   testTimeout: 50000,
-  verbose: true,
 }

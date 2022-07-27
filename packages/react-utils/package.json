@@ -7,10 +7,9 @@
   "types": "build/index.d.ts",
   "exports": {
     ".": {
-      "import": "build/wrapper.js",
-      "require": "build/index.js"
-    },
-    "./types": "build/types.d.ts"
+      "import": "./build/wrapper.js",
+      "require": "./build/index.js"
+    }
   },
   "files": [
     "build/**/*"
@@ -26,6 +25,7 @@
     "build:wrapper": "renamer --path-element name src/index.ts --find 'index' --replace 'wrapper'",
     "copy:es": "copyfiles --up 1 ./src/wrapper.js build",
     "rename:wrapper": "renamer --path-element ext src/wrapper.ts --find '.ts' --replace '.js'",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
     "test": "echo \"'yarn test' should be run from root directory.\" && exit 1"
   },
   "dependencies": {

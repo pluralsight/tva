@@ -1,6 +1,10 @@
 {
   "extends": "./tsconfig.json",
+  "include": ["build/generated/**/*"],
   "compilerOptions": {
-    "module": "commonjs"
+    "module": "commonjs",
+    "outDir": "build",
+    "rootDir": "./build/generated",
+    "types": ["svelte"]
   }
 }

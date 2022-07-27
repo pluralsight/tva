@@ -1,13 +1,9 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["build/generated/**/*"],
-  "exclude": ["src"],
+  "include": ["tests"],
+  "exclude": ["src", "utils"],
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "src",
-    "jsx": "react",
-    "outDir": "build",
-    "rootDir": "./build/generated",
-    "types": ["svelte"]
+    "baseUrl": "src"
   }
 }
