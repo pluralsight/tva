@@ -5,7 +5,7 @@ import styles from './textLinkCSS.module.css'
 
 export function getTextLinkProps(options?: TextLinkOptions) {
   const defaultOptions = getDefaultTextLinkOptions(options)
-  const props = createTextLinkProps()
+  const props = createTextLinkProps(defaultOptions.tech)
 
   return {
     ...props,

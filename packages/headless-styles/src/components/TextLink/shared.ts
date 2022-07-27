@@ -11,11 +11,12 @@ export function getDefaultTextLinkOptions(options?: TextLinkOptions) {
   }
 }
 
-export function createTextLinkProps() {
+export function createTextLinkProps(tech: Tech) {
   return {
     link: {},
     iconOptions: {
       customSize: '1em',
+      tech: tech,
     },
   }
 }

@@ -8,6 +8,7 @@ describe('Text Link CSS - getTextLinkProps', () => {
     },
     iconOptions: {
       customSize: '1em',
+      tech: '',
     },
   }
 
@@ -20,6 +21,10 @@ describe('Text Link CSS - getTextLinkProps', () => {
       ...defaultResult,
       link: {
         class: 'baseTextLink',
+      },
+      iconOptions: {
+        ...defaultResult.iconOptions,
+        tech: 'svelte',
       },
     })
   })
