@@ -1,72 +1,19 @@
-import React, { useCallback, useEffect, useRef, useState, memo } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  forwardRef,
+  memo,
+} from 'react'
 import { createPortal } from 'react-dom'
+import { useFocusTrap } from '@pluralsight/react-utils'
 import {
   getButtonProps,
   getDangerButtonProps,
   getAlertDialogProps,
   getJSAlertDialogProps,
 } from '../../../src'
-
-function useFocusTrap(selectorList, triggerRef) {
-  const modalRef = useRef(null)
-
-  const getFocusItems = useCallback(() => {
-    const focusableItems = modalRef.current.querySelectorAll(selectorList)
-    return {
-      allItems: focusableItems,
-      firstItem: focusableItems[0],
-      lastItem: focusableItems[focusableItems.length - 1],
-    }
-  }, [modalRef])
-
-  const handleFocus = useCallback(
-    (event) => {
-      const { activeElement } = document
-      const { firstItem, lastItem } = getFocusItems()
-
-      if (event.key !== 'Tab') {
-        return
-      }
-
-      if (event.shiftKey) {
-        if (activeElement === firstItem) {
-          event.preventDefault()
-          lastItem.focus()
-        }
-      } else {
-        if (activeElement === lastItem) {
-          event.preventDefault()
-          firstItem.focus()
-        }
-      }
-    },
-    [getFocusItems, modalRef]
-  )
-
-  const handleInitFocusTrap = useCallback(() => {
-    document.body.setAttribute('data-modal-open', 'true')
-
-    if (modalRef.current != null) {
-      const { firstItem } = getFocusItems()
-      if (document.activeElement !== firstItem) {
-        firstItem.focus()
-      }
-    }
-  }, [getFocusItems, modalRef])
-
-  useEffect(() => {
-    return () => {
-      document.body.removeAttribute('data-modal-open')
-      triggerRef.current.focus()
-    }
-  }, [triggerRef])
-
-  return {
-    ref: modalRef,
-    initFocusTrap: handleInitFocusTrap,
-    onKeydown: handleFocus,
-  }
-}
 
 function getButtonStyleProps(kind, btnOptions) {
   const { cancel, primary } = btnOptions
@@ -82,15 +29,15 @@ function getButtonStyleProps(kind, btnOptions) {
   }
 }
 
-function NormalAlert(props) {
-  const { onClose, triggerRef, ...alertProps } = props
+function NormalAlert(props, triggerRef) {
+  const { onClose, ...alertProps } = props
   const alert = getAlertDialogProps(alertProps)
   const { cancelBtnProps, primaryBtnProps } = getButtonStyleProps(props.kind, {
     cancel: alert.cancelBtnOptions,
     primary: alert.primaryBtnOptions,
   })
   const wrapperRef = useRef(null)
-  const { ref, onKeydown, initFocusTrap } = useFocusTrap('button', triggerRef)
+  const { ref, onKeydown, initFocusTrap } = useFocusTrap(triggerRef)
 
   function handleBackdropClick(event) {
     event.stopPropagation()
@@ -142,10 +89,11 @@ function NormalAlert(props) {
   )
 }
 
-const AlertDialogEl = memo(NormalAlert)
+const AlertDialogEl = memo(forwardRef(NormalAlert))
 
 export default function AlertDialog({ logJS }) {
   const triggerRef = useRef(null)
+  const destTriggerRef = useRef(null)
   const [showAlert, setShowAlert] = useState(false)
   const [showDestructiveAlert, setShowDestructiveAlert] = useState(false)
 
@@ -191,6 +139,7 @@ export default function AlertDialog({ logJS }) {
         <button
           {...getDangerButtonProps({ kind: 'strong' })}
           onClick={handleShowDestructiveAlert}
+          ref={destTriggerRef}
         >
           destructive
         </button>
@@ -203,7 +152,7 @@ export default function AlertDialog({ logJS }) {
             bodyId="normalAlert-body"
             id="normalAlert"
             onClose={handleCloseAlert}
-            triggerRef={triggerRef}
+            ref={triggerRef}
           />,
           document.getElementById('root')
         )}
@@ -215,6 +164,7 @@ export default function AlertDialog({ logJS }) {
             id="destructiveAlert"
             kind="destructive"
             onClose={handleCloseDestructiveAlert}
+            ref={destTriggerRef}
           />,
           document.getElementById('root')
         )}
