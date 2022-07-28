@@ -8,13 +8,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@pluralsight/icons": "experimental",
+    "@pluralsight/react-utils": "experimental",
     "css": "^3.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@pluralsight/design-tokens": "alpha",
-    "@pluralsight/icons": "experimental",
+    "@pluralsight/design-tokens": "experimental",
     "@vitejs/plugin-react": "^1.0.7",
     "vite": "^2.8.0"
   }

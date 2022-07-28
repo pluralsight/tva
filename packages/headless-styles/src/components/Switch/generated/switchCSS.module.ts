@@ -21,7 +21,7 @@ export default {
     whiteSpace: 'nowrap',
     width: '1px',
     '&:focus + .track': {
-      boxShadow: '0 0 0 3px hsl(249deg 63% 34% / 100%)',
+      boxShadow: '0 0 0 3px hsl(249 63% 34%)',
     },
     '&:focus:not(:focus-visible) + .track': {
       boxShadow: 'none',
@@ -40,7 +40,7 @@ export default {
     '-PsThumbSize': '1.25rem',
     '-PsTrackHeight': '1.5rem',
     '-PsTrackWidth': '3rem',
-    background: 'hsl(240deg 31% 25% / 100%)',
+    background: 'hsl(240 31% 25%)',
     borderRadius: '1000px',
     boxSizing: 'border-box',
     cursor: 'pointer',
@@ -53,34 +53,34 @@ export default {
     transitionProperty: 'background, background-color, border-color, transform',
     width: 'undefined',
     '&:hover': {
-      background: 'hsl(237deg 30% 36% / 100%)',
+      background: 'hsl(237 30% 36%)',
     },
   },
   thumb_data_checked__true: {
     transform: 'translateX(calc(undefined - undefined))',
   },
   thumb_data_disabled__true: {
-    background: 'hsl(235deg 30% 78% / 100%)',
+    background: 'hsl(235 30% 78%)',
   },
   track_data_checked__true: {
-    background: 'hsl(249deg 63% 51% / 100%)',
+    background: 'hsl(249 63% 51%)',
     '&:hover': {
-      background: 'hsl(249deg 63% 43% / 100%)',
+      background: 'hsl(249 63% 43%)',
     },
   },
   track_data_disabled__true: {
     cursor: 'not-allowed',
     '&:hover': {
-      background: 'hsl(240deg 31% 25% / 100%)',
+      background: 'hsl(240 31% 25%)',
     },
   },
   track_data_readonly__true: {
     cursor: 'not-allowed',
   },
   track_data_invalid__true: {
-    background: 'hsl(336deg 100% 36% / 100%)',
+    background: 'hsl(336 100% 36%)',
     '&:hover': {
-      background: 'hsl(336deg 100% 27% / 100%)',
+      background: 'hsl(336 100% 27%)',
     },
   },
   sTrack: {

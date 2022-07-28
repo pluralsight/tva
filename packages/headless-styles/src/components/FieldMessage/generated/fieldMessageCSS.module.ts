@@ -5,7 +5,7 @@
 
 export default {
   fieldMessage: {
-    color: 'hsl(234deg 30% 66% / 100%)',
+    color: 'hsl(234 30% 66%)',
     fontFamily:
       "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     fontSize: '0.75rem',

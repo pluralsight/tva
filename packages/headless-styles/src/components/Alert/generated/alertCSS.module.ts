@@ -58,63 +58,63 @@ export default {
     flexDirection: 'column',
   },
   infoAlert: {
-    background: 'hsl(202deg 100% 17% / 100%)',
+    background: 'hsl(202 100% 17%)',
     composes: 'alertWrapper',
     '&::before': {
-      backgroundColor: 'hsl(202deg 100% 50% / 100%)',
+      backgroundColor: 'hsl(202 100% 50%)',
     },
   },
   infoIconWrapper: {
-    color: 'hsl(202deg 100% 58% / 100%)',
+    color: 'hsl(202 100% 58%)',
     composes: 'alertIconWrapper',
   },
   infoTextContainer: {
-    color: 'hsl(201deg 100% 92% / 100%)',
+    color: 'hsl(201 100% 92%)',
     composes: 'alertTextContainer',
   },
   successAlert: {
-    background: 'hsl(156deg 97% 15% / 100%)',
+    background: 'hsl(156 97% 15%)',
     composes: 'alertWrapper',
     '&::before': {
-      backgroundColor: 'hsl(156deg 98% 44% / 100%)',
+      backgroundColor: 'hsl(156 98% 44%)',
     },
   },
   successIconWrapper: {
-    color: 'hsl(156deg 98% 37% / 100%)',
+    color: 'hsl(156 98% 37%)',
     composes: 'alertIconWrapper',
   },
   successTextContainer: {
-    color: 'hsl(156deg 100% 91% / 100%)',
+    color: 'hsl(156 100% 91%)',
     composes: 'alertTextContainer',
   },
   warningAlert: {
-    background: 'hsl(43deg 100% 21% / 100%)',
+    background: 'hsl(43 100% 21%)',
     composes: 'alertWrapper',
     '&::before': {
-      backgroundColor: 'hsl(43deg 100% 53% / 100%)',
+      backgroundColor: 'hsl(43 100% 53%)',
     },
   },
   warningIconWrapper: {
-    color: 'hsl(43deg 100% 69% / 100%)',
+    color: 'hsl(43 100% 69%)',
     composes: 'alertIconWrapper',
   },
   warningTextContainer: {
-    color: 'hsl(43deg 100% 94% / 100%)',
+    color: 'hsl(43 100% 94%)',
     composes: 'alertTextContainer',
   },
   dangerAlert: {
-    background: 'hsl(335deg 100% 18% / 100%)',
+    background: 'hsl(335 100% 18%)',
     composes: 'alertWrapper',
     '&::before': {
-      backgroundColor: 'hsl(336deg 100% 54% / 100%)',
+      backgroundColor: 'hsl(336 100% 54%)',
     },
   },
   dangerIconWrapper: {
-    color: 'hsl(336deg 100% 73% / 100%)',
+    color: 'hsl(336 100% 73%)',
     composes: 'alertIconWrapper',
   },
   dangerTextContainer: {
-    color: 'hsl(336deg 100% 97% / 100%)',
+    color: 'hsl(336 100% 97%)',
     composes: 'alertTextContainer',
   },
 }

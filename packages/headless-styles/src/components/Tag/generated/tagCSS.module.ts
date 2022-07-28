@@ -33,7 +33,7 @@ export default {
     },
     '&:focus': {
       boxShadow: 'none',
-      outline: '3px solid hsl(249deg 63% 34% / 100%)',
+      outline: '3px solid hsl(249 63% 34%)',
     },
     '&:active': {
       boxShadow: 'none',
@@ -45,25 +45,25 @@ export default {
     },
   },
   strongTag: {
-    backgroundColor: 'hsl(249deg 63% 25% / 100%)',
-    color: 'hsl(249deg 62% 92% / 100%)',
+    backgroundColor: 'hsl(249 63% 25%)',
+    color: 'hsl(249 62% 92%)',
     composes: 'baseTag',
     '&:hover': {
-      backgroundColor: 'hsl(248deg 63% 34% / 100%)',
+      backgroundColor: 'hsl(248 63% 34%)',
     },
     '&:active': {
-      backgroundColor: 'hsl(249deg 63% 25% / 100%)',
+      backgroundColor: 'hsl(249 63% 25%)',
     },
   },
   weakTag: {
-    backgroundColor: 'hsl(238deg 30% 32% / 100%)',
-    color: 'hsl(0deg 0% 100% / 100%)',
+    backgroundColor: 'hsl(238 30% 32%)',
+    color: 'hsl(0 0% 100%)',
     composes: 'baseTag',
     '&:hover': {
-      backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+      backgroundColor: 'hsl(237 30% 36%)',
     },
     '&:active': {
-      backgroundColor: 'hsl(240deg 31% 25% / 100%)',
+      backgroundColor: 'hsl(240 31% 25%)',
     },
   },
   sTag: {

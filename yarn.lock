@@ -5590,10 +5590,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pluralsight/design-tokens@npm:alpha":
-  version: 0.0.0-alpha-ea49e7
-  resolution: "@pluralsight/design-tokens@npm:0.0.0-alpha-ea49e7"
-  checksum: 7f5366bce3fd88285dd60ee64be7bab4df78577080b03aae15c00f923c1da1b1ebe46832454dec3a147ce087334fbc46ab375dc02eebf9a497efefe15c5dc61d
+"@pluralsight/design-tokens@npm:experimental":
+  version: 0.0.0-experimental-426480-20220728
+  resolution: "@pluralsight/design-tokens@npm:0.0.0-experimental-426480-20220728"
+  checksum: 96a4135a5b9a3463ea7443de95ec292149ab610d69c3f9c5129dfe81fb38a53c9b229d3f4d2933d03067976a09dad76933e109ae00d330b0ed64db390a7d0a1b
   languageName: node
   linkType: hard
 
@@ -5669,6 +5669,17 @@ __metadata:
       optional: true
   languageName: unknown
   linkType: soft
+
+"@pluralsight/react-utils@npm:experimental":
+  version: 0.0.0-experimental-426480-20220728
+  resolution: "@pluralsight/react-utils@npm:0.0.0-experimental-426480-20220728"
+  dependencies:
+    tslib: ^2.3.1
+  peerDependencies:
+    react: "*"
+  checksum: 56c0be6f91766596bbb1f4b6ef4985bf27cc6ac7ff5a636ffbe702228ac655435c7184599e0ae490dce74ca70b30454d31ca83e04e93764ce0bc22a38dc515be
+  languageName: node
+  linkType: hard
 
 "@pluralsight/react-utils@workspace:packages/react-utils":
   version: 0.0.0-use.local
@@ -17776,8 +17787,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sandbox@workspace:packages/headless-styles/sandbox"
   dependencies:
-    "@pluralsight/design-tokens": alpha
+    "@pluralsight/design-tokens": experimental
     "@pluralsight/icons": experimental
+    "@pluralsight/react-utils": experimental
     "@vitejs/plugin-react": ^1.0.7
     css: ^3.0.0
     react: ^18.0.0

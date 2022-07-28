@@ -928,7 +928,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@pluralsight/design-tokens",\
-        "npm:0.0.0-alpha-ea49e7"\
+        "npm:0.0.0-experimental-426480-20220728"\
       ],\
       [\
         "@pluralsight/headless-styles",\
@@ -940,7 +940,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ],\
       [\
         "@pluralsight/react-utils",\
-        "workspace:packages/react-utils"\
+        "virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-experimental-426480-20220728"\
       ],\
       [\
         "@polka/url",\
@@ -16647,10 +16647,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@pluralsight/design-tokens", [\
-        ["npm:0.0.0-alpha-ea49e7", {\
-          "packageLocation": "./.yarn/cache/@pluralsight-design-tokens-npm-0.0.0-alpha-ea49e7-15b398a2b7-7f5366bce3.zip/node_modules/@pluralsight/design-tokens/",\
+        ["npm:0.0.0-experimental-426480-20220728", {\
+          "packageLocation": "./.yarn/cache/@pluralsight-design-tokens-npm-0.0.0-experimental-426480-20220728-6265a353b8-96a4135a5b.zip/node_modules/@pluralsight/design-tokens/",\
           "packageDependencies": [\
-            ["@pluralsight/design-tokens", "npm:0.0.0-alpha-ea49e7"]\
+            ["@pluralsight/design-tokens", "npm:0.0.0-experimental-426480-20220728"]\
           ],\
           "linkType": "HARD"\
         }],\
@@ -16734,6 +16734,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@pluralsight/react-utils", [\
+        ["npm:0.0.0-experimental-426480-20220728", {\
+          "packageLocation": "./.yarn/cache/@pluralsight-react-utils-npm-0.0.0-experimental-426480-20220728-d605dfbcb1-56c0be6f91.zip/node_modules/@pluralsight/react-utils/",\
+          "packageDependencies": [\
+            ["@pluralsight/react-utils", "npm:0.0.0-experimental-426480-20220728"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-experimental-426480-20220728", {\
+          "packageLocation": "./.yarn/__virtual__/@pluralsight-react-utils-virtual-615c5c161f/0/cache/@pluralsight-react-utils-npm-0.0.0-experimental-426480-20220728-d605dfbcb1-56c0be6f91.zip/node_modules/@pluralsight/react-utils/",\
+          "packageDependencies": [\
+            ["@pluralsight/react-utils", "virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-experimental-426480-20220728"],\
+            ["@types/react", null],\
+            ["react", "npm:18.0.0"],\
+            ["tslib", "npm:2.3.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["workspace:packages/react-utils", {\
           "packageLocation": "./packages/react-utils/",\
           "packageDependencies": [\
@@ -32216,8 +32237,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/headless-styles/sandbox/",\
           "packageDependencies": [\
             ["sandbox", "workspace:packages/headless-styles/sandbox"],\
-            ["@pluralsight/design-tokens", "npm:0.0.0-alpha-ea49e7"],\
+            ["@pluralsight/design-tokens", "npm:0.0.0-experimental-426480-20220728"],\
             ["@pluralsight/icons", "virtual:8693780468136bf004f9b532d653844c342247b6a39276486a4e8cbecc2c295c87d04c42b26f9c469bc9dfcf5a0d1f6012e10b6c148cd44051b30c652ede2384#npm:0.0.0-experimental-fae891-20220718"],\
+            ["@pluralsight/react-utils", "virtual:dd3df45847fe829fd5ffb9b7749585a9c697dfb38056abace1499b781cbea006ad99f0625f1da313eac0c1b7abb6f3f15f777db8ea816eba668f5946b2a8c58c#npm:0.0.0-experimental-426480-20220728"],\
             ["@vitejs/plugin-react", "npm:1.2.0"],\
             ["css", "npm:3.0.0"],\
             ["react", "npm:18.0.0"],\
