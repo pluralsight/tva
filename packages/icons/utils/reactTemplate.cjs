@@ -1,6 +1,6 @@
 function defaultTemplate(variables, { tpl }) {
   return tpl`
-import type { SVGProps } from 'react';
+import type { SVGProps } from '../types';
 
 ${variables.interfaces};
 
