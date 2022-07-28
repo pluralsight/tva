@@ -1,3 +1,7 @@
+import {
+  psNeutralBackground,
+  psBackgroundWeak,
+} from '@pluralsight/design-tokens'
 import { getJSTagProps, getJSTagWithIconProps } from '../../src'
 
 describe('Tag JS', () => {
@@ -7,18 +11,21 @@ describe('Tag JS', () => {
       expect(getJSTagProps().styles.fontSize).toEqual('0.875rem')
     })
 
-    test('should accept a kind type', () => {
+    test('should accept a weak kind type', () => {
+      const bg = psNeutralBackground
       expect(getJSTagProps({ kind: 'weak' }).cssProps).toContain(
-        'background-color: hsl(238deg 30% 32% / 100%)'
+        `background-color: ${bg}`
       )
-      expect(getJSTagProps({ kind: 'weak' }).styles.backgroundColor).toEqual(
-        'hsl(238deg 30% 32% / 100%)'
-      )
+      expect(getJSTagProps({ kind: 'weak' }).styles.backgroundColor).toEqual(bg)
+    })
+
+    test('should accept a strong kind type', () => {
+      const bg = psBackgroundWeak
       expect(getJSTagProps({ kind: 'strong' }).cssProps).toContain(
-        'background-color: hsl(249deg 63% 25% / 100%)'
+        `background-color: ${bg}`
       )
       expect(getJSTagProps({ kind: 'strong' }).styles.backgroundColor).toEqual(
-        'hsl(249deg 63% 25% / 100%)'
+        bg
       )
     })
 

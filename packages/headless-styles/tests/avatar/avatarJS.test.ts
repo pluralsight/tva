@@ -1,3 +1,4 @@
+import { psBackground, psNeutralBackground } from '@pluralsight/design-tokens'
 import { getJSAvatarProps } from '../../src'
 
 describe('Avatar JS -> getJSAvatarProps', () => {
@@ -17,23 +18,17 @@ describe('Avatar JS -> getJSAvatarProps', () => {
   })
 
   test('should accept a neutral kind type', () => {
+    const bg = psNeutralBackground
     const neutralProps = getJSAvatarProps({ kind: 'neutral' })
-    expect(neutralProps.avatar.cssProps).toContain(
-      'background-color: hsl(238deg 30% 32% / 100%)'
-    )
-    expect(neutralProps.avatar.styles.backgroundColor).toEqual(
-      'hsl(238deg 30% 32% / 100%)'
-    )
+    expect(neutralProps.avatar.cssProps).toContain(`background-color: ${bg}`)
+    expect(neutralProps.avatar.styles.backgroundColor).toEqual(bg)
   })
 
   test('should accept a strong kind type', () => {
+    const bg = psBackground
     const strongProps = getJSAvatarProps({ kind: 'strong' })
-    expect(strongProps.avatar.cssProps).toContain(
-      'background-color: hsl(249deg 63% 51% / 100%)'
-    )
-    expect(strongProps.avatar.styles.backgroundColor).toEqual(
-      'hsl(249deg 63% 51% / 100%)'
-    )
+    expect(strongProps.avatar.cssProps).toContain(`background-color: ${bg}`)
+    expect(strongProps.avatar.styles.backgroundColor).toEqual(bg)
   })
 
   test('should accept an xs size type', () => {

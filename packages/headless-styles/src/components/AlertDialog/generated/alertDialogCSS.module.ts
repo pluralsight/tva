@@ -63,11 +63,11 @@ export default {
     animationFillMode: 'forwards',
     animationName: 'fadeIn',
     animationTimingFunction: 'ease-in-out',
-    background: 'hsl(244deg 36% 24% / 100%)',
+    background: 'hsl(244 36% 24%)',
     borderRadius: '8px',
     boxShadow:
       '0 10px 15px -3px rgba(0 0 0 / 1%),\n    0 4px 6px -2px rgba(0 0 0 / 05%)',
-    color: 'hsl(249deg 62% 92% / 100%)',
+    color: 'hsl(249 62% 92%)',
     display: 'flex',
     flexDirection: 'column',
     fontFamily: 'inherit',

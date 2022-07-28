@@ -24,7 +24,7 @@ export default {
     textDecoration: 'none',
     textTransform: 'uppercase',
     '&:focus': {
-      outline: '3px solid hsl(249deg 63% 34% / 100%)',
+      outline: '3px solid hsl(249 63% 34%)',
     },
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
@@ -41,12 +41,12 @@ export default {
   },
   neutralAvatar: {
     composes: 'baseAvatar',
-    backgroundColor: 'hsl(238deg 30% 32% / 100%)',
-    color: 'hsl(0deg 0% 100% / 100%)',
+    backgroundColor: 'hsl(238 30% 32%)',
+    color: 'hsl(0 0% 100%)',
   },
   strongAvatar: {
     composes: 'baseAvatar',
-    backgroundColor: 'hsl(249deg 63% 51% / 100%)',
+    backgroundColor: 'hsl(249 63% 51%)',
     color: '#fff',
   },
   xsAvatar: {

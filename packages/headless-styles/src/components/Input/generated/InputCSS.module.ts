@@ -7,12 +7,12 @@ export default {
   inputBase: {
     appearance: 'none',
     background: 'inherit',
-    borderColor: 'hsl(237deg 30% 36% / 100%)',
+    borderColor: 'hsl(237 30% 36%)',
     borderImage: 'initial',
     borderRadius: '6px',
     borderStyle: 'solid',
     borderWidth: '1px',
-    color: 'hsl(0deg 0% 100% / 100%)',
+    color: 'hsl(0 0% 100%)',
     fontFamily:
       "'PS TT Commons Roman', 'Gotham SSm A', 'Gotham SSm B', Arial,\n    sans-serif",
     fontSize: '1rem',
@@ -34,11 +34,11 @@ export default {
       outline: 'none',
     },
     '&:hover': {
-      boxShadow: 'hsl(234deg 30% 49% / 100%) 0 0 0 1px',
+      boxShadow: 'hsl(234 30% 49%) 0 0 0 1px',
     },
     '&:focus': {
       boxShadow: 'none',
-      outline: '3px solid hsl(249deg 63% 34% / 100%)',
+      outline: '3px solid hsl(249 63% 34%)',
     },
     '&:focus:not(:focus-visible)': {
       boxShadow: 'none',
@@ -57,7 +57,7 @@ export default {
   },
   '': {
     '&::placeholder': {
-      color: 'hsl(237deg 30% 36% / 100%)',
+      color: 'hsl(237 30% 36%)',
       opacity: '1',
     },
   },
@@ -69,8 +69,8 @@ export default {
     },
   },
   inputBase_data_invalid__true: {
-    borderColor: 'hsl(336deg 100% 54% / 100%)',
-    boxShadow: 'hsl(336deg 100% 54% / 100%) 0 0 0 1px',
+    borderColor: 'hsl(336 100% 54%)',
+    boxShadow: 'hsl(336 100% 54%) 0 0 0 1px',
   },
   inputBase_data_readonly__true: {
     cursor: 'not-allowed',

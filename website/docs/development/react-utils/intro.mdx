@@ -1,0 +1,47 @@
+---
+sidebar_position: 1
+tags: [Development, Usage, Intro, React utils]
+---
+
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+
+# Intro
+
+:::caution
+
+This is pre-release documention for the **experimental** version of the **react-utils** package.
+
+:::
+
+<p className="page-subheadline" markdown="1">
+  Install Pluralsight's React utility custom hook library to improve the UX and
+  accessibility of your components.
+</p>
+
+<ViewSourceLink href="https://www.npmjs.com/package/@pluralsight/react-utils">
+  @pluralsight/react-utils
+</ViewSourceLink>
+
+## npm
+
+To use react-utils install the package with your preferred manager.
+
+```bash npm2yarn
+npm install @pluralsight/react-utils@experimental
+```
+
+## Who is this for?
+
+The package is for all React users who want to build components but not own the responsibility of the "hard stuff" (i.e. a11y). Our custom hooks are designed to handle all the logic that manages things like focus management down to overall helpers that may reduce your code base without risking the loss of ownership of what really matters.
+
+## React Versions
+
+**React-utils uses React 18+** and is tested using the `createRoot` function.
+
+## Typescript
+
+React-utils is built using Typescript and we ship type files in our [npm package](https://www.npmjs.com/package/@pluralsight/react-utils).
+
+## Node
+
+React-utils follows the latest Node module design so we support ES6 and CommonJS out of the box.

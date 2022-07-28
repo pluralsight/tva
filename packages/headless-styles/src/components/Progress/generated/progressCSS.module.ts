@@ -5,7 +5,7 @@
 
 export default {
   bar: {
-    backgroundColor: 'hsl(0deg 0% 100% / 100%)',
+    backgroundColor: 'hsl(0 0% 100%)',
     height: '100%',
     width: '0',
   },
@@ -20,7 +20,7 @@ export default {
     height: '0.25rem',
   },
   wrapper: {
-    backgroundColor: 'hsl(237deg 30% 36% / 100%)',
+    backgroundColor: 'hsl(237 30% 36%)',
     height: '0.5rem',
     overflowY: 'hidden',
     position: 'relative',

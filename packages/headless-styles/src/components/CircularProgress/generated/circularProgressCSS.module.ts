@@ -43,11 +43,11 @@ export default {
   },
   circle: {
     fill: 'transparent',
-    stroke: 'hsl(237deg 30% 36% / 100%)',
+    stroke: 'hsl(237 30% 36%)',
   },
   circleNow: {
     fill: 'transparent',
-    stroke: 'hsl(0deg 0% 100% / 100%)',
+    stroke: 'hsl(0 0% 100%)',
     transitionDuration: '600ms',
     transitionProperty: 'stroke-dasharray, stroke',
     transitionTimingFunction: 'ease',

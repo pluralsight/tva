@@ -26,7 +26,7 @@ export default {
     whiteSpace: 'nowrap',
     width: '1px',
     '&:focus + .radioControl': {
-      boxShadow: '0 0 0 3px hsl(249deg 63% 34% / 100%)',
+      boxShadow: '0 0 0 3px hsl(249 63% 34%)',
     },
     '&:focus:not(:focus-visible) + .radioControl': {
       boxShadow: 'none',
@@ -35,12 +35,12 @@ export default {
   },
   radioControl: {
     alignItems: 'center',
-    borderColor: 'hsl(237deg 30% 36% / 100%)',
+    borderColor: 'hsl(237 30% 36%)',
     borderImage: 'initial',
     borderRadius: '50%',
     borderStyle: 'solid',
     borderWidth: '1px',
-    color: 'hsl(249deg 62% 92% / 100%)',
+    color: 'hsl(249 62% 92%)',
     display: 'inline-flex',
     flexShrink: '0',
     justifyContent: 'center',
@@ -51,7 +51,7 @@ export default {
     transitionProperty: 'background, box-shadow',
     width: '1.125rem',
     '&:hover': {
-      background: 'hsl(238deg 30% 32% / 100%)',
+      background: 'hsl(238 30% 32%)',
     },
   },
   radioContainer_data_disabled__true: {
@@ -61,11 +61,11 @@ export default {
     cursor: 'not-allowed',
   },
   radioControl_data_checked__true: {
-    background: 'hsl(249deg 63% 51% / 100%)',
-    borderColor: 'hsl(249deg 63% 51% / 100%)',
+    background: 'hsl(249 63% 51%)',
+    borderColor: 'hsl(249 63% 51%)',
     '&:hover': {
-      background: 'hsl(249deg 63% 43% / 100%)',
-      borderColor: 'hsl(249deg 63% 43% / 100%)',
+      background: 'hsl(249 63% 43%)',
+      borderColor: 'hsl(249 63% 43%)',
     },
     '&::before': {
       background: 'white',
@@ -78,15 +78,15 @@ export default {
     },
   },
   radioControl_data_disabled__true: {
-    background: 'hsl(238deg 30% 32% / 100%)',
-    borderColor: 'hsl(238deg 30% 32% / 100%)',
+    background: 'hsl(238 30% 32%)',
+    borderColor: 'hsl(238 30% 32%)',
   },
   radioControl_data_invalid__true: {
-    background: 'hsl(336deg 100% 36% / 100%)',
-    borderColor: 'hsl(336deg 100% 36% / 100%)',
+    background: 'hsl(336 100% 36%)',
+    borderColor: 'hsl(336 100% 36%)',
     '&:hover': {
-      background: 'hsl(336deg 100% 27% / 100%)',
-      borderColor: 'hsl(336deg 100% 27% / 100%)',
+      background: 'hsl(336 100% 27%)',
+      borderColor: 'hsl(336 100% 27%)',
     },
   },
   radioControl_data_readonly__true: {
