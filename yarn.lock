@@ -5622,6 +5622,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pluralsight/headless-styles@workspace:packages/headless-styles"
   dependencies:
+    "@pluralsight/design-tokens": experimental
     "@types/copyfiles": ^2
     "@types/jest": ^28.1.6
     "@types/react": ^17.0.40

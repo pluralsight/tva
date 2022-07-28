@@ -16680,6 +16680,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/headless-styles/",\
           "packageDependencies": [\
             ["@pluralsight/headless-styles", "workspace:packages/headless-styles"],\
+            ["@pluralsight/design-tokens", "npm:0.0.0-experimental-426480-20220728"],\
             ["@types/copyfiles", "npm:2.4.1"],\
             ["@types/jest", "npm:28.1.6"],\
             ["@types/react", "npm:17.0.40"],\
