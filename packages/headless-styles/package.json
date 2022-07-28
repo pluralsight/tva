@@ -11,6 +11,7 @@
       "require": "./build/index.js"
     },
     "./types": {
+      "default": "./build/types.js",
       "types": {
         "default": "./build/types.d.ts"
       }
