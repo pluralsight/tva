@@ -1,5 +1,5 @@
 import { getJSSwitchProps } from '../../src'
-import type { SwitchOptions } from '@pluralsight/headless-styles/types'
+import type { SwitchOptions } from '../../src/types'
 
 describe('Switch JS', () => {
   test('should allow no props to be passed in', () => {

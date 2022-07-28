@@ -10,7 +10,11 @@
       "import": "./build/wrapper.js",
       "require": "./build/index.js"
     },
-    "./types": "./build/types.d.ts"
+    "./types": {
+      "types": {
+        "default": "./build/types.d.ts"
+      }
+    }
   },
   "files": [
     "build/**/*"

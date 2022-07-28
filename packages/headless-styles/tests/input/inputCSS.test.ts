@@ -1,5 +1,5 @@
 import { getInputProps } from '../../src'
-import type { InputOptions } from '@pluralsight/headless-styles/types'
+import type { InputOptions } from '../../src/types'
 
 describe('Input CSS', () => {
   describe('getInputProps', () => {

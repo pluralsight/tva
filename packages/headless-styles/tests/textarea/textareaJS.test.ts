@@ -1,5 +1,5 @@
 import { getJSTextareaProps } from '../../src'
-import type { TextareaOptions } from '@pluralsight/headless-styles/types'
+import type { TextareaOptions } from '../../src/types'
 
 describe('Textarea JS', () => {
   test('should allow no props to be passed in', () => {

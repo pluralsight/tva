@@ -1,5 +1,5 @@
 import { getJSInputProps } from '../../src'
-import type { InputOptions } from '@pluralsight/headless-styles/types'
+import type { InputOptions } from '../../src/types'
 
 describe('Input JS', () => {
   test('should allow no props to be passed in', () => {
