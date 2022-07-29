@@ -5,6 +5,8 @@ describe('Text Link CSS - getTextLinkProps', () => {
   const defaultResult = {
     link: {
       className: `${baseClass} baseTextLink`,
+      href: '',
+      rel: '',
     },
     iconOptions: {
       ariaHidden: true,
@@ -22,10 +24,33 @@ describe('Text Link CSS - getTextLinkProps', () => {
       ...defaultResult,
       link: {
         class: 'baseTextLink',
+        href: '',
+        rel: '',
       },
       iconOptions: {
         ...defaultResult.iconOptions,
         tech: 'svelte',
+      },
+    })
+  })
+
+  test('should accept a relative href', () => {
+    expect(getTextLinkProps({ href: 'index.html' })).toEqual({
+      ...defaultResult,
+      link: {
+        ...defaultResult.link,
+        href: 'index.html',
+      },
+    })
+  })
+
+  test('should accept an external href', () => {
+    expect(getTextLinkProps({ href: 'https://www.pluralsight.com' })).toEqual({
+      ...defaultResult,
+      link: {
+        ...defaultResult.link,
+        href: 'https://www.pluralsight.com',
+        rel: 'noopener external',
       },
     })
   })
