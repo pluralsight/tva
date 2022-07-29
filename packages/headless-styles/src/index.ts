@@ -79,4 +79,6 @@ export { getJSTagProps, getJSTagWithIconProps } from './components/Tag/tagJS'
 export { getTextareaProps } from './components/Textarea/textareaCSS'
 export { getJSTextareaProps } from './components/Textarea/textareaJS'
 
+export { getTextLinkProps } from './components/TextLink/textLinkCSS'
+
 export { chakraPSTheme } from './chakra'

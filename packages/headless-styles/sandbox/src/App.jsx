@@ -21,6 +21,7 @@ import Skeleton from './components/Skeleton'
 import Switch from './components/Switch'
 import Tag from './components/Tag'
 import Textarea from './components/Textarea'
+import TextLink from './components/TextLink'
 import './App.css'
 
 const initialTheme = localStorage.getItem('theme')
@@ -71,6 +72,7 @@ function App() {
       <Switch />
       <Tag />
       <Textarea />
+      <TextLink />
     </div>
   )
 }

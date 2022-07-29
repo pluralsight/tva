@@ -42,7 +42,7 @@ The `useFocusTrap` hook returns an Object with the following properties
 
 ## Example usage in Component
 
-Here is an example of how you might use `useFocusTrap` for an Alert Dialog combined with the [headless-styles](../headless-styles/intro.mdx) package.
+Here is an example of how you might use `useFocusTrap` for an Alert Dialog combined with the [useEscToClose](./use-esc-to-close.mdx) hook, and [headless-styles](../headless-styles/intro.mdx) package.
 
 :::tip
 
@@ -71,24 +71,12 @@ function AlertDialog(props, triggerRef) {
     }
   }
 
+  useEscToClose(onClose)
+
   useEffect(() => {
     // highlight-next-line
     initFocusTrap()
   }, [initFocusTrap])
-
-  useEffect(() => {
-    function handleEscClose(event) {
-      if (event.key === 'Escape') {
-        event.stopPropagation()
-        onClose()
-      }
-    }
-    window.addEventListener('keydown', handleEscClose, false)
-
-    return () => {
-      window.removeEventListener('keydown', handleEscClose, false)
-    }
-  }, [onClose])
 
   return (
     <div {...alert.backdrop}>

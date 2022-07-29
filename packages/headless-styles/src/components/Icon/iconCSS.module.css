@@ -19,3 +19,7 @@
   height: 1.5rem;
   width: 1.5rem;
 }
+
+.customIconSize {
+  composes: psIcon;
+}

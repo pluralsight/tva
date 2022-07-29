@@ -46,7 +46,7 @@
     "build/wrapper.js"
   ],
   "scripts": {
-    "build": "yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run build:strings && yarn run build:ts && yarn run create:entryFiles",
+    "build": "rm -rf build && yarn run build:svg && yarn run build:react && yarn run build:svelte && yarn run build:strings && yarn run build:ts && yarn run create:entryFiles",
     "build:ts": "tsc --project ./tsconfig.cjs.json",
     "build:strings": "yarn node ./utils/svgToStrings.mjs",
     "build:react": "yarn node ./utils/svgToReact.mjs",
