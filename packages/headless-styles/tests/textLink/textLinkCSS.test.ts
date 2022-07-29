@@ -8,7 +8,8 @@ describe('Text Link CSS - getTextLinkProps', () => {
       href: '',
     },
     iconOptions: {
-      ariaHidden: true,
+      ariaLabel: '(opens in a new window)',
+      ariaHidden: false,
       customSize: '1em',
       tech: '',
     },
@@ -45,6 +46,7 @@ describe('Text Link CSS - getTextLinkProps', () => {
         ...defaultResult.link,
         href: 'https://www.pluralsight.com',
         rel: 'noopener external',
+        target: '_blank',
       },
     })
   })
