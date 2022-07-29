@@ -28,10 +28,8 @@ describe('Icon CSS', () => {
     test('should accept a custom size', () => {
       expect(getIconProps({ customSize: '5rem' })).toEqual({
         ...result,
-        style: {
-          height: '5rem',
-          width: '5rem',
-        },
+        height: '5rem',
+        width: '5rem',
       })
     })
 
