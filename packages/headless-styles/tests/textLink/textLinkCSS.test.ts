@@ -6,7 +6,6 @@ describe('Text Link CSS - getTextLinkProps', () => {
     link: {
       className: `${baseClass} textLinkBase`,
       href: '',
-      rel: '',
     },
     iconOptions: {
       ariaHidden: true,
@@ -21,7 +20,6 @@ describe('Text Link CSS - getTextLinkProps', () => {
       link: {
         class: 'textLinkBase',
         href: '#top',
-        rel: '',
       },
       iconOptions: {
         ...defaultResult.iconOptions,

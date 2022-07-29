@@ -22,10 +22,13 @@ export function getDefaultTextLinkOptions(options?: TextLinkOptions) {
 }
 
 export function createTextLinkProps(href: string, tech: Tech) {
+  const rel = getRel(href)
+  const relProps = rel && { rel: rel }
+
   return {
     link: {
       href: href,
-      rel: getRel(href),
+      ...relProps,
     },
     iconOptions: {
       ariaHidden: true,
