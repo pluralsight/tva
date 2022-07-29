@@ -5,12 +5,24 @@ function isExternalHref(href: string) {
   return /^https?:\/\//.test(href)
 }
 
-function getRel(href: string) {
-  return isExternalHref(href) ? 'noopener external' : ''
+function getLinkProps(href: string) {
+  if (isExternalHref(href)) {
+    return {
+      rel: 'noopener external',
+      target: '_blank',
+    }
+  }
+
+  return {}
 }
 
-function getTarget(href: string) {
-  return isExternalHref(href) ? '_blank' : ''
+function getIconOptions(tech: Tech) {
+  return {
+    ariaHidden: false,
+    ariaLabel: '(opens in a new window)',
+    customSize: '1em',
+    tech: tech,
+  }
 }
 
 export const defaultTextLinkOptions = {
@@ -26,22 +38,10 @@ export function getDefaultTextLinkOptions(options?: TextLinkOptions) {
 }
 
 export function createTextLinkProps(href: string, tech: Tech) {
-  const rel = getRel(href)
-  const target = getTarget(href)
-  const relProps = rel && { rel: rel }
-  const targetProps = target && { target: target }
+  const linkProps = getLinkProps(href)
 
   return {
-    link: {
-      href: href,
-      ...relProps,
-      ...targetProps,
-    },
-    iconOptions: {
-      ariaHidden: false,
-      ariaLabel: '(opens in a new window)',
-      customSize: '1em',
-      tech: tech,
-    },
+    link: { href, ...linkProps },
+    ...(isExternalHref(href) && { iconOptions: getIconOptions(tech) }),
   }
 }

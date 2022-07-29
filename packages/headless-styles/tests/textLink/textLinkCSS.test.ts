@@ -7,12 +7,6 @@ describe('Text Link CSS - getTextLinkProps', () => {
       className: `${baseClass} textLinkBase`,
       href: '',
     },
-    iconOptions: {
-      ariaLabel: '(opens in a new window)',
-      ariaHidden: false,
-      customSize: '1em',
-      tech: '',
-    },
   }
 
   test('should accept a tech type', () => {
@@ -21,10 +15,6 @@ describe('Text Link CSS - getTextLinkProps', () => {
       link: {
         class: 'textLinkBase',
         href: '#top',
-      },
-      iconOptions: {
-        ...defaultResult.iconOptions,
-        tech: 'svelte',
       },
     })
   })
@@ -47,6 +37,12 @@ describe('Text Link CSS - getTextLinkProps', () => {
         href: 'https://www.pluralsight.com',
         rel: 'noopener external',
         target: '_blank',
+      },
+      iconOptions: {
+        ariaLabel: '(opens in a new window)',
+        ariaHidden: false,
+        customSize: '1em',
+        tech: '',
       },
     })
   })
