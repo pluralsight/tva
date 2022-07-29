@@ -71,5 +71,4 @@ function createOutputDir(pathName) {
 console.log('Generating React icons...')
 removeIndexFile()
 iterateSvgs(srcPath, svgToReact, createOutputDir)
-fs.copyFileSync(resolve('src', 'types.ts'), resolve(buildPath, 'types.ts'))
 console.log('done!')
