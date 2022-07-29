@@ -15,16 +15,12 @@ describe('Text Link CSS - getTextLinkProps', () => {
     },
   }
 
-  test('should allow no props to be passed in', () => {
-    expect(getTextLinkProps()).toEqual(defaultResult)
-  })
-
   test('should accept a tech type', () => {
-    expect(getTextLinkProps({ tech: 'svelte' })).toEqual({
+    expect(getTextLinkProps({ href: '#top', tech: 'svelte' })).toEqual({
       ...defaultResult,
       link: {
         class: 'textLinkBase',
-        href: '',
+        href: '#top',
         rel: '',
       },
       iconOptions: {
