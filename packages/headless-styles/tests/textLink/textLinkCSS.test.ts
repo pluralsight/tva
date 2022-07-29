@@ -4,7 +4,7 @@ describe('Text Link CSS - getTextLinkProps', () => {
   const baseClass = 'ps-text-link'
   const defaultResult = {
     link: {
-      className: `${baseClass} baseTextLink`,
+      className: `${baseClass} textLinkBase`,
       href: '',
       rel: '',
     },
@@ -23,7 +23,7 @@ describe('Text Link CSS - getTextLinkProps', () => {
     expect(getTextLinkProps({ tech: 'svelte' })).toEqual({
       ...defaultResult,
       link: {
-        class: 'baseTextLink',
+        class: 'textLinkBase',
         href: '',
         rel: '',
       },

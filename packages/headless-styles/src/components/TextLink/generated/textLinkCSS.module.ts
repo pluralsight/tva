@@ -4,7 +4,7 @@
 // Manual changes will be lost - proceed with caution!
 
 export default {
-  baseTextLink: {
+  textLinkBase: {
     alignItems: 'center',
     backgroundColor: 'transparent',
     borderRadius: '6px',

@@ -12,8 +12,8 @@ export function getTextLinkProps(options?: TextLinkOptions) {
     link: {
       ...props.link,
       ...createClassProp(defaultOptions.tech, {
-        defaultClass: `ps-text-link ${styles.baseTextLink}`,
-        svelteClass: `baseTextLink`,
+        defaultClass: `ps-text-link ${styles.textLinkBase}`,
+        svelteClass: `textLinkBase`,
       }),
     },
   }

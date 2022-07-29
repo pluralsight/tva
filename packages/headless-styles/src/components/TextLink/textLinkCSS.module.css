@@ -1,4 +1,4 @@
-.baseTextLink {
+.textLinkBase {
   align-items: center;
   background-color: transparent;
   border-radius: 6px;
@@ -14,24 +14,24 @@
   transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
-.baseTextLink:visited {
+.textLinkBase:visited {
   color: var(--ps-text-medium);
 }
 
-.baseTextLink:hover {
+.textLinkBase:hover {
   text-decoration: none;
 }
 
-.baseTextLink:active {
+.textLinkBase:active {
   text-decoration: underline;
 }
 
-.baseTextLink:focus {
+.textLinkBase:focus {
   outline: 3px solid var(--ps-background-active);
   outline-offset: 4px;
 }
 
-.baseTextLink:focus:not(:focus-visible) {
+.textLinkBase:focus:not(:focus-visible) {
   box-shadow: none;
   outline: none;
 }
