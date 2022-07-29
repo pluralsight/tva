@@ -3,6 +3,8 @@ sidebar_position: 2
 tags: [Development, Usage, Icons, Web]
 ---
 
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 import LiveExampleTabs from '@site/src/components/LiveExampleTabs/LiveExampleTabs'
 import BasicIcon from '@site/src/components/Icons/BasicIcon'
 import {
@@ -59,6 +61,47 @@ import { MenuIcon } from '@pluralsight/icons/svelte'
 ```javascript
 import menuSvg from '@pluralsight/icons/svg/navigation/menu.svg'
 ```
+
+### Typescript and pathed imports
+
+To use imports other than the default (`@pluralsight/icons`)
+or direct build file references with Typescript you will need
+**version 4.5 or greater** and
+[moduleResolution](https://www.typescriptlang.org/tsconfig#moduleResolution) set to `nodenext`
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "moduleResolution": "nodenext"
+  }
+}
+```
+
+If you are unable to upgrade or use these settings, you can reference the build files directly.
+
+<Tabs>
+  <TabItem label="React" value="react">
+
+```typescript
+import MenuIcon from '@pluralsight/icons/build/react/navigation/MenuIcon.js'
+```
+
+  </TabItem>
+  <TabItem label="Svelte" value="svelte">
+
+```typescript
+import MenuIcon from '@pluralsight/icons/build/svelte/navigation/MenuIcon.svelte'
+```
+
+  </TabItem>
+  <TabItem label="SVG" value="svg">
+
+```typescript
+import menuSvg from '@pluralsight/icons/build/svg/navigation/menu.svg'
+```
+
+  </TabItem>
+</Tabs>
 
 :::tip
 

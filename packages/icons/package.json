@@ -13,11 +13,11 @@
     "./react/*": {
       "import": [
         "./build/react/*/wrapper.js",
-        "./build/react/*"
+        "./build/react/*.js"
       ],
       "require": [
         "./build/react/*/index.js",
-        "./build/react/*"
+        "./build/react/*.js"
       ]
     },
     "./svelte": {
