@@ -1,0 +1,101 @@
+---
+tags: [Development, Packages, React, React utils, useEscToClose]
+---
+
+import CodeBlock from '@theme/CodeBlock'
+import ViewSourceLink from '@site/src/components/ViewSourceLink/ViewSourceLink'
+
+# useEscToClose
+
+A custom hook for calling a function when the user presses the "Escape" key.
+
+<ViewSourceLink
+  icon="github"
+  href="https://github.com/pluralsight/tva/blob/main/packages/react-utils/src/hooks/useEscapeToClose.ts"
+>
+  View source
+</ViewSourceLink>
+
+## Import
+
+```javascript
+import { useEscToClose } from '@pluralsight/react-utils'
+```
+
+## Basic Usage
+
+To use `useEscToClose` you only need to pass in a function returned by the `useCallback` React hook.
+
+```jsx
+useEscToClose(onClose)
+```
+
+## Return Value
+
+The `useEscToClose` hook does not return any values.
+
+## Example usage in Component
+
+Here is an example of how you might use `useEscToClose` for an Alert Dialog combined with the [useFocusTrap](./use-focus-trap.mdx) hook, and the [headless-styles](../headless-styles/intro.mdx) package.
+
+:::tip
+
+When using `useEscToClose` within a component, make sure you are using `useCallback` to define the close Function you are passing as a parameter into the hook.
+
+**Not doing this will negatively impact performance and cause unnecessary re-rendering.**
+
+:::
+
+```jsx
+function AlertDialog(props, triggerRef) {
+  const { onClose, ...alertProps } = props
+  const wrapperRef = useRef(null)
+  const alert = getAlertDialogProps(alertProps)
+  const { cancelBtnProps, primaryBtnProps } = getButtonStyleProps(props.kind, {
+    cancel: alert.cancelBtnOptions,
+    primary: alert.primaryBtnOptions,
+  })
+  const { ref, onKeydown, initFocusTrap } = useFocusTrap(triggerRef)
+
+  function handleBackdropClick(event) {
+    event.stopPropagation()
+    if (wrapperRef.current === event.target) {
+      onClose()
+    }
+  }
+
+  // highlight-next-line
+  useEscToClose(onClose)
+
+  useEffect(() => {
+    initFocusTrap()
+  }, [initFocusTrap])
+
+  return (
+    <div {...alert.backdrop}>
+      <div {...alert.focusGuard} />
+
+      <div {...alert.wrapper} ref={wrapperRef} onClick={handleBackdropClick}>
+        <section {...alert.section} ref={ref} onKeyDown={onKeydown}>
+          <header {...alert.alertTitle}>Example Alert</header>
+          <p {...alert.alertBody}>
+            Performing this action will be permanent. Are you sure you want to
+            do it?
+          </p>
+          <footer {...alert.buttonGroup}>
+            <button {...cancelBtnProps} onClick={onClose}>
+              Cancel
+            </button>
+            <button {...primaryBtnProps}>Action</button>
+          </footer>
+        </section>
+      </div>
+
+      <div {...alert.focusGuard} />
+    </div>
+  )
+}
+
+// highlight-next-line
+const AlertDialogEl = memo(forwardRef(NormalAlert))
+```
