@@ -5672,13 +5672,13 @@ __metadata:
   linkType: soft
 
 "@pluralsight/react-utils@npm:experimental":
-  version: 0.0.0-experimental-426480-20220728
-  resolution: "@pluralsight/react-utils@npm:0.0.0-experimental-426480-20220728"
+  version: 0.0.0-experimental-fd9e2c-20220729
+  resolution: "@pluralsight/react-utils@npm:0.0.0-experimental-fd9e2c-20220729"
   dependencies:
     tslib: ^2.3.1
   peerDependencies:
     react: "*"
-  checksum: 56c0be6f91766596bbb1f4b6ef4985bf27cc6ac7ff5a636ffbe702228ac655435c7184599e0ae490dce74ca70b30454d31ca83e04e93764ce0bc22a38dc515be
+  checksum: 920c0013445ad61d6a402c9679032efc95e8d44998c6f3a1b23b1fd3c51117bf85b7cf73a058075330ce3fae521d51b15c10058a44fde3dcc447c9850aba1983
   languageName: node
   linkType: hard
 

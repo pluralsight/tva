@@ -7,7 +7,7 @@ import React, {
   memo,
 } from 'react'
 import { createPortal } from 'react-dom'
-import { useFocusTrap } from '@pluralsight/react-utils'
+import { useEscToClose, useFocusTrap } from '@pluralsight/react-utils'
 import {
   getButtonProps,
   getDangerButtonProps,
@@ -31,12 +31,12 @@ function getButtonStyleProps(kind, btnOptions) {
 
 function NormalAlert(props, triggerRef) {
   const { onClose, ...alertProps } = props
+  const wrapperRef = useRef(null)
   const alert = getAlertDialogProps(alertProps)
   const { cancelBtnProps, primaryBtnProps } = getButtonStyleProps(props.kind, {
     cancel: alert.cancelBtnOptions,
     primary: alert.primaryBtnOptions,
   })
-  const wrapperRef = useRef(null)
   const { ref, onKeydown, initFocusTrap } = useFocusTrap(triggerRef)
 
   function handleBackdropClick(event) {
@@ -46,23 +46,11 @@ function NormalAlert(props, triggerRef) {
     }
   }
 
+  useEscToClose(onClose)
+
   useEffect(() => {
     initFocusTrap()
   }, [initFocusTrap])
-
-  useEffect(() => {
-    function handleEscClose(event) {
-      if (event.key === 'Escape') {
-        event.stopPropagation()
-        onClose()
-      }
-    }
-    window.addEventListener('keydown', handleEscClose, false)
-
-    return () => {
-      window.removeEventListener('keydown', handleEscClose, false)
-    }
-  }, [onClose])
 
   return (
     <div {...alert.backdrop}>
