@@ -22,4 +22,7 @@ export default {
     height: '1.5rem',
     width: '1.5rem',
   },
+  customSize: {
+    composes: 'psIcon',
+  },
 }

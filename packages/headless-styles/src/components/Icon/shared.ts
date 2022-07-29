@@ -7,6 +7,17 @@ export const defaultIconOptions = {
   ariaHidden: false,
 }
 
+export function createIconSelectorClasses(
+  size?: IconSize,
+  customSize?: string
+) {
+  const sizeSuffix = 'IconSize'
+
+  return {
+    sizeClass: customSize ? `custom${sizeSuffix}` : `${size}${sizeSuffix}`,
+  }
+}
+
 export function getDefaultIconOptions(options?: IconOptions) {
   return {
     ariaHidden: options?.ariaHidden ?? defaultIconOptions.ariaHidden,
